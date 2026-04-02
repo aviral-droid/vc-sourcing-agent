@@ -445,6 +445,54 @@ input[type=range]::-webkit-slider-thumb {
 @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
 
 /* ── Toast ────────────────────────────────────────────────────────── */
+/* ── PAT modal ────────────────────────────────────────────────────── */
+.pat-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.6);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+}
+.pat-overlay.open { display: flex; }
+.pat-box {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: 14px;
+  padding: 28px 28px 22px;
+  width: 420px;
+  max-width: 90vw;
+  box-shadow: 0 20px 60px rgba(0,0,0,.5);
+}
+.pat-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.pat-sub { font-size: 12px; color: var(--muted); margin-bottom: 18px; line-height: 1.5; }
+.pat-input {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border2);
+  border-radius: 8px;
+  padding: 9px 12px;
+  color: var(--text);
+  font-size: 13px;
+  outline: none;
+  font-family: monospace;
+  margin-bottom: 16px;
+}
+.pat-input:focus { border-color: var(--accent); }
+.pat-actions { display: flex; gap: 8px; justify-content: flex-end; }
+.pat-cancel {
+  background: transparent; border: 1px solid var(--border2);
+  border-radius: 7px; padding: 7px 16px;
+  color: var(--muted2); font-size: 12px; cursor: pointer;
+}
+.pat-save {
+  background: var(--accent); border: none;
+  border-radius: 7px; padding: 7px 18px;
+  color: #fff; font-size: 12px; font-weight: 600; cursor: pointer;
+}
+.pat-hint { font-size: 11px; color: var(--muted); margin-top: 10px; }
+.pat-hint a { color: var(--accent); }
+
 .toast {
   position: fixed;
   bottom: 20px;
@@ -637,6 +685,20 @@ input[type=range]::-webkit-slider-thumb {
 
 <!-- Toast -->
 <div class="toast" id="toast"></div>
+
+<!-- ── PAT modal (shown only on first use) ──────────────────────── -->
+<div class="pat-overlay" id="pat-overlay">
+  <div class="pat-box">
+    <div class="pat-title">Connect GitHub</div>
+    <div class="pat-sub">Enter a GitHub Personal Access Token with <strong>workflow</strong> scope. Saved in your browser — you'll never be asked again.</div>
+    <input class="pat-input" id="pat-input" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off" spellcheck="false" />
+    <div class="pat-actions">
+      <button class="pat-cancel" id="pat-cancel-btn">Cancel</button>
+      <button class="pat-save"   id="pat-save-btn">Save &amp; Run</button>
+    </div>
+    <div class="pat-hint">Create one at <a href="https://github.com/settings/tokens/new?scopes=workflow" target="_blank">github.com/settings/tokens</a> → select <code>workflow</code> scope.</div>
+  </div>
+</div>
 
 <script>
 // ── State ────────────────────────────────────────────────────────────
@@ -913,15 +975,51 @@ loadData();
 // ── GitHub Actions Run button ─────────────────────────────────────────
 const GH_REPO     = 'aviral-droid/vc-sourcing-agent';
 const GH_WORKFLOW = 'sourcing.yml';
-const GH_PAT      = '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';
 
 function getGHToken() {
-  return GH_PAT;
+  return localStorage.getItem('gh_pat') || null;
+}
+
+function openPatModal(onSave) {
+  const overlay = document.getElementById('pat-overlay');
+  const input   = document.getElementById('pat-input');
+  const saveBtn = document.getElementById('pat-save-btn');
+  const cancelBtn = document.getElementById('pat-cancel-btn');
+  input.value = '';
+  overlay.classList.add('open');
+  setTimeout(() => input.focus(), 80);
+  function save() {
+    const val = input.value.trim();
+    if (!val) return;
+    localStorage.setItem('gh_pat', val);
+    overlay.classList.remove('open');
+    saveBtn.removeEventListener('click', save);
+    cancelBtn.removeEventListener('click', cancel);
+    onSave(val);
+  }
+  function cancel() {
+    overlay.classList.remove('open');
+    saveBtn.removeEventListener('click', save);
+    cancelBtn.removeEventListener('click', cancel);
+    resetRunBtn();
+  }
+  saveBtn.addEventListener('click', save);
+  cancelBtn.addEventListener('click', cancel);
+  input.onkeydown = e => { if (e.key === 'Enter') save(); if (e.key === 'Escape') cancel(); };
 }
 
 async function triggerGHRun() {
   const token = getGHToken();
-  if (!token) return;
+  if (!token) {
+    const btn = document.getElementById('run-btn');
+    btn.disabled = true;
+    openPatModal(t => { btn.disabled = false; _doRun(t); });
+    return;
+  }
+  _doRun(token);
+}
+
+async function _doRun(token) {
   const days = document.getElementById('days-select').value;
   const btn = document.getElementById('run-btn');
   btn.textContent = 'Starting…';
@@ -947,8 +1045,9 @@ async function triggerGHRun() {
       setTimeout(() => pollGHRun(token), 8000);
     } else if (r.status === 401 || r.status === 403) {
       localStorage.removeItem('gh_pat');
-      alert('Invalid PAT or missing "workflow" scope. Please try again with a valid token.');
+      toast('Invalid PAT — please enter a new one', 'error');
       resetRunBtn();
+      openPatModal(t => _doRun(t));
     } else {
       const err = await r.json().catch(() => ({}));
       alert('GitHub error: ' + (err.message || r.status));
