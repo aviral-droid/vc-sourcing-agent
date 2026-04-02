@@ -100,13 +100,15 @@ def _build_signals_text(person: Person) -> str:
 
 
 def _call_gemini(prompt: str) -> Optional[str]:
-    """Primary LLM — Gemini 1.5 Flash (free tier: 1500 req/day, 15 RPM)."""
+    """Primary LLM — Gemini Flash (free tier, multiple model fallbacks)."""
     if not config.GEMINI_API_KEY:
         return None
+    import warnings
+    warnings.filterwarnings("ignore")
     import google.generativeai as genai
     genai.configure(api_key=config.GEMINI_API_KEY)
-    # Try 1.5-flash first, fall back to 1.5-flash-8b (higher free quota)
-    for model_name in ("gemini-1.5-flash", "gemini-1.5-flash-8b"):
+    # Try models in order of preference; each has a separate daily + per-minute quota
+    for model_name in ("gemini-2.5-flash-lite", "gemini-2.5-flash", "gemini-2.0-flash-lite", "gemini-2.0-flash"):
         wait = 30
         for attempt in range(4):
             try:
@@ -116,16 +118,25 @@ def _call_gemini(prompt: str) -> Optional[str]:
                 )
                 resp = model.generate_content(
                     prompt,
-                    generation_config={"temperature": 0.1, "max_output_tokens": 600},
+                    generation_config={"temperature": 0.1, "max_output_tokens": 1024},
                 )
+                # If truncated (MAX_TOKENS finish reason = 2), try next model
+                if resp.candidates and resp.candidates[0].finish_reason == 2:
+                    logger.warning("Gemini %s output truncated (MAX_TOKENS), trying next model", model_name)
+                    break
                 return resp.text.strip()
             except Exception as e:
                 err = str(e)
-                if "quota" in err.lower() or "429" in err or "rate" in err.lower():
-                    if "per day" in err.lower() or "PerDay" in err:
+                if "quota" in err.lower() or "429" in err or "rate" in err.lower() or "RESOURCE_EXHAUSTED" in err:
+                    if "PerDay" in err or "per day" in err.lower() or "PerDayPerProject" in err:
                         logger.warning("Gemini %s daily quota exhausted, trying next model", model_name)
                         break  # try next model
                     if attempt < 3:
+                        # extract retry delay from error if available
+                        import re as _re
+                        m2 = _re.search(r'seconds:\s*(\d+)', err)
+                        if m2:
+                            wait = min(int(m2.group(1)) + 2, 120)
                         logger.info("Gemini %s rate limit — waiting %ds…", model_name, wait)
                         time.sleep(wait)
                         wait = min(wait * 2, 120)
@@ -146,7 +157,7 @@ def _call_claude(prompt: str) -> Optional[str]:
         client = anthropic.Anthropic(api_key=config.ANTHROPIC_API_KEY)
         resp = client.messages.create(
             model="claude-sonnet-4-6",
-            max_tokens=600,
+            max_tokens=1024,
             system=SYSTEM_PROMPT,
             messages=[{"role": "user", "content": prompt}],
         )
@@ -173,7 +184,7 @@ def _call_groq(prompt: str, retries: int = 5) -> Optional[str]:
                     {"role": "user", "content": prompt},
                 ],
                 temperature=0.1,
-                max_tokens=600,
+                max_tokens=1024,
             )
             return resp.choices[0].message.content.strip()
         except Exception as e:
