@@ -1,0 +1,93 @@
+name: VC Sourcing Pipeline
+
+on:
+  schedule:
+    - cron: '0 7 * * *'   # Daily at 07:00 UTC
+  workflow_dispatch:        # Manual trigger from GitHub Actions tab
+    inputs:
+      days_back:
+        description: 'Days back to scan'
+        required: false
+        default: '30'
+      skip_headcount:
+        description: 'Skip headcount step (faster run)'
+        required: false
+        default: 'false'
+        type: boolean
+
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    permissions:
+      contents: write       # Required to commit reports/ and docs/ back to repo
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # ── Persist SQLite state between runs ──────────────────────────────────
+      - name: Restore SQLite DB cache
+        uses: actions/cache@v4
+        with:
+          path: vc-sourcing-agent/state.db
+          key: state-db-${{ github.run_id }}
+          restore-keys: |
+            state-db-
+
+      # ── Python setup ───────────────────────────────────────────────────────
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          cache-dependency-path: vc-sourcing-agent/requirements.txt
+
+      - name: Install dependencies
+        working-directory: vc-sourcing-agent
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Install Playwright browsers (for crawl4ai)
+        working-directory: vc-sourcing-agent
+        run: |
+          crawl4ai-setup || python -m playwright install chromium --with-deps
+
+      # ── Run pipeline ───────────────────────────────────────────────────────
+      - name: Run VC sourcing pipeline
+        working-directory: vc-sourcing-agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          DAYS_BACK="${{ github.event.inputs.days_back || '30' }}"
+          SKIP_HC="${{ github.event.inputs.skip_headcount || 'false' }}"
+          SKIP_FLAG=""
+          if [ "$SKIP_HC" = "true" ]; then SKIP_FLAG="--skip-headcount"; fi
+          python main.py --days-back "$DAYS_BACK" $SKIP_FLAG
+
+      # ── Commit outputs back to repo ────────────────────────────────────────
+      - name: Commit reports and dashboard
+        working-directory: vc-sourcing-agent
+        run: |
+          git config user.name  "VC Sourcing Bot"
+          git config user.email "vc-bot@users.noreply.github.com"
+          git add reports/ docs/
+          git diff --staged --quiet || \
+            git commit -m "chore: sourcing digest $(date -u +%Y-%m-%d)" && \
+            git push
+
+      # ── Upload report as artifact (for easy download) ─────────────────────
+      - name: Upload digest artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: sourcing-digest-${{ github.run_id }}
+          path: vc-sourcing-agent/reports/
+          retention-days: 30

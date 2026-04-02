@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VC Sourcing Agent</title>
+<style>
+/* ── Reset & Base ────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:        #0a0b0e;
+  --surface:   #111318;
+  --surface2:  #181c24;
+  --surface3:  #1e2330;
+  --border:    #252b38;
+  --border2:   #2d3547;
+  --text:      #e8eaf0;
+  --text2:     #8b92a8;
+  --text3:     #5a6175;
+  --accent:    #4f7cff;
+  --accent2:   #7b4fff;
+  --green:     #22d47e;
+  --yellow:    #f5b942;
+  --red:       #f05a5a;
+  --orange:    #f08030;
+  --tag-bg:    #1a2035;
+  --radius:    10px;
+  --radius-sm: 6px;
+  --shadow:    0 2px 16px rgba(0,0,0,0.4);
+}
+html, body { height: 100%; background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, -apple-system, sans-serif; font-size: 14px; line-height: 1.5; }
+button { cursor: pointer; border: none; outline: none; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+input, select { outline: none; }
+
+/* ── Layout ──────────────────────────────────────────────── */
+#app { display: flex; flex-direction: column; height: 100vh; overflow: hidden; }
+
+/* Topbar */
+.topbar {
+  display: flex; align-items: center; gap: 16px;
+  padding: 0 24px; height: 56px; min-height: 56px;
+  background: var(--surface); border-bottom: 1px solid var(--border);
+  z-index: 100;
+}
+.topbar .logo {
+  font-size: 15px; font-weight: 700; letter-spacing: -0.3px;
+  color: var(--text); white-space: nowrap;
+}
+.topbar .logo span { color: var(--accent); }
+.topbar-tabs { display: flex; gap: 4px; margin-left: 8px; }
+.tab-btn {
+  padding: 6px 14px; border-radius: var(--radius-sm);
+  background: transparent; color: var(--text2);
+  font-size: 13px; font-weight: 500; transition: all 0.15s;
+}
+.tab-btn:hover { background: var(--surface3); color: var(--text); }
+.tab-btn.active { background: var(--accent); color: #fff; }
+.topbar-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+.run-controls { display: flex; align-items: center; gap: 8px; }
+.run-select {
+  background: var(--surface3); border: 1px solid var(--border2);
+  color: var(--text); border-radius: var(--radius-sm);
+  padding: 5px 10px; font-size: 12px;
+}
+.btn-run {
+  display: flex; align-items: center; gap: 6px;
+  padding: 6px 14px; border-radius: var(--radius-sm);
+  background: var(--accent); color: #fff; font-size: 13px; font-weight: 600;
+  transition: background 0.15s;
+}
+.btn-run:hover { background: #3a6bff; }
+.btn-run.running { background: var(--orange); }
+.btn-run svg { width: 14px; height: 14px; }
+.run-badge {
+  display: flex; align-items: center; gap: 5px;
+  font-size: 11px; color: var(--green); font-weight: 500;
+}
+.run-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: pulse 1.2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+/* Main content */
+.main { flex: 1; overflow: hidden; display: flex; flex-direction: column; }
+
+/* Stats strip */
+.stats-strip {
+  display: flex; gap: 1px; background: var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.stat-cell {
+  flex: 1; padding: 10px 16px;
+  background: var(--surface); display: flex; flex-direction: column; gap: 2px;
+}
+.stat-cell .val { font-size: 20px; font-weight: 700; color: var(--text); }
+.stat-cell .lbl { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.5px; }
+.stat-cell .val.green { color: var(--green); }
+.stat-cell .val.yellow { color: var(--yellow); }
+.stat-cell .val.blue { color: var(--accent); }
+
+/* Tabs */
+.tab-content { display: none; flex: 1; overflow: hidden; }
+.tab-content.active { display: flex; }
+
+/* ── Sourcing Tab ─────────────────────────────────────────── */
+#tab-sourcing { flex-direction: row; overflow: hidden; }
+
+.sidebar {
+  width: 220px; min-width: 220px;
+  background: var(--surface); border-right: 1px solid var(--border);
+  display: flex; flex-direction: column; overflow-y: auto; padding: 16px 0;
+}
+.sidebar-section { padding: 0 14px; margin-bottom: 20px; }
+.sidebar-label { font-size: 10px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.8px; color: var(--text3); margin-bottom: 8px; }
+.filter-btn {
+  width: 100%; text-align: left; padding: 7px 10px;
+  border-radius: var(--radius-sm); background: transparent; color: var(--text2);
+  font-size: 12px; display: flex; justify-content: space-between; align-items: center;
+  transition: all 0.12s;
+}
+.filter-btn:hover { background: var(--surface2); color: var(--text); }
+.filter-btn.active { background: var(--tag-bg); color: var(--accent); }
+.filter-count {
+  font-size: 11px; padding: 1px 6px; border-radius: 10px;
+  background: var(--surface3); color: var(--text3);
+}
+.filter-btn.active .filter-count { background: var(--accent); color: #fff; }
+
+/* Score slider */
+.score-slider-wrap { padding: 0 14px; margin-bottom: 20px; }
+.slider-header { display: flex; justify-content: space-between; margin-bottom: 8px; }
+.slider-title { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text3); }
+.slider-val { font-size: 12px; color: var(--accent); font-weight: 600; }
+input[type=range] {
+  width: 100%; accent-color: var(--accent);
+  -webkit-appearance: none; height: 4px; border-radius: 2px;
+  background: linear-gradient(to right, var(--accent) 0%, var(--accent) var(--pct, 0%), var(--surface3) var(--pct, 0%), var(--surface3) 100%);
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 14px; height: 14px;
+  border-radius: 50%; background: var(--accent); cursor: pointer;
+}
+
+/* Source mini chart */
+.source-chart { padding: 0 14px; }
+.source-bar-row { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; }
+.source-bar-label { font-size: 11px; color: var(--text2); width: 70px; flex-shrink: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.source-bar-track { flex: 1; height: 4px; background: var(--surface3); border-radius: 2px; }
+.source-bar-fill { height: 100%; border-radius: 2px; background: var(--accent); transition: width 0.4s; }
+.source-bar-n { font-size: 10px; color: var(--text3); width: 20px; text-align: right; }
+
+/* Search */
+.search-bar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 16px; border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+.search-input {
+  flex: 1; background: var(--surface3); border: 1px solid var(--border2);
+  color: var(--text); border-radius: var(--radius-sm); padding: 7px 12px;
+  font-size: 13px;
+}
+.search-input::placeholder { color: var(--text3); }
+.view-toggle { display: flex; gap: 2px; }
+.view-btn {
+  padding: 6px 8px; border-radius: var(--radius-sm);
+  background: transparent; color: var(--text3); transition: all 0.12s;
+}
+.view-btn.active { background: var(--surface3); color: var(--text); }
+
+/* Signals container */
+.signals-wrap {
+  flex: 1; display: flex; flex-direction: column; overflow: hidden;
+}
+.signals-scroll { flex: 1; overflow-y: auto; padding: 16px; }
+
+/* Cards */
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 14px; }
+.cards-list { display: flex; flex-direction: column; gap: 10px; }
+
+.signal-card {
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 16px;
+  border-left: 3px solid var(--border2);
+  transition: border-color 0.15s, box-shadow 0.15s;
+  position: relative;
+}
+.signal-card:hover { border-color: var(--border2); box-shadow: var(--shadow); }
+.signal-card.score-high { border-left-color: var(--green); }
+.signal-card.score-mid { border-left-color: var(--yellow); }
+.signal-card.score-low { border-left-color: var(--red); }
+.signal-card.in-pipeline { border-left-color: var(--accent2); }
+
+.card-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 10px; }
+.score-ring-wrap { flex-shrink: 0; position: relative; width: 50px; height: 50px; }
+.score-ring-wrap svg { width: 50px; height: 50px; transform: rotate(-90deg); }
+.score-ring-bg { fill: none; stroke: var(--surface3); stroke-width: 4; }
+.score-ring-fill { fill: none; stroke-width: 4; stroke-linecap: round;
+  stroke-dasharray: 126; stroke-dashoffset: 126; transition: stroke-dashoffset 0.6s ease; }
+.score-ring-text {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  font-size: 13px; font-weight: 700; color: var(--text);
+}
+.card-info { flex: 1; min-width: 0; }
+.card-name { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 2px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.card-subtitle { font-size: 12px; color: var(--text2); margin-bottom: 6px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.card-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+.tag {
+  font-size: 10px; padding: 2px 7px; border-radius: 10px;
+  background: var(--tag-bg); color: var(--text2); white-space: nowrap;
+}
+.tag.geo { background: #1a2535; color: #6aadff; }
+.tag.sector { background: #1f1a35; color: #a980ff; }
+.tag.signal { background: #1a2520; color: #4dc98e; }
+.tag.pipeline { background: #2a1f10; color: var(--yellow); }
+
+.card-thesis { font-size: 12px; color: var(--text2); margin: 10px 0;
+  line-height: 1.5; border-left: 2px solid var(--border2); padding-left: 10px; }
+
+.card-actions { display: flex; gap: 8px; margin-top: 12px; align-items: center; }
+.btn-track {
+  flex: 1; padding: 7px; border-radius: var(--radius-sm);
+  background: #162b1e; color: var(--green); font-size: 12px; font-weight: 600;
+  border: 1px solid #1e4030; transition: all 0.15s;
+}
+.btn-track:hover { background: #1e3d28; }
+.btn-pass {
+  flex: 1; padding: 7px; border-radius: var(--radius-sm);
+  background: var(--surface3); color: var(--text3); font-size: 12px;
+  border: 1px solid var(--border); transition: all 0.15s;
+}
+.btn-pass:hover { background: #2a1515; color: var(--red); border-color: #4a2020; }
+.btn-track.tracked, .btn-track.in-pipeline {
+  background: #0e1f2e; color: var(--accent); border-color: #1a3050; cursor: default;
+}
+.card-links { display: flex; gap: 8px; margin-left: auto; }
+.card-link { font-size: 11px; color: var(--text3); padding: 4px 6px; border-radius: 4px; background: var(--surface3); }
+.card-link:hover { color: var(--accent); text-decoration: none; }
+
+/* Empty state */
+.empty-state {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 80px 20px; color: var(--text3); text-align: center; gap: 12px;
+}
+.empty-state svg { width: 48px; height: 48px; opacity: 0.3; }
+.empty-state h3 { font-size: 16px; color: var(--text2); }
+.empty-state p { font-size: 13px; max-width: 300px; line-height: 1.6; }
+
+/* Loading spinner */
+.spinner-wrap { display: flex; justify-content: center; padding: 60px 0; }
+.spinner {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 3px solid var(--surface3); border-top-color: var(--accent);
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── LinkedIn Tab ─────────────────────────────────────────── */
+#tab-linkedin { flex-direction: column; overflow: hidden; }
+.linkedin-toolbar {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 16px; border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+.linkedin-scroll { flex: 1; overflow-y: auto; padding: 16px; }
+.li-person-card {
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: var(--radius); margin-bottom: 12px; overflow: hidden;
+}
+.li-person-header {
+  display: flex; align-items: center; gap: 12px;
+  padding: 14px 16px; cursor: pointer; transition: background 0.12s;
+}
+.li-person-header:hover { background: var(--surface3); }
+.li-avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--accent); display: flex; align-items: center; justify-content: center;
+  font-size: 15px; font-weight: 700; color: #fff; flex-shrink: 0;
+}
+.li-info { flex: 1; min-width: 0; }
+.li-name { font-size: 14px; font-weight: 600; }
+.li-sub { font-size: 12px; color: var(--text2); }
+.li-score { font-size: 18px; font-weight: 700; margin-right: 8px; }
+.li-score.green { color: var(--green); }
+.li-score.yellow { color: var(--yellow); }
+.li-score.red { color: var(--red); }
+.li-chevron { color: var(--text3); transition: transform 0.2s; }
+.li-chevron.open { transform: rotate(90deg); }
+
+.li-signals { display: none; border-top: 1px solid var(--border); }
+.li-signals.open { display: block; }
+.li-signal-row {
+  display: flex; gap: 10px; padding: 10px 16px;
+  border-bottom: 1px solid var(--border); font-size: 12px;
+}
+.li-signal-row:last-child { border-bottom: none; }
+.li-signal-type {
+  font-size: 10px; padding: 2px 8px; border-radius: 10px;
+  background: var(--tag-bg); color: var(--green); white-space: nowrap;
+  align-self: flex-start; flex-shrink: 0;
+}
+.li-signal-desc { color: var(--text2); flex: 1; line-height: 1.5; }
+.li-signal-date { color: var(--text3); font-size: 11px; white-space: nowrap; }
+.li-card-actions { display: flex; gap: 8px; padding: 10px 16px; background: var(--surface); border-top: 1px solid var(--border); }
+
+/* ── Pipeline Tab ────────────────────────────────────────── */
+#tab-pipeline { flex-direction: column; overflow: hidden; }
+.pipeline-toolbar {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 16px; border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+.pipeline-view-toggle { display: flex; gap: 2px; margin-left: auto; }
+.pipeline-scroll { flex: 1; overflow: hidden; }
+
+/* Kanban */
+.kanban-board {
+  display: flex; gap: 12px; height: 100%; overflow-x: auto; padding: 16px;
+  align-items: flex-start;
+}
+.kanban-col {
+  min-width: 240px; max-width: 240px;
+  background: var(--surface2); border-radius: var(--radius);
+  border: 1px solid var(--border); display: flex; flex-direction: column;
+  max-height: calc(100% - 0px);
+}
+.kanban-col-header {
+  padding: 10px 12px; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 6px;
+}
+.kanban-col-title { font-size: 12px; font-weight: 600; }
+.kanban-col-count {
+  font-size: 11px; padding: 1px 7px; border-radius: 10px;
+  background: var(--surface3); color: var(--text3); margin-left: auto;
+}
+.kanban-cards { flex: 1; overflow-y: auto; padding: 10px; display: flex; flex-direction: column; gap: 8px; }
+.kanban-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 10px 12px;
+  transition: box-shadow 0.15s;
+}
+.kanban-card:hover { box-shadow: var(--shadow); }
+.kanban-card-name { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+.kanban-card-sub { font-size: 11px; color: var(--text2); margin-bottom: 6px; }
+.kanban-card-score { font-size: 11px; }
+.kanban-card-actions { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 8px; }
+.btn-stage {
+  font-size: 10px; padding: 3px 8px; border-radius: 4px;
+  background: var(--surface3); color: var(--text2); border: 1px solid var(--border);
+  transition: all 0.12s;
+}
+.btn-stage:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+/* Pipeline list */
+.pipeline-list { padding: 16px; display: flex; flex-direction: column; gap: 8px; }
+.pl-row {
+  display: grid; grid-template-columns: 2fr 1.2fr 100px 80px 1fr auto;
+  gap: 12px; align-items: center;
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 10px 14px;
+  font-size: 13px;
+}
+.pl-name { font-weight: 600; }
+.pl-company { color: var(--text2); font-size: 12px; }
+.pl-stage-badge {
+  font-size: 11px; padding: 3px 10px; border-radius: 10px;
+  background: var(--surface3); color: var(--text2); text-align: center;
+}
+.pl-score { font-size: 14px; font-weight: 700; text-align: center; }
+.pl-note { font-size: 12px; color: var(--text3); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pl-actions { display: flex; gap: 4px; }
+.btn-sm {
+  font-size: 11px; padding: 4px 8px; border-radius: 4px;
+  background: var(--surface3); color: var(--text2); border: 1px solid var(--border);
+  transition: all 0.12s;
+}
+.btn-sm:hover { background: var(--surface2); color: var(--text); }
+
+/* Stage dot colours */
+.stage-dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+.sd-tracked { background: var(--text3); }
+.sd-linkedin_requested { background: var(--accent); }
+.sd-linkedin_messaged { background: #4fc3f7; }
+.sd-call_set_up { background: var(--yellow); }
+.sd-meeting_done { background: var(--orange); }
+.sd-invested { background: var(--green); }
+.sd-passed { background: var(--red); }
+
+/* ── Toast ───────────────────────────────────────────────── */
+#toast-container { position: fixed; bottom: 24px; right: 24px; z-index: 9999; display: flex; flex-direction: column; gap: 8px; }
+.toast {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 16px; border-radius: var(--radius-sm);
+  background: var(--surface2); border: 1px solid var(--border2);
+  color: var(--text); font-size: 13px; box-shadow: var(--shadow);
+  animation: slideIn 0.2s ease; max-width: 320px;
+}
+.toast.success { border-left: 3px solid var(--green); }
+.toast.error   { border-left: 3px solid var(--red); }
+.toast.info    { border-left: 3px solid var(--accent); }
+@keyframes slideIn { from { transform: translateX(20px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+
+/* Modal */
+#modal-overlay {
+  display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6);
+  z-index: 1000; align-items: center; justify-content: center;
+}
+#modal-overlay.open { display: flex; }
+.modal {
+  background: var(--surface2); border: 1px solid var(--border2);
+  border-radius: var(--radius); padding: 24px; min-width: 380px; max-width: 520px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+}
+.modal h3 { font-size: 16px; margin-bottom: 14px; }
+.modal-stages { display: flex; flex-direction: column; gap: 6px; }
+.modal-stage-btn {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 12px; border-radius: var(--radius-sm);
+  background: var(--surface3); border: 1px solid var(--border);
+  color: var(--text); font-size: 13px; text-align: left; width: 100%;
+  transition: all 0.12s;
+}
+.modal-stage-btn:hover { background: var(--surface); border-color: var(--accent); }
+.modal-stage-btn.current { border-color: var(--accent); color: var(--accent); }
+.modal-close {
+  margin-top: 14px; width: 100%; padding: 8px;
+  background: var(--surface3); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); color: var(--text2); font-size: 13px;
+}
+.modal-close:hover { color: var(--text); }
+.note-textarea {
+  width: 100%; background: var(--surface3); border: 1px solid var(--border2);
+  color: var(--text); border-radius: var(--radius-sm); padding: 8px 12px;
+  font-size: 13px; resize: vertical; min-height: 80px; margin-bottom: 10px;
+  font-family: inherit;
+}
+.note-textarea:focus { border-color: var(--accent); }
+.modal-btns { display: flex; gap: 8px; justify-content: flex-end; }
+.btn-primary {
+  padding: 7px 16px; border-radius: var(--radius-sm);
+  background: var(--accent); color: #fff; font-size: 13px; font-weight: 600;
+}
+.btn-secondary {
+  padding: 7px 16px; border-radius: var(--radius-sm);
+  background: var(--surface3); border: 1px solid var(--border); color: var(--text2); font-size: 13px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text3); }
+
+/* Responsive tweaks */
+@media(max-width: 900px) {
+  .sidebar { display: none; }
+  .cards-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div id="app">
+
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="logo">VC <span>Sourcing</span></div>
+    <nav class="topbar-tabs">
+      <button class="tab-btn active" onclick="switchTab('sourcing')">Sourcing</button>
+      <button class="tab-btn" onclick="switchTab('linkedin')">LinkedIn</button>
+      <button class="tab-btn" onclick="switchTab('pipeline')">Pipeline</button>
+    </nav>
+    <div class="topbar-right">
+      <div class="run-controls">
+        <select class="run-select" id="days-select" onchange="onDaysChange(this.value)">
+          <option value="3">3 days</option>
+          <option value="7">7 days</option>
+          <option value="30" selected>30 days</option>
+          <option value="60">60 days</option>
+          <option value="180">180 days</option>
+        </select>
+        <button class="btn-run" id="run-btn" onclick="triggerRun()">
+          <svg viewBox="0 0 16 16" fill="currentColor"><path d="M3 2l10 6-10 6V2z"/></svg>
+          <span id="run-btn-text">Run</span>
+        </button>
+      </div>
+      <div id="run-status-badge" style="display:none" class="run-badge">
+        <div class="run-dot"></div><span id="run-status-text">Running…</span>
+        <span id="run-timer" style="color:var(--text3);margin-left:4px"></span>
+      </div>
+      <div id="last-ran-badge" style="font-size:11px;color:var(--text3);white-space:nowrap"></div>
+    </div>
+  </header>
+
+  <!-- Stats strip -->
+  <div class="stats-strip" id="stats-strip">
+    <div class="stat-cell"><div class="val blue" id="stat-total">—</div><div class="lbl">Founders Found</div></div>
+    <div class="stat-cell"><div class="val green" id="stat-investigate">—</div><div class="lbl">Investigate</div></div>
+    <div class="stat-cell"><div class="val" id="stat-week">—</div><div class="lbl">Signals (7d)</div></div>
+    <div class="stat-cell"><div class="val" id="stat-pipeline">—</div><div class="lbl">Pipeline</div></div>
+    <div class="stat-cell"><div class="val yellow" id="stat-meetings">—</div><div class="lbl">Meetings</div></div>
+    <div class="stat-cell"><div class="val green" id="stat-invested">—</div><div class="lbl">Invested</div></div>
+  </div>
+
+  <div class="main">
+
+    <!-- ── Tab: Sourcing ───────────────────────────────────── -->
+    <div class="tab-content active" id="tab-sourcing">
+
+      <!-- Sidebar filters -->
+      <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-section">
+          <div class="sidebar-label">Action</div>
+          <button class="filter-btn active" onclick="setFilter('action','all',this)" data-key="action" data-val="all">
+            All <span class="filter-count" id="fc-action-all">0</span>
+          </button>
+          <button class="filter-btn" onclick="setFilter('action','investigate',this)" data-key="action" data-val="investigate">
+            Investigate <span class="filter-count" id="fc-action-investigate">0</span>
+          </button>
+          <button class="filter-btn" onclick="setFilter('action','watchlist',this)" data-key="action" data-val="watchlist">
+            Watchlist <span class="filter-count" id="fc-action-watchlist">0</span>
+          </button>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-label">Geography</div>
+          <button class="filter-btn active" onclick="setFilter('geo','all',this)" data-key="geo" data-val="all">
+            All <span class="filter-count" id="fc-geo-all">0</span>
+          </button>
+          <button class="filter-btn" onclick="setFilter('geo','India',this)" data-key="geo" data-val="India">
+            India <span class="filter-count" id="fc-geo-India">0</span>
+          </button>
+          <button class="filter-btn" onclick="setFilter('geo','Singapore',this)" data-key="geo" data-val="Singapore">
+            Singapore <span class="filter-count" id="fc-geo-Singapore">0</span>
+          </button>
+          <button class="filter-btn" onclick="setFilter('geo','Indonesia',this)" data-key="geo" data-val="Indonesia">
+            Indonesia <span class="filter-count" id="fc-geo-Indonesia">0</span>
+          </button>
+          <button class="filter-btn" onclick="setFilter('geo','SEA',this)" data-key="geo" data-val="SEA">
+            SEA (other) <span class="filter-count" id="fc-geo-SEA">0</span>
+          </button>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="sidebar-label">Signal Type</div>
+          <button class="filter-btn active" onclick="setFilter('signal','all',this)" data-key="signal" data-val="all">
+            All <span class="filter-count" id="fc-signal-all">0</span>
+          </button>
+          <button class="filter-btn" onclick="setFilter('signal','stealth_founder',this)" data-key="signal" data-val="stealth_founder">
+            Stealth <span class="filter-count" id="fc-signal-stealth_founder">0</span>
+          </button>
+          <button class="filter-btn" onclick="setFilter('signal','executive_departure',this)" data-key="signal" data-val="executive_departure">
+            Departure <span class="filter-count" id="fc-signal-executive_departure">0</span>
+          </button>
+          <button class="filter-btn" onclick="setFilter('signal','company_registration',this)" data-key="signal" data-val="company_registration">
+            Registration <span class="filter-count" id="fc-signal-company_registration">0</span>
+          </button>
+          <button class="filter-btn" onclick="setFilter('signal','headcount_growth',this)" data-key="signal" data-val="headcount_growth">
+            Headcount <span class="filter-count" id="fc-signal-headcount_growth">0</span>
+          </button>
+          <button class="filter-btn" onclick="setFilter('signal','github_launch',this)" data-key="signal" data-val="github_launch">
+            GitHub <span class="filter-count" id="fc-signal-github_launch">0</span>
+          </button>
+        </div>
+
+        <div class="score-slider-wrap">
+          <div class="slider-header">
+            <span class="slider-title">Min Score</span>
+            <span class="slider-val" id="score-slider-val">0</span>
+          </div>
+          <input type="range" id="score-slider" min="0" max="100" value="0" step="5"
+            oninput="onScoreSlider(this.value)">
+        </div>
+
+        <div class="source-chart sidebar-section">
+          <div class="sidebar-label">Sources</div>
+          <div id="source-chart-inner"></div>
+        </div>
+
+      </aside>
+
+      <!-- Right: search + cards -->
+      <div class="signals-wrap">
+        <div class="search-bar">
+          <input type="text" class="search-input" id="search-input"
+            placeholder="Search founders, companies, sectors…" oninput="onSearch(this.value)">
+          <div class="view-toggle">
+            <button class="view-btn active" id="view-grid" title="Grid" onclick="setView('grid',this)">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                <rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/>
+                <rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/>
+              </svg>
+            </button>
+            <button class="view-btn" id="view-list" title="List" onclick="setView('list',this)">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                <rect x="1" y="2" width="14" height="2" rx="1"/><rect x="1" y="7" width="14" height="2" rx="1"/>
+                <rect x="1" y="12" width="14" height="2" rx="1"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="signals-scroll" id="signals-scroll">
+          <div class="spinner-wrap"><div class="spinner"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Tab: LinkedIn ───────────────────────────────────── -->
+    <div class="tab-content" id="tab-linkedin">
+      <div class="linkedin-toolbar">
+        <span style="font-size:13px;color:var(--text2)">Stealth founders &amp; departures from tracked companies</span>
+        <select class="run-select" id="li-days-select" onchange="loadLinkedIn(this.value)" style="margin-left:auto">
+          <option value="7">7 days</option>
+          <option value="30" selected>30 days</option>
+          <option value="60">60 days</option>
+          <option value="180">180 days</option>
+        </select>
+      </div>
+      <div class="linkedin-scroll" id="linkedin-scroll">
+        <div class="spinner-wrap"><div class="spinner"></div></div>
+      </div>
+    </div>
+
+    <!-- ── Tab: Pipeline ──────────────────────────────────── -->
+    <div class="tab-content" id="tab-pipeline">
+      <div class="pipeline-toolbar">
+        <span style="font-size:13px;color:var(--text2)" id="pipeline-count">Loading…</span>
+        <div class="pipeline-view-toggle">
+          <button class="view-btn active" id="pv-kanban" onclick="setPipelineView('kanban',this)" title="Kanban">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+              <rect x="1" y="2" width="3" height="12" rx="1"/><rect x="6" y="2" width="3" height="12" rx="1"/>
+              <rect x="11" y="2" width="4" height="12" rx="1"/>
+            </svg>
+          </button>
+          <button class="view-btn" id="pv-list" onclick="setPipelineView('list',this)" title="List">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+              <rect x="1" y="2" width="14" height="2" rx="1"/><rect x="1" y="7" width="14" height="2" rx="1"/>
+              <rect x="1" y="12" width="14" height="2" rx="1"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="pipeline-scroll" id="pipeline-scroll" style="overflow-y:auto">
+        <div class="spinner-wrap"><div class="spinner"></div></div>
+      </div>
+    </div>
+
+  </div><!-- .main -->
+</div><!-- #app -->
+
+<!-- Toast container -->
+<div id="toast-container"></div>
+
+<!-- Modal -->
+<div id="modal-overlay" onclick="closeModal()">
+  <div class="modal" onclick="event.stopPropagation()" id="modal-inner"></div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════
+   State
+═══════════════════════════════════════════════════════════ */
+const state = {
+  persons: [],
+  filtered: [],
+  pipeline: [],
+  stats: {},
+  filters: { action:'all', geo:'all', signal:'all' },
+  minScore: 0,
+  search: '',
+  view: 'grid',
+  pipelineView: 'kanban',
+  days: 30,
+  activeTab: 'sourcing',
+  runPollerTimer: null,
+};
+const STAGES = [
+  { key:'tracked',             label:'Tracked',           emoji:'📋' },
+  { key:'linkedin_requested',  label:'LI Request Sent',   emoji:'🔗' },
+  { key:'linkedin_messaged',   label:'LI Message Sent',   emoji:'💬' },
+  { key:'call_set_up',         label:'Call Set Up',       emoji:'📞' },
+  { key:'meeting_done',        label:'Meeting Done',      emoji:'✅' },
+  { key:'invested',            label:'Invested',          emoji:'💰' },
+  { key:'passed',              label:'Passed',            emoji:'❌' },
+];
+
+/* ═══════════════════════════════════════════════════════════
+   API helpers
+═══════════════════════════════════════════════════════════ */
+async function api(method, path, body) {
+  try {
+    const opts = { method, headers: { 'Content-Type': 'application/json' } };
+    if (body) opts.body = JSON.stringify(body);
+    const r = await fetch(path, opts);
+    if (!r.ok) throw new Error(await r.text());
+    return await r.json();
+  } catch(e) {
+    toast(e.message || 'Network error', 'error');
+    throw e;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Tab switching
+═══════════════════════════════════════════════════════════ */
+function switchTab(tab) {
+  state.activeTab = tab;
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.textContent.trim().toLowerCase().startsWith(tab)));
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.toggle('active', c.id === 'tab-'+tab));
+  if (tab === 'sourcing') renderCards();
+  if (tab === 'linkedin') loadLinkedIn(document.getElementById('li-days-select').value);
+  if (tab === 'pipeline') loadPipeline();
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Stats
+═══════════════════════════════════════════════════════════ */
+async function loadStats() {
+  try {
+    const d = await api('GET', '/api/stats');
+    state.stats = d;
+    document.getElementById('stat-week').textContent = d.signals_week ?? '—';
+    document.getElementById('stat-pipeline').textContent = d.total_pipeline ?? '—';
+    document.getElementById('stat-meetings').textContent = d.meetings ?? '—';
+    document.getElementById('stat-invested').textContent = d.invested ?? '—';
+    renderSourceChart(d.by_source || {});
+  } catch(e) {}
+}
+
+function renderSourceChart(src) {
+  const max = Math.max(...Object.values(src), 1);
+  const el = document.getElementById('source-chart-inner');
+  if (!el) return;
+  el.innerHTML = Object.entries(src)
+    .sort((a,b) => b[1]-a[1]).slice(0,8)
+    .map(([s,n]) => `
+      <div class="source-bar-row">
+        <div class="source-bar-label">${s}</div>
+        <div class="source-bar-track"><div class="source-bar-fill" style="width:${Math.round(n/max*100)}%"></div></div>
+        <div class="source-bar-n">${n}</div>
+      </div>`).join('');
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Sourcing tab
+═══════════════════════════════════════════════════════════ */
+async function loadSignals(days) {
+  document.getElementById('signals-scroll').innerHTML = '<div class="spinner-wrap"><div class="spinner"></div></div>';
+  try {
+    const d = await api('GET', `/api/signals?days=${days}&min_score=0`);
+    state.persons = d.persons || [];
+    applyFilters();
+    updateFilterCounts();
+    document.getElementById('stat-total').textContent = state.persons.length;
+    document.getElementById('stat-investigate').textContent =
+      state.persons.filter(p => p.recommended_action === 'investigate').length;
+  } catch(e) {
+    document.getElementById('signals-scroll').innerHTML = `<div class="empty-state">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+      <h3>Could not load signals</h3><p>Make sure the server is running and you've run the pipeline at least once.</p>
+    </div>`;
+  }
+}
+
+function applyFilters() {
+  let list = [...state.persons];
+  const { action, geo, signal } = state.filters;
+
+  if (action !== 'all') list = list.filter(p => p.recommended_action === action || p.pipeline_stage === action);
+  if (geo !== 'all') {
+    const SEA = ['Singapore','Indonesia','Vietnam','Malaysia','Philippines','Thailand'];
+    if (geo === 'SEA') list = list.filter(p => SEA.filter(c=>c!=='India').some(c => (p.geography||p.location||'').includes(c)));
+    else list = list.filter(p => (p.geography||p.location||'').includes(geo));
+  }
+  if (signal !== 'all') {
+    list = list.filter(p => {
+      const types = Array.isArray(p.signal_types) ? p.signal_types : [p.signal_type||''];
+      return types.includes(signal);
+    });
+  }
+  if (state.minScore > 0) list = list.filter(p => (p.score||0) >= state.minScore);
+  if (state.search) {
+    const q = state.search.toLowerCase();
+    list = list.filter(p =>
+      (p.name||'').toLowerCase().includes(q) ||
+      (p.previous_company||'').toLowerCase().includes(q) ||
+      (p.headline||'').toLowerCase().includes(q) ||
+      (p.sector||'').toLowerCase().includes(q) ||
+      (p.investment_thesis||'').toLowerCase().includes(q)
+    );
+  }
+  state.filtered = list;
+  renderCards();
+}
+
+function updateFilterCounts() {
+  const p = state.persons;
+  const count = (fn) => p.filter(fn).length;
+  const set = (id, n) => { const el = document.getElementById(id); if(el) el.textContent = n; };
+
+  set('fc-action-all', p.length);
+  set('fc-action-investigate', count(x => x.recommended_action==='investigate'));
+  set('fc-action-watchlist', count(x => x.recommended_action==='watchlist'));
+  set('fc-geo-all', p.length);
+  set('fc-geo-India', count(x => (x.geography||x.location||'').includes('India')));
+  set('fc-geo-Singapore', count(x => (x.geography||x.location||'').includes('Singapore')));
+  set('fc-geo-Indonesia', count(x => (x.geography||x.location||'').includes('Indonesia')));
+  const SEA = ['Vietnam','Malaysia','Philippines','Thailand'];
+  set('fc-geo-SEA', count(x => SEA.some(c => (x.geography||x.location||'').includes(c))));
+  set('fc-signal-all', p.length);
+  ['stealth_founder','executive_departure','company_registration','headcount_growth','github_launch'].forEach(s => {
+    set(`fc-signal-${s}`, count(x => (Array.isArray(x.signal_types)?x.signal_types:[x.signal_type||'']).includes(s)));
+  });
+}
+
+function renderCards() {
+  const container = document.getElementById('signals-scroll');
+  const persons = state.filtered;
+
+  if (!persons.length) {
+    container.innerHTML = `<div class="empty-state">
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:56px;height:56px;opacity:0.25">
+        <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
+      </svg>
+      <h3>No founders sourced yet</h3>
+      <p>The pipeline hasn't run or no signals passed the score threshold.<br>
+      Click <strong>Run</strong> in the top bar to start sourcing.<br>
+      Requires <code>ANTHROPIC_API_KEY</code> and/or <code>GROQ_API_KEY</code> in your <code>.env</code> file.</p>
+      <button class="btn-run" style="margin-top:16px;padding:10px 24px;font-size:14px" onclick="triggerRun()">
+        <svg viewBox="0 0 16 16" fill="currentColor" style="width:14px;height:14px"><path d="M3 2l10 6-10 6V2z"/></svg>
+        Run Pipeline Now
+      </button>
+    </div>`;
+    return;
+  }
+
+  const wrapClass = state.view === 'grid' ? 'cards-grid' : 'cards-list';
+  container.innerHTML = `<div class="${wrapClass}">${persons.map(renderCard).join('')}</div>`;
+}
+
+function renderCard(p) {
+  const score = Math.round(p.score || 0);
+  const scoreClass = score >= 75 ? 'score-high' : score >= 55 ? 'score-mid' : 'score-low';
+  const scoreColor = score >= 75 ? 'var(--green)' : score >= 55 ? 'var(--yellow)' : 'var(--red)';
+  const inPipeline = !!p.outreach_id || !!p.pipeline_stage;
+  const cardClass = inPipeline ? 'in-pipeline' : scoreClass;
+
+  const circumference = 126;
+  const offset = circumference - (score / 100) * circumference;
+
+  const rationale = p.rationale || {};
+  const geo = p.geography || (p.location||'').split(',').pop().trim() || '';
+  const sector = p.sector || rationale.sector || '';
+  const signalTypes = Array.isArray(p.signal_types) ? p.signal_types : [p.signal_type||''];
+  const stageLabel = inPipeline ? (STAGES.find(s=>s.key===p.pipeline_stage)||{label:p.pipeline_stage||'Tracked'}).label : null;
+
+  const tags = [
+    geo && `<span class="tag geo">${geo}</span>`,
+    sector && `<span class="tag sector">${sector}</span>`,
+    ...signalTypes.slice(0,2).map(s => s && `<span class="tag signal">${s.replace(/_/g,' ')}</span>`),
+    stageLabel && `<span class="tag pipeline">${stageLabel}</span>`,
+    (p.experience_years > 0) && `<span class="tag">${p.experience_years}y exp</span>`,
+    p.is_second_time_founder && `<span class="tag signal">2nd-time founder</span>`,
+  ].filter(Boolean).join('');
+
+  const prevRole = [p.previous_title, p.previous_company].filter(Boolean).join(' @ ');
+  const thesis = p.investment_thesis ? `<div class="card-thesis">${p.investment_thesis.slice(0,200)}${p.investment_thesis.length>200?'…':''}</div>` : '';
+
+  const trackLabel = inPipeline ? '✓ In Pipeline' : '+ Track';
+  const trackClass = inPipeline ? 'btn-track tracked' : 'btn-track';
+  const trackDisabled = inPipeline ? 'disabled' : '';
+
+  const pData = JSON.stringify({
+    name: p.name, linkedin_url: p.linkedin_url||'', score: p.score||0,
+    previous_company: p.previous_company||'', previous_title: p.previous_title||'',
+    headline: p.headline||'', sector: sector,
+    signal_id: p.id||0, primary_signal: (signalTypes[0]||''),
+    source: p.source||'',
+  }).replace(/"/g,'&quot;');
+
+  return `
+  <div class="signal-card ${cardClass}">
+    <div class="card-header">
+      <div class="score-ring-wrap">
+        <svg viewBox="0 0 44 44">
+          <circle class="score-ring-bg" cx="22" cy="22" r="20"/>
+          <circle class="score-ring-fill" cx="22" cy="22" r="20"
+            stroke="${scoreColor}"
+            style="stroke-dashoffset:${offset}"/>
+        </svg>
+        <div class="score-ring-text">${score}</div>
+      </div>
+      <div class="card-info">
+        <div class="card-name">${esc(p.name||'Unknown')}</div>
+        <div class="card-subtitle">${esc(prevRole||p.headline||'')}</div>
+        <div class="card-tags">${tags}</div>
+      </div>
+    </div>
+    ${thesis}
+    <div class="card-actions">
+      <button class="${trackClass}" ${trackDisabled} onclick="trackFounder(${JSON.stringify(pData)})">
+        ${trackLabel}
+      </button>
+      <button class="btn-pass" onclick="passFounder(${JSON.stringify(pData)})">Pass</button>
+      <div class="card-links">
+        ${validLinkedIn(p.linkedin_url) ? `<a class="card-link" href="${p.linkedin_url}" target="_blank">LinkedIn →</a>` : ''}
+        ${p.company_url ? `<a class="card-link" href="${p.company_url}" target="_blank" style="color:var(--green)">Company ↗</a>` : ''}
+        ${p.github_url ? `<a class="card-link" href="${p.github_url}" target="_blank">GitHub</a>` : ''}
+      </div>
+    </div>
+  </div>`;
+}
+
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Track / Pass
+═══════════════════════════════════════════════════════════ */
+async function trackFounder(dataStr) {
+  const data = JSON.parse(dataStr.replace(/&quot;/g,'"'));
+  try {
+    await api('POST', '/api/track', data);
+    toast(`Tracking ${data.name}`, 'success');
+    // Mark in local state
+    const p = state.persons.find(x => x.name === data.name);
+    if (p) { p.pipeline_stage = 'tracked'; p.outreach_id = 1; }
+    applyFilters();
+  } catch(e) {}
+}
+
+async function passFounder(dataStr) {
+  const data = JSON.parse(dataStr.replace(/&quot;/g,'"'));
+  try {
+    await api('POST', '/api/pass', data);
+    toast(`Passed ${data.name}`, 'info');
+  } catch(e) {}
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Filters
+═══════════════════════════════════════════════════════════ */
+function setFilter(key, val, btn) {
+  state.filters[key] = val;
+  document.querySelectorAll(`[data-key="${key}"]`).forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  applyFilters();
+}
+
+function onScoreSlider(val) {
+  state.minScore = parseInt(val);
+  document.getElementById('score-slider-val').textContent = val;
+  const pct = (val/100*100)+'%';
+  document.getElementById('score-slider').style.setProperty('--pct', pct);
+  applyFilters();
+}
+
+function onSearch(val) {
+  state.search = val;
+  applyFilters();
+}
+
+function setView(v, btn) {
+  state.view = v;
+  document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderCards();
+}
+
+function onDaysChange(val) {
+  state.days = parseInt(val);
+  document.getElementById('li-days-select').value = val;
+  loadSignals(state.days);
+  loadLinkedIn(state.days);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   LinkedIn tab
+═══════════════════════════════════════════════════════════ */
+async function loadLinkedIn(days) {
+  const container = document.getElementById('linkedin-scroll');
+  container.innerHTML = '<div class="spinner-wrap"><div class="spinner"></div></div>';
+  try {
+    const d = await api('GET', `/api/linkedin?days=${days}&min_score=0`);
+    const persons = d.persons || [];
+    if (!persons.length) {
+      container.innerHTML = `<div class="empty-state">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        <h3>No LinkedIn signals</h3>
+        <p>Run the pipeline to source LinkedIn departure and stealth founder signals.</p>
+      </div>`;
+      return;
+    }
+    container.innerHTML = persons.map(renderLinkedInPerson).join('');
+  } catch(e) {
+    container.innerHTML = '<div class="empty-state"><h3>Error loading LinkedIn signals</h3></div>';
+  }
+}
+
+function renderLinkedInPerson(p) {
+  const score = Math.round(p.score || 0);
+  const scoreClass = score >= 75 ? 'green' : score >= 55 ? 'yellow' : 'red';
+  const inPipeline = p.in_pipeline;
+  const pData = JSON.stringify({
+    name: p.name, linkedin_url: p.linkedin_url||'', score: p.score||0, source:'linkedin'
+  }).replace(/"/g,'&quot;');
+
+  const signals = (p.signals||[]).map(s => `
+    <div class="li-signal-row">
+      <span class="li-signal-type">${esc(s.signal_type||'').replace(/_/g,' ')}</span>
+      <span class="li-signal-desc">${esc(s.description||'')}</span>
+      <span class="li-signal-date">${(s.detected_at||'').slice(0,10)}</span>
+    </div>`).join('');
+
+  const initials = (p.name||'?').split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
+
+  return `<div class="li-person-card">
+    <div class="li-person-header" onclick="toggleLiCard(this)">
+      <div class="li-avatar">${initials}</div>
+      <div class="li-info">
+        <div class="li-name">${esc(p.name||'Unknown')}</div>
+        <div class="li-sub">${(p.signals||[]).length} signal(s) · ${p.in_pipeline ? `<span style="color:var(--yellow)">In Pipeline</span>` : 'Not tracked'}</div>
+      </div>
+      <div class="li-score ${scoreClass}">${score}</div>
+      <span class="li-chevron">▶</span>
+    </div>
+    <div class="li-signals">
+      ${signals}
+      <div class="li-card-actions">
+        ${!inPipeline ? `<button class="btn-track" onclick="trackFounder('${pData}')">+ Track</button>` : `<span class="tag pipeline">${(STAGES.find(s=>s.key===p.pipeline_stage)||{label:'Tracked'}).label}</span>`}
+        ${p.linkedin_url ? `<a class="btn-sm" href="${p.linkedin_url}" target="_blank">View LinkedIn →</a>` : ''}
+      </div>
+    </div>
+  </div>`;
+}
+
+function toggleLiCard(header) {
+  const signals = header.nextElementSibling;
+  const chevron = header.querySelector('.li-chevron');
+  const open = signals.classList.toggle('open');
+  if (chevron) chevron.classList.toggle('open', open);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Pipeline tab
+═══════════════════════════════════════════════════════════ */
+async function loadPipeline() {
+  const container = document.getElementById('pipeline-scroll');
+  container.innerHTML = '<div class="spinner-wrap"><div class="spinner"></div></div>';
+  try {
+    const d = await api('GET', '/api/pipeline');
+    state.pipeline = d.pipeline || [];
+    const grouped = d.grouped || {};
+    document.getElementById('pipeline-count').textContent =
+      `${state.pipeline.length} founders in pipeline`;
+    if (state.pipelineView === 'kanban') renderKanban(grouped);
+    else renderPipelineList(state.pipeline);
+  } catch(e) {
+    container.innerHTML = '<div class="empty-state"><h3>Error loading pipeline</h3></div>';
+  }
+}
+
+function renderKanban(grouped) {
+  const container = document.getElementById('pipeline-scroll');
+  container.style.overflowY = 'hidden';
+  container.innerHTML = `<div class="kanban-board">${STAGES.map(s => {
+    const cards = (grouped[s.key]||[]);
+    return `<div class="kanban-col">
+      <div class="kanban-col-header">
+        <span>${s.emoji}</span>
+        <span class="kanban-col-title">${s.label}</span>
+        <span class="kanban-col-count">${cards.length}</span>
+      </div>
+      <div class="kanban-cards">${cards.map(c => renderKanbanCard(c)).join('') || '<div style="padding:10px;color:var(--text3);font-size:12px">Empty</div>'}</div>
+    </div>`;
+  }).join('')}</div>`;
+}
+
+function renderKanbanCard(c) {
+  const score = Math.round(c.claude_score||0);
+  const scoreColor = score>=75?'var(--green)':score>=55?'var(--yellow)':'var(--red)';
+  const stageKeys = STAGES.filter(s=>s.key!==c.stage).map(s =>
+    `<button class="btn-stage" onclick="moveStage(${c.id},'${s.key}')">${s.emoji} ${s.label}</button>`
+  );
+
+  return `<div class="kanban-card">
+    <div class="kanban-card-name">${esc(c.person_name||'')}</div>
+    <div class="kanban-card-sub">${esc(c.primary_signal||c.sector||'')}</div>
+    <div class="kanban-card-score" style="color:${scoreColor}">Score: ${score}</div>
+    <div style="font-size:11px;color:var(--text3);margin-top:4px">${(c.notes||'').slice(0,60)||'No notes'}</div>
+    <div class="kanban-card-actions">
+      <button class="btn-sm" onclick="openNoteModal(${c.id}, '${esc(c.notes||'')}')">Note</button>
+      <button class="btn-sm" onclick="openStageModal(${c.id}, '${c.stage}')">Move</button>
+      ${c.person_linkedin ? `<a class="btn-sm" href="${c.person_linkedin}" target="_blank">LI</a>` : ''}
+    </div>
+  </div>`;
+}
+
+function renderPipelineList(pipeline) {
+  const container = document.getElementById('pipeline-scroll');
+  container.style.overflowY = 'auto';
+  if (!pipeline.length) {
+    container.innerHTML = `<div class="empty-state">
+      <h3>Pipeline is empty</h3><p>Track founders from the Sourcing tab to add them here.</p>
+    </div>`;
+    return;
+  }
+  container.innerHTML = `
+    <div style="padding:12px 16px;border-bottom:1px solid var(--border);background:var(--surface);display:grid;grid-template-columns:2fr 1.2fr 100px 80px 1fr auto;gap:12px;font-size:11px;text-transform:uppercase;color:var(--text3);letter-spacing:0.5px">
+      <div>Founder</div><div>Company / Signal</div><div>Stage</div><div>Score</div><div>Notes</div><div></div>
+    </div>
+    <div class="pipeline-list">${pipeline.map(c => `
+      <div class="pl-row">
+        <div>
+          <div class="pl-name">${esc(c.person_name||'')}</div>
+          ${c.person_linkedin ? `<a href="${c.person_linkedin}" target="_blank" style="font-size:11px;color:var(--accent)">LinkedIn →</a>` : ''}
+        </div>
+        <div class="pl-company">${esc(c.primary_signal||c.sector||c.source||'')}</div>
+        <div>
+          <span class="pl-stage-badge">
+            <span class="stage-dot sd-${c.stage}"></span>&nbsp;
+            ${(STAGES.find(s=>s.key===c.stage)||{label:c.stage}).label}
+          </span>
+        </div>
+        <div class="pl-score" style="color:${(c.claude_score||0)>=75?'var(--green)':(c.claude_score||0)>=55?'var(--yellow)':'var(--red)'}">${Math.round(c.claude_score||0)}</div>
+        <div class="pl-note" title="${esc(c.notes||'')}">${esc((c.notes||'No notes').slice(0,60))}</div>
+        <div class="pl-actions">
+          <button class="btn-sm" onclick="openNoteModal(${c.id},'${esc(c.notes||'')}')">Note</button>
+          <button class="btn-sm" onclick="openStageModal(${c.id},'${c.stage}')">Stage</button>
+        </div>
+      </div>`).join('')}
+    </div>`;
+}
+
+function setPipelineView(v, btn) {
+  state.pipelineView = v;
+  document.querySelectorAll('.pipeline-view-toggle .view-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  loadPipeline();
+}
+
+async function moveStage(id, stage) {
+  try {
+    await api('PATCH', `/api/pipeline/${id}/stage`, { stage });
+    toast(`Moved to ${(STAGES.find(s=>s.key===stage)||{label:stage}).label}`, 'success');
+    loadPipeline();
+  } catch(e) {}
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Modals
+═══════════════════════════════════════════════════════════ */
+function openStageModal(id, currentStage) {
+  const inner = document.getElementById('modal-inner');
+  inner.innerHTML = `
+    <h3>Move to Stage</h3>
+    <div class="modal-stages">
+      ${STAGES.map(s => `
+        <button class="modal-stage-btn ${s.key===currentStage?'current':''}"
+          onclick="moveStage(${id},'${s.key}');closeModal()">
+          <span>${s.emoji}</span> ${s.label}
+          ${s.key===currentStage?' <span style="color:var(--text3);font-size:11px">(current)</span>':''}
+        </button>`).join('')}
+    </div>
+    <button class="modal-close" onclick="closeModal()">Cancel</button>`;
+  document.getElementById('modal-overlay').classList.add('open');
+}
+
+function openNoteModal(id, currentNote) {
+  const n = currentNote.replace(/&quot;/g,'"').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>');
+  const inner = document.getElementById('modal-inner');
+  inner.innerHTML = `
+    <h3>Add Note</h3>
+    <textarea class="note-textarea" id="note-text" placeholder="Enter notes…">${n}</textarea>
+    <div class="modal-btns">
+      <button class="btn-secondary" onclick="closeModal()">Cancel</button>
+      <button class="btn-primary" onclick="saveNote(${id})">Save</button>
+    </div>`;
+  document.getElementById('modal-overlay').classList.add('open');
+}
+
+async function saveNote(id) {
+  const note = document.getElementById('note-text').value;
+  try {
+    await api('POST', `/api/pipeline/${id}/note`, { note });
+    toast('Note saved', 'success');
+    closeModal();
+    loadPipeline();
+  } catch(e) {}
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Run pipeline
+═══════════════════════════════════════════════════════════ */
+async function triggerRun() {
+  const days = document.getElementById('days-select').value;
+  const btn = document.getElementById('run-btn');
+  const btnText = document.getElementById('run-btn-text');
+
+  if (btn.classList.contains('running')) {
+    toast('Already running…', 'info'); return;
+  }
+
+  btn.classList.add('running');
+  btnText.textContent = 'Running…';
+  document.getElementById('run-status-badge').style.display = 'flex';
+  document.getElementById('run-status-text').textContent = 'Starting…';
+
+  try {
+    await api('POST', `/api/run?days=${days}`);
+    startRunPoller();
+  } catch(e) {
+    btn.classList.remove('running');
+    btnText.textContent = 'Run';
+    document.getElementById('run-status-badge').style.display = 'none';
+  }
+}
+
+function startRunPoller() {
+  if (state.runPollerTimer) clearInterval(state.runPollerTimer);
+  state.runPollerTimer = setInterval(async () => {
+    try {
+      const d = await api('GET', '/api/run/status');
+      document.getElementById('run-status-text').textContent = d.progress || 'Running…';
+      // Elapsed timer
+      const timerEl = document.getElementById('run-timer');
+      if (timerEl && d.elapsed_seconds > 0) {
+        timerEl.textContent = `(${fmtElapsed(d.elapsed_seconds)})`;
+      }
+      if (!d.running) {
+        clearInterval(state.runPollerTimer);
+        state.runPollerTimer = null;
+        document.getElementById('run-btn').classList.remove('running');
+        document.getElementById('run-btn-text').textContent = 'Run';
+        document.getElementById('run-status-badge').style.display = 'none';
+        if (timerEl) timerEl.textContent = '';
+        updateLastRan(d.recent_runs);
+        if (d.error) {
+          toast('Run failed: ' + d.error.slice(0,80), 'error');
+        } else {
+          toast('Pipeline complete — reloading signals', 'success');
+          loadSignals(state.days);
+          loadStats();
+        }
+      }
+    } catch(e) {}
+  }, 2000);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Toast
+═══════════════════════════════════════════════════════════ */
+function toast(msg, type='info') {
+  const el = document.createElement('div');
+  el.className = `toast ${type}`;
+  el.textContent = msg;
+  document.getElementById('toast-container').appendChild(el);
+  setTimeout(() => el.remove(), 4000);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Helpers
+═══════════════════════════════════════════════════════════ */
+function validLinkedIn(url) {
+  return url && url.includes('linkedin.com/in/');
+}
+
+function fmtElapsed(secs) {
+  if (secs < 60) return `${secs}s`;
+  const m = Math.floor(secs / 60), s = secs % 60;
+  return `${m}m ${s}s`;
+}
+
+function timeAgo(isoStr) {
+  if (!isoStr) return '';
+  const diff = Math.floor((Date.now() - new Date(isoStr).getTime()) / 1000);
+  if (diff < 60) return 'just now';
+  if (diff < 3600) return `${Math.floor(diff/60)}m ago`;
+  if (diff < 86400) return `${Math.floor(diff/3600)}h ago`;
+  return `${Math.floor(diff/86400)}d ago`;
+}
+
+function updateLastRan(recentRuns) {
+  const el = document.getElementById('last-ran-badge');
+  if (!el) return;
+  const last = recentRuns && recentRuns[0];
+  if (!last) { el.textContent = 'Never run'; return; }
+  const when = last.finished_at || last.started_at;
+  const persons = last.persons_found ? ` · ${last.persons_found} founders` : '';
+  el.textContent = `Last run: ${timeAgo(when)}${persons}`;
+  el.title = when;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Init
+═══════════════════════════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', async () => {
+  await Promise.all([
+    loadStats(),
+    loadSignals(state.days),
+  ]);
+  // Check run status — resume poller if already running, show last ran
+  try {
+    const d = await api('GET', '/api/run/status');
+    updateLastRan(d.recent_runs);
+    if (d.running) {
+      document.getElementById('run-btn').classList.add('running');
+      document.getElementById('run-btn-text').textContent = 'Running…';
+      document.getElementById('run-status-badge').style.display = 'flex';
+      document.getElementById('run-status-text').textContent = d.progress || 'Running…';
+      startRunPoller();
+    }
+  } catch(e) {}
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VC Sourcing — India & SEA</title>
+<style>
+/* ── Reset & base ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:        #08090d;
+  --bg2:       #0e0f16;
+  --surface:   #13141e;
+  --surface2:  #1c1d2b;
+  --surface3:  #242538;
+  --border:    #2a2b40;
+  --border2:   #363752;
+  --text:      #e8e9f8;
+  --muted:     #6b6d8a;
+  --muted2:    #9596b3;
+  --green:     #22d272;
+  --green-dim: rgba(34,210,114,.12);
+  --yellow:    #f5c842;
+  --yellow-dim:rgba(245,200,66,.12);
+  --red:       #f05d5d;
+  --red-dim:   rgba(240,93,93,.1);
+  --blue:      #5b8af5;
+  --blue-dim:  rgba(91,138,245,.12);
+  --purple:    #a78bfa;
+  --purple-dim:rgba(167,139,250,.12);
+  --accent:    #7c6fff;
+  --accent2:   #6457f0;
+  --teal:      #2dd4bf;
+  --orange:    #fb923c;
+  --glow:      0 0 40px rgba(124,111,255,.15);
+}
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+  min-height: 100vh;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ── Scrollbar ────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+
+/* ── Layout ───────────────────────────────────────────────────────── */
+.app { display: grid; grid-template-rows: 56px 1fr; min-height: 100vh; }
+
+/* ── Top nav ──────────────────────────────────────────────────────── */
+.nav {
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(8px);
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -.01em;
+}
+.nav-logo .dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50% { opacity: .6; transform: scale(.85); }
+}
+.nav-tag {
+  background: var(--surface3);
+  border: 1px solid var(--border2);
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-size: 11px;
+  color: var(--muted2);
+}
+.nav-spacer { flex: 1; }
+.nav-date { font-size: 12px; color: var(--muted); }
+.nav-refresh {
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  border-radius: 8px;
+  padding: 6px 12px;
+  color: var(--muted2);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all .15s;
+}
+.nav-refresh:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ── Main layout ──────────────────────────────────────────────────── */
+.main { display: grid; grid-template-columns: 260px 1fr; }
+
+/* ── Sidebar ──────────────────────────────────────────────────────── */
+.sidebar {
+  background: var(--bg2);
+  border-right: 1px solid var(--border);
+  height: calc(100vh - 56px);
+  position: sticky;
+  top: 56px;
+  overflow-y: auto;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.sidebar-section { display: flex; flex-direction: column; gap: 6px; }
+.sidebar-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--muted);
+  padding: 0 4px;
+  margin-bottom: 2px;
+}
+.filter-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 10px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background .1s;
+  color: var(--muted2);
+  font-size: 12px;
+  border: 1px solid transparent;
+}
+.filter-btn:hover { background: var(--surface2); color: var(--text); }
+.filter-btn.active {
+  background: var(--surface3);
+  border-color: var(--border2);
+  color: var(--text);
+}
+.filter-btn .count {
+  background: var(--surface3);
+  border-radius: 10px;
+  padding: 1px 7px;
+  font-size: 10px;
+  color: var(--muted);
+  min-width: 24px;
+  text-align: center;
+}
+.filter-btn.active .count { background: var(--accent); color: #fff; }
+.filter-emoji { width: 18px; text-align: center; margin-right: 4px; }
+
+.score-slider-wrap { padding: 4px; }
+.score-slider-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.score-slider-label span { color: var(--text); font-weight: 600; }
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  background: var(--surface3);
+  border-radius: 2px;
+  outline: none;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(124,111,255,.5);
+}
+
+.source-mini-chart { display: flex; flex-direction: column; gap: 5px; }
+.src-row { display: flex; align-items: center; gap: 8px; }
+.src-name { font-size: 11px; color: var(--muted2); width: 90px; flex-shrink: 0; }
+.src-bar { flex: 1; height: 4px; background: var(--surface3); border-radius: 2px; overflow: hidden; }
+.src-fill { height: 100%; background: var(--accent); border-radius: 2px; opacity: .7; }
+.src-n { font-size: 10px; color: var(--muted); width: 20px; text-align: right; }
+
+/* ── Content area ─────────────────────────────────────────────────── */
+.content { overflow-y: auto; height: calc(100vh - 56px); }
+.content-inner { padding: 24px 28px; max-width: 980px; }
+
+/* ── Stats strip ──────────────────────────────────────────────────── */
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  position: relative;
+  overflow: hidden;
+}
+.stat::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(124,111,255,.04), transparent);
+  pointer-events: none;
+}
+.stat-val { font-size: 24px; font-weight: 800; line-height: 1; color: var(--text); }
+.stat-val.g { color: var(--green); }
+.stat-val.y { color: var(--yellow); }
+.stat-val.a { color: var(--accent); }
+.stat-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-top: 5px; }
+
+/* ── Summary card ─────────────────────────────────────────────────── */
+.summary-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.summary-icon {
+  width: 36px; height: 36px;
+  background: var(--purple-dim);
+  border: 1px solid rgba(167,139,250,.2);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.summary-text { font-size: 13px; color: var(--muted2); line-height: 1.7; }
+.summary-text strong { color: var(--text); }
+
+/* ── Toolbar ──────────────────────────────────────────────────────── */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 12px;
+}
+.results-count { font-size: 13px; color: var(--muted); }
+.results-count strong { color: var(--text); }
+.view-toggle { display: flex; gap: 4px; }
+.view-btn {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 8px;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 14px;
+  transition: all .15s;
+}
+.view-btn.active, .view-btn:hover { background: var(--surface3); border-color: var(--border2); color: var(--text); }
+
+/* ── Person cards ─────────────────────────────────────────────────── */
+.persons-list { display: flex; flex-direction: column; gap: 8px; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 18px;
+  transition: border-color .15s, box-shadow .15s;
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  border-radius: 12px 0 0 12px;
+}
+.card.investigate::before { background: var(--green); box-shadow: 0 0 12px var(--green); }
+.card.watchlist::before   { background: var(--yellow); box-shadow: 0 0 12px var(--yellow); }
+.card.pass::before        { background: var(--border); }
+.card:hover { border-color: var(--border2); box-shadow: 0 4px 24px rgba(0,0,0,.4); }
+
+.card-grid { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: start; }
+.card-left {}
+.card-name-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 3px; }
+.card-name { font-size: 15px; font-weight: 700; color: var(--text); }
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+.badge-investigate { background: var(--green-dim); color: var(--green); border: 1px solid rgba(34,210,114,.2); }
+.badge-watchlist   { background: var(--yellow-dim); color: var(--yellow); border: 1px solid rgba(245,200,66,.2); }
+.badge-pass        { background: var(--red-dim); color: var(--red); border: 1px solid rgba(240,93,93,.15); }
+.badge-star        { background: rgba(251,146,60,.1); color: var(--orange); border: 1px solid rgba(251,146,60,.2); }
+
+.card-prev { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+.card-prev .arrow { color: var(--accent); margin: 0 4px; }
+.card-prev strong { color: var(--muted2); }
+
+.thesis {
+  font-size: 12px;
+  color: var(--muted2);
+  line-height: 1.65;
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  background: var(--bg2);
+  border-radius: 7px;
+  border-left: 2px solid var(--border2);
+}
+
+.tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+.tag {
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 500;
+  border: 1px solid transparent;
+}
+.tag-geo      { background: var(--blue-dim); color: var(--blue); border-color: rgba(91,138,245,.2); }
+.tag-sector   { background: var(--purple-dim); color: var(--purple); border-color: rgba(167,139,250,.2); }
+.tag-signal   { background: rgba(124,111,255,.08); color: var(--accent); border-color: rgba(124,111,255,.2); }
+.tag-exp      { background: var(--surface3); color: var(--muted2); }
+.tag-teal     { background: rgba(45,212,191,.08); color: var(--teal); border-color: rgba(45,212,191,.2); }
+
+.signals-row { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+.signal-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--muted2);
+}
+
+.links-row { display: flex; gap: 6px; flex-wrap: wrap; }
+.link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--muted2);
+  font-size: 11px;
+  transition: all .15s;
+  text-decoration: none;
+}
+.link-btn:hover { background: var(--surface3); border-color: var(--border2); color: var(--text); }
+
+/* ── Score block ──────────────────────────────────────────────────── */
+.score-block { text-align: center; min-width: 72px; }
+.score-ring {
+  position: relative;
+  width: 60px; height: 60px;
+  margin: 0 auto 6px;
+}
+.score-ring svg { transform: rotate(-90deg); }
+.score-ring .track { fill: none; stroke: var(--surface3); stroke-width: 4; }
+.score-ring .fill  { fill: none; stroke-width: 4; stroke-linecap: round; transition: stroke-dashoffset .5s ease; }
+.score-num {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 800;
+}
+.score-conf { font-size: 9px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+
+/* ── No results ───────────────────────────────────────────────────── */
+.empty { text-align: center; padding: 60px 20px; color: var(--muted); }
+.empty-icon { font-size: 36px; margin-bottom: 12px; }
+.empty-text { font-size: 14px; }
+
+/* ── Loading skeleton ─────────────────────────────────────────────── */
+.skeleton {
+  background: linear-gradient(90deg, var(--surface) 25%, var(--surface2) 50%, var(--surface) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+@keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+/* ── Toast ────────────────────────────────────────────────────────── */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--surface3);
+  border: 1px solid var(--border2);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 12px;
+  color: var(--text);
+  z-index: 100;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all .2s;
+}
+.toast.show { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+<div class="app">
+
+<!-- ── Nav ──────────────────────────────────────────────────────────── -->
+<nav class="nav">
+  <div class="nav-logo">
+    <div class="dot"></div>
+    VC Sourcing
+  </div>
+  <span class="nav-tag">India + SEA</span>
+  <span class="nav-tag">Pre-seed · Seed</span>
+  <div class="nav-spacer"></div>
+  <div class="nav-date" id="nav-date">—</div>
+  <button class="nav-refresh" onclick="loadData()">↺ Refresh</button>
+</nav>
+
+<!-- ── Main ──────────────────────────────────────────────────────────── -->
+<div class="main">
+
+  <!-- ── Sidebar ──────────────────────────────────────────────────── -->
+  <aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Action</div>
+      <div class="filter-btn active" data-filter="action" data-val="all" onclick="setFilter('action','all',this)">
+        <span><span class="filter-emoji">🔍</span>All signals</span>
+        <span class="count" id="cnt-action-all">0</span>
+      </div>
+      <div class="filter-btn" data-filter="action" data-val="investigate" onclick="setFilter('action','investigate',this)">
+        <span><span class="filter-emoji">🟢</span>Investigate</span>
+        <span class="count" id="cnt-investigate">0</span>
+      </div>
+      <div class="filter-btn" data-filter="action" data-val="watchlist" onclick="setFilter('action','watchlist',this)">
+        <span><span class="filter-emoji">🟡</span>Watchlist</span>
+        <span class="count" id="cnt-watchlist">0</span>
+      </div>
+      <div class="filter-btn" data-filter="action" data-val="pass" onclick="setFilter('action','pass',this)">
+        <span><span class="filter-emoji">🔴</span>Pass</span>
+        <span class="count" id="cnt-pass">0</span>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Geography</div>
+      <div class="filter-btn active" data-filter="geo" data-val="all" onclick="setFilter('geo','all',this)">
+        <span><span class="filter-emoji">🌏</span>All regions</span>
+        <span class="count" id="cnt-geo-all">0</span>
+      </div>
+      <div class="filter-btn" data-filter="geo" data-val="India" onclick="setFilter('geo','India',this)">
+        <span><span class="filter-emoji">🇮🇳</span>India</span>
+        <span class="count" id="cnt-India">0</span>
+      </div>
+      <div class="filter-btn" data-filter="geo" data-val="Singapore" onclick="setFilter('geo','Singapore',this)">
+        <span><span class="filter-emoji">🇸🇬</span>Singapore</span>
+        <span class="count" id="cnt-Singapore">0</span>
+      </div>
+      <div class="filter-btn" data-filter="geo" data-val="Indonesia" onclick="setFilter('geo','Indonesia',this)">
+        <span><span class="filter-emoji">🇮🇩</span>Indonesia</span>
+        <span class="count" id="cnt-Indonesia">0</span>
+      </div>
+      <div class="filter-btn" data-filter="geo" data-val="Vietnam" onclick="setFilter('geo','Vietnam',this)">
+        <span><span class="filter-emoji">🇻🇳</span>Vietnam</span>
+        <span class="count" id="cnt-Vietnam">0</span>
+      </div>
+      <div class="filter-btn" data-filter="geo" data-val="Malaysia" onclick="setFilter('geo','Malaysia',this)">
+        <span><span class="filter-emoji">🇲🇾</span>Malaysia</span>
+        <span class="count" id="cnt-Malaysia">0</span>
+      </div>
+      <div class="filter-btn" data-filter="geo" data-val="Philippines" onclick="setFilter('geo','Philippines',this)">
+        <span><span class="filter-emoji">🇵🇭</span>Philippines</span>
+        <span class="count" id="cnt-Philippines">0</span>
+      </div>
+      <div class="filter-btn" data-filter="geo" data-val="Thailand" onclick="setFilter('geo','Thailand',this)">
+        <span><span class="filter-emoji">🇹🇭</span>Thailand</span>
+        <span class="count" id="cnt-Thailand">0</span>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Signal type</div>
+      <div class="filter-btn active" data-filter="signal" data-val="all" onclick="setFilter('signal','all',this)">
+        <span><span class="filter-emoji">⚡</span>All signals</span>
+        <span class="count">—</span>
+      </div>
+      <div class="filter-btn" data-filter="signal" data-val="stealth_founder" onclick="setFilter('signal','stealth_founder',this)">
+        <span><span class="filter-emoji">🥷</span>Stealth</span><span class="count">—</span>
+      </div>
+      <div class="filter-btn" data-filter="signal" data-val="executive_departure" onclick="setFilter('signal','executive_departure',this)">
+        <span><span class="filter-emoji">🚪</span>Departure</span><span class="count">—</span>
+      </div>
+      <div class="filter-btn" data-filter="signal" data-val="company_registration" onclick="setFilter('signal','company_registration',this)">
+        <span><span class="filter-emoji">🏢</span>Registry</span><span class="count">—</span>
+      </div>
+      <div class="filter-btn" data-filter="signal" data-val="twitter_announcement" onclick="setFilter('signal','twitter_announcement',this)">
+        <span><span class="filter-emoji">🐦</span>Twitter/X</span><span class="count">—</span>
+      </div>
+      <div class="filter-btn" data-filter="signal" data-val="github_launch" onclick="setFilter('signal','github_launch',this)">
+        <span><span class="filter-emoji">🐙</span>GitHub</span><span class="count">—</span>
+      </div>
+      <div class="filter-btn" data-filter="signal" data-val="headcount_growth" onclick="setFilter('signal','headcount_growth',this)">
+        <span><span class="filter-emoji">📈</span>Headcount</span><span class="count">—</span>
+      </div>
+      <div class="filter-btn" data-filter="signal" data-val="funding_news" onclick="setFilter('signal','funding_news',this)">
+        <span><span class="filter-emoji">💰</span>Funding</span><span class="count">—</span>
+      </div>
+      <div class="filter-btn" data-filter="signal" data-val="product_launch" onclick="setFilter('signal','product_launch',this)">
+        <span><span class="filter-emoji">🚀</span>Product launch</span><span class="count">—</span>
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Min score</div>
+      <div class="score-slider-wrap">
+        <div class="score-slider-label">Score threshold <span id="slider-val">0+</span></div>
+        <input type="range" id="score-slider" min="0" max="100" step="5" value="0"
+               oninput="onSlider(this)">
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Sources</div>
+      <div class="source-mini-chart" id="source-chart"></div>
+    </div>
+
+  </aside>
+
+  <!-- ── Content ──────────────────────────────────────────────────── -->
+  <div class="content">
+    <div class="content-inner">
+
+      <!-- Stats strip -->
+      <div class="stats-strip" id="stats-strip">
+        <div class="stat skeleton" style="height:72px"></div>
+        <div class="stat skeleton" style="height:72px"></div>
+        <div class="stat skeleton" style="height:72px"></div>
+        <div class="stat skeleton" style="height:72px"></div>
+        <div class="stat skeleton" style="height:72px"></div>
+        <div class="stat skeleton" style="height:72px"></div>
+      </div>
+
+      <!-- Executive summary -->
+      <div class="summary-card" id="summary-card" style="display:none">
+        <div class="summary-icon">🧠</div>
+        <div class="summary-text" id="summary-text">Loading...</div>
+      </div>
+
+      <!-- Toolbar -->
+      <div class="toolbar">
+        <div class="results-count" id="results-count"></div>
+        <div class="view-toggle">
+          <button class="view-btn active" id="view-list" onclick="setView('list')">☰</button>
+          <button class="view-btn" id="view-compact" onclick="setView('compact')">⊟</button>
+        </div>
+      </div>
+
+      <!-- Persons grid -->
+      <div id="persons-list" class="persons-list"></div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ── State ────────────────────────────────────────────────────────────
+let allPersons = [];
+let data = {};
+let filters = { action: 'all', geo: 'all', signal: 'all', score: 0 };
+let viewMode = 'list';
+
+// ── Signal config ─────────────────────────────────────────────────────
+const SIG = {
+  stealth_founder:      { emoji: '🥷', label: 'Stealth' },
+  executive_departure:  { emoji: '🚪', label: 'Departure' },
+  github_launch:        { emoji: '🐙', label: 'GitHub' },
+  funding_news:         { emoji: '💰', label: 'Funding' },
+  company_registration: { emoji: '🏢', label: 'Registry' },
+  twitter_announcement: { emoji: '🐦', label: 'Twitter/X' },
+  headcount_growth:     { emoji: '📈', label: 'Growth' },
+  headcount_drop:       { emoji: '📉', label: 'Drop' },
+  product_launch:       { emoji: '🚀', label: 'Launch' },
+  patent_filing:        { emoji: '📄', label: 'Patent' },
+};
+
+const GEO_FLAG = {
+  India: '🇮🇳', Singapore: '🇸🇬', Indonesia: '🇮🇩',
+  Vietnam: '🇻🇳', Malaysia: '🇲🇾', Philippines: '🇵🇭', Thailand: '🇹🇭',
+};
+
+// ── Helpers ───────────────────────────────────────────────────────────
+function scoreColor(s) {
+  if (s >= 75) return '#22d272';
+  if (s >= 55) return '#f5c842';
+  return '#f05d5d';
+}
+
+function scoreRing(score, size=60) {
+  const r = (size/2) - 6;
+  const circ = 2 * Math.PI * r;
+  const offset = circ * (1 - score/100);
+  const col = scoreColor(score);
+  return `<div class="score-ring" style="width:${size}px;height:${size}px">
+    <svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
+      <circle class="track" cx="${size/2}" cy="${size/2}" r="${r}"/>
+      <circle class="fill" cx="${size/2}" cy="${size/2}" r="${r}"
+        stroke="${col}"
+        stroke-dasharray="${circ}"
+        stroke-dashoffset="${offset}"
+        style="filter:drop-shadow(0 0 4px ${col}66)"/>
+    </svg>
+    <div class="score-num" style="color:${col}">${score}</div>
+  </div>`;
+}
+
+function escHtml(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function toast(msg, ms=2500) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), ms);
+}
+
+// ── Render a single card ──────────────────────────────────────────────
+function renderCard(p) {
+  const actionBadge = {
+    investigate: '<span class="badge badge-investigate">🟢 Investigate</span>',
+    watchlist:   '<span class="badge badge-watchlist">🟡 Watchlist</span>',
+    pass:        '<span class="badge badge-pass">🔴 Pass</span>',
+  }[p.action] || '';
+  const starBadge = p.is_second_time_founder ? '<span class="badge badge-star">⭐ 2nd-time</span>' : '';
+
+  const prev = [p.previous_title, p.previous_company].filter(Boolean);
+  const prevStr = prev.length ? `<strong>${escHtml(prev.join(' @ '))}</strong>` : '';
+  const nowStr = p.current_company ? escHtml(p.current_company) : 'Stealth';
+  const geoFlag = GEO_FLAG[p.geography] || '🌏';
+
+  const signalPills = (p.signal_types||[]).map(t => {
+    const s = SIG[t] || { emoji: '•', label: t };
+    return `<span class="signal-pill">${s.emoji} ${s.label}</span>`;
+  }).join('');
+
+  const tags = [
+    p.geography ? `<span class="tag tag-geo">${geoFlag} ${escHtml(p.geography)}</span>` : '',
+    p.sector    ? `<span class="tag tag-sector">◈ ${escHtml(p.sector)}</span>` : '',
+    p.experience_years ? `<span class="tag tag-exp">~${p.experience_years}yrs</span>` : '',
+    p.confidence === 'high' ? `<span class="tag tag-teal">✓ high confidence</span>` : '',
+  ].filter(Boolean).join('');
+
+  const links = [];
+  if (p.linkedin_url) links.push(`<a class="link-btn" href="${escHtml(p.linkedin_url)}" target="_blank" rel="noopener">in LinkedIn</a>`);
+  if (p.twitter_handle) links.push(`<a class="link-btn" href="https://twitter.com/${escHtml(p.twitter_handle)}" target="_blank" rel="noopener">𝕏 Twitter</a>`);
+  if (p.github_url) links.push(`<a class="link-btn" href="${escHtml(p.github_url)}" target="_blank" rel="noopener">⌥ GitHub</a>`);
+
+  if (viewMode === 'compact') {
+    return `<div class="card ${escHtml(p.action)}">
+      <div style="display:flex;align-items:center;gap:10px">
+        ${scoreRing(p.score, 44)}
+        <div style="flex:1;min-width:0">
+          <div class="card-name-row">
+            <span class="card-name">${escHtml(p.name)}</span>
+            ${actionBadge}${starBadge}
+          </div>
+          <div class="card-prev" style="margin:0">
+            ${prevStr ? prevStr + '<span class="arrow">→</span>' : ''}${nowStr}
+            ${tags ? '<span style="margin-left:6px">'+tags+'</span>' : ''}
+          </div>
+        </div>
+        ${links.length ? `<div class="links-row">${links.join('')}</div>` : ''}
+      </div>
+    </div>`;
+  }
+
+  return `<div class="card ${escHtml(p.action)}">
+    <div class="card-grid">
+      <div class="card-left">
+        <div class="card-name-row">
+          <span class="card-name">${escHtml(p.name)}</span>
+          ${actionBadge}
+          ${starBadge}
+        </div>
+        <div class="card-prev">
+          ${prevStr ? prevStr + '<span class="arrow">→</span>' : ''}
+          ${nowStr}
+          <span style="margin-left:6px;color:var(--muted)">· ${escHtml(p.location||p.geography||'')}</span>
+        </div>
+        ${p.investment_thesis ? `<div class="thesis">${escHtml(p.investment_thesis)}</div>` : ''}
+        <div class="tags">${tags}</div>
+        <div class="signals-row">${signalPills}</div>
+        ${links.length ? `<div class="links-row">${links.join('')}</div>` : ''}
+      </div>
+      <div class="score-block">
+        ${scoreRing(p.score)}
+        <div class="score-conf">${escHtml(p.confidence||'')}</div>
+      </div>
+    </div>
+  </div>`;
+}
+
+// ── Filtering ─────────────────────────────────────────────────────────
+function applyFilters() {
+  let f = allPersons.filter(p => {
+    if (filters.action !== 'all' && p.action !== filters.action) return false;
+    if (filters.geo    !== 'all' && p.geography !== filters.geo) return false;
+    if (filters.signal !== 'all' && !(p.signal_types||[]).includes(filters.signal)) return false;
+    if (p.score < filters.score) return false;
+    return true;
+  });
+
+  document.getElementById('results-count').innerHTML =
+    `Showing <strong>${f.length}</strong> of <strong>${allPersons.length}</strong> founders`;
+
+  const list = document.getElementById('persons-list');
+  if (f.length === 0) {
+    list.innerHTML = `<div class="empty"><div class="empty-icon">🔭</div><div class="empty-text">No founders match these filters.<br>Try widening your criteria.</div></div>`;
+  } else {
+    list.innerHTML = f.map(renderCard).join('');
+  }
+}
+
+function setFilter(type, val, el) {
+  filters[type] = val;
+  // Deactivate siblings
+  document.querySelectorAll(`[data-filter="${type}"]`).forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+  applyFilters();
+}
+
+function onSlider(el) {
+  filters.score = parseInt(el.value);
+  document.getElementById('slider-val').textContent = el.value + '+';
+  applyFilters();
+}
+
+function setView(mode) {
+  viewMode = mode;
+  document.getElementById('view-list').classList.toggle('active', mode === 'list');
+  document.getElementById('view-compact').classList.toggle('active', mode === 'compact');
+  applyFilters();
+}
+
+// ── Count badges ──────────────────────────────────────────────────────
+function updateCounts() {
+  const geos = ['India','Singapore','Indonesia','Vietnam','Malaysia','Philippines','Thailand'];
+  const total = allPersons.length;
+
+  const byAction = { investigate:0, watchlist:0, pass:0 };
+  const byGeo = {};
+  geos.forEach(g => byGeo[g] = 0);
+
+  allPersons.forEach(p => {
+    if (byAction[p.action] !== undefined) byAction[p.action]++;
+    if (byGeo[p.geography] !== undefined) byGeo[p.geography]++;
+  });
+
+  const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+  set('cnt-action-all', total);
+  set('cnt-investigate', byAction.investigate);
+  set('cnt-watchlist',   byAction.watchlist);
+  set('cnt-pass',        byAction.pass);
+  set('cnt-geo-all', total);
+  geos.forEach(g => set('cnt-' + g, byGeo[g]));
+}
+
+// ── Stats strip ───────────────────────────────────────────────────────
+function renderStats(d) {
+  const inv   = d.persons.filter(p => p.action === 'investigate').length;
+  const watch = d.persons.filter(p => p.action === 'watchlist').length;
+  const st2   = d.persons.filter(p => p.is_second_time_founder).length;
+  const avgS  = d.persons.length ? Math.round(d.persons.reduce((a,b)=>a+b.score,0)/d.persons.length) : 0;
+
+  const stats = [
+    { val: d.total_signals, label: 'Signals collected', cls: 'a' },
+    { val: d.total_persons, label: 'Persons scored', cls: '' },
+    { val: inv,             label: 'Investigate',     cls: 'g' },
+    { val: watch,           label: 'Watchlist',        cls: 'y' },
+    { val: st2,             label: '2nd-time founders',cls: 'a' },
+    { val: avgS,            label: 'Avg score',        cls: '' },
+  ];
+  document.getElementById('stats-strip').innerHTML = stats.map(s =>
+    `<div class="stat"><div class="stat-val ${s.cls}">${s.val}</div><div class="stat-label">${s.label}</div></div>`
+  ).join('');
+}
+
+// ── Source chart ──────────────────────────────────────────────────────
+function renderSourceChart(breakdown) {
+  const entries = Object.entries(breakdown).sort((a,b) => b[1]-a[1]).slice(0, 10);
+  const max = Math.max(...entries.map(e=>e[1]), 1);
+  document.getElementById('source-chart').innerHTML = entries.map(([src, n]) =>
+    `<div class="src-row">
+      <div class="src-name">${src}</div>
+      <div class="src-bar"><div class="src-fill" style="width:${Math.round(n/max*100)}%"></div></div>
+      <div class="src-n">${n}</div>
+    </div>`
+  ).join('');
+}
+
+// ── Load data ─────────────────────────────────────────────────────────
+async function loadData() {
+  try {
+    const resp = await fetch('data.json?t=' + Date.now());
+    if (!resp.ok) throw new Error('not found');
+    data = await resp.json();
+  } catch(e) {
+    document.getElementById('stats-strip').innerHTML =
+      `<div style="grid-column:1/-1;color:var(--muted);padding:20px;text-align:center">
+        No data yet — run <code>python main.py</code> to generate data.json
+      </div>`;
+    return;
+  }
+
+  allPersons = data.persons || [];
+
+  // Nav
+  document.getElementById('nav-date').textContent = data.date_label || '';
+
+  // Summary
+  if (data.executive_summary) {
+    document.getElementById('summary-text').innerHTML =
+      '<strong>AI Summary</strong> — ' + escHtml(data.executive_summary);
+    document.getElementById('summary-card').style.display = 'flex';
+  }
+
+  renderStats(data);
+  updateCounts();
+  renderSourceChart(data.source_breakdown || {});
+  applyFilters();
+
+  toast(`Loaded ${allPersons.length} founders · ${data.date_label}`);
+}
+
+loadData();
+</script>
+</body>
+</html>
