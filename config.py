@@ -10,6 +10,7 @@ load_dotenv(Path(__file__).parent / ".env", override=True)
 # ── API keys ───────────────────────────────────────────────────────────────────
 ANTHROPIC_API_KEY: str = os.getenv("ANTHROPIC_API_KEY", "")
 GROQ_API_KEY: str = os.getenv("GROQ_API_KEY", "")
+GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
 FIRECRAWL_API_KEY: str = os.getenv("FIRECRAWL_API_KEY", "")
 GITHUB_TOKEN: str = os.getenv("GITHUB_TOKEN", "")
 

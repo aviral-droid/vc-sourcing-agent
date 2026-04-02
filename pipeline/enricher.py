@@ -99,8 +99,29 @@ def _build_signals_text(person: Person) -> str:
     return "\n".join(lines) if lines else "  (no signals)"
 
 
+def _call_gemini(prompt: str) -> Optional[str]:
+    """Primary LLM — Gemini Flash (free, 1M tokens/day)."""
+    if not config.GEMINI_API_KEY:
+        return None
+    try:
+        import google.generativeai as genai
+        genai.configure(api_key=config.GEMINI_API_KEY)
+        model = genai.GenerativeModel(
+            model_name="gemini-2.0-flash",
+            system_instruction=SYSTEM_PROMPT,
+        )
+        resp = model.generate_content(
+            prompt,
+            generation_config={"temperature": 0.1, "max_output_tokens": 600},
+        )
+        return resp.text.strip()
+    except Exception as e:
+        logger.warning("Gemini scoring error: %s", e)
+        return None
+
+
 def _call_claude(prompt: str) -> Optional[str]:
-    """Primary LLM for investment scoring."""
+    """Secondary LLM for investment scoring (fallback if Gemini unavailable)."""
     if not config.ANTHROPIC_API_KEY:
         return None
     try:
@@ -192,7 +213,7 @@ def score_person(person: Person) -> None:
         signals_text=_build_signals_text(person),
     )
 
-    raw = _call_claude(prompt) or _call_groq(prompt)
+    raw = _call_gemini(prompt) or _call_claude(prompt) or _call_groq(prompt)
     if not raw:
         person.score = 0.0
         person.recommended_action = "pass"
@@ -286,7 +307,7 @@ Total signals above threshold: {len(persons)}
 
 Write as a crisp analyst briefing. Mention geography (India/SEA split), strongest archetypes, and 1-2 most compelling leads by name. No bullet points."""
 
-    raw = _call_claude(prompt) or _call_groq(prompt)
+    raw = _call_gemini(prompt) or _call_claude(prompt) or _call_groq(prompt)
     if raw:
         return raw.strip()
 
