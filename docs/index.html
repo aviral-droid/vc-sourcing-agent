@@ -107,6 +107,21 @@ a { color: inherit; text-decoration: none; }
   transition: all .15s;
 }
 .nav-refresh:hover { border-color: var(--accent); color: var(--accent); }
+.nav-run {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 6px;
+  transition: opacity .15s;
+  white-space: nowrap;
+}
+.nav-run:hover { opacity: .85; }
+.nav-run:disabled { opacity: .5; cursor: default; }
 
 /* ── Main layout ──────────────────────────────────────────────────── */
 .main { display: grid; grid-template-columns: 260px 1fr; }
@@ -448,6 +463,7 @@ input[type=range]::-webkit-slider-thumb {
   <div class="nav-spacer"></div>
   <div class="nav-date" id="nav-date">—</div>
   <button class="nav-refresh" onclick="loadData()">↺ Refresh</button>
+  <button class="nav-run" id="run-btn" onclick="triggerGHRun()">▶ Run Pipeline</button>
 </nav>
 
 <!-- ── Main ──────────────────────────────────────────────────────────── -->
@@ -871,6 +887,104 @@ async function loadData() {
 }
 
 loadData();
+
+// ── GitHub Actions Run button ─────────────────────────────────────────
+const GH_REPO     = 'aviral-droid/vc-sourcing-agent';
+const GH_WORKFLOW = 'sourcing.yml';
+
+function getGHToken() {
+  let t = localStorage.getItem('gh_pat');
+  if (!t) {
+    t = prompt('Enter your GitHub PAT to trigger a pipeline run.\n(Stored in your browser only — never sent anywhere except the GitHub API)');
+    if (t) localStorage.setItem('gh_pat', t.trim());
+  }
+  return t ? t.trim() : null;
+}
+
+async function triggerGHRun() {
+  const token = getGHToken();
+  if (!token) return;
+  const btn = document.getElementById('run-btn');
+  btn.textContent = 'Starting…';
+  btn.disabled = true;
+  try {
+    const r = await fetch(
+      `https://api.github.com/repos/${GH_REPO}/actions/workflows/${GH_WORKFLOW}/dispatches`,
+      {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          Accept: 'application/vnd.github+json',
+          'Content-Type': 'application/json',
+          'X-GitHub-Api-Version': '2022-11-28'
+        },
+        body: JSON.stringify({ ref: 'main' })
+      }
+    );
+    if (r.status === 204) {
+      toast('Pipeline started on GitHub Actions…', 'info');
+      btn.textContent = 'Running…';
+      // Wait 8s for GitHub to register the run before polling
+      setTimeout(() => pollGHRun(token), 8000);
+    } else if (r.status === 401 || r.status === 403) {
+      localStorage.removeItem('gh_pat');
+      alert('Invalid PAT or missing "workflow" scope. Please try again with a valid token.');
+      resetRunBtn();
+    } else {
+      const err = await r.json().catch(() => ({}));
+      alert('GitHub error: ' + (err.message || r.status));
+      resetRunBtn();
+    }
+  } catch(e) {
+    alert('Network error: ' + e.message);
+    resetRunBtn();
+  }
+}
+
+function pollGHRun(token) {
+  let polls = 0;
+  const interval = setInterval(async () => {
+    polls++;
+    if (polls > 60) { // stop after 15 min
+      clearInterval(interval);
+      resetRunBtn();
+      toast('Timed out waiting for run — check GitHub Actions tab', 'error');
+      return;
+    }
+    try {
+      const r = await fetch(
+        `https://api.github.com/repos/${GH_REPO}/actions/runs?per_page=1`,
+        { headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' } }
+      );
+      if (!r.ok) return;
+      const d = await r.json();
+      const run = d.workflow_runs?.[0];
+      if (!run) return;
+
+      const btn = document.getElementById('run-btn');
+      if (run.status === 'completed') {
+        clearInterval(interval);
+        if (run.conclusion === 'success') {
+          btn.textContent = '✓ Done';
+          toast('Pipeline complete! Reloading data…', 'success');
+          setTimeout(() => { loadData(); resetRunBtn(); }, 2000);
+        } else {
+          toast(`Run finished: ${run.conclusion}. Check Actions tab for logs.`, 'error');
+          resetRunBtn();
+        }
+      } else {
+        const statusMap = { queued: 'Queued…', in_progress: 'Running…', waiting: 'Waiting…' };
+        btn.textContent = statusMap[run.status] || 'Running…';
+      }
+    } catch(e) { /* retry next poll */ }
+  }, 15000);
+}
+
+function resetRunBtn() {
+  const btn = document.getElementById('run-btn');
+  btn.textContent = '▶ Run Pipeline';
+  btn.disabled = false;
+}
 </script>
 </body>
 </html>

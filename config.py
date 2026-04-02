@@ -37,7 +37,7 @@ REPORTS_DIR.mkdir(exist_ok=True)
 DOCS_DIR.mkdir(exist_ok=True)
 
 # ── Report tuning ──────────────────────────────────────────────────────────────
-MIN_SCORE_THRESHOLD: int = int(os.getenv("MIN_SCORE_THRESHOLD", "55"))
+MIN_SCORE_THRESHOLD: int = int(os.getenv("MIN_SCORE_THRESHOLD", "30"))
 TOP_N_IN_DIGEST: int = int(os.getenv("TOP_N_IN_DIGEST", "15"))
 
 # ── Headcount growth thresholds ────────────────────────────────────────────────
