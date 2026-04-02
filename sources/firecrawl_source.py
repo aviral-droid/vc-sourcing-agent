@@ -85,25 +85,35 @@ def _parse_with_groq(text: str, source: str) -> List[dict]:
     """Use Groq to extract founder signals from any page content."""
     if not config.GROQ_API_KEY or len(text.strip()) < 100:
         return []
-    try:
-        from groq import Groq
-        client = Groq(api_key=config.GROQ_API_KEY)
-        resp = client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
-            messages=[{"role": "user", "content": GROQ_PARSE_PROMPT.format(
-                source=source, text=text[:4000]
-            )}],
-            temperature=0.1,
-            max_tokens=1500,
-        )
-        raw = resp.choices[0].message.content.strip()
-        m = re.search(r"\[.*\]", raw, re.DOTALL)
-        if m:
-            return json.loads(m.group(0))
-        return []
-    except Exception as e:
-        logger.debug("Groq parse error [%s]: %s", source, e)
-        return []
+    from groq import Groq, RateLimitError
+    client = Groq(api_key=config.GROQ_API_KEY)
+    wait = 15
+    for attempt in range(4):
+        try:
+            resp = client.chat.completions.create(
+                model="llama-3.3-70b-versatile",
+                messages=[{"role": "user", "content": GROQ_PARSE_PROMPT.format(
+                    source=source, text=text[:4000]
+                )}],
+                temperature=0.1,
+                max_tokens=1500,
+            )
+            raw = resp.choices[0].message.content.strip()
+            m = re.search(r"\[.*\]", raw, re.DOTALL)
+            if m:
+                return json.loads(m.group(0))
+            return []
+        except RateLimitError:
+            if attempt < 3:
+                logger.info("Groq 429 [%s] — waiting %ds…", source, wait)
+                time.sleep(wait)
+                wait = min(wait * 2, 120)
+            else:
+                logger.warning("Groq rate limit exhausted for [%s]", source)
+        except Exception as e:
+            logger.debug("Groq parse error [%s]: %s", source, e)
+            break
+    return []
 
 
 def _items_to_persons(items: List[dict], source_label: str, signal_type: str = "product_launch") -> List[Person]:

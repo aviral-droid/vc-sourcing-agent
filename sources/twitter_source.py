@@ -79,26 +79,33 @@ def _parse_with_groq(text: str) -> List[dict]:
     """Use Groq to parse raw snippet text into structured signals."""
     if not config.GROQ_API_KEY:
         return []
-    try:
-        from groq import Groq
-        client = Groq(api_key=config.GROQ_API_KEY)
-        response = client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
-            messages=[
-                {"role": "user", "content": GROQ_PARSE_PROMPT.format(text=text[:3000])}
-            ],
-            temperature=0.1,
-            max_tokens=1024,
-        )
-        raw = response.choices[0].message.content.strip()
-        # Extract JSON from response
-        m = re.search(r"\[.*\]", raw, re.DOTALL)
-        if m:
-            return json.loads(m.group(0))
-        return []
-    except Exception as e:
-        logger.debug("Groq parsing error: %s", e)
-        return []
+    from groq import Groq, RateLimitError
+    client = Groq(api_key=config.GROQ_API_KEY)
+    wait = 15
+    for attempt in range(4):
+        try:
+            response = client.chat.completions.create(
+                model="llama-3.3-70b-versatile",
+                messages=[{"role": "user", "content": GROQ_PARSE_PROMPT.format(text=text[:3000])}],
+                temperature=0.1,
+                max_tokens=1024,
+            )
+            raw = response.choices[0].message.content.strip()
+            m = re.search(r"\[.*\]", raw, re.DOTALL)
+            if m:
+                return json.loads(m.group(0))
+            return []
+        except RateLimitError:
+            if attempt < 3:
+                logger.info("Groq 429 [twitter] — waiting %ds…", wait)
+                time.sleep(wait)
+                wait = min(wait * 2, 120)
+            else:
+                logger.warning("Groq rate limit exhausted for twitter source")
+        except Exception as e:
+            logger.debug("Groq parsing error: %s", e)
+            break
+    return []
 
 
 def _keyword_extract(title: str, snippet: str, url: str) -> Optional[Person]:

@@ -117,26 +117,36 @@ def _call_claude(prompt: str) -> Optional[str]:
         return None
 
 
-def _call_groq(prompt: str) -> Optional[str]:
-    """Fallback LLM for scoring when Claude unavailable."""
+def _call_groq(prompt: str, retries: int = 5) -> Optional[str]:
+    """Fallback LLM for scoring when Claude unavailable. Retries on 429."""
     if not config.GROQ_API_KEY:
         return None
-    try:
-        from groq import Groq
-        client = Groq(api_key=config.GROQ_API_KEY)
-        resp = client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
-            messages=[
-                {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": prompt},
-            ],
-            temperature=0.1,
-            max_tokens=600,
-        )
-        return resp.choices[0].message.content.strip()
-    except Exception as e:
-        logger.warning("Groq scoring fallback error: %s", e)
-        return None
+    from groq import Groq, RateLimitError
+    client = Groq(api_key=config.GROQ_API_KEY)
+    wait = 10  # start with 10s backoff
+    for attempt in range(retries):
+        try:
+            resp = client.chat.completions.create(
+                model="llama-3.3-70b-versatile",
+                messages=[
+                    {"role": "system", "content": SYSTEM_PROMPT},
+                    {"role": "user", "content": prompt},
+                ],
+                temperature=0.1,
+                max_tokens=600,
+            )
+            return resp.choices[0].message.content.strip()
+        except RateLimitError:
+            if attempt < retries - 1:
+                logger.info("Groq 429 — waiting %ds before retry (%d/%d)…", wait, attempt + 1, retries)
+                time.sleep(wait)
+                wait = min(wait * 2, 120)  # cap at 2 min
+            else:
+                logger.warning("Groq rate limit exhausted after %d retries", retries)
+        except Exception as e:
+            logger.warning("Groq scoring error: %s", e)
+            break
+    return None
 
 
 def _parse_score_response(raw: str) -> Optional[dict]:
