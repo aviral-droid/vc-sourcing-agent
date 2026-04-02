@@ -121,9 +121,9 @@ def _call_groq(prompt: str, retries: int = 5) -> Optional[str]:
     """Fallback LLM for scoring when Claude unavailable. Retries on 429."""
     if not config.GROQ_API_KEY:
         return None
-    from groq import Groq, RateLimitError
+    from groq import Groq
     client = Groq(api_key=config.GROQ_API_KEY)
-    wait = 10  # start with 10s backoff
+    wait = 20
     for attempt in range(retries):
         try:
             resp = client.chat.completions.create(
@@ -136,16 +136,29 @@ def _call_groq(prompt: str, retries: int = 5) -> Optional[str]:
                 max_tokens=600,
             )
             return resp.choices[0].message.content.strip()
-        except RateLimitError:
-            if attempt < retries - 1:
-                logger.info("Groq 429 — waiting %ds before retry (%d/%d)…", wait, attempt + 1, retries)
-                time.sleep(wait)
-                wait = min(wait * 2, 120)  # cap at 2 min
-            else:
-                logger.warning("Groq rate limit exhausted after %d retries", retries)
         except Exception as e:
-            logger.warning("Groq scoring error: %s", e)
-            break
+            err_str = str(e)
+            # Both RPM and TPD limits come back as 429 — parse wait time from message
+            if "429" in err_str or "rate_limit" in err_str.lower():
+                # Try to extract suggested wait from Groq message e.g. "try again in 13m54s"
+                import re as _re
+                m = _re.search(r"try again in (\d+)m(\d+)", err_str)
+                if m:
+                    suggested = int(m.group(1)) * 60 + int(m.group(2)) + 5
+                    if "tokens per day" in err_str.lower():
+                        # TPD limit hit — no point retrying today, bail out
+                        logger.warning("Groq daily token limit exhausted — add ANTHROPIC_API_KEY for scoring")
+                        return None
+                    wait = min(suggested, 120)
+                if attempt < retries - 1:
+                    logger.info("Groq 429 — waiting %ds before retry (%d/%d)…", wait, attempt + 1, retries)
+                    time.sleep(wait)
+                    wait = min(wait * 2, 120)
+                else:
+                    logger.warning("Groq rate limit exhausted after %d retries", retries)
+            else:
+                logger.warning("Groq scoring error: %s", e)
+                break
     return None
 
 

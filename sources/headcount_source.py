@@ -75,7 +75,7 @@ def _parse_headcount_with_groq(text: str, company_name: str) -> Optional[dict]:
         from groq import Groq
         client = Groq(api_key=config.GROQ_API_KEY)
         response = client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
+            model="llama-3.1-8b-instant",
             messages=[{"role": "user", "content": GROQ_HEADCOUNT_PROMPT.format(text=text[:2000])}],
             temperature=0.0,
             max_tokens=256,

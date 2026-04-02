@@ -85,7 +85,7 @@ def _parse_with_groq(text: str) -> List[dict]:
     for attempt in range(4):
         try:
             response = client.chat.completions.create(
-                model="llama-3.3-70b-versatile",
+                model="llama-3.1-8b-instant",
                 messages=[{"role": "user", "content": GROQ_PARSE_PROMPT.format(text=text[:3000])}],
                 temperature=0.1,
                 max_tokens=1024,
