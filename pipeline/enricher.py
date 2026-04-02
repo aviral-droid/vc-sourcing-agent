@@ -129,7 +129,7 @@ def _call_groq(prompt: str, retries: int = 5) -> Optional[str]:
         try:
             groq_wait()
             resp = client.chat.completions.create(
-                model="llama-3.3-70b-versatile",
+                model="llama-3.1-8b-instant",  # fallback; use llama-3.3-70b-versatile when TPD allows
                 messages=[
                     {"role": "system", "content": SYSTEM_PROMPT},
                     {"role": "user", "content": prompt},
