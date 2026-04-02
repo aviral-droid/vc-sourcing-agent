@@ -100,24 +100,41 @@ def _build_signals_text(person: Person) -> str:
 
 
 def _call_gemini(prompt: str) -> Optional[str]:
-    """Primary LLM — Gemini Flash (free, 1M tokens/day)."""
+    """Primary LLM — Gemini 1.5 Flash (free tier: 1500 req/day, 15 RPM)."""
     if not config.GEMINI_API_KEY:
         return None
-    try:
-        import google.generativeai as genai
-        genai.configure(api_key=config.GEMINI_API_KEY)
-        model = genai.GenerativeModel(
-            model_name="gemini-2.0-flash",
-            system_instruction=SYSTEM_PROMPT,
-        )
-        resp = model.generate_content(
-            prompt,
-            generation_config={"temperature": 0.1, "max_output_tokens": 600},
-        )
-        return resp.text.strip()
-    except Exception as e:
-        logger.warning("Gemini scoring error: %s", e)
-        return None
+    import google.generativeai as genai
+    genai.configure(api_key=config.GEMINI_API_KEY)
+    # Try 1.5-flash first, fall back to 1.5-flash-8b (higher free quota)
+    for model_name in ("gemini-1.5-flash", "gemini-1.5-flash-8b"):
+        wait = 30
+        for attempt in range(4):
+            try:
+                model = genai.GenerativeModel(
+                    model_name=model_name,
+                    system_instruction=SYSTEM_PROMPT,
+                )
+                resp = model.generate_content(
+                    prompt,
+                    generation_config={"temperature": 0.1, "max_output_tokens": 600},
+                )
+                return resp.text.strip()
+            except Exception as e:
+                err = str(e)
+                if "quota" in err.lower() or "429" in err or "rate" in err.lower():
+                    if "per day" in err.lower() or "PerDay" in err:
+                        logger.warning("Gemini %s daily quota exhausted, trying next model", model_name)
+                        break  # try next model
+                    if attempt < 3:
+                        logger.info("Gemini %s rate limit — waiting %ds…", model_name, wait)
+                        time.sleep(wait)
+                        wait = min(wait * 2, 120)
+                    else:
+                        break
+                else:
+                    logger.warning("Gemini scoring error [%s]: %s", model_name, e)
+                    break
+    return None
 
 
 def _call_claude(prompt: str) -> Optional[str]:
