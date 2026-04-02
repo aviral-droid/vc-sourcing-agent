@@ -20,6 +20,7 @@ from typing import List, Optional
 
 import config
 from models import Person, DailyReport
+from sources.groq_limiter import groq_wait
 
 logger = logging.getLogger(__name__)
 
@@ -126,6 +127,7 @@ def _call_groq(prompt: str, retries: int = 5) -> Optional[str]:
     wait = 20
     for attempt in range(retries):
         try:
+            groq_wait()
             resp = client.chat.completions.create(
                 model="llama-3.3-70b-versatile",
                 messages=[

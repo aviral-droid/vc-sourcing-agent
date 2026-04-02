@@ -52,6 +52,7 @@ from urllib.parse import quote_plus
 import requests
 
 import config
+from sources.groq_limiter import groq_wait
 from models import Person, Signal
 
 logger = logging.getLogger(__name__)
@@ -90,6 +91,7 @@ def _parse_with_groq(text: str, source: str) -> List[dict]:
     wait = 15
     for attempt in range(4):
         try:
+            groq_wait()
             resp = client.chat.completions.create(
                 model="llama-3.1-8b-instant",
                 messages=[{"role": "user", "content": GROQ_PARSE_PROMPT.format(
