@@ -913,14 +913,10 @@ loadData();
 // ── GitHub Actions Run button ─────────────────────────────────────────
 const GH_REPO     = 'aviral-droid/vc-sourcing-agent';
 const GH_WORKFLOW = 'sourcing.yml';
+const GH_PAT      = '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';
 
 function getGHToken() {
-  let t = localStorage.getItem('gh_pat');
-  if (!t) {
-    t = prompt('Enter your GitHub PAT to trigger a pipeline run.\n(Stored in your browser only — never sent anywhere except the GitHub API)');
-    if (t) localStorage.setItem('gh_pat', t.trim());
-  }
-  return t ? t.trim() : null;
+  return GH_PAT;
 }
 
 async function triggerGHRun() {
