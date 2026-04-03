@@ -380,7 +380,12 @@ input[type=range]::-webkit-slider-thumb {
 .tag-exp      { background: var(--surface3); color: var(--muted2); }
 .tag-teal     { background: rgba(45,212,191,.08); color: var(--teal); border-color: rgba(45,212,191,.2); }
 
-.signals-row { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+.signals-row { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }
+.signal-evidence { margin-bottom: 10px; display: flex; flex-direction: column; gap: 3px; }
+.sig-row { font-size: 11px; color: var(--muted); line-height: 1.4; display: flex; align-items: baseline; gap: 5px; }
+.sig-src { font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: var(--muted2); background: var(--surface3); border-radius: 4px; padding: 1px 5px; flex-shrink: 0; }
+.sig-link { color: var(--accent); text-decoration: none; font-size: 10px; flex-shrink: 0; }
+.sig-link:hover { text-decoration: underline; }
 .signal-pill {
   display: inline-flex;
   align-items: center;
@@ -828,6 +833,14 @@ function renderCard(p) {
         ${p.investment_thesis ? `<div class="thesis">${escHtml(p.investment_thesis)}</div>` : ''}
         <div class="tags">${tags}</div>
         <div class="signals-row">${signalPills}</div>
+        ${(p.signals||[]).length ? `<div class="signal-evidence">${
+          (p.signals||[]).slice(0,4).map(s => {
+            const src = `<span class="sig-src">${escHtml(s.source)}</span>`;
+            const desc = escHtml(s.description||'');
+            const lnk = s.url ? ` <a href="${escHtml(s.url)}" target="_blank" rel="noopener" class="sig-link">↗</a>` : '';
+            return `<div class="sig-row">${src} ${desc}${lnk}</div>`;
+          }).join('')
+        }</div>` : ''}
         ${links.length ? `<div class="links-row">${links.join('')}</div>` : ''}
       </div>
       <div class="score-block">

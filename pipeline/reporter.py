@@ -210,8 +210,19 @@ def _generate_data_json(report: DailyReport) -> None:
             "twitter_handle": p.twitter_handle or "",
             "signal_count": p.signal_count,
             "signal_types": list({s.signal_type for s in p.signals}),
+            "signals": [
+                {
+                    "source": s.source,
+                    "type": s.signal_type,
+                    "description": s.description,
+                    "url": s.url or "",
+                }
+                for s in p.signals[:8]
+            ],
             "confidence": rationale.get("confidence", ""),
             "founder_type": rationale.get("founder_type", ""),
+            "key_strengths": rationale.get("key_strengths", []),
+            "risks": rationale.get("risks", []),
             "company_url": getattr(p, "company_url", "") or "",
         })
 
