@@ -76,10 +76,12 @@ jobs:
           git config user.name  "VC Sourcing Bot"
           git config user.email "vc-bot@users.noreply.github.com"
           mkdir -p reports
-          git add reports/ docs/
+          # Force-add reports (gitignored) and always add docs/
+          git add -f reports/ || true
+          git add docs/
           git diff --staged --quiet || \
             git commit -m "chore: sourcing digest $(date -u +%Y-%m-%d)" && \
-            git push
+            git push || true
 
       # ── Upload report as artifact (for easy download) ─────────────────────
       - name: Upload digest artifact
