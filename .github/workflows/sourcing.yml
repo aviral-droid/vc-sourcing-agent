@@ -12,13 +12,13 @@ on:
       skip_headcount:
         description: 'Skip headcount step (faster run)'
         required: false
-        default: 'false'
+        default: 'true'
         type: boolean
 
 jobs:
   source:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 60
 
     permissions:
       contents: write       # Required to commit reports/ and docs/ back to repo
@@ -65,10 +65,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           DAYS_BACK="${{ github.event.inputs.days_back || '30' }}"
-          SKIP_HC="${{ github.event.inputs.skip_headcount || 'false' }}"
+          SKIP_HC="${{ github.event.inputs.skip_headcount || 'true' }}"
           SKIP_FLAG=""
           if [ "$SKIP_HC" = "true" ]; then SKIP_FLAG="--skip-headcount"; fi
-          python main.py --days-back "$DAYS_BACK" $SKIP_FLAG
+          python main.py --days-back "$DAYS_BACK" --companies 15 $SKIP_FLAG
 
       # ── Commit outputs back to repo ────────────────────────────────────────
       - name: Commit reports and dashboard
