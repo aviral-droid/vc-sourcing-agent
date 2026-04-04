@@ -33,27 +33,21 @@ GDELT_BASE = "https://api.gdeltproject.org/api/v2/doc/doc"
 # ── Query sets ────────────────────────────────────────────────────────────────
 # Each tuple: (query_string, signal_type_hint)
 GDELT_QUERIES: list[tuple[str, str]] = [
-    # India founder departures
-    ('"founder" "stealth" "India" startup 2025', "stealth_founder"),
-    ('"left" "to start" OR "new venture" India startup founder', "executive_departure"),
-    ('"ex-Razorpay" OR "ex-Zepto" OR "ex-Swiggy" founder startup', "executive_departure"),
-    ('"ex-Zomato" OR "ex-CRED" OR "ex-PhonePe" founder startup', "executive_departure"),
-    ('"ex-Meesho" OR "ex-Flipkart" OR "ex-Ola" founder startup', "executive_departure"),
-    ('"ex-Paytm" OR "ex-BrowserStack" OR "ex-Freshworks" founder', "executive_departure"),
-    ('"seed funding" OR "pre-seed" founder India 2025', "funding_news"),
-    ('"second-time founder" OR "serial entrepreneur" India startup 2025', "stealth_founder"),
-    ('"building in stealth" India startup founder', "stealth_founder"),
-    ('"VP" OR "Director" left India unicorn "new startup" 2025', "executive_departure"),
-    # SEA founder departures
-    ('"ex-Grab" OR "ex-Gojek" OR "ex-Sea Group" founder startup', "executive_departure"),
-    ('"ex-Tokopedia" OR "ex-GoTo" OR "ex-Traveloka" founder startup', "executive_departure"),
-    ('"ex-Xendit" OR "ex-Lazada" OR "ex-Nium" founder startup', "executive_departure"),
-    ('"seed funding" founder Singapore OR Indonesia OR Vietnam 2025', "funding_news"),
-    ('"stealth" founder Singapore "new startup" 2025', "stealth_founder"),
-    ('"stealth" founder Indonesia OR Vietnam OR Malaysia 2025', "stealth_founder"),
-    # Broader coverage
-    ('startup founder "announced" "new company" India OR Singapore 2025', "stealth_founder"),
-    ('"raises" "seed" OR "pre-seed" India startup founder 2025', "funding_news"),
+    # India — simpler queries work better with GDELT; it indexes article full text
+    ('India startup founder departure stealth new venture', "stealth_founder"),
+    ('India unicorn executive left founded new startup', "executive_departure"),
+    ('Razorpay Zepto PhonePe Swiggy founder departure startup', "executive_departure"),
+    ('Zomato CRED Meesho Flipkart founder departure new company', "executive_departure"),
+    ('India seed funding pre-seed angel round founder 2025', "funding_news"),
+    ('India second-time founder serial entrepreneur startup 2025', "stealth_founder"),
+    ('India startup founder stealth building new venture 2025', "stealth_founder"),
+    # SEA
+    ('Grab Gojek Sea Group Tokopedia founder departure startup', "executive_departure"),
+    ('Singapore startup founder seed funding new venture 2025', "funding_news"),
+    ('Singapore Indonesia founder stealth new startup 2025', "stealth_founder"),
+    ('Southeast Asia founder departure unicorn new startup 2025', "executive_departure"),
+    # Broader — use sourcecountry filter in API call
+    ('startup founder raises seed pre-seed India Singapore 2025', "funding_news"),
 ]
 
 # Trusted India + SEA tech news domains to prioritize
@@ -66,9 +60,11 @@ PRIORITY_DOMAINS = {
 
 EXCLUDE_KEYWORDS = [
     "job opening", "we are hiring", "internship", "scholarship",
-    "opinion:", "analysis:", "how to ", "lessons from", "tips for",
-    "advice for", "guide to", "balancing ambition", "why founders",
-    "what founders", "a founder's take", "acquisition", "ipo",
+    "opinion:", "analysis:", "how to ", "lessons from", "tips for founders",
+    "advice for founders", "guide to ", "balancing ambition", "why founders",
+    "what founders", "a founder's take",
+    # Be specific — don't exclude all IPO/acquisition mentions, only when they're the main topic
+    "ipo roadshow", "ipo listing", "going public", "filed for ipo",
 ]
 
 # ── Name extraction (shared with news_source) ────────────────────────────────
@@ -174,16 +170,24 @@ def _query_gdelt(query: str, timespan_days: int, max_records: int = 100) -> list
         "timespan": f"{timespan_days}d",
         "sort": "DateDesc",
     }
-    try:
-        resp = requests.get(GDELT_BASE, params=params, timeout=20)
-        if resp.status_code != 200:
-            logger.debug("GDELT HTTP %d for query: %s", resp.status_code, query[:60])
+    for attempt in range(3):
+        try:
+            resp = requests.get(GDELT_BASE, params=params, timeout=20)
+            if resp.status_code == 429:
+                logger.debug("GDELT rate-limited (429), sleeping 15s (attempt %d)", attempt + 1)
+                time.sleep(15)
+                continue
+            if resp.status_code != 200:
+                logger.debug("GDELT HTTP %d for query: %s", resp.status_code, query[:60])
+                return []
+            if not resp.content:
+                return []
+            data = resp.json()
+            return data.get("articles") or []
+        except Exception as e:
+            logger.debug("GDELT error [%s]: %s", query[:50], e)
             return []
-        data = resp.json()
-        return data.get("articles") or []
-    except Exception as e:
-        logger.debug("GDELT error [%s]: %s", query[:50], e)
-        return []
+    return []
 
 
 def search_gdelt_signals(days_back: int = 30) -> List[Person]:
@@ -239,7 +243,7 @@ def search_gdelt_signals(days_back: int = 30) -> List[Person]:
             person.signals.append(signal)
             persons.append(person)
 
-        time.sleep(0.3)  # be polite to GDELT
+        time.sleep(6)  # GDELT rate limit: 1 req/5s — be safe at 6s
 
     logger.info("GDELT: %d signals collected", len(persons))
     return persons
