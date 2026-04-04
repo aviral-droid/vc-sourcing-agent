@@ -5,532 +5,378 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VC Sourcing — India & SEA</title>
 <style>
-/* ── Reset & base ─────────────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --bg:        #08090d;
-  --bg2:       #0e0f16;
-  --surface:   #13141e;
-  --surface2:  #1c1d2b;
-  --surface3:  #242538;
-  --border:    #2a2b40;
-  --border2:   #363752;
-  --text:      #e8e9f8;
-  --muted:     #6b6d8a;
-  --muted2:    #9596b3;
-  --green:     #22d272;
-  --green-dim: rgba(34,210,114,.12);
-  --yellow:    #f5c842;
-  --yellow-dim:rgba(245,200,66,.12);
-  --red:       #f05d5d;
-  --red-dim:   rgba(240,93,93,.1);
-  --blue:      #5b8af5;
-  --blue-dim:  rgba(91,138,245,.12);
-  --purple:    #a78bfa;
-  --purple-dim:rgba(167,139,250,.12);
-  --accent:    #7c6fff;
-  --accent2:   #6457f0;
-  --teal:      #2dd4bf;
-  --orange:    #fb923c;
-  --glow:      0 0 40px rgba(124,111,255,.15);
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#07080f;
+  --surface:#0e0f18;
+  --surface2:#131520;
+  --surface3:#1a1c2a;
+  --border:#1f2235;
+  --border2:#2a2d46;
+  --text:#e2e4f0;
+  --text2:#b8bbcf;
+  --muted:#6b6e88;
+  --muted2:#9295ae;
+  --green:#10b981;
+  --green-dim:rgba(16,185,129,.1);
+  --green-glow:rgba(16,185,129,.2);
+  --amber:#f59e0b;
+  --amber-dim:rgba(245,158,11,.1);
+  --red:#ef4444;
+  --red-dim:rgba(239,68,68,.08);
+  --blue:#3b82f6;
+  --blue-dim:rgba(59,130,246,.1);
+  --purple:#8b5cf6;
+  --teal:#06b6d4;
+  --accent:#6366f1;
+  --accent-dim:rgba(99,102,241,.12);
+  --accent2:#4f46e5;
+  --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
 }
-html { scroll-behavior: smooth; }
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
-  font-size: 13px;
-  line-height: 1.55;
-  min-height: 100vh;
-}
-a { color: inherit; text-decoration: none; }
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13px;line-height:1.6;min-height:100vh}
+a{color:inherit;text-decoration:none}
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
 
-/* ── Scrollbar ────────────────────────────────────────────────────── */
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: var(--bg2); }
-::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+/* ── Layout ─────────────────────────────────────────────────────────── */
+.app{display:flex;flex-direction:column;min-height:100vh}
 
-/* ── Layout ───────────────────────────────────────────────────────── */
-.app { display: grid; grid-template-rows: 56px 1fr; min-height: 100vh; }
+/* ── Top bar ─────────────────────────────────────────────────────────── */
+.topbar{
+  height:52px;
+  background:var(--surface);
+  border-bottom:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:0 20px;
+  position:sticky;top:0;z-index:100;
+  backdrop-filter:blur(12px);
+}
+.logo{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;letter-spacing:-.3px;color:var(--text);white-space:nowrap}
+.logo-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green-glow);flex-shrink:0}
+.logo-sub{font-size:10px;font-weight:500;color:var(--muted);letter-spacing:.5px;padding:2px 7px;background:var(--surface3);border:1px solid var(--border2);border-radius:20px}
+.topbar-spacer{flex:1}
 
-/* ── Top nav ──────────────────────────────────────────────────────── */
-.nav {
-  background: var(--bg2);
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  padding: 0 24px;
-  gap: 16px;
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  backdrop-filter: blur(8px);
+/* Run status */
+.run-status{
+  display:flex;align-items:center;gap:8px;
+  font-size:11px;color:var(--muted);
+  padding:4px 12px;
+  background:var(--surface2);
+  border:1px solid var(--border);
+  border-radius:8px;
+  white-space:nowrap;
 }
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--text);
-  letter-spacing: -.01em;
-}
-.nav-logo .dot {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 10px var(--accent);
-  animation: pulse 2s infinite;
-}
-@keyframes pulse {
-  0%,100% { opacity: 1; transform: scale(1); }
-  50% { opacity: .6; transform: scale(.85); }
-}
-.nav-tag {
-  background: var(--surface3);
-  border: 1px solid var(--border2);
-  border-radius: 20px;
-  padding: 3px 10px;
-  font-size: 11px;
-  color: var(--muted2);
-}
-.nav-spacer { flex: 1; }
-.nav-date { font-size: 12px; color: var(--muted); }
-.nav-refresh {
-  background: var(--surface2);
-  border: 1px solid var(--border2);
-  border-radius: 8px;
-  padding: 6px 12px;
-  color: var(--muted2);
-  font-size: 12px;
-  cursor: pointer;
-  transition: all .15s;
-}
-.nav-refresh:hover { border-color: var(--accent); color: var(--accent); }
-.nav-run {
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  padding: 6px 14px;
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  margin-left: 6px;
-  transition: opacity .15s;
-  white-space: nowrap;
-}
-.nav-run:hover { opacity: .85; }
-.nav-run:disabled { opacity: .5; cursor: default; }
-.nav-days {
-  background: var(--surface2);
-  border: 1px solid var(--border2);
-  border-radius: 8px;
-  padding: 5px 10px;
-  color: var(--muted2);
-  font-size: 12px;
-  cursor: pointer;
-  outline: none;
-  margin-left: 6px;
-  appearance: none;
-  -webkit-appearance: none;
-}
-.nav-days:focus { border-color: var(--accent); color: var(--text); }
+.run-status .dot{width:6px;height:6px;border-radius:50%;background:var(--muted);flex-shrink:0}
+.run-status .dot.ok{background:var(--green);box-shadow:0 0 6px var(--green-glow)}
+.run-status .dot.running{background:var(--amber);animation:pulse 1.2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 
-/* ── Main layout ──────────────────────────────────────────────────── */
-.main { display: grid; grid-template-columns: 260px 1fr; }
+.days-select{
+  font-size:11px;font-family:var(--font);
+  background:var(--surface2);border:1px solid var(--border2);
+  color:var(--text2);border-radius:7px;padding:5px 8px;cursor:pointer;outline:none;
+}
+.days-select:hover{border-color:var(--accent)}
 
-/* ── Sidebar ──────────────────────────────────────────────────────── */
-.sidebar {
-  background: var(--bg2);
-  border-right: 1px solid var(--border);
-  height: calc(100vh - 56px);
-  position: sticky;
-  top: 56px;
-  overflow-y: auto;
-  padding: 20px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+.run-btn{
+  display:flex;align-items:center;gap:6px;
+  font-size:12px;font-family:var(--font);font-weight:600;
+  background:var(--accent);color:#fff;
+  border:none;border-radius:8px;
+  padding:7px 14px;cursor:pointer;
+  transition:background .15s,opacity .15s;
+  white-space:nowrap;
 }
-.sidebar-section { display: flex; flex-direction: column; gap: 6px; }
-.sidebar-label {
-  font-size: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  color: var(--muted);
-  padding: 0 4px;
-  margin-bottom: 2px;
-}
-.filter-btn {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 7px 10px;
-  border-radius: 7px;
-  cursor: pointer;
-  transition: background .1s;
-  color: var(--muted2);
-  font-size: 12px;
-  border: 1px solid transparent;
-}
-.filter-btn:hover { background: var(--surface2); color: var(--text); }
-.filter-btn.active {
-  background: var(--surface3);
-  border-color: var(--border2);
-  color: var(--text);
-}
-.filter-btn .count {
-  background: var(--surface3);
-  border-radius: 10px;
-  padding: 1px 7px;
-  font-size: 10px;
-  color: var(--muted);
-  min-width: 24px;
-  text-align: center;
-}
-.filter-btn.active .count { background: var(--accent); color: #fff; }
-.filter-emoji { width: 18px; text-align: center; margin-right: 4px; }
+.run-btn:hover:not(:disabled){background:var(--accent2)}
+.run-btn:disabled{opacity:.5;cursor:not-allowed}
 
-.score-slider-wrap { padding: 4px; }
-.score-slider-label {
-  display: flex;
-  justify-content: space-between;
-  font-size: 11px;
-  color: var(--muted);
-  margin-bottom: 8px;
-}
-.score-slider-label span { color: var(--text); font-weight: 600; }
-input[type=range] {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 4px;
-  background: var(--surface3);
-  border-radius: 2px;
-  outline: none;
-}
-input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 14px; height: 14px;
-  border-radius: 50%;
-  background: var(--accent);
-  cursor: pointer;
-  box-shadow: 0 0 8px rgba(124,111,255,.5);
-}
+/* ── Body layout ─────────────────────────────────────────────────────── */
+.body{display:flex;flex:1;overflow:hidden}
 
-.source-mini-chart { display: flex; flex-direction: column; gap: 5px; }
-.src-row { display: flex; align-items: center; gap: 8px; }
-.src-name { font-size: 11px; color: var(--muted2); width: 90px; flex-shrink: 0; }
-.src-bar { flex: 1; height: 4px; background: var(--surface3); border-radius: 2px; overflow: hidden; }
-.src-fill { height: 100%; background: var(--accent); border-radius: 2px; opacity: .7; }
-.src-n { font-size: 10px; color: var(--muted); width: 20px; text-align: right; }
+/* ── Sidebar ─────────────────────────────────────────────────────────── */
+.sidebar{
+  width:220px;flex-shrink:0;
+  background:var(--surface);
+  border-right:1px solid var(--border);
+  overflow-y:auto;
+  padding:16px 12px;
+  display:flex;flex-direction:column;gap:4px;
+}
+.sidebar-label{
+  font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);padding:12px 8px 6px;
+}
+.sidebar-label:first-child{padding-top:4px}
+.filter-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:6px 9px;border-radius:7px;cursor:pointer;
+  transition:background .12s;gap:8px;
+  font-size:12px;color:var(--text2);
+  border:1px solid transparent;
+}
+.filter-row:hover{background:var(--surface2);color:var(--text)}
+.filter-row.active{background:var(--accent-dim);border-color:rgba(99,102,241,.25);color:var(--text)}
+.filter-row-label{display:flex;align-items:center;gap:7px;flex:1;min-width:0}
+.filter-icon{width:16px;text-align:center;font-size:12px;flex-shrink:0}
+.filter-count{font-size:10px;font-weight:600;color:var(--muted);background:var(--surface3);padding:1px 6px;border-radius:10px;flex-shrink:0}
+.filter-row.active .filter-count{color:var(--accent)}
 
-/* ── Content area ─────────────────────────────────────────────────── */
-.content { overflow-y: auto; height: calc(100vh - 56px); }
-.content-inner { padding: 24px 28px; max-width: 980px; }
+.sidebar-divider{height:1px;background:var(--border);margin:8px 0}
 
-/* ── Stats strip ──────────────────────────────────────────────────── */
-.stats-strip {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 10px;
-  margin-bottom: 24px;
-}
-.stat {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 14px 16px;
-  position: relative;
-  overflow: hidden;
-}
-.stat::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(124,111,255,.04), transparent);
-  pointer-events: none;
-}
-.stat-val { font-size: 24px; font-weight: 800; line-height: 1; color: var(--text); }
-.stat-val.g { color: var(--green); }
-.stat-val.y { color: var(--yellow); }
-.stat-val.a { color: var(--accent); }
-.stat-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; margin-top: 5px; }
+/* Score slider */
+.slider-wrap{padding:4px 8px 8px}
+.slider-label{display:flex;justify-content:space-between;font-size:11px;color:var(--muted2);margin-bottom:6px}
+input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4px}
 
-/* ── Summary card ─────────────────────────────────────────────────── */
-.summary-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 18px 20px;
-  margin-bottom: 20px;
-  display: flex;
-  gap: 14px;
-  align-items: flex-start;
-}
-.summary-icon {
-  width: 36px; height: 36px;
-  background: var(--purple-dim);
-  border: 1px solid rgba(167,139,250,.2);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  flex-shrink: 0;
-}
-.summary-text { font-size: 13px; color: var(--muted2); line-height: 1.7; }
-.summary-text strong { color: var(--text); }
+/* Source bars */
+.src-list{display:flex;flex-direction:column;gap:4px;padding:4px 8px 0}
+.src-row{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted2)}
+.src-name{width:68px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex-shrink:0}
+.src-bar{flex:1;height:3px;background:var(--surface3);border-radius:2px}
+.src-fill{height:100%;background:var(--accent);border-radius:2px}
+.src-n{width:18px;text-align:right;font-size:10px;color:var(--muted)}
 
-/* ── Toolbar ──────────────────────────────────────────────────────── */
-.toolbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 16px;
-  gap: 12px;
-}
-.results-count { font-size: 13px; color: var(--muted); }
-.results-count strong { color: var(--text); }
-.view-toggle { display: flex; gap: 4px; }
-.view-btn {
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 6px 8px;
-  cursor: pointer;
-  color: var(--muted);
-  font-size: 14px;
-  transition: all .15s;
-}
-.view-btn.active, .view-btn:hover { background: var(--surface3); border-color: var(--border2); color: var(--text); }
+/* ── Content ─────────────────────────────────────────────────────────── */
+.content{flex:1;overflow-y:auto;padding:20px 24px}
 
-/* ── Person cards ─────────────────────────────────────────────────── */
-.persons-list { display: flex; flex-direction: column; gap: 8px; }
-
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 16px 18px;
-  transition: border-color .15s, box-shadow .15s;
-  cursor: default;
-  position: relative;
-  overflow: hidden;
+/* ── Stats row ───────────────────────────────────────────────────────── */
+.stats-row{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+.stat-card{
+  flex:1;min-width:100px;
+  background:var(--surface);border:1px solid var(--border);border-radius:10px;
+  padding:14px 16px;
 }
-.card::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 3px;
-  border-radius: 12px 0 0 12px;
+.stat-card.highlight{border-color:rgba(16,185,129,.25);background:rgba(16,185,129,.05)}
+.stat-card.highlight-amber{border-color:rgba(245,158,11,.2);background:rgba(245,158,11,.04)}
+.stat-val{font-size:26px;font-weight:800;line-height:1;letter-spacing:-1px;color:var(--text)}
+.stat-val.green{color:var(--green)}
+.stat-val.amber{color:var(--amber)}
+.stat-label{font-size:11px;color:var(--muted);margin-top:4px;font-weight:500}
+
+/* ── Summary card ────────────────────────────────────────────────────── */
+.summary{
+  background:var(--surface);border:1px solid var(--border);border-radius:10px;
+  padding:14px 16px;margin-bottom:16px;
+  display:none;flex-direction:row;gap:12px;align-items:flex-start;
 }
-.card.investigate::before { background: var(--green); box-shadow: 0 0 12px var(--green); }
-.card.watchlist::before   { background: var(--yellow); box-shadow: 0 0 12px var(--yellow); }
-.card.pass::before        { background: var(--border); }
-.card:hover { border-color: var(--border2); box-shadow: 0 4px 24px rgba(0,0,0,.4); }
+.summary-icon{font-size:18px;flex-shrink:0;padding-top:1px}
+.summary-text{font-size:12px;color:var(--text2);line-height:1.6}
 
-.card-grid { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: start; }
-.card-left {}
-.card-name-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 3px; }
-.card-name { font-size: 15px; font-weight: 700; color: var(--text); }
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 2px 8px;
-  border-radius: 5px;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .02em;
-  text-transform: uppercase;
+/* ── Toolbar ─────────────────────────────────────────────────────────── */
+.toolbar{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:12px;
 }
-.badge-investigate { background: var(--green-dim); color: var(--green); border: 1px solid rgba(34,210,114,.2); }
-.badge-watchlist   { background: var(--yellow-dim); color: var(--yellow); border: 1px solid rgba(245,200,66,.2); }
-.badge-pass        { background: var(--red-dim); color: var(--red); border: 1px solid rgba(240,93,93,.15); }
-.badge-star        { background: rgba(251,146,60,.1); color: var(--orange); border: 1px solid rgba(251,146,60,.2); }
+.result-count{font-size:12px;color:var(--muted);font-weight:500}
+.result-count strong{color:var(--text2)}
+.view-toggle{display:flex;gap:4px}
+.view-btn{
+  background:none;border:1px solid var(--border);border-radius:6px;
+  color:var(--muted);padding:4px 8px;cursor:pointer;font-size:13px;
+  transition:all .12s;
+}
+.view-btn.active,.view-btn:hover{background:var(--surface2);border-color:var(--border2);color:var(--text)}
 
-.card-prev { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
-.card-prev .arrow { color: var(--accent); margin: 0 4px; }
-.card-prev strong { color: var(--muted2); }
+/* ── Person cards ────────────────────────────────────────────────────── */
+.cards-list{display:flex;flex-direction:column;gap:10px}
 
-.thesis {
-  font-size: 12px;
-  color: var(--muted2);
-  line-height: 1.65;
-  margin-bottom: 10px;
-  padding: 10px 12px;
-  background: var(--bg2);
-  border-radius: 7px;
-  border-left: 2px solid var(--border2);
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:16px 18px;
+  position:relative;
+  overflow:hidden;
+  transition:border-color .15s,box-shadow .15s;
+}
+.card:hover{border-color:var(--border2);box-shadow:0 2px 20px rgba(0,0,0,.3)}
+.card::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:12px 0 0 12px;
+}
+.card.investigate::before{background:var(--green)}
+.card.watchlist::before{background:var(--amber)}
+.card.pass::before{background:var(--border2)}
+
+/* Card header */
+.card-header{display:flex;align-items:flex-start;gap:12px;margin-bottom:10px}
+.avatar{
+  width:38px;height:38px;border-radius:10px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:700;letter-spacing:-.5px;
+  background:var(--surface3);color:var(--text2);
+}
+.avatar.investigate{background:var(--green-dim);color:var(--green)}
+.avatar.watchlist{background:var(--amber-dim);color:var(--amber)}
+.card-meta{flex:1;min-width:0}
+.card-name-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:3px}
+.card-name{font-size:15px;font-weight:700;color:var(--text);letter-spacing:-.2px}
+.badge{
+  font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;
+  letter-spacing:.03em;white-space:nowrap;
+}
+.badge-inv{background:var(--green-dim);color:var(--green);border:1px solid rgba(16,185,129,.2)}
+.badge-watch{background:var(--amber-dim);color:var(--amber);border:1px solid rgba(245,158,11,.2)}
+.badge-pass{background:var(--surface3);color:var(--muted2);border:1px solid var(--border)}
+.badge-star{background:rgba(251,191,36,.1);color:#fbbf24;border:1px solid rgba(251,191,36,.2)}
+.card-sub{font-size:12px;color:var(--muted2);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.arrow-sep{color:var(--accent);font-size:11px}
+.card-score{display:flex;flex-direction:column;align-items:center;flex-shrink:0;gap:3px}
+.score-num{
+  font-size:22px;font-weight:800;letter-spacing:-1px;line-height:1;
+}
+.score-label{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.score-bar{width:36px;height:3px;background:var(--surface3);border-radius:2px;overflow:hidden}
+.score-bar-fill{height:100%;border-radius:2px}
+
+/* Thesis */
+.thesis{
+  font-size:12px;color:var(--text2);line-height:1.65;
+  background:var(--surface2);border-radius:8px;
+  padding:10px 12px;margin-bottom:10px;
+  border-left:2px solid var(--border2);
 }
 
-.tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
-.tag {
-  padding: 3px 8px;
-  border-radius: 5px;
-  font-size: 10px;
-  font-weight: 500;
-  border: 1px solid transparent;
+/* Tags */
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+.tag{
+  font-size:10px;font-weight:600;padding:3px 8px;border-radius:20px;
+  border:1px solid var(--border2);background:var(--surface2);color:var(--muted2);
 }
-.tag-geo      { background: var(--blue-dim); color: var(--blue); border-color: rgba(91,138,245,.2); }
-.tag-sector   { background: var(--purple-dim); color: var(--purple); border-color: rgba(167,139,250,.2); }
-.tag-signal   { background: rgba(124,111,255,.08); color: var(--accent); border-color: rgba(124,111,255,.2); }
-.tag-exp      { background: var(--surface3); color: var(--muted2); }
-.tag-teal     { background: rgba(45,212,191,.08); color: var(--teal); border-color: rgba(45,212,191,.2); }
+.tag-geo{background:rgba(59,130,246,.08);color:var(--blue);border-color:rgba(59,130,246,.2)}
+.tag-sector{background:var(--accent-dim);color:var(--accent);border-color:rgba(99,102,241,.2)}
+.tag-exp{color:var(--muted2)}
+.tag-high{background:rgba(16,185,129,.08);color:var(--green);border-color:rgba(16,185,129,.2)}
+.tag-2x{background:rgba(251,191,36,.08);color:#fbbf24;border-color:rgba(251,191,36,.2)}
 
-.signals-row { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }
-.signal-evidence { margin-bottom: 10px; display: flex; flex-direction: column; gap: 3px; }
-.sig-row { font-size: 11px; color: var(--muted); line-height: 1.4; display: flex; align-items: baseline; gap: 5px; }
-.sig-src { font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: var(--muted2); background: var(--surface3); border-radius: 4px; padding: 1px 5px; flex-shrink: 0; }
-.sig-link { color: var(--accent); text-decoration: none; font-size: 10px; flex-shrink: 0; }
-.sig-link:hover { text-decoration: underline; }
-.signal-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 3px 9px;
-  border-radius: 20px;
-  font-size: 10px;
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  color: var(--muted2);
+/* Signal pills */
+.sig-pills{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px}
+.sig-pill{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:10px;font-weight:600;padding:3px 9px;border-radius:20px;
+  background:var(--surface3);border:1px solid var(--border2);color:var(--muted2);
 }
+.sig-pill.stealth_founder,.sig-pill.stealth{background:rgba(139,92,246,.08);color:var(--purple);border-color:rgba(139,92,246,.2)}
+.sig-pill.executive_departure,.sig-pill.departure{background:rgba(239,68,68,.08);color:var(--red);border-color:rgba(239,68,68,.15)}
+.sig-pill.funding_news,.sig-pill.funding{background:rgba(16,185,129,.08);color:var(--green);border-color:rgba(16,185,129,.2)}
+.sig-pill.company_registration,.sig-pill.registry{background:rgba(6,182,212,.08);color:var(--teal);border-color:rgba(6,182,212,.2)}
+.sig-pill.github_launch,.sig-pill.github{background:rgba(251,191,36,.08);color:#fbbf24;border-color:rgba(251,191,36,.2)}
 
-.links-row { display: flex; gap: 6px; flex-wrap: wrap; }
-.link-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 4px 10px;
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  color: var(--muted2);
-  font-size: 11px;
-  transition: all .15s;
-  text-decoration: none;
+/* Signal evidence */
+.sig-evidence{display:flex;flex-direction:column;gap:4px;margin-bottom:10px}
+.sig-ev-row{
+  display:flex;align-items:flex-start;gap:7px;
+  font-size:11px;color:var(--muted2);line-height:1.45;
 }
-.link-btn:hover { background: var(--surface3); border-color: var(--border2); color: var(--text); }
+.sig-ev-src{
+  font-size:9px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  padding:2px 6px;border-radius:4px;background:var(--surface3);
+  border:1px solid var(--border2);color:var(--muted2);flex-shrink:0;margin-top:1px;
+}
+.sig-ev-src.news{background:rgba(59,130,246,.08);color:var(--blue);border-color:rgba(59,130,246,.2)}
+.sig-ev-src.linkedin{background:rgba(59,130,246,.1);color:#60a5fa;border-color:rgba(96,165,250,.2)}
+.sig-ev-src.twitter{background:rgba(99,102,241,.08);color:#a78bfa;border-color:rgba(167,139,250,.2)}
+.sig-ev-src.github{background:rgba(251,191,36,.07);color:#fcd34d;border-color:rgba(252,211,77,.2)}
+.sig-ev-src.registry{background:rgba(6,182,212,.08);color:var(--teal);border-color:rgba(6,182,212,.2)}
+.sig-ev-src.headcount{background:rgba(16,185,129,.07);color:#34d399;border-color:rgba(52,211,153,.2)}
+.sig-ev-desc{flex:1;color:var(--muted2)}
+.sig-ev-link{color:var(--accent);font-size:10px;flex-shrink:0;margin-top:1px;text-decoration:none}
+.sig-ev-link:hover{text-decoration:underline}
 
-/* ── Score block ──────────────────────────────────────────────────── */
-.score-block { text-align: center; min-width: 72px; }
-.score-ring {
-  position: relative;
-  width: 60px; height: 60px;
-  margin: 0 auto 6px;
+/* Links row */
+.links-row{display:flex;gap:6px;flex-wrap:wrap}
+.link-btn{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:11px;font-weight:600;padding:4px 10px;border-radius:7px;
+  background:var(--surface2);border:1px solid var(--border2);color:var(--text2);
+  transition:all .12s;
 }
-.score-ring svg { transform: rotate(-90deg); }
-.score-ring .track { fill: none; stroke: var(--surface3); stroke-width: 4; }
-.score-ring .fill  { fill: none; stroke-width: 4; stroke-linecap: round; transition: stroke-dashoffset .5s ease; }
-.score-num {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 15px;
-  font-weight: 800;
-}
-.score-conf { font-size: 9px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.link-btn:hover{background:var(--surface3);border-color:var(--border2);color:var(--text)}
 
-/* ── No results ───────────────────────────────────────────────────── */
-.empty { text-align: center; padding: 60px 20px; color: var(--muted); }
-.empty-icon { font-size: 36px; margin-bottom: 12px; }
-.empty-text { font-size: 14px; }
+/* Compact mode */
+.card.compact{padding:10px 14px}
+.card.compact .card-header{margin-bottom:0}
+.card.compact .avatar{width:32px;height:32px;border-radius:8px;font-size:12px}
+.card.compact .card-name{font-size:13px}
 
-/* ── Loading skeleton ─────────────────────────────────────────────── */
-.skeleton {
-  background: linear-gradient(90deg, var(--surface) 25%, var(--surface2) 50%, var(--surface) 75%);
-  background-size: 200% 100%;
-  animation: shimmer 1.5s infinite;
-  border-radius: 8px;
+/* Empty state */
+.empty{
+  text-align:center;padding:60px 20px;color:var(--muted);
+  display:flex;flex-direction:column;align-items:center;gap:12px;
 }
-@keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+.empty-icon{font-size:36px}
+.empty-title{font-size:15px;font-weight:600;color:var(--muted2)}
+.empty-sub{font-size:12px;line-height:1.6;max-width:300px}
 
-/* ── Toast ────────────────────────────────────────────────────────── */
-/* ── PAT modal ────────────────────────────────────────────────────── */
-.pat-overlay {
-  display: none;
-  position: fixed; inset: 0;
-  background: rgba(0,0,0,.6);
-  z-index: 200;
-  align-items: center;
-  justify-content: center;
+/* Toast */
+.toast{
+  position:fixed;bottom:20px;right:20px;z-index:9999;
+  background:var(--surface3);border:1px solid var(--border2);border-radius:9px;
+  color:var(--text);font-size:12px;font-weight:500;
+  padding:10px 16px;
+  opacity:0;transform:translateY(10px);pointer-events:none;
+  transition:opacity .2s,transform .2s;
+  max-width:320px;
 }
-.pat-overlay.open { display: flex; }
-.pat-box {
-  background: var(--surface);
-  border: 1px solid var(--border2);
-  border-radius: 14px;
-  padding: 28px 28px 22px;
-  width: 420px;
-  max-width: 90vw;
-  box-shadow: 0 20px 60px rgba(0,0,0,.5);
-}
-.pat-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
-.pat-sub { font-size: 12px; color: var(--muted); margin-bottom: 18px; line-height: 1.5; }
-.pat-input {
-  width: 100%;
-  background: var(--bg);
-  border: 1px solid var(--border2);
-  border-radius: 8px;
-  padding: 9px 12px;
-  color: var(--text);
-  font-size: 13px;
-  outline: none;
-  font-family: monospace;
-  margin-bottom: 16px;
-}
-.pat-input:focus { border-color: var(--accent); }
-.pat-actions { display: flex; gap: 8px; justify-content: flex-end; }
-.pat-cancel {
-  background: transparent; border: 1px solid var(--border2);
-  border-radius: 7px; padding: 7px 16px;
-  color: var(--muted2); font-size: 12px; cursor: pointer;
-}
-.pat-save {
-  background: var(--accent); border: none;
-  border-radius: 7px; padding: 7px 18px;
-  color: #fff; font-size: 12px; font-weight: 600; cursor: pointer;
-}
-.pat-hint { font-size: 11px; color: var(--muted); margin-top: 10px; }
-.pat-hint a { color: var(--accent); }
+.toast.show{opacity:1;transform:translateY(0)}
 
-.toast {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--surface3);
-  border: 1px solid var(--border2);
-  border-radius: 8px;
-  padding: 10px 16px;
-  font-size: 12px;
-  color: var(--text);
-  z-index: 100;
-  opacity: 0;
-  transform: translateY(8px);
-  transition: all .2s;
+/* PAT overlay */
+.pat-overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:10000;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transition:opacity .2s;
 }
-.toast.show { opacity: 1; transform: translateY(0); }
+.pat-overlay.open{opacity:1;pointer-events:all}
+.pat-box{
+  background:var(--surface);border:1px solid var(--border2);border-radius:14px;
+  padding:28px 28px 24px;width:380px;max-width:92vw;
+  box-shadow:0 20px 60px rgba(0,0,0,.6);
+}
+.pat-title{font-size:16px;font-weight:700;margin-bottom:6px}
+.pat-sub{font-size:12px;color:var(--muted2);line-height:1.6;margin-bottom:16px}
+.pat-input{
+  width:100%;font-size:12px;font-family:monospace;
+  background:var(--surface2);border:1px solid var(--border2);
+  color:var(--text);border-radius:8px;padding:10px 12px;outline:none;
+  transition:border-color .15s;margin-bottom:14px;
+}
+.pat-input:focus{border-color:var(--accent)}
+.pat-actions{display:flex;gap:8px;justify-content:flex-end;margin-bottom:10px}
+.pat-cancel{background:none;border:1px solid var(--border2);color:var(--muted2);font-family:var(--font);font-size:12px;border-radius:7px;padding:7px 14px;cursor:pointer}
+.pat-cancel:hover{color:var(--text)}
+.pat-save{background:var(--accent);color:#fff;border:none;font-family:var(--font);font-size:12px;font-weight:600;border-radius:7px;padding:7px 14px;cursor:pointer}
+.pat-save:hover{background:var(--accent2)}
+.pat-hint{font-size:11px;color:var(--muted);line-height:1.5}
+.pat-hint a{color:var(--accent)}
+.pat-hint code{background:var(--surface3);padding:1px 5px;border-radius:4px}
+
+/* Skeleton */
+.skeleton{background:var(--surface2);border-radius:8px;animation:shimmer 1.5s infinite linear;background-size:200% 100%}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+.skeleton{background:linear-gradient(90deg,var(--surface2) 25%,var(--surface3) 50%,var(--surface2) 75%);background-size:400% 100%}
 </style>
 </head>
 <body>
 <div class="app">
 
-<!-- ── Nav ──────────────────────────────────────────────────────────── -->
-<nav class="nav">
-  <div class="nav-logo">
-    <div class="dot"></div>
+<!-- ── Top bar ───────────────────────────────────────────────────────── -->
+<header class="topbar">
+  <div class="logo">
+    <div class="logo-dot"></div>
     VC Sourcing
   </div>
-  <span class="nav-tag">India + SEA</span>
-  <span class="nav-tag">Pre-seed · Seed</span>
-  <div class="nav-spacer"></div>
-  <div class="nav-date" id="nav-date">—</div>
-  <button class="nav-refresh" onclick="loadData()">↺ Refresh</button>
-  <select class="nav-days" id="days-select" title="Scan window">
+  <span class="logo-sub">India + SEA · Pre-seed/Seed</span>
+  <div class="topbar-spacer"></div>
+
+  <div class="run-status" id="run-status">
+    <div class="dot" id="status-dot"></div>
+    <span id="status-text">Loading…</span>
+  </div>
+
+  <select class="days-select" id="days-select" title="Days back to scan">
     <option value="3">3 days</option>
     <option value="7" selected>7 days</option>
     <option value="30">30 days</option>
@@ -538,583 +384,603 @@ input[type=range]::-webkit-slider-thumb {
     <option value="180">180 days</option>
     <option value="360">360 days</option>
   </select>
-  <button class="nav-run" id="run-btn" onclick="triggerGHRun()">▶ Run Pipeline</button>
-</nav>
 
-<!-- ── Main ──────────────────────────────────────────────────────────── -->
-<div class="main">
+  <button class="run-btn" id="run-btn" onclick="triggerGHRun()">
+    ▶ Run Pipeline
+  </button>
+</header>
 
-  <!-- ── Sidebar ──────────────────────────────────────────────────── -->
-  <aside class="sidebar" id="sidebar">
+<!-- ── Body ──────────────────────────────────────────────────────────── -->
+<div class="body">
 
-    <div class="sidebar-section">
-      <div class="sidebar-label">Action</div>
-      <div class="filter-btn active" data-filter="action" data-val="all" onclick="setFilter('action','all',this)">
-        <span><span class="filter-emoji">🔍</span>All signals</span>
-        <span class="count" id="cnt-action-all">0</span>
-      </div>
-      <div class="filter-btn" data-filter="action" data-val="investigate" onclick="setFilter('action','investigate',this)">
-        <span><span class="filter-emoji">🟢</span>Investigate</span>
-        <span class="count" id="cnt-investigate">0</span>
-      </div>
-      <div class="filter-btn" data-filter="action" data-val="watchlist" onclick="setFilter('action','watchlist',this)">
-        <span><span class="filter-emoji">🟡</span>Watchlist</span>
-        <span class="count" id="cnt-watchlist">0</span>
-      </div>
-      <div class="filter-btn" data-filter="action" data-val="pass" onclick="setFilter('action','pass',this)">
-        <span><span class="filter-emoji">🔴</span>Pass</span>
-        <span class="count" id="cnt-pass">0</span>
-      </div>
+  <!-- ── Sidebar ─────────────────────────────────────────────────────── -->
+  <aside class="sidebar">
+
+    <div class="sidebar-label">Action</div>
+    <div class="filter-row active" data-filter="action" data-val="all" onclick="setFilter('action','all',this)">
+      <div class="filter-row-label"><span class="filter-icon">⚡</span>All founders</div>
+      <span class="filter-count" id="cnt-action-all">0</span>
+    </div>
+    <div class="filter-row" data-filter="action" data-val="investigate" onclick="setFilter('action','investigate',this)">
+      <div class="filter-row-label"><span class="filter-icon" style="color:var(--green)">●</span>Investigate</div>
+      <span class="filter-count" id="cnt-investigate">0</span>
+    </div>
+    <div class="filter-row" data-filter="action" data-val="watchlist" onclick="setFilter('action','watchlist',this)">
+      <div class="filter-row-label"><span class="filter-icon" style="color:var(--amber)">●</span>Watchlist</div>
+      <span class="filter-count" id="cnt-watchlist">0</span>
+    </div>
+    <div class="filter-row" data-filter="action" data-val="pass" onclick="setFilter('action','pass',this)">
+      <div class="filter-row-label"><span class="filter-icon" style="color:var(--muted)">●</span>Pass</div>
+      <span class="filter-count" id="cnt-pass">0</span>
     </div>
 
-    <div class="sidebar-section">
-      <div class="sidebar-label">Geography</div>
-      <div class="filter-btn active" data-filter="geo" data-val="all" onclick="setFilter('geo','all',this)">
-        <span><span class="filter-emoji">🌏</span>All regions</span>
-        <span class="count" id="cnt-geo-all">0</span>
-      </div>
-      <div class="filter-btn" data-filter="geo" data-val="India" onclick="setFilter('geo','India',this)">
-        <span><span class="filter-emoji">🇮🇳</span>India</span>
-        <span class="count" id="cnt-India">0</span>
-      </div>
-      <div class="filter-btn" data-filter="geo" data-val="Singapore" onclick="setFilter('geo','Singapore',this)">
-        <span><span class="filter-emoji">🇸🇬</span>Singapore</span>
-        <span class="count" id="cnt-Singapore">0</span>
-      </div>
-      <div class="filter-btn" data-filter="geo" data-val="Indonesia" onclick="setFilter('geo','Indonesia',this)">
-        <span><span class="filter-emoji">🇮🇩</span>Indonesia</span>
-        <span class="count" id="cnt-Indonesia">0</span>
-      </div>
-      <div class="filter-btn" data-filter="geo" data-val="Vietnam" onclick="setFilter('geo','Vietnam',this)">
-        <span><span class="filter-emoji">🇻🇳</span>Vietnam</span>
-        <span class="count" id="cnt-Vietnam">0</span>
-      </div>
-      <div class="filter-btn" data-filter="geo" data-val="Malaysia" onclick="setFilter('geo','Malaysia',this)">
-        <span><span class="filter-emoji">🇲🇾</span>Malaysia</span>
-        <span class="count" id="cnt-Malaysia">0</span>
-      </div>
-      <div class="filter-btn" data-filter="geo" data-val="Philippines" onclick="setFilter('geo','Philippines',this)">
-        <span><span class="filter-emoji">🇵🇭</span>Philippines</span>
-        <span class="count" id="cnt-Philippines">0</span>
-      </div>
-      <div class="filter-btn" data-filter="geo" data-val="Thailand" onclick="setFilter('geo','Thailand',this)">
-        <span><span class="filter-emoji">🇹🇭</span>Thailand</span>
-        <span class="count" id="cnt-Thailand">0</span>
-      </div>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-label">Geography</div>
+    <div class="filter-row active" data-filter="geo" data-val="all" onclick="setFilter('geo','all',this)">
+      <div class="filter-row-label"><span class="filter-icon">🌏</span>All regions</div>
+      <span class="filter-count" id="cnt-geo-all">0</span>
+    </div>
+    <div class="filter-row" data-filter="geo" data-val="India" onclick="setFilter('geo','India',this)">
+      <div class="filter-row-label"><span class="filter-icon">🇮🇳</span>India</div>
+      <span class="filter-count" id="cnt-India">0</span>
+    </div>
+    <div class="filter-row" data-filter="geo" data-val="Singapore" onclick="setFilter('geo','Singapore',this)">
+      <div class="filter-row-label"><span class="filter-icon">🇸🇬</span>Singapore</div>
+      <span class="filter-count" id="cnt-Singapore">0</span>
+    </div>
+    <div class="filter-row" data-filter="geo" data-val="Indonesia" onclick="setFilter('geo','Indonesia',this)">
+      <div class="filter-row-label"><span class="filter-icon">🇮🇩</span>Indonesia</div>
+      <span class="filter-count" id="cnt-Indonesia">0</span>
+    </div>
+    <div class="filter-row" data-filter="geo" data-val="Vietnam" onclick="setFilter('geo','Vietnam',this)">
+      <div class="filter-row-label"><span class="filter-icon">🇻🇳</span>Vietnam</div>
+      <span class="filter-count" id="cnt-Vietnam">0</span>
+    </div>
+    <div class="filter-row" data-filter="geo" data-val="Malaysia" onclick="setFilter('geo','Malaysia',this)">
+      <div class="filter-row-label"><span class="filter-icon">🇲🇾</span>Malaysia</div>
+      <span class="filter-count" id="cnt-Malaysia">0</span>
+    </div>
+    <div class="filter-row" data-filter="geo" data-val="Philippines" onclick="setFilter('geo','Philippines',this)">
+      <div class="filter-row-label"><span class="filter-icon">🇵🇭</span>Philippines</div>
+      <span class="filter-count" id="cnt-Philippines">0</span>
+    </div>
+    <div class="filter-row" data-filter="geo" data-val="Thailand" onclick="setFilter('geo','Thailand',this)">
+      <div class="filter-row-label"><span class="filter-icon">🇹🇭</span>Thailand</div>
+      <span class="filter-count" id="cnt-Thailand">0</span>
     </div>
 
-    <div class="sidebar-section">
-      <div class="sidebar-label">Signal type</div>
-      <div class="filter-btn active" data-filter="signal" data-val="all" onclick="setFilter('signal','all',this)">
-        <span><span class="filter-emoji">⚡</span>All signals</span>
-        <span class="count">—</span>
-      </div>
-      <div class="filter-btn" data-filter="signal" data-val="stealth_founder" onclick="setFilter('signal','stealth_founder',this)">
-        <span><span class="filter-emoji">🥷</span>Stealth</span><span class="count">—</span>
-      </div>
-      <div class="filter-btn" data-filter="signal" data-val="executive_departure" onclick="setFilter('signal','executive_departure',this)">
-        <span><span class="filter-emoji">🚪</span>Departure</span><span class="count">—</span>
-      </div>
-      <div class="filter-btn" data-filter="signal" data-val="company_registration" onclick="setFilter('signal','company_registration',this)">
-        <span><span class="filter-emoji">🏢</span>Registry</span><span class="count">—</span>
-      </div>
-      <div class="filter-btn" data-filter="signal" data-val="twitter_announcement" onclick="setFilter('signal','twitter_announcement',this)">
-        <span><span class="filter-emoji">🐦</span>Twitter/X</span><span class="count">—</span>
-      </div>
-      <div class="filter-btn" data-filter="signal" data-val="github_launch" onclick="setFilter('signal','github_launch',this)">
-        <span><span class="filter-emoji">🐙</span>GitHub</span><span class="count">—</span>
-      </div>
-      <div class="filter-btn" data-filter="signal" data-val="headcount_growth" onclick="setFilter('signal','headcount_growth',this)">
-        <span><span class="filter-emoji">📈</span>Headcount</span><span class="count">—</span>
-      </div>
-      <div class="filter-btn" data-filter="signal" data-val="funding_news" onclick="setFilter('signal','funding_news',this)">
-        <span><span class="filter-emoji">💰</span>Funding</span><span class="count">—</span>
-      </div>
-      <div class="filter-btn" data-filter="signal" data-val="product_launch" onclick="setFilter('signal','product_launch',this)">
-        <span><span class="filter-emoji">🚀</span>Product launch</span><span class="count">—</span>
-      </div>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-label">Signal type</div>
+    <div class="filter-row active" data-filter="signal" data-val="all" onclick="setFilter('signal','all',this)">
+      <div class="filter-row-label"><span class="filter-icon">⚡</span>All signals</div>
+      <span class="filter-count">—</span>
+    </div>
+    <div class="filter-row" data-filter="signal" data-val="stealth_founder" onclick="setFilter('signal','stealth_founder',this)">
+      <div class="filter-row-label"><span class="filter-icon">🥷</span>Stealth</div><span class="filter-count">—</span>
+    </div>
+    <div class="filter-row" data-filter="signal" data-val="executive_departure" onclick="setFilter('signal','executive_departure',this)">
+      <div class="filter-row-label"><span class="filter-icon">🚪</span>Departure</div><span class="filter-count">—</span>
+    </div>
+    <div class="filter-row" data-filter="signal" data-val="company_registration" onclick="setFilter('signal','company_registration',this)">
+      <div class="filter-row-label"><span class="filter-icon">🏢</span>Registry</div><span class="filter-count">—</span>
+    </div>
+    <div class="filter-row" data-filter="signal" data-val="funding_news" onclick="setFilter('signal','funding_news',this)">
+      <div class="filter-row-label"><span class="filter-icon">💰</span>Funding</div><span class="filter-count">—</span>
+    </div>
+    <div class="filter-row" data-filter="signal" data-val="github_launch" onclick="setFilter('signal','github_launch',this)">
+      <div class="filter-row-label"><span class="filter-icon">🐙</span>GitHub</div><span class="filter-count">—</span>
+    </div>
+    <div class="filter-row" data-filter="signal" data-val="twitter_announcement" onclick="setFilter('signal','twitter_announcement',this)">
+      <div class="filter-row-label"><span class="filter-icon">𝕏</span>Twitter/X</div><span class="filter-count">—</span>
     </div>
 
-    <div class="sidebar-section">
-      <div class="sidebar-label">Min score</div>
-      <div class="score-slider-wrap">
-        <div class="score-slider-label">Score threshold <span id="slider-val">0+</span></div>
-        <input type="range" id="score-slider" min="0" max="100" step="5" value="0"
-               oninput="onSlider(this)">
-      </div>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-label">Min score</div>
+    <div class="slider-wrap">
+      <div class="slider-label"><span>Threshold</span><strong id="slider-val">0+</strong></div>
+      <input type="range" id="score-slider" min="0" max="100" step="5" value="0" oninput="onSlider(this)">
     </div>
 
-    <div class="sidebar-section">
-      <div class="sidebar-label">Sources</div>
-      <div class="source-mini-chart" id="source-chart"></div>
-    </div>
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-label">Source breakdown</div>
+    <div class="src-list" id="source-chart"></div>
 
   </aside>
 
-  <!-- ── Content ──────────────────────────────────────────────────── -->
-  <div class="content">
-    <div class="content-inner">
+  <!-- ── Main content ─────────────────────────────────────────────────── -->
+  <main class="content">
 
-      <!-- Stats strip -->
-      <div class="stats-strip" id="stats-strip">
-        <div class="stat skeleton" style="height:72px"></div>
-        <div class="stat skeleton" style="height:72px"></div>
-        <div class="stat skeleton" style="height:72px"></div>
-        <div class="stat skeleton" style="height:72px"></div>
-        <div class="stat skeleton" style="height:72px"></div>
-        <div class="stat skeleton" style="height:72px"></div>
-      </div>
-
-      <!-- Executive summary -->
-      <div class="summary-card" id="summary-card" style="display:none">
-        <div class="summary-icon">🧠</div>
-        <div class="summary-text" id="summary-text">Loading...</div>
-      </div>
-
-      <!-- Toolbar -->
-      <div class="toolbar">
-        <div class="results-count" id="results-count"></div>
-        <div class="view-toggle">
-          <button class="view-btn active" id="view-list" onclick="setView('list')">☰</button>
-          <button class="view-btn" id="view-compact" onclick="setView('compact')">⊟</button>
-        </div>
-      </div>
-
-      <!-- Persons grid -->
-      <div id="persons-list" class="persons-list"></div>
-
+    <!-- Stats -->
+    <div class="stats-row" id="stats-row">
+      <div class="stat-card skeleton" style="height:64px"></div>
+      <div class="stat-card skeleton" style="height:64px"></div>
+      <div class="stat-card skeleton" style="height:64px"></div>
+      <div class="stat-card skeleton" style="height:64px"></div>
+      <div class="stat-card skeleton" style="height:64px"></div>
     </div>
-  </div>
+
+    <!-- AI Summary -->
+    <div class="summary" id="summary">
+      <div class="summary-icon">🧠</div>
+      <div class="summary-text" id="summary-text"></div>
+    </div>
+
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <div class="result-count" id="result-count"></div>
+      <div class="view-toggle">
+        <button class="view-btn active" id="view-list" onclick="setView('list')" title="Detailed view">≡</button>
+        <button class="view-btn" id="view-compact" onclick="setView('compact')" title="Compact view">⊟</button>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="cards-list" id="cards-list"></div>
+
+  </main>
 </div>
 </div>
 
 <!-- Toast -->
 <div class="toast" id="toast"></div>
 
-<!-- ── PAT modal (shown only on first use) ──────────────────────── -->
+<!-- PAT modal -->
 <div class="pat-overlay" id="pat-overlay">
   <div class="pat-box">
     <div class="pat-title">Connect GitHub</div>
-    <div class="pat-sub">Enter a GitHub Personal Access Token with <strong>workflow</strong> scope. Saved in your browser — you'll never be asked again.</div>
-    <input class="pat-input" id="pat-input" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off" spellcheck="false" />
+    <div class="pat-sub">Enter a GitHub PAT with <strong>workflow</strong> scope. Saved in your browser — never asked again.</div>
+    <input class="pat-input" id="pat-input" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" autocomplete="off" spellcheck="false"/>
     <div class="pat-actions">
       <button class="pat-cancel" id="pat-cancel-btn">Cancel</button>
-      <button class="pat-save"   id="pat-save-btn">Save &amp; Run</button>
+      <button class="pat-save" id="pat-save-btn">Save &amp; Run</button>
     </div>
-    <div class="pat-hint">Create one at <a href="https://github.com/settings/tokens/new?scopes=workflow" target="_blank">github.com/settings/tokens</a> → select <code>workflow</code> scope.</div>
+    <div class="pat-hint">Create at <a href="https://github.com/settings/tokens/new?scopes=workflow" target="_blank">github.com/settings/tokens</a> → select <code>workflow</code> scope.</div>
   </div>
 </div>
 
 <script>
-// ── State ────────────────────────────────────────────────────────────
-let allPersons = [];
-let data = {};
-let filters = { action: 'all', geo: 'all', signal: 'all', score: 0 };
+// ── State ─────────────────────────────────────────────────────────────
+let allPersons = [], data = {};
+let filters = { action:'all', geo:'all', signal:'all', score:0 };
 let viewMode = 'list';
+const GH_REPO = 'aviral-droid/vc-sourcing-agent';
+const GH_WORKFLOW = 'sourcing.yml';
 
 // ── Signal config ─────────────────────────────────────────────────────
 const SIG = {
-  stealth_founder:      { emoji: '🥷', label: 'Stealth' },
-  executive_departure:  { emoji: '🚪', label: 'Departure' },
-  github_launch:        { emoji: '🐙', label: 'GitHub' },
-  funding_news:         { emoji: '💰', label: 'Funding' },
-  company_registration: { emoji: '🏢', label: 'Registry' },
-  twitter_announcement: { emoji: '🐦', label: 'Twitter/X' },
-  headcount_growth:     { emoji: '📈', label: 'Growth' },
-  headcount_drop:       { emoji: '📉', label: 'Drop' },
-  product_launch:       { emoji: '🚀', label: 'Launch' },
-  patent_filing:        { emoji: '📄', label: 'Patent' },
+  stealth_founder:      {emoji:'🥷', label:'Stealth'},
+  executive_departure:  {emoji:'🚪', label:'Departure'},
+  github_launch:        {emoji:'🐙', label:'GitHub'},
+  funding_news:         {emoji:'💰', label:'Funding'},
+  company_registration: {emoji:'🏢', label:'Registry'},
+  mca_registration:     {emoji:'🏢', label:'MCA India'},
+  acra_registration:    {emoji:'🏢', label:'ACRA SG'},
+  twitter_announcement: {emoji:'𝕏',  label:'Twitter/X'},
+  twitter_announce:     {emoji:'𝕏',  label:'Twitter/X'},
+  headcount_growth:     {emoji:'📈', label:'Growth signal'},
+  headcount_drop:       {emoji:'📉', label:'Layoff signal'},
+  second_time_founder:  {emoji:'⭐', label:'2x Founder'},
+  news_mention:         {emoji:'📰', label:'News'},
 };
 
-const GEO_FLAG = {
-  India: '🇮🇳', Singapore: '🇸🇬', Indonesia: '🇮🇩',
-  Vietnam: '🇻🇳', Malaysia: '🇲🇾', Philippines: '🇵🇭', Thailand: '🇹🇭',
-};
+const GEO_FLAG = {India:'🇮🇳',Singapore:'🇸🇬',Indonesia:'🇮🇩',Vietnam:'🇻🇳',Malaysia:'🇲🇾',Philippines:'🇵🇭',Thailand:'🇹🇭'};
 
 // ── Helpers ───────────────────────────────────────────────────────────
-function scoreColor(s) {
-  if (s >= 75) return '#22d272';
-  if (s >= 55) return '#f5c842';
-  return '#f05d5d';
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+
+function scoreColor(s){
+  if(s>=75) return 'var(--green)';
+  if(s>=50) return 'var(--amber)';
+  return 'var(--red)';
 }
 
-function scoreRing(score, size=60) {
-  const r = (size/2) - 6;
-  const circ = 2 * Math.PI * r;
-  const offset = circ * (1 - score/100);
-  const col = scoreColor(score);
-  return `<div class="score-ring" style="width:${size}px;height:${size}px">
-    <svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}">
-      <circle class="track" cx="${size/2}" cy="${size/2}" r="${r}"/>
-      <circle class="fill" cx="${size/2}" cy="${size/2}" r="${r}"
-        stroke="${col}"
-        stroke-dasharray="${circ}"
-        stroke-dashoffset="${offset}"
-        style="filter:drop-shadow(0 0 4px ${col}66)"/>
-    </svg>
-    <div class="score-num" style="color:${col}">${score}</div>
-  </div>`;
+function initials(name){
+  if(!name || name==='Unknown') return '?';
+  const parts = name.trim().split(/\s+/);
+  if(parts.length===1) return parts[0][0].toUpperCase();
+  return (parts[0][0]+parts[parts.length-1][0]).toUpperCase();
 }
 
-function escHtml(s) {
-  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+function timeAgo(isoStr){
+  if(!isoStr) return 'never';
+  const d = new Date(isoStr);
+  if(isNaN(d)) return 'never';
+  const mins = Math.floor((Date.now()-d)/60000);
+  if(mins<1)  return 'just now';
+  if(mins<60) return `${mins}m ago`;
+  const hrs = Math.floor(mins/60);
+  if(hrs<24)  return `${hrs}h ago`;
+  return `${Math.floor(hrs/24)}d ago`;
 }
 
-function toast(msg, ms=2500) {
-  const el = document.getElementById('toast');
-  el.textContent = msg;
-  el.classList.add('show');
-  setTimeout(() => el.classList.remove('show'), ms);
+function nextRunStr(){
+  const now = new Date();
+  const next = new Date(now);
+  next.setUTCHours(7,0,0,0);
+  if(next<=now) next.setUTCDate(next.getUTCDate()+1);
+  const mins = Math.round((next-now)/60000);
+  if(mins<60) return `${mins}m`;
+  return `${Math.floor(mins/60)}h ${mins%60}m`;
 }
 
-// ── Render a single card ──────────────────────────────────────────────
-function renderCard(p) {
-  const actionBadge = {
-    investigate: '<span class="badge badge-investigate">🟢 Investigate</span>',
-    watchlist:   '<span class="badge badge-watchlist">🟡 Watchlist</span>',
-    pass:        '<span class="badge badge-pass">🔴 Pass</span>',
-  }[p.action] || '';
-  const starBadge = p.is_second_time_founder ? '<span class="badge badge-star">⭐ 2nd-time</span>' : '';
+function toast(msg,ms=3000){
+  const el=document.getElementById('toast');
+  el.textContent=msg;el.classList.add('show');
+  setTimeout(()=>el.classList.remove('show'),ms);
+}
 
-  const prev = [p.previous_title, p.previous_company].filter(Boolean);
-  const prevStr = prev.length ? `<strong>${escHtml(prev.join(' @ '))}</strong>` : '';
-  const nowStr = p.current_company ? escHtml(p.current_company) : 'Stealth';
-  const geoFlag = GEO_FLAG[p.geography] || '🌏';
+// ── Clean signal description ──────────────────────────────────────────
+function cleanDesc(desc){
+  if(!desc) return '';
+  // Remove "[Source]" prefix like "[Inc42] ..."
+  let s = desc.replace(/^\[[\w\s]+\]\s*/,'');
+  // Remove "LinkedIn signal: " prefix and garbled follower text
+  s = s.replace(/^LinkedIn signal:\s*/i,'');
+  s = s.replace(/LinkedIn\s*·\s*.+?followers.*/i,'');
+  s = s.replace(/\s*\d+(\.\d+)?[KkMm]?\+?\s*followers.*/i,'');
+  s = s.replace(/\s*-\s*(Razorpay|Zepto|Swiggy|Grab|Gojek|Nium|BrowserStack|PhonePe|Flipkart|Paytm|Meesho|CRED|Ola|Zomato|Unacademy|Byju|Google India|Amazon India|Microsoft India)LinkedIn.*/i,'');
+  // Clean up double spaces
+  s = s.replace(/\s{2,}/g,' ').trim();
+  // Truncate long descriptions
+  if(s.length>140) s = s.slice(0,137)+'…';
+  return s;
+}
 
-  const signalPills = (p.signal_types||[]).map(t => {
-    const s = SIG[t] || { emoji: '•', label: t };
-    return `<span class="signal-pill">${s.emoji} ${s.label}</span>`;
-  }).join('');
+// ── Display name ──────────────────────────────────────────────────────
+function displayName(p){
+  if(p.name && p.name!=='Unknown' && p.name.trim()) return p.name;
+  // Fallback: use first signal headline
+  const sig = (p.signals||[])[0];
+  if(sig && sig.description){
+    const clean = cleanDesc(sig.description);
+    if(clean.length>50) return clean.slice(0,47)+'…';
+    return clean;
+  }
+  return 'Unknown signal';
+}
 
-  const tags = [
-    p.geography ? `<span class="tag tag-geo">${geoFlag} ${escHtml(p.geography)}</span>` : '',
-    p.sector    ? `<span class="tag tag-sector">◈ ${escHtml(p.sector)}</span>` : '',
-    p.experience_years ? `<span class="tag tag-exp">~${p.experience_years}yrs</span>` : '',
-    p.confidence === 'high' ? `<span class="tag tag-teal">✓ high confidence</span>` : '',
+// ── Render a card ─────────────────────────────────────────────────────
+function renderCard(p){
+  const action = p.action||'pass';
+  const name   = displayName(p);
+  const isUnknown = !p.name || p.name==='Unknown';
+
+  const badge = {
+    investigate:`<span class="badge badge-inv">● Investigate</span>`,
+    watchlist:  `<span class="badge badge-watch">● Watchlist</span>`,
+    pass:       `<span class="badge badge-pass">● Pass</span>`,
+  }[action]||'';
+
+  const starBadge = p.is_second_time_founder?`<span class="badge badge-star">⭐ 2×</span>`:'';
+
+  const prev = [p.previous_title, p.previous_company].filter(Boolean).join(' @ ');
+  const nowStr = p.current_company||'Stealth';
+
+  // Tags
+  const geoFlag = GEO_FLAG[p.geography]||'';
+  const tagParts = [
+    p.geography ? `<span class="tag tag-geo">${geoFlag} ${esc(p.geography)}</span>` : '',
+    p.sector    ? `<span class="tag tag-sector">◈ ${esc(p.sector)}</span>` : '',
+    p.experience_years ? `<span class="tag tag-exp">${p.experience_years}yr exp</span>` : '',
+    p.confidence==='high' ? `<span class="tag tag-high">✓ high confidence</span>` : '',
+    p.is_second_time_founder ? `<span class="tag tag-2x">⭐ 2nd-time founder</span>` : '',
   ].filter(Boolean).join('');
 
-  const links = [];
-  if (p.linkedin_url) links.push(`<a class="link-btn" href="${escHtml(p.linkedin_url)}" target="_blank" rel="noopener">in LinkedIn</a>`);
-  if (p.twitter_handle) links.push(`<a class="link-btn" href="https://twitter.com/${escHtml(p.twitter_handle)}" target="_blank" rel="noopener">𝕏 Twitter</a>`);
-  if (p.github_url) links.push(`<a class="link-btn" href="${escHtml(p.github_url)}" target="_blank" rel="noopener">⌥ GitHub</a>`);
+  // Signal pills
+  const pills = (p.signal_types||[]).map(t=>{
+    const s=SIG[t]||{emoji:'•',label:t.replace(/_/g,' ')};
+    return `<span class="sig-pill ${esc(t)}">${s.emoji} ${s.label}</span>`;
+  }).join('');
 
-  if (viewMode === 'compact') {
-    return `<div class="card ${escHtml(p.action)}">
-      <div style="display:flex;align-items:center;gap:10px">
-        ${scoreRing(p.score, 44)}
-        <div style="flex:1;min-width:0">
+  // Signal evidence
+  const evidence = (p.signals||[]).slice(0,4).map(s=>{
+    const srcKey = (s.source||'').toLowerCase();
+    const srcClass = ['news','linkedin','twitter','github','registry','headcount'].find(k=>srcKey.includes(k))||'';
+    const desc = cleanDesc(s.description);
+    const lnk = s.url ? ` <a class="sig-ev-link" href="${esc(s.url)}" target="_blank" rel="noopener">↗</a>` : '';
+    return `<div class="sig-ev-row"><span class="sig-ev-src ${srcClass}">${esc(s.source||'')}</span><span class="sig-ev-desc">${esc(desc)}${lnk}</span></div>`;
+  }).join('');
+
+  // Links
+  const links = [
+    p.linkedin_url   ? `<a class="link-btn" href="${esc(p.linkedin_url)}" target="_blank" rel="noopener">in LinkedIn</a>` : '',
+    p.twitter_handle ? `<a class="link-btn" href="https://twitter.com/${esc(p.twitter_handle)}" target="_blank" rel="noopener">𝕏 Twitter</a>` : '',
+    p.github_url     ? `<a class="link-btn" href="${esc(p.github_url)}" target="_blank" rel="noopener">⌥ GitHub</a>` : '',
+    p.company_url    ? `<a class="link-btn" href="${esc(p.company_url)}" target="_blank" rel="noopener">↗ Website</a>` : '',
+  ].filter(Boolean).join('');
+
+  const scoreCol = scoreColor(p.score);
+  const scoreBarW = Math.round(p.score);
+
+  if(viewMode==='compact'){
+    return `<div class="card compact ${esc(action)}">
+      <div class="card-header">
+        <div class="avatar ${action}" style="${isUnknown?'opacity:.5':''}">${initials(p.name)}</div>
+        <div class="card-meta" style="flex:1">
           <div class="card-name-row">
-            <span class="card-name">${escHtml(p.name)}</span>
-            ${actionBadge}${starBadge}
+            <span class="card-name" style="${isUnknown?'color:var(--muted2);font-style:italic':''}">${esc(name)}</span>
+            ${badge}${starBadge}
           </div>
-          <div class="card-prev" style="margin:0">
-            ${prevStr ? prevStr + '<span class="arrow">→</span>' : ''}${nowStr}
-            ${tags ? '<span style="margin-left:6px">'+tags+'</span>' : ''}
+          <div class="card-sub">
+            ${prev?`<strong>${esc(prev)}</strong><span class="arrow-sep">→</span>`:''}
+            <span>${esc(nowStr)}</span>
+            ${p.geography?`<span>${geoFlag} ${esc(p.geography)}</span>`:''}
           </div>
         </div>
-        ${links.length ? `<div class="links-row">${links.join('')}</div>` : ''}
+        <div class="card-score">
+          <div class="score-num" style="color:${scoreCol}">${p.score}</div>
+        </div>
       </div>
     </div>`;
   }
 
-  return `<div class="card ${escHtml(p.action)}">
-    <div class="card-grid">
-      <div class="card-left">
+  return `<div class="card ${esc(action)}">
+    <div class="card-header">
+      <div class="avatar ${action}" style="${isUnknown?'opacity:.5':''}">${initials(p.name)}</div>
+      <div class="card-meta">
         <div class="card-name-row">
-          <span class="card-name">${escHtml(p.name)}</span>
-          ${actionBadge}
-          ${starBadge}
+          <span class="card-name" style="${isUnknown?'color:var(--muted2);font-style:italic':''}">${esc(name)}</span>
+          ${badge}${starBadge}
         </div>
-        <div class="card-prev">
-          ${prevStr ? prevStr + '<span class="arrow">→</span>' : ''}
-          ${nowStr}
-          <span style="margin-left:6px;color:var(--muted)">· ${escHtml(p.location||p.geography||'')}</span>
+        <div class="card-sub">
+          ${prev?`<strong>${esc(prev)}</strong><span class="arrow-sep">→</span>`:''}
+          <span>${esc(nowStr)}</span>
+          ${p.location||p.geography?`<span style="color:var(--muted)">·</span><span>${esc(p.location||p.geography)}</span>`:''}
         </div>
-        ${p.investment_thesis ? `<div class="thesis">${escHtml(p.investment_thesis)}</div>` : ''}
-        <div class="tags">${tags}</div>
-        <div class="signals-row">${signalPills}</div>
-        ${(p.signals||[]).length ? `<div class="signal-evidence">${
-          (p.signals||[]).slice(0,4).map(s => {
-            const src = `<span class="sig-src">${escHtml(s.source)}</span>`;
-            const desc = escHtml(s.description||'');
-            const lnk = s.url ? ` <a href="${escHtml(s.url)}" target="_blank" rel="noopener" class="sig-link">↗</a>` : '';
-            return `<div class="sig-row">${src} ${desc}${lnk}</div>`;
-          }).join('')
-        }</div>` : ''}
-        ${links.length ? `<div class="links-row">${links.join('')}</div>` : ''}
       </div>
-      <div class="score-block">
-        ${scoreRing(p.score)}
-        <div class="score-conf">${escHtml(p.confidence||'')}</div>
+      <div class="card-score">
+        <div class="score-num" style="color:${scoreCol}">${p.score}</div>
+        <div class="score-label">score</div>
+        <div class="score-bar"><div class="score-bar-fill" style="width:${scoreBarW}%;background:${scoreCol}"></div></div>
       </div>
     </div>
+    ${tagParts?`<div class="tags">${tagParts}</div>`:''}
+    ${p.investment_thesis?`<div class="thesis">${esc(p.investment_thesis)}</div>`:''}
+    ${pills?`<div class="sig-pills">${pills}</div>`:''}
+    ${evidence?`<div class="sig-evidence">${evidence}</div>`:''}
+    ${links?`<div class="links-row">${links}</div>`:''}
   </div>`;
 }
 
-// ── Filtering ─────────────────────────────────────────────────────────
-function applyFilters() {
-  let f = allPersons.filter(p => {
-    if (filters.action !== 'all' && p.action !== filters.action) return false;
-    if (filters.geo    !== 'all' && p.geography !== filters.geo) return false;
-    if (filters.signal !== 'all' && !(p.signal_types||[]).includes(filters.signal)) return false;
-    if (p.score < filters.score) return false;
+// ── Filters ───────────────────────────────────────────────────────────
+function applyFilters(){
+  let f = allPersons.filter(p=>{
+    if(filters.action!=='all' && p.action!==filters.action) return false;
+    if(filters.geo!=='all' && p.geography!==filters.geo) return false;
+    if(filters.signal!=='all' && !(p.signal_types||[]).includes(filters.signal)) return false;
+    if(p.score<filters.score) return false;
     return true;
   });
-
-  document.getElementById('results-count').innerHTML =
+  document.getElementById('result-count').innerHTML =
     `Showing <strong>${f.length}</strong> of <strong>${allPersons.length}</strong> founders`;
-
-  const list = document.getElementById('persons-list');
-  if (f.length === 0) {
-    list.innerHTML = `<div class="empty"><div class="empty-icon">🔭</div><div class="empty-text">No founders match these filters.<br>Try widening your criteria.</div></div>`;
-  } else {
-    list.innerHTML = f.map(renderCard).join('');
-  }
+  const list = document.getElementById('cards-list');
+  list.innerHTML = f.length===0
+    ? `<div class="empty"><div class="empty-icon">🔭</div><div class="empty-title">No founders match</div><div class="empty-sub">Try widening your filters or running a new pipeline scan.</div></div>`
+    : f.map(renderCard).join('');
 }
 
-function setFilter(type, val, el) {
-  filters[type] = val;
-  // Deactivate siblings
-  document.querySelectorAll(`[data-filter="${type}"]`).forEach(b => b.classList.remove('active'));
+function setFilter(type,val,el){
+  filters[type]=val;
+  document.querySelectorAll(`[data-filter="${type}"]`).forEach(b=>b.classList.remove('active'));
   el.classList.add('active');
   applyFilters();
 }
 
-function onSlider(el) {
-  filters.score = parseInt(el.value);
-  document.getElementById('slider-val').textContent = el.value + '+';
+function onSlider(el){
+  filters.score=parseInt(el.value);
+  document.getElementById('slider-val').textContent=el.value+'+';
   applyFilters();
 }
 
-function setView(mode) {
-  viewMode = mode;
-  document.getElementById('view-list').classList.toggle('active', mode === 'list');
-  document.getElementById('view-compact').classList.toggle('active', mode === 'compact');
+function setView(mode){
+  viewMode=mode;
+  document.getElementById('view-list').classList.toggle('active',mode==='list');
+  document.getElementById('view-compact').classList.toggle('active',mode==='compact');
   applyFilters();
 }
 
 // ── Count badges ──────────────────────────────────────────────────────
-function updateCounts() {
-  const geos = ['India','Singapore','Indonesia','Vietnam','Malaysia','Philippines','Thailand'];
-  const total = allPersons.length;
-
-  const byAction = { investigate:0, watchlist:0, pass:0 };
-  const byGeo = {};
-  geos.forEach(g => byGeo[g] = 0);
-
-  allPersons.forEach(p => {
-    if (byAction[p.action] !== undefined) byAction[p.action]++;
-    if (byGeo[p.geography] !== undefined) byGeo[p.geography]++;
+function updateCounts(){
+  const geos=['India','Singapore','Indonesia','Vietnam','Malaysia','Philippines','Thailand'];
+  const byAction={investigate:0,watchlist:0,pass:0}, byGeo={};
+  geos.forEach(g=>byGeo[g]=0);
+  allPersons.forEach(p=>{
+    if(byAction[p.action]!==undefined) byAction[p.action]++;
+    if(byGeo[p.geography]!==undefined) byGeo[p.geography]++;
   });
-
-  const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
-  set('cnt-action-all', total);
-  set('cnt-investigate', byAction.investigate);
-  set('cnt-watchlist',   byAction.watchlist);
-  set('cnt-pass',        byAction.pass);
-  set('cnt-geo-all', total);
-  geos.forEach(g => set('cnt-' + g, byGeo[g]));
+  const set=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v};
+  set('cnt-action-all',allPersons.length);
+  set('cnt-investigate',byAction.investigate);
+  set('cnt-watchlist',byAction.watchlist);
+  set('cnt-pass',byAction.pass);
+  set('cnt-geo-all',allPersons.length);
+  geos.forEach(g=>set('cnt-'+g,byGeo[g]));
 }
 
-// ── Stats strip ───────────────────────────────────────────────────────
-function renderStats(d) {
-  const inv   = d.persons.filter(p => p.action === 'investigate').length;
-  const watch = d.persons.filter(p => p.action === 'watchlist').length;
-  const st2   = d.persons.filter(p => p.is_second_time_founder).length;
+// ── Stats row ─────────────────────────────────────────────────────────
+function renderStats(d){
+  const inv   = d.persons.filter(p=>p.action==='investigate').length;
+  const watch = d.persons.filter(p=>p.action==='watchlist').length;
+  const st2   = d.persons.filter(p=>p.is_second_time_founder).length;
   const avgS  = d.persons.length ? Math.round(d.persons.reduce((a,b)=>a+b.score,0)/d.persons.length) : 0;
-
-  const stats = [
-    { val: d.total_signals, label: 'Signals collected', cls: 'a' },
-    { val: d.total_persons, label: 'Persons scored', cls: '' },
-    { val: inv,             label: 'Investigate',     cls: 'g' },
-    { val: watch,           label: 'Watchlist',        cls: 'y' },
-    { val: st2,             label: '2nd-time founders',cls: 'a' },
-    { val: avgS,            label: 'Avg score',        cls: '' },
-  ];
-  document.getElementById('stats-strip').innerHTML = stats.map(s =>
-    `<div class="stat"><div class="stat-val ${s.cls}">${s.val}</div><div class="stat-label">${s.label}</div></div>`
-  ).join('');
+  document.getElementById('stats-row').innerHTML = [
+    {val:d.total_signals,      label:'Signals collected',  cls:'',                              extra:''},
+    {val:d.total_persons,      label:'Founders scored',    cls:'',                              extra:''},
+    {val:inv,                  label:'Investigate',        cls:'highlight',   valCls:'green',   extra:''},
+    {val:watch,                label:'Watchlist',          cls:'highlight-amber', valCls:'amber', extra:''},
+    {val:avgS,                 label:'Avg score',          cls:'',                              extra:''},
+  ].map(s=>`<div class="stat-card ${s.cls}">
+    <div class="stat-val ${s.valCls||''}">${s.val}</div>
+    <div class="stat-label">${s.label}</div>
+  </div>`).join('');
 }
 
 // ── Source chart ──────────────────────────────────────────────────────
-function renderSourceChart(breakdown) {
-  const entries = Object.entries(breakdown).sort((a,b) => b[1]-a[1]).slice(0, 10);
-  const max = Math.max(...entries.map(e=>e[1]), 1);
-  document.getElementById('source-chart').innerHTML = entries.map(([src, n]) =>
-    `<div class="src-row">
+function renderSourceChart(breakdown){
+  const entries=Object.entries(breakdown).sort((a,b)=>b[1]-a[1]).slice(0,8);
+  const max=Math.max(...entries.map(e=>e[1]),1);
+  document.getElementById('source-chart').innerHTML=entries.map(([src,n])=>`
+    <div class="src-row">
       <div class="src-name">${src}</div>
       <div class="src-bar"><div class="src-fill" style="width:${Math.round(n/max*100)}%"></div></div>
       <div class="src-n">${n}</div>
-    </div>`
-  ).join('');
+    </div>`).join('');
+}
+
+// ── Run status display ────────────────────────────────────────────────
+function updateRunStatus(generatedAt){
+  const dot  = document.getElementById('status-dot');
+  const text = document.getElementById('status-text');
+  const ago  = timeAgo(generatedAt);
+  const next = nextRunStr();
+  dot.className = 'dot ok';
+  text.textContent = `Updated ${ago} · Next in ~${next}`;
 }
 
 // ── Load data ─────────────────────────────────────────────────────────
-async function loadData() {
-  try {
-    const resp = await fetch('data.json?t=' + Date.now());
-    if (!resp.ok) throw new Error('not found');
+async function loadData(){
+  try{
+    const resp = await fetch('data.json?t='+Date.now());
+    if(!resp.ok) throw new Error('no data');
     data = await resp.json();
-  } catch(e) {
-    document.getElementById('stats-strip').innerHTML =
+  }catch(e){
+    document.getElementById('stats-row').innerHTML=
       `<div style="grid-column:1/-1;color:var(--muted);padding:20px;text-align:center">
-        No data yet — run <code>python main.py</code> to generate data.json
+        No data yet — click <strong>Run Pipeline</strong> to generate results.
       </div>`;
+    document.getElementById('status-text').textContent='No data yet';
     return;
   }
-
-  allPersons = data.persons || [];
-
-  // Nav
-  document.getElementById('nav-date').textContent = data.date_label || '';
-
-  // Summary
-  if (data.executive_summary) {
-    document.getElementById('summary-text').innerHTML =
-      '<strong>AI Summary</strong> — ' + escHtml(data.executive_summary);
-    document.getElementById('summary-card').style.display = 'flex';
+  allPersons = data.persons||[];
+  updateRunStatus(data.generated_at);
+  if(data.executive_summary){
+    document.getElementById('summary-text').innerHTML='<strong>AI Summary</strong> — '+esc(data.executive_summary);
+    document.getElementById('summary').style.display='flex';
   }
-
   renderStats(data);
   updateCounts();
-  renderSourceChart(data.source_breakdown || {});
+  renderSourceChart(data.source_breakdown||{});
   applyFilters();
-
-  toast(`Loaded ${allPersons.length} founders · ${data.date_label}`);
+  toast(`Loaded ${allPersons.length} founders · ${data.date_label||''}`);
 }
 
 loadData();
+// Refresh status clock every minute
+setInterval(()=>{ if(data.generated_at) updateRunStatus(data.generated_at); }, 60000);
 
-// ── GitHub Actions Run button ─────────────────────────────────────────
-const GH_REPO     = 'aviral-droid/vc-sourcing-agent';
-const GH_WORKFLOW = 'sourcing.yml';
+// ── GitHub Actions trigger ────────────────────────────────────────────
+function getGHToken(){return localStorage.getItem('gh_pat')||null}
 
-function getGHToken() {
-  return localStorage.getItem('gh_pat') || null;
-}
-
-function openPatModal(onSave) {
-  const overlay = document.getElementById('pat-overlay');
-  const input   = document.getElementById('pat-input');
-  const saveBtn = document.getElementById('pat-save-btn');
-  const cancelBtn = document.getElementById('pat-cancel-btn');
-  input.value = '';
+function openPatModal(onSave){
+  const overlay=document.getElementById('pat-overlay'),
+        input  =document.getElementById('pat-input'),
+        saveBtn=document.getElementById('pat-save-btn'),
+        cancelBtn=document.getElementById('pat-cancel-btn');
+  input.value='';
   overlay.classList.add('open');
-  setTimeout(() => input.focus(), 80);
-  function save() {
-    const val = input.value.trim();
-    if (!val) return;
-    localStorage.setItem('gh_pat', val);
+  setTimeout(()=>input.focus(),80);
+  function save(){
+    const val=input.value.trim();
+    if(!val) return;
+    localStorage.setItem('gh_pat',val);
     overlay.classList.remove('open');
-    saveBtn.removeEventListener('click', save);
-    cancelBtn.removeEventListener('click', cancel);
+    saveBtn.removeEventListener('click',save);
+    cancelBtn.removeEventListener('click',cancel);
     onSave(val);
   }
-  function cancel() {
+  function cancel(){
     overlay.classList.remove('open');
-    saveBtn.removeEventListener('click', save);
-    cancelBtn.removeEventListener('click', cancel);
+    saveBtn.removeEventListener('click',save);
+    cancelBtn.removeEventListener('click',cancel);
     resetRunBtn();
   }
-  saveBtn.addEventListener('click', save);
-  cancelBtn.addEventListener('click', cancel);
-  input.onkeydown = e => { if (e.key === 'Enter') save(); if (e.key === 'Escape') cancel(); };
+  saveBtn.addEventListener('click',save);
+  cancelBtn.addEventListener('click',cancel);
+  input.onkeydown=e=>{if(e.key==='Enter')save();if(e.key==='Escape')cancel()};
 }
 
-async function triggerGHRun() {
-  const token = getGHToken();
-  if (!token) {
-    const btn = document.getElementById('run-btn');
-    btn.disabled = true;
-    openPatModal(t => { btn.disabled = false; _doRun(t); });
+async function triggerGHRun(){
+  const token=getGHToken();
+  if(!token){
+    const btn=document.getElementById('run-btn');
+    btn.disabled=true;
+    openPatModal(t=>{btn.disabled=false;_doRun(t)});
     return;
   }
   _doRun(token);
 }
 
-async function _doRun(token) {
-  const days = document.getElementById('days-select').value;
-  const btn = document.getElementById('run-btn');
-  btn.textContent = 'Starting…';
-  btn.disabled = true;
-  try {
-    const r = await fetch(
-      `https://api.github.com/repos/${GH_REPO}/actions/workflows/${GH_WORKFLOW}/dispatches`,
-      {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${token}`,
-          Accept: 'application/vnd.github+json',
-          'Content-Type': 'application/json',
-          'X-GitHub-Api-Version': '2022-11-28'
-        },
-        body: JSON.stringify({ ref: 'main', inputs: { days_back: days, skip_headcount: 'false' } })
-      }
-    );
-    if (r.status === 204) {
-      toast(`Pipeline started — scanning last ${days} days…`, 'info');
-      btn.textContent = `Running (${days}d)…`;
-      // Wait 8s for GitHub to register the run before polling
-      setTimeout(() => pollGHRun(token), 8000);
-    } else if (r.status === 401 || r.status === 403) {
+async function _doRun(token){
+  const days=document.getElementById('days-select').value;
+  const btn=document.getElementById('run-btn');
+  const dot=document.getElementById('status-dot');
+  btn.textContent='Starting…';btn.disabled=true;
+  dot.className='dot running';
+  document.getElementById('status-text').textContent='Triggering pipeline…';
+  try{
+    const r=await fetch(`https://api.github.com/repos/${GH_REPO}/actions/workflows/${GH_WORKFLOW}/dispatches`,{
+      method:'POST',
+      headers:{Authorization:`Bearer ${token}`,Accept:'application/vnd.github+json','Content-Type':'application/json','X-GitHub-Api-Version':'2022-11-28'},
+      body:JSON.stringify({ref:'main',inputs:{days_back:days,skip_headcount:'true'}})
+    });
+    if(r.status===204){
+      toast(`Pipeline started — scanning last ${days} days…`);
+      btn.textContent=`Running (${days}d)…`;
+      document.getElementById('status-text').textContent='Pipeline running…';
+      setTimeout(()=>pollGHRun(token),8000);
+    }else if(r.status===401||r.status===403){
       localStorage.removeItem('gh_pat');
-      toast('Invalid PAT — please enter a new one', 'error');
+      toast('Invalid PAT — please enter a new one');
       resetRunBtn();
-      openPatModal(t => _doRun(t));
-    } else {
-      const err = await r.json().catch(() => ({}));
-      alert('GitHub error: ' + (err.message || r.status));
+      openPatModal(t=>_doRun(t));
+    }else{
+      const err=await r.json().catch(()=>({}));
+      alert('GitHub error: '+(err.message||r.status));
       resetRunBtn();
     }
-  } catch(e) {
-    alert('Network error: ' + e.message);
-    resetRunBtn();
-  }
+  }catch(e){alert('Network error: '+e.message);resetRunBtn()}
 }
 
-function pollGHRun(token) {
-  let polls = 0;
-  const interval = setInterval(async () => {
+function pollGHRun(token){
+  let polls=0;
+  const iv=setInterval(async()=>{
     polls++;
-    if (polls > 60) { // stop after 15 min
-      clearInterval(interval);
-      resetRunBtn();
-      toast('Timed out waiting for run — check GitHub Actions tab', 'error');
-      return;
-    }
-    try {
-      const r = await fetch(
-        `https://api.github.com/repos/${GH_REPO}/actions/runs?per_page=1`,
-        { headers: { Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json' } }
-      );
-      if (!r.ok) return;
-      const d = await r.json();
-      const run = d.workflow_runs?.[0];
-      if (!run) return;
-
-      const btn = document.getElementById('run-btn');
-      if (run.status === 'completed') {
-        clearInterval(interval);
-        if (run.conclusion === 'success') {
-          btn.textContent = '✓ Done';
-          toast('Pipeline complete! Reloading data…', 'success');
-          setTimeout(() => { loadData(); resetRunBtn(); }, 2000);
-        } else {
-          toast(`Run finished: ${run.conclusion}. Check Actions tab for logs.`, 'error');
+    if(polls>60){clearInterval(iv);resetRunBtn();toast('Timeout — check GitHub Actions tab');return}
+    try{
+      const r=await fetch(`https://api.github.com/repos/${GH_REPO}/actions/runs?per_page=1`,{
+        headers:{Authorization:`Bearer ${token}`,Accept:'application/vnd.github+json'}
+      });
+      if(!r.ok) return;
+      const d=await r.json();
+      const run=d.workflow_runs?.[0];
+      if(!run) return;
+      const btn=document.getElementById('run-btn');
+      const statusText=document.getElementById('status-text');
+      if(run.status==='completed'){
+        clearInterval(iv);
+        if(run.conclusion==='success'){
+          btn.textContent='✓ Done';
+          toast('Pipeline complete! Reloading data…');
+          statusText.textContent='Pipeline complete — reloading…';
+          setTimeout(()=>{loadData();resetRunBtn()},2000);
+        }else{
+          toast(`Pipeline ${run.conclusion} — check Actions tab`);
           resetRunBtn();
         }
-      } else {
-        const statusMap = { queued: 'Queued…', in_progress: 'Running…', waiting: 'Waiting…' };
-        btn.textContent = statusMap[run.status] || 'Running…';
+      }else{
+        const elapsed=Math.round((Date.now()-new Date(run.created_at))/60000);
+        btn.textContent=`Running… ${elapsed}m`;
+        statusText.textContent=`Pipeline running · ${elapsed}m elapsed`;
       }
-    } catch(e) { /* retry next poll */ }
-  }, 15000);
+    }catch(e){}
+  },15000);
 }
 
-function resetRunBtn() {
-  const btn = document.getElementById('run-btn');
-  btn.textContent = '▶ Run Pipeline';
-  btn.disabled = false;
+function resetRunBtn(){
+  const btn=document.getElementById('run-btn');
+  btn.textContent='▶ Run Pipeline';btn.disabled=false;
+  document.getElementById('status-dot').className='dot ok';
+  if(data.generated_at) updateRunStatus(data.generated_at);
 }
 </script>
 </body>
