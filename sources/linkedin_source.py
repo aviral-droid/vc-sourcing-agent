@@ -194,6 +194,16 @@ def _extract_person_from_result(title: str, snippet: str, url: str, query: str) 
     if m2:
         previous_company = m2.group(1).strip()
 
+    # Build a clean description from structured data, not garbled link text
+    if previous_company and signal_type == "stealth_founder":
+        description = f"Ex-{previous_company} exec going stealth — LinkedIn profile detected via departure query"
+    elif previous_company and signal_type == "executive_departure":
+        description = f"Senior departure from {previous_company} — LinkedIn profile flagged"
+    elif signal_type == "stealth_founder":
+        description = f"LinkedIn: {name} appears to be building a new venture (stealth signal)"
+    else:
+        description = f"LinkedIn: Senior exec departure signal for {name}"
+
     person = Person(
         name=name,
         linkedin_url=clean_url,
@@ -203,8 +213,8 @@ def _extract_person_from_result(title: str, snippet: str, url: str, query: str) 
     signal = Signal(
         source="linkedin",
         signal_type=signal_type,
-        description=f"LinkedIn signal: {title[:150]}",
-        url=url,
+        description=description,
+        url=clean_url,  # use clean LinkedIn URL, not Google redirect
         raw_data={"snippet": snippet[:400], "title": title, "query": query, "rule_score": score},
     )
     person.signals.append(signal)

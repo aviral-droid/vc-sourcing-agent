@@ -353,6 +353,32 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
 .pat-hint a{color:var(--accent)}
 .pat-hint code{background:var(--surface3);padding:1px 5px;border-radius:4px}
 
+/* Search bar */
+.search-wrap{
+  position:relative;display:flex;align-items:center;
+  background:var(--surface2);border:1px solid var(--border);border-radius:8px;
+  transition:border-color .15s;overflow:hidden;
+}
+.search-wrap:focus-within{border-color:var(--accent)}
+.search-icon{padding:0 8px 0 10px;font-size:14px;color:var(--muted);pointer-events:none;line-height:1}
+.search-input{
+  background:none;border:none;outline:none;font-family:var(--font);
+  font-size:12px;color:var(--text);padding:6px 4px;width:200px;
+}
+.search-input::placeholder{color:var(--muted)}
+.search-clear{
+  padding:0 8px;font-size:11px;color:var(--muted);cursor:pointer;
+  display:none;transition:color .1s;
+}
+.search-clear:hover{color:var(--text)}
+.search-clear.visible{display:block}
+
+/* NEW badge */
+.badge-new{background:rgba(16,185,129,.15);color:var(--green);border:1px solid rgba(16,185,129,.3);
+  font-size:9px;font-weight:800;padding:1px 6px;border-radius:20px;letter-spacing:.05em;
+  animation:newPulse 2s ease-in-out 3}
+@keyframes newPulse{0%,100%{opacity:1}50%{opacity:.6}}
+
 /* Skeleton */
 .skeleton{background:var(--surface2);border-radius:8px;animation:shimmer 1.5s infinite linear;background-size:200% 100%}
 @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
@@ -374,6 +400,12 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
   <div class="run-status" id="run-status">
     <div class="dot" id="status-dot"></div>
     <span id="status-text">Loading…</span>
+  </div>
+
+  <div class="search-wrap">
+    <span class="search-icon">⌕</span>
+    <input class="search-input" id="search-input" type="text" placeholder="Search founders, companies, sectors…" oninput="onSearch(this.value)" autocomplete="off" spellcheck="false"/>
+    <span class="search-clear" id="search-clear" onclick="clearSearch()">✕</span>
   </div>
 
   <select class="days-select" id="days-select" title="Days back to scan">
@@ -542,7 +574,9 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
 // ── State ─────────────────────────────────────────────────────────────
 let allPersons = [], data = {};
 let filters = { action:'all', geo:'all', signal:'all', score:0 };
+let searchQuery = '';
 let viewMode = 'list';
+let dataGeneratedAt = null;
 const GH_REPO = 'aviral-droid/vc-sourcing-agent';
 const GH_WORKFLOW = 'sourcing.yml';
 
@@ -639,11 +673,22 @@ function displayName(p){
   return 'Unknown signal';
 }
 
+// ── "NEW" detection (signal found in last 24h of data.json generation) ──
+function isNewSignal(p){
+  if(!dataGeneratedAt) return false;
+  // signals found within 24h of when data.json was last written = "new"
+  // We use score > 0 and mark the first N persons (top 3 by score) as "new"
+  // More precisely: mark as NEW if data was generated recently (< 4h ago)
+  const minsAgo = (Date.now() - dataGeneratedAt) / 60000;
+  return minsAgo < 240 && (p.score >= 65); // top scorers from a recent run
+}
+
 // ── Render a card ─────────────────────────────────────────────────────
 function renderCard(p){
   const action = p.action||'pass';
   const name   = displayName(p);
   const isUnknown = !p.name || p.name==='Unknown';
+  const isNew  = isNewSignal(p);
 
   const badge = {
     investigate:`<span class="badge badge-inv">● Investigate</span>`,
@@ -652,6 +697,7 @@ function renderCard(p){
   }[action]||'';
 
   const starBadge = p.is_second_time_founder?`<span class="badge badge-star">⭐ 2×</span>`:'';
+  const newBadge  = isNew?`<span class="badge badge-new">NEW</span>`:'';
 
   const prev = [p.previous_title, p.previous_company].filter(Boolean).join(' @ ');
   const nowStr = p.current_company||'Stealth';
@@ -699,7 +745,7 @@ function renderCard(p){
         <div class="card-meta" style="flex:1">
           <div class="card-name-row">
             <span class="card-name" style="${isUnknown?'color:var(--muted2);font-style:italic':''}">${esc(name)}</span>
-            ${badge}${starBadge}
+            ${newBadge}${badge}${starBadge}
           </div>
           <div class="card-sub">
             ${prev?`<strong>${esc(prev)}</strong><span class="arrow-sep">→</span>`:''}
@@ -720,7 +766,7 @@ function renderCard(p){
       <div class="card-meta">
         <div class="card-name-row">
           <span class="card-name" style="${isUnknown?'color:var(--muted2);font-style:italic':''}">${esc(name)}</span>
-          ${badge}${starBadge}
+          ${newBadge}${badge}${starBadge}
         </div>
         <div class="card-sub">
           ${prev?`<strong>${esc(prev)}</strong><span class="arrow-sep">→</span>`:''}
@@ -742,6 +788,34 @@ function renderCard(p){
   </div>`;
 }
 
+// ── Search ────────────────────────────────────────────────────────────
+function onSearch(val){
+  searchQuery = val.trim().toLowerCase();
+  const clr = document.getElementById('search-clear');
+  if(clr) clr.classList.toggle('visible', searchQuery.length>0);
+  applyFilters();
+}
+
+function clearSearch(){
+  searchQuery='';
+  const inp=document.getElementById('search-input');
+  if(inp) inp.value='';
+  const clr=document.getElementById('search-clear');
+  if(clr) clr.classList.remove('visible');
+  applyFilters();
+}
+
+function matchesSearch(p){
+  if(!searchQuery) return true;
+  const hay = [
+    p.name, p.previous_company, p.previous_title, p.current_company,
+    p.location, p.geography, p.sector, p.investment_thesis,
+    ...(p.signal_types||[]),
+    ...(p.signals||[]).map(s=>s.description),
+  ].join(' ').toLowerCase();
+  return searchQuery.split(/\s+/).every(term=>hay.includes(term));
+}
+
 // ── Filters ───────────────────────────────────────────────────────────
 function applyFilters(){
   let f = allPersons.filter(p=>{
@@ -749,6 +823,7 @@ function applyFilters(){
     if(filters.geo!=='all' && p.geography!==filters.geo) return false;
     if(filters.signal!=='all' && !(p.signal_types||[]).includes(filters.signal)) return false;
     if(p.score<filters.score) return false;
+    if(!matchesSearch(p)) return false;
     return true;
   });
   document.getElementById('result-count').innerHTML =
@@ -782,19 +857,29 @@ function setView(mode){
 // ── Count badges ──────────────────────────────────────────────────────
 function updateCounts(){
   const geos=['India','Singapore','Indonesia','Vietnam','Malaysia','Philippines','Thailand'];
-  const byAction={investigate:0,watchlist:0,pass:0}, byGeo={};
+  const sigTypes=['stealth_founder','executive_departure','company_registration','funding_news','github_launch','twitter_announcement'];
+  const byAction={investigate:0,watchlist:0,pass:0}, byGeo={}, bySig={};
   geos.forEach(g=>byGeo[g]=0);
+  sigTypes.forEach(s=>bySig[s]=0);
   allPersons.forEach(p=>{
     if(byAction[p.action]!==undefined) byAction[p.action]++;
     if(byGeo[p.geography]!==undefined) byGeo[p.geography]++;
+    (p.signal_types||[]).forEach(s=>{ if(bySig[s]!==undefined) bySig[s]++; });
   });
-  const set=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v};
+  const set=(id,v)=>{const el=document.getElementById(id);if(el)el.textContent=v||'—'};
   set('cnt-action-all',allPersons.length);
   set('cnt-investigate',byAction.investigate);
   set('cnt-watchlist',byAction.watchlist);
   set('cnt-pass',byAction.pass);
   set('cnt-geo-all',allPersons.length);
   geos.forEach(g=>set('cnt-'+g,byGeo[g]));
+  // Update signal type counts in sidebar (query by data attribute)
+  document.querySelectorAll('[data-filter="signal"]').forEach(el=>{
+    const val=el.dataset.val;
+    if(val==='all') return;
+    const cnt=el.querySelector('.filter-count');
+    if(cnt) cnt.textContent=bySig[val]||0;
+  });
 }
 
 // ── Stats row ─────────────────────────────────────────────────────────
@@ -852,6 +937,7 @@ async function loadData(){
     return;
   }
   allPersons = data.persons||[];
+  dataGeneratedAt = data.generated_at ? new Date(data.generated_at).getTime() : null;
   updateRunStatus(data.generated_at);
   if(data.executive_summary){
     document.getElementById('summary-text').innerHTML='<strong>AI Summary</strong> — '+esc(data.executive_summary);
