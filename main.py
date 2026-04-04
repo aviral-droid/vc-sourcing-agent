@@ -52,6 +52,9 @@ from sources.github_source import search_github_signals, enrich_person_with_gith
 from sources.headcount_source import search_headcount_signals
 from sources.firecrawl_source import search_firecrawl_signals
 from sources.osint_source import batch_enrich_osint
+from sources.gdelt_source import search_gdelt_signals
+from sources.exa_source import search_exa_signals
+from sources.brave_source import search_brave_signals
 
 from pipeline.enricher import score_all, write_executive_summary
 from pipeline.reporter import generate_report
@@ -96,6 +99,33 @@ def run_pipeline(
     all_persons.extend(news_persons)
     sources_active.append("News")
     _log("News signals (India + SEA outlets)", len(news_persons))
+
+    # ── STEP 0b: GDELT — global news index (free, no key) ─────────────────────
+    logger.info("\n[0b] GDELT scan (global news index, last %d days)...", days_back)
+    gdelt_persons = search_gdelt_signals(days_back=days_back)
+    all_persons.extend(gdelt_persons)
+    sources_active.append("GDELT")
+    _log("GDELT article signals", len(gdelt_persons))
+
+    # ── STEP 0c: Exa semantic search ──────────────────────────────────────────
+    if config.EXA_ENABLED:
+        logger.info("\n[0c] Exa semantic search (neural founder signal detection)...")
+        exa_persons = search_exa_signals(days_back=days_back)
+        all_persons.extend(exa_persons)
+        sources_active.append("Exa")
+        _log("Exa neural search signals", len(exa_persons))
+    else:
+        logger.info("\n[0c] Exa: EXA_API_KEY not set, skipping.")
+
+    # ── STEP 0d: Brave Search (LinkedIn + news) ────────────────────────────────
+    if config.BRAVE_ENABLED:
+        logger.info("\n[0d] Brave Search (LinkedIn profiles + news, India + SEA)...")
+        brave_persons = search_brave_signals(days_back=days_back)
+        all_persons.extend(brave_persons)
+        sources_active.append("Brave")
+        _log("Brave Search signals (LinkedIn + news)", len(brave_persons))
+    else:
+        logger.info("\n[0d] Brave: BRAVE_API_KEY not set, skipping.")
 
     # ── STEP 1a: LinkedIn stealth + departure (60+ queries) ───────────────────
     logger.info("\n[1a] LinkedIn scan (60+ stealth + departure queries, India + SEA)...")

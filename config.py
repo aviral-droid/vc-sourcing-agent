@@ -13,9 +13,14 @@ GROQ_API_KEY: str = os.getenv("GROQ_API_KEY", "")
 GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
 FIRECRAWL_API_KEY: str = os.getenv("FIRECRAWL_API_KEY", "")
 GITHUB_TOKEN: str = os.getenv("GITHUB_TOKEN", "")
+EXA_API_KEY: str = os.getenv("EXA_API_KEY", "")
+BRAVE_API_KEY: str = os.getenv("BRAVE_API_KEY", "")
 
 # ── Feature flags ──────────────────────────────────────────────────────────────
 FIRECRAWL_ENABLED: bool = bool(FIRECRAWL_API_KEY)
+EXA_ENABLED: bool = bool(EXA_API_KEY)
+BRAVE_ENABLED: bool = bool(BRAVE_API_KEY)
+GDELT_ENABLED: bool = True   # free, always on
 GITHUB_ENABLED: bool = True
 NEWS_ENABLED: bool = True
 LINKEDIN_ENABLED: bool = True

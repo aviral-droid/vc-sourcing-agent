@@ -50,6 +50,7 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
+          pip install exa-py  # Exa semantic search
 
       - name: Install Playwright browsers (for crawl4ai)
         run: |
@@ -63,6 +64,8 @@ jobs:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          EXA_API_KEY: ${{ secrets.EXA_API_KEY }}
+          BRAVE_API_KEY: ${{ secrets.BRAVE_API_KEY }}
         run: |
           DAYS_BACK="${{ github.event.inputs.days_back || '30' }}"
           SKIP_HC="${{ github.event.inputs.skip_headcount || 'true' }}"
