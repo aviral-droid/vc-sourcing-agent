@@ -520,6 +520,22 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
 .sector-card[data-level="3"] .sector-bar{background:var(--accent)}
 .sector-card[data-level="2"] .sector-bar{background:var(--amber)}
 .sector-card[data-level="1"] .sector-bar{background:var(--muted)}
+
+/* Sector group label */
+.sector-group-label{
+  grid-column:1/-1;
+  font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);padding:6px 2px 0;border-top:1px solid var(--border);margin-top:4px;
+}
+.sector-group-label:first-child{border-top:none;margin-top:0;padding-top:0}
+.sector-india-note{
+  font-size:9px;font-weight:600;color:var(--accent);margin-top:3px;
+  letter-spacing:.02em;
+}
+
+/* Emerging source badge */
+.news-src-badge.emerging{background:rgba(16,185,129,.08);color:var(--green);border-color:rgba(16,185,129,.2)}
+.news-src-badge.global{background:rgba(139,92,246,.08);color:var(--purple);border-color:rgba(139,92,246,.2)}
 </style>
 </head>
 <body>
@@ -736,7 +752,7 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
       </div>
 
       <!-- India + SEA News -->
-      <div class="intel-panel intel-panel-wide">
+      <div class="intel-panel">
         <div class="panel-head">
           <div class="panel-title">
             🌏 India + SEA Tech
@@ -752,8 +768,28 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
         </div>
       </div>
 
+      <!-- Emerging Tech & New Startups Globally -->
+      <div class="intel-panel">
+        <div class="panel-head">
+          <div class="panel-title">
+            🔬 Emerging Tech · Global
+            <span class="panel-live"><span class="panel-live-dot"></span>LIVE</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <span class="panel-ts" id="emerging-ts">—</span>
+            <button class="panel-refresh" onclick="loadEmerging(true)" title="Refresh">↺</button>
+          </div>
+        </div>
+        <div style="padding:6px 14px 2px;font-size:10px;color:var(--muted);border-bottom:1px solid var(--border);flex-shrink:0">
+          New technology categories &amp; startup types emerging worldwide
+        </div>
+        <div class="news-feed" id="emerging-feed">
+          <div style="padding:20px;color:var(--muted);font-size:12px;text-align:center">Loading…</div>
+        </div>
+      </div>
+
       <!-- Market Data -->
-      <div class="intel-panel" style="max-width:300px;min-width:240px">
+      <div class="intel-panel" style="max-width:280px;min-width:220px">
         <div class="panel-head">
           <div class="panel-title">
             📈 Markets
@@ -776,8 +812,8 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
   <div class="intel-bottom">
     <div class="panel-head" style="border-top:none">
       <div class="panel-title">
-        🔭 Sector Signal Heatmap
-        <span style="font-size:10px;font-weight:500;color:var(--muted)">India + SEA · last 7 days · via GDELT</span>
+        🔭 Deep Sector Signal Heatmap
+        <span style="font-size:10px;font-weight:500;color:var(--muted)">Sub-segment signals · global → India · last 7 days · GDELT</span>
       </div>
       <div style="display:flex;align-items:center;gap:8px">
         <span class="panel-ts" id="sectors-ts">—</span>
@@ -1362,9 +1398,11 @@ function relTime(str){
 function srcBadgeClass(src){
   const s=src.toLowerCase();
   if(s.includes('gdelt')) return 'gdelt';
-  if(s.includes('ventureb')||s.includes('techcrunch')||s.includes('mit')||s.includes('wired')||s.includes('verge')||s.includes('ars')||s.includes('hugging')||s.includes('batch')||s.includes('ai')) return 'ai';
-  if(s.includes('yourstory')||s.includes('inc42')||s.includes('entrackr')||s.includes('bridge')||s.includes('vccircle')) return 'india';
+  if(s.includes('ventureb')||s.includes('techcrunch')||s.includes('mit')||s.includes('wired')||s.includes('verge')||s.includes('ars')||s.includes('hugging')||s.includes('batch')||s.includes('ieee')) return 'ai';
+  if(s.includes('yourstory')||s.includes('inc42')||s.includes('entrackr')||s.includes('bridge')||s.includes('vccircle')||s.includes('et market')) return 'india';
   if(s.includes('e27')||s.includes('kr.asia')||s.includes('techinasia')||s.includes('dealstreet')) return 'sea';
+  if(s.includes('rest of world')||s.includes('sifted')||s.includes('crunchbase')||s.includes('product hunt')||s.includes('tech.eu')||s.includes('technode')||s.includes('science|business')||s.includes('nature')) return 'emerging';
+  if(s.includes('hacker news')||s.includes('wired global')) return 'global';
   return '';
 }
 
@@ -1409,6 +1447,22 @@ async function loadAIML(force=false){
     updateTicker(d.articles||[]);
   }catch(e){
     feed.innerHTML='<div style="padding:20px;color:var(--red);font-size:12px">Error loading feed — is the local server running?</div>';
+  }
+}
+
+// ── Emerging Tech Feed ───────────────────────────────────────
+async function loadEmerging(force=false){
+  const feed = document.getElementById('emerging-feed');
+  const ts   = document.getElementById('emerging-ts');
+  try{
+    const r = await fetch(API('/api/intelligence/news?type=emerging&limit=50'));
+    if(!r.ok) throw new Error(r.status);
+    const d = await r.json();
+    feed.innerHTML = (d.articles||[]).map(renderNewsItem).join('') ||
+      '<div style="padding:20px;color:var(--muted);font-size:12px;text-align:center">No articles found</div>';
+    ts.textContent = relTime(d.fetched_at)||'now';
+  }catch(e){
+    feed.innerHTML='<div style="padding:20px;color:var(--red);font-size:12px">Error loading feed</div>';
   }
 }
 
@@ -1473,47 +1527,61 @@ async function loadMarket(force=false){
   }
 }
 
-// ── Sectors ───────────────────────────────────────────────────
+// ── Sectors — grouped sub-segments ───────────────────────────
 async function loadSectors(force=false){
   const grid = document.getElementById('sectors-grid');
   const ts   = document.getElementById('sectors-ts');
-  grid.innerHTML='<div style="padding:10px;color:var(--muted);font-size:12px">Fetching sector signals from GDELT (may take ~2 min first load)…</div>';
+  grid.innerHTML='<div style="padding:10px;color:var(--muted);font-size:12px;grid-column:1/-1">Scanning sub-segment signals via GDELT (~3 min first load — 36 themes)…</div>';
   try{
     const r = await fetch(API('/api/intelligence/sectors'));
     if(!r.ok) throw new Error(r.status);
     const d = await r.json();
     const sectors = d.sectors||[];
     const maxCount = Math.max(...sectors.map(s=>s.signal_count),1);
-    grid.innerHTML = sectors.map(s=>{
-      const pct  = Math.round(s.signal_count/maxCount*100);
-      const level = pct>=80?5:pct>=60?4:pct>=40?3:pct>=20?2:1;
-      const headline = (s.headlines||[])[0]||'';
-      return `<div class="sector-card" data-level="${level}">
-        <div class="sector-name">${esc(s.name)}</div>
-        <div class="sector-bar-wrap"><div class="sector-bar" style="width:${pct}%"></div></div>
-        <div class="sector-count">${s.signal_count} signals · 7d</div>
-        ${headline?`<div class="sector-headline">${esc(headline)}</div>`:''}
-      </div>`;
-    }).join('');
+
+    // Group by parent
+    const groups = {};
+    sectors.forEach(s=>{
+      if(!groups[s.parent]) groups[s.parent]=[];
+      groups[s.parent].push(s);
+    });
+
+    let html = '';
+    for(const [parent, subs] of Object.entries(groups)){
+      html += `<div class="sector-group-label">${esc(parent)}</div>`;
+      subs.forEach(s=>{
+        const pct   = Math.round(s.signal_count/maxCount*100);
+        const level = pct>=80?5:pct>=60?4:pct>=40?3:pct>=20?2:1;
+        const headline = (s.headlines||[])[0]||'';
+        html += `<div class="sector-card" data-level="${level}">
+          <div class="sector-name">${esc(s.name)}</div>
+          <div class="sector-bar-wrap"><div class="sector-bar" style="width:${pct}%"></div></div>
+          <div class="sector-count">${s.signal_count} signals · 7d</div>
+          ${s.india_note?`<div class="sector-india-note">${esc(s.india_note)}</div>`:''}
+          ${headline?`<div class="sector-headline">${esc(headline)}</div>`:''}
+        </div>`;
+      });
+    }
+    grid.innerHTML = html;
     ts.textContent = relTime(d.fetched_at)||'now';
   }catch(e){
-    grid.innerHTML='<div style="padding:10px;color:var(--red);font-size:12px">Sector data unavailable</div>';
+    grid.innerHTML='<div style="padding:10px;color:var(--red);font-size:12px">Sector data unavailable — is the local server running?</div>';
   }
 }
 
 // ── Init & auto-refresh ───────────────────────────────────────
 function initIntel(){
-  // Load news + market immediately; sectors are slow (GDELT rate limit)
   loadAIML();
   loadIndiaSEA();
+  loadEmerging();
   loadMarket();
-  loadSectors();  // ~2 min to complete
+  loadSectors();  // ~3 min first load (36 GDELT queries @ 6s each)
 
-  // Auto-refresh intervals
-  setInterval(()=>loadAIML(),   2*60*1000);   // every 2 min
-  setInterval(()=>loadIndiaSEA(),2*60*1000);
-  setInterval(()=>loadMarket(),  5*60*1000);   // every 5 min
-  setInterval(()=>loadSectors(), 30*60*1000);  // every 30 min
+  setInterval(()=>loadAIML(),     2*60*1000);
+  setInterval(()=>loadIndiaSEA(), 2*60*1000);
+  setInterval(()=>loadEmerging(), 3*60*1000);   // every 3 min
+  setInterval(()=>loadMarket(),   5*60*1000);
+  setInterval(()=>loadSectors(),  30*60*1000);
 }
 </script>
 </body>

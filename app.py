@@ -467,80 +467,207 @@ async def get_linkedin_signals(
 # VC INTELLIGENCE ROOM  — Tab 2 backend
 # ══════════════════════════════════════════════════════════════════════════════
 
+import re as _re
 from threading import Lock as _Lock
 _intel_cache: dict = {}
 _intel_lock = _Lock()
 
+# ── Topic relevance filter ─────────────────────────────────────────────────────
+# Articles must contain ≥1 of these (or come from a curated feed)
+_RELEVANT_KW = {
+    "startup","founder","funding","venture","vc","seed","series a","series b",
+    "angel","pre-seed","investment","investor","portfolio","unicorn","valuation",
+    "ai","ml","llm","gpt","machine learning","artificial intelligence",
+    "deep learning","neural","generative","robotics","automation",
+    "fintech","saas","b2b","enterprise","software","platform","api",
+    "ipo","m&a","acquisition","merger","exit","spac",
+    "economy","gdp","inflation","interest rate","fiscal","monetary",
+    "geopolitics","trade war","sanctions","tariff","regulation","policy",
+    "market","stock","equity","bond","commodities","crypto","bitcoin",
+    "government","ministry","budget","reform","legislation",
+    "climate","energy","ev","renewable","battery","carbon",
+    "semiconductor","chip","quantum","biotech","pharma","medtech","space",
+    "india","southeast asia","singapore","indonesia","vietnam","asean",
+    "data center","cloud","infrastructure","photonics",
+}
+_IRRELEVANT_KW = {
+    "nfl","nba","premier league","la liga","cricket match","ipl score",
+    "celebrity","oscars","grammy","golden globe","kardashian","taylor swift",
+    "movie review","film review","box office","tv show","reality tv",
+    "recipe","restaurant review","food critic","cooking show",
+    "fashion week","runway","makeup tutorial","skincare routine",
+    "sports score","match result","goal","touchdown","home run",
+    "horoscope","astrology","zodiac",
+}
+
+def _is_relevant_article(title: str, summary: str = "") -> bool:
+    text = (title + " " + summary).lower()
+    if any(kw in text for kw in _IRRELEVANT_KW):
+        return False
+    return any(kw in text for kw in _RELEVANT_KW)
+
 # ── Feed configs ───────────────────────────────────────────────────────────────
 AI_ML_FEEDS = [
-    ("VentureBeat AI",    "https://venturebeat.com/category/ai/feed/"),
-    ("TechCrunch AI",     "https://techcrunch.com/category/artificial-intelligence/feed/"),
-    ("MIT Tech Review",   "https://www.technologyreview.com/feed/"),
-    ("HuggingFace",       "https://huggingface.co/blog/feed.xml"),
-    ("The Batch",         "https://www.deeplearning.ai/the-batch/feed/"),
-    ("Wired AI",          "https://www.wired.com/feed/category/artificial-intelligence/latest/rss"),
-    ("Ars Technica",      "https://feeds.arstechnica.com/arstechnica/index"),
-    ("The Verge AI",      "https://www.theverge.com/ai-artificial-intelligence/rss/index.xml"),
+    ("VentureBeat AI",  "https://venturebeat.com/category/ai/feed/"),
+    ("TechCrunch AI",   "https://techcrunch.com/category/artificial-intelligence/feed/"),
+    ("MIT Tech Review", "https://www.technologyreview.com/feed/"),
+    ("HuggingFace",     "https://huggingface.co/blog/feed.xml"),
+    ("The Batch",       "https://www.deeplearning.ai/the-batch/feed/"),
+    ("Wired AI",        "https://www.wired.com/feed/category/artificial-intelligence/latest/rss"),
+    ("The Verge AI",    "https://www.theverge.com/ai-artificial-intelligence/rss/index.xml"),
+    ("IEEE Spectrum",   "https://spectrum.ieee.org/feeds/feed.rss"),
 ]
 
 INDIA_SEA_FEEDS = [
-    ("YourStory",         "https://yourstory.com/feed"),
-    ("Inc42",             "https://inc42.com/feed/"),
-    ("Entrackr",          "https://entrackr.com/feed/"),
-    ("The Bridge",        "https://thebridge.in/feed/"),
-    ("e27",               "https://e27.co/feed/"),
-    ("KR Asia",           "https://kr.asia/feed/"),
-    ("Tech in Asia",      "https://www.techinasia.com/feed"),
-    ("Deal Street Asia",  "https://dealstreetasia.com/feed/"),
-    ("VCCircle",          "https://www.vccircle.com/feed"),
+    ("YourStory",       "https://yourstory.com/feed"),
+    ("Inc42",           "https://inc42.com/feed/"),
+    ("Entrackr",        "https://entrackr.com/feed/"),
+    ("The Bridge",      "https://thebridge.in/feed/"),
+    ("e27",             "https://e27.co/feed/"),
+    ("KR Asia",         "https://kr.asia/feed/"),
+    ("Tech in Asia",    "https://www.techinasia.com/feed"),
+    ("Deal Street Asia","https://dealstreetasia.com/feed/"),
+    ("VCCircle",        "https://www.vccircle.com/feed"),
+    ("ET Markets",      "https://economictimes.indiatimes.com/markets/rssfeeds/1977021501.cms"),
+]
+
+# NEW: Global emerging tech feeds (4th panel)
+EMERGING_FEEDS = [
+    ("Rest of World",   "https://restofworld.org/feed/"),
+    ("Sifted (EU)",     "https://sifted.eu/articles/feed/"),
+    ("Crunchbase News", "https://news.crunchbase.com/feed/"),
+    ("Product Hunt",    "https://www.producthunt.com/feed"),
+    ("Hacker News",     "https://news.ycombinator.com/rss"),
+    ("TechNode (China)","https://technode.com/feed/"),
+    ("Tech EU",         "https://tech.eu/feed/"),
+    ("Wired Global",    "https://www.wired.com/feed/rss"),
+    ("Science|Business","https://sciencebusiness.net/rss.xml"),
+    ("Nature News",     "https://www.nature.com/nature.rss"),
 ]
 
 MARKET_SYMBOLS = [
-    # Indices
-    {"symbol": "^NSEI",   "name": "NIFTY 50",     "type": "index",  "geo": "India"},
-    {"symbol": "^BSESN",  "name": "SENSEX",        "type": "index",  "geo": "India"},
-    {"symbol": "^STI",    "name": "STI",           "type": "index",  "geo": "Singapore"},
-    {"symbol": "^JKSE",   "name": "IDX Composite", "type": "index",  "geo": "Indonesia"},
-    {"symbol": "^KLSE",   "name": "KLCI",          "type": "index",  "geo": "Malaysia"},
-    {"symbol": "^IXIC",   "name": "NASDAQ",        "type": "index",  "geo": "Global"},
-    {"symbol": "^GSPC",   "name": "S&P 500",       "type": "index",  "geo": "Global"},
-    {"symbol": "^VIX",    "name": "VIX",           "type": "index",  "geo": "Global"},
-    # India tech stocks
-    {"symbol": "ZOMATO.NS",    "name": "Zomato",         "type": "stock", "geo": "India"},
-    {"symbol": "PAYTM.NS",     "name": "Paytm",          "type": "stock", "geo": "India"},
-    {"symbol": "NYKAA.NS",     "name": "Nykaa",          "type": "stock", "geo": "India"},
-    {"symbol": "POLICYBZR.NS", "name": "PolicyBazaar",   "type": "stock", "geo": "India"},
-    {"symbol": "INFY.NS",      "name": "Infosys",        "type": "stock", "geo": "India"},
-    {"symbol": "TCS.NS",       "name": "TCS",            "type": "stock", "geo": "India"},
-    {"symbol": "DMART.NS",     "name": "DMart",          "type": "stock", "geo": "India"},
-    # SEA tech stocks (US-listed)
-    {"symbol": "GRAB",    "name": "Grab",           "type": "stock", "geo": "SEA"},
-    {"symbol": "SE",      "name": "Sea Ltd",        "type": "stock", "geo": "SEA"},
-    {"symbol": "MMYT",    "name": "MakeMyTrip",     "type": "stock", "geo": "India"},
-    {"symbol": "WIX",     "name": "GoTo (GOTO.JK)", "type": "stock", "geo": "SEA"},
+    {"symbol": "^NSEI",        "name": "NIFTY 50",      "type": "index",  "geo": "India"},
+    {"symbol": "^BSESN",       "name": "SENSEX",         "type": "index",  "geo": "India"},
+    {"symbol": "^STI",         "name": "STI",            "type": "index",  "geo": "Singapore"},
+    {"symbol": "^JKSE",        "name": "IDX Composite",  "type": "index",  "geo": "Indonesia"},
+    {"symbol": "^KLSE",        "name": "KLCI",           "type": "index",  "geo": "Malaysia"},
+    {"symbol": "^IXIC",        "name": "NASDAQ",         "type": "index",  "geo": "Global"},
+    {"symbol": "^GSPC",        "name": "S&P 500",        "type": "index",  "geo": "Global"},
+    {"symbol": "^VIX",         "name": "VIX",            "type": "index",  "geo": "Global"},
+    {"symbol": "ZOMATO.NS",    "name": "Zomato",         "type": "stock",  "geo": "India"},
+    {"symbol": "PAYTM.NS",     "name": "Paytm",          "type": "stock",  "geo": "India"},
+    {"symbol": "NYKAA.NS",     "name": "Nykaa",          "type": "stock",  "geo": "India"},
+    {"symbol": "POLICYBZR.NS", "name": "PolicyBazaar",   "type": "stock",  "geo": "India"},
+    {"symbol": "INFY.NS",      "name": "Infosys",        "type": "stock",  "geo": "India"},
+    {"symbol": "TCS.NS",       "name": "TCS",            "type": "stock",  "geo": "India"},
+    {"symbol": "GRAB",         "name": "Grab",           "type": "stock",  "geo": "SEA"},
+    {"symbol": "SE",           "name": "Sea Ltd",        "type": "stock",  "geo": "SEA"},
+    {"symbol": "MMYT",         "name": "MakeMyTrip",     "type": "stock",  "geo": "India"},
 ]
 
-SECTOR_THEMES = [
-    ("AI / ML",           "artificial intelligence machine learning startup India SEA 2025"),
-    ("Fintech",           "fintech payments lending neobank startup India Southeast Asia 2025"),
-    ("B2B SaaS",          "B2B SaaS enterprise software startup India 2025"),
-    ("Healthtech",        "healthtech digital health telemedicine startup India Singapore 2025"),
-    ("Climate / Green",   "climate tech greentech cleantech sustainability startup India SEA 2025"),
-    ("Edtech",            "edtech education technology startup India Southeast Asia 2025"),
-    ("Logistics / SCM",   "logistics supply chain D2C commerce startup India SEA 2025"),
-    ("Web3 / Crypto",     "Web3 crypto blockchain DeFi startup India Singapore 2025"),
-    ("AgriTech",          "agritech agriculture technology startup India 2025"),
-    ("SpaceTech / Deep",  "deep tech space biotech semiconductor startup India 2025"),
-    ("Gaming / Media",    "gaming esports media creator startup India Southeast Asia 2025"),
-    ("Consumer / D2C",    "D2C consumer brand direct-to-consumer startup India SEA 2025"),
+# ── Deep sector heatmap — sub-segments ─────────────────────────────────────────
+# Format: (parent, sub-segment, gdelt_query, india_relevance_note)
+DEEP_SECTOR_THEMES = [
+    # AI / ML
+    ("AI / ML", "Physical AI & Robotics",
+     "physical AI embodied intelligence humanoid robot startup 2025", "🇮🇳 possible"),
+    ("AI / ML", "Data Centers & Infra",
+     "AI data center GPU compute infrastructure startup hyperscaler 2025", "🌏 incoming"),
+    ("AI / ML", "Photonics & Optical AI",
+     "photonics optical computing silicon photonics AI chip startup 2025", "🔬 early"),
+    ("AI / ML", "Foundation Models & LLMs",
+     "foundation model large language model LLM startup funding 2025", "🇮🇳 active"),
+    ("AI / ML", "AI Agents & Automation",
+     "AI agents autonomous agentic workflow automation startup 2025", "🇮🇳 growing"),
+    ("AI / ML", "Edge AI & On-device",
+     "edge AI on-device inference TinyML embedded AI startup 2025", "🌏 SEA"),
+    ("AI / ML", "Computer Vision",
+     "computer vision image recognition video AI startup 2025", "🇮🇳 active"),
+    ("AI / ML", "Voice & Audio AI",
+     "voice AI speech recognition audio synthesis startup 2025", "🇮🇳 active"),
+    # Fintech
+    ("Fintech", "Payments & Infra",
+     "payments fintech payment infrastructure startup India SEA 2025", "🇮🇳 mature"),
+    ("Fintech", "Lending & Credit",
+     "lending credit fintech BNPL embedded finance startup India 2025", "🇮🇳 growing"),
+    ("Fintech", "WealthTech & Investing",
+     "wealthtech investment platform robo-advisor startup India 2025", "🇮🇳 growing"),
+    ("Fintech", "InsurTech",
+     "insurtech insurance technology startup India Southeast Asia 2025", "🇮🇳 early"),
+    ("Fintech", "RegTech & Compliance",
+     "regtech compliance KYC AML fintech startup 2025", "🌏 opportunity"),
+    ("Fintech", "Cross-border & Remittance",
+     "cross-border payments remittance forex startup India SEA 2025", "🌏 SEA"),
+    # Healthtech
+    ("Healthtech", "AI Drug Discovery",
+     "AI drug discovery biotech computational biology startup 2025", "🔬 early India"),
+    ("Healthtech", "Digital Health & Telemedicine",
+     "digital health telemedicine remote care startup India SEA 2025", "🇮🇳 active"),
+    ("Healthtech", "MedTech & Diagnostics",
+     "medtech medical device diagnostic point-of-care startup India 2025", "🇮🇳 growing"),
+    ("Healthtech", "Mental Health & Wellness",
+     "mental health wellness digital therapy startup India 2025", "🇮🇳 early"),
+    ("Healthtech", "Genomics & Precision Med",
+     "genomics precision medicine genetic testing startup India 2025", "🔬 early"),
+    # B2B SaaS
+    ("B2B SaaS", "Vertical SaaS",
+     "vertical SaaS industry-specific software SMB startup India 2025", "🇮🇳 large opp"),
+    ("B2B SaaS", "DevTools & Infrastructure",
+     "developer tools devtools infrastructure platform startup 2025", "🇮🇳 active"),
+    ("B2B SaaS", "Cybersecurity",
+     "cybersecurity security startup India funding 2025", "🇮🇳 growing"),
+    ("B2B SaaS", "HR Tech & Future of Work",
+     "hrtech future of work workforce startup India SEA 2025", "🇮🇳 active"),
+    # Climate & Energy
+    ("Climate", "Solar & Storage",
+     "solar energy battery storage startup India 2025", "🇮🇳 large opp"),
+    ("Climate", "EV & Mobility",
+     "electric vehicle EV two-wheeler mobility startup India SEA 2025", "🇮🇳 active"),
+    ("Climate", "Carbon & ESG",
+     "carbon credit ESG sustainability startup India 2025", "🌏 emerging"),
+    ("Climate", "Green Hydrogen",
+     "green hydrogen clean energy startup India 2025", "🇮🇳 policy push"),
+    # Deep Tech
+    ("Deep Tech", "Semiconductors & VLSI",
+     "semiconductor chip design VLSI fabless startup India 2025", "🇮🇳 policy push"),
+    ("Deep Tech", "Quantum Computing",
+     "quantum computing startup funding 2025", "🔬 early global"),
+    ("Deep Tech", "SpaceTech",
+     "space tech satellite launch startup India 2025", "🇮🇳 ISRO tailwind"),
+    ("Deep Tech", "Synthetic Biology",
+     "synthetic biology biotech startup funding 2025", "🔬 emerging"),
+    # Logistics
+    ("Logistics", "Last-mile Delivery",
+     "last mile delivery logistics quick commerce startup India SEA 2025", "🇮🇳 active"),
+    ("Logistics", "Supply Chain AI",
+     "supply chain AI visibility optimization startup India 2025", "🇮🇳 growing"),
+    # Consumer
+    ("Consumer", "D2C & Brands",
+     "D2C direct-to-consumer brand startup India 2025", "🇮🇳 active"),
+    ("Consumer", "Creator Economy",
+     "creator economy influencer platform monetization startup India 2025", "🇮🇳 early"),
+    # AgriTech
+    ("AgriTech", "Precision Farming & IoT",
+     "precision farming agritech IoT sensor startup India 2025", "🇮🇳 large opp"),
+    ("AgriTech", "AgriFin & Rural Credit",
+     "agri finance rural credit farmer fintech startup India 2025", "🇮🇳 large opp"),
+]
+
+# ── Emerging global tech GDELT queries ────────────────────────────────────────
+EMERGING_GDELT_QUERIES = [
+    "novel startup category new technology breakthrough 2025",
+    "new kind startup emerging technology global funding 2025",
+    "frontier technology startup outside US China 2025",
+    "deep tech breakthrough new startup category 2025",
+    "emerging market technology startup innovation 2025",
 ]
 
 
-def _fetch_rss_feed(source_name: str, feed_url: str, max_items: int = 6) -> list[dict]:
-    """Parse an RSS/Atom feed and return normalised article dicts."""
+def _fetch_rss_feed(source_name: str, feed_url: str, max_items: int = 8,
+                    apply_filter: bool = True) -> list[dict]:
+    """Parse an RSS/Atom feed, filter to relevant topics, return normalised dicts."""
     import feedparser, requests as _req
     try:
-        # Some feeds block Python's default UA; use a browser UA
         r = _req.get(feed_url, timeout=12,
                      headers={"User-Agent": "Mozilla/5.0 (compatible; VCSourcing/1.0)"})
         parsed = feedparser.parse(r.content)
@@ -551,25 +678,22 @@ def _fetch_rss_feed(source_name: str, feed_url: str, max_items: int = 6) -> list
             return []
 
     articles = []
-    for entry in parsed.entries[:max_items]:
-        pub = ""
-        if hasattr(entry, "published"):
-            pub = entry.published
-        elif hasattr(entry, "updated"):
-            pub = entry.updated
+    for entry in parsed.entries:
+        if len(articles) >= max_items:
+            break
+        title   = entry.get("title", "").strip()
+        summary = _re.sub(r"<[^>]+>", "", entry.get("summary", ""))[:300].strip()
 
-        summary = ""
-        if hasattr(entry, "summary"):
-            # Strip HTML tags
-            import re
-            summary = re.sub(r"<[^>]+>", "", entry.get("summary", ""))[:240]
+        if apply_filter and not _is_relevant_article(title, summary):
+            continue
 
+        pub = entry.get("published") or entry.get("updated", "")
         articles.append({
-            "source": source_name,
-            "title":  entry.get("title", "").strip(),
-            "url":    entry.get("link", ""),
+            "source":    source_name,
+            "title":     title,
+            "url":       entry.get("link", ""),
             "published": pub,
-            "summary": summary.strip(),
+            "summary":   summary[:240],
         })
     return articles
 
@@ -590,44 +714,52 @@ def _fetch_gdelt_news(query: str, days: int = 3, max_records: int = 15) -> list[
                  "title": a.get("title", ""),
                  "url": a.get("url", ""),
                  "published": a.get("seendate", ""),
-                 "summary": ""} for a in arts]
+                 "summary": ""} for a in arts
+                if _is_relevant_article(a.get("title", ""))]
     except Exception:
         return []
 
 
 @app.get("/api/intelligence/news")
-async def intelligence_news(type: str = "ai_ml", limit: int = 40):
-    """Live news: type=ai_ml | india_sea"""
+async def intelligence_news(type: str = "ai_ml", limit: int = 50):
+    """Live news: type=ai_ml | india_sea | emerging"""
     cache_key = f"news_{type}"
     with _intel_lock:
         cached = _intel_cache.get(cache_key)
         if cached and _time.time() - cached["ts"] < 120:
             return JSONResponse(cached["data"])
 
-    feeds = AI_ML_FEEDS if type == "ai_ml" else INDIA_SEA_FEEDS
-    articles: list[dict] = []
+    if type == "emerging":
+        feeds = EMERGING_FEEDS
+    elif type == "india_sea":
+        feeds = INDIA_SEA_FEEDS
+    else:
+        feeds = AI_ML_FEEDS
 
-    # RSS feeds (run in parallel via threads)
+    articles: list[dict] = []
     from concurrent.futures import ThreadPoolExecutor, as_completed
-    with ThreadPoolExecutor(max_workers=6) as pool:
-        futures = {pool.submit(_fetch_rss_feed, name, url): name for name, url in feeds}
-        for fut in as_completed(futures, timeout=20):
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        # Curated AI/ML feeds are pre-filtered; others need topic filter
+        apply = (type != "ai_ml")
+        futures = {pool.submit(_fetch_rss_feed, name, url, 8, apply): name
+                   for name, url in feeds}
+        for fut in as_completed(futures, timeout=25):
             try:
                 articles.extend(fut.result())
             except Exception:
                 pass
 
     # GDELT supplement
-    gdelt_q = ("artificial intelligence machine learning LLM generative AI startup 2025"
-               if type == "ai_ml"
-               else "startup founder India Singapore Indonesia Vietnam 2025")
-    articles.extend(_fetch_gdelt_news(gdelt_q, days=3, max_records=20))
+    gdelt_queries = {
+        "ai_ml":     "artificial intelligence machine learning LLM startup funding 2025",
+        "india_sea": "startup founder India Singapore Indonesia Vietnam 2025",
+        "emerging":  "new technology startup global emerging 2025",
+    }
+    articles.extend(_fetch_gdelt_news(gdelt_queries.get(type, ""), days=3, max_records=20))
 
-    # Deduplicate by URL, sort newest first
-    seen = set()
-    unique = []
+    seen, unique = set(), []
     for a in articles:
-        if a["url"] and a["url"] not in seen:
+        if a["url"] and a["url"] not in seen and a.get("title"):
             seen.add(a["url"])
             unique.append(a)
 
@@ -641,7 +773,7 @@ async def intelligence_news(type: str = "ai_ml", limit: int = 40):
 
 @app.get("/api/intelligence/market")
 async def intelligence_market():
-    """Live market data: India/SEA indices + key tech stocks via Yahoo Finance."""
+    """Live market data via Yahoo Finance (5-min cache)."""
     cache_key = "market"
     with _intel_lock:
         cached = _intel_cache.get(cache_key)
@@ -651,10 +783,9 @@ async def intelligence_market():
     import requests as _req
 
     def _fetch_quote(item: dict) -> dict | None:
-        symbol = item["symbol"]
         try:
             r = _req.get(
-                f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}",
+                f"https://query1.finance.yahoo.com/v8/finance/chart/{item['symbol']}",
                 params={"interval": "1d", "range": "5d"},
                 headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"},
                 timeout=8,
@@ -665,16 +796,10 @@ async def intelligence_market():
             price = meta.get("regularMarketPrice") or meta.get("chartPreviousClose", 0)
             prev  = meta.get("chartPreviousClose") or meta.get("previousClose", price)
             chg   = round(((price - prev) / prev * 100) if prev else 0, 2)
-            return {
-                "symbol":       symbol,
-                "name":         item["name"],
-                "type":         item["type"],
-                "geo":          item["geo"],
-                "price":        round(price, 2),
-                "change_pct":   chg,
-                "currency":     meta.get("currency", "USD"),
-                "market_state": meta.get("marketState", "CLOSED"),
-            }
+            return {"symbol": item["symbol"], "name": item["name"], "type": item["type"],
+                    "geo": item["geo"], "price": round(price, 2), "change_pct": chg,
+                    "currency": meta.get("currency", "USD"),
+                    "market_state": meta.get("marketState", "CLOSED")}
         except Exception:
             return None
 
@@ -690,9 +815,7 @@ async def intelligence_market():
             except Exception:
                 pass
 
-    # Sort: indices first, then stocks; within each group by geo
     quotes.sort(key=lambda q: (0 if q["type"] == "index" else 1, q["geo"], q["name"]))
-
     result = {"quotes": quotes, "fetched_at": datetime.utcnow().isoformat() + "Z"}
     with _intel_lock:
         _intel_cache[cache_key] = {"ts": _time.time(), "data": result}
@@ -701,7 +824,7 @@ async def intelligence_market():
 
 @app.get("/api/intelligence/sectors")
 async def intelligence_sectors():
-    """Sector signal heatmap — GDELT article counts per investment theme (30-min cache)."""
+    """Deep sector heatmap with sub-segments — GDELT signal counts (30-min cache)."""
     cache_key = "sectors"
     with _intel_lock:
         cached = _intel_cache.get(cache_key)
@@ -710,7 +833,7 @@ async def intelligence_sectors():
 
     import requests as _req
     sectors = []
-    for sector_name, query in SECTOR_THEMES:
+    for parent, sub, query, india_note in DEEP_SECTOR_THEMES:
         try:
             r = _req.get(
                 "https://api.gdeltproject.org/api/v2/doc/doc",
@@ -724,8 +847,12 @@ async def intelligence_sectors():
         except Exception:
             count, headlines = 0, []
 
-        sectors.append({"name": sector_name, "signal_count": count, "headlines": headlines})
-        _time.sleep(6)  # GDELT rate limit: 1 req / 5s
+        sectors.append({
+            "parent": parent, "name": sub,
+            "signal_count": count, "headlines": headlines,
+            "india_note": india_note,
+        })
+        _time.sleep(6)
 
     result = {"sectors": sectors, "fetched_at": datetime.utcnow().isoformat() + "Z"}
     with _intel_lock:
