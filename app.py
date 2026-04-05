@@ -197,7 +197,22 @@ async def get_signals(
     if geo:
         persons = [p for p in persons if geo.lower() in (p.get("geography") or p.get("location") or "").lower()]
 
-    return JSONResponse({"persons": persons, "total": len(persons), "days": days})
+    # Parse social fields for each person
+    for p in persons:
+        if isinstance(p.get("social_snippets"), str):
+            try:
+                p["social_snippets"] = json.loads(p["social_snippets"])
+            except Exception:
+                p["social_snippets"] = []
+        try:
+            p["social_score"] = int(p.get("social_score", 0) or 0)
+        except (TypeError, ValueError):
+            p["social_score"] = 0
+
+    return JSONResponse({
+        "persons": persons, "total": len(persons), "days": days,
+        "hot_sectors": get_hot_sectors(),
+    })
 
 
 @app.get("/api/signals/live")
@@ -598,6 +613,8 @@ MARKET_SYMBOLS = [
     {"symbol": "SPANDANA.NS",    "name": "Spandana Sphoorty",    "type": "stock",  "geo": "Portfolio"},
     {"symbol": "WALCHANNAG.NS",  "name": "Walchandnagar Inds",   "type": "stock",  "geo": "Portfolio"},
     {"symbol": "TIMEXGROUP.NS",  "name": "Timex Group",          "type": "stock",  "geo": "Portfolio"},
+    {"symbol": "GIAINDIA.NS",    "name": "GIA India",            "type": "stock",  "geo": "Portfolio"},
+    {"symbol": "KMT",            "name": "Kennametal",           "type": "stock",  "geo": "Portfolio"},
     # ── Commodities ────────────────────────────────────────────────────────────────
     {"symbol": "GC=F",    "name": "Gold",          "type": "commodity", "geo": "Commodities"},
     {"symbol": "SI=F",    "name": "Silver",         "type": "commodity", "geo": "Commodities"},
@@ -803,7 +820,7 @@ async def intelligence_news(type: str = "ai_ml", limit: int = 50):
         apply = (type != "ai_ml")
         futures = {pool.submit(_fetch_rss_feed, name, url, 8, apply): name
                    for name, url in feeds}
-        for fut in as_completed(futures, timeout=25):
+        for fut in as_completed(futures, timeout=35):
             try:
                 articles.extend(fut.result())
             except Exception:
@@ -867,7 +884,7 @@ async def intelligence_market():
     quotes = []
     with ThreadPoolExecutor(max_workers=8) as pool:
         futures = {pool.submit(_fetch_quote, item): item for item in MARKET_SYMBOLS}
-        for fut in as_completed(futures, timeout=25):
+        for fut in as_completed(futures, timeout=35):
             try:
                 q = fut.result()
                 if q:
@@ -882,84 +899,331 @@ async def intelligence_market():
     return JSONResponse(result)
 
 
-def _run_sectors_fetch() -> None:
-    """Sync worker — runs in a threadpool or background thread. GDELT rate-limited at 1 req/5s."""
-    import requests as _req
-    sectors = []
-    for parent, sub, query, india_note in DEEP_SECTOR_THEMES:
+def _fetch_patents_for_sector(sub: str, keywords: list) -> list:
+    """Fetch patent signals from free public APIs for a given sector."""
+    import requests as _req, urllib.parse as _up
+
+    # Use SearXNG to search for recent patents related to this sub-sector
+    query = " ".join(keywords[:4]) + " patent 2024 2025 startup"
+    INSTANCES = [
+        "https://searx.be/search",
+        "https://search.sapti.me/search",
+        "https://searxng.site/search",
+    ]
+
+    for base in INSTANCES:
         try:
             r = _req.get(
-                "https://api.gdeltproject.org/api/v2/doc/doc",
-                params={"query": query, "mode": "artlist", "maxrecords": "25",
-                        "format": "json", "timespan": "7d"},
-                timeout=12,
+                base,
+                params={"q": query, "format": "json", "categories": "science,general"},
+                headers={"User-Agent": "Mozilla/5.0 (compatible; VCBot/1.0)"},
+                timeout=6,
             )
-            arts = r.json().get("articles", []) if r.ok and r.content else []
-            count = len(arts)
-            headlines = [a.get("title", "") for a in arts[:3] if a.get("title")]
+            if not r.ok:
+                continue
+            patents = []
+            for res in r.json().get("results", [])[:8]:
+                t = res.get("title", "")
+                u = res.get("url", "")
+                s = res.get("content", "")[:120]
+                # Only include if looks like a patent source
+                patent_sources = [
+                    "patents.google", "espacenet", "patents.justia",
+                    "lens.org", "freepatentsonline", "uspto.gov", "wipo.int",
+                ]
+                if t and (
+                    any(ps in u for ps in patent_sources)
+                    or any(w in t.lower() for w in ["patent", "invention", "apparatus", "method for"])
+                ):
+                    patents.append({"title": t, "url": u, "snippet": s, "type": "patent"})
+            if patents:
+                return patents
         except Exception:
-            count, headlines = 0, []
-
-        sectors.append({
-            "parent": parent, "name": sub,
-            "signal_count": count, "headlines": headlines,
-            "india_note": india_note,
-        })
-        _time.sleep(6)  # GDELT rate limit: 1 req/5s — safe at 6s
-
-    result = {
-        "sectors": sectors,
-        "fetched_at": datetime.utcnow().isoformat() + "Z",
-        "loading": False,
-    }
-    with _intel_lock:
-        _intel_cache["sectors"] = {"ts": _time.time(), "data": result}
-    logging.getLogger(__name__).info("Sectors cache warmed — %d sub-segments", len(sectors))
+            continue
+    return []
 
 
-def _prewarm_sectors() -> None:
-    """Called once at startup in a daemon thread so the cache is ready before first user visit."""
+def get_hot_sectors() -> list:
+    """Read sectors cache and return top 5 by signal_count."""
     with _intel_lock:
         cached = _intel_cache.get("sectors")
-        if cached and _time.time() - cached["ts"] < 1800:
-            return  # already fresh from a previous prewarm in this process
-    _run_sectors_fetch()
+        if not cached:
+            return []
+        sectors = cached.get("data", {}).get("sectors", [])
+    sorted_sectors = sorted(sectors, key=lambda s: s.get("signal_count", 0), reverse=True)
+    return [s.get("name", "") for s in sorted_sectors[:5] if s.get("name")]
 
 
-# Kick off background prewarm immediately at import time (daemon = dies with server process)
-_sectors_prewarm_thread = threading.Thread(target=_prewarm_sectors, daemon=True, name="sectors-prewarm")
-_sectors_prewarm_thread.start()
+def _rss_sector_baseline() -> list:
+    """Build instant sector counts from already-cached RSS news — no network calls needed."""
+    all_text: list[str] = []
+    with _intel_lock:
+        for key in ("india_sea", "ai_ml", "emerging"):
+            nc = _intel_cache.get(key)
+            if nc:
+                for item in nc["data"].get("items", []):
+                    all_text.append((item.get("title", "") + " " + item.get("summary", "")).lower())
+
+    sectors = []
+    for parent, sub, query, india_note in DEEP_SECTOR_THEMES:
+        # Use first 5 meaningful words from the GDELT query as keyword signals
+        keywords = [w.lower() for w in query.split() if len(w) > 4][:6]
+        count = sum(1 for t in all_text if any(kw in t for kw in keywords))
+        sectors.append({
+            "parent": parent, "name": sub,
+            "signal_count": count, "headlines": [],
+            "india_note": india_note,
+            "source": "rss",
+        })
+    return sectors
+
+
+def _run_sectors_fetch() -> None:
+    """Sync worker — runs in background thread.
+    Uses RSS keyword counts for instant display, then enriches with GDELT article counts.
+    Writes partial results every 9 queries so the frontend can show progressive loading.
+    GDELT rate-limited: reduced to 2s sleep per query (handles 429s gracefully).
+    """
+    import requests as _req
+    log = logging.getLogger(__name__)
+
+    # Seed cache immediately with RSS baseline so heatmap is instant
+    baseline = _rss_sector_baseline()
+    with _intel_lock:
+        _intel_cache["sectors"] = {
+            "ts": _time.time(),
+            "data": {
+                "sectors": baseline,
+                "fetched_at": datetime.utcnow().isoformat() + "Z",
+                "loading": True,
+                "progress": 0,
+                "source": "rss_baseline",
+            },
+        }
+    log.info("Sectors: RSS baseline written (%d sub-segments)", len(baseline))
+
+    # Now enrich with GDELT article counts progressively
+    sectors = list(baseline)  # copy to update in place
+    total = len(DEEP_SECTOR_THEMES)
+    for i, (parent, sub, query, india_note) in enumerate(DEEP_SECTOR_THEMES):
+        for attempt in range(2):
+            try:
+                r = _req.get(
+                    "https://api.gdeltproject.org/api/v2/doc/doc",
+                    params={"query": query, "mode": "artlist", "maxrecords": "25",
+                            "format": "json", "timespan": "7d"},
+                    timeout=10,
+                )
+                if r.status_code == 429:
+                    _time.sleep(10)
+                    continue
+                arts = r.json().get("articles", []) if r.ok and r.content else []
+                count = len(arts)
+                headlines = [a.get("title", "") for a in arts[:3] if a.get("title")]
+                # Fetch patent signals for this sector
+                patent_keywords = [w.lower() for w in query.split() if len(w) > 4][:5]
+                patent_list = _fetch_patents_for_sector(sub, patent_keywords)
+                sectors[i] = {"parent": parent, "name": sub, "signal_count": count,
+                               "headlines": headlines, "india_note": india_note, "source": "gdelt",
+                               "patents": patent_list}
+                break
+            except Exception:
+                break
+
+        # Write partial cache every 9 queries (4 partial updates before final)
+        done = i + 1
+        if done % 9 == 0 or done == total:
+            progress = round(done / total * 100)
+            with _intel_lock:
+                _intel_cache["sectors"] = {
+                    "ts": _time.time(),
+                    "data": {
+                        "sectors": sectors[:done],
+                        "fetched_at": datetime.utcnow().isoformat() + "Z",
+                        "loading": done < total,
+                        "progress": progress,
+                        "source": "gdelt_partial",
+                    },
+                }
+            log.info("Sectors: %d/%d complete (%d%%)", done, total, progress)
+
+        _time.sleep(2)  # Reduced from 6s → 36×2s = ~72s total vs 216s before
+
+    log.info("Sectors: GDELT enrichment complete — %d sub-segments", total)
+
+
+_sectors_gdelt_thread: threading.Thread | None = None
 
 
 @app.get("/api/intelligence/sectors")
 def intelligence_sectors():
-    """Deep sector heatmap — returns cached data or loading placeholder (non-blocking).
+    """Deep sector heatmap — always returns immediately.
 
-    FastAPI runs plain `def` endpoints in a threadpool so this never blocks the event loop.
-    The actual GDELT fetch is done by the background prewarm thread (or this thread on cache miss).
+    First call: builds instant RSS baseline from already-cached news, then starts
+    GDELT enrichment in a background thread. Frontend polls every 10s for updates.
+    FastAPI runs plain `def` so this never blocks the async event loop.
     """
+    global _sectors_gdelt_thread
     cache_key = "sectors"
-    with _intel_lock:
-        cached = _intel_cache.get(cache_key)
-        if cached and _time.time() - cached["ts"] < 1800:
-            return JSONResponse(cached["data"])
-        # Check if background thread is still running
-        if _sectors_prewarm_thread.is_alive():
-            return JSONResponse({
-                "sectors": [],
-                "loading": True,
-                "fetched_at": None,
-                "eta_seconds": max(0, int(len(DEEP_SECTOR_THEMES) * 6.5)),
-            })
 
-    # Thread finished (or crashed) and cache is empty/stale — re-run synchronously in this threadpool worker
-    _run_sectors_fetch()
     with _intel_lock:
         cached = _intel_cache.get(cache_key)
-    return JSONResponse(cached["data"] if cached else {"sectors": [], "loading": False, "fetched_at": None})
+
+    if cached:
+        data = cached["data"]
+        # Fully complete + fresh → serve from cache
+        if not data.get("loading") and _time.time() - cached["ts"] < 1800:
+            return JSONResponse(data)
+        # Partial data available → return it (client polls for more)
+        if data.get("sectors"):
+            return JSONResponse(data)
+
+    # Cache empty — build instant RSS baseline NOW (news feeds have had ~5s to populate)
+    baseline = _rss_sector_baseline()
+    instant = {
+        "sectors": baseline, "loading": True, "progress": 0,
+        "fetched_at": datetime.utcnow().isoformat() + "Z", "source": "rss_baseline",
+    }
+    with _intel_lock:
+        _intel_cache[cache_key] = {"ts": _time.time(), "data": instant}
+
+    # Kick off GDELT enrichment if not already running
+    if _sectors_gdelt_thread is None or not _sectors_gdelt_thread.is_alive():
+        _sectors_gdelt_thread = threading.Thread(
+            target=_run_sectors_fetch, daemon=True, name="sectors-gdelt")
+        _sectors_gdelt_thread.start()
+
+    return JSONResponse(instant)
 
 
 # ── Consumer & Demand Intelligence ────────────────────────────────────────────
+
+def _fetch_ddg(query: str, max_results: int = 15) -> list:
+    """DuckDuckGo search — free, no API key needed. Uses the ddg HTML API."""
+    import requests as _req
+    try:
+        r = _req.get(
+            "https://api.duckduckgo.com/",
+            params={"q": query, "format": "json", "no_html": "1", "skip_disambig": "1"},
+            headers={"User-Agent": "Mozilla/5.0 (compatible; VC-Intel/1.0)"},
+            timeout=8,
+        )
+        if not r.ok:
+            return []
+        data = r.json()
+        items = []
+        # Abstract / main result
+        if data.get("AbstractText") and data.get("AbstractURL"):
+            title = data.get("Heading", query)
+            if _is_relevant_article(title):
+                items.append({"source": "DuckDuckGo", "title": title,
+                               "url": data["AbstractURL"], "score": 0, "comments": 0,
+                               "age": "recent", "ts": _time.time()})
+        # Related topics
+        for rt in (data.get("RelatedTopics") or [])[:max_results]:
+            text = rt.get("Text", "") or (rt.get("Topics") or [{}])[0].get("Text", "")
+            url  = rt.get("FirstURL", "") or ""
+            if text and url and _is_relevant_article(text):
+                items.append({"source": "DuckDuckGo", "title": text[:120],
+                               "url": url, "score": 0, "comments": 0,
+                               "age": "recent", "ts": _time.time() - 3600})
+        return items[:max_results]
+    except Exception:
+        return []
+
+
+def _fetch_searxng(query: str, max_results: int = 15) -> list:
+    """SearXNG — free metasearch. Uses public instances with fallback."""
+    import requests as _req
+    INSTANCES = [
+        "https://searx.be/search",
+        "https://search.sapti.me/search",
+        "https://searx.prvcy.eu/search",
+    ]
+    for base in INSTANCES:
+        try:
+            r = _req.get(
+                base,
+                params={"q": query, "format": "json", "categories": "news,general", "language": "en"},
+                headers={"User-Agent": "Mozilla/5.0 (compatible; VC-Intel/1.0)"},
+                timeout=7,
+            )
+            if not r.ok:
+                continue
+            results = r.json().get("results", [])
+            items = []
+            for res in results[:max_results]:
+                title = res.get("title", "")
+                url   = res.get("url", "")
+                if not title or not url or not _is_relevant_article(title):
+                    continue
+                items.append({"source": "SearXNG", "title": title[:120], "url": url,
+                               "score": 0, "comments": 0, "age": "recent",
+                               "ts": _time.time() - 1800})
+            if items:
+                return items
+        except Exception:
+            continue
+    return []
+
+
+def _fetch_serper(query: str, max_results: int = 15) -> list:
+    """Serper.dev Google News search — requires SERPER_API_KEY in env."""
+    import os, requests as _req
+    key = os.getenv("SERPER_API_KEY", "")
+    if not key:
+        return []
+    try:
+        r = _req.post(
+            "https://google.serper.dev/news",
+            json={"q": query, "gl": "in", "hl": "en", "num": max_results},
+            headers={"X-API-KEY": key, "Content-Type": "application/json"},
+            timeout=8,
+        )
+        if not r.ok:
+            return []
+        items = []
+        for art in r.json().get("news", [])[:max_results]:
+            title = art.get("title", "")
+            url   = art.get("link", "")
+            if not title or not _is_relevant_article(title):
+                continue
+            items.append({"source": "Serper/Google", "title": title[:120], "url": url,
+                           "score": 0, "comments": 0, "age": art.get("date", "recent"),
+                           "ts": _time.time() - 3600})
+        return items
+    except Exception:
+        return []
+
+
+def _fetch_tavily(query: str, max_results: int = 15) -> list:
+    """Tavily AI search — requires TAVILY_API_KEY in env."""
+    import os, requests as _req
+    key = os.getenv("TAVILY_API_KEY", "")
+    if not key:
+        return []
+    try:
+        r = _req.post(
+            "https://api.tavily.com/search",
+            json={"api_key": key, "query": query, "search_depth": "basic",
+                  "include_answer": False, "max_results": max_results, "topic": "news"},
+            timeout=10,
+        )
+        if not r.ok:
+            return []
+        items = []
+        for res in r.json().get("results", [])[:max_results]:
+            title = res.get("title", "")
+            url   = res.get("url", "")
+            if not title or not _is_relevant_article(title):
+                continue
+            items.append({"source": "Tavily", "title": title[:120], "url": url,
+                           "score": 0, "comments": 0, "age": "recent",
+                           "ts": _time.time() - 1800})
+        return items
+    except Exception:
+        return []
+
 
 def _fetch_reddit_feed(url: str, source_name: str, limit: int = 25) -> list:
     """Fetch a Reddit JSON feed and return normalised items."""
@@ -1105,10 +1369,16 @@ def intelligence_demand():
          ("consumer india product OR fintech india 2025",
           "HackerNews", 15)),
         (_fetch_ph_feed, ()),
+        # ── Free search enrichment (no key needed) ──────────────────────────
+        (_fetch_ddg,     ("India startup fintech consumer 2025", 12)),
+        (_fetch_searxng, ("India SEA startup tech consumer 2025", 12)),
+        # ── Optional paid search APIs (use key if available) ────────────────
+        (_fetch_serper,  ("India startup consumer tech fintech 2025", 15)),
+        (_fetch_tavily,  ("India Southeast Asia startup consumer demand 2025", 15)),
     ]
 
     all_items: list = []
-    with ThreadPoolExecutor(max_workers=7) as pool:
+    with ThreadPoolExecutor(max_workers=11) as pool:
         futures = {pool.submit(fn, *args): fn for fn, args in tasks}
         for fut in as_completed(futures, timeout=20):
             try:
@@ -1116,7 +1386,39 @@ def intelligence_demand():
             except Exception:
                 pass
 
-    # Deduplicate by URL, sort by timestamp descending, cap at 60
+    # ── Tag each item with category + theme tags ──────────────────────────────
+    CONSUMER_SOURCES = {"Reddit/IndiaInvestments", "Reddit/SGInvestments"}
+    BUSINESS_SOURCES = {"HackerNews", "Reddit/IndiaStartups"}
+    THEME_MAP = {
+        "AI/ML":       ["ai", "machine learning", "llm", "chatgpt", "claude", "gemini", "openai", "nvidia"],
+        "Fintech":     ["fintech", "payment", "upi", "crypto", "neobank", "lending", "insurance", "banking"],
+        "SaaS/B2B":    ["saas", "b2b", "enterprise", "software", "platform", "api", "tool", "automation"],
+        "EV/Mobility": ["ev ", "electric vehicle", "mobility", "scooter", "delivery", "logistics"],
+        "Healthtech":  ["health", "medical", "wellness", "telemedicine", "pharma", "hospital"],
+        "D2C/Brand":   ["brand", "d2c", "retail", "fashion", "consumer", "ecommerce"],
+        "Edtech":      ["education", "edtech", "learning", "course", "skill", "upskill"],
+        "Startup":     ["startup", "founder", "venture", "seed", "series a", "funding", "vc", "raise"],
+        "Defence":     ["defence", "defense", "military", "drone", "aerospace", "isro"],
+        "Climate":     ["climate", "solar", "ev", "green", "sustainability", "carbon", "hydrogen"],
+    }
+    CONSUMER_KW = ["buy", "use", "app", "product", "price", "review", "best", "recommend", "personal", "consumer"]
+    BUSINESS_KW = ["b2b", "enterprise", "saas", "startup", "founder", "api", "tool", "business", "solution", "workflow"]
+
+    for item in all_items:
+        title_low = item.get("title", "").lower()
+        src = item.get("source", "")
+        # Category
+        if src in CONSUMER_SOURCES or any(kw in title_low for kw in CONSUMER_KW):
+            item["category"] = "consumer"
+        elif src in BUSINESS_SOURCES or any(kw in title_low for kw in BUSINESS_KW):
+            item["category"] = "business"
+        else:
+            item["category"] = "consumer"  # default
+        # Theme tags
+        tags = [theme for theme, kws in THEME_MAP.items() if any(kw in title_low for kw in kws)]
+        item["theme_tags"] = tags[:3]
+
+    # Deduplicate by URL, sort by timestamp descending, cap at 80
     seen_urls: set = set()
     deduped = []
     for item in sorted(all_items, key=lambda x: x.get("ts", 0), reverse=True):
@@ -1125,7 +1427,7 @@ def intelligence_demand():
             continue
         seen_urls.add(url)
         deduped.append(item)
-        if len(deduped) >= 60:
+        if len(deduped) >= 80:
             break
 
     # Strip internal ts field

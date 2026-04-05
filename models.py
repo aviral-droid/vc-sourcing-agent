@@ -47,6 +47,10 @@ class Person:
     score_rationale: str = ""
     investment_thesis: str = ""
     recommended_action: str = ""  # investigate | watchlist | pass
+    # Social screening fields
+    twitter_url: str = ""
+    social_score: int = 0
+    social_snippets: List[str] = field(default_factory=list)
 
     @property
     def signal_count(self) -> int:

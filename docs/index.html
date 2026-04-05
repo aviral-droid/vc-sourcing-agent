@@ -526,23 +526,41 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
 .sector-card[data-level="1"] .sector-bar{background:var(--muted)}
 
 /* Demand Intelligence panel */
-.intel-demand{border-top:1px solid var(--border);background:var(--surface);padding:12px 16px}
-.intel-demand-header{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.demand-grid{display:flex;gap:10px;overflow-x:auto;padding-bottom:6px}
-.demand-card{
-  flex-shrink:0;width:220px;
-  background:var(--surface2);border:1px solid var(--border);
-  border-radius:10px;padding:10px 12px;cursor:pointer;
-  transition:border-color .15s;
-}
-.demand-card:hover{border-color:var(--border2)}
-.demand-card-title{font-size:12px;font-weight:500;color:var(--text);line-height:1.4;margin-bottom:6px}
-.demand-card-meta{display:flex;align-items:center;gap:6px}
-.demand-src{font-size:9px;font-weight:700;padding:2px 6px;border-radius:4px;text-transform:uppercase}
+/* ── Consumer & Demand Dashboard ─────────────────────────────────────────── */
+.intel-demand{border-top:2px solid var(--border);background:var(--surface);padding:16px 18px 20px}
+.demand-header{display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.demand-header-title{font-size:13px;font-weight:700;color:var(--text)}
+.demand-header-sub{font-size:10px;color:var(--muted)}
+.demand-header-ts{font-size:10px;color:var(--muted);margin-left:auto}
+.demand-layout{display:grid;grid-template-columns:220px 1fr 1fr;gap:16px;min-height:220px}
+/* Theme bar chart column */
+.demand-themes{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px}
+.demand-themes-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:10px}
+.theme-bar-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.theme-bar-label{font-size:11px;color:var(--text2);width:80px;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.theme-bar-track{flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+.theme-bar-fill{height:100%;border-radius:3px;transition:width .4s}
+.theme-bar-count{font-size:10px;color:var(--muted);width:24px;text-align:right;flex-shrink:0}
+/* Consumer / Business pulse columns */
+.demand-col{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px;overflow-y:auto;max-height:280px}
+.demand-col-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.demand-col-title.consumer{color:#f59e0b}
+.demand-col-title.business{color:#3b82f6}
+.demand-item{padding:7px 0;border-bottom:1px solid var(--border);cursor:pointer}
+.demand-item:last-child{border-bottom:none}
+.demand-item:hover .demand-item-title{color:var(--text)}
+.demand-item-title{font-size:11px;color:var(--text2);line-height:1.4;margin-bottom:4px;transition:color .1s}
+.demand-item-meta{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.demand-src{font-size:8px;font-weight:700;padding:1px 5px;border-radius:3px;text-transform:uppercase}
 .demand-src.reddit{background:rgba(255,69,0,.15);color:#ff4500}
 .demand-src.hn{background:rgba(255,102,0,.15);color:#ff6600}
 .demand-src.ph{background:rgba(218,72,15,.15);color:#da480f}
-.demand-card-score{font-size:10px;color:var(--muted)}
+.demand-item-score{font-size:9px;color:var(--muted)}
+.demand-theme-tag{font-size:8px;padding:1px 5px;border-radius:3px;background:var(--accent-dim);color:var(--accent)}
+/* Common themes pills strip */
+.demand-themes-strip{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.demand-theme-pill{padding:3px 10px;border-radius:20px;font-size:10px;font-weight:600;cursor:pointer;border:1px solid var(--border);color:var(--text2);transition:all .15s}
+.demand-theme-pill:hover,.demand-theme-pill.active{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
 
 /* Market Composite bar */
 .composite-bar-wrap{padding:8px 10px;background:var(--surface3);border-radius:8px;margin-bottom:10px}
@@ -572,6 +590,78 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
 /* Emerging source badge */
 .news-src-badge.emerging{background:rgba(16,185,129,.08);color:var(--green);border-color:rgba(16,185,129,.2)}
 .news-src-badge.global{background:rgba(139,92,246,.08);color:var(--purple);border-color:rgba(139,92,246,.2)}
+
+/* ── Patent signals in heatmap ────────────────────────────────── */
+.sector-patents{font-size:9px;color:var(--teal);margin-top:4px}
+.sector-patents-expand{cursor:pointer;text-decoration:underline}
+.sector-patents-list{margin-top:4px;display:flex;flex-direction:column;gap:2px}
+.sector-patents-list.hidden{display:none}
+.patent-link{font-size:9px;color:var(--muted2);line-height:1.3}
+.patent-link:hover{color:var(--text)}
+
+/* ── Score ring SVG ───────────────────────────────────────────── */
+.score-ring{position:relative;width:48px;height:48px;flex-shrink:0}
+.score-ring svg{width:48px;height:48px;transform:rotate(-90deg)}
+.score-ring-bg{fill:none;stroke:var(--surface3);stroke-width:4}
+.score-ring-fg{fill:none;stroke-width:4;stroke-linecap:round;transition:stroke-dashoffset .6s ease}
+.score-ring-text{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:800;letter-spacing:-0.5px}
+.score-ring-label{font-size:8px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);text-align:center;margin-top:2px}
+
+/* ── Social badge ─────────────────────────────────────────────── */
+.social-badge{display:inline-flex;align-items:center;gap:3px;font-size:10px;font-weight:600;padding:2px 8px;border-radius:20px;background:rgba(6,182,212,.08);color:var(--teal);border:1px solid rgba(6,182,212,.2)}
+.social-snippet{font-size:10px;color:var(--muted2);font-style:italic;line-height:1.4;margin-top:4px;padding:6px 8px;background:var(--surface2);border-radius:6px;border-left:2px solid var(--teal)}
+
+/* ── Hot sectors strip ────────────────────────────────────────── */
+.hot-sectors-strip{display:flex;align-items:center;gap:8px;padding:8px 0;margin-bottom:12px;flex-wrap:wrap}
+.hot-sector-label{font-size:11px;font-weight:700;color:var(--amber)}
+.hot-sector-pill{font-size:10px;font-weight:600;padding:2px 10px;border-radius:20px;background:rgba(245,158,11,.08);color:var(--amber);border:1px solid rgba(245,158,11,.2)}
+
+/* ── Hot sector glow on card ──────────────────────────────────── */
+.card.hot-sector{box-shadow:0 0 12px rgba(245,158,11,.12);border-color:rgba(245,158,11,.2)}
+
+/* ── Action buttons ───────────────────────────────────────────── */
+.action-btns{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.action-btn{
+  display:inline-flex;align-items:center;gap:4px;
+  font-size:11px;font-weight:600;padding:5px 12px;border-radius:7px;
+  cursor:pointer;border:1px solid var(--border2);background:var(--surface2);color:var(--text2);
+  font-family:var(--font);transition:all .12s;
+}
+.action-btn:hover{background:var(--surface3);color:var(--text)}
+.action-btn.outreach{border-color:rgba(99,102,241,.25);color:var(--accent)}
+.action-btn.outreach:hover{background:var(--accent-dim)}
+.action-btn.track{border-color:rgba(16,185,129,.25);color:var(--green)}
+.action-btn.track:hover{background:var(--green-dim)}
+.action-btn.pass-btn{border-color:rgba(239,68,68,.15);color:var(--muted2)}
+.action-btn.pass-btn:hover{background:var(--red-dim);color:var(--red)}
+
+/* ── Stats bar ────────────────────────────────────────────────── */
+.stats-bar{display:flex;gap:16px;align-items:center;font-size:11px;color:var(--muted2);padding:6px 0;margin-bottom:8px;flex-wrap:wrap}
+.stats-bar strong{color:var(--text2)}
+
+/* ── Table view ───────────────────────────────────────────────── */
+.founders-table{width:100%;border-collapse:collapse;font-size:12px}
+.founders-table th{
+  text-align:left;padding:8px 10px;border-bottom:2px solid var(--border2);
+  font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;
+  color:var(--muted);cursor:pointer;user-select:none;white-space:nowrap;
+}
+.founders-table th:hover{color:var(--text2)}
+.founders-table td{padding:8px 10px;border-bottom:1px solid var(--border);color:var(--text2)}
+.founders-table tr:hover td{background:var(--surface2)}
+.founders-table .score-cell{font-weight:800;letter-spacing:-.5px}
+
+/* ── Empty state ──────────────────────────────────────────────── */
+.empty-state{
+  text-align:center;padding:60px 20px;color:var(--muted);
+  display:flex;flex-direction:column;align-items:center;gap:12px;
+}
+.empty-state button{
+  margin-top:8px;font-size:12px;font-family:var(--font);font-weight:600;
+  background:var(--accent);color:#fff;border:none;border-radius:8px;
+  padding:8px 16px;cursor:pointer;transition:background .15s;
+}
+.empty-state button:hover{background:var(--accent2)}
 </style>
 </head>
 <body>
@@ -705,7 +795,7 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
     <div class="sidebar-divider"></div>
     <div class="sidebar-label">Min score</div>
     <div class="slider-wrap">
-      <div class="slider-label"><span>Threshold</span><strong id="slider-val">0+</strong></div>
+      <div class="slider-label"><span>Score &ge;</span><strong id="slider-val">0</strong></div>
       <input type="range" id="score-slider" min="0" max="100" step="5" value="0" oninput="onSlider(this)">
     </div>
 
@@ -733,17 +823,40 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
       <div class="summary-text" id="summary-text"></div>
     </div>
 
+    <!-- Hot sectors strip -->
+    <div class="hot-sectors-strip" id="hot-sectors-strip" style="display:none"></div>
+
     <!-- Toolbar -->
     <div class="toolbar">
       <div class="result-count" id="result-count"></div>
       <div class="view-toggle">
         <button class="view-btn active" id="view-list" onclick="setView('list')" title="Detailed view">≡</button>
         <button class="view-btn" id="view-compact" onclick="setView('compact')" title="Compact view">⊟</button>
+        <button class="view-btn" id="view-table" onclick="setView('table')" title="Table view">☰</button>
       </div>
     </div>
 
+    <!-- Stats bar -->
+    <div class="stats-bar" id="stats-bar"></div>
+
     <!-- Cards -->
     <div class="cards-list" id="cards-list"></div>
+
+    <!-- Table (hidden by default) -->
+    <table class="founders-table" id="founders-table" style="display:none">
+      <thead>
+        <tr>
+          <th onclick="sortTable('score')">Score &#x21C5;</th>
+          <th onclick="sortTable('name')">Name &#x21C5;</th>
+          <th>Company</th>
+          <th>Location</th>
+          <th>Signals</th>
+          <th>Social</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="founders-tbody"></tbody>
+    </table>
 
   </main>
 </div>
@@ -861,14 +974,33 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
     </div>
   </div>
 
-  <!-- Consumer & Demand Intelligence -->
+  <!-- Consumer & Demand Intelligence Dashboard -->
   <div class="intel-demand">
-    <div class="intel-demand-header">
-      <span class="panel-title">🛒 Consumer &amp; Demand Intelligence</span>
-      <span class="panel-subtitle">India + SEA · Reddit · HN · ProductHunt · live</span>
-      <span class="panel-ts" id="demand-ts">—</span>
+    <div class="demand-header">
+      <span class="demand-header-title">🛒 Consumer &amp; Demand Intelligence</span>
+      <span class="demand-header-sub">India + SEA · Reddit · HN · ProductHunt · live</span>
+      <span class="demand-header-ts" id="demand-ts">—</span>
     </div>
-    <div class="demand-grid" id="demand-grid">Loading demand signals…</div>
+    <!-- Theme pills filter strip -->
+    <div class="demand-themes-strip" id="demand-pills"></div>
+    <!-- 3-column layout: bars | consumer | business -->
+    <div class="demand-layout">
+      <!-- Left: theme frequency bar chart -->
+      <div class="demand-themes">
+        <div class="demand-themes-title">📊 Top Themes</div>
+        <div id="demand-bars"><div style="color:var(--muted);font-size:11px">Loading…</div></div>
+      </div>
+      <!-- Middle: Consumer pulse -->
+      <div class="demand-col">
+        <div class="demand-col-title consumer">👤 Consumer Pulse <span style="font-weight:400;opacity:.6;font-size:9px">what people want to buy &amp; use</span></div>
+        <div id="demand-col-consumer"><div style="color:var(--muted);font-size:11px">Loading…</div></div>
+      </div>
+      <!-- Right: Business/startup pulse -->
+      <div class="demand-col">
+        <div class="demand-col-title business">🏢 Business Pulse <span style="font-weight:400;opacity:.6;font-size:9px">what startups &amp; enterprises need</span></div>
+        <div id="demand-col-business"><div style="color:var(--muted);font-size:11px">Loading…</div></div>
+      </div>
+    </div>
   </div>
 
 </div>
@@ -897,8 +1029,28 @@ let filters = { action:'all', geo:'all', signal:'all', score:0 };
 let searchQuery = '';
 let viewMode = 'list';
 let dataGeneratedAt = null;
+let tableSortKey = 'score', tableSortDir = -1;
+window._hotSectors = [];
 const GH_REPO = 'aviral-droid/vc-sourcing-agent';
 const GH_WORKFLOW = 'sourcing.yml';
+
+function togglePatents(el){
+  const list = el.nextElementSibling;
+  list.classList.toggle('hidden');
+  el.textContent = list.classList.contains('hidden') ? 'show \u25BE' : 'hide \u25B4';
+}
+
+function sortTable(key){
+  if(tableSortKey===key) tableSortDir*=-1;
+  else { tableSortKey=key; tableSortDir=-1; }
+  applyFilters();
+}
+
+function isHotSector(sector){
+  if(!sector || !window._hotSectors.length) return false;
+  const s=sector.toLowerCase();
+  return window._hotSectors.some(hs=>s.includes(hs.toLowerCase())||hs.toLowerCase().includes(s));
+}
 
 // ── Signal config ─────────────────────────────────────────────────────
 const SIG = {
@@ -1003,21 +1155,35 @@ function isNewSignal(p){
   return minsAgo < 240 && (p.score >= 65); // top scorers from a recent run
 }
 
+// ── Score ring SVG helper ─────────────────────────────────────────────
+function scoreRingSVG(score){
+  const r=19, c=2*Math.PI*r;
+  const pct=Math.max(0,Math.min(100,score));
+  const offset=c-(pct/100)*c;
+  const col=scoreColor(score);
+  return `<div class="score-ring">
+    <svg viewBox="0 0 48 48"><circle class="score-ring-bg" cx="24" cy="24" r="${r}"/><circle class="score-ring-fg" cx="24" cy="24" r="${r}" stroke="${col}" stroke-dasharray="${c}" stroke-dashoffset="${offset}"/></svg>
+    <div class="score-ring-text" style="color:${col}">${Math.round(score)}</div>
+  </div>`;
+}
+
 // ── Render a card ─────────────────────────────────────────────────────
 function renderCard(p){
-  const action = p.action||'pass';
+  const action = p.action||p.recommended_action||'pass';
   const name   = displayName(p);
   const isUnknown = !p.name || p.name==='Unknown';
   const isNew  = isNewSignal(p);
+  const hot    = isHotSector(p.sector);
 
   const badge = {
-    investigate:`<span class="badge badge-inv">● Investigate</span>`,
-    watchlist:  `<span class="badge badge-watch">● Watchlist</span>`,
-    pass:       `<span class="badge badge-pass">● Pass</span>`,
+    investigate:`<span class="badge badge-inv">Investigate</span>`,
+    watchlist:  `<span class="badge badge-watch">Watchlist</span>`,
+    pass:       `<span class="badge badge-pass">Pass</span>`,
   }[action]||'';
 
-  const starBadge = p.is_second_time_founder?`<span class="badge badge-star">⭐ 2×</span>`:'';
+  const starBadge = p.is_second_time_founder?`<span class="badge badge-star">2x</span>`:'';
   const newBadge  = isNew?`<span class="badge badge-new">NEW</span>`:'';
+  const hotBadge  = hot?'<span style="font-size:12px" title="Hot sector">🔥</span>':'';
 
   const prev = [p.previous_title, p.previous_company].filter(Boolean).join(' @ ');
   const nowStr = p.current_company||'Stealth';
@@ -1026,16 +1192,23 @@ function renderCard(p){
   const geoFlag = GEO_FLAG[p.geography]||'';
   const tagParts = [
     p.geography ? `<span class="tag tag-geo">${geoFlag} ${esc(p.geography)}</span>` : '',
-    p.sector    ? `<span class="tag tag-sector">◈ ${esc(p.sector)}</span>` : '',
+    p.sector    ? `<span class="tag tag-sector">${hotBadge} ${esc(p.sector)}</span>` : '',
     p.experience_years ? `<span class="tag tag-exp">${p.experience_years}yr exp</span>` : '',
-    p.confidence==='high' ? `<span class="tag tag-high">✓ high confidence</span>` : '',
-    p.is_second_time_founder ? `<span class="tag tag-2x">⭐ 2nd-time founder</span>` : '',
+    p.confidence==='high' ? `<span class="tag tag-high">high confidence</span>` : '',
+    p.is_second_time_founder ? `<span class="tag tag-2x">2nd-time founder</span>` : '',
   ].filter(Boolean).join('');
 
-  // Signal pills
+  // Signal pills — colored by type
+  const PILL_COLORS = {
+    stealth_founder:'stealth_founder', executive_departure:'executive_departure',
+    funding_news:'funding_news', company_registration:'company_registration',
+    mca_registration:'company_registration', acra_registration:'company_registration',
+    github_launch:'github_launch', twitter_announcement:'twitter_announcement',
+  };
   const pills = (p.signal_types||[]).map(t=>{
-    const s=SIG[t]||{emoji:'•',label:t.replace(/_/g,' ')};
-    return `<span class="sig-pill ${esc(t)}">${s.emoji} ${s.label}</span>`;
+    const s=SIG[t]||{emoji:'',label:t.replace(/_/g,' ')};
+    const cls=PILL_COLORS[t]||t;
+    return `<span class="sig-pill ${esc(cls)}">${s.emoji} ${s.label}</span>`;
   }).join('');
 
   // Signal evidence
@@ -1043,69 +1216,95 @@ function renderCard(p){
     const srcKey = (s.source||'').toLowerCase();
     const srcClass = ['news','linkedin','twitter','github','registry','headcount'].find(k=>srcKey.includes(k))||'';
     const desc = cleanDesc(s.description);
-    const lnk = s.url ? ` <a class="sig-ev-link" href="${esc(s.url)}" target="_blank" rel="noopener">↗</a>` : '';
+    const lnk = s.url ? ` <a class="sig-ev-link" href="${esc(s.url)}" target="_blank" rel="noopener">&#x2197;</a>` : '';
     return `<div class="sig-ev-row"><span class="sig-ev-src ${srcClass}">${esc(s.source||'')}</span><span class="sig-ev-desc">${esc(desc)}${lnk}</span></div>`;
   }).join('');
 
   // Links
   const links = [
     p.linkedin_url   ? `<a class="link-btn" href="${esc(p.linkedin_url)}" target="_blank" rel="noopener">in LinkedIn</a>` : '',
-    p.twitter_handle ? `<a class="link-btn" href="https://twitter.com/${esc(p.twitter_handle)}" target="_blank" rel="noopener">𝕏 Twitter</a>` : '',
-    p.github_url     ? `<a class="link-btn" href="${esc(p.github_url)}" target="_blank" rel="noopener">⌥ GitHub</a>` : '',
-    p.company_url    ? `<a class="link-btn" href="${esc(p.company_url)}" target="_blank" rel="noopener">↗ Website</a>` : '',
+    p.twitter_handle ? `<a class="link-btn" href="https://twitter.com/${esc(p.twitter_handle)}" target="_blank" rel="noopener">X Twitter</a>` : '',
+    p.github_url     ? `<a class="link-btn" href="${esc(p.github_url)}" target="_blank" rel="noopener">GitHub</a>` : '',
+    p.company_url    ? `<a class="link-btn" href="${esc(p.company_url)}" target="_blank" rel="noopener">Website</a>` : '',
   ].filter(Boolean).join('');
 
-  const scoreCol = scoreColor(p.score);
-  const scoreBarW = Math.round(p.score);
+  // Social badge
+  const socialScore = parseInt(p.social_score)||0;
+  const socialBadge = socialScore > 0 ? `<span class="social-badge">Social: ${socialScore}</span>` : '';
+  const socialSnippets = (p.social_snippets||[]);
+  const socialQuote = socialSnippets.length > 0 ? `<div class="social-snippet">"${esc(socialSnippets[0].slice(0,120))}"</div>` : '';
+
+  // Action buttons
+  const actionBtns = `<div class="action-btns">
+    <button class="action-btn outreach" onclick="event.stopPropagation();trackFounder(${JSON.stringify(p.name).replace(/"/g,'&quot;')},${JSON.stringify(p.linkedin_url||'').replace(/"/g,'&quot;')},${p.score||0},'outreach')">Outreach</button>
+    <button class="action-btn track" onclick="event.stopPropagation();trackFounder(${JSON.stringify(p.name).replace(/"/g,'&quot;')},${JSON.stringify(p.linkedin_url||'').replace(/"/g,'&quot;')},${p.score||0},'track')">Track</button>
+    <button class="action-btn pass-btn" onclick="event.stopPropagation();passFounder(${JSON.stringify(p.name).replace(/"/g,'&quot;')},${JSON.stringify(p.linkedin_url||'').replace(/"/g,'&quot;')},${p.score||0})">Pass</button>
+  </div>`;
+
+  const hotClass = hot ? ' hot-sector' : '';
 
   if(viewMode==='compact'){
-    return `<div class="card compact ${esc(action)}">
+    return `<div class="card compact ${esc(action)}${hotClass}">
       <div class="card-header">
         <div class="avatar ${action}" style="${isUnknown?'opacity:.5':''}">${initials(p.name)}</div>
         <div class="card-meta" style="flex:1">
           <div class="card-name-row">
             <span class="card-name" style="${isUnknown?'color:var(--muted2);font-style:italic':''}">${esc(name)}</span>
-            ${newBadge}${badge}${starBadge}
+            ${newBadge}${badge}${starBadge}${socialBadge}
           </div>
           <div class="card-sub">
-            ${prev?`<strong>${esc(prev)}</strong><span class="arrow-sep">→</span>`:''}
+            ${prev?`<strong>${esc(prev)}</strong><span class="arrow-sep">&rarr;</span>`:''}
             <span>${esc(nowStr)}</span>
             ${p.geography?`<span>${geoFlag} ${esc(p.geography)}</span>`:''}
           </div>
         </div>
-        <div class="card-score">
-          <div class="score-num" style="color:${scoreCol}">${p.score}</div>
-        </div>
+        ${scoreRingSVG(p.score)}
       </div>
     </div>`;
   }
 
-  return `<div class="card ${esc(action)}">
+  return `<div class="card ${esc(action)}${hotClass}">
     <div class="card-header">
       <div class="avatar ${action}" style="${isUnknown?'opacity:.5':''}">${initials(p.name)}</div>
       <div class="card-meta">
         <div class="card-name-row">
           <span class="card-name" style="${isUnknown?'color:var(--muted2);font-style:italic':''}">${esc(name)}</span>
-          ${newBadge}${badge}${starBadge}
+          ${newBadge}${badge}${starBadge}${socialBadge}
         </div>
         <div class="card-sub">
-          ${prev?`<strong>${esc(prev)}</strong><span class="arrow-sep">→</span>`:''}
+          ${prev?`<strong>${esc(prev)}</strong><span class="arrow-sep">&rarr;</span>`:''}
           <span>${esc(nowStr)}</span>
-          ${p.location||p.geography?`<span style="color:var(--muted)">·</span><span>${esc(p.location||p.geography)}</span>`:''}
+          ${p.location||p.geography?`<span style="color:var(--muted)">&middot;</span><span>${esc(p.location||p.geography)}</span>`:''}
         </div>
       </div>
-      <div class="card-score">
-        <div class="score-num" style="color:${scoreCol}">${p.score}</div>
-        <div class="score-label">score</div>
-        <div class="score-bar"><div class="score-bar-fill" style="width:${scoreBarW}%;background:${scoreCol}"></div></div>
-      </div>
+      ${scoreRingSVG(p.score)}
     </div>
     ${tagParts?`<div class="tags">${tagParts}</div>`:''}
     ${p.investment_thesis?`<div class="thesis">${esc(p.investment_thesis)}</div>`:''}
     ${pills?`<div class="sig-pills">${pills}</div>`:''}
     ${evidence?`<div class="sig-evidence">${evidence}</div>`:''}
+    ${socialQuote}
     ${links?`<div class="links-row">${links}</div>`:''}
+    ${actionBtns}
   </div>`;
+}
+
+// ── Action button handlers ───────────────────────────────────────────
+async function trackFounder(name,linkedin,score,mode){
+  try{
+    const r=await fetch('/api/track',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({name:name,linkedin_url:linkedin,score:score,primary_signal:mode})});
+    if(r.ok) toast(mode==='outreach'?`Outreach started: ${name}`:`Tracking: ${name}`);
+    else toast('Error tracking founder');
+  }catch(e){toast('Network error')}
+}
+async function passFounder(name,linkedin,score){
+  try{
+    const r=await fetch('/api/pass',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({name:name,linkedin_url:linkedin,score:score})});
+    if(r.ok) toast(`Passed: ${name}`);
+    else toast('Error');
+  }catch(e){toast('Network error')}
 }
 
 // ── Search ────────────────────────────────────────────────────────────
@@ -1146,12 +1345,69 @@ function applyFilters(){
     if(!matchesSearch(p)) return false;
     return true;
   });
+
   document.getElementById('result-count').innerHTML =
     `Showing <strong>${f.length}</strong> of <strong>${allPersons.length}</strong> founders`;
+
+  // Stats bar
+  const tracked = allPersons.filter(p=>p.pipeline_stage&&p.pipeline_stage!=='passed').length;
+  const passed  = allPersons.filter(p=>p.pipeline_stage==='passed').length;
+  const avgS    = f.length ? Math.round(f.reduce((a,b)=>a+b.score,0)/f.length) : 0;
+  const topSectors = {};
+  f.forEach(p=>{ if(p.sector) topSectors[p.sector]=(topSectors[p.sector]||0)+1; });
+  const topSec  = Object.entries(topSectors).sort((a,b)=>b[1]-a[1])[0];
+  const statsBar = document.getElementById('stats-bar');
+  if(statsBar) statsBar.innerHTML = `<span><strong>${f.length}</strong> founders</span>
+    <span><strong>${tracked}</strong> tracked</span>
+    <span><strong>${passed}</strong> passed</span>
+    <span>avg score <strong>${avgS}</strong></span>
+    ${topSec?`<span>top: <strong>${esc(topSec[0])}</strong></span>`:''}`;
+
   const list = document.getElementById('cards-list');
-  list.innerHTML = f.length===0
-    ? `<div class="empty"><div class="empty-icon">🔭</div><div class="empty-title">No founders match</div><div class="empty-sub">Try widening your filters or running a new pipeline scan.</div></div>`
-    : f.map(renderCard).join('');
+  const table = document.getElementById('founders-table');
+  const tbody = document.getElementById('founders-tbody');
+
+  if(viewMode==='table'){
+    list.style.display='none';
+    table.style.display='table';
+    // Sort for table
+    const sorted = [...f].sort((a,b)=>{
+      let va=a[tableSortKey]||'', vb=b[tableSortKey]||'';
+      if(typeof va==='number') return (va-vb)*tableSortDir;
+      return String(va).localeCompare(String(vb))*tableSortDir;
+    });
+    tbody.innerHTML = sorted.length===0
+      ? `<tr><td colspan="7" style="text-align:center;padding:40px;color:var(--muted)">No founders match this filter</td></tr>`
+      : sorted.map(p=>{
+        const col=scoreColor(p.score);
+        const sigs=(p.signal_types||[]).map(t=>{const s=SIG[t]||{emoji:'',label:t};return s.emoji+' '+s.label;}).join(', ');
+        const socialS=parseInt(p.social_score)||0;
+        return `<tr>
+          <td class="score-cell" style="color:${col}">${Math.round(p.score)}</td>
+          <td><strong>${esc(displayName(p))}</strong></td>
+          <td>${esc(p.previous_company||p.current_company||'')}</td>
+          <td>${esc(p.geography||p.location||'')}</td>
+          <td style="font-size:11px">${esc(sigs)}</td>
+          <td>${socialS>0?socialS:''}</td>
+          <td>
+            <button class="action-btn track" style="padding:2px 8px;font-size:10px" onclick="trackFounder('${esc(p.name)}','${esc(p.linkedin_url||'')}',${p.score},'track')">Track</button>
+          </td>
+        </tr>`;
+      }).join('');
+  } else {
+    table.style.display='none';
+    list.style.display='';
+    if(f.length===0){
+      list.innerHTML = `<div class="empty-state">
+        <div style="font-size:32px">&#x1F50D;</div>
+        <div>No founders match this filter</div>
+        <div style="font-size:11px;color:var(--muted)">Try lowering the score threshold or running the pipeline</div>
+        <button onclick="triggerGHRun()">&#x25B6; Run Pipeline</button>
+      </div>`;
+    } else {
+      list.innerHTML = f.map(renderCard).join('');
+    }
+  }
 }
 
 function setFilter(type,val,el){
@@ -1163,7 +1419,7 @@ function setFilter(type,val,el){
 
 function onSlider(el){
   filters.score=parseInt(el.value);
-  document.getElementById('slider-val').textContent=el.value+'+';
+  document.getElementById('slider-val').textContent=el.value;
   applyFilters();
 }
 
@@ -1171,6 +1427,7 @@ function setView(mode){
   viewMode=mode;
   document.getElementById('view-list').classList.toggle('active',mode==='list');
   document.getElementById('view-compact').classList.toggle('active',mode==='compact');
+  document.getElementById('view-table').classList.toggle('active',mode==='table');
   applyFilters();
 }
 
@@ -1260,14 +1517,43 @@ async function loadData(){
   dataGeneratedAt = data.generated_at ? new Date(data.generated_at).getTime() : null;
   updateRunStatus(data.generated_at);
   if(data.executive_summary){
-    document.getElementById('summary-text').innerHTML='<strong>AI Summary</strong> — '+esc(data.executive_summary);
+    document.getElementById('summary-text').innerHTML='<strong>AI Summary</strong> &mdash; '+esc(data.executive_summary);
     document.getElementById('summary').style.display='flex';
   }
   renderStats(data);
   updateCounts();
   renderSourceChart(data.source_breakdown||{});
+
+  // Also try to load hot sectors from the live API
+  try{
+    const apiResp = await fetch('/api/signals?days=30&min_score=0');
+    if(apiResp.ok){
+      const apiData = await apiResp.json();
+      window._hotSectors = apiData.hot_sectors || [];
+      // Merge social data from API into persons if available
+      if(apiData.persons && apiData.persons.length){
+        const apiMap = {};
+        apiData.persons.forEach(ap=>{ if(ap.name) apiMap[ap.name]=ap; });
+        allPersons.forEach(p=>{
+          const match = apiMap[p.name];
+          if(match){
+            if(match.social_score) p.social_score = match.social_score;
+            if(match.social_snippets && match.social_snippets.length) p.social_snippets = match.social_snippets;
+          }
+        });
+      }
+      // Show hot sectors strip
+      const strip = document.getElementById('hot-sectors-strip');
+      if(strip && window._hotSectors.length){
+        strip.style.display='flex';
+        strip.innerHTML = `<span class="hot-sector-label">🔥 Hot right now:</span>` +
+          window._hotSectors.map(s=>`<span class="hot-sector-pill">${esc(s)}</span>`).join('');
+      }
+    }
+  }catch(e){}
+
   applyFilters();
-  toast(`Loaded ${allPersons.length} founders · ${data.date_label||''}`);
+  toast(`Loaded ${allPersons.length} founders`);
 }
 
 loadData();
@@ -1632,12 +1918,15 @@ function _renderSectors(sectors, fetchedAt){
       const pct   = Math.round(s.signal_count/maxCount*100);
       const level = pct>=80?5:pct>=60?4:pct>=40?3:pct>=20?2:1;
       const headline = (s.headlines||[])[0]||'';
+      const patents = s.patents||[];
+      const patentHtml = patents.length ? `<div class="sector-patents">&#x1F52C; ${patents.length} patents &middot; <span class="sector-patents-expand" onclick="togglePatents(this)">show &#x25BE;</span><div class="sector-patents-list hidden">${patents.map(p=>`<a href="${esc(p.url)}" target="_blank" class="patent-link">${esc((p.title||'').slice(0,70))}</a>`).join('')}</div></div>` : '';
       html += `<div class="sector-card" data-level="${level}">
         <div class="sector-name">${esc(s.name)}</div>
         <div class="sector-bar-wrap"><div class="sector-bar" style="width:${pct}%"></div></div>
         <div class="sector-count">${s.signal_count} signals · 7d</div>
         ${s.india_note?`<div class="sector-india-note">${esc(s.india_note)}</div>`:''}
         ${headline?`<div class="sector-headline">${esc(headline)}</div>`:''}
+        ${patentHtml}
       </div>`;
     });
   }
@@ -1652,114 +1941,154 @@ async function loadSectors(force=false){
     const r = await fetch(API('/api/intelligence/sectors'));
     if(!r.ok) throw new Error(r.status);
     const d = await r.json();
+    const sectors = d.sectors || [];
 
-    if(d.loading){
-      // Server is still warming up — show countdown and poll
-      const eta = d.eta_seconds || 234;
-      let elapsed = 0;
-      if(!grid.dataset.polling){
-        grid.dataset.polling = '1';
-        grid.innerHTML=`<div id="sectors-loading-msg" style="padding:10px;color:var(--muted);font-size:12px;grid-column:1/-1">
-          🔍 Scanning 36 sub-sectors via GDELT — server pre-warming in background…
-          <span id="sectors-eta" style="color:var(--amber);font-weight:600"></span>
-        </div>`;
-        // Update ETA countdown every second
-        const etaEl = () => document.getElementById('sectors-eta');
-        const countdown = setInterval(()=>{
-          elapsed++;
-          const rem = Math.max(0, eta - elapsed);
-          if(etaEl()) etaEl().textContent = ` (~${rem}s remaining)`;
-        }, 1000);
-        // Poll every 20s until data arrives
-        if(_sectorsPollingTimer) clearInterval(_sectorsPollingTimer);
-        _sectorsPollingTimer = setInterval(async ()=>{
-          try{
-            const pr = await fetch(API('/api/intelligence/sectors'));
-            const pd = await pr.json();
-            if(!pd.loading && pd.sectors && pd.sectors.length > 0){
-              clearInterval(_sectorsPollingTimer);
-              clearInterval(countdown);
-              delete grid.dataset.polling;
-              grid.innerHTML = _renderSectors(pd.sectors);
-              ts.textContent = relTime(pd.fetched_at)||'now';
-            }
-          }catch(_){}
-        }, 20000);
-      }
-      return;
+    if(sectors.length > 0){
+      // Render whatever we have (baseline RSS counts or GDELT-enriched)
+      const src = d.source || '';
+      const isGDELT = src.includes('gdelt') || src === 'rss_baseline';
+      const badge = d.loading
+        ? `<div style="grid-column:1/-1;padding:5px 10px;background:var(--surface3);border-radius:6px;font-size:10px;color:var(--amber);margin-bottom:8px">
+             ⏳ Enriching with GDELT signals ${d.progress||0}% — heatmap updates every 10s
+           </div>`
+        : (isGDELT
+            ? `<div style="grid-column:1/-1;padding:5px 10px;background:rgba(16,185,129,.06);border-radius:6px;font-size:10px;color:var(--green);margin-bottom:8px">
+               ✓ GDELT enrichment complete
+               </div>`
+            : '');
+      grid.innerHTML = badge + _renderSectors(sectors);
+      ts.textContent = relTime(d.fetched_at) || 'now';
+    } else {
+      grid.innerHTML = '<div style="padding:10px;color:var(--muted);font-size:12px;grid-column:1/-1">Warming up — news feeds loading…</div>';
     }
 
-    // Data ready
-    if(_sectorsPollingTimer){ clearInterval(_sectorsPollingTimer); _sectorsPollingTimer = null; }
-    delete grid.dataset.polling;
-    const html = _renderSectors(d.sectors||[]);
-    grid.innerHTML = html || '<div style="padding:10px;color:var(--muted);font-size:12px;grid-column:1/-1">No sector signals yet</div>';
-    ts.textContent = relTime(d.fetched_at)||'now';
+    // Keep polling every 10s while GDELT enrichment is in progress
+    if(d.loading){
+      if(!grid.dataset.polling){
+        grid.dataset.polling = '1';
+        if(_sectorsPollingTimer) clearInterval(_sectorsPollingTimer);
+        _sectorsPollingTimer = setInterval(()=>loadSectors(), 10000);
+      }
+    } else {
+      if(_sectorsPollingTimer){ clearInterval(_sectorsPollingTimer); _sectorsPollingTimer = null; }
+      delete grid.dataset.polling;
+    }
   }catch(e){
     grid.innerHTML='<div style="padding:10px;color:var(--red);font-size:12px">Sector data unavailable — is the local server running?</div>';
   }
 }
 
-// ── Consumer & Demand Intelligence ───────────────────────────
+// ── Consumer & Demand Intelligence Dashboard ──────────────────
+const THEME_COLORS = {
+  'AI/ML':      '#8b5cf6', 'Fintech':  '#10b981', 'SaaS/B2B':  '#3b82f6',
+  'EV/Mobility':'#06b6d4', 'Healthtech':'#f59e0b', 'D2C/Brand': '#ec4899',
+  'Edtech':     '#6366f1', 'Startup':  '#f97316', 'Defence':   '#64748b',
+  'Climate':    '#22c55e',
+};
+let _demandActiveTheme = null;
+let _demandAllItems = [];
+
+function srcClass(src){
+  const s=(src||'').toLowerCase();
+  if(s.includes('reddit')) return 'reddit';
+  if(s.includes('hackernews')||s.includes('hn')) return 'hn';
+  if(s.includes('producthunt')) return 'ph';
+  return 'hn';
+}
+function srcShort(src){
+  if(src.includes('IndiaInvestments')) return 'r/InvIN';
+  if(src.includes('IndiaStartups'))   return 'r/Startups';
+  if(src.includes('Reddit/India'))    return 'r/India';
+  if(src.includes('SGInvestments'))   return 'r/SGInv';
+  if(src.includes('HackerNews'))      return 'HN';
+  if(src.includes('ProductHunt'))     return 'PH';
+  return src.replace('Reddit/','r/').slice(0,10);
+}
+
+function renderDemandCols(items, activeTheme){
+  const filtered = activeTheme ? items.filter(it=>(it.theme_tags||[]).includes(activeTheme)) : items;
+  const consumer = filtered.filter(it=>it.category==='consumer').slice(0,20);
+  const business = filtered.filter(it=>it.category==='business').slice(0,20);
+
+  const renderItem = it => {
+    const sc=srcClass(it.source), sh=srcShort(it.source);
+    const title=(it.title||'').slice(0,90)+((it.title||'').length>90?'…':'');
+    const tags=(it.theme_tags||[]).slice(0,2).map(t=>`<span class="demand-theme-tag">${esc(t)}</span>`).join('');
+    const score=it.score?`▲${it.score}`:''; const cmts=it.comments?`💬${it.comments}`:'';
+    const meta=[score,cmts,it.age||''].filter(Boolean).join(' · ');
+    return `<div class="demand-item" onclick="window.open(${JSON.stringify(it.url||'#')},'_blank')">
+      <div class="demand-item-title">${esc(title)}</div>
+      <div class="demand-item-meta">
+        <span class="demand-src ${sc}">${esc(sh)}</span>
+        ${tags}
+        <span class="demand-item-score">${esc(meta)}</span>
+      </div>
+    </div>`;
+  };
+
+  const noData='<div style="padding:10px;color:var(--muted);font-size:11px">No signals yet</div>';
+  document.getElementById('demand-col-consumer').innerHTML = consumer.length ? consumer.map(renderItem).join('') : noData;
+  document.getElementById('demand-col-business').innerHTML = business.length ? business.map(renderItem).join('') : noData;
+}
+
+function renderThemeBars(items){
+  const counts = {};
+  items.forEach(it=>(it.theme_tags||[]).forEach(t=>{ counts[t]=(counts[t]||0)+1; }));
+  const sorted = Object.entries(counts).sort((a,b)=>b[1]-a[1]).slice(0,10);
+  const max = sorted[0]?.[1] || 1;
+
+  // Pills strip
+  const pills = sorted.map(([t,c])=>`<span class="demand-theme-pill${_demandActiveTheme===t?' active':''}" onclick="filterDemandTheme('${t}')">${t} <span style="opacity:.6">${c}</span></span>`).join('');
+  document.getElementById('demand-pills').innerHTML = pills;
+
+  // Bar chart
+  const bars = sorted.map(([t,c])=>{
+    const pct=Math.round(c/max*100);
+    const col=THEME_COLORS[t]||'var(--accent)';
+    return `<div class="theme-bar-row">
+      <div class="theme-bar-label">${esc(t)}</div>
+      <div class="theme-bar-track"><div class="theme-bar-fill" style="width:${pct}%;background:${col}"></div></div>
+      <div class="theme-bar-count">${c}</div>
+    </div>`;
+  }).join('');
+  document.getElementById('demand-bars').innerHTML = bars || '<div style="color:var(--muted);font-size:11px">Loading themes…</div>';
+}
+
+function filterDemandTheme(theme){
+  _demandActiveTheme = _demandActiveTheme===theme ? null : theme;
+  renderThemeBars(_demandAllItems);
+  renderDemandCols(_demandAllItems, _demandActiveTheme);
+}
+
 async function loadDemand(force=false){
-  const grid = document.getElementById('demand-grid');
-  const ts   = document.getElementById('demand-ts');
+  const ts = document.getElementById('demand-ts');
   try{
     const r = await fetch(API('/api/intelligence/demand'));
     if(!r.ok) throw new Error(r.status);
     const d = await r.json();
-    const items = d.items || [];
-    if(!items.length){
-      grid.innerHTML='<div style="padding:12px;color:var(--muted);font-size:12px">No demand signals available.</div>';
-      return;
-    }
-    const srcClass = src => {
-      const s = src.toLowerCase();
-      if(s.includes('reddit')) return 'reddit';
-      if(s.includes('hackernews') || s.includes('hn')) return 'hn';
-      if(s.includes('producthunt')) return 'ph';
-      return 'hn';
-    };
-    const srcShort = src => {
-      if(src.includes('IndiaInvestments')) return 'r/IndiaInv';
-      if(src.includes('IndiaStartups'))   return 'r/IndiaStart';
-      if(src.includes('Reddit/India'))    return 'r/India';
-      if(src.includes('SGInvestments'))   return 'r/SGInvest';
-      if(src.includes('HackerNews'))      return 'HN';
-      if(src.includes('ProductHunt'))     return 'PH';
-      return src.replace('Reddit/','r/');
-    };
-    grid.innerHTML = items.map(item=>{
-      const sc = srcClass(item.source);
-      const short = srcShort(item.source);
-      const title = (item.title||'').slice(0,80) + ((item.title||'').length>80?'…':'');
-      const meta = [item.score ? `▲${item.score}` : '', item.comments ? `💬${item.comments}` : '', item.age||''].filter(Boolean).join(' · ');
-      return `<div class="demand-card" onclick="window.open(${JSON.stringify(item.url||'#')},'_blank')">
-        <div class="demand-card-title">${esc(title)}</div>
-        <div class="demand-card-meta">
-          <span class="demand-src ${sc}">${esc(short)}</span>
-          <span class="demand-card-score">${esc(meta)}</span>
-        </div>
-      </div>`;
-    }).join('');
+    _demandAllItems = d.items || [];
+    renderThemeBars(_demandAllItems);
+    renderDemandCols(_demandAllItems, _demandActiveTheme);
     if(ts) ts.textContent = relTime(d.fetched_at)||'now';
   }catch(e){
-    if(grid) grid.innerHTML='<div style="padding:12px;color:var(--red);font-size:12px">Demand data unavailable</div>';
+    const el=document.getElementById('demand-col-consumer');
+    if(el) el.innerHTML='<div style="padding:12px;color:var(--red);font-size:12px">Demand data unavailable</div>';
   }
 }
 
 // ── Init & auto-refresh ───────────────────────────────────────
 function initIntel(){
-  loadAIML();
-  loadIndiaSEA();
-  loadEmerging();
+  // Load news + market first (they populate the server's news cache)
+  Promise.all([loadAIML(), loadIndiaSEA(), loadEmerging()]).then(()=>{
+    // Sectors uses the news cache for instant RSS baseline → call after news is loaded
+    loadSectors();
+  });
   loadMarket();
-  loadSectors();  // ~3 min first load (36 GDELT queries @ 6s each)
   loadDemand();
 
   setInterval(()=>loadAIML(),     2*60*1000);
   setInterval(()=>loadIndiaSEA(), 2*60*1000);
-  setInterval(()=>loadEmerging(), 3*60*1000);   // every 3 min
+  setInterval(()=>loadEmerging(), 3*60*1000);
   setInterval(()=>loadMarket(),   5*60*1000);
   setInterval(()=>loadSectors(),  30*60*1000);
   setInterval(()=>loadDemand(),   5*60*1000);

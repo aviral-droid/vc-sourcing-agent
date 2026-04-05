@@ -56,7 +56,8 @@ SCORING INSTRUCTIONS:
 - Multiple corroborating signals = 75-90
 - Unknown name + single weak signal = 20-35
 - Score 0 for: hiring posts, job seekers, companies (not individuals), geographies outside mandate
-- Be generous with score if the person clearly fits the archetype even with incomplete data"""
+- Be generous with score if the person clearly fits the archetype even with incomplete data
+- Give a +5 bonus if the founder's sector aligns with current hot sectors detected by our intelligence feed (e.g. AI Agents, Fintech, EV/Mobility)"""
 
 
 USER_PROMPT_TEMPLATE = """Score this potential founder/executive signal:

@@ -192,6 +192,8 @@ def _migrate(conn: sqlite3.Connection) -> None:
         "ALTER TABLE outreach ADD COLUMN sector TEXT DEFAULT ''",
         "ALTER TABLE signals  ADD COLUMN claude_action TEXT DEFAULT ''",
         "ALTER TABLE cached_persons ADD COLUMN company_url TEXT DEFAULT ''",
+        "ALTER TABLE cached_persons ADD COLUMN social_score TEXT DEFAULT '0'",
+        "ALTER TABLE cached_persons ADD COLUMN social_snippets TEXT DEFAULT '[]'",
     ]:
         try:
             conn.execute(col_sql)
@@ -778,13 +780,13 @@ def cache_persons(persons: list, days_back: int = 30) -> None:
                  current_company, location, geography, sector, experience_years,
                  is_second_time_founder, score, recommended_action, investment_thesis,
                  score_rationale, github_url, twitter_handle, signal_types,
-                 signal_count, run_days_back, company_url)
+                 signal_count, run_days_back, company_url, social_score, social_snippets)
             VALUES
                 (:name,:linkedin_url,:headline,:previous_company,:previous_title,
                  :current_company,:location,:geography,:sector,:experience_years,
                  :is_second_time_founder,:score,:recommended_action,:investment_thesis,
                  :score_rationale,:github_url,:twitter_handle,:signal_types,
-                 :signal_count,:run_days_back,:company_url)
+                 :signal_count,:run_days_back,:company_url,:social_score,:social_snippets)
         """, {
             "name":                  p.name,
             "linkedin_url":          p.linkedin_url or "",
@@ -807,6 +809,8 @@ def cache_persons(persons: list, days_back: int = 30) -> None:
             "signal_count":          p.signal_count,
             "run_days_back":         days_back,
             "company_url":           getattr(p, "company_url", "") or "",
+            "social_score":          str(getattr(p, "social_score", 0) or 0),
+            "social_snippets":       json.dumps(getattr(p, "social_snippets", []) or []),
         })
     conn.commit()
     conn.close()

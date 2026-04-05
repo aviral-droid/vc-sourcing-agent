@@ -55,6 +55,7 @@ from sources.osint_source import batch_enrich_osint
 from sources.gdelt_source import search_gdelt_signals
 from sources.exa_source import search_exa_signals
 from sources.brave_source import search_brave_signals
+from sources.social_source import screen_founder_social
 
 from pipeline.enricher import score_all, write_executive_summary
 from pipeline.reporter import generate_report
@@ -66,6 +67,41 @@ try:
     RICH = True
 except ImportError:
     RICH = False
+
+
+def _boost_hot_sector_founders(persons: list, hot_sectors: list) -> int:
+    """Add +10 to score for founders whose sector matches a hot sector."""
+    if not hot_sectors:
+        return 0
+    hot_set = {s.lower() for s in hot_sectors}
+    boosted = 0
+    for p in persons:
+        rationale = {}
+        try:
+            import json as _json
+            rationale = _json.loads(p.score_rationale) if p.score_rationale else {}
+        except Exception:
+            pass
+        sector = (rationale.get("sector", "") or "").lower()
+        if sector and any(hs in sector or sector in hs for hs in hot_set):
+            p.score = min(100, p.score + 10)
+            boosted += 1
+    return boosted
+
+
+def _get_hot_sectors_from_cache() -> list:
+    """Read sectors cache from the intel system and return top 5 by signal_count."""
+    try:
+        # Try to read from the app's intel cache via a local API call
+        import requests as _req
+        r = _req.get("http://localhost:8000/api/intelligence/sectors", timeout=5)
+        if r.ok:
+            sectors = r.json().get("sectors", [])
+            sorted_sectors = sorted(sectors, key=lambda s: s.get("signal_count", 0), reverse=True)
+            return [s.get("name", "") for s in sorted_sectors[:5] if s.get("name")]
+    except Exception:
+        pass
+    return []
 
 
 def init_database() -> None:
@@ -201,6 +237,27 @@ def run_pipeline(
                 len(all_persons))
     scored = score_all(all_persons)
     logger.info("  %d persons passed threshold (%d)", len(scored), config.MIN_SCORE_THRESHOLD)
+
+    # ── Hot sector boost ──────────────────────────────────────────────────
+    hot_sectors = _get_hot_sectors_from_cache()
+    if hot_sectors:
+        boosted = _boost_hot_sector_founders(scored, hot_sectors)
+        logger.info("  Hot sectors: %s — boosted %d founders", ", ".join(hot_sectors[:5]), boosted)
+        scored.sort(key=lambda p: p.score, reverse=True)
+
+    # ── Social screening (top 20 by score only, to keep it fast) ──────────
+    logger.info("\n[Social] Social media screening (top 20 founders)...")
+    social_screened = 0
+    for person in scored[:20]:
+        try:
+            result = screen_founder_social(person)
+            if result.get("screened"):
+                person.social_score = result.get("social_score", 0)
+                person.social_snippets = result.get("social_snippets", [])
+                social_screened += 1
+        except Exception as e:
+            logger.debug("Social screening error for %s: %s", person.name, e)
+    _log("Founders socially screened", social_screened)
 
     # Persist scored results so the live dashboard can display them
     database.cache_persons(scored, days_back)
