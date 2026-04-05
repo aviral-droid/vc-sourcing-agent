@@ -137,10 +137,25 @@ def _format_outreach(row) -> dict:
 
 @app.get("/", response_class=HTMLResponse)
 async def serve_dashboard(request: Request):
+    # Prefer the full docs/index.html (has Tab 1 + Tab 2 VC Intelligence Room)
+    docs_index = DOCS_DIR / "index.html"
+    if docs_index.exists():
+        return HTMLResponse(docs_index.read_text())
+    # Fallback to legacy template
     template_path = TEMPLATES_DIR / "dashboard.html"
     if not template_path.exists():
-        return HTMLResponse("<h1>Dashboard template not found</h1><p>templates/dashboard.html missing</p>", status_code=500)
+        return HTMLResponse("<h1>Dashboard not found</h1>", status_code=500)
     return templates.TemplateResponse("dashboard.html", {"request": request})
+
+
+@app.get("/data.json")
+async def serve_data_json():
+    """Serve docs/data.json (founder scoring output) for the SPA."""
+    path = DOCS_DIR / "data.json"
+    if not path.exists():
+        return JSONResponse({"persons": [], "total_persons": 0, "total_signals": 0,
+                             "generated_at": None, "source_breakdown": {}})
+    return JSONResponse(json.loads(path.read_text()))
 
 
 # ── API: Signals ───────────────────────────────────────────────────────────────
