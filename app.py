@@ -22,6 +22,7 @@ import logging
 import subprocess
 import sys
 import threading
+import time as _time
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
@@ -445,6 +446,276 @@ async def get_linkedin_signals(
 
     result = sorted(persons.values(), key=lambda x: x["score"], reverse=True)
     return JSONResponse({"persons": result, "total": len(result)})
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# VC INTELLIGENCE ROOM  — Tab 2 backend
+# ══════════════════════════════════════════════════════════════════════════════
+
+from threading import Lock as _Lock
+_intel_cache: dict = {}
+_intel_lock = _Lock()
+
+# ── Feed configs ───────────────────────────────────────────────────────────────
+AI_ML_FEEDS = [
+    ("VentureBeat AI",    "https://venturebeat.com/category/ai/feed/"),
+    ("TechCrunch AI",     "https://techcrunch.com/category/artificial-intelligence/feed/"),
+    ("MIT Tech Review",   "https://www.technologyreview.com/feed/"),
+    ("HuggingFace",       "https://huggingface.co/blog/feed.xml"),
+    ("The Batch",         "https://www.deeplearning.ai/the-batch/feed/"),
+    ("Wired AI",          "https://www.wired.com/feed/category/artificial-intelligence/latest/rss"),
+    ("Ars Technica",      "https://feeds.arstechnica.com/arstechnica/index"),
+    ("The Verge AI",      "https://www.theverge.com/ai-artificial-intelligence/rss/index.xml"),
+]
+
+INDIA_SEA_FEEDS = [
+    ("YourStory",         "https://yourstory.com/feed"),
+    ("Inc42",             "https://inc42.com/feed/"),
+    ("Entrackr",          "https://entrackr.com/feed/"),
+    ("The Bridge",        "https://thebridge.in/feed/"),
+    ("e27",               "https://e27.co/feed/"),
+    ("KR Asia",           "https://kr.asia/feed/"),
+    ("Tech in Asia",      "https://www.techinasia.com/feed"),
+    ("Deal Street Asia",  "https://dealstreetasia.com/feed/"),
+    ("VCCircle",          "https://www.vccircle.com/feed"),
+]
+
+MARKET_SYMBOLS = [
+    # Indices
+    {"symbol": "^NSEI",   "name": "NIFTY 50",     "type": "index",  "geo": "India"},
+    {"symbol": "^BSESN",  "name": "SENSEX",        "type": "index",  "geo": "India"},
+    {"symbol": "^STI",    "name": "STI",           "type": "index",  "geo": "Singapore"},
+    {"symbol": "^JKSE",   "name": "IDX Composite", "type": "index",  "geo": "Indonesia"},
+    {"symbol": "^KLSE",   "name": "KLCI",          "type": "index",  "geo": "Malaysia"},
+    {"symbol": "^IXIC",   "name": "NASDAQ",        "type": "index",  "geo": "Global"},
+    {"symbol": "^GSPC",   "name": "S&P 500",       "type": "index",  "geo": "Global"},
+    {"symbol": "^VIX",    "name": "VIX",           "type": "index",  "geo": "Global"},
+    # India tech stocks
+    {"symbol": "ZOMATO.NS",    "name": "Zomato",         "type": "stock", "geo": "India"},
+    {"symbol": "PAYTM.NS",     "name": "Paytm",          "type": "stock", "geo": "India"},
+    {"symbol": "NYKAA.NS",     "name": "Nykaa",          "type": "stock", "geo": "India"},
+    {"symbol": "POLICYBZR.NS", "name": "PolicyBazaar",   "type": "stock", "geo": "India"},
+    {"symbol": "INFY.NS",      "name": "Infosys",        "type": "stock", "geo": "India"},
+    {"symbol": "TCS.NS",       "name": "TCS",            "type": "stock", "geo": "India"},
+    {"symbol": "DMART.NS",     "name": "DMart",          "type": "stock", "geo": "India"},
+    # SEA tech stocks (US-listed)
+    {"symbol": "GRAB",    "name": "Grab",           "type": "stock", "geo": "SEA"},
+    {"symbol": "SE",      "name": "Sea Ltd",        "type": "stock", "geo": "SEA"},
+    {"symbol": "MMYT",    "name": "MakeMyTrip",     "type": "stock", "geo": "India"},
+    {"symbol": "WIX",     "name": "GoTo (GOTO.JK)", "type": "stock", "geo": "SEA"},
+]
+
+SECTOR_THEMES = [
+    ("AI / ML",           "artificial intelligence machine learning startup India SEA 2025"),
+    ("Fintech",           "fintech payments lending neobank startup India Southeast Asia 2025"),
+    ("B2B SaaS",          "B2B SaaS enterprise software startup India 2025"),
+    ("Healthtech",        "healthtech digital health telemedicine startup India Singapore 2025"),
+    ("Climate / Green",   "climate tech greentech cleantech sustainability startup India SEA 2025"),
+    ("Edtech",            "edtech education technology startup India Southeast Asia 2025"),
+    ("Logistics / SCM",   "logistics supply chain D2C commerce startup India SEA 2025"),
+    ("Web3 / Crypto",     "Web3 crypto blockchain DeFi startup India Singapore 2025"),
+    ("AgriTech",          "agritech agriculture technology startup India 2025"),
+    ("SpaceTech / Deep",  "deep tech space biotech semiconductor startup India 2025"),
+    ("Gaming / Media",    "gaming esports media creator startup India Southeast Asia 2025"),
+    ("Consumer / D2C",    "D2C consumer brand direct-to-consumer startup India SEA 2025"),
+]
+
+
+def _fetch_rss_feed(source_name: str, feed_url: str, max_items: int = 6) -> list[dict]:
+    """Parse an RSS/Atom feed and return normalised article dicts."""
+    import feedparser, requests as _req
+    try:
+        # Some feeds block Python's default UA; use a browser UA
+        r = _req.get(feed_url, timeout=12,
+                     headers={"User-Agent": "Mozilla/5.0 (compatible; VCSourcing/1.0)"})
+        parsed = feedparser.parse(r.content)
+    except Exception:
+        try:
+            parsed = feedparser.parse(feed_url)
+        except Exception:
+            return []
+
+    articles = []
+    for entry in parsed.entries[:max_items]:
+        pub = ""
+        if hasattr(entry, "published"):
+            pub = entry.published
+        elif hasattr(entry, "updated"):
+            pub = entry.updated
+
+        summary = ""
+        if hasattr(entry, "summary"):
+            # Strip HTML tags
+            import re
+            summary = re.sub(r"<[^>]+>", "", entry.get("summary", ""))[:240]
+
+        articles.append({
+            "source": source_name,
+            "title":  entry.get("title", "").strip(),
+            "url":    entry.get("link", ""),
+            "published": pub,
+            "summary": summary.strip(),
+        })
+    return articles
+
+
+def _fetch_gdelt_news(query: str, days: int = 3, max_records: int = 15) -> list[dict]:
+    import requests as _req
+    try:
+        r = _req.get(
+            "https://api.gdeltproject.org/api/v2/doc/doc",
+            params={"query": query, "mode": "artlist", "maxrecords": str(max_records),
+                    "format": "json", "timespan": f"{days}d", "sort": "DateDesc"},
+            timeout=12,
+        )
+        if not r.ok or not r.content:
+            return []
+        arts = r.json().get("articles", [])
+        return [{"source": f"GDELT/{a.get('domain','news')}",
+                 "title": a.get("title", ""),
+                 "url": a.get("url", ""),
+                 "published": a.get("seendate", ""),
+                 "summary": ""} for a in arts]
+    except Exception:
+        return []
+
+
+@app.get("/api/intelligence/news")
+async def intelligence_news(type: str = "ai_ml", limit: int = 40):
+    """Live news: type=ai_ml | india_sea"""
+    cache_key = f"news_{type}"
+    with _intel_lock:
+        cached = _intel_cache.get(cache_key)
+        if cached and _time.time() - cached["ts"] < 120:
+            return JSONResponse(cached["data"])
+
+    feeds = AI_ML_FEEDS if type == "ai_ml" else INDIA_SEA_FEEDS
+    articles: list[dict] = []
+
+    # RSS feeds (run in parallel via threads)
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    with ThreadPoolExecutor(max_workers=6) as pool:
+        futures = {pool.submit(_fetch_rss_feed, name, url): name for name, url in feeds}
+        for fut in as_completed(futures, timeout=20):
+            try:
+                articles.extend(fut.result())
+            except Exception:
+                pass
+
+    # GDELT supplement
+    gdelt_q = ("artificial intelligence machine learning LLM generative AI startup 2025"
+               if type == "ai_ml"
+               else "startup founder India Singapore Indonesia Vietnam 2025")
+    articles.extend(_fetch_gdelt_news(gdelt_q, days=3, max_records=20))
+
+    # Deduplicate by URL, sort newest first
+    seen = set()
+    unique = []
+    for a in articles:
+        if a["url"] and a["url"] not in seen:
+            seen.add(a["url"])
+            unique.append(a)
+
+    unique = unique[:limit]
+    result = {"articles": unique, "fetched_at": datetime.utcnow().isoformat() + "Z",
+              "count": len(unique), "type": type}
+    with _intel_lock:
+        _intel_cache[cache_key] = {"ts": _time.time(), "data": result}
+    return JSONResponse(result)
+
+
+@app.get("/api/intelligence/market")
+async def intelligence_market():
+    """Live market data: India/SEA indices + key tech stocks via Yahoo Finance."""
+    cache_key = "market"
+    with _intel_lock:
+        cached = _intel_cache.get(cache_key)
+        if cached and _time.time() - cached["ts"] < 300:
+            return JSONResponse(cached["data"])
+
+    import requests as _req
+
+    def _fetch_quote(item: dict) -> dict | None:
+        symbol = item["symbol"]
+        try:
+            r = _req.get(
+                f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}",
+                params={"interval": "1d", "range": "5d"},
+                headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"},
+                timeout=8,
+            )
+            if not r.ok:
+                return None
+            meta = r.json()["chart"]["result"][0]["meta"]
+            price = meta.get("regularMarketPrice") or meta.get("chartPreviousClose", 0)
+            prev  = meta.get("chartPreviousClose") or meta.get("previousClose", price)
+            chg   = round(((price - prev) / prev * 100) if prev else 0, 2)
+            return {
+                "symbol":       symbol,
+                "name":         item["name"],
+                "type":         item["type"],
+                "geo":          item["geo"],
+                "price":        round(price, 2),
+                "change_pct":   chg,
+                "currency":     meta.get("currency", "USD"),
+                "market_state": meta.get("marketState", "CLOSED"),
+            }
+        except Exception:
+            return None
+
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    quotes = []
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        futures = {pool.submit(_fetch_quote, item): item for item in MARKET_SYMBOLS}
+        for fut in as_completed(futures, timeout=25):
+            try:
+                q = fut.result()
+                if q:
+                    quotes.append(q)
+            except Exception:
+                pass
+
+    # Sort: indices first, then stocks; within each group by geo
+    quotes.sort(key=lambda q: (0 if q["type"] == "index" else 1, q["geo"], q["name"]))
+
+    result = {"quotes": quotes, "fetched_at": datetime.utcnow().isoformat() + "Z"}
+    with _intel_lock:
+        _intel_cache[cache_key] = {"ts": _time.time(), "data": result}
+    return JSONResponse(result)
+
+
+@app.get("/api/intelligence/sectors")
+async def intelligence_sectors():
+    """Sector signal heatmap — GDELT article counts per investment theme (30-min cache)."""
+    cache_key = "sectors"
+    with _intel_lock:
+        cached = _intel_cache.get(cache_key)
+        if cached and _time.time() - cached["ts"] < 1800:
+            return JSONResponse(cached["data"])
+
+    import requests as _req
+    sectors = []
+    for sector_name, query in SECTOR_THEMES:
+        try:
+            r = _req.get(
+                "https://api.gdeltproject.org/api/v2/doc/doc",
+                params={"query": query, "mode": "artlist", "maxrecords": "25",
+                        "format": "json", "timespan": "7d"},
+                timeout=12,
+            )
+            arts = r.json().get("articles", []) if r.ok and r.content else []
+            count = len(arts)
+            headlines = [a.get("title", "") for a in arts[:3] if a.get("title")]
+        except Exception:
+            count, headlines = 0, []
+
+        sectors.append({"name": sector_name, "signal_count": count, "headlines": headlines})
+        _time.sleep(6)  # GDELT rate limit: 1 req / 5s
+
+    result = {"sectors": sectors, "fetched_at": datetime.utcnow().isoformat() + "Z"}
+    with _intel_lock:
+        _intel_cache[cache_key] = {"ts": _time.time(), "data": result}
+    return JSONResponse(result)
 
 
 # ── Entry point ────────────────────────────────────────────────────────────────

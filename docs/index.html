@@ -383,6 +383,143 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
 .skeleton{background:var(--surface2);border-radius:8px;animation:shimmer 1.5s infinite linear;background-size:200% 100%}
 @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
 .skeleton{background:linear-gradient(90deg,var(--surface2) 25%,var(--surface3) 50%,var(--surface2) 75%);background-size:400% 100%}
+
+/* ── Tab nav ──────────────────────────────────────────────────────────── */
+.tab-nav{display:flex;gap:2px;align-items:center;margin-left:4px}
+.tab-btn{
+  font-size:12px;font-weight:600;font-family:var(--font);
+  padding:5px 14px;border-radius:7px;border:1px solid transparent;
+  cursor:pointer;background:none;color:var(--muted);transition:all .15s;white-space:nowrap;
+}
+.tab-btn:hover{color:var(--text2);background:var(--surface2)}
+.tab-btn.active{color:var(--text);background:var(--surface2);border-color:var(--border2)}
+
+/* ── Intelligence Room (Tab 2) ────────────────────────────────────────── */
+.intel-room{display:none;flex:1;flex-direction:column;overflow:hidden}
+.intel-room.visible{display:flex}
+
+/* Ticker */
+.ticker{
+  height:34px;background:rgba(99,102,241,.07);border-bottom:1px solid var(--border);
+  overflow:hidden;display:flex;align-items:center;gap:0;flex-shrink:0;
+}
+.ticker-label{
+  font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--accent);padding:0 14px;border-right:1px solid var(--border);
+  white-space:nowrap;flex-shrink:0;display:flex;align-items:center;gap:6px;
+}
+.ticker-live{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 1.2s ease-in-out infinite;flex-shrink:0}
+.ticker-track{
+  display:flex;gap:0;overflow:hidden;flex:1;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 40px,#000 calc(100% - 40px),transparent 100%);
+}
+.ticker-inner{
+  display:flex;gap:0;white-space:nowrap;
+  animation:tickerScroll 60s linear infinite;
+}
+.ticker-item{
+  font-size:11px;color:var(--text2);padding:0 20px;
+  border-right:1px solid var(--border);cursor:pointer;
+}
+.ticker-item:hover{color:var(--text)}
+@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* Intel body */
+.intel-body{display:flex;flex:1;overflow:hidden}
+
+/* Intel panels */
+.intel-panels{display:flex;flex:1;overflow:hidden;gap:0}
+.intel-panel{
+  display:flex;flex-direction:column;flex:1;
+  border-right:1px solid var(--border);overflow:hidden;
+}
+.intel-panel:last-child{border-right:none}
+.intel-panel-wide{flex:1.4}
+
+.panel-head{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 14px;border-bottom:1px solid var(--border);flex-shrink:0;
+  background:var(--surface);
+}
+.panel-title{font-size:12px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:7px}
+.panel-live{
+  font-size:9px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+  padding:2px 7px;border-radius:20px;
+  background:rgba(16,185,129,.12);color:var(--green);border:1px solid rgba(16,185,129,.25);
+  display:flex;align-items:center;gap:4px;
+}
+.panel-live-dot{width:5px;height:5px;border-radius:50%;background:var(--green);animation:pulse 1.2s ease-in-out infinite}
+.panel-ts{font-size:10px;color:var(--muted)}
+.panel-refresh{font-size:11px;color:var(--muted);cursor:pointer;padding:2px 6px;border-radius:5px;background:none;border:none;font-family:var(--font)}
+.panel-refresh:hover{color:var(--text);background:var(--surface2)}
+
+/* News feed */
+.news-feed{flex:1;overflow-y:auto;padding:0}
+.news-item{
+  padding:10px 14px;border-bottom:1px solid var(--border);
+  transition:background .1s;cursor:pointer;text-decoration:none;display:block;
+}
+.news-item:hover{background:var(--surface2)}
+.news-item-src{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.news-src-badge{
+  font-size:9px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+  padding:1px 6px;border-radius:3px;background:var(--surface3);color:var(--muted2);
+  border:1px solid var(--border2);white-space:nowrap;flex-shrink:0;
+}
+.news-src-badge.ai{background:rgba(139,92,246,.1);color:var(--purple);border-color:rgba(139,92,246,.25)}
+.news-src-badge.india{background:rgba(245,158,11,.1);color:var(--amber);border-color:rgba(245,158,11,.25)}
+.news-src-badge.sea{background:rgba(59,130,246,.1);color:var(--blue);border-color:rgba(59,130,246,.2)}
+.news-src-badge.gdelt{background:rgba(6,182,212,.08);color:var(--teal);border-color:rgba(6,182,212,.2)}
+.news-time{font-size:10px;color:var(--muted)}
+.news-title{font-size:12px;font-weight:600;color:var(--text2);line-height:1.45;margin-bottom:3px}
+.news-item:hover .news-title{color:var(--text)}
+.news-summary{font-size:11px;color:var(--muted);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* Market panel */
+.market-body{flex:1;overflow-y:auto;padding:8px}
+.market-section-label{font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:8px 6px 4px}
+.market-grid{display:flex;flex-direction:column;gap:3px;margin-bottom:8px}
+.market-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:7px 10px;border-radius:8px;background:var(--surface2);
+  border:1px solid var(--border);transition:border-color .1s;cursor:default;
+}
+.market-row:hover{border-color:var(--border2)}
+.market-row-left{display:flex;flex-direction:column;gap:1px}
+.market-name{font-size:12px;font-weight:600;color:var(--text)}
+.market-geo{font-size:10px;color:var(--muted)}
+.market-row-right{display:flex;flex-direction:column;align-items:flex-end;gap:1px}
+.market-price{font-size:13px;font-weight:700;color:var(--text);letter-spacing:-.3px}
+.market-chg{font-size:11px;font-weight:600;padding:1px 6px;border-radius:4px}
+.market-chg.up{color:#10b981;background:rgba(16,185,129,.1)}
+.market-chg.down{color:#ef4444;background:rgba(239,68,68,.1)}
+.market-chg.flat{color:var(--muted);background:var(--surface3)}
+
+/* Sectors panel */
+.intel-bottom{
+  flex-shrink:0;border-top:1px solid var(--border);
+  background:var(--surface);padding:0;
+}
+.sectors-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+  gap:6px;padding:10px 16px;overflow-x:auto;
+}
+.sector-card{
+  background:var(--surface2);border:1px solid var(--border);border-radius:9px;
+  padding:10px 12px;transition:border-color .15s,box-shadow .15s;cursor:default;
+}
+.sector-card:hover{border-color:var(--border2);box-shadow:0 2px 12px rgba(0,0,0,.25)}
+.sector-name{font-size:11px;font-weight:700;color:var(--text2);margin-bottom:5px}
+.sector-bar-wrap{height:3px;background:var(--surface3);border-radius:2px;margin-bottom:6px;overflow:hidden}
+.sector-bar{height:100%;border-radius:2px;background:var(--accent);transition:width .6s ease}
+.sector-count{font-size:10px;color:var(--muted);margin-bottom:4px}
+.sector-headline{font-size:10px;color:var(--muted2);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+/* Intensity colours */
+.sector-card[data-level="5"] .sector-bar{background:var(--green)}
+.sector-card[data-level="4"] .sector-bar{background:#34d399}
+.sector-card[data-level="3"] .sector-bar{background:var(--accent)}
+.sector-card[data-level="2"] .sector-bar{background:var(--amber)}
+.sector-card[data-level="1"] .sector-bar{background:var(--muted)}
 </style>
 </head>
 <body>
@@ -395,6 +532,12 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
     VC Sourcing
   </div>
   <span class="logo-sub">India + SEA · Pre-seed/Seed</span>
+
+  <div class="tab-nav">
+    <button class="tab-btn active" id="tab-sourcing" onclick="switchTab('sourcing')">⚡ Founder Sourcing</button>
+    <button class="tab-btn" id="tab-intel" onclick="switchTab('intel')">📡 VC Intelligence</button>
+  </div>
+
   <div class="topbar-spacer"></div>
 
   <div class="run-status" id="run-status">
@@ -422,7 +565,8 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
   </button>
 </header>
 
-<!-- ── Body ──────────────────────────────────────────────────────────── -->
+<!-- ── Body (Tab 1 — Founder Sourcing) ───────────────────────────────── -->
+<div id="sourcing-room" style="display:flex;flex:1;overflow:hidden">
 <div class="body">
 
   <!-- ── Sidebar ─────────────────────────────────────────────────────── -->
@@ -551,6 +695,100 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
 
   </main>
 </div>
+</div><!-- end sourcing-room -->
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- TAB 2 — VC Intelligence Room                            -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div class="intel-room" id="intel-room">
+
+  <!-- Breaking news ticker -->
+  <div class="ticker">
+    <div class="ticker-label"><div class="ticker-live"></div>LIVE</div>
+    <div class="ticker-track">
+      <div class="ticker-inner" id="ticker-inner">
+        <span class="ticker-item">Loading live headlines…</span>
+        <span class="ticker-item">Fetching India + SEA signals…</span>
+        <span class="ticker-item">Scanning AI / ML news…</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main panels -->
+  <div class="intel-body">
+    <div class="intel-panels" id="intel-panels">
+
+      <!-- AI / ML News -->
+      <div class="intel-panel">
+        <div class="panel-head">
+          <div class="panel-title">
+            🤖 AI / ML News
+            <span class="panel-live"><span class="panel-live-dot"></span>LIVE</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <span class="panel-ts" id="aiml-ts">—</span>
+            <button class="panel-refresh" onclick="loadAIML(true)" title="Refresh">↺</button>
+          </div>
+        </div>
+        <div class="news-feed" id="aiml-feed">
+          <div style="padding:20px;color:var(--muted);font-size:12px;text-align:center">Loading…</div>
+        </div>
+      </div>
+
+      <!-- India + SEA News -->
+      <div class="intel-panel intel-panel-wide">
+        <div class="panel-head">
+          <div class="panel-title">
+            🌏 India + SEA Tech
+            <span class="panel-live"><span class="panel-live-dot"></span>LIVE</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <span class="panel-ts" id="indiasea-ts">—</span>
+            <button class="panel-refresh" onclick="loadIndiaSEA(true)" title="Refresh">↺</button>
+          </div>
+        </div>
+        <div class="news-feed" id="indiasea-feed">
+          <div style="padding:20px;color:var(--muted);font-size:12px;text-align:center">Loading…</div>
+        </div>
+      </div>
+
+      <!-- Market Data -->
+      <div class="intel-panel" style="max-width:300px;min-width:240px">
+        <div class="panel-head">
+          <div class="panel-title">
+            📈 Markets
+            <span class="panel-live"><span class="panel-live-dot"></span>LIVE</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px">
+            <span class="panel-ts" id="market-ts">—</span>
+            <button class="panel-refresh" onclick="loadMarket(true)" title="Refresh">↺</button>
+          </div>
+        </div>
+        <div class="market-body" id="market-body">
+          <div style="padding:20px;color:var(--muted);font-size:12px;text-align:center">Loading…</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Sector signals strip -->
+  <div class="intel-bottom">
+    <div class="panel-head" style="border-top:none">
+      <div class="panel-title">
+        🔭 Sector Signal Heatmap
+        <span style="font-size:10px;font-weight:500;color:var(--muted)">India + SEA · last 7 days · via GDELT</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="panel-ts" id="sectors-ts">—</span>
+        <button class="panel-refresh" onclick="loadSectors(true)" title="Refresh">↺</button>
+      </div>
+    </div>
+    <div class="sectors-grid" id="sectors-grid">
+      <div style="padding:10px;color:var(--muted);font-size:12px">Loading sector themes…</div>
+    </div>
+  </div>
+
 </div>
 
 <!-- Toast -->
@@ -1067,6 +1305,215 @@ function resetRunBtn(){
   btn.textContent='▶ Run Pipeline';btn.disabled=false;
   document.getElementById('status-dot').className='dot ok';
   if(data.generated_at) updateRunStatus(data.generated_at);
+}
+
+// ══════════════════════════════════════════════════════════════
+// TAB 2 — VC Intelligence Room
+// ══════════════════════════════════════════════════════════════
+
+// ── Tab switcher ──────────────────────────────────────────────
+let intelLoaded = false;
+function switchTab(tab){
+  const sourcing = document.getElementById('sourcing-room');
+  const intel    = document.getElementById('intel-room');
+  document.getElementById('tab-sourcing').classList.toggle('active', tab==='sourcing');
+  document.getElementById('tab-intel').classList.toggle('active', tab==='intel');
+  const runBtn = document.getElementById('run-btn');
+  const daysSelect = document.getElementById('days-select');
+  const searchWrap = document.querySelector('.search-wrap');
+  const runStatus  = document.getElementById('run-status');
+  if(tab==='intel'){
+    sourcing.style.display='none';
+    intel.classList.add('visible');
+    runBtn.style.display='none';
+    daysSelect.style.display='none';
+    if(searchWrap) searchWrap.style.display='none';
+    if(!intelLoaded){ initIntel(); intelLoaded=true; }
+  } else {
+    sourcing.style.display='flex';
+    intel.classList.remove('visible');
+    runBtn.style.display='';
+    daysSelect.style.display='';
+    if(searchWrap) searchWrap.style.display='';
+  }
+}
+
+// ── Helpers ───────────────────────────────────────────────────
+const API = (path) => `http://localhost:8000${path}`;
+
+function relTime(str){
+  if(!str) return '';
+  // GDELT format: 20250405T120000Z
+  let d;
+  if(/^\d{8}T\d{6}Z?$/.test(str)){
+    d = new Date(str.replace(/(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})/,'$1-$2-$3T$4:$5:$6Z'));
+  } else {
+    d = new Date(str);
+  }
+  if(isNaN(d)) return '';
+  const mins = Math.floor((Date.now()-d)/60000);
+  if(mins<1)  return 'just now';
+  if(mins<60) return `${mins}m ago`;
+  const hrs = Math.floor(mins/60);
+  if(hrs<24)  return `${hrs}h ago`;
+  return `${Math.floor(hrs/24)}d ago`;
+}
+
+function srcBadgeClass(src){
+  const s=src.toLowerCase();
+  if(s.includes('gdelt')) return 'gdelt';
+  if(s.includes('ventureb')||s.includes('techcrunch')||s.includes('mit')||s.includes('wired')||s.includes('verge')||s.includes('ars')||s.includes('hugging')||s.includes('batch')||s.includes('ai')) return 'ai';
+  if(s.includes('yourstory')||s.includes('inc42')||s.includes('entrackr')||s.includes('bridge')||s.includes('vccircle')) return 'india';
+  if(s.includes('e27')||s.includes('kr.asia')||s.includes('techinasia')||s.includes('dealstreet')) return 'sea';
+  return '';
+}
+
+function renderNewsItem(a){
+  const t = relTime(a.published);
+  const cls = srcBadgeClass(a.source);
+  const srcShort = a.source.replace(/^GDELT\//,'').replace(/\.com$/,'').replace(/\.co$/,'').replace(/\.in$/,'');
+  return `<a class="news-item" href="${esc(a.url)}" target="_blank" rel="noopener">
+    <div class="news-item-src">
+      <span class="news-src-badge ${cls}">${esc(srcShort)}</span>
+      ${t?`<span class="news-time">${t}</span>`:''}
+    </div>
+    <div class="news-title">${esc(a.title)}</div>
+    ${a.summary?`<div class="news-summary">${esc(a.summary)}</div>`:''}
+  </a>`;
+}
+
+// ── Ticker ────────────────────────────────────────────────────
+function updateTicker(articles){
+  if(!articles||!articles.length) return;
+  const items = articles.slice(0,20).map(a=>
+    `<span class="ticker-item" onclick="window.open('${esc(a.url)}','_blank')">${esc(a.title)}</span>`
+  );
+  // Duplicate for seamless loop
+  const html = items.join('')+items.join('');
+  const inner = document.getElementById('ticker-inner');
+  if(inner) inner.innerHTML = html;
+}
+
+// ── AI / ML Feed ──────────────────────────────────────────────
+let aimlRefreshIv;
+async function loadAIML(force=false){
+  const feed = document.getElementById('aiml-feed');
+  const ts   = document.getElementById('aiml-ts');
+  try{
+    const r = await fetch(API('/api/intelligence/news?type=ai_ml&limit=40'));
+    if(!r.ok) throw new Error(r.status);
+    const d = await r.json();
+    feed.innerHTML = (d.articles||[]).map(renderNewsItem).join('') ||
+      '<div style="padding:20px;color:var(--muted);font-size:12px;text-align:center">No articles found</div>';
+    ts.textContent = relTime(d.fetched_at)||'now';
+    updateTicker(d.articles||[]);
+  }catch(e){
+    feed.innerHTML='<div style="padding:20px;color:var(--red);font-size:12px">Error loading feed — is the local server running?</div>';
+  }
+}
+
+// ── India + SEA Feed ─────────────────────────────────────────
+async function loadIndiaSEA(force=false){
+  const feed = document.getElementById('indiasea-feed');
+  const ts   = document.getElementById('indiasea-ts');
+  try{
+    const r = await fetch(API('/api/intelligence/news?type=india_sea&limit=40'));
+    if(!r.ok) throw new Error(r.status);
+    const d = await r.json();
+    feed.innerHTML = (d.articles||[]).map(renderNewsItem).join('') ||
+      '<div style="padding:20px;color:var(--muted);font-size:12px;text-align:center">No articles found</div>';
+    ts.textContent = relTime(d.fetched_at)||'now';
+  }catch(e){
+    feed.innerHTML='<div style="padding:20px;color:var(--red);font-size:12px">Error loading feed</div>';
+  }
+}
+
+// ── Market Data ───────────────────────────────────────────────
+function fmtPrice(p, cur){
+  if(!p) return '—';
+  if(cur==='INR'||cur==='IDR'||cur==='VND') return p.toLocaleString('en-IN');
+  return p.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+}
+
+async function loadMarket(force=false){
+  const body = document.getElementById('market-body');
+  const ts   = document.getElementById('market-ts');
+  try{
+    const r = await fetch(API('/api/intelligence/market'));
+    if(!r.ok) throw new Error(r.status);
+    const d = await r.json();
+    const quotes = d.quotes||[];
+    const indices = quotes.filter(q=>q.type==='index');
+    const stocks  = quotes.filter(q=>q.type==='stock');
+
+    const renderRow = q => {
+      const chgCls = q.change_pct>0?'up':q.change_pct<0?'down':'flat';
+      const chgStr = (q.change_pct>0?'+':'')+q.change_pct+'%';
+      return `<div class="market-row">
+        <div class="market-row-left">
+          <div class="market-name">${esc(q.name)}</div>
+          <div class="market-geo">${esc(q.geo)} · ${esc(q.market_state||'')}</div>
+        </div>
+        <div class="market-row-right">
+          <div class="market-price">${fmtPrice(q.price,q.currency)}</div>
+          <div class="market-chg ${chgCls}">${chgStr}</div>
+        </div>
+      </div>`;
+    };
+
+    body.innerHTML = `
+      <div class="market-section-label">Indices</div>
+      <div class="market-grid">${indices.map(renderRow).join('')}</div>
+      <div class="market-section-label">India + SEA Tech Stocks</div>
+      <div class="market-grid">${stocks.map(renderRow).join('')}</div>
+    `;
+    ts.textContent = relTime(d.fetched_at)||'now';
+  }catch(e){
+    body.innerHTML='<div style="padding:20px;color:var(--red);font-size:12px">Market data unavailable</div>';
+  }
+}
+
+// ── Sectors ───────────────────────────────────────────────────
+async function loadSectors(force=false){
+  const grid = document.getElementById('sectors-grid');
+  const ts   = document.getElementById('sectors-ts');
+  grid.innerHTML='<div style="padding:10px;color:var(--muted);font-size:12px">Fetching sector signals from GDELT (may take ~2 min first load)…</div>';
+  try{
+    const r = await fetch(API('/api/intelligence/sectors'));
+    if(!r.ok) throw new Error(r.status);
+    const d = await r.json();
+    const sectors = d.sectors||[];
+    const maxCount = Math.max(...sectors.map(s=>s.signal_count),1);
+    grid.innerHTML = sectors.map(s=>{
+      const pct  = Math.round(s.signal_count/maxCount*100);
+      const level = pct>=80?5:pct>=60?4:pct>=40?3:pct>=20?2:1;
+      const headline = (s.headlines||[])[0]||'';
+      return `<div class="sector-card" data-level="${level}">
+        <div class="sector-name">${esc(s.name)}</div>
+        <div class="sector-bar-wrap"><div class="sector-bar" style="width:${pct}%"></div></div>
+        <div class="sector-count">${s.signal_count} signals · 7d</div>
+        ${headline?`<div class="sector-headline">${esc(headline)}</div>`:''}
+      </div>`;
+    }).join('');
+    ts.textContent = relTime(d.fetched_at)||'now';
+  }catch(e){
+    grid.innerHTML='<div style="padding:10px;color:var(--red);font-size:12px">Sector data unavailable</div>';
+  }
+}
+
+// ── Init & auto-refresh ───────────────────────────────────────
+function initIntel(){
+  // Load news + market immediately; sectors are slow (GDELT rate limit)
+  loadAIML();
+  loadIndiaSEA();
+  loadMarket();
+  loadSectors();  // ~2 min to complete
+
+  // Auto-refresh intervals
+  setInterval(()=>loadAIML(),   2*60*1000);   // every 2 min
+  setInterval(()=>loadIndiaSEA(),2*60*1000);
+  setInterval(()=>loadMarket(),  5*60*1000);   // every 5 min
+  setInterval(()=>loadSectors(), 30*60*1000);  // every 30 min
 }
 </script>
 </body>
