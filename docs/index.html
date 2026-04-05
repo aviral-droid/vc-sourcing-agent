@@ -442,6 +442,7 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
   background:var(--surface);
 }
 .panel-title{font-size:12px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:7px}
+.panel-subtitle{font-size:10px;color:var(--muted);font-weight:500}
 .panel-live{
   font-size:9px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
   padding:2px 7px;border-radius:20px;
@@ -476,8 +477,9 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
 .news-summary{font-size:11px;color:var(--muted);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 
 /* Market panel */
-.market-body{flex:1;overflow-y:auto;padding:8px}
+.market-body{flex:1;overflow-y:auto;padding:8px;max-height:600px}
 .market-section-label{font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:8px 6px 4px}
+.market-section-portfolio{color:var(--accent);border-top:1px solid var(--border);margin-top:4px;padding-top:12px}
 .market-grid{display:flex;flex-direction:column;gap:3px;margin-bottom:8px}
 .market-row{
   display:flex;align-items:center;justify-content:space-between;
@@ -485,6 +487,8 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
   border:1px solid var(--border);transition:border-color .1s;cursor:default;
 }
 .market-row:hover{border-color:var(--border2)}
+.market-row-portfolio{border-color:rgba(99,102,241,.25);background:rgba(99,102,241,.06)}
+.market-row-portfolio:hover{border-color:rgba(99,102,241,.5)}
 .market-row-left{display:flex;flex-direction:column;gap:1px}
 .market-name{font-size:12px;font-weight:600;color:var(--text)}
 .market-geo{font-size:10px;color:var(--muted)}
@@ -520,6 +524,38 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
 .sector-card[data-level="3"] .sector-bar{background:var(--accent)}
 .sector-card[data-level="2"] .sector-bar{background:var(--amber)}
 .sector-card[data-level="1"] .sector-bar{background:var(--muted)}
+
+/* Demand Intelligence panel */
+.intel-demand{border-top:1px solid var(--border);background:var(--surface);padding:12px 16px}
+.intel-demand-header{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.demand-grid{display:flex;gap:10px;overflow-x:auto;padding-bottom:6px}
+.demand-card{
+  flex-shrink:0;width:220px;
+  background:var(--surface2);border:1px solid var(--border);
+  border-radius:10px;padding:10px 12px;cursor:pointer;
+  transition:border-color .15s;
+}
+.demand-card:hover{border-color:var(--border2)}
+.demand-card-title{font-size:12px;font-weight:500;color:var(--text);line-height:1.4;margin-bottom:6px}
+.demand-card-meta{display:flex;align-items:center;gap:6px}
+.demand-src{font-size:9px;font-weight:700;padding:2px 6px;border-radius:4px;text-transform:uppercase}
+.demand-src.reddit{background:rgba(255,69,0,.15);color:#ff4500}
+.demand-src.hn{background:rgba(255,102,0,.15);color:#ff6600}
+.demand-src.ph{background:rgba(218,72,15,.15);color:#da480f}
+.demand-card-score{font-size:10px;color:var(--muted)}
+
+/* Market Composite bar */
+.composite-bar-wrap{padding:8px 10px;background:var(--surface3);border-radius:8px;margin-bottom:10px}
+.composite-label{font-size:10px;color:var(--muted2);font-weight:600;margin-bottom:5px}
+.composite-score{font-weight:700;color:var(--text);margin-left:4px}
+.composite-track{height:5px;background:var(--border);border-radius:3px;overflow:hidden}
+.composite-fill{height:100%;border-radius:3px;transition:width .4s}
+.composite-fill.bull{background:var(--green)}
+.composite-fill.neutral{background:var(--amber)}
+.composite-fill.bear{background:var(--red)}
+.composite-hint{font-size:9px;color:var(--muted);margin-top:3px;text-align:right}
+
+.sector-india-note{font-size:9px;color:var(--accent);margin-bottom:2px}
 
 /* Sector group label */
 .sector-group-label{
@@ -823,6 +859,16 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
     <div class="sectors-grid" id="sectors-grid">
       <div style="padding:10px;color:var(--muted);font-size:12px">Loading sector themes…</div>
     </div>
+  </div>
+
+  <!-- Consumer & Demand Intelligence -->
+  <div class="intel-demand">
+    <div class="intel-demand-header">
+      <span class="panel-title">🛒 Consumer &amp; Demand Intelligence</span>
+      <span class="panel-subtitle">India + SEA · Reddit · HN · ProductHunt · live</span>
+      <span class="panel-ts" id="demand-ts">—</span>
+    </div>
+    <div class="demand-grid" id="demand-grid">Loading demand signals…</div>
   </div>
 
 </div>
@@ -1497,16 +1543,15 @@ async function loadMarket(force=false){
     if(!r.ok) throw new Error(r.status);
     const d = await r.json();
     const quotes = d.quotes||[];
-    const indices = quotes.filter(q=>q.type==='index');
-    const stocks  = quotes.filter(q=>q.type==='stock');
 
-    const renderRow = q => {
+    const renderRow = (q, portfolio=false) => {
       const chgCls = q.change_pct>0?'up':q.change_pct<0?'down':'flat';
       const chgStr = (q.change_pct>0?'+':'')+q.change_pct+'%';
-      return `<div class="market-row">
+      const stateStr = q.market_state && q.market_state!=='REGULAR' ? ` · ${q.market_state}` : '';
+      return `<div class="market-row${portfolio?' market-row-portfolio':''}">
         <div class="market-row-left">
           <div class="market-name">${esc(q.name)}</div>
-          <div class="market-geo">${esc(q.geo)} · ${esc(q.market_state||'')}</div>
+          <div class="market-geo">${esc(q.geo)}${stateStr}</div>
         </div>
         <div class="market-row-right">
           <div class="market-price">${fmtPrice(q.price,q.currency)}</div>
@@ -1515,12 +1560,56 @@ async function loadMarket(force=false){
       </div>`;
     };
 
-    body.innerHTML = `
-      <div class="market-section-label">Indices</div>
-      <div class="market-grid">${indices.map(renderRow).join('')}</div>
-      <div class="market-section-label">India + SEA Tech Stocks</div>
-      <div class="market-grid">${stocks.map(renderRow).join('')}</div>
-    `;
+    // Market Composite Signal
+    function calcComposite(quotes) {
+      let score = 50;
+      const get = name => quotes.find(q=>q.name===name);
+      const vix = get('VIX'); if(vix) score -= Math.min(20, Math.max(-10, (vix.change_pct)*2));
+      const sp = get('S&P 500'); if(sp) score += sp.change_pct * 3;
+      const nifty = get('NIFTY 50'); if(nifty) score += nifty.change_pct * 2;
+      const nasdaq = get('NASDAQ'); if(nasdaq) score += nasdaq.change_pct * 2;
+      const btc = get('Bitcoin'); if(btc) score += btc.change_pct * 1;
+      const gold = get('Gold'); if(gold) score += gold.change_pct * 1.5;
+      const usdinr = get('USD/INR'); if(usdinr) score -= usdinr.change_pct * 2;
+      return Math.max(0, Math.min(100, Math.round(score)));
+    }
+    const composite = calcComposite(quotes);
+    const compClass = composite >= 60 ? 'bull' : composite >= 40 ? 'neutral' : 'bear';
+    const compHint  = composite >= 60 ? 'Bullish' : composite >= 40 ? 'Neutral' : 'Bearish';
+    let html = `<div class="composite-bar-wrap">
+      <div class="composite-label">Market Composite <span class="composite-score">${composite}</span></div>
+      <div class="composite-track"><div class="composite-fill ${compClass}" style="width:${composite}%"></div></div>
+      <div class="composite-hint">${compHint}</div>
+    </div>`;
+
+    // Group by geo
+    const GEO_ORDER = ['Global','India','SEA','US Tech','India Tech','SEA Tech','Portfolio','Asia','Europe','FX','Commodities','Crypto'];
+    const GEO_LABELS = {
+      'Global':      '🌐 Global Indices',
+      'India':       '🇮🇳 India Indices',
+      'SEA':         '🌏 SEA Indices',
+      'US Tech':     '🇺🇸 US AI & Tech',
+      'India Tech':  '🇮🇳 India Tech',
+      'SEA Tech':    '🌏 SEA Tech',
+      'Portfolio':   '💼 Aviral Portfolio',
+      'Asia':        '🌏 Asia Indices',
+      'Europe':      '🇪🇺 Europe Indices',
+      'FX':          '💱 FX & USD',
+      'Commodities': '🪙 Commodities',
+      'Crypto':      '₿ Crypto',
+    };
+    const groups = {};
+    quotes.forEach(q=>{ if(!groups[q.geo]) groups[q.geo]=[]; groups[q.geo].push(q); });
+
+    for(const geo of GEO_ORDER){
+      const rows = groups[geo];
+      if(!rows || rows.length===0) continue;
+      const isPortfolio = geo==='Portfolio';
+      html += `<div class="market-section-label${isPortfolio?' market-section-portfolio':''}">${GEO_LABELS[geo]||geo}</div>`;
+      html += `<div class="market-grid">${rows.map(q=>renderRow(q,isPortfolio)).join('')}</div>`;
+    }
+
+    body.innerHTML = html;
     ts.textContent = relTime(d.fetched_at)||'now';
   }catch(e){
     body.innerHTML='<div style="padding:20px;color:var(--red);font-size:12px">Market data unavailable</div>';
@@ -1528,44 +1617,134 @@ async function loadMarket(force=false){
 }
 
 // ── Sectors — grouped sub-segments ───────────────────────────
+function _renderSectors(sectors, fetchedAt){
+  if(!sectors || sectors.length === 0) return '';
+  const maxCount = Math.max(...sectors.map(s=>s.signal_count), 1);
+  const groups = {};
+  sectors.forEach(s=>{
+    if(!groups[s.parent]) groups[s.parent]=[];
+    groups[s.parent].push(s);
+  });
+  let html = '';
+  for(const [parent, subs] of Object.entries(groups)){
+    html += `<div class="sector-group-label">${esc(parent)}</div>`;
+    subs.forEach(s=>{
+      const pct   = Math.round(s.signal_count/maxCount*100);
+      const level = pct>=80?5:pct>=60?4:pct>=40?3:pct>=20?2:1;
+      const headline = (s.headlines||[])[0]||'';
+      html += `<div class="sector-card" data-level="${level}">
+        <div class="sector-name">${esc(s.name)}</div>
+        <div class="sector-bar-wrap"><div class="sector-bar" style="width:${pct}%"></div></div>
+        <div class="sector-count">${s.signal_count} signals · 7d</div>
+        ${s.india_note?`<div class="sector-india-note">${esc(s.india_note)}</div>`:''}
+        ${headline?`<div class="sector-headline">${esc(headline)}</div>`:''}
+      </div>`;
+    });
+  }
+  return html;
+}
+
+let _sectorsPollingTimer = null;
 async function loadSectors(force=false){
   const grid = document.getElementById('sectors-grid');
   const ts   = document.getElementById('sectors-ts');
-  grid.innerHTML='<div style="padding:10px;color:var(--muted);font-size:12px;grid-column:1/-1">Scanning sub-segment signals via GDELT (~3 min first load — 36 themes)…</div>';
   try{
     const r = await fetch(API('/api/intelligence/sectors'));
     if(!r.ok) throw new Error(r.status);
     const d = await r.json();
-    const sectors = d.sectors||[];
-    const maxCount = Math.max(...sectors.map(s=>s.signal_count),1);
 
-    // Group by parent
-    const groups = {};
-    sectors.forEach(s=>{
-      if(!groups[s.parent]) groups[s.parent]=[];
-      groups[s.parent].push(s);
-    });
-
-    let html = '';
-    for(const [parent, subs] of Object.entries(groups)){
-      html += `<div class="sector-group-label">${esc(parent)}</div>`;
-      subs.forEach(s=>{
-        const pct   = Math.round(s.signal_count/maxCount*100);
-        const level = pct>=80?5:pct>=60?4:pct>=40?3:pct>=20?2:1;
-        const headline = (s.headlines||[])[0]||'';
-        html += `<div class="sector-card" data-level="${level}">
-          <div class="sector-name">${esc(s.name)}</div>
-          <div class="sector-bar-wrap"><div class="sector-bar" style="width:${pct}%"></div></div>
-          <div class="sector-count">${s.signal_count} signals · 7d</div>
-          ${s.india_note?`<div class="sector-india-note">${esc(s.india_note)}</div>`:''}
-          ${headline?`<div class="sector-headline">${esc(headline)}</div>`:''}
+    if(d.loading){
+      // Server is still warming up — show countdown and poll
+      const eta = d.eta_seconds || 234;
+      let elapsed = 0;
+      if(!grid.dataset.polling){
+        grid.dataset.polling = '1';
+        grid.innerHTML=`<div id="sectors-loading-msg" style="padding:10px;color:var(--muted);font-size:12px;grid-column:1/-1">
+          🔍 Scanning 36 sub-sectors via GDELT — server pre-warming in background…
+          <span id="sectors-eta" style="color:var(--amber);font-weight:600"></span>
         </div>`;
-      });
+        // Update ETA countdown every second
+        const etaEl = () => document.getElementById('sectors-eta');
+        const countdown = setInterval(()=>{
+          elapsed++;
+          const rem = Math.max(0, eta - elapsed);
+          if(etaEl()) etaEl().textContent = ` (~${rem}s remaining)`;
+        }, 1000);
+        // Poll every 20s until data arrives
+        if(_sectorsPollingTimer) clearInterval(_sectorsPollingTimer);
+        _sectorsPollingTimer = setInterval(async ()=>{
+          try{
+            const pr = await fetch(API('/api/intelligence/sectors'));
+            const pd = await pr.json();
+            if(!pd.loading && pd.sectors && pd.sectors.length > 0){
+              clearInterval(_sectorsPollingTimer);
+              clearInterval(countdown);
+              delete grid.dataset.polling;
+              grid.innerHTML = _renderSectors(pd.sectors);
+              ts.textContent = relTime(pd.fetched_at)||'now';
+            }
+          }catch(_){}
+        }, 20000);
+      }
+      return;
     }
-    grid.innerHTML = html;
+
+    // Data ready
+    if(_sectorsPollingTimer){ clearInterval(_sectorsPollingTimer); _sectorsPollingTimer = null; }
+    delete grid.dataset.polling;
+    const html = _renderSectors(d.sectors||[]);
+    grid.innerHTML = html || '<div style="padding:10px;color:var(--muted);font-size:12px;grid-column:1/-1">No sector signals yet</div>';
     ts.textContent = relTime(d.fetched_at)||'now';
   }catch(e){
     grid.innerHTML='<div style="padding:10px;color:var(--red);font-size:12px">Sector data unavailable — is the local server running?</div>';
+  }
+}
+
+// ── Consumer & Demand Intelligence ───────────────────────────
+async function loadDemand(force=false){
+  const grid = document.getElementById('demand-grid');
+  const ts   = document.getElementById('demand-ts');
+  try{
+    const r = await fetch(API('/api/intelligence/demand'));
+    if(!r.ok) throw new Error(r.status);
+    const d = await r.json();
+    const items = d.items || [];
+    if(!items.length){
+      grid.innerHTML='<div style="padding:12px;color:var(--muted);font-size:12px">No demand signals available.</div>';
+      return;
+    }
+    const srcClass = src => {
+      const s = src.toLowerCase();
+      if(s.includes('reddit')) return 'reddit';
+      if(s.includes('hackernews') || s.includes('hn')) return 'hn';
+      if(s.includes('producthunt')) return 'ph';
+      return 'hn';
+    };
+    const srcShort = src => {
+      if(src.includes('IndiaInvestments')) return 'r/IndiaInv';
+      if(src.includes('IndiaStartups'))   return 'r/IndiaStart';
+      if(src.includes('Reddit/India'))    return 'r/India';
+      if(src.includes('SGInvestments'))   return 'r/SGInvest';
+      if(src.includes('HackerNews'))      return 'HN';
+      if(src.includes('ProductHunt'))     return 'PH';
+      return src.replace('Reddit/','r/');
+    };
+    grid.innerHTML = items.map(item=>{
+      const sc = srcClass(item.source);
+      const short = srcShort(item.source);
+      const title = (item.title||'').slice(0,80) + ((item.title||'').length>80?'…':'');
+      const meta = [item.score ? `▲${item.score}` : '', item.comments ? `💬${item.comments}` : '', item.age||''].filter(Boolean).join(' · ');
+      return `<div class="demand-card" onclick="window.open(${JSON.stringify(item.url||'#')},'_blank')">
+        <div class="demand-card-title">${esc(title)}</div>
+        <div class="demand-card-meta">
+          <span class="demand-src ${sc}">${esc(short)}</span>
+          <span class="demand-card-score">${esc(meta)}</span>
+        </div>
+      </div>`;
+    }).join('');
+    if(ts) ts.textContent = relTime(d.fetched_at)||'now';
+  }catch(e){
+    if(grid) grid.innerHTML='<div style="padding:12px;color:var(--red);font-size:12px">Demand data unavailable</div>';
   }
 }
 
@@ -1576,12 +1755,14 @@ function initIntel(){
   loadEmerging();
   loadMarket();
   loadSectors();  // ~3 min first load (36 GDELT queries @ 6s each)
+  loadDemand();
 
   setInterval(()=>loadAIML(),     2*60*1000);
   setInterval(()=>loadIndiaSEA(), 2*60*1000);
   setInterval(()=>loadEmerging(), 3*60*1000);   // every 3 min
   setInterval(()=>loadMarket(),   5*60*1000);
   setInterval(()=>loadSectors(),  30*60*1000);
+  setInterval(()=>loadDemand(),   5*60*1000);
 }
 </script>
 </body>

@@ -546,23 +546,83 @@ EMERGING_FEEDS = [
 ]
 
 MARKET_SYMBOLS = [
-    {"symbol": "^NSEI",        "name": "NIFTY 50",      "type": "index",  "geo": "India"},
-    {"symbol": "^BSESN",       "name": "SENSEX",         "type": "index",  "geo": "India"},
-    {"symbol": "^STI",         "name": "STI",            "type": "index",  "geo": "Singapore"},
-    {"symbol": "^JKSE",        "name": "IDX Composite",  "type": "index",  "geo": "Indonesia"},
-    {"symbol": "^KLSE",        "name": "KLCI",           "type": "index",  "geo": "Malaysia"},
-    {"symbol": "^IXIC",        "name": "NASDAQ",         "type": "index",  "geo": "Global"},
-    {"symbol": "^GSPC",        "name": "S&P 500",        "type": "index",  "geo": "Global"},
-    {"symbol": "^VIX",         "name": "VIX",            "type": "index",  "geo": "Global"},
-    {"symbol": "ZOMATO.NS",    "name": "Zomato",         "type": "stock",  "geo": "India"},
-    {"symbol": "PAYTM.NS",     "name": "Paytm",          "type": "stock",  "geo": "India"},
-    {"symbol": "NYKAA.NS",     "name": "Nykaa",          "type": "stock",  "geo": "India"},
-    {"symbol": "POLICYBZR.NS", "name": "PolicyBazaar",   "type": "stock",  "geo": "India"},
-    {"symbol": "INFY.NS",      "name": "Infosys",        "type": "stock",  "geo": "India"},
-    {"symbol": "TCS.NS",       "name": "TCS",            "type": "stock",  "geo": "India"},
-    {"symbol": "GRAB",         "name": "Grab",           "type": "stock",  "geo": "SEA"},
-    {"symbol": "SE",           "name": "Sea Ltd",        "type": "stock",  "geo": "SEA"},
-    {"symbol": "MMYT",         "name": "MakeMyTrip",     "type": "stock",  "geo": "India"},
+    # ── Global indices ─────────────────────────────────────────────────────────
+    {"symbol": "^IXIC",        "name": "NASDAQ",          "type": "index",  "geo": "Global"},
+    {"symbol": "^GSPC",        "name": "S&P 500",         "type": "index",  "geo": "Global"},
+    {"symbol": "^VIX",         "name": "VIX",             "type": "index",  "geo": "Global"},
+    {"symbol": "^NSEI",        "name": "NIFTY 50",        "type": "index",  "geo": "India"},
+    {"symbol": "^BSESN",       "name": "SENSEX",          "type": "index",  "geo": "India"},
+    {"symbol": "^STI",         "name": "STI (SG)",        "type": "index",  "geo": "SEA"},
+    {"symbol": "^JKSE",        "name": "IDX (ID)",        "type": "index",  "geo": "SEA"},
+    # ── US AI & Tech ───────────────────────────────────────────────────────────
+    {"symbol": "NVDA",         "name": "NVIDIA",          "type": "stock",  "geo": "US Tech"},
+    {"symbol": "MSFT",         "name": "Microsoft",       "type": "stock",  "geo": "US Tech"},
+    {"symbol": "GOOGL",        "name": "Alphabet",        "type": "stock",  "geo": "US Tech"},
+    {"symbol": "META",         "name": "Meta",            "type": "stock",  "geo": "US Tech"},
+    {"symbol": "AAPL",         "name": "Apple",           "type": "stock",  "geo": "US Tech"},
+    {"symbol": "AMZN",         "name": "Amazon",          "type": "stock",  "geo": "US Tech"},
+    {"symbol": "AMD",          "name": "AMD",             "type": "stock",  "geo": "US Tech"},
+    {"symbol": "AVGO",         "name": "Broadcom",        "type": "stock",  "geo": "US Tech"},
+    {"symbol": "PLTR",         "name": "Palantir",        "type": "stock",  "geo": "US Tech"},
+    {"symbol": "CRM",          "name": "Salesforce",      "type": "stock",  "geo": "US Tech"},
+    {"symbol": "NOW",          "name": "ServiceNow",      "type": "stock",  "geo": "US Tech"},
+    {"symbol": "SNOW",         "name": "Snowflake",       "type": "stock",  "geo": "US Tech"},
+    {"symbol": "DDOG",         "name": "Datadog",         "type": "stock",  "geo": "US Tech"},
+    {"symbol": "TSLA",         "name": "Tesla",           "type": "stock",  "geo": "US Tech"},
+    # ── India Tech ─────────────────────────────────────────────────────────────
+    {"symbol": "TCS.NS",       "name": "TCS",             "type": "stock",  "geo": "India Tech"},
+    {"symbol": "INFY.NS",      "name": "Infosys",         "type": "stock",  "geo": "India Tech"},
+    {"symbol": "HCLTECH.NS",   "name": "HCL Tech",        "type": "stock",  "geo": "India Tech"},
+    {"symbol": "WIPRO.NS",     "name": "Wipro",           "type": "stock",  "geo": "India Tech"},
+    {"symbol": "TECHM.NS",     "name": "Tech Mahindra",   "type": "stock",  "geo": "India Tech"},
+    {"symbol": "LTIM.NS",      "name": "LTIMindtree",     "type": "stock",  "geo": "India Tech"},
+    {"symbol": "ZOMATO.NS",    "name": "Zomato",          "type": "stock",  "geo": "India Tech"},
+    {"symbol": "PAYTM.NS",     "name": "Paytm",           "type": "stock",  "geo": "India Tech"},
+    {"symbol": "NYKAA.NS",     "name": "Nykaa",           "type": "stock",  "geo": "India Tech"},
+    {"symbol": "POLICYBZR.NS", "name": "PB Fintech",      "type": "stock",  "geo": "India Tech"},
+    {"symbol": "MMYT",         "name": "MakeMyTrip",      "type": "stock",  "geo": "India Tech"},
+    # ── SEA Tech ───────────────────────────────────────────────────────────────
+    {"symbol": "GRAB",         "name": "Grab",            "type": "stock",  "geo": "SEA Tech"},
+    {"symbol": "SE",           "name": "Sea Ltd",         "type": "stock",  "geo": "SEA Tech"},
+    # ── Aviral Portfolio ───────────────────────────────────────────────────────
+    {"symbol": "BHARATFORG.NS",  "name": "Bharat Forge",         "type": "stock",  "geo": "Portfolio"},
+    {"symbol": "HAL.NS",         "name": "HAL",                  "type": "stock",  "geo": "Portfolio"},
+    {"symbol": "TEGA.NS",        "name": "TEGA Industries",       "type": "stock",  "geo": "Portfolio"},
+    {"symbol": "WABAG.NS",       "name": "VA Tech WABAG",        "type": "stock",  "geo": "Portfolio"},
+    {"symbol": "TATACOMM.NS",    "name": "Tata Comms",           "type": "stock",  "geo": "Portfolio"},
+    {"symbol": "TVSSCL.NS",      "name": "TVS Supply Chain",     "type": "stock",  "geo": "Portfolio"},
+    {"symbol": "INDHOTEL.NS",    "name": "IHCL",                 "type": "stock",  "geo": "Portfolio"},
+    {"symbol": "EIHOTEL.NS",     "name": "EIH Hotels",           "type": "stock",  "geo": "Portfolio"},
+    {"symbol": "ICICIBANK.NS",   "name": "ICICI Bank",           "type": "stock",  "geo": "Portfolio"},
+    {"symbol": "JAGATJIT.NS",    "name": "Jagatjit Inds",        "type": "stock",  "geo": "Portfolio"},
+    {"symbol": "SPANDANA.NS",    "name": "Spandana Sphoorty",    "type": "stock",  "geo": "Portfolio"},
+    {"symbol": "WALCHANNAG.NS",  "name": "Walchandnagar Inds",   "type": "stock",  "geo": "Portfolio"},
+    {"symbol": "TIMEXGROUP.NS",  "name": "Timex Group",          "type": "stock",  "geo": "Portfolio"},
+    # ── Commodities ────────────────────────────────────────────────────────────────
+    {"symbol": "GC=F",    "name": "Gold",          "type": "commodity", "geo": "Commodities"},
+    {"symbol": "SI=F",    "name": "Silver",         "type": "commodity", "geo": "Commodities"},
+    {"symbol": "CL=F",    "name": "WTI Oil",        "type": "commodity", "geo": "Commodities"},
+    {"symbol": "BZ=F",    "name": "Brent Oil",      "type": "commodity", "geo": "Commodities"},
+    {"symbol": "HG=F",    "name": "Copper",         "type": "commodity", "geo": "Commodities"},
+    {"symbol": "NG=F",    "name": "Natural Gas",    "type": "commodity", "geo": "Commodities"},
+    {"symbol": "ZW=F",    "name": "Wheat",          "type": "commodity", "geo": "Commodities"},
+    {"symbol": "ZS=F",    "name": "Soybeans",       "type": "commodity", "geo": "Commodities"},
+    # ── Crypto ─────────────────────────────────────────────────────────────────────
+    {"symbol": "BTC-USD", "name": "Bitcoin",        "type": "crypto",    "geo": "Crypto"},
+    {"symbol": "ETH-USD", "name": "Ethereum",       "type": "crypto",    "geo": "Crypto"},
+    {"symbol": "SOL-USD", "name": "Solana",         "type": "crypto",    "geo": "Crypto"},
+    {"symbol": "BNB-USD", "name": "BNB",            "type": "crypto",    "geo": "Crypto"},
+    # ── More Global Indices ─────────────────────────────────────────────────────────
+    {"symbol": "^N225",   "name": "Nikkei 225",     "type": "index",     "geo": "Asia"},
+    {"symbol": "^HSI",    "name": "Hang Seng",      "type": "index",     "geo": "Asia"},
+    {"symbol": "^KS11",   "name": "KOSPI",          "type": "index",     "geo": "Asia"},
+    {"symbol": "^FTSE",   "name": "FTSE 100",       "type": "index",     "geo": "Europe"},
+    {"symbol": "^GDAXI",  "name": "DAX",            "type": "index",     "geo": "Europe"},
+    {"symbol": "^FCHI",   "name": "CAC 40",         "type": "index",     "geo": "Europe"},
+    {"symbol": "DX-Y.NYB","name": "USD Index",      "type": "index",     "geo": "FX"},
+    {"symbol": "EURUSD=X","name": "EUR/USD",        "type": "fx",        "geo": "FX"},
+    {"symbol": "USDINR=X","name": "USD/INR",        "type": "fx",        "geo": "FX"},
+    {"symbol": "USDSGD=X","name": "USD/SGD",        "type": "fx",        "geo": "FX"},
 ]
 
 # ── Deep sector heatmap — sub-segments ─────────────────────────────────────────
@@ -822,15 +882,8 @@ async def intelligence_market():
     return JSONResponse(result)
 
 
-@app.get("/api/intelligence/sectors")
-async def intelligence_sectors():
-    """Deep sector heatmap with sub-segments — GDELT signal counts (30-min cache)."""
-    cache_key = "sectors"
-    with _intel_lock:
-        cached = _intel_cache.get(cache_key)
-        if cached and _time.time() - cached["ts"] < 1800:
-            return JSONResponse(cached["data"])
-
+def _run_sectors_fetch() -> None:
+    """Sync worker — runs in a threadpool or background thread. GDELT rate-limited at 1 req/5s."""
     import requests as _req
     sectors = []
     for parent, sub, query, india_note in DEEP_SECTOR_THEMES:
@@ -852,9 +905,234 @@ async def intelligence_sectors():
             "signal_count": count, "headlines": headlines,
             "india_note": india_note,
         })
-        _time.sleep(6)
+        _time.sleep(6)  # GDELT rate limit: 1 req/5s — safe at 6s
 
-    result = {"sectors": sectors, "fetched_at": datetime.utcnow().isoformat() + "Z"}
+    result = {
+        "sectors": sectors,
+        "fetched_at": datetime.utcnow().isoformat() + "Z",
+        "loading": False,
+    }
+    with _intel_lock:
+        _intel_cache["sectors"] = {"ts": _time.time(), "data": result}
+    logging.getLogger(__name__).info("Sectors cache warmed — %d sub-segments", len(sectors))
+
+
+def _prewarm_sectors() -> None:
+    """Called once at startup in a daemon thread so the cache is ready before first user visit."""
+    with _intel_lock:
+        cached = _intel_cache.get("sectors")
+        if cached and _time.time() - cached["ts"] < 1800:
+            return  # already fresh from a previous prewarm in this process
+    _run_sectors_fetch()
+
+
+# Kick off background prewarm immediately at import time (daemon = dies with server process)
+_sectors_prewarm_thread = threading.Thread(target=_prewarm_sectors, daemon=True, name="sectors-prewarm")
+_sectors_prewarm_thread.start()
+
+
+@app.get("/api/intelligence/sectors")
+def intelligence_sectors():
+    """Deep sector heatmap — returns cached data or loading placeholder (non-blocking).
+
+    FastAPI runs plain `def` endpoints in a threadpool so this never blocks the event loop.
+    The actual GDELT fetch is done by the background prewarm thread (or this thread on cache miss).
+    """
+    cache_key = "sectors"
+    with _intel_lock:
+        cached = _intel_cache.get(cache_key)
+        if cached and _time.time() - cached["ts"] < 1800:
+            return JSONResponse(cached["data"])
+        # Check if background thread is still running
+        if _sectors_prewarm_thread.is_alive():
+            return JSONResponse({
+                "sectors": [],
+                "loading": True,
+                "fetched_at": None,
+                "eta_seconds": max(0, int(len(DEEP_SECTOR_THEMES) * 6.5)),
+            })
+
+    # Thread finished (or crashed) and cache is empty/stale — re-run synchronously in this threadpool worker
+    _run_sectors_fetch()
+    with _intel_lock:
+        cached = _intel_cache.get(cache_key)
+    return JSONResponse(cached["data"] if cached else {"sectors": [], "loading": False, "fetched_at": None})
+
+
+# ── Consumer & Demand Intelligence ────────────────────────────────────────────
+
+def _fetch_reddit_feed(url: str, source_name: str, limit: int = 25) -> list:
+    """Fetch a Reddit JSON feed and return normalised items."""
+    import requests as _req
+    try:
+        r = _req.get(
+            url,
+            headers={"User-Agent": "Mozilla/5.0 (compatible; VC-Intel/1.0)"},
+            timeout=10,
+        )
+        if not r.ok:
+            return []
+        posts = r.json().get("data", {}).get("children", [])
+        items = []
+        for p in posts[:limit]:
+            d = p.get("data", {})
+            title = d.get("title", "").strip()
+            if not title or not _is_relevant_article(title):
+                continue
+            created = d.get("created_utc", 0)
+            age_str = _demand_age(created)
+            items.append({
+                "source": source_name,
+                "title": title,
+                "url": "https://reddit.com" + d.get("permalink", ""),
+                "score": d.get("score", 0),
+                "comments": d.get("num_comments", 0),
+                "age": age_str,
+                "ts": created,
+            })
+        return items
+    except Exception:
+        return []
+
+
+def _fetch_hn_feed(query: str, source_name: str, hits_per_page: int = 20) -> list:
+    """Fetch HackerNews Algolia search results."""
+    import requests as _req
+    try:
+        r = _req.get(
+            "https://hn.algolia.com/api/v1/search",
+            params={"query": query, "tags": "story", "hitsPerPage": hits_per_page},
+            timeout=10,
+        )
+        if not r.ok:
+            return []
+        hits = r.json().get("hits", [])
+        items = []
+        for h in hits:
+            title = h.get("title", "").strip()
+            if not title or not _is_relevant_article(title):
+                continue
+            created = h.get("created_at_i", 0)
+            age_str = _demand_age(created)
+            items.append({
+                "source": source_name,
+                "title": title,
+                "url": h.get("url") or f"https://news.ycombinator.com/item?id={h.get('objectID','')}",
+                "score": h.get("points", 0),
+                "comments": h.get("num_comments", 0),
+                "age": age_str,
+                "ts": created,
+            })
+        return items
+    except Exception:
+        return []
+
+
+def _fetch_ph_feed() -> list:
+    """Fetch ProductHunt RSS feed via feedparser."""
+    try:
+        import feedparser as _fp
+        feed = _fp.parse("https://www.producthunt.com/feed")
+        items = []
+        for entry in (feed.entries or [])[:20]:
+            title = entry.get("title", "").strip()
+            if not title:
+                continue
+            pub = entry.get("published_parsed") or entry.get("updated_parsed")
+            ts = _time.mktime(pub) if pub else 0
+            age_str = _demand_age(ts)
+            items.append({
+                "source": "ProductHunt",
+                "title": title,
+                "url": entry.get("link", ""),
+                "score": 0,
+                "comments": 0,
+                "age": age_str,
+                "ts": ts,
+            })
+        return items
+    except Exception:
+        return []
+
+
+def _demand_age(ts: float) -> str:
+    """Return a human-readable age string from a unix timestamp."""
+    if not ts:
+        return "—"
+    delta = _time.time() - ts
+    if delta < 3600:
+        m = max(1, int(delta / 60))
+        return f"{m}m ago"
+    if delta < 86400:
+        h = int(delta / 3600)
+        return f"{h}h ago"
+    d = int(delta / 86400)
+    return f"{d}d ago"
+
+
+@app.get("/api/intelligence/demand")
+def intelligence_demand():
+    """Consumer & Demand Intelligence — Reddit + HackerNews + ProductHunt.
+
+    Returns up to 60 items sorted by date. Cached for 10 minutes.
+    FastAPI runs plain `def` endpoints in a threadpool so this never blocks the event loop.
+    """
+    cache_key = "demand"
+    with _intel_lock:
+        cached = _intel_cache.get(cache_key)
+        if cached and _time.time() - cached["ts"] < 600:
+            return JSONResponse(cached["data"])
+
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    tasks = [
+        (_fetch_reddit_feed,
+         ("https://www.reddit.com/r/IndiaInvestments/new.json?limit=25",
+          "Reddit/IndiaInvestments", 25)),
+        (_fetch_reddit_feed,
+         ("https://www.reddit.com/r/india/search.json?q=startup+OR+tech+OR+fintech&sort=new&limit=25",
+          "Reddit/India", 25)),
+        (_fetch_reddit_feed,
+         ("https://www.reddit.com/r/IndiaStartups/new.json?limit=25",
+          "Reddit/IndiaStartups", 25)),
+        (_fetch_reddit_feed,
+         ("https://www.reddit.com/r/SingaporeInvestments/new.json?limit=15",
+          "Reddit/SGInvestments", 15)),
+        (_fetch_hn_feed,
+         ("india startup OR sea fintech OR india ai",
+          "HackerNews", 20)),
+        (_fetch_hn_feed,
+         ("consumer india product OR fintech india 2025",
+          "HackerNews", 15)),
+        (_fetch_ph_feed, ()),
+    ]
+
+    all_items: list = []
+    with ThreadPoolExecutor(max_workers=7) as pool:
+        futures = {pool.submit(fn, *args): fn for fn, args in tasks}
+        for fut in as_completed(futures, timeout=20):
+            try:
+                all_items.extend(fut.result() or [])
+            except Exception:
+                pass
+
+    # Deduplicate by URL, sort by timestamp descending, cap at 60
+    seen_urls: set = set()
+    deduped = []
+    for item in sorted(all_items, key=lambda x: x.get("ts", 0), reverse=True):
+        url = item.get("url", "")
+        if url and url in seen_urls:
+            continue
+        seen_urls.add(url)
+        deduped.append(item)
+        if len(deduped) >= 60:
+            break
+
+    # Strip internal ts field
+    for item in deduped:
+        item.pop("ts", None)
+
+    result = {"items": deduped, "fetched_at": datetime.utcnow().isoformat() + "Z"}
     with _intel_lock:
         _intel_cache[cache_key] = {"ts": _time.time(), "data": result}
     return JSONResponse(result)
