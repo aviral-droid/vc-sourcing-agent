@@ -517,20 +517,57 @@ _RELEVANT_KW = {
     "data center","cloud","infrastructure","photonics",
 }
 _IRRELEVANT_KW = {
+    # Sports
     "nfl","nba","premier league","la liga","cricket match","ipl score",
+    "sports score","match result","goal","touchdown","home run","wimbledon",
+    # Entertainment
     "celebrity","oscars","grammy","golden globe","kardashian","taylor swift",
-    "movie review","film review","box office","tv show","reality tv",
-    "recipe","restaurant review","food critic","cooking show",
+    "movie review","film review","box office","tv show","reality tv","sitcom",
+    # Consumer product reviews / lifestyle
+    "recipe","restaurant review","food critic","cooking show","dining guide",
+    "art of dining","best restaurants","michelin","chef megha","vegan market",
     "fashion week","runway","makeup tutorial","skincare routine",
-    "sports score","match result","goal","touchdown","home run",
-    "horoscope","astrology","zodiac",
+    "best headphones","best laptop","best smartphone","watch band","lawn mower",
+    "robot vacuum","smart home review","gift guide","product review","buyer's guide",
+    "best earbuds","best tv","best camera","best router","gadget review",
+    "space heater","heatbit","home automation","smart speaker",
+    # Personal essays / culture pieces that slip through business feeds
+    "night of grief","i can't forget","memoir","personal essay","love story",
+    "jfk jr","princess diana","remembering","eulogy","obituary","in memoriam",
+    # Other noise
+    "horoscope","astrology","zodiac","dating advice","relationship","wellness quiz",
+    "weekly quiz","business creativity quiz","community event","party invite",
+}
+
+# Stronger keyword set — must appear for emerging/India feeds (avoids borderline content)
+_STRONG_KW = {
+    "startup","founder","funding","venture capital","vc","seed round","series a",
+    "series b","series c","angel round","investment","investor","unicorn","valuation",
+    "ipo","acquisition","merger","raises","launch","backed","incubator","accelerator",
+    "fintech","saas","b2b","deeptech","new company","spin-off","pivot","exit",
+    "partnership","contract","deal","revenue","growth","scale","market share",
 }
 
 def _is_relevant_article(title: str, summary: str = "") -> bool:
+    """Broad relevance — used for AI/ML feed."""
     text = (title + " " + summary).lower()
     if any(kw in text for kw in _IRRELEVANT_KW):
         return False
     return any(kw in text for kw in _RELEVANT_KW)
+
+def _is_vc_relevant(title: str, summary: str = "") -> bool:
+    """Strict relevance — used for India/SEA and Emerging Tech feeds.
+    Requires at least one 'strong' VC/startup keyword to cut out lifestyle fluff."""
+    text = (title + " " + summary).lower()
+    if any(kw in text for kw in _IRRELEVANT_KW):
+        return False
+    # Must have a strong signal AND a general tech/geo signal
+    has_strong = any(kw in text for kw in _STRONG_KW)
+    has_relevant = any(kw in text for kw in _RELEVANT_KW)
+    return has_strong or (has_relevant and any(kw in text for kw in {
+        "ai","ml","tech","india","singapore","indonesia","vietnam","sea","fintech",
+        "saas","deeptech","climate","ev","semiconductor","biotech","space",
+    }))
 
 # ── Feed configs ───────────────────────────────────────────────────────────────
 AI_ML_FEEDS = [
@@ -557,18 +594,18 @@ INDIA_SEA_FEEDS = [
     ("ET Markets",      "https://economictimes.indiatimes.com/markets/rssfeeds/1977021501.cms"),
 ]
 
-# NEW: Global emerging tech feeds (4th panel)
+# NEW: Global emerging tech feeds (4th panel) — startup/VC/deeptech focused only
 EMERGING_FEEDS = [
-    ("Rest of World",   "https://restofworld.org/feed/"),
-    ("Sifted (EU)",     "https://sifted.eu/articles/feed/"),
-    ("Crunchbase News", "https://news.crunchbase.com/feed/"),
-    ("Product Hunt",    "https://www.producthunt.com/feed"),
-    ("Hacker News",     "https://news.ycombinator.com/rss"),
-    ("TechNode (China)","https://technode.com/feed/"),
-    ("Tech EU",         "https://tech.eu/feed/"),
-    ("Wired Global",    "https://www.wired.com/feed/rss"),
-    ("Science|Business","https://sciencebusiness.net/rss.xml"),
-    ("Nature News",     "https://www.nature.com/nature.rss"),
+    ("Rest of World",      "https://restofworld.org/feed/"),
+    ("Sifted (EU)",        "https://sifted.eu/articles/feed/"),
+    ("Crunchbase News",    "https://news.crunchbase.com/feed/"),
+    ("TechCrunch Startups","https://techcrunch.com/category/startups/feed/"),
+    ("Hacker News",        "https://news.ycombinator.com/rss"),
+    ("TechNode (China)",   "https://technode.com/feed/"),
+    ("Tech EU",            "https://tech.eu/feed/"),
+    ("TechCrunch Funding", "https://techcrunch.com/category/venture/feed/"),
+    ("Science|Business",   "https://sciencebusiness.net/rss.xml"),
+    ("Axios Pro Rata",     "https://www.axios.com/feeds/feed.rss"),
 ]
 
 MARKET_SYMBOLS = [
@@ -826,11 +863,44 @@ async def intelligence_news(type: str = "ai_ml", limit: int = 50):
 
     articles: list[dict] = []
     from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    def _fetch_strict(name, url):
+        """Fetch with strict VC relevance filter for India/SEA and Emerging panels."""
+        import feedparser, requests as _req
+        try:
+            r = _req.get(url, timeout=12, headers={"User-Agent": "Mozilla/5.0"})
+            parsed = feedparser.parse(r.content)
+        except Exception:
+            try:
+                parsed = feedparser.parse(url)
+            except Exception:
+                return []
+        results = []
+        import re as _re2
+        for entry in parsed.entries:
+            if len(results) >= 8:
+                break
+            title   = entry.get("title", "").strip()
+            summary = _re2.sub(r"<[^>]+>", "", entry.get("summary", ""))[:300].strip()
+            if not _is_vc_relevant(title, summary):
+                continue
+            pub = entry.get("published") or entry.get("updated", "")
+            results.append({
+                "source": name, "title": title,
+                "url": entry.get("link", ""), "published": pub,
+                "summary": summary[:200],
+            })
+        return results
+
     with ThreadPoolExecutor(max_workers=8) as pool:
-        # Curated AI/ML feeds are pre-filtered; others need topic filter
-        apply = (type != "ai_ml")
-        futures = {pool.submit(_fetch_rss_feed, name, url, 8, apply): name
-                   for name, url in feeds}
+        if type == "ai_ml":
+            # AI/ML: broad filter is fine (all sources are curated AI-focused)
+            futures = {pool.submit(_fetch_rss_feed, name, url, 8, False): name
+                       for name, url in feeds}
+        else:
+            # India/SEA & Emerging: strict VC/startup filter to kill lifestyle noise
+            futures = {pool.submit(_fetch_strict, name, url): name
+                       for name, url in feeds}
         for fut in as_completed(futures, timeout=35):
             try:
                 articles.extend(fut.result())
