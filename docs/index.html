@@ -1292,7 +1292,7 @@ function renderCard(p){
 // ── Action button handlers ───────────────────────────────────────────
 async function trackFounder(name,linkedin,score,mode){
   try{
-    const r=await fetch('/api/track',{method:'POST',headers:{'Content-Type':'application/json'},
+    const r=await fetch(API('/api/track'),{method:'POST',headers:{'Content-Type':'application/json'},
       body:JSON.stringify({name:name,linkedin_url:linkedin,score:score,primary_signal:mode})});
     if(r.ok) toast(mode==='outreach'?`Outreach started: ${name}`:`Tracking: ${name}`);
     else toast('Error tracking founder');
@@ -1300,7 +1300,7 @@ async function trackFounder(name,linkedin,score,mode){
 }
 async function passFounder(name,linkedin,score){
   try{
-    const r=await fetch('/api/pass',{method:'POST',headers:{'Content-Type':'application/json'},
+    const r=await fetch(API('/api/pass'),{method:'POST',headers:{'Content-Type':'application/json'},
       body:JSON.stringify({name:name,linkedin_url:linkedin,score:score})});
     if(r.ok) toast(`Passed: ${name}`);
     else toast('Error');
@@ -1526,7 +1526,7 @@ async function loadData(){
 
   // Also try to load hot sectors from the live API
   try{
-    const apiResp = await fetch('/api/signals?days=30&min_score=0');
+    const apiResp = await fetch(API('/api/signals?days=30&min_score=0'));
     if(apiResp.ok){
       const apiData = await apiResp.json();
       window._hotSectors = apiData.hot_sectors || [];
@@ -1706,8 +1706,19 @@ function switchTab(tab){
   }
 }
 
-// ── Helpers ───────────────────────────────────────────────────
-const API = (path) => `http://localhost:8000${path}`;
+// ── API base URL — auto-resolves: localhost in dev, Render URL in production ──
+let _API_BASE = 'http://localhost:8000';   // default: local dev server
+(async function _resolveApiBase(){
+  // On GitHub Pages (or any host other than localhost), load the backend URL from config.json
+  if(!location.hostname.includes('localhost') && !location.hostname.includes('127.0.0.1')){
+    try{
+      const cfg = await fetch('/vc-sourcing-agent/config.json').then(r=>r.json()).catch(
+        ()=>fetch('/config.json').then(r=>r.json()));
+      if(cfg?.api_url) _API_BASE = cfg.api_url.replace(/\/$/, '');
+    }catch(_){}
+  }
+})();
+const API = (path) => `${_API_BASE}${path}`;
 
 function relTime(str){
   if(!str) return '';

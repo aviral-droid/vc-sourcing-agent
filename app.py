@@ -50,7 +50,18 @@ if not database.get_cached_persons(days_back=365, min_score=0):
     if seeded:
         logger.info("Seeded %d demo founder profiles (DB was empty)", seeded)
 
+from fastapi.middleware.cors import CORSMiddleware
+
 app = FastAPI(title="VC Sourcing Agent", version="2.0")
+
+# ── CORS — allow GitHub Pages and any origin to call the API ──────────────────
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],          # GitHub Pages, localhost, any frontend
+    allow_credentials=False,
+    allow_methods=["GET", "POST", "PATCH"],
+    allow_headers=["*"],
+)
 
 TEMPLATES_DIR = Path(__file__).parent / "templates"
 TEMPLATES_DIR.mkdir(exist_ok=True)
@@ -1440,16 +1451,18 @@ def intelligence_demand():
     return JSONResponse(result)
 
 
+# ── Health check (used by Render / uptime monitors) ───────────────────────────
+@app.get("/api/health")
+async def health():
+    return {"status": "ok", "version": "2.0"}
+
+
 # ── Entry point ────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
+    import os as _os
+    port = int(_os.getenv("PORT", 8000))
     print("\n" + "═" * 60)
-    print("  VC Sourcing Agent  |  http://localhost:8000")
+    print(f"  VC Sourcing Agent  |  http://0.0.0.0:{port}")
     print("═" * 60 + "\n")
-    uvicorn.run(
-        "app:app",
-        host="0.0.0.0",
-        port=8000,
-        reload=True,
-        log_level="info",
-    )
+    uvicorn.run("app:app", host="0.0.0.0", port=port, log_level="info")

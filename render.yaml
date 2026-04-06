@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: vc-sourcing-agent
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: EXA_API_KEY
+        sync: false   # set in Render dashboard → Environment
+      - key: BRAVE_API_KEY
+        sync: false
+      - key: PYTHON_VERSION
+        value: 3.11.0
+    disk:
+      name: vc-state
+      mountPath: /opt/render/project/src
+      sizeGB: 1       # persists state.db across restarts
