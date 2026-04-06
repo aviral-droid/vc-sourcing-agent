@@ -594,6 +594,127 @@ INDIA_SEA_FEEDS = [
     ("ET Markets",      "https://economictimes.indiatimes.com/markets/rssfeeds/1977021501.cms"),
 ]
 
+# ── Portfolio companies — live sector intelligence ─────────────────────────────
+PORTFOLIO_COMPANIES = [
+    {
+        "id": "distil",
+        "name": "Distil",
+        "url": "https://distil.market",
+        "sector": "Specialty Chemicals",
+        "emoji": "⚗️",
+        "color": "#06b6d4",
+        "keywords": ["specialty chemical", "chemicals marketplace", "b2b chemical",
+                     "formulation", "aroma chemical", "coatings adhesives", "masterbatch",
+                     "chemical procurement", "pharma chemicals", "personal care chemicals"],
+        "gdelt_query": "specialty chemicals B2B marketplace India startup 2025",
+        "context": "B2B specialty chemicals marketplace — connects suppliers with buyers across Aroma, Personal Care, CASE, Pharma sectors",
+    },
+    {
+        "id": "sanlayan",
+        "name": "Sanlayan",
+        "url": "",
+        "sector": "Defence Tech",
+        "emoji": "🛡️",
+        "color": "#64748b",
+        "keywords": ["india defence startup", "defence technology india", "drdo",
+                     "military tech india", "defence procurement india", "indian defence tech",
+                     "homeland security india", "defence manufacturing"],
+        "gdelt_query": "defence technology startup India DRDO military procurement 2025",
+        "context": "India defence technology startup — hardware + software for defence sector",
+    },
+    {
+        "id": "escplan",
+        "name": "Esc Plan",
+        "url": "",
+        "sector": "Travel & Luggage",
+        "emoji": "🧳",
+        "color": "#f97316",
+        "keywords": ["travel startup india", "luggage brand india", "d2c luggage",
+                     "travel tech india", "backpack startup", "travel accessories india",
+                     "india travel market", "adventure travel india"],
+        "gdelt_query": "travel luggage startup India D2C brand tourism 2025",
+        "context": "Travel and luggage D2C brand targeting Indian travelers",
+    },
+    {
+        "id": "nirogstreet",
+        "name": "Nirog Street",
+        "url": "https://www.nirogstreet.com",
+        "sector": "Ayurveda & Digital Health",
+        "emoji": "🌿",
+        "color": "#22c55e",
+        "keywords": ["ayurveda", "ayurvedic", "traditional medicine india", "digital ayurveda",
+                     "herbal health", "panchakarma", "ayurvedic doctor", "ayurvedic platform",
+                     "natural health india", "traditional health startup"],
+        "gdelt_query": "ayurveda digital health platform India startup traditional medicine 2025",
+        "context": "Digital Ayurveda platform — teleconsultations with Ayurvedic doctors + herbal product e-commerce across 2K cities",
+    },
+    {
+        "id": "enerzolve",
+        "name": "Enerzolve",
+        "url": "",
+        "sector": "Energy & ODM",
+        "emoji": "⚡",
+        "color": "#fbbf24",
+        "keywords": ["energy storage india", "clean energy startup india", "battery startup india",
+                     "renewable energy india", "odm energy", "energy management india",
+                     "solar storage startup", "green energy startup india"],
+        "gdelt_query": "clean energy storage ODM startup India renewable battery 2025",
+        "context": "Clean energy startup — energy storage solutions and ODM (original design manufacturing) for energy sector",
+    },
+    {
+        "id": "getright",
+        "name": "GetRight",
+        "url": "",
+        "sector": "InsurTech",
+        "emoji": "🔒",
+        "color": "#8b5cf6",
+        "keywords": ["insurtech india", "embedded insurance india", "insurance technology india",
+                     "india insurance startup", "micro insurance india", "insurance aggregator",
+                     "digital insurance india", "parametric insurance"],
+        "gdelt_query": "insurtech insurance technology startup India embedded 2025",
+        "context": "India InsurTech startup — insurance distribution and embedded insurance solutions",
+    },
+    {
+        "id": "coto",
+        "name": "Coto",
+        "url": "https://www.coto.world",
+        "sector": "Women's Creator Economy",
+        "emoji": "👩‍💼",
+        "color": "#ec4899",
+        "keywords": ["women creator economy", "women wellness platform", "female creator india",
+                     "women community platform india", "creator economy india women",
+                     "women monetization platform", "female entrepreneur platform"],
+        "gdelt_query": "women creator economy wellness community platform startup India 2025",
+        "context": "Women's creator economy platform — live wellness coaching, community, and creator monetization for female experts",
+    },
+    {
+        "id": "datbike",
+        "name": "Dat Bike",
+        "url": "https://datbike.vn",
+        "sector": "EV Bikes · Vietnam",
+        "emoji": "🏍️",
+        "color": "#10b981",
+        "keywords": ["electric motorcycle vietnam", "ev bike vietnam", "vietnam ev startup",
+                     "electric scooter vietnam", "dat bike", "vietnam electric vehicle",
+                     "ev two-wheeler vietnam", "motorbike electrification vietnam"],
+        "gdelt_query": "electric motorcycle Vietnam EV startup funding 2025",
+        "context": "Vietnamese electric motorcycle startup — premium EV bikes designed and manufactured in Vietnam",
+    },
+    {
+        "id": "prosperr",
+        "name": "Prosperr",
+        "url": "https://www.prosperr.io",
+        "sector": "FinTech & Tax",
+        "emoji": "💰",
+        "color": "#3b82f6",
+        "keywords": ["tax fintech india", "income tax planning india", "tax tech startup",
+                     "personal finance india", "tax optimization india", "itr filing india",
+                     "tax advisory startup", "india tax platform"],
+        "gdelt_query": "fintech tax planning startup India income tax optimization ITR 2025",
+        "context": "India FinTech/Tax platform — income tax planning, optimization, and advisory for individuals and self-employed",
+    },
+]
+
 # NEW: Global emerging tech feeds (4th panel) — startup/VC/deeptech focused only
 EMERGING_FEEDS = [
     ("Rest of World",      "https://restofworld.org/feed/"),
@@ -1518,6 +1639,126 @@ def intelligence_demand():
     result = {"items": deduped, "fetched_at": datetime.utcnow().isoformat() + "Z"}
     with _intel_lock:
         _intel_cache[cache_key] = {"ts": _time.time(), "data": result}
+    return JSONResponse(result)
+
+
+# ── Portfolio Intelligence ─────────────────────────────────────────────────────
+
+@app.get("/api/intelligence/portfolio")
+def intelligence_portfolio():
+    """Live sector + company news for each portfolio company.
+    Phase 1 (instant): keyword-scan already-cached RSS articles.
+    Phase 2 (background ~20s): GDELT enrichment per company.
+    Cached 20 min after GDELT completes.
+    """
+    cache_key = "portfolio"
+    with _intel_lock:
+        cached = _intel_cache.get(cache_key)
+        if cached and _time.time() - cached["ts"] < 1200:
+            return JSONResponse(cached["data"])
+
+    # ── Phase 1: scan cached RSS articles for portfolio keyword matches ─────────
+    all_cached: list[dict] = []
+    with _intel_lock:
+        for key in ("india_sea", "ai_ml", "emerging"):
+            nc = _intel_cache.get(key)
+            if nc:
+                all_cached.extend(nc["data"].get("items", []))
+
+    companies: list[dict] = []
+    for co in PORTFOLIO_COMPANIES:
+        kws = co["keywords"]
+        matched: list[dict] = []
+        for art in all_cached:
+            text = (art.get("title", "") + " " + art.get("summary", "")).lower()
+            if any(kw in text for kw in kws):
+                matched.append({
+                    "title":     art.get("title", ""),
+                    "url":       art.get("url", art.get("link", "")),
+                    "source":    art.get("source", ""),
+                    "published": art.get("published", ""),
+                    "summary":   art.get("summary", "")[:150],
+                })
+            if len(matched) >= 6:
+                break
+        companies.append({
+            "id":           co["id"],
+            "name":         co["name"],
+            "sector":       co["sector"],
+            "emoji":        co["emoji"],
+            "color":        co["color"],
+            "url":          co.get("url", ""),
+            "context":      co.get("context", ""),
+            "articles":     matched[:5],
+            "signal_count": len(matched),
+            "source":       "rss_cache",
+            "loading":      True,
+        })
+
+    result = {
+        "companies": companies,
+        "fetched_at": datetime.utcnow().isoformat() + "Z",
+        "loading": True,
+    }
+    with _intel_lock:
+        _intel_cache[cache_key] = {"ts": _time.time() - 1100, "data": result}  # short TTL so GDELT overwrites
+
+    # ── Phase 2: GDELT enrichment in background ─────────────────────────────────
+    def _enrich_portfolio_gdelt():
+        import requests as _req
+        log = logging.getLogger(__name__)
+        enriched = [dict(c) for c in companies]
+
+        for i, co in enumerate(PORTFOLIO_COMPANIES):
+            for attempt in range(2):
+                try:
+                    r = _req.get(
+                        "https://api.gdeltproject.org/api/v2/doc/doc",
+                        params={"query": co["gdelt_query"], "mode": "artlist",
+                                "maxrecords": "15", "format": "json", "timespan": "7d"},
+                        timeout=10,
+                    )
+                    if r.status_code == 429:
+                        _time.sleep(12)
+                        continue
+                    if not r.ok or not r.content:
+                        break
+                    arts = r.json().get("articles", [])
+                    new_arts = []
+                    existing_urls = {a["url"] for a in enriched[i]["articles"]}
+                    for a in arts:
+                        u = a.get("url", "")
+                        if u and u not in existing_urls:
+                            new_arts.append({
+                                "title":     a.get("title", ""),
+                                "url":       u,
+                                "source":    a.get("domain", ""),
+                                "published": a.get("seendate", ""),
+                                "summary":   "",
+                            })
+                            existing_urls.add(u)
+                    combined = enriched[i]["articles"] + new_arts
+                    enriched[i]["articles"]     = combined[:6]
+                    enriched[i]["signal_count"] = len(combined)
+                    enriched[i]["source"]       = "gdelt+rss"
+                    enriched[i]["loading"]      = False
+                    break
+                except Exception:
+                    break
+            _time.sleep(2)
+
+        final = {
+            "companies":  enriched,
+            "fetched_at": datetime.utcnow().isoformat() + "Z",
+            "loading":    False,
+        }
+        with _intel_lock:
+            _intel_cache[cache_key] = {"ts": _time.time(), "data": final}
+        log.info("Portfolio: GDELT enrichment complete — %d companies", len(enriched))
+
+    t = threading.Thread(target=_enrich_portfolio_gdelt, daemon=True, name="portfolio-gdelt")
+    t.start()
+
     return JSONResponse(result)
 
 
