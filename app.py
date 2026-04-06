@@ -54,6 +54,78 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="VC Sourcing Agent", version="2.0")
 
+
+# ── Startup: pre-warm all RSS feeds in background so first tab-switch is instant ──
+@app.on_event("startup")
+async def _startup_prewarm():
+    """Fire background threads to pre-cache news feeds immediately on server start."""
+    import asyncio, concurrent.futures
+
+    def _prewarm_all():
+        import time as _t
+        log = logging.getLogger(__name__)
+        log.info("Startup prewarm: fetching all RSS feeds...")
+        # Fetch all three feed types in parallel threads
+        from concurrent.futures import ThreadPoolExecutor
+        def _fetch_type(ftype):
+            import requests, feedparser
+            if ftype == "emerging":
+                feeds = EMERGING_FEEDS
+            elif ftype == "india_sea":
+                feeds = INDIA_SEA_FEEDS
+            else:
+                feeds = AI_ML_FEEDS
+
+            articles = []
+            def _fetch_strict(name, url):
+                try:
+                    r = requests.get(url, timeout=12, headers={"User-Agent": "Mozilla/5.0"})
+                    parsed = feedparser.parse(r.content)
+                except Exception:
+                    try: parsed = feedparser.parse(url)
+                    except Exception: return []
+                import re as _re2
+                results = []
+                for entry in parsed.entries:
+                    if len(results) >= 8: break
+                    title   = entry.get("title", "").strip()
+                    summary = _re2.sub(r"<[^>]+>", "", entry.get("summary", ""))[:300].strip()
+                    if ftype == "ai_ml" or _is_vc_relevant(title, summary):
+                        pub = entry.get("published") or entry.get("updated", "")
+                        results.append({"source": name, "title": title,
+                                        "url": entry.get("link", ""), "published": pub,
+                                        "summary": summary[:200]})
+                return results
+
+            with ThreadPoolExecutor(max_workers=8) as pool:
+                from concurrent.futures import as_completed
+                futures = {pool.submit(_fetch_strict, n, u): n for n, u in feeds}
+                for fut in as_completed(futures, timeout=35):
+                    try: articles.extend(fut.result())
+                    except Exception: pass
+
+            seen, unique = set(), []
+            for a in articles:
+                if a["url"] and a["url"] not in seen and a.get("title"):
+                    seen.add(a["url"]); unique.append(a)
+
+            from datetime import datetime
+            result = {"articles": unique[:50], "fetched_at": datetime.utcnow().isoformat() + "Z",
+                      "count": len(unique[:50]), "type": ftype}
+            with _intel_lock:
+                _intel_cache[f"news_{ftype}"] = {"ts": _t.time(), "data": result}
+            log.info("Startup prewarm: %s cached (%d articles)", ftype, len(unique))
+
+        with ThreadPoolExecutor(max_workers=3) as pool:
+            from concurrent.futures import as_completed
+            futs = [pool.submit(_fetch_type, t) for t in ("ai_ml", "india_sea", "emerging")]
+            for f in as_completed(futs, timeout=45): pass
+        log.info("Startup prewarm complete.")
+
+    loop = asyncio.get_event_loop()
+    loop.run_in_executor(None, _prewarm_all)
+
+
 # ── CORS — allow GitHub Pages and any origin to call the API ──────────────────
 app.add_middleware(
     CORSMiddleware,
@@ -517,9 +589,18 @@ _RELEVANT_KW = {
     "data center","cloud","infrastructure","photonics",
 }
 _IRRELEVANT_KW = {
-    # Sports
+    # Sports — broad catch to kill The Bridge / ESPN style content
     "nfl","nba","premier league","la liga","cricket match","ipl score",
-    "sports score","match result","goal","touchdown","home run","wimbledon",
+    "sports score","match result","touchdown","home run","wimbledon",
+    "fide candidates","chess round","chess tournament","chess championship",
+    "wrestling championship","boxing championship","bjk cup","billie jean king",
+    "asian wrestling","asian boxing","asian athletics","para-athlete",
+    "sprinting","long jump","high jump","shot put","javelin","relay race",
+    "football match","hockey match","kabaddi","badminton match","table tennis",
+    "murali sreeshankar","ankita raina","vishvanath suresh","komal tyagi",
+    "praggnanandhaa","vaishali","divya deshmukh","hikaru nakamura",
+    "india vs australia","india vs pakistan","icc","cwg","commonwealth games",
+    "olympic","olympics","asian games","national games","sports news",
     # Entertainment
     "celebrity","oscars","grammy","golden globe","kardashian","taylor swift",
     "movie review","film review","box office","tv show","reality tv","sitcom",
@@ -537,6 +618,10 @@ _IRRELEVANT_KW = {
     # Other noise
     "horoscope","astrology","zodiac","dating advice","relationship","wellness quiz",
     "weekly quiz","business creativity quiz","community event","party invite",
+    # Markets noise that isn't startup/VC relevant
+    "oversold","support level","buy on dip","sell on rise","technical analysis",
+    "largecap","smallcap","midcap","nifty target","sensex target","stock pick",
+    "commodity radar","gold target","silver target","options data","oi data",
 }
 
 # Stronger keyword set — must appear for emerging/India feeds (avoids borderline content)
@@ -585,13 +670,14 @@ INDIA_SEA_FEEDS = [
     ("YourStory",       "https://yourstory.com/feed"),
     ("Inc42",           "https://inc42.com/feed/"),
     ("Entrackr",        "https://entrackr.com/feed/"),
-    ("The Bridge",      "https://thebridge.in/feed/"),
     ("e27",             "https://e27.co/feed/"),
     ("KR Asia",         "https://kr.asia/feed/"),
     ("Tech in Asia",    "https://www.techinasia.com/feed"),
     ("Deal Street Asia","https://dealstreetasia.com/feed/"),
     ("VCCircle",        "https://www.vccircle.com/feed"),
-    ("ET Markets",      "https://economictimes.indiatimes.com/markets/rssfeeds/1977021501.cms"),
+    ("ET Startups",     "https://economictimes.indiatimes.com/small-biz/startups/rssfeeds/7102427703.cms"),
+    ("LiveMint Tech",   "https://www.livemint.com/rss/technology"),
+    ("Moneycontrol VC", "https://www.moneycontrol.com/rss/MCtopnews.xml"),
 ]
 
 # ── Portfolio companies — live sector intelligence ─────────────────────────────
@@ -606,7 +692,7 @@ PORTFOLIO_COMPANIES = [
         "keywords": ["specialty chemical", "chemicals marketplace", "b2b chemical",
                      "formulation", "aroma chemical", "coatings adhesives", "masterbatch",
                      "chemical procurement", "pharma chemicals", "personal care chemicals"],
-        "gdelt_query": "specialty chemicals B2B marketplace India startup 2025",
+        "gdelt_query": "specialty chemicals India B2B procurement market",
         "context": "B2B specialty chemicals marketplace — connects suppliers with buyers across Aroma, Personal Care, CASE, Pharma sectors",
     },
     {
@@ -619,7 +705,7 @@ PORTFOLIO_COMPANIES = [
         "keywords": ["india defence startup", "defence technology india", "drdo",
                      "military tech india", "defence procurement india", "indian defence tech",
                      "homeland security india", "defence manufacturing"],
-        "gdelt_query": "defence technology startup India DRDO military procurement 2025",
+        "gdelt_query": "India defence technology drone military startup funding",
         "context": "India defence technology startup — hardware + software for defence sector",
     },
     {
@@ -632,7 +718,7 @@ PORTFOLIO_COMPANIES = [
         "keywords": ["travel startup india", "luggage brand india", "d2c luggage",
                      "travel tech india", "backpack startup", "travel accessories india",
                      "india travel market", "adventure travel india"],
-        "gdelt_query": "travel luggage startup India D2C brand tourism 2025",
+        "gdelt_query": "India travel tourism luggage D2C brand startup",
         "context": "Travel and luggage D2C brand targeting Indian travelers",
     },
     {
@@ -645,7 +731,7 @@ PORTFOLIO_COMPANIES = [
         "keywords": ["ayurveda", "ayurvedic", "traditional medicine india", "digital ayurveda",
                      "herbal health", "panchakarma", "ayurvedic doctor", "ayurvedic platform",
                      "natural health india", "traditional health startup"],
-        "gdelt_query": "ayurveda digital health platform India startup traditional medicine 2025",
+        "gdelt_query": "ayurveda India herbal health digital platform",
         "context": "Digital Ayurveda platform — teleconsultations with Ayurvedic doctors + herbal product e-commerce across 2K cities",
     },
     {
@@ -658,7 +744,7 @@ PORTFOLIO_COMPANIES = [
         "keywords": ["energy storage india", "clean energy startup india", "battery startup india",
                      "renewable energy india", "odm energy", "energy management india",
                      "solar storage startup", "green energy startup india"],
-        "gdelt_query": "clean energy storage ODM startup India renewable battery 2025",
+        "gdelt_query": "India renewable energy storage battery startup solar",
         "context": "Clean energy startup — energy storage solutions and ODM (original design manufacturing) for energy sector",
     },
     {
@@ -671,7 +757,7 @@ PORTFOLIO_COMPANIES = [
         "keywords": ["insurtech india", "embedded insurance india", "insurance technology india",
                      "india insurance startup", "micro insurance india", "insurance aggregator",
                      "digital insurance india", "parametric insurance"],
-        "gdelt_query": "insurtech insurance technology startup India embedded 2025",
+        "gdelt_query": "India insurtech insurance startup embedded digital",
         "context": "India InsurTech startup — insurance distribution and embedded insurance solutions",
     },
     {
@@ -684,7 +770,7 @@ PORTFOLIO_COMPANIES = [
         "keywords": ["women creator economy", "women wellness platform", "female creator india",
                      "women community platform india", "creator economy india women",
                      "women monetization platform", "female entrepreneur platform"],
-        "gdelt_query": "women creator economy wellness community platform startup India 2025",
+        "gdelt_query": "India women creator community platform startup funding",
         "context": "Women's creator economy platform — live wellness coaching, community, and creator monetization for female experts",
     },
     {
@@ -697,7 +783,7 @@ PORTFOLIO_COMPANIES = [
         "keywords": ["electric motorcycle vietnam", "ev bike vietnam", "vietnam ev startup",
                      "electric scooter vietnam", "dat bike", "vietnam electric vehicle",
                      "ev two-wheeler vietnam", "motorbike electrification vietnam"],
-        "gdelt_query": "electric motorcycle Vietnam EV startup funding 2025",
+        "gdelt_query": "Vietnam electric vehicle motorcycle EV startup",
         "context": "Vietnamese electric motorcycle startup — premium EV bikes designed and manufactured in Vietnam",
     },
     {
@@ -710,7 +796,7 @@ PORTFOLIO_COMPANIES = [
         "keywords": ["tax fintech india", "income tax planning india", "tax tech startup",
                      "personal finance india", "tax optimization india", "itr filing india",
                      "tax advisory startup", "india tax platform"],
-        "gdelt_query": "fintech tax planning startup India income tax optimization ITR 2025",
+        "gdelt_query": "India fintech tax personal finance startup",
         "context": "India FinTech/Tax platform — income tax planning, optimization, and advisory for individuals and self-employed",
     },
 ]
@@ -814,89 +900,89 @@ MARKET_SYMBOLS = [
 # ── Deep sector heatmap — sub-segments ─────────────────────────────────────────
 # Format: (parent, sub-segment, gdelt_query, india_relevance_note)
 DEEP_SECTOR_THEMES = [
-    # AI / ML
+    # AI / ML — concise queries work best with GDELT
     ("AI / ML", "Physical AI & Robotics",
-     "physical AI embodied intelligence humanoid robot startup 2025", "🇮🇳 possible"),
+     "humanoid robot AI startup funding", "🇮🇳 possible"),
     ("AI / ML", "Data Centers & Infra",
-     "AI data center GPU compute infrastructure startup hyperscaler 2025", "🌏 incoming"),
+     "AI data center GPU startup investment", "🌏 incoming"),
     ("AI / ML", "Photonics & Optical AI",
-     "photonics optical computing silicon photonics AI chip startup 2025", "🔬 early"),
+     "silicon photonics AI chip startup", "🔬 early"),
     ("AI / ML", "Foundation Models & LLMs",
-     "foundation model large language model LLM startup funding 2025", "🇮🇳 active"),
+     "large language model LLM startup funding", "🇮🇳 active"),
     ("AI / ML", "AI Agents & Automation",
-     "AI agents autonomous agentic workflow automation startup 2025", "🇮🇳 growing"),
+     "AI agent automation startup raises", "🇮🇳 growing"),
     ("AI / ML", "Edge AI & On-device",
-     "edge AI on-device inference TinyML embedded AI startup 2025", "🌏 SEA"),
+     "edge AI on-device TinyML startup", "🌏 SEA"),
     ("AI / ML", "Computer Vision",
-     "computer vision image recognition video AI startup 2025", "🇮🇳 active"),
+     "computer vision AI startup funding", "🇮🇳 active"),
     ("AI / ML", "Voice & Audio AI",
-     "voice AI speech recognition audio synthesis startup 2025", "🇮🇳 active"),
+     "voice AI speech synthesis startup", "🇮🇳 active"),
     # Fintech
     ("Fintech", "Payments & Infra",
-     "payments fintech payment infrastructure startup India SEA 2025", "🇮🇳 mature"),
+     "payments fintech startup India raises", "🇮🇳 mature"),
     ("Fintech", "Lending & Credit",
-     "lending credit fintech BNPL embedded finance startup India 2025", "🇮🇳 growing"),
+     "lending credit BNPL fintech startup India", "🇮🇳 growing"),
     ("Fintech", "WealthTech & Investing",
-     "wealthtech investment platform robo-advisor startup India 2025", "🇮🇳 growing"),
+     "wealthtech investment platform startup India", "🇮🇳 growing"),
     ("Fintech", "InsurTech",
-     "insurtech insurance technology startup India Southeast Asia 2025", "🇮🇳 early"),
+     "insurtech insurance startup India funding", "🇮🇳 early"),
     ("Fintech", "RegTech & Compliance",
-     "regtech compliance KYC AML fintech startup 2025", "🌏 opportunity"),
+     "regtech compliance KYC startup funding", "🌏 opportunity"),
     ("Fintech", "Cross-border & Remittance",
-     "cross-border payments remittance forex startup India SEA 2025", "🌏 SEA"),
+     "remittance cross-border payments startup", "🌏 SEA"),
     # Healthtech
     ("Healthtech", "AI Drug Discovery",
-     "AI drug discovery biotech computational biology startup 2025", "🔬 early India"),
+     "AI drug discovery biotech startup funding", "🔬 early India"),
     ("Healthtech", "Digital Health & Telemedicine",
-     "digital health telemedicine remote care startup India SEA 2025", "🇮🇳 active"),
+     "digital health telemedicine startup India raises", "🇮🇳 active"),
     ("Healthtech", "MedTech & Diagnostics",
-     "medtech medical device diagnostic point-of-care startup India 2025", "🇮🇳 growing"),
+     "medtech diagnostic startup India funding", "🇮🇳 growing"),
     ("Healthtech", "Mental Health & Wellness",
-     "mental health wellness digital therapy startup India 2025", "🇮🇳 early"),
+     "mental health digital therapy startup India", "🇮🇳 early"),
     ("Healthtech", "Genomics & Precision Med",
-     "genomics precision medicine genetic testing startup India 2025", "🔬 early"),
+     "genomics precision medicine startup funding", "🔬 early"),
     # B2B SaaS
     ("B2B SaaS", "Vertical SaaS",
-     "vertical SaaS industry-specific software SMB startup India 2025", "🇮🇳 large opp"),
+     "vertical SaaS startup India SMB raises", "🇮🇳 large opp"),
     ("B2B SaaS", "DevTools & Infrastructure",
-     "developer tools devtools infrastructure platform startup 2025", "🇮🇳 active"),
+     "developer tools infrastructure startup funding", "🇮🇳 active"),
     ("B2B SaaS", "Cybersecurity",
-     "cybersecurity security startup India funding 2025", "🇮🇳 growing"),
+     "cybersecurity startup India funding raises", "🇮🇳 growing"),
     ("B2B SaaS", "HR Tech & Future of Work",
-     "hrtech future of work workforce startup India SEA 2025", "🇮🇳 active"),
+     "HR tech workforce startup India funding", "🇮🇳 active"),
     # Climate & Energy
     ("Climate", "Solar & Storage",
-     "solar energy battery storage startup India 2025", "🇮🇳 large opp"),
+     "solar battery storage startup India funding", "🇮🇳 large opp"),
     ("Climate", "EV & Mobility",
-     "electric vehicle EV two-wheeler mobility startup India SEA 2025", "🇮🇳 active"),
+     "electric vehicle EV startup India SEA", "🇮🇳 active"),
     ("Climate", "Carbon & ESG",
-     "carbon credit ESG sustainability startup India 2025", "🌏 emerging"),
+     "carbon credit ESG startup funding", "🌏 emerging"),
     ("Climate", "Green Hydrogen",
-     "green hydrogen clean energy startup India 2025", "🇮🇳 policy push"),
+     "green hydrogen startup India funding", "🇮🇳 policy push"),
     # Deep Tech
     ("Deep Tech", "Semiconductors & VLSI",
-     "semiconductor chip design VLSI fabless startup India 2025", "🇮🇳 policy push"),
+     "semiconductor chip startup India funding", "🇮🇳 policy push"),
     ("Deep Tech", "Quantum Computing",
-     "quantum computing startup funding 2025", "🔬 early global"),
+     "quantum computing startup funding raises", "🔬 early global"),
     ("Deep Tech", "SpaceTech",
-     "space tech satellite launch startup India 2025", "🇮🇳 ISRO tailwind"),
+     "space satellite startup India ISRO", "🇮🇳 ISRO tailwind"),
     ("Deep Tech", "Synthetic Biology",
-     "synthetic biology biotech startup funding 2025", "🔬 emerging"),
+     "synthetic biology biotech startup raises", "🔬 emerging"),
     # Logistics
     ("Logistics", "Last-mile Delivery",
-     "last mile delivery logistics quick commerce startup India SEA 2025", "🇮🇳 active"),
+     "last mile delivery startup India raises", "🇮🇳 active"),
     ("Logistics", "Supply Chain AI",
-     "supply chain AI visibility optimization startup India 2025", "🇮🇳 growing"),
+     "supply chain AI startup India funding", "🇮🇳 growing"),
     # Consumer
     ("Consumer", "D2C & Brands",
-     "D2C direct-to-consumer brand startup India 2025", "🇮🇳 active"),
+     "D2C brand startup India raises funding", "🇮🇳 active"),
     ("Consumer", "Creator Economy",
-     "creator economy influencer platform monetization startup India 2025", "🇮🇳 early"),
+     "creator economy startup India raises", "🇮🇳 early"),
     # AgriTech
     ("AgriTech", "Precision Farming & IoT",
-     "precision farming agritech IoT sensor startup India 2025", "🇮🇳 large opp"),
+     "agritech precision farming startup India", "🇮🇳 large opp"),
     ("AgriTech", "AgriFin & Rural Credit",
-     "agri finance rural credit farmer fintech startup India 2025", "🇮🇳 large opp"),
+     "agri finance rural credit startup India", "🇮🇳 large opp"),
 ]
 
 # ── Emerging global tech GDELT queries ────────────────────────────────────────
@@ -1160,10 +1246,12 @@ def _rss_sector_baseline() -> list:
     """Build instant sector counts from already-cached RSS news — no network calls needed."""
     all_text: list[str] = []
     with _intel_lock:
-        for key in ("india_sea", "ai_ml", "emerging"):
+        # Cache keys are "news_ai_ml", "news_india_sea", "news_emerging"
+        # Data field is "articles" (not "items")
+        for key in ("news_india_sea", "news_ai_ml", "news_emerging"):
             nc = _intel_cache.get(key)
             if nc:
-                for item in nc["data"].get("items", []):
+                for item in nc["data"].get("articles", []):
                     all_text.append((item.get("title", "") + " " + item.get("summary", "")).lower())
 
     sectors = []
