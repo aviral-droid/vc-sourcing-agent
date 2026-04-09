@@ -1030,7 +1030,7 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
       <span class="portfolio-header-ts" id="portfolio-ts">—</span>
     </div>
     <div class="portfolio-scroll" id="portfolio-scroll">
-      <div style="padding:20px;color:var(--muted);font-size:11px">Loading portfolio signals…</div>
+      <!-- populated by loadPortfolio() from data.json -->
     </div>
   </div>
 
@@ -1039,7 +1039,7 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
     <div class="panel-head" style="border-top:none">
       <div class="panel-title">
         🔭 Deep Sector Signal Heatmap
-        <span style="font-size:10px;font-weight:500;color:var(--muted)">Sub-segment signals · global → India · last 7 days · GDELT</span>
+        <span style="font-size:10px;font-weight:500;color:var(--muted)">Sector signals · India + SEA · updated each pipeline run</span>
       </div>
       <div style="display:flex;align-items:center;gap:8px">
         <span class="panel-ts" id="sectors-ts">—</span>
@@ -1047,7 +1047,7 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
       </div>
     </div>
     <div class="sectors-grid" id="sectors-grid">
-      <div style="padding:10px;color:var(--muted);font-size:12px">Loading sector themes…</div>
+      <!-- populated by loadSectors() from data.json -->
     </div>
   </div>
 
@@ -1065,17 +1065,17 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
       <!-- Left: theme frequency bar chart -->
       <div class="demand-themes">
         <div class="demand-themes-title">📊 Top Themes</div>
-        <div id="demand-bars"><div style="color:var(--muted);font-size:11px">Loading…</div></div>
+        <div id="demand-bars"><!-- populated by loadDemand() --></div>
       </div>
       <!-- Middle: Consumer pulse -->
       <div class="demand-col">
         <div class="demand-col-title consumer">👤 Consumer Pulse <span style="font-weight:400;opacity:.6;font-size:9px">what people want to buy &amp; use</span></div>
-        <div id="demand-col-consumer"><div style="color:var(--muted);font-size:11px">Loading…</div></div>
+        <div id="demand-col-consumer"><!-- populated by loadDemand() --></div>
       </div>
       <!-- Right: Business/startup pulse -->
       <div class="demand-col">
         <div class="demand-col-title business">🏢 Business Pulse <span style="font-weight:400;opacity:.6;font-size:9px">what startups &amp; enterprises need</span></div>
-        <div id="demand-col-business"><div style="color:var(--muted);font-size:11px">Loading…</div></div>
+        <div id="demand-col-business"><!-- populated by loadDemand() --></div>
       </div>
     </div>
   </div>
@@ -1791,15 +1791,22 @@ function _renderArticles(containerId, articles, emptyMsg) {
 function _renderSectorsStatic(heatmap) {
   const grid = document.getElementById('sectors-grid');
   if (!grid) return;
-  if (!heatmap || !heatmap.length) { grid.innerHTML = '<p class="muted">Run pipeline to generate sector heatmap.</p>'; return; }
+  if (!heatmap || !heatmap.length) {
+    grid.innerHTML = '<p style="padding:10px;color:var(--muted);font-size:11px">Run pipeline to generate sector heatmap.</p>';
+    return;
+  }
   const maxSig = Math.max(...heatmap.map(s => s.signals||0), 1);
+  // Map signal count to data-level 1–5
   grid.innerHTML = heatmap.map(s => {
     const pct = Math.round((s.signals||0) / maxSig * 100);
-    const heat = pct > 70 ? 'hot' : pct > 40 ? 'warm' : 'cool';
-    return `<div class="sector-cell ${heat}" title="${s.signals} signals">
+    const level = pct > 80 ? 5 : pct > 60 ? 4 : pct > 40 ? 3 : pct > 20 ? 2 : 1;
+    const sentiment = (s.sentiment||'neutral');
+    const sentColor = sentiment==='bullish' ? 'var(--green)' : sentiment==='bearish' ? 'var(--red)' : 'var(--muted)';
+    return `<div class="sector-card" data-level="${level}" title="${s.signals} signals · ${sentiment}">
       <div class="sector-name">${s.name}</div>
-      <div class="sector-bar"><div class="sector-fill" style="width:${pct}%"></div></div>
-      <div class="sector-count">${s.signals} signals · ${s.sentiment||'neutral'}</div>
+      <div class="sector-bar-wrap"><div class="sector-bar" style="width:${pct}%"></div></div>
+      <div class="sector-count">${s.signals} signals</div>
+      <div class="sector-headline" style="color:${sentColor}">${sentiment}</div>
     </div>`;
   }).join('');
 }
@@ -1948,12 +1955,120 @@ function filterDemandTheme(theme){
   renderDemandCols(_demandAllItems, _demandActiveTheme);
 }
 
-function loadDemand(force=false) { /* placeholder — no backend in static mode */ }
+function loadDemand(force=false) {
+  // Populate Consumer Pulse from Product Hunt signals in data.json
+  const intel = (_data && _data.intelligence) || {};
+  const phArticles = (intel.india_sea||{}).articles || [];
+
+  // Theme frequency from all articles
+  const themeCounts = {};
+  const allArticles = [
+    ...(intel.ai_ml||{}).articles||[],
+    ...(intel.india_sea||{}).articles||[],
+    ...(intel.emerging||{}).articles||[],
+  ];
+  const themeKw = {
+    'AI / Agents':['ai','agent','llm','gpt','ml'],
+    'Fintech':['fintech','payment','lending','credit','banking'],
+    'SaaS / B2B':['saas','b2b','enterprise','software','api'],
+    'Consumer':['consumer','d2c','ecommerce','brand','retail'],
+    'Healthtech':['health','medtech','wellness','pharma'],
+    'Climate':['climate','sustainability','solar','ev','green'],
+  };
+  allArticles.forEach(a => {
+    const t = ((a.title||'')+(a.summary||'')).toLowerCase();
+    Object.entries(themeKw).forEach(([theme, kws]) => {
+      if(kws.some(k => t.includes(k))) themeCounts[theme] = (themeCounts[theme]||0)+1;
+    });
+  });
+  const sortedThemes = Object.entries(themeCounts).sort((a,b)=>b[1]-a[1]);
+  const maxTC = sortedThemes[0]?.[1] || 1;
+
+  const barsEl = document.getElementById('demand-bars');
+  if(barsEl) {
+    if(!sortedThemes.length) {
+      barsEl.innerHTML = '<div style="color:var(--muted);font-size:11px">Run pipeline to populate themes.</div>';
+    } else {
+      barsEl.innerHTML = sortedThemes.map(([theme,count]) => `
+        <div class="theme-bar-row">
+          <div class="theme-bar-label">${theme}</div>
+          <div class="theme-bar-track"><div class="theme-bar-fill" style="width:${Math.round(count/maxTC*100)}%;background:var(--accent)"></div></div>
+          <div class="theme-bar-count">${count}</div>
+        </div>`).join('');
+    }
+  }
+
+  // Consumer pulse = India/SEA articles
+  const consumerEl = document.getElementById('demand-col-consumer');
+  if(consumerEl) {
+    const items = phArticles.slice(0,8);
+    if(!items.length) {
+      consumerEl.innerHTML = '<div style="color:var(--muted);font-size:11px">Run pipeline to load articles.</div>';
+    } else {
+      consumerEl.innerHTML = items.map(a => `
+        <div class="demand-item" onclick="window.open('${a.url||'#'}','_blank')">
+          <div class="demand-item-title">${a.title||'Untitled'}</div>
+          <div class="demand-item-meta">
+            <span class="demand-src ph">${a.source||'News'}</span>
+            <span class="demand-item-score">${a.pub_date ? new Date(a.pub_date).toLocaleDateString() : ''}</span>
+          </div>
+        </div>`).join('');
+    }
+  }
+
+  // Business pulse = AI/ML articles
+  const bizArticles = (intel.ai_ml||{}).articles || [];
+  const bizEl = document.getElementById('demand-col-business');
+  if(bizEl) {
+    const items = bizArticles.slice(0,8);
+    if(!items.length) {
+      bizEl.innerHTML = '<div style="color:var(--muted);font-size:11px">Run pipeline to load articles.</div>';
+    } else {
+      bizEl.innerHTML = items.map(a => `
+        <div class="demand-item" onclick="window.open('${a.url||'#'}','_blank')">
+          <div class="demand-item-title">${a.title||'Untitled'}</div>
+          <div class="demand-item-meta">
+            <span class="demand-src hn">${a.source||'AI'}</span>
+            <span class="demand-item-score">${a.pub_date ? new Date(a.pub_date).toLocaleDateString() : ''}</span>
+          </div>
+        </div>`).join('');
+    }
+  }
+
+  const ts = document.getElementById('demand-ts');
+  if(ts && _data?.generated_at) ts.textContent = 'Updated ' + new Date(_data.generated_at).toLocaleDateString();
+}
 
 // ── Portfolio Intelligence ────────────────────────────────────
-let _portfolioPollingTimer = null;
-
-function loadPortfolio(force=false) { /* placeholder — no backend in static mode */ }
+function loadPortfolio(force=false) {
+  const el = document.getElementById('portfolio-scroll');
+  if (!el) return;
+  // Show portfolio companies from config with a "track manually" message
+  const companies = [
+    'Distil','Sanlayan','Esc Plan','Nirog Street','Enerzolve',
+    'GetRight','Coto','Dat Bike','Prosperr'
+  ];
+  el.innerHTML = `
+    <div style="padding:14px 18px">
+      <div style="font-size:11px;color:var(--muted);margin-bottom:10px">
+        Portfolio monitoring via news signals — refreshes each pipeline run.
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:6px">
+        ${companies.map(c=>`
+          <a href="https://www.google.com/search?q=${encodeURIComponent(c+' startup news')}" target="_blank"
+             style="padding:4px 10px;border-radius:20px;background:var(--surface2);border:1px solid var(--border);
+                    font-size:11px;color:var(--text2);text-decoration:none;transition:all .15s"
+             onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+            ${c}
+          </a>`).join('')}
+      </div>
+      <div style="margin-top:12px;font-size:10px;color:var(--muted)">
+        💡 Click any company to see latest news · Run pipeline to refresh signals
+      </div>
+    </div>`;
+  const ts = document.getElementById('portfolio-ts');
+  if(ts && _data?.generated_at) ts.textContent = new Date(_data.generated_at).toLocaleDateString();
+}
 
 // ── Init & auto-refresh ───────────────────────────────────────
 async function initIntel() {
@@ -1964,7 +2079,8 @@ async function initIntel() {
   loadIndiaSEA();
   loadEmerging();
   loadSectors();
-  loadMarket();
+  loadDemand();
+  loadPortfolio();
 }
 
 function loadMarket(force=false) { /* placeholder — no live market data in static mode */ }
