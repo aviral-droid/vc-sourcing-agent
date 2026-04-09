@@ -182,6 +182,130 @@ def _generate_markdown(report: DailyReport) -> None:
     logger.info("Markdown report written: %s", filepath)
 
 
+def _fetch_intel_for_static() -> dict:
+    """Fetch RSS intelligence data for embedding in data.json (static mode)."""
+    import re as _re
+    try:
+        import feedparser
+    except ImportError:
+        logger.warning("feedparser not installed — skipping intelligence fetch")
+        return {
+            "ai_ml": {"articles": [], "cached_at": datetime.utcnow().isoformat()},
+            "india_sea": {"articles": [], "cached_at": datetime.utcnow().isoformat()},
+            "emerging": {"articles": [], "cached_at": datetime.utcnow().isoformat()},
+            "sector_heatmap": [],
+        }
+
+    FEEDS = {
+        "ai_ml": [
+            "https://techcrunch.com/feed/",
+            "https://venturebeat.com/feed/",
+            "https://www.theinformation.com/feed",
+        ],
+        "india_sea": [
+            "https://inc42.com/feed/",
+            "https://yourstory.com/feed",
+            "https://e27.co/feed/",
+        ],
+        "emerging": [
+            "https://www.wired.com/feed/rss",
+            "https://feeds.arstechnica.com/arstechnica/index",
+        ],
+    }
+
+    SECTOR_KEYWORDS = {
+        "fintech": ["fintech", "payment", "banking", "neobank", "lending", "insurance", "insurtech", "wealthtech"],
+        "ai": ["ai", "artificial intelligence", "machine learning", "llm", "generative", "gpt", "deep learning", "neural"],
+        "saas": ["saas", "b2b software", "enterprise software", "cloud software", "subscription"],
+        "health": ["healthtech", "health tech", "medtech", "digital health", "biotech", "pharma", "telemedicine"],
+        "edtech": ["edtech", "education tech", "e-learning", "online learning", "upskilling"],
+        "logistics": ["logistics", "supply chain", "fulfillment", "last mile", "freight", "shipping"],
+        "climate": ["climate", "cleantech", "sustainability", "renewable", "carbon", "green energy", "ev", "electric vehicle"],
+        "consumer": ["consumer", "d2c", "direct to consumer", "retail tech", "e-commerce", "marketplace"],
+        "deeptech": ["deeptech", "deep tech", "semiconductor", "robotics", "drone", "space tech", "quantum", "bioengineering"],
+    }
+
+    SECTOR_DISPLAY = {
+        "fintech": "Fintech",
+        "ai": "AI / ML",
+        "saas": "SaaS / B2B",
+        "health": "Healthtech",
+        "edtech": "Edtech",
+        "logistics": "Logistics",
+        "climate": "Climate / Clean",
+        "consumer": "Consumer / D2C",
+        "deeptech": "Deep Tech",
+    }
+
+    def _strip_html(text: str) -> str:
+        return _re.sub(r"<[^>]+>", "", text or "").strip()
+
+    def _parse_feed(url: str, max_items: int = 8) -> list:
+        articles = []
+        try:
+            feed = feedparser.parse(url)
+            for entry in feed.entries[:max_items]:
+                title = _strip_html(entry.get("title", ""))
+                link = entry.get("link", "")
+                summary_raw = entry.get("summary", entry.get("description", ""))
+                summary = _strip_html(summary_raw)[:200]
+                pub = ""
+                if hasattr(entry, "published"):
+                    try:
+                        import email.utils
+                        t = email.utils.parsedate_to_datetime(entry.published)
+                        pub = t.isoformat()
+                    except Exception:
+                        pub = entry.published
+                from urllib.parse import urlparse
+                domain = urlparse(link).netloc.replace("www.", "") if link else urlparse(url).netloc.replace("www.", "")
+                articles.append({
+                    "title": title,
+                    "url": link,
+                    "source": domain,
+                    "pub_date": pub,
+                    "summary": summary,
+                })
+        except Exception as exc:
+            logger.warning("Feed fetch failed %s: %s", url, exc)
+        return articles
+
+    result: dict = {}
+    all_articles: list = []
+    now_iso = datetime.utcnow().isoformat()
+
+    for category, feed_urls in FEEDS.items():
+        articles: list = []
+        for feed_url in feed_urls:
+            articles.extend(_parse_feed(feed_url))
+        result[category] = {"articles": articles, "cached_at": now_iso}
+        all_articles.extend(articles)
+
+    # Compute sector heatmap from all articles
+    sector_counts: dict = {k: 0 for k in SECTOR_KEYWORDS}
+    for article in all_articles:
+        text = (article.get("title", "") + " " + article.get("summary", "")).lower()
+        for sector, keywords in SECTOR_KEYWORDS.items():
+            for kw in keywords:
+                if kw in text:
+                    sector_counts[sector] += 1
+                    break  # count each article once per sector
+
+    SENTIMENTS = ["bullish", "bullish", "neutral", "neutral", "bullish", "neutral", "bullish", "neutral", "bullish"]
+    heatmap = []
+    for i, (sector_key, count) in enumerate(sorted(sector_counts.items(), key=lambda x: -x[1])):
+        sentiment = "bullish" if count > 3 else "neutral" if count > 0 else "quiet"
+        heatmap.append({
+            "name": SECTOR_DISPLAY.get(sector_key, sector_key),
+            "signals": count,
+            "sentiment": sentiment,
+        })
+    heatmap.sort(key=lambda x: -x["signals"])
+
+    result["sector_heatmap"] = heatmap
+    return result
+
+
 def _generate_data_json(report: DailyReport) -> None:
     """Write docs/data.json for the dashboard."""
     source_breakdown: dict = {}
@@ -196,6 +320,7 @@ def _generate_data_json(report: DailyReport) -> None:
             "name": p.name,
             "score": round(p.score),
             "action": p.recommended_action,
+            "recommended_action": p.recommended_action,
             "previous_company": p.previous_company or "",
             "previous_title": p.previous_title or "",
             "current_company": p.current_company or "",
@@ -226,6 +351,9 @@ def _generate_data_json(report: DailyReport) -> None:
             "company_url": getattr(p, "company_url", "") or "",
         })
 
+    logger.info("Fetching intelligence data for static embed…")
+    intelligence = _fetch_intel_for_static()
+
     data = {
         "generated_at": report.generated_at,
         "date_label": report.date_label,
@@ -236,6 +364,7 @@ def _generate_data_json(report: DailyReport) -> None:
         "persons": persons_data,
         "source_breakdown": source_breakdown,
         "score_threshold": config.MIN_SCORE_THRESHOLD,
+        "intelligence": intelligence,
     }
 
     filepath = config.DOCS_DIR / "data.json"

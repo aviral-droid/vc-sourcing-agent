@@ -1367,21 +1367,18 @@ function renderCard(p){
 }
 
 // ── Action button handlers ───────────────────────────────────────────
-async function trackFounder(name,linkedin,score,mode){
-  try{
-    const r=await fetch(API('/api/track'),{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({name:name,linkedin_url:linkedin,score:score,primary_signal:mode})});
-    if(r.ok) toast(mode==='outreach'?`Outreach started: ${name}`:`Tracking: ${name}`);
-    else toast('Error tracking founder');
-  }catch(e){toast('Network error')}
+function trackFounder(name, linkedinUrl, score, mode='track') {
+  const tracked = JSON.parse(localStorage.getItem('vc_tracked') || '[]');
+  tracked.push({ name, linkedinUrl, score, mode, ts: Date.now() });
+  localStorage.setItem('vc_tracked', JSON.stringify(tracked));
+  toast(`✅ ${name} added to pipeline`);
 }
-async function passFounder(name,linkedin,score){
-  try{
-    const r=await fetch(API('/api/pass'),{method:'POST',headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({name:name,linkedin_url:linkedin,score:score})});
-    if(r.ok) toast(`Passed: ${name}`);
-    else toast('Error');
-  }catch(e){toast('Network error')}
+
+function passFounder(name, linkedinUrl, score) {
+  const passed = JSON.parse(localStorage.getItem('vc_passed') || '[]');
+  passed.push({ name, linkedinUrl, score, ts: Date.now() });
+  localStorage.setItem('vc_passed', JSON.stringify(passed));
+  toast(`⏭ ${name} passed`);
 }
 
 // ── Search ────────────────────────────────────────────────────────────
@@ -1577,58 +1574,20 @@ function updateRunStatus(generatedAt){
 }
 
 // ── Load data ─────────────────────────────────────────────────────────
-async function loadData(){
-  try{
-    const resp = await fetch('data.json?t='+Date.now());
-    if(!resp.ok) throw new Error('no data');
-    data = await resp.json();
-  }catch(e){
-    document.getElementById('stats-row').innerHTML=
-      `<div style="grid-column:1/-1;color:var(--muted);padding:20px;text-align:center">
-        No data yet — click <strong>Run Pipeline</strong> to generate results.
-      </div>`;
-    document.getElementById('status-text').textContent='No data yet';
-    return;
-  }
-  allPersons = data.persons||[];
+async function loadData() {
+  await loadAllData();
+  allPersons = (_data && _data.persons) ? _data.persons.map(p => ({...p, score: Number(p.score||0)})) : [];
+  data = _data || {};
   dataGeneratedAt = data.generated_at ? new Date(data.generated_at).getTime() : null;
-  updateRunStatus(data.generated_at);
+  if(data.generated_at) updateRunStatus(data.generated_at);
   if(data.executive_summary){
     document.getElementById('summary-text').innerHTML='<strong>AI Summary</strong> &mdash; '+esc(data.executive_summary);
     document.getElementById('summary').style.display='flex';
   }
-  renderStats(data);
+  if(data.source_breakdown) renderStats(data);
   updateCounts();
   renderSourceChart(data.source_breakdown||{});
-
-  // Also try to load hot sectors from the live API
-  try{
-    const apiResp = await fetch(API('/api/signals?days=30&min_score=0'));
-    if(apiResp.ok){
-      const apiData = await apiResp.json();
-      window._hotSectors = apiData.hot_sectors || [];
-      // Merge social data from API into persons if available
-      if(apiData.persons && apiData.persons.length){
-        const apiMap = {};
-        apiData.persons.forEach(ap=>{ if(ap.name) apiMap[ap.name]=ap; });
-        allPersons.forEach(p=>{
-          const match = apiMap[p.name];
-          if(match){
-            if(match.social_score) p.social_score = match.social_score;
-            if(match.social_snippets && match.social_snippets.length) p.social_snippets = match.social_snippets;
-          }
-        });
-      }
-      // Show hot sectors strip
-      const strip = document.getElementById('hot-sectors-strip');
-      if(strip && window._hotSectors.length){
-        strip.style.display='flex';
-        strip.innerHTML = `<span class="hot-sector-label">🔥 Hot right now:</span>` +
-          window._hotSectors.map(s=>`<span class="hot-sector-pill">${esc(s)}</span>`).join('');
-      }
-    }
-  }catch(e){}
-
+  window._hotSectors = [];
   applyFilters();
   toast(`Loaded ${allPersons.length} founders`);
 }
@@ -1668,71 +1627,53 @@ function openPatModal(onSave){
   input.onkeydown=e=>{if(e.key==='Enter')save();if(e.key==='Escape')cancel()};
 }
 
-// ── Run Pipeline — calls backend API directly (no GitHub PAT needed) ─────────
-async function triggerGHRun(){
-  const btn  = document.getElementById('run-btn');
-  const dot  = document.getElementById('status-dot');
-  const statusText = document.getElementById('status-text');
-  btn.textContent = 'Starting…'; btn.disabled = true;
-  dot.className = 'dot running';
-  statusText.textContent = 'Triggering pipeline…';
-  try{
-    await _apiReadyPromise;
-    const r = await fetch(API('/api/run-pipeline'), {method:'POST'});
-    const d = await r.json();
-    if(d.status === 'started'){
-      toast('Pipeline running — News + GDELT + GitHub (~90s)');
-      btn.textContent = 'Running…';
-      statusText.textContent = 'Pipeline running · News + GDELT + GitHub';
-      _pollPipelineStatus();
-    } else if(d.status === 'already_running'){
-      toast('Pipeline already running — please wait');
-      btn.textContent = 'Running…';
-      _pollPipelineStatus();
+// ── Run Pipeline — dispatches GitHub Actions workflow ────────────────────────
+async function triggerGHRun() {
+  const btn = document.getElementById('run-btn');
+  const status = document.getElementById('run-status');
+  if (btn) { btn.disabled = true; btn.textContent = '⏳ Triggering…'; }
+
+  // Get PAT from localStorage or prompt once
+  let pat = localStorage.getItem('gh_pat');
+  if (!pat) {
+    pat = prompt('Enter your GitHub Personal Access Token (needs actions:write scope).\nThis is stored only in your browser localStorage.');
+    if (!pat) { resetRunBtn(); return; }
+    localStorage.setItem('gh_pat', pat);
+  }
+
+  try {
+    const r = await fetch(
+      'https://api.github.com/repos/aviral-droid/vc-sourcing-agent/actions/workflows/pipeline.yml/dispatches',
+      {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${pat}`, 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ref: 'main' })
+      }
+    );
+    if (r.status === 204) {
+      if (status) status.textContent = '🚀 Pipeline triggered on GitHub Actions (~5 min)';
+      toast('Pipeline triggered! Data will refresh in ~5 minutes.');
+      // After 6 min, reload page to get fresh data.json
+      setTimeout(() => { loadData(); resetRunBtn(); }, 360000);
     } else {
-      toast('Failed to start pipeline: ' + (d.message || 'unknown error'));
+      // PAT might be wrong — clear it so user can re-enter
+      localStorage.removeItem('gh_pat');
+      toast('❌ Trigger failed (bad token?). PAT cleared — try again.', 'error');
       resetRunBtn();
     }
-  } catch(e){
-    toast('Backend not reachable — is the server running?');
+  } catch(e) {
+    toast('❌ Network error: ' + e.message, 'error');
     resetRunBtn();
   }
 }
 
-function _pollPipelineStatus(){
-  let polls = 0;
-  const iv = setInterval(async()=>{
-    polls++;
-    if(polls > 40){ clearInterval(iv); resetRunBtn(); return; }
-    try{
-      const r = await fetch(API('/api/pipeline-status'));
-      const d = await r.json();
-      const btn = document.getElementById('run-btn');
-      const statusText = document.getElementById('status-text');
-      if(!d.running && d.last_run){
-        clearInterval(iv);
-        if(d.last_result?.error){
-          toast('Pipeline error: ' + d.last_result.error);
-        } else {
-          const n = d.last_result?.persons_found ?? 0;
-          toast(`Pipeline complete — ${n} founders found! Reloading…`);
-          statusText.textContent = `Complete · ${n} founders`;
-          setTimeout(()=>{ loadData(); resetRunBtn(); }, 1500);
-          return;
-        }
-        resetRunBtn();
-      } else if(d.running){
-        btn.textContent = `Running… ${polls * 5}s`;
-      }
-    } catch(e){}
-  }, 5000);
-}
+function _pollPipelineStatus() { /* no-op in static mode */ }
 
-function resetRunBtn(){
+function resetRunBtn() {
   const btn = document.getElementById('run-btn');
-  btn.textContent = '▶ Run Pipeline'; btn.disabled = false;
-  document.getElementById('status-dot').className = 'dot ok';
-  if(data && data.generated_at) updateRunStatus(data.generated_at);
+  const status = document.getElementById('run-status');
+  if (btn) { btn.disabled = false; btn.textContent = '▶ Run Pipeline'; }
+  if (status) status.textContent = '';
 }
 
 // ══════════════════════════════════════════════════════════════
@@ -1766,72 +1707,17 @@ function switchTab(tab){
   }
 }
 
-// ── API base URL — auto-resolves: localhost in dev, Render URL in production ──
-let _API_BASE = 'http://localhost:8000';   // default: local dev server
-let _apiReady = false;
-const _apiReadyPromise = (async function _resolveApiBase(){
-  if(!location.hostname.includes('localhost') && !location.hostname.includes('127.0.0.1')){
-    // Try multiple config.json paths (GitHub Pages can have different base paths)
-    const paths = [
-      '/vc-sourcing-agent/config.json',
-      '/config.json',
-      './config.json',
-    ];
-    for(const p of paths){
-      try{
-        const cfg = await fetch(p, {cache:'no-store'}).then(r=>r.ok?r.json():null);
-        if(cfg?.api_url){ _API_BASE = cfg.api_url.replace(/\/$/, ''); break; }
-      }catch(_){}
-    }
-  }
-  _apiReady = true;
-})();
-const API = (path) => `${_API_BASE}${path}`;
+// ── Static mode: all data comes from data.json, no backend needed ────────────
+let _data = null;  // populated by loadAllData()
 
-// ── Fetch with Render cold-start retry ───────────────────────────────────────
-// Render free tier sleeps after 15 min — first request can take 30s+ to wake up.
-// This wrapper retries up to 3 times with increasing timeouts and shows a banner.
-let _renderWaking = false;
-async function apiFetch(path, opts={}){
-  await _apiReadyPromise;  // ensure API_BASE is resolved first
-  const url = API(path);
-  const MAX_TRIES = 3;
-  for(let attempt=1; attempt<=MAX_TRIES; attempt++){
-    try{
-      const ctrl = new AbortController();
-      const tid = setTimeout(()=>ctrl.abort(), attempt===1 ? 15000 : 35000);
-      const r = await fetch(url, {...opts, signal: ctrl.signal});
-      clearTimeout(tid);
-      if(_renderWaking){ _renderWaking=false; _hideWakeupBanner(); }
-      return r;
-    }catch(e){
-      clearTimeout(0);
-      if(attempt < MAX_TRIES){
-        if(!_renderWaking){ _renderWaking=true; _showWakeupBanner(); }
-        await new Promise(res=>setTimeout(res, 3000 * attempt));
-      } else {
-        if(_renderWaking){ _renderWaking=false; _hideWakeupBanner(); }
-        throw e;
-      }
-    }
+async function loadAllData() {
+  try {
+    const r = await fetch('data.json?t=' + Date.now());
+    _data = await r.json();
+  } catch(e) {
+    console.warn('data.json load failed:', e);
+    _data = { persons: [], intelligence: { ai_ml: {articles:[]}, india_sea: {articles:[]}, emerging: {articles:[]}, sector_heatmap: [] } };
   }
-}
-
-function _showWakeupBanner(){
-  let b = document.getElementById('wakeup-banner');
-  if(!b){
-    b = document.createElement('div');
-    b.id = 'wakeup-banner';
-    b.style.cssText = `position:fixed;top:0;left:0;right:0;z-index:9999;
-      background:#1e40af;color:#fff;font-size:12px;text-align:center;padding:6px;
-      display:flex;align-items:center;justify-content:center;gap:8px;`;
-    b.innerHTML = `<span style="animation:spin 1s linear infinite;display:inline-block">⏳</span>
-      <span>Backend waking up (Render free tier) — usually takes 20–30s on first visit…</span>`;
-    document.body.prepend(b);
-  }
-}
-function _hideWakeupBanner(){
-  document.getElementById('wakeup-banner')?.remove();
 }
 
 function relTime(str){
@@ -1889,54 +1775,51 @@ function updateTicker(articles){
   if(inner) inner.innerHTML = html;
 }
 
+// ── Intelligence feed helpers (static mode) ───────────────────
+function _renderArticles(containerId, articles, emptyMsg) {
+  const el = document.getElementById(containerId);
+  if (!el) return;
+  if (!articles || !articles.length) { el.innerHTML = `<p class="muted">${emptyMsg||'No articles available.'}</p>`; return; }
+  el.innerHTML = articles.map(a => `
+    <div class="news-item">
+      <a href="${a.url||'#'}" target="_blank" rel="noopener" class="news-title">${a.title||'Untitled'}</a>
+      <div class="news-meta">${a.source||''} · ${a.pub_date ? new Date(a.pub_date).toLocaleDateString() : ''}</div>
+      ${a.summary ? `<div class="news-summary">${a.summary}</div>` : ''}
+    </div>`).join('');
+}
+
+function _renderSectorsStatic(heatmap) {
+  const grid = document.getElementById('sectors-grid');
+  if (!grid) return;
+  if (!heatmap || !heatmap.length) { grid.innerHTML = '<p class="muted">Run pipeline to generate sector heatmap.</p>'; return; }
+  const maxSig = Math.max(...heatmap.map(s => s.signals||0), 1);
+  grid.innerHTML = heatmap.map(s => {
+    const pct = Math.round((s.signals||0) / maxSig * 100);
+    const heat = pct > 70 ? 'hot' : pct > 40 ? 'warm' : 'cool';
+    return `<div class="sector-cell ${heat}" title="${s.signals} signals">
+      <div class="sector-name">${s.name}</div>
+      <div class="sector-bar"><div class="sector-fill" style="width:${pct}%"></div></div>
+      <div class="sector-count">${s.signals} signals · ${s.sentiment||'neutral'}</div>
+    </div>`;
+  }).join('');
+}
+
 // ── AI / ML Feed ──────────────────────────────────────────────
-let aimlRefreshIv;
-async function loadAIML(force=false){
-  const feed = document.getElementById('aiml-feed');
-  const ts   = document.getElementById('aiml-ts');
-  try{
-    const r = await apiFetch('/api/intelligence/news?type=ai_ml&limit=40');
-    if(!r.ok) throw new Error(r.status);
-    const d = await r.json();
-    feed.innerHTML = (d.articles||[]).map(renderNewsItem).join('') ||
-      '<div style="padding:20px;color:var(--muted);font-size:12px;text-align:center">No articles found</div>';
-    ts.textContent = relTime(d.fetched_at)||'now';
-    updateTicker(d.articles||[]);
-  }catch(e){
-    feed.innerHTML='<div style="padding:20px;color:var(--red);font-size:12px">Error loading feed — is the local server running?</div>';
-  }
+function loadAIML(force=false){
+  const intel = (_data && _data.intelligence) || {};
+  _renderArticles('aiml-feed', (intel.ai_ml||{}).articles, 'No AI/ML articles — run pipeline to fetch.');
 }
 
 // ── Emerging Tech Feed ───────────────────────────────────────
-async function loadEmerging(force=false){
-  const feed = document.getElementById('emerging-feed');
-  const ts   = document.getElementById('emerging-ts');
-  try{
-    const r = await apiFetch('/api/intelligence/news?type=emerging&limit=50');
-    if(!r.ok) throw new Error(r.status);
-    const d = await r.json();
-    feed.innerHTML = (d.articles||[]).map(renderNewsItem).join('') ||
-      '<div style="padding:20px;color:var(--muted);font-size:12px;text-align:center">No articles found</div>';
-    ts.textContent = relTime(d.fetched_at)||'now';
-  }catch(e){
-    feed.innerHTML='<div style="padding:20px;color:var(--red);font-size:12px">Error loading feed</div>';
-  }
+function loadEmerging(force=false){
+  const intel = (_data && _data.intelligence) || {};
+  _renderArticles('emerging-feed', (intel.emerging||{}).articles, 'No emerging tech articles — run pipeline to fetch.');
 }
 
 // ── India + SEA Feed ─────────────────────────────────────────
-async function loadIndiaSEA(force=false){
-  const feed = document.getElementById('indiasea-feed');
-  const ts   = document.getElementById('indiasea-ts');
-  try{
-    const r = await apiFetch('/api/intelligence/news?type=india_sea&limit=40');
-    if(!r.ok) throw new Error(r.status);
-    const d = await r.json();
-    feed.innerHTML = (d.articles||[]).map(renderNewsItem).join('') ||
-      '<div style="padding:20px;color:var(--muted);font-size:12px;text-align:center">No articles found</div>';
-    ts.textContent = relTime(d.fetched_at)||'now';
-  }catch(e){
-    feed.innerHTML='<div style="padding:20px;color:var(--red);font-size:12px">Error loading feed</div>';
-  }
+function loadIndiaSEA(force=false){
+  const intel = (_data && _data.intelligence) || {};
+  _renderArticles('indiasea-feed', (intel.india_sea||{}).articles, 'No India/SEA articles — run pipeline to fetch.');
 }
 
 // ── Market Data ───────────────────────────────────────────────
@@ -1944,87 +1827,6 @@ function fmtPrice(p, cur){
   if(!p) return '—';
   if(cur==='INR'||cur==='IDR'||cur==='VND') return p.toLocaleString('en-IN');
   return p.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
-}
-
-async function loadMarket(force=false){
-  const body = document.getElementById('market-body');
-  const ts   = document.getElementById('market-ts');
-  try{
-    const r = await apiFetch('/api/intelligence/market');
-    if(!r.ok) throw new Error(r.status);
-    const d = await r.json();
-    const quotes = d.quotes||[];
-
-    const renderRow = (q, portfolio=false) => {
-      const chgCls = q.change_pct>0?'up':q.change_pct<0?'down':'flat';
-      const chgStr = (q.change_pct>0?'+':'')+q.change_pct+'%';
-      const stateStr = q.market_state && q.market_state!=='REGULAR' ? ` · ${q.market_state}` : '';
-      return `<div class="market-row${portfolio?' market-row-portfolio':''}">
-        <div class="market-row-left">
-          <div class="market-name">${esc(q.name)}</div>
-          <div class="market-geo">${esc(q.geo)}${stateStr}</div>
-        </div>
-        <div class="market-row-right">
-          <div class="market-price">${fmtPrice(q.price,q.currency)}</div>
-          <div class="market-chg ${chgCls}">${chgStr}</div>
-        </div>
-      </div>`;
-    };
-
-    // Market Composite Signal
-    function calcComposite(quotes) {
-      let score = 50;
-      const get = name => quotes.find(q=>q.name===name);
-      const vix = get('VIX'); if(vix) score -= Math.min(20, Math.max(-10, (vix.change_pct)*2));
-      const sp = get('S&P 500'); if(sp) score += sp.change_pct * 3;
-      const nifty = get('NIFTY 50'); if(nifty) score += nifty.change_pct * 2;
-      const nasdaq = get('NASDAQ'); if(nasdaq) score += nasdaq.change_pct * 2;
-      const btc = get('Bitcoin'); if(btc) score += btc.change_pct * 1;
-      const gold = get('Gold'); if(gold) score += gold.change_pct * 1.5;
-      const usdinr = get('USD/INR'); if(usdinr) score -= usdinr.change_pct * 2;
-      return Math.max(0, Math.min(100, Math.round(score)));
-    }
-    const composite = calcComposite(quotes);
-    const compClass = composite >= 60 ? 'bull' : composite >= 40 ? 'neutral' : 'bear';
-    const compHint  = composite >= 60 ? 'Bullish' : composite >= 40 ? 'Neutral' : 'Bearish';
-    let html = `<div class="composite-bar-wrap">
-      <div class="composite-label">Market Composite <span class="composite-score">${composite}</span></div>
-      <div class="composite-track"><div class="composite-fill ${compClass}" style="width:${composite}%"></div></div>
-      <div class="composite-hint">${compHint}</div>
-    </div>`;
-
-    // Group by geo
-    const GEO_ORDER = ['Global','India','SEA','US Tech','India Tech','SEA Tech','Portfolio','Asia','Europe','FX','Commodities','Crypto'];
-    const GEO_LABELS = {
-      'Global':      '🌐 Global Indices',
-      'India':       '🇮🇳 India Indices',
-      'SEA':         '🌏 SEA Indices',
-      'US Tech':     '🇺🇸 US AI & Tech',
-      'India Tech':  '🇮🇳 India Tech',
-      'SEA Tech':    '🌏 SEA Tech',
-      'Portfolio':   '💼 Aviral Portfolio',
-      'Asia':        '🌏 Asia Indices',
-      'Europe':      '🇪🇺 Europe Indices',
-      'FX':          '💱 FX & USD',
-      'Commodities': '🪙 Commodities',
-      'Crypto':      '₿ Crypto',
-    };
-    const groups = {};
-    quotes.forEach(q=>{ if(!groups[q.geo]) groups[q.geo]=[]; groups[q.geo].push(q); });
-
-    for(const geo of GEO_ORDER){
-      const rows = groups[geo];
-      if(!rows || rows.length===0) continue;
-      const isPortfolio = geo==='Portfolio';
-      html += `<div class="market-section-label${isPortfolio?' market-section-portfolio':''}">${GEO_LABELS[geo]||geo}</div>`;
-      html += `<div class="market-grid">${rows.map(q=>renderRow(q,isPortfolio)).join('')}</div>`;
-    }
-
-    body.innerHTML = html;
-    ts.textContent = relTime(d.fetched_at)||'now';
-  }catch(e){
-    body.innerHTML='<div style="padding:20px;color:var(--red);font-size:12px">Market data unavailable</div>';
-  }
 }
 
 // ── Sectors — grouped sub-segments ───────────────────────────
@@ -2059,48 +1861,9 @@ function _renderSectors(sectors, fetchedAt){
 }
 
 let _sectorsPollingTimer = null;
-async function loadSectors(force=false){
-  const grid = document.getElementById('sectors-grid');
-  const ts   = document.getElementById('sectors-ts');
-  try{
-    const r = await apiFetch('/api/intelligence/sectors');
-    if(!r.ok) throw new Error(r.status);
-    const d = await r.json();
-    const sectors = d.sectors || [];
-
-    if(sectors.length > 0){
-      // Render whatever we have (baseline RSS counts or GDELT-enriched)
-      const src = d.source || '';
-      const isGDELT = src.includes('gdelt') || src === 'rss_baseline';
-      const badge = d.loading
-        ? `<div style="grid-column:1/-1;padding:5px 10px;background:var(--surface3);border-radius:6px;font-size:10px;color:var(--amber);margin-bottom:8px">
-             ⏳ Enriching with GDELT signals ${d.progress||0}% — heatmap updates every 10s
-           </div>`
-        : (isGDELT
-            ? `<div style="grid-column:1/-1;padding:5px 10px;background:rgba(16,185,129,.06);border-radius:6px;font-size:10px;color:var(--green);margin-bottom:8px">
-               ✓ GDELT enrichment complete
-               </div>`
-            : '');
-      grid.innerHTML = badge + _renderSectors(sectors);
-      ts.textContent = relTime(d.fetched_at) || 'now';
-    } else {
-      grid.innerHTML = '<div style="padding:10px;color:var(--muted);font-size:12px;grid-column:1/-1">Warming up — news feeds loading…</div>';
-    }
-
-    // Keep polling every 10s while GDELT enrichment is in progress
-    if(d.loading){
-      if(!grid.dataset.polling){
-        grid.dataset.polling = '1';
-        if(_sectorsPollingTimer) clearInterval(_sectorsPollingTimer);
-        _sectorsPollingTimer = setInterval(()=>loadSectors(), 10000);
-      }
-    } else {
-      if(_sectorsPollingTimer){ clearInterval(_sectorsPollingTimer); _sectorsPollingTimer = null; }
-      delete grid.dataset.polling;
-    }
-  }catch(e){
-    grid.innerHTML='<div style="padding:10px;color:var(--red);font-size:12px">Sector data unavailable — is the local server running?</div>';
-  }
+function loadSectors(force=false){
+  const intel = (_data && _data.intelligence) || {};
+  _renderSectorsStatic((intel.sector_heatmap)||[]);
 }
 
 // ── Consumer & Demand Intelligence Dashboard ──────────────────
@@ -2185,118 +1948,26 @@ function filterDemandTheme(theme){
   renderDemandCols(_demandAllItems, _demandActiveTheme);
 }
 
-async function loadDemand(force=false){
-  const ts = document.getElementById('demand-ts');
-  try{
-    const r = await apiFetch('/api/intelligence/demand');
-    if(!r.ok) throw new Error(r.status);
-    const d = await r.json();
-    _demandAllItems = d.items || [];
-    renderThemeBars(_demandAllItems);
-    renderDemandCols(_demandAllItems, _demandActiveTheme);
-    if(ts) ts.textContent = relTime(d.fetched_at)||'now';
-  }catch(e){
-    const el=document.getElementById('demand-col-consumer');
-    if(el) el.innerHTML='<div style="padding:12px;color:var(--red);font-size:12px">Demand data unavailable</div>';
-  }
-}
+function loadDemand(force=false) { /* placeholder — no backend in static mode */ }
 
 // ── Portfolio Intelligence ────────────────────────────────────
 let _portfolioPollingTimer = null;
 
-async function loadPortfolio(force=false){
-  const scroll = document.getElementById('portfolio-scroll');
-  const ts     = document.getElementById('portfolio-ts');
-  try{
-    const r = await apiFetch('/api/intelligence/portfolio');
-    if(!r.ok) throw new Error(r.status);
-    const d = await r.json();
-    const companies = d.companies || [];
-
-    const renderCard = co => {
-      const col = co.color || '#6366f1';
-      const articles = (co.articles || []).slice(0,5);
-
-      const articlesHtml = articles.length
-        ? articles.map(a=>{
-            const title = (a.title||'').slice(0,90)+((a.title||'').length>90?'…':'');
-            const src   = (a.source||'').replace(/^www\./,'').split('.')[0].slice(0,12);
-            const age   = a.published ? relTime(a.published) : '';
-            return `<div class="portfolio-article" onclick="window.open(${JSON.stringify(a.url||'#')},'_blank')">
-              <div class="portfolio-article-title">${esc(title)}</div>
-              <div class="portfolio-article-meta">
-                <span class="portfolio-article-src">${esc(src)}</span>
-                ${age?`<span class="portfolio-article-age">${esc(age)}</span>`:''}
-              </div>
-            </div>`;
-          }).join('')
-        : `<div class="portfolio-empty">
-             <span style="font-size:18px">📡</span>
-             <span>Scanning sector…</span>
-             <span style="font-size:9px">GDELT enrichment in progress</span>
-           </div>`;
-
-      const signalColor = co.signal_count >= 4 ? 'var(--green)' :
-                          co.signal_count >= 1 ? 'var(--amber)' : 'var(--muted)';
-
-      return `<div class="portfolio-card" style="border-top-color:${col}">
-        <div class="portfolio-card-head">
-          <span class="portfolio-emoji">${esc(co.emoji||'📊')}</span>
-          <span class="portfolio-name">${esc(co.name)}</span>
-          <span class="portfolio-sector-tag" style="background:${col}20;color:${col}">${esc(co.sector)}</span>
-        </div>
-        <div class="portfolio-signal-bar">
-          <span class="portfolio-signal-count" style="color:${signalColor}">
-            ${co.signal_count} signal${co.signal_count!==1?'s':''}
-          </span>
-          ${co.loading?'<span class="portfolio-loading-dot" title="GDELT enriching…"></span>':''}
-          ${co.url?`<a href="${esc(co.url)}" target="_blank" style="font-size:9px;color:var(--muted);margin-left:auto;text-decoration:underline">website ↗</a>`:''}
-        </div>
-        <div class="portfolio-articles">${articlesHtml}</div>
-        ${co.context?`<div class="portfolio-context">${esc(co.context)}</div>`:''}
-      </div>`;
-    };
-
-    scroll.innerHTML = companies.map(renderCard).join('');
-    ts.textContent = relTime(d.fetched_at)||'now';
-
-    // Poll every 15s while GDELT enrichment is loading
-    if(d.loading && !_portfolioPollingTimer){
-      _portfolioPollingTimer = setInterval(async()=>{
-        const pr = await apiFetch('/api/intelligence/portfolio').then(r=>r.json()).catch(()=>null);
-        if(!pr) return;
-        scroll.innerHTML = pr.companies.map(renderCard).join('');
-        ts.textContent = relTime(pr.fetched_at)||'now';
-        if(!pr.loading){ clearInterval(_portfolioPollingTimer); _portfolioPollingTimer=null; }
-      }, 15000);
-    } else if(!d.loading && _portfolioPollingTimer){
-      clearInterval(_portfolioPollingTimer); _portfolioPollingTimer=null;
-    }
-
-  }catch(e){
-    scroll.innerHTML='<div style="padding:16px;color:var(--red);font-size:11px">Portfolio data unavailable — is the server running?</div>';
-  }
-}
+function loadPortfolio(force=false) { /* placeholder — no backend in static mode */ }
 
 // ── Init & auto-refresh ───────────────────────────────────────
-function initIntel(){
-  // Load news + market first (they populate the server's news cache)
-  Promise.all([loadAIML(), loadIndiaSEA(), loadEmerging()]).then(()=>{
-    // Both sectors and portfolio use the news cache as RSS baseline → call after news loads
-    loadSectors();
-    loadPortfolio();
-  });
-  loadMarket();
-  loadDemand();
+async function initIntel() {
+  // Wait for data.json to be loaded
+  if (!_data) await loadAllData();
 
-  setInterval(()=>loadAIML(),      2*60*1000);
-  setInterval(()=>loadIndiaSEA(),  2*60*1000);
-  setInterval(()=>loadEmerging(),  3*60*1000);
-  setInterval(()=>loadMarket(),    5*60*1000);
-  setInterval(()=>loadSectors(),   30*60*1000);
-  setInterval(()=>loadDemand(),    5*60*1000);
-  setInterval(()=>loadPortfolio(), 20*60*1000);
+  loadAIML();
+  loadIndiaSEA();
+  loadEmerging();
+  loadSectors();
+  loadMarket();
 }
+
+function loadMarket(force=false) { /* placeholder — no live market data in static mode */ }
 </script>
 </body>
 </html>
