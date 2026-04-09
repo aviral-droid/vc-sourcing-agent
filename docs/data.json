@@ -1,28 +1,28 @@
 {
-  "generated_at": "2026-04-09T05:39:13.998484",
+  "generated_at": "2026-04-09T08:05:09.027988",
   "date_label": "2026-04-09",
-  "total_signals": 7,
-  "total_persons": 7,
+  "total_signals": 11,
+  "total_persons": 11,
   "sources_active": [
     "News",
-    "GDELT",
     "GitHub"
   ],
-  "executive_summary": "Today's top VC sourcing signals are predominantly from India, with a notable absence of signals from Southeast Asia. The strongest archetypes emerging are second-time founders and senior executives with 10+ years of experience, particularly in the fintech and consumer electronics sectors. Aman Gupta stands out as a compelling lead, scoring 80 with a stealth mode company in the consumer electronics/audio space, while Tarun Mathur also shows promise with a score of 60 in the fintech/insurance sector, potentially benefiting from our intelligence feed's identified hot sectors. Overall, these leads warrant further investigation to uncover potential investment opportunities.",
+  "executive_summary": "Pipeline surfaced 11 founders above threshold on 2026-04-09. 6 flagged for immediate investigation, 2 added to watchlist. Top lead: Aman Gupta (score 85, India, ex-?) — Consumer Electronics sector. Rule-based scoring active (LLM quota reset at midnight UTC).",
   "persons": [
     {
       "name": "Aman Gupta",
-      "score": 80,
+      "score": 85,
       "action": "investigate",
+      "recommended_action": "investigate",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
       "location": "",
-      "sector": "Consumer Electronics/Audio",
+      "sector": "Consumer Electronics",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": true,
-      "investment_thesis": "Aman Gupta, co-founder of boAt, has raised ₹100 Cr for his new venture OFF/BEAT, indicating a strong potential for growth and a promising investment opportunity. His experience and success with boAt make him an attractive founder to invest in. Further investigation is needed to understand the details of OFF/BEAT and its market potential.",
+      "investment_thesis": "Aman Gupta, co-founder of the highly successful boAt, has launched a new venture, OFF/BEAT, and already secured a significant Rs 100 Cr funding round led by Bessemer. This demonstrates strong founder-market fit and execution capabilities, making him a compelling second-time founder to investigate.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -34,73 +34,38 @@
         {
           "source": "news",
           "type": "funding_news",
-          "description": "[Inc42] boAt Cofounder Aman Gupta’s New Venture OFF/BEAT Raises ₹100 Cr",
-          "url": "https://inc42.com/buzz/boat-cofounder-aman-guptas-new-venture-off-beat-raises-%e2%82%b9100-cr/"
+          "description": "[YourStory] boAt co-founder Aman Gupta’s OFF/BEAT raises Rs 100 Cr led by Bessemer Venture Partners",
+          "url": "https://yourstory.com/2026/04/aman-gupta-startup-offbeat-rs-100-crore-bessemer-venture-partners"
         }
       ],
       "confidence": "high",
       "founder_type": "second_time_founder",
       "key_strengths": [
-        "Successful exit with boAt",
-        "Ability to raise significant funding"
+        "Second-time founder with a proven track record (boAt)",
+        "Significant funding raised for new venture (Rs 100 Cr)",
+        "Strong investor backing (Bessemer Venture Partners)"
       ],
       "risks": [
-        "Unclear details about new venture OFF/BEAT"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Unknown",
-      "score": 60,
-      "action": "investigate",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Fintech/Insurance",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "The former CEO of Policybazaar has quit, indicating potential for a new venture. With their experience in the fintech/insurance space, they could be building something innovative. Their departure is a strong signal worth investigating.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "executive_departure",
-          "description": "[Inc42] New Unicorn Unlocked, Policybazaar CEO Quits & More",
-          "url": "https://inc42.com/buzz/new-unicorn-unlocked-policybazaar-ceo-quits-more/"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Executive experience",
-        "Domain expertise"
-      ],
-      "risks": [
-        "Unknown plans post-departure"
+        "Location is unknown",
+        "Previous title and experience years are unknown",
+        "Sector fit is weak based on current intelligence feed"
       ],
       "company_url": ""
     },
     {
       "name": "Tarun Mathur",
-      "score": 60,
+      "score": 75,
       "action": "investigate",
+      "recommended_action": "investigate",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
       "location": "",
-      "sector": "Fintech/Insurance",
+      "sector": "Fintech",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Tarun Mathur's departure as CEO of Policybazaar presents an opportunity to investigate a potential new venture, given his extensive experience in the insurance sector. His background and expertise could be leveraged to build a successful startup in the fintech or insurance space. Further research is needed to determine his plans and potential for a new company.",
+      "investment_thesis": "Tarun Mathur, former CEO of Policybazaar, represents a highly promising seasoned operator signal. His departure from a prominent publicly listed Fintech company in India suggests he is likely to embark on a new venture, potentially within the same high-growth sector. This aligns perfectly with our mandate for experienced founders.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -119,27 +84,117 @@
       "confidence": "medium",
       "founder_type": "seasoned_operator",
       "key_strengths": [
-        "Executive experience",
-        "Domain expertise in insurance"
+        "CEO of a major publicly listed company (Policybazaar)",
+        "Significant experience in the Fintech sector",
+        "Executive departure signal"
       ],
       "risks": [
-        "Unknown plans after departure"
+        "Location unknown",
+        "Experience years unknown",
+        "No explicit signal of a new company registration or stealth venture"
       ],
       "company_url": ""
     },
     {
       "name": "Unknown",
-      "score": 60,
+      "score": 70,
       "action": "investigate",
+      "recommended_action": "investigate",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
       "location": "India",
-      "sector": "Aviation/Transportation",
+      "sector": "Fintech",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "The recent departure of the Air India CEO could indicate a potential new venture in the aviation or transportation sector, leveraging their executive experience and industry expertise. This individual's background and experience make them a worthwhile candidate for investigation. However, more information is needed to determine the viability of their potential new venture.",
+      "investment_thesis": "The departure of a CEO from a major unicorn like Policybazaar is a strong signal of a seasoned operator likely embarking on a new venture. Given Policybazaar's domain, this individual is highly likely to be building something in the Fintech space, aligning with our investment thesis for experienced founders in high-growth sectors.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "executive_departure",
+          "description": "[Inc42] New Unicorn Unlocked, Policybazaar CEO Quits & More",
+          "url": "https://inc42.com/buzz/new-unicorn-unlocked-policybazaar-ceo-quits-more/"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
+      "key_strengths": [
+        "Executive departure from a prominent unicorn (Policybazaar)",
+        "CEO title indicates significant leadership experience",
+        "Headline suggests a potential new venture in a high-growth area"
+      ],
+      "risks": [
+        "Founder's name and specific experience details are unknown",
+        "No direct signal of a new company registration or stealth mode",
+        "Experience years are unknown, though CEO role implies seniority"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 55,
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Developer Tools / AI",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This is an intriguing signal about brothers from Bengaluru building a potentially disruptive GitHub alternative for the AI era, operating out of Finland. While the founders' experience is currently unknown, the ambitious nature of the project and the focus on a critical developer tool for AI warrants further investigation.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "stealth_founder",
+          "description": "[YourStory] How two Bengaluru brothers are building a GitHub alternative for the AI age from Finland",
+          "url": "https://yourstory.com/2026/04/bengaluru-brothers-building-github-alternative-ai-age-finland"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Building a GitHub alternative for the AI age",
+        "Bengaluru brothers (potential for strong founding team)",
+        "Operating from Finland (international ambition)"
+      ],
+      "risks": [
+        "Founder identity and experience unknown",
+        "Company registration and stealth status not yet confirmed",
+        "Geographic operational base in Finland might present unique challenges/opportunities"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "deeptech",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -155,31 +210,32 @@
           "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOaTg4X0luWkstelk4TGJMcl9JUi1LbFB1S0pxaEtiSmFIVEJyenpydnR3SmhIQlY5UHpCRnlDTWdCUHJrMGs3YmVWUlFaRXkyZFZ2emF1Q29GdlpDNDdDZldRdWhxcFVqNXQ3RkcxVHJvSzJCYVV3Ry1CdFNiQXRJdHI2Vm54RnRCWGRqcmZrYnpTT0RfSy03OGs1S05fOXdnU2c?oc=5"
         }
       ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
+      "confidence": "low",
+      "founder_type": "unknown",
       "key_strengths": [
-        "Executive experience",
-        "Industry expertise"
+        "Signal detected from sourcing pipeline"
       ],
       "risks": [
-        "Unknown intentions",
-        "Lack of information on new venture"
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Previous role unclear"
       ],
       "company_url": ""
     },
     {
       "name": "Unknown",
-      "score": 40,
+      "score": 45,
       "action": "investigate",
+      "recommended_action": "investigate",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
       "location": "",
-      "sector": "Autonomous Vehicles",
-      "geography": "India",
+      "sector": "Autonomous Vehicles / Industrial Automation",
+      "geography": "Unknown",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "RoshAi has secured significant funding to develop autonomous vehicles for industrial use, indicating a promising idea with potential for growth. However, the unknown founder and team pose a risk. Further investigation is needed to understand the founder's experience and the company's potential.",
+      "investment_thesis": "RoshAi has secured substantial seed funding to develop autonomous vehicles for industrial use, indicating strong market potential and investor confidence. While the founder's background is currently unknown, the significant capital raise warrants further investigation into the team's capabilities and vision.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -195,71 +251,32 @@
           "url": "https://inc42.com/buzz/roshai-raises-%e2%82%b922-cr-to-develop-autonomous-vehicles-for-industrial-use/"
         }
       ],
-      "confidence": "medium",
+      "confidence": "low",
       "founder_type": "unknown",
       "key_strengths": [
-        "Secured funding",
-        "Innovative idea"
+        "Significant funding raised (₹22 Cr) for a new venture."
       ],
       "risks": [
-        "Unknown founder experience",
-        "Unknown team"
+        "Founder identity and experience are unknown.",
+        "Company's operational geography is unclear.",
+        "No information on previous entrepreneurial experience or operator background."
       ],
       "company_url": ""
     },
     {
       "name": "Unknown",
-      "score": 40,
-      "action": "investigate",
+      "score": 42,
+      "action": "pass",
+      "recommended_action": "pass",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
       "location": "",
-      "sector": "AI",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "The funding news of WorkOnGrid, an AI startup, indicates a potentially promising venture, but the lack of information about the founder's background and experience raises concerns. Further investigation is needed to determine the founder's fit with our investment mandate. The alignment with the AI sector, a current hot sector, is a positive signal.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "funding_news"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "funding_news",
-          "description": "[Inc42] AI Startup WorkOnGrid Nets ₹22.5 Cr To Fuel International Expansion",
-          "url": "https://inc42.com/buzz/ai-startup-workongrid-nets-%e2%82%b922-5-cr-to-fuel-international-expansion/"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "funding news",
-        "AI sector alignment"
-      ],
-      "risks": [
-        "unknown founder background",
-        "limited information"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Unknown",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "AI",
+      "sector": "saas",
       "geography": "Unknown",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "H2LooP has secured $2 Mn in funding to scale its AI platform, indicating a promising startup with potential for growth. The focus on AI for embedded systems is a current hot sector, aligning with our intelligence feed. However, the lack of information on the founder's background and experience is a significant risk.",
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -271,25 +288,636 @@
         {
           "source": "news",
           "type": "funding_news",
-          "description": "[Inc42] H2LooP Secures $2 Mn To Scale AI Platform For Embedded Systems",
-          "url": "https://inc42.com/buzz/h2loop-secures-2-mn-to-scale-ai-platform-for-embedded-systems/"
+          "description": "[e27] Capital comes roaring back: Inside SEA’s March funding boom",
+          "url": "https://e27.co/capital-comes-roaring-back-inside-seas-march-funding-boom-20260406/"
         }
       ],
       "confidence": "low",
       "founder_type": "unknown",
       "key_strengths": [
-        "secured funding",
-        "AI expertise"
+        "Signal detected from sourcing pipeline"
       ],
       "risks": [
-        "unknown founder background",
-        "limited information"
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 42,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "saas",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "funding_news",
+          "description": "[e27] AI hype, hard lessons: Where SEA’s startup capital is really going",
+          "url": "https://e27.co/ai-hype-hard-lessons-where-seas-startup-capital-is-really-going-20260406/"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 35,
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "AI",
+      "geography": "Singapore",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Muun AI has secured pre-seed funding for its industrial AI push in Singapore. While the founder's background is currently unknown, the successful fundraising and focus on AI present an initial signal of potential. Further investigation into the founding team's experience and track record is warranted.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "funding_news",
+          "description": "[e27] Muun AI expands industrial AI push with US$700K pre-seed funding",
+          "url": "https://e27.co/muun-ai-funding-20260408/"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Pre-seed funding secured"
+      ],
+      "risks": [
+        "Founder identity and experience unknown",
+        "Limited information beyond funding news"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 35,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "AI/Mental Health",
+      "geography": "Singapore",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This individual has written an article about corporate mental health and AI, indicating potential expertise in the area. With the current focus on AI and mental health, this could be an interesting space to explore. However, more information is needed to determine the founder's experience and credibility.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "executive_departure",
+          "description": "[e27] Why corporate mental health fails and how AI can fix it",
+          "url": "https://e27.co/why-corporate-mental-health-strategies-fail-and-how-ai-can-support-more-personalised-proactive-care-20250511/"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "AI expertise",
+        "Mental health domain knowledge"
+      ],
+      "risks": [
+        "Unknown experience and background"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 34,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "unknown",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "funding_news",
+          "description": "[e27] Why easy money kills startups",
+          "url": "https://e27.co/why-easy-money-kills-startups-20260326/"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
       ],
       "company_url": ""
     }
   ],
   "source_breakdown": {
-    "news": 7
+    "news": 11
   },
-  "score_threshold": 40
+  "score_threshold": 30,
+  "intelligence": {
+    "ai_ml": {
+      "articles": [
+        {
+          "title": "WireGuard VPN developer can’t ship software updates after Microsoft locks account",
+          "url": "https://techcrunch.com/2026/04/08/wireguard-vpn-developer-cant-ship-software-updates-after-microsoft-locks-account/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-04-08T21:50:41+00:00",
+          "summary": "The popular open source VPN maker is the second high-profile developer to say Microsoft locked his account without notifying him and is blocking their ability to send software updates to users."
+        },
+        {
+          "title": "A self-driving car in Texas hit and killed a mother duck, sparking neighborhood outrage",
+          "url": "https://techcrunch.com/2026/04/08/avride-self-driving-car-austin-kills-duck-mueller/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-04-08T21:19:07+00:00",
+          "summary": "An Avride autonomous vehicle near Austin hit the duck, facing backlash from the community. \"It didn't slow down or hesitate at all, just steamrolled right through,\" according to a witness."
+        },
+        {
+          "title": "Poke makes using AI agents as easy as sending a text",
+          "url": "https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-04-08T21:05:13+00:00",
+          "summary": "Poke brings AI agents to everyday users via text message by handling tasks and automations without complex setup, apps, or technical know-how."
+        },
+        {
+          "title": "Canva doubles down on AI and marketing automation with Simtheory, Ortto acquisitions",
+          "url": "https://techcrunch.com/2026/04/08/canva-doubles-down-on-ai-and-marketing-automation-with-simtheory-ortto-acquisitions/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-04-08T21:00:00+00:00",
+          "summary": "Canva says the acquisitions add strengths in agentic AI, data infrastructure, marketing automation, and customer engagement."
+        },
+        {
+          "title": "AWS boss explains why investing billions in both Anthropic and OpenAI is an OK conflict",
+          "url": "https://techcrunch.com/2026/04/08/aws-boss-explains-why-investing-billions-in-both-anthropic-and-openai-is-an-ok-conflict/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-04-08T20:09:14+00:00",
+          "summary": "AWS has an ingrained culture of handling competition, he explained, because the cloud giant also competes with its partners."
+        },
+        {
+          "title": "Amazon to end support for older Kindle devices",
+          "url": "https://techcrunch.com/2026/04/08/amazon-to-end-support-for-older-kindle-devices-2012/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-04-08T19:56:16+00:00",
+          "summary": "Amazon told Kindle owners this week that it's ending support for all e-readers released in 2012 or earlier, making them virtually unable to load any new content."
+        },
+        {
+          "title": "Meta debuts the Muse Spark model in a ‘ground-up overhaul’ of its AI",
+          "url": "https://techcrunch.com/2026/04/08/meta-debuts-the-muse-spark-model-in-a-ground-up-overhaul-of-its-ai/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-04-08T18:53:19+00:00",
+          "summary": "This is the first model Meta has released under its Superintelligence Labs, led by former Scale AI CEO Alexandr Wang."
+        },
+        {
+          "title": "Hack-for-hire group caught targeting Android devices and iCloud backups",
+          "url": "https://techcrunch.com/2026/04/08/hack-for-hire-group-caught-targeting-android-devices-and-icloud-backups/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-04-08T18:51:20+00:00",
+          "summary": "Security researchers exposed a spying campaign by a hack-for-hire group that used Android spyware and phishing to steal iCloud credentials and hack victims’ devices."
+        },
+        {
+          "title": "Claude, OpenClaw and the new reality: AI agents are here — and so is the chaos",
+          "url": "https://venturebeat.com/infrastructure/claude-openclaw-and-the-new-reality-ai-agents-are-here-and-so-is-the-chaos",
+          "source": "venturebeat.com",
+          "pub_date": "2026-04-08T22:26:37+00:00",
+          "summary": "The age of agentic AI is upon us — whether we like it or not. What started with an innocent question-answer banter with ChatGPT back in 2022 has become an existential debate on job security and the ri"
+        },
+        {
+          "title": "Goodbye, Llama? Meta launches new proprietary AI model Muse Spark — first since Superintelligence Labs' formation",
+          "url": "https://venturebeat.com/technology/goodbye-llama-meta-launches-new-proprietary-ai-model-muse-spark-first-since",
+          "source": "venturebeat.com",
+          "pub_date": "2026-04-08T20:34:01+00:00",
+          "summary": "Meta has been one of the most interesting companies of the generative AI era — initially gaining a loyal and huge following of users for the release of its mostly open source Llama family of large lan"
+        },
+        {
+          "title": "LLM-referred traffic converts at 30-40% — and most enterprises aren't optimizing for it",
+          "url": "https://venturebeat.com/technology/llm-referred-traffic-converts-at-30-40-and-most-enterprises-arent-optimizing",
+          "source": "venturebeat.com",
+          "pub_date": "2026-04-08T19:04:30+00:00",
+          "summary": "For more than two decades, digital discovery has operated on a simple model: search, scan, click, decide. That worked when humans were the ones doing the web searching; but with the advent of AI agent"
+        },
+        {
+          "title": "New framework lets AI agents rewrite their own skills without retraining the underlying model",
+          "url": "https://venturebeat.com/orchestration/new-framework-lets-ai-agents-rewrite-their-own-skills-without-retraining-the",
+          "source": "venturebeat.com",
+          "pub_date": "2026-04-08T17:18:21+00:00",
+          "summary": "One major challenge in deploying autonomous agents is building systems that can adapt to changes in their environments without the need to retrain the underlying large language models (LLMs).Memento-S"
+        },
+        {
+          "title": "Block introduces Managerbot, a proactive Square AI agent and the clearest proof point yet for Jack Dorsey’s AI bet",
+          "url": "https://venturebeat.com/data/block-introduces-managerbot-a-proactive-square-ai-agent-and-the-clearest",
+          "source": "venturebeat.com",
+          "pub_date": "2026-04-07T22:14:30+00:00",
+          "summary": "Block today unveiled Managerbot, a new AI agent embedded in the Square platform that proactively monitors a seller&#x27;s business, identifies emerging problems, and proposes actionable solutions — wi"
+        },
+        {
+          "title": "Amazon S3 Files gives AI agents a native file system workspace, ending the object-file split that breaks multi-agent pipelines",
+          "url": "https://venturebeat.com/data/amazon-s3-files-gives-ai-agents-a-native-file-system-workspace-ending-the",
+          "source": "venturebeat.com",
+          "pub_date": "2026-04-07T21:36:00+00:00",
+          "summary": "AI agents run on file systems using standard tools to navigate directories and read file paths. The challenge, however, is that there is a lot of enterprise data in object storage systems, notably Ama"
+        },
+        {
+          "title": "Anthropic says its most powerful AI cyber model is too dangerous to release publicly — so it built Project Glasswing",
+          "url": "https://venturebeat.com/technology/anthropic-says-its-most-powerful-ai-cyber-model-is-too-dangerous-to-release",
+          "source": "venturebeat.com",
+          "pub_date": "2026-04-07T21:35:44+00:00",
+          "summary": "Anthropic on Tuesday announced Project Glasswing, a sweeping cybersecurity initiative that pairs an unreleased frontier AI model — Claude Mythos Preview — with a coalition of twelve major technology a"
+        }
+      ],
+      "cached_at": "2026-04-09T08:05:11.495355"
+    },
+    "india_sea": {
+      "articles": [
+        {
+          "title": "Honasa Surges Over 11% After Company Projects Early-20s Revenue Growth In Q4",
+          "url": "https://inc42.com/buzz/honasa-surges-over-11-after-company-projects-early-20s-revenue-growth-in-q4/",
+          "source": "inc42.com",
+          "pub_date": "2026-04-09T07:32:55+00:00",
+          "summary": "Shares of Mamaearth parent entity Honasa Consumer jumped 11.49% during the intraday trading to ₹348.75 apiece on the BSE after&#8230;"
+        },
+        {
+          "title": "Is Algae The Answer To Carbon Capture? Intrinsic Foundries’ Green Fix For Toxic Waste",
+          "url": "https://inc42.com/startups/algae-for-carbon-capture-intrinsic-foundries-green-toxic-waste/",
+          "source": "inc42.com",
+          "pub_date": "2026-04-09T07:31:42+00:00",
+          "summary": "Believe it or not, the simplest form of life can actually outsmart the most complex life form when it comes&#8230;"
+        },
+        {
+          "title": "Pluckk Bags ₹100 Cr To Scale Farm-To-Door Business, Enter Offline Retail",
+          "url": "https://inc42.com/buzz/pluckk-bags-%e2%82%b9100-cr-to-scale-farm-to-door-business-enter-offline-retail/",
+          "source": "inc42.com",
+          "pub_date": "2026-04-09T06:44:42+00:00",
+          "summary": "D2C grocery startup Pluckk has raised ₹100 Cr (around $10.8 Mn) in its Series A1 funding round led by existing&#8230;"
+        },
+        {
+          "title": "EV Financing & Asset Management Startup Astranova Mobility Raises ₹60 Cr",
+          "url": "https://inc42.com/buzz/ev-financing-asset-management-startup-astranova-mobility-raises-%e2%82%b960-cr/",
+          "source": "inc42.com",
+          "pub_date": "2026-04-09T06:02:18+00:00",
+          "summary": "EV asset management and leasing startup Astranova Mobility (previously known as Electrifi Mobility) has secured ₹60 Cr (about $6.4 Mn)&#8230;"
+        },
+        {
+          "title": "New Unicorn Unlocked, Policybazaar CEO Quits & More",
+          "url": "https://inc42.com/buzz/new-unicorn-unlocked-policybazaar-ceo-quits-more/",
+          "source": "inc42.com",
+          "pub_date": "2026-04-09T02:30:48+00:00",
+          "summary": "India Gets Its 128th Unicorn KreditBee has become the second Indian unicorn of 2026. Despite ongoing geopolitical tensions, the lending&#8230;"
+        },
+        {
+          "title": "Nexus Venture Partners Sells Delhivery Shares Worth ₹530 Cr",
+          "url": "https://inc42.com/buzz/nexus-venture-partners-sells-delhivery-shares-worth-%e2%82%b9530-cr/",
+          "source": "inc42.com",
+          "pub_date": "2026-04-08T17:45:29+00:00",
+          "summary": "Venture capital (VC) firm Nexus Venture Partners offloaded 1.2 Cr shares of logistics major Delhivery via multiple block deals for&#8230;"
+        },
+        {
+          "title": "Atlas Nets $6 Mn To Scale Its Accounting-Focused AI Platform",
+          "url": "https://inc42.com/buzz/atlas-nets-6-mn-to-scale-its-accounting-focused-ai-platform/",
+          "source": "inc42.com",
+          "pub_date": "2026-04-08T14:39:05+00:00",
+          "summary": "Singapore-based AI startup Atlas, which helps accounting firms deploy AI systems to increase capacity, has raised $6 Mn (₹55.4 Cr)&#8230;"
+        },
+        {
+          "title": "Inside Q1 2026’s Mega Deal Drought: War, LP Shift & Growth Capital Gap",
+          "url": "https://inc42.com/features/inside-q1-2026s-mega-deal-drought-war-lp-shift-growth-capital-gap/",
+          "source": "inc42.com",
+          "pub_date": "2026-04-08T13:56:04+00:00",
+          "summary": "The second quarter of 2026 has begun on a strong note for the Indian startup ecosystem, with KreditBee raising $280&#8230;"
+        },
+        {
+          "title": "Pluckk raises Rs 100 Cr from Euro Gulf, targets profitability in 12 months",
+          "url": "https://yourstory.com/2026/04/funding-pluckk-rs-100-cr-euro-gulf-targets-profitability-12-months",
+          "source": "yourstory.com",
+          "pub_date": "2026-04-09T07:50:15+00:00",
+          "summary": "The latest infusion takes the company’s total funding to $26 million and comes amid steady growth, with Pluckk reporting an average 25% year-on-year increase over the past two years."
+        },
+        {
+          "title": "How VirtueLife makes home physiotherapy actually work",
+          "url": "https://yourstory.com/2026/04/virtuelife-ai-home-physiotherapy-app-india",
+          "source": "yourstory.com",
+          "pub_date": "2026-04-09T01:50:00+00:00",
+          "summary": "Built from a founder’s recovery struggle, VirtueLife combines video guidance, clinician tools, and AI-assisted planning to bring structure and accountability to home-based rehab."
+        },
+        {
+          "title": "What it takes to run AI in the real world: Lessons from Akamai Digital Leadership Summit",
+          "url": "https://yourstory.com/2026/04/real-world-lessons-akamai-digital-leadership-summit",
+          "source": "yourstory.com",
+          "pub_date": "2026-04-08T06:04:11+00:00",
+          "summary": "From inference costs and voice AI to API security and sovereign models, the Akamai Digital Leadership Summit examined what it really takes to run AI systems in production at India’s scale."
+        },
+        {
+          "title": "What happened when scale met the farm reality",
+          "url": "https://yourstory.com/2026/04/what-happened-when-scale-met-the-farm-reality",
+          "source": "yourstory.com",
+          "pub_date": "2026-04-08T07:29:34+00:00",
+          "summary": "A post-boom correction reveals why venture-backed models struggled against the realities of smallholder farming, weak monetisation, and costly distribution."
+        },
+        {
+          "title": "NVIDIA DGX Spark brings sovereign AI to your desktop",
+          "url": "https://yourstory.com/2026/04/nvidia-dgx-spark-brings-sovereign-ai-to-your-desktop",
+          "source": "yourstory.com",
+          "pub_date": "2026-04-09T06:46:54+00:00",
+          "summary": "Learn how to deploy models like Sarvam 30B and Param-2-17B on a personal AI supercomputer in an upcoming technical session hosted by RP Tech, an NVIDIA partner."
+        },
+        {
+          "title": "Beyond the cloud: NVIDIA explores local AI systems at DevSparks Pune 2026, with RP Tech, an NVIDIA partner",
+          "url": "https://yourstory.com/2026/04/nvidia-explores-local-ai-systems-devsparks-pune-2026-rp-tech-nvidia-partner",
+          "source": "yourstory.com",
+          "pub_date": "2026-04-07T13:57:52+00:00",
+          "summary": "At NVIDIA’s DevSparks Pune 2026 masterclass session, attendees explored the software stack and built a Video Search and Summarization agent with NVIDIA DGX Spark, learning how compact AI systems addre"
+        },
+        {
+          "title": "Private, local, and fully yours: NVIDIA's vision for AI development at DevSparks Pune 2026, with RP Tech, an NVIDIA partner",
+          "url": "https://yourstory.com/2026/04/nvidias-vision-ai-development-devsparks-pune-2026-rp-tech-nvidia-partner",
+          "source": "yourstory.com",
+          "pub_date": "2026-04-07T13:46:00+00:00",
+          "summary": "At DevSparks Pune 2026, RP Tech, an NVIDIA partner, demonstrated how NVIDIA DGX Spark enables developers to run full AI workflows locally from a single device.\n\nCandida D’silva\n\nIndia's developer ecos"
+        },
+        {
+          "title": "A platform for home chefs; Agritech’s post-boom correction",
+          "url": "https://yourstory.com/2026/04/tocco-platform-for-home-chefs-agritech-post-boom-correction",
+          "source": "yourstory.com",
+          "pub_date": "2026-04-09T02:00:00+00:00",
+          "summary": "Tocco helps home chefs, especially women, turn their cooking into income. Meanwhile, in the world of agritech there's a structural correction in how investors understand the segment."
+        },
+        {
+          "title": "Why institutional money isn’t saving crypto from this sell-off",
+          "url": "https://e27.co/why-institutional-money-isnt-saving-crypto-from-this-sell-off-20260409/",
+          "source": "e27.co",
+          "pub_date": "2026-04-09T05:38:51+00:00",
+          "summary": "While traditional equity markets celebrated a historic relief rally, the cryptocurrency market posted a 1.42 per cent decline, settling at US$2.41T. This divergence tells a compelling story about the "
+        },
+        {
+          "title": "Networking was the topic, alignment was the outcome",
+          "url": "https://e27.co/networking-was-the-topic-alignment-was-the-outcome-20260409/",
+          "source": "e27.co",
+          "pub_date": "2026-04-09T05:30:10+00:00",
+          "summary": "Most people don&#8217;t have a networking problem. They have an environmental problem. Networking remains one of the most talked-about skills in business, yet the way it is commonly approached has bar"
+        },
+        {
+          "title": "It’s not the chatbot but the access: Why AI agents are the real threat",
+          "url": "https://e27.co/its-not-the-chatbot-but-is-the-access-why-ai-agents-are-the-real-threat-20260409/",
+          "source": "e27.co",
+          "pub_date": "2026-04-09T03:37:51+00:00",
+          "summary": "Every technology boom produces its own version of unauthorised adoption. Cloud had it. SaaS had it. Messaging apps had it. Now, AI agents are doing it at machine speed. That is one of the most explosi"
+        },
+        {
+          "title": "Secondary sales in SEA: The liquidity lifeline when exits are scarce",
+          "url": "https://e27.co/secondary-sales-in-sea-the-liquidity-lifeline-when-exits-are-scarce-20260402/",
+          "source": "e27.co",
+          "pub_date": "2026-04-09T02:40:34+00:00",
+          "summary": "During Southeast Asia’s fundraising boom, oversubscribed rounds were common and later-stage investors often wanted larger allocations than primary rounds could accommodate. Secondary share sales were "
+        },
+        {
+          "title": "Why inclusive AI is the next frontier of product strategy",
+          "url": "https://e27.co/why-inclusive-ai-is-the-next-frontier-of-product-strategy-20260326/",
+          "source": "e27.co",
+          "pub_date": "2026-04-09T02:22:22+00:00",
+          "summary": "Every product is designed for someone. But the real question for those of us building in the AI space is: who is that someone—and who are we quietly leaving behind? In the race to build faster, smarte"
+        },
+        {
+          "title": "AI impersonation is exposing a regulatory gap in real estate platforms",
+          "url": "https://e27.co/ai-impersonation-is-exposing-a-regulatory-gap-in-real-estate-platforms-20260331/",
+          "source": "e27.co",
+          "pub_date": "2026-04-09T02:17:12+00:00",
+          "summary": "Real estate transactions have historically relied on a network of trusted intermediaries &#8212; brokers, lawyers, lenders, home inspectors, and escrow agents &#8212; to ensure that property deals are"
+        },
+        {
+          "title": "The equity gap in strategy: Why the people who know most have the least say",
+          "url": "https://e27.co/equity-gap-in-strategy-20260317/",
+          "source": "e27.co",
+          "pub_date": "2026-04-09T02:14:43+00:00",
+          "summary": "I’ve seen this too many times: the people fixing the business every day are rarely the ones allowed to shape its direction. Most companies don’t have a strategy problem — they have a listening problem"
+        },
+        {
+          "title": "Singapore ranks second globally in AI readiness, leading Asia Pacific",
+          "url": "https://e27.co/singapore-ranks-second-globally-in-ai-readiness-leading-asia-pacific-20250731/",
+          "source": "e27.co",
+          "pub_date": "2026-04-08T12:00:19+00:00",
+          "summary": "Singapore has ranked second globally—and first in Asia Pacific—for overall AI readiness, according to Salesforce’s newly released Global AI Readiness Index. The recognition reinforces Singapore’s long"
+        }
+      ],
+      "cached_at": "2026-04-09T08:05:11.495355"
+    },
+    "emerging": {
+      "articles": [
+        {
+          "title": "Google Workspace Promo Code: Up to 14% Off in 2026",
+          "url": "https://www.wired.com/story/google-workspace-promo-code/",
+          "source": "wired.com",
+          "pub_date": "2026-04-09T05:00:00+00:00",
+          "summary": "Boost your productivity and save with exclusive Google Workspace coupons from WIRED. Get up to 14% off plans for three months, including Starter, Standard, and Plus tiers."
+        },
+        {
+          "title": "20% Off LG Promo Code & Coupons | April 2026",
+          "url": "https://www.wired.com/story/lg-promo-code/",
+          "source": "wired.com",
+          "pub_date": "2026-04-09T05:00:00+00:00",
+          "summary": "Save 20% with an LG promo code today, plus up to $1,000 off appliances, 40% off bestselling TVs and monitors."
+        },
+        {
+          "title": "NZXT Discount Codes: 50% Off in April 2026",
+          "url": "https://www.wired.com/story/nzxt-discount-code/",
+          "source": "wired.com",
+          "pub_date": "2026-04-09T05:00:00+00:00",
+          "summary": "Save 50%, plus up to $250 with NZXT promo codes and discounts."
+        },
+        {
+          "title": "30% Off Canon Promo Codes | April 2026",
+          "url": "https://www.wired.com/story/canon-promo-code/",
+          "source": "wired.com",
+          "pub_date": "2026-04-09T05:00:00+00:00",
+          "summary": "Save an extra 10% or 30% with Canon coupon codes, plus up to $1,600 on cameras, printers, and more this April."
+        },
+        {
+          "title": "Vimeo Promo Codes and Deals: Save Up to 40%",
+          "url": "https://www.wired.com/story/vimeo-promo-code/",
+          "source": "wired.com",
+          "pub_date": "2026-04-09T05:00:00+00:00",
+          "summary": "Enjoy 25% off a membership, 40% off, plus an additional 10% off annual plans, and more deals to save at Vimeo."
+        },
+        {
+          "title": "Medicube Coupon Code: Top Promo Codes and Discounts for April 2026",
+          "url": "https://www.wired.com/story/medicube-coupon-code/",
+          "source": "wired.com",
+          "pub_date": "2026-04-09T05:00:00+00:00",
+          "summary": "Upgrade your K-beauty routine with these active Medicube promo codes. Save on Age-R devices, serums, and masks with student discounts and referral rewards."
+        },
+        {
+          "title": "Top Paramount+ Coupon Codes and Deals for April 2026",
+          "url": "https://www.wired.com/story/paramount-plus-coupon-code/",
+          "source": "wired.com",
+          "pub_date": "2026-04-09T05:00:00+00:00",
+          "summary": "Save on streaming with the latest Paramount+ promo codes and deals, including 50% off subscriptions, free trials, and more."
+        },
+        {
+          "title": "TurboTax Service Codes: 30% Off TurboTax Full Service Expert | April 2026",
+          "url": "https://www.wired.com/story/turbotax-coupon/",
+          "source": "wired.com",
+          "pub_date": "2026-04-09T05:00:00+00:00",
+          "summary": "Tax season doesn’t have to be stressful. Score 30% off full service expert on federal tax filings and more exclusive TurboTax discount codes on WIRED."
+        },
+        {
+          "title": "The Moon is already on Google Maps—did Artemis II really tell us anything new?",
+          "url": "https://arstechnica.com/space/2026/04/the-moon-is-already-on-google-maps-did-artemis-ii-really-tell-us-anything-new/",
+          "source": "arstechnica.com",
+          "pub_date": "2026-04-09T03:44:24+00:00",
+          "summary": "\"I think the biggest value here is the PR. I mean, it's getting the public excited.\""
+        },
+        {
+          "title": "Trump admin makes sweeping request for medical records of federal workers",
+          "url": "https://arstechnica.com/health/2026/04/trump-admin-seeks-medical-records-of-federal-workers-for-vague-reasons/",
+          "source": "arstechnica.com",
+          "pub_date": "2026-04-08T22:00:11+00:00",
+          "summary": "The unprecedented proposal would give the Trump admin access to doctors' notes."
+        },
+        {
+          "title": "LinkedIn scanning users' browser extensions sparks controversy and two lawsuits",
+          "url": "https://arstechnica.com/tech-policy/2026/04/linkedin-scanning-users-browser-extensions-sparks-controversy-and-two-lawsuits/",
+          "source": "arstechnica.com",
+          "pub_date": "2026-04-08T21:08:06+00:00",
+          "summary": "LinkedIn says claims fabricated by extension maker suspended for scraping data."
+        },
+        {
+          "title": "Iran-linked hackers disrupt operations at US critical infrastructure sites",
+          "url": "https://arstechnica.com/security/2026/04/iran-linked-hackers-disrupt-operations-at-us-critical-infrastructure-sites/",
+          "source": "arstechnica.com",
+          "pub_date": "2026-04-08T20:49:11+00:00",
+          "summary": "As the US and Israel's war has ramped up, so too have hacks on US industrial sites."
+        },
+        {
+          "title": "Meta's Superintelligence Lab unveils its first public model, Muse Spark",
+          "url": "https://arstechnica.com/ai/2026/04/metas-superintelligence-lab-unveils-its-first-public-model-muse-spark/",
+          "source": "arstechnica.com",
+          "pub_date": "2026-04-08T19:59:10+00:00",
+          "summary": "Meta touts strong benchmarks but admits \"performance gaps\" in agentic and coding systems."
+        },
+        {
+          "title": "How our digital devices are putting our right to privacy at risk",
+          "url": "https://arstechnica.com/culture/2026/04/how-our-digital-devices-are-putting-our-right-to-privacy-at-risk/",
+          "source": "arstechnica.com",
+          "pub_date": "2026-04-08T19:17:30+00:00",
+          "summary": "Law professor Andrew Guthrie Ferguson chats with Ars about his new book, Your Data Will Be Used Against You."
+        },
+        {
+          "title": "Motorola suddenly raises budget phone prices up to 50%—you can probably thank AI",
+          "url": "https://arstechnica.com/gadgets/2026/04/motorolas-budget-phones-are-now-up-to-50-more-expensive-as-memory-shortage-drags-on/",
+          "source": "arstechnica.com",
+          "pub_date": "2026-04-08T18:39:08+00:00",
+          "summary": "Motorola's budget phones are much less budget-friendly today."
+        },
+        {
+          "title": "To beat Altman in court, Musk offers to give all damages to OpenAI nonprofit",
+          "url": "https://arstechnica.com/tech-policy/2026/04/to-beat-altman-in-court-musk-offers-to-give-all-damages-to-open-ai-nonprofit/",
+          "source": "arstechnica.com",
+          "pub_date": "2026-04-08T17:37:06+00:00",
+          "summary": "Musk won’t seek a “single dollar” in OpenAI suit after asking to pocket up to $134 billion."
+        }
+      ],
+      "cached_at": "2026-04-09T08:05:11.495355"
+    },
+    "sector_heatmap": [
+      {
+        "name": "AI / ML",
+        "signals": 33,
+        "sentiment": "bullish"
+      },
+      {
+        "name": "Climate / Clean",
+        "signals": 17,
+        "sentiment": "bullish"
+      },
+      {
+        "name": "SaaS / B2B",
+        "signals": 2,
+        "sentiment": "neutral"
+      },
+      {
+        "name": "Consumer / D2C",
+        "signals": 2,
+        "sentiment": "neutral"
+      },
+      {
+        "name": "Fintech",
+        "signals": 1,
+        "sentiment": "neutral"
+      },
+      {
+        "name": "Logistics",
+        "signals": 1,
+        "sentiment": "neutral"
+      },
+      {
+        "name": "Healthtech",
+        "signals": 0,
+        "sentiment": "quiet"
+      },
+      {
+        "name": "Edtech",
+        "signals": 0,
+        "sentiment": "quiet"
+      },
+      {
+        "name": "Deep Tech",
+        "signals": 0,
+        "sentiment": "quiet"
+      }
+    ]
+  }
 }
