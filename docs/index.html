@@ -1668,88 +1668,71 @@ function openPatModal(onSave){
   input.onkeydown=e=>{if(e.key==='Enter')save();if(e.key==='Escape')cancel()};
 }
 
+// ── Run Pipeline — calls backend API directly (no GitHub PAT needed) ─────────
 async function triggerGHRun(){
-  const token=getGHToken();
-  if(!token){
-    const btn=document.getElementById('run-btn');
-    btn.disabled=true;
-    openPatModal(t=>{btn.disabled=false;_doRun(t)});
-    return;
-  }
-  _doRun(token);
-}
-
-async function _doRun(token){
-  const days=document.getElementById('days-select').value;
-  const btn=document.getElementById('run-btn');
-  const dot=document.getElementById('status-dot');
-  btn.textContent='Starting…';btn.disabled=true;
-  dot.className='dot running';
-  document.getElementById('status-text').textContent='Triggering pipeline…';
+  const btn  = document.getElementById('run-btn');
+  const dot  = document.getElementById('status-dot');
+  const statusText = document.getElementById('status-text');
+  btn.textContent = 'Starting…'; btn.disabled = true;
+  dot.className = 'dot running';
+  statusText.textContent = 'Triggering pipeline…';
   try{
-    const r=await fetch(`https://api.github.com/repos/${GH_REPO}/actions/workflows/${GH_WORKFLOW}/dispatches`,{
-      method:'POST',
-      headers:{Authorization:`Bearer ${token}`,Accept:'application/vnd.github+json','Content-Type':'application/json','X-GitHub-Api-Version':'2022-11-28'},
-      body:JSON.stringify({ref:'main',inputs:{days_back:days,skip_headcount:'true'}})
-    });
-    if(r.status===204){
-      toast(`Pipeline started — scanning last ${days} days…`);
-      btn.textContent=`Running (${days}d)…`;
-      document.getElementById('status-text').textContent='Pipeline running…';
-      setTimeout(()=>pollGHRun(token),8000);
-    }else if(r.status===401||r.status===403){
-      localStorage.removeItem('gh_pat');
-      toast('Invalid PAT — please enter a new one');
-      resetRunBtn();
-      openPatModal(t=>_doRun(t));
-    }else{
-      const err=await r.json().catch(()=>({}));
-      alert('GitHub error: '+(err.message||r.status));
+    await _apiReadyPromise;
+    const r = await fetch(API('/api/run-pipeline'), {method:'POST'});
+    const d = await r.json();
+    if(d.status === 'started'){
+      toast('Pipeline running — News + GDELT + GitHub (~90s)');
+      btn.textContent = 'Running…';
+      statusText.textContent = 'Pipeline running · News + GDELT + GitHub';
+      _pollPipelineStatus();
+    } else if(d.status === 'already_running'){
+      toast('Pipeline already running — please wait');
+      btn.textContent = 'Running…';
+      _pollPipelineStatus();
+    } else {
+      toast('Failed to start pipeline: ' + (d.message || 'unknown error'));
       resetRunBtn();
     }
-  }catch(e){alert('Network error: '+e.message);resetRunBtn()}
+  } catch(e){
+    toast('Backend not reachable — is the server running?');
+    resetRunBtn();
+  }
 }
 
-function pollGHRun(token){
-  let polls=0;
-  const iv=setInterval(async()=>{
+function _pollPipelineStatus(){
+  let polls = 0;
+  const iv = setInterval(async()=>{
     polls++;
-    if(polls>60){clearInterval(iv);resetRunBtn();toast('Timeout — check GitHub Actions tab');return}
+    if(polls > 40){ clearInterval(iv); resetRunBtn(); return; }
     try{
-      const r=await fetch(`https://api.github.com/repos/${GH_REPO}/actions/runs?per_page=1`,{
-        headers:{Authorization:`Bearer ${token}`,Accept:'application/vnd.github+json'}
-      });
-      if(!r.ok) return;
-      const d=await r.json();
-      const run=d.workflow_runs?.[0];
-      if(!run) return;
-      const btn=document.getElementById('run-btn');
-      const statusText=document.getElementById('status-text');
-      if(run.status==='completed'){
+      const r = await fetch(API('/api/pipeline-status'));
+      const d = await r.json();
+      const btn = document.getElementById('run-btn');
+      const statusText = document.getElementById('status-text');
+      if(!d.running && d.last_run){
         clearInterval(iv);
-        if(run.conclusion==='success'){
-          btn.textContent='✓ Done';
-          toast('Pipeline complete! Reloading data…');
-          statusText.textContent='Pipeline complete — reloading…';
-          setTimeout(()=>{loadData();resetRunBtn()},2000);
-        }else{
-          toast(`Pipeline ${run.conclusion} — check Actions tab`);
-          resetRunBtn();
+        if(d.last_result?.error){
+          toast('Pipeline error: ' + d.last_result.error);
+        } else {
+          const n = d.last_result?.persons_found ?? 0;
+          toast(`Pipeline complete — ${n} founders found! Reloading…`);
+          statusText.textContent = `Complete · ${n} founders`;
+          setTimeout(()=>{ loadData(); resetRunBtn(); }, 1500);
+          return;
         }
-      }else{
-        const elapsed=Math.round((Date.now()-new Date(run.created_at))/60000);
-        btn.textContent=`Running… ${elapsed}m`;
-        statusText.textContent=`Pipeline running · ${elapsed}m elapsed`;
+        resetRunBtn();
+      } else if(d.running){
+        btn.textContent = `Running… ${polls * 5}s`;
       }
-    }catch(e){}
-  },15000);
+    } catch(e){}
+  }, 5000);
 }
 
 function resetRunBtn(){
-  const btn=document.getElementById('run-btn');
-  btn.textContent='▶ Run Pipeline';btn.disabled=false;
-  document.getElementById('status-dot').className='dot ok';
-  if(data.generated_at) updateRunStatus(data.generated_at);
+  const btn = document.getElementById('run-btn');
+  btn.textContent = '▶ Run Pipeline'; btn.disabled = false;
+  document.getElementById('status-dot').className = 'dot ok';
+  if(data && data.generated_at) updateRunStatus(data.generated_at);
 }
 
 // ══════════════════════════════════════════════════════════════

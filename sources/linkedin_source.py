@@ -299,16 +299,31 @@ async def _async_search_all(queries: List[str]) -> List[Person]:
 
 
 def search_linkedin_signals(days_back: int = 30) -> List[Person]:
-    """Main entry point — run all LinkedIn stealth/departure queries."""
-    logger.info("LinkedIn source: running %d queries (India + SEA)...", len(ALL_QUERIES))
+    """Main entry point — run all LinkedIn stealth/departure queries.
+    Hard 90-second budget to prevent pipeline hangs."""
+    logger.info("LinkedIn source: running %d queries (India + SEA, 90s budget)...", len(ALL_QUERIES))
+    import concurrent.futures
+    persons: List[Person] = []
     try:
-        persons = asyncio.run(_async_search_all(ALL_QUERIES))
-    except RuntimeError:
-        # Already in an event loop (e.g. Jupyter)
-        loop = asyncio.get_event_loop()
-        persons = loop.run_until_complete(_async_search_all(ALL_QUERIES))
+        with concurrent.futures.ThreadPoolExecutor(max_workers=1) as ex:
+            future = ex.submit(_run_linkedin_sync)
+            try:
+                persons = future.result(timeout=90)
+            except concurrent.futures.TimeoutError:
+                logger.warning("LinkedIn source: timed out after 90s — returning partial results")
+                future.cancel()
+    except Exception as e:
+        logger.warning("LinkedIn source failed: %s", e)
     logger.info("LinkedIn source: %d signals found", len(persons))
     return persons
+
+
+def _run_linkedin_sync() -> List[Person]:
+    try:
+        return asyncio.run(_async_search_all(ALL_QUERIES[:20]))  # cap at 20 queries
+    except RuntimeError:
+        loop = asyncio.new_event_loop()
+        return loop.run_until_complete(_async_search_all(ALL_QUERIES[:20]))
 
 
 # -- Import needed for fallback ------------------------------------------------

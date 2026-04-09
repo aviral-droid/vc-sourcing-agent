@@ -244,19 +244,21 @@ _SENIOR_TITLE_KEYWORDS = {
 }
 
 _SIGNAL_SCORES = {
-    "exec_departure":       18,
-    "company_registration": 15,
-    "stealth_founder":      15,
-    "second_time_founder":  20,
-    "funding_announcement": 12,
-    "twitter_announce":     10,
-    "linkedin_headline":     8,
-    "github_signal":         7,
-    "headcount_change":      7,
-    "news_mention":          5,
-    "registry":             13,
-    "mca_registration":     15,
-    "acra_registration":    15,
+    "exec_departure":         18,
+    "executive_departure":    18,  # alias used by news_source
+    "company_registration":   15,
+    "stealth_founder":        15,
+    "second_time_founder":    20,
+    "funding_announcement":   12,
+    "funding_news":           12,  # alias used by news_source
+    "twitter_announce":       10,
+    "linkedin_headline":       8,
+    "github_signal":           7,
+    "headcount_change":        7,
+    "news_mention":            5,
+    "registry":               13,
+    "mca_registration":       15,
+    "acra_registration":      15,
 }
 
 _SECTOR_KEYWORDS = {
@@ -323,7 +325,7 @@ def _rule_based_score(person: Person) -> dict:
     Deterministic rule-based scoring. Requires zero API keys.
     Returns same dict shape as LLM response.
     """
-    score = 25  # base
+    score = 22  # base
 
     # ── Geography check ────────────────────────────────────────────────────────
     geo = _detect_geography(person)
@@ -333,6 +335,8 @@ def _rule_based_score(person: Person) -> dict:
         # Check signals for location hints
         sig_text = " ".join(s.description for s in person.signals).lower()
         in_mandate = any(k in sig_text for k in _INDIA_SEA_KEYWORDS)
+    if in_mandate:
+        score += 8  # geo-confirmed India/SEA bonus
     _blank_loc = not loc_text or loc_text in ("unknown", "n/a", "-", "none")
     if not in_mandate and not _blank_loc:
         # Location is set AND it's clearly outside mandate — hard cap at 5
@@ -567,20 +571,30 @@ def score_person(person: Person) -> None:
 
 
 def score_all(persons: List[Person]) -> List[Person]:
-    """Score all persons, filter by threshold, sort by score desc."""
+    """Score all persons in parallel, filter by threshold, sort by score desc."""
+    from concurrent.futures import ThreadPoolExecutor, as_completed
     threshold = max(config.MIN_SCORE_THRESHOLD, 30)
     scored = []
 
-    for i, person in enumerate(persons):
+    def _score_one(person):
         try:
             score_person(person)
-            if person.score >= threshold:
-                scored.append(person)
-            if i > 0 and i % 10 == 0:
-                logger.info("  Scored %d/%d persons…", i, len(persons))
-            time.sleep(0.1)
+            return person
         except Exception as e:
             logger.warning("Scoring error for %s: %s", person.name, e)
+            return person
+
+    # Use up to 4 parallel threads — Groq allows ~30 RPM so 4 threads = ~15 RPM safe
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        futures = {pool.submit(_score_one, p): p for p in persons}
+        done = 0
+        for fut in as_completed(futures):
+            done += 1
+            person = fut.result()
+            if person.score >= threshold:
+                scored.append(person)
+            if done % 10 == 0:
+                logger.info("  Scored %d/%d persons…", done, len(persons))
 
     scored.sort(key=lambda p: p.score, reverse=True)
     logger.info("Scored %d persons, %d above threshold %d", len(persons), len(scored), threshold)

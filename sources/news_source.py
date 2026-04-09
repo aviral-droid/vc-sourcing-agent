@@ -21,6 +21,7 @@ from typing import List, Optional
 from urllib.parse import quote_plus
 
 import feedparser
+import json
 
 import config
 from models import Person, Signal
@@ -126,56 +127,92 @@ def _is_relevant(text: str) -> bool:
 
 def _extract_name(title: str, summary: str) -> str:
     """
-    Best-effort extraction of a person's name from a news headline.
-    Tries several regex patterns and returns the best match.
+    Extract a person's name from a news headline or summary.
+    Uses targeted patterns requiring name + title/action context.
     """
-    text = f"{title} {summary}"
+    # Words that look like names but are noise (stop words, common nouns, verbs)
+    _NOISE = {
+        "india", "startup", "tech", "digital", "new", "former", "global",
+        "group", "corp", "fund", "venture", "capital", "growth", "series",
+        "round", "company", "platform", "network", "world", "market",
+        "to", "as", "in", "of", "by", "with", "for", "from", "the", "a", "an",
+        "is", "are", "was", "has", "had", "have", "at", "on", "up", "its", "and",
+        "mn", "cr", "bn", "usd", "inr", "raise", "raises", "bags", "bags",
+        "scale", "advance", "launch", "launches", "backs", "bets",
+        "indian", "chinese", "singapore", "indonesian", "vietnamese",
+        "steps", "projects", "builds", "building", "now", "just", "exclusive",
+        "meet", "how", "why", "what", "when", "who", "where", "this", "that",
+        "undone", "crisis", "report", "tracker", "inside", "big", "top",
+        "deal", "blinkit", "checks", "takes",
+    }
+    _TITLES = (r"(?:VP|Vice President|Director|Head|CEO|CTO|COO|CFO|CPO|CRO|"
+               r"MD|GM|President|Partner|Founder|Co-Founder|Managing Director|"
+               r"General Partner|Chief\s+\w+)")
+    _action = (r"(?:leaves?|quits?|steps\s+down|steps\s+aside|resigns?|departs?|"
+               r"exits?|launches?|co-?founds?|founded|joins\s+as|announces?|"
+               r"appointed|named\s+as|promoted\s+to)")
 
-    # Pattern 1: "First Last leaves/quits/steps/joins/launches..."
-    # e.g. "Arjun Mehta leaves Razorpay to start new fintech"
-    action_re = (
-        r"(?:leaves?|quits?|steps\s+down|steps\s+aside|resigns?|departs?|"
-        r"exits?|launches?|co-?founds?|founded|joins\s+as|announces?|raises?)"
-    )
-    m = re.match(rf"^([A-Z][a-z]+(?:\s+[A-Z][a-z]+){{1,3}})\s+{action_re}", title)
-    if m:
-        name = m.group(1).strip()
-        if 2 <= len(name.split()) <= 4 and not any(
-            w in name.lower() for w in ("india", "startup", "tech", "digital", "new", "former")
-        ):
-            return name
+    def _ok(name: str) -> bool:
+        parts = name.split()
+        if not (2 <= len(parts) <= 4):
+            return False
+        if any(w.lower() in _NOISE for w in parts):
+            return False
+        # Each part must start with uppercase and have at least 2 chars
+        if not all(len(p) >= 2 and p[0].isupper() and p[1:].islower() for p in parts):
+            return False
+        return True
 
-    # Pattern 2: "Former/Ex-Company VP/Director Name"
-    # e.g. "Former Swiggy VP Priya Nair raises seed"
+    # P1: "First Last [action]..." at start of title
+    m = re.match(rf"^([A-Z][a-z]+(?:\s+[A-Z][a-z]+){{1,3}})\s+{_action}", title)
+    if m and _ok(m.group(1)):
+        return m.group(1).strip()
+
+    # P2: "Former [Company] Title Name" — "Former Swiggy VP Priya Nair..."
     m = re.search(
-        r"(?:Former|Ex-\w+)\s+(?:VP|Vice President|Director|Head|CEO|CTO|COO|"
-        r"MD|GM|President|Partner|Founder)\s+([A-Z][a-z]+\s+[A-Z][a-z]+)",
-        title,
-    )
-    if m:
+        rf"(?:Former|Ex-\w+)\s+(?:\w+\s+)?{_TITLES}\s+([A-Z][a-z]+(?:\s+[A-Z][a-z]+){{1,2}})",
+        title)
+    if m and _ok(m.group(1)):
         return m.group(1)
 
-    # Pattern 3: "Name, [title]..." at start of headline
-    # e.g. "Kunal Shah, CEO of CRED, announces..."
-    m = re.match(
-        r"^([A-Z][a-z]+\s+[A-Z][a-z]+),\s+(?:co-?founder|CEO|founder|VP|director|head)",
-        title,
-        re.IGNORECASE,
-    )
-    if m:
+    # P3: "Name, Title" — handles "Exclusive: Name, CEO..." and "Name, CEO..."
+    clean = re.sub(r'^[A-Z][a-z]+:\s*', '', title)  # strip "Exclusive: " etc
+    m = re.search(
+        rf"([A-Z][a-z]+(?:\s+[A-Z][a-z]+){{1,2}}),\s+(?:the\s+|a\s+)?{_TITLES}",
+        clean, re.IGNORECASE)
+    if m and _ok(m.group(1)):
         return m.group(1)
 
-    # Pattern 4: "[Name] of [Company]" in middle of title
-    m = re.search(r"\b([A-Z][a-z]+ [A-Z][a-z]+) of [A-Z]\w+", title)
-    if m:
-        candidate = m.group(1)
-        if not any(w in candidate.lower() for w in ("founder", "head", "india", "asia")):
-            return candidate
-
-    # Pattern 5: Title has "co-founder" immediately after a name
+    # P4: "Name, co-founder" anywhere
     m = re.search(r"([A-Z][a-z]+ [A-Z][a-z]+),?\s+co-?founder", title, re.IGNORECASE)
-    if m:
+    if m and _ok(m.group(1)):
         return m.group(1)
+
+    # P5: "led by / backed by / founded by Name" — search title & summary separately
+    _combined = title + ". " + summary  # use ". " separator to avoid cross-boundary matches
+    m = re.search(
+        r"(?:led by|backed by|founded by|started by|launched by|co-founded by)\s+"
+        r"([A-Z][a-z]+ [A-Z][a-z]+)",
+        _combined, re.IGNORECASE)
+    if m and _ok(m.group(1)):
+        return m.group(1)
+
+    # P6: "Name of Company" — "Priya Nair of Swiggy..."
+    m = re.search(r"\b([A-Z][a-z]+ [A-Z][a-z]+) of [A-Z][A-Za-z]+", title)
+    if m and _ok(m.group(1)):
+        return m.group(1)
+
+    # P7: Name in summary with title context — "Arjun Mehta, CEO, has..."
+    m = re.search(
+        rf"([A-Z][a-z]+(?:\s+[A-Z][a-z]+){{1,2}}),\s+(?:a\s+)?(?:the\s+)?{_TITLES}",
+        summary, re.IGNORECASE)
+    if m and _ok(m.group(1)):
+        return m.group(1)
+
+    # P8: Name + action in summary
+    m = re.match(rf"([A-Z][a-z]+(?:\s+[A-Z][a-z]+){{1,2}})\s+{_action}", summary)
+    if m and _ok(m.group(1)):
+        return m.group(1).strip()
 
     return "Unknown"
 
@@ -222,6 +259,9 @@ def _extract_person_from_snippet(
         signal_type = "executive_departure"
 
     name = _extract_name(title, summary)
+    # Sanity-check: if name looks like an organisation, reset
+    if _is_org_name(name):
+        name = "Unknown"
     prev_company = _extract_company(title, summary)
     location = _extract_location(title, summary)
 
@@ -244,6 +284,7 @@ def _extract_person_from_snippet(
 
 def _collect_rss(days_back: int) -> List[Person]:
     persons: List[Person] = []
+    pending_unknown: List[dict] = []
     cutoff = datetime.utcnow() - timedelta(days=days_back)
 
     for source_name, feed_url in RSS_FEEDS.items():
@@ -258,16 +299,130 @@ def _collect_rss(days_back: int) -> List[Person]:
                 link = getattr(entry, "link", "")
                 p = _extract_person_from_snippet(title, summary, link, source_name)
                 if p:
-                    persons.append(p)
+                    if p.name == "Unknown":
+                        pending_unknown.append({"title": title, "url": link, "person": p})
+                    else:
+                        persons.append(p)
         except Exception as e:
             logger.warning("RSS feed error [%s]: %s", source_name, e)
+
+    # Batch Groq extraction for unknown RSS entries
+    if pending_unknown:
+        groq_names = _groq_extract_names_batch(pending_unknown[:20])
+        for item in pending_unknown:
+            p = item["person"]
+            n = groq_names.get(item["url"], "Unknown")
+            if n and n != "Unknown" and not _is_org_name(n):
+                p.name = n
+            persons.append(p)  # include all RSS signals, even unnamed
 
     logger.info("RSS feeds: %d relevant signals", len(persons))
     return persons
 
 
+_ORG_SUFFIXES = {
+    "invest", "ventures", "capital", "fund", "partners", "group", "corp",
+    "inc", "ltd", "limited", "holdings", "technologies", "tech", "labs",
+    "systems", "solutions", "services", "platform", "networks",
+}
+
+def _is_org_name(name: str) -> bool:
+    """Return True if extracted 'name' looks like an organization rather than a person."""
+    if not name or name == "Unknown":
+        return False
+    parts = name.lower().split()
+    # Org if any word is a known org suffix
+    if any(p.rstrip("s,.'") in _ORG_SUFFIXES for p in parts):
+        return True
+    # Org if more than 4 words (no person has 5+ names)
+    if len(parts) > 4:
+        return True
+    return False
+
+
+def _fetch_article_text(url: str, timeout: int = 7) -> str:
+    """Fetch first ~800 chars of article body for deeper name extraction.
+    Returns empty string on any error (network, paywall, timeout).
+    """
+    try:
+        import requests
+        from bs4 import BeautifulSoup
+        headers = {
+            "User-Agent": (
+                "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/122.0 Safari/537.36"
+            )
+        }
+        r = requests.get(url, timeout=timeout, headers=headers, allow_redirects=True)
+        soup = BeautifulSoup(r.text, "lxml")
+        # Remove noise
+        for tag in soup.find_all(["script", "style", "nav", "header", "footer"]):
+            tag.decompose()
+        # Extract first substantial paragraphs
+        chunks = []
+        for p in soup.find_all("p"):
+            text = p.get_text(" ", strip=True)
+            if len(text) > 40:
+                chunks.append(text)
+                if sum(len(c) for c in chunks) > 800:
+                    break
+        return " ".join(chunks)[:800]
+    except Exception:
+        return ""
+
+
+def _groq_extract_names_batch(entries: List[dict]) -> dict:
+    """Ask Groq to identify founder/executive names from article headlines.
+    entries: list of {"title": str, "url": str}
+    Returns: {url: name_or_unknown}
+    """
+    try:
+        import config as _cfg
+        if not _cfg.GROQ_API_KEY:
+            return {}
+        from groq import Groq
+        client = Groq(api_key=_cfg.GROQ_API_KEY)
+
+        headlines = "\n".join(
+            f"{i+1}. {e['title'][:120]}" for i, e in enumerate(entries)
+        )
+        prompt = (
+            "You are analyzing Indian/Southeast Asian tech startup news headlines.\n"
+            "For each numbered headline below, identify the FULL NAME of the individual "
+            "founder/executive being discussed (the person who left, founded something, or raised money).\n"
+            "If the headline does not mention or imply a specific named person, return 'Unknown'.\n"
+            "Use your knowledge of Indian and SEA tech ecosystem executives.\n\n"
+            f"Headlines:\n{headlines}\n\n"
+            "Return ONLY a JSON array of strings, one name per headline, in the same order. "
+            'Example: ["Ankit Agarwal", "Unknown", "Dale Vaz"]'
+        )
+        resp = client.chat.completions.create(
+            model="llama-3.3-70b-versatile",
+            messages=[{"role": "user", "content": prompt}],
+            max_tokens=300,
+            temperature=0.1,
+        )
+        raw = resp.choices[0].message.content.strip()
+        m = re.search(r"\[.*\]", raw, re.DOTALL)
+        if not m:
+            return {}
+        names = json.loads(m.group(0))
+        result = {}
+        for i, e in enumerate(entries):
+            if i < len(names):
+                n = str(names[i]).strip()
+                result[e["url"]] = n if n and n.lower() != "unknown" else "Unknown"
+        return result
+    except Exception as ex:
+        logger.debug("Groq batch name extraction error: %s", ex)
+        return {}
+
+
 def _collect_google_news(days_back: int) -> List[Person]:
     persons: List[Person] = []
+    # Collect all relevant entries first, then do batch name extraction
+    pending_unknown: List[dict] = []  # entries where name == "Unknown"
 
     for query in GOOGLE_NEWS_QUERIES:
         url = f"https://news.google.com/rss/search?q={quote_plus(query)}&hl=en-IN&gl=IN&ceid=IN:en"
@@ -283,10 +438,49 @@ def _collect_google_news(days_back: int) -> List[Person]:
                 link = getattr(entry, "link", "")
                 p = _extract_person_from_snippet(title, summary, link, "Google News")
                 if p:
-                    persons.append(p)
-            time.sleep(0.5)
+                    if p.name == "Unknown":
+                        pending_unknown.append({"title": title, "url": link, "person": p})
+                    else:
+                        persons.append(p)
+            time.sleep(0.3)
         except Exception as e:
             logger.warning("Google News error [%s]: %s", query[:40], e)
+
+    # ── Batch Groq name extraction for unknown persons ─────────────────────────
+    if pending_unknown:
+        logger.info("Groq name extraction: %d unknown Google News entries…", len(pending_unknown))
+        # Batch Groq call for first 30 entries
+        batch = pending_unknown[:30]
+        groq_names = _groq_extract_names_batch(batch)
+
+        # Apply Groq names and add ALL pending entries to persons list
+        still_need_article = []
+        for item in pending_unknown:
+            p = item["person"]
+            url = item["url"]
+            groq_name = groq_names.get(url, "Unknown")
+            if groq_name and groq_name != "Unknown" and not _is_org_name(groq_name):
+                p.name = groq_name
+                persons.append(p)
+            else:
+                still_need_article.append(item)
+
+        # For top 8 still-unknown entries, try fetching article content
+        for item in still_need_article[:8]:
+            try:
+                article_text = _fetch_article_text(item["url"])
+                if article_text:
+                    name = _extract_name(item["title"] + " " + article_text, article_text)
+                    if name and name != "Unknown":
+                        item["person"].name = name
+            except Exception:
+                pass
+            # Add regardless — even unnamed signals are useful for scoring
+            persons.append(item["person"])
+
+        # Add remaining entries that we didn't try article fetching for
+        for item in still_need_article[8:]:
+            persons.append(item["person"])
 
     logger.info("Google News: %d relevant signals", len(persons))
     return persons

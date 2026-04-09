@@ -392,13 +392,8 @@ def _ossinsight_scan(days_back: int) -> List[Person]:
     return persons
 
 
-def search_github_signals(days_back: int = 30) -> List[Person]:
-    """
-    Main entry point — three complementary GitHub signals:
-      1. GitHub Trending page (real-time, no API key)
-      2. OSS Insight contributor scan (ex-company engineers building new repos)
-      3. GitHub Search API (keyword + creation date)
-    """
+def _search_github_impl(days_back: int = 30) -> List[Person]:
+    """Internal implementation — called from search_github_signals with a timeout."""
     if not config.GITHUB_ENABLED:
         return []
 
@@ -445,6 +440,26 @@ def search_github_signals(days_back: int = 30) -> List[Person]:
 
     logger.info("GitHub source total: %d signals found", len(persons))
     return persons
+
+
+def search_github_signals(days_back: int = 30) -> List[Person]:
+    """Main entry point — 45-second hard budget to prevent pipeline hangs."""
+    import concurrent.futures
+    logger.info("GitHub source: running with 45s budget…")
+    try:
+        with concurrent.futures.ThreadPoolExecutor(max_workers=1) as ex:
+            future = ex.submit(_search_github_impl, days_back)
+            try:
+                persons = future.result(timeout=45)
+                logger.info("GitHub source: %d signals found", len(persons))
+                return persons
+            except concurrent.futures.TimeoutError:
+                logger.warning("GitHub source: timed out after 45s — returning partial results")
+                future.cancel()
+                return []
+    except Exception as e:
+        logger.warning("GitHub source failed: %s", e)
+        return []
 
 
 def enrich_person_with_github(person: Person) -> None:

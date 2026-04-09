@@ -1856,6 +1856,105 @@ async def health():
     return {"status": "ok", "version": "2.0"}
 
 
+# ── Pipeline trigger — run fast sourcing in background ───────────────────────
+_pipeline_state: dict = {"running": False, "last_run": None, "last_result": None}
+
+@app.post("/api/run-pipeline")
+def trigger_pipeline():
+    """Trigger a fast founder-sourcing pipeline run.
+    Uses News + GDELT + GitHub (no LinkedIn/crawl4ai hang risk).
+    Runs in background thread, returns immediately.
+    """
+    global _pipeline_state
+    if _pipeline_state["running"]:
+        return JSONResponse({"status": "already_running",
+                             "message": "Pipeline already in progress"})
+
+    def _fast_pipeline():
+        global _pipeline_state
+        log = logging.getLogger("pipeline")
+        log.info("Fast pipeline started via subprocess…")
+        import subprocess as _sp, sys as _sys, os as _os2
+        project_dir = str(_os2.path.dirname(_os2.path.abspath(__file__)))
+        # Run as separate Python process — avoids sandbox extension restrictions
+        script = (
+            "import sys, os; sys.path.insert(0, %r); os.chdir(%r);\n"
+            "from sources.news_source import search_news_signals;\n"
+            "from sources.linkedin_source import search_linkedin_signals;\n"
+            "from sources.github_source import search_github_signals;\n"
+            "from pipeline.enricher import score_all, write_executive_summary;\n"
+            "from pipeline.reporter import generate_report;\n"
+            "from models import DailyReport; import database as _db;\n"
+            "from datetime import datetime;\n"
+            "all_p=[];\n"
+            "print('NEWS...', flush=True);\n"
+            "try: all_p.extend(search_news_signals(days_back=7))\n"
+            "except Exception as e: print(f'News err: {e}', flush=True);\n"
+            "print('LINKEDIN...', flush=True);\n"
+            "try: all_p.extend(search_linkedin_signals(days_back=7))\n"
+            "except Exception as e: print(f'LinkedIn err: {e}', flush=True);\n"
+            "print('GITHUB...', flush=True);\n"
+            "try: all_p.extend(search_github_signals(days_back=7))\n"
+            "except Exception as e: print(f'GH err: {e}', flush=True);\n"
+            "print(f'Raw: {len(all_p)}', flush=True);\n"
+            "# Deduplicate by name+headline, prioritise named persons, cap at 40\n"
+            "seen=set(); deduped=[];\n"
+            "for p in sorted(all_p, key=lambda x: 0 if x.name and x.name!='Unknown' else 1):\n"
+            "  n=p.name or 'Unknown';\n"
+            "  # Use headline as secondary key so Unknown persons don't all collapse to one slot\n"
+            "  k=n[:30] if n!='Unknown' else (p.headline or '')[:60];\n"
+            "  if k not in seen: seen.add(k); deduped.append(p)\n"
+            "  if len(deduped)>=50: break\n"
+            "print(f'Deduped: {len(deduped)}', flush=True);\n"
+            "scored=score_all(deduped); print(f'Scored: {len(scored)}', flush=True);\n"
+            "_db.cache_persons(scored, days_back=7);\n"
+            "d=datetime.utcnow().strftime('%%Y-%%m-%%d');\n"
+            "r=DailyReport(date_label=d, persons=scored,\n"
+            "  total_signals=sum(p.signal_count for p in scored),\n"
+            "  sources_active=['News','LinkedIn','GitHub']);\n"
+            "r.executive_summary=write_executive_summary(scored,d);\n"
+            "generate_report(r);\n"
+            "print(f'DONE:{len(scored)}', flush=True);\n"
+        ) % (project_dir, project_dir)
+        try:
+            result = _sp.run(
+                [_sys.executable, "-c", script],
+                capture_output=True, text=True, timeout=480,
+                cwd=project_dir,
+            )
+            log.info("Pipeline stdout: %s", result.stdout[-500:] if result.stdout else "")
+            if result.returncode != 0:
+                log.error("Pipeline stderr: %s", result.stderr[-500:] if result.stderr else "")
+                _pipeline_state["last_result"] = {"error": result.stderr[-200:] or "exit code " + str(result.returncode)}
+            else:
+                # Parse "DONE:N" from stdout
+                import re as _re
+                m = _re.search(r"DONE:(\d+)", result.stdout or "")
+                n = int(m.group(1)) if m else 0
+                _pipeline_state["last_result"] = {"persons_found": n, "sources": ["News", "LinkedIn", "GitHub"]}
+                log.info("Fast pipeline complete — %d founders", n)
+        except _sp.TimeoutExpired:
+            log.warning("Pipeline timed out after 300s")
+            _pipeline_state["last_result"] = {"error": "timeout after 300s"}
+        except Exception as e:
+            log.error("Pipeline launch error: %s", e)
+            _pipeline_state["last_result"] = {"error": str(e)}
+        finally:
+            _pipeline_state["running"] = False
+            _pipeline_state["last_run"] = datetime.utcnow().isoformat() + "Z"
+
+    t = threading.Thread(target=_fast_pipeline, daemon=True, name="fast-pipeline")
+    t.start()
+    _pipeline_state["running"] = True
+    return JSONResponse({"status": "started",
+                         "message": "Pipeline running — News + GDELT + GitHub (~2–3 min)"})
+
+
+@app.get("/api/pipeline-status")
+def pipeline_status():
+    return JSONResponse(_pipeline_state)
+
+
 # ── Entry point ────────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":

@@ -172,7 +172,7 @@ def _query_gdelt(query: str, timespan_days: int, max_records: int = 100) -> list
     }
     for attempt in range(3):
         try:
-            resp = requests.get(GDELT_BASE, params=params, timeout=20)
+            resp = requests.get(GDELT_BASE, params=params, timeout=8)
             if resp.status_code == 429:
                 logger.debug("GDELT rate-limited (429), sleeping 15s (attempt %d)", attempt + 1)
                 time.sleep(15)
@@ -243,7 +243,7 @@ def search_gdelt_signals(days_back: int = 30) -> List[Person]:
             person.signals.append(signal)
             persons.append(person)
 
-        time.sleep(6)  # GDELT rate limit: 1 req/5s — be safe at 6s
+        time.sleep(2)  # GDELT rate limit — short sleep, fail fast
 
     logger.info("GDELT: %d signals collected", len(persons))
     return persons
