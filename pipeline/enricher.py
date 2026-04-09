@@ -251,6 +251,7 @@ _SIGNAL_SCORES = {
     "second_time_founder":    20,
     "funding_announcement":   12,
     "funding_news":           12,  # alias used by news_source
+    "product_launch":         10,  # Product Hunt launch signal
     "twitter_announce":       10,
     "linkedin_headline":       8,
     "github_signal":           7,

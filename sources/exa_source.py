@@ -93,17 +93,58 @@ EXA_NEURAL_QUERIES: list[dict] = [
 
 # ── Keyword fallback queries (cheaper, uses keyword mode) ────────────────────
 EXA_KEYWORD_QUERIES: list[dict] = [
+    # LinkedIn profile discovery
     {
-        "query": "site:linkedin.com/in ex-Razorpay founder stealth building 2025",
+        "query": "site:linkedin.com/in ex-Razorpay OR ex-Zepto OR ex-PhonePe stealth building",
         "signal_type": "stealth_founder",
         "num_results": 10,
-        "use_autoprompt": False,
     },
     {
-        "query": "site:linkedin.com/in ex-Grab OR ex-Gojek founder stealth 2025",
+        "query": "site:linkedin.com/in ex-Swiggy OR ex-Zomato OR ex-CRED founder stealth",
         "signal_type": "stealth_founder",
         "num_results": 10,
-        "use_autoprompt": False,
+    },
+    {
+        "query": "site:linkedin.com/in ex-Grab OR ex-Gojek OR ex-Sea stealth founder",
+        "signal_type": "stealth_founder",
+        "num_results": 10,
+    },
+    {
+        "query": "site:linkedin.com/in India VP Director stealth building new company 2025",
+        "signal_type": "stealth_founder",
+        "num_results": 10,
+    },
+    # Twitter/X founder announcements
+    {
+        "query": "site:x.com OR site:twitter.com India founder \"building in stealth\" 2025",
+        "signal_type": "stealth_founder",
+        "num_results": 10,
+    },
+    {
+        "query": "site:x.com OR site:twitter.com \"leaving\" \"to build\" India startup founder 2025",
+        "signal_type": "executive_departure",
+        "num_results": 10,
+    },
+    {
+        "query": "site:x.com OR site:twitter.com \"excited to announce\" India \"new startup\" founder 2025",
+        "signal_type": "stealth_founder",
+        "num_results": 10,
+    },
+    {
+        "query": "site:x.com OR site:twitter.com Singapore Indonesia founder stealth startup 2025",
+        "signal_type": "stealth_founder",
+        "num_results": 8,
+    },
+    # MCA / company registry
+    {
+        "query": "site:zaubacorp.com private limited incorporated 2025 technology AI fintech",
+        "signal_type": "company_registration",
+        "num_results": 10,
+    },
+    {
+        "query": "site:tofler.in incorporated 2025 private limited startup India",
+        "signal_type": "company_registration",
+        "num_results": 10,
     },
 ]
 
@@ -207,6 +248,16 @@ def _result_to_person(result, signal_type: str, query: str) -> Optional[Person]:
             slug = re.sub(r"-?[a-z0-9]{6,}$", "", slug_m.group(1))
             name = slug.replace("-", " ").title()
 
+    # Sanity-check: reject org names (company/fund names mistaken for people)
+    _ORG_TERMS = {"invest", "ventures", "capital", "fund", "partners", "group",
+                  "corp", "inc", "ltd", "limited", "holdings", "technologies",
+                  "tech", "labs", "systems", "solutions", "exchange", "aerospace",
+                  "industries", "global", "international", "services", "platform"}
+    if name and name != "Unknown":
+        parts = name.lower().split()
+        if any(p.rstrip("s,.'") in _ORG_TERMS for p in parts) or len(parts) > 4:
+            name = "Unknown"
+
     description = f"[Exa] {title[:200]}"
     if body:
         snippet = body[:200].replace("\n", " ").strip()
@@ -257,7 +308,6 @@ def search_exa_signals(days_back: int = 30) -> List[Person]:
         try:
             kwargs: dict = {
                 "num_results": num_results,
-                "use_autoprompt": True,
                 "type": "neural",
             }
             if domains:
@@ -292,7 +342,6 @@ def search_exa_signals(days_back: int = 30) -> List[Person]:
             results = exa.search(
                 query,
                 num_results=num_results,
-                use_autoprompt=False,
                 type="keyword",
             )
             for r in results.results:

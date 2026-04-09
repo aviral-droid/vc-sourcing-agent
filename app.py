@@ -1880,22 +1880,24 @@ def trigger_pipeline():
         script = (
             "import sys, os; sys.path.insert(0, %r); os.chdir(%r);\n"
             "from sources.news_source import search_news_signals;\n"
-            "from sources.linkedin_source import search_linkedin_signals;\n"
+            "from sources.exa_source import search_exa_signals;\n"
+            "from sources.producthunt_source import search_producthunt_signals;\n"
             "from sources.github_source import search_github_signals;\n"
             "from pipeline.enricher import score_all, write_executive_summary;\n"
             "from pipeline.reporter import generate_report;\n"
             "from models import DailyReport; import database as _db;\n"
             "from datetime import datetime;\n"
-            "all_p=[];\n"
-            "print('NEWS...', flush=True);\n"
-            "try: all_p.extend(search_news_signals(days_back=7))\n"
-            "except Exception as e: print(f'News err: {e}', flush=True);\n"
-            "print('LINKEDIN...', flush=True);\n"
-            "try: all_p.extend(search_linkedin_signals(days_back=7))\n"
-            "except Exception as e: print(f'LinkedIn err: {e}', flush=True);\n"
-            "print('GITHUB...', flush=True);\n"
-            "try: all_p.extend(search_github_signals(days_back=7))\n"
-            "except Exception as e: print(f'GH err: {e}', flush=True);\n"
+            "from concurrent.futures import ThreadPoolExecutor, as_completed;\n"
+            "all_p=[]; src_used=[];\n"
+            "def _src(name, fn, **kw):\n"
+            "  try:\n"
+            "    r=fn(**kw); print(f'{name}: {len(r)}', flush=True); return r\n"
+            "  except Exception as e: print(f'{name} err: {e}', flush=True); return []\n"
+            "fns=[('News',search_news_signals),('Exa',search_exa_signals),"
+            "('PH',search_producthunt_signals),('GH',search_github_signals)];\n"
+            "with ThreadPoolExecutor(max_workers=4) as p:\n"
+            "  fs={p.submit(_src,n,f,days_back=7):(n,f) for n,f in fns};\n"
+            "  [all_p.extend(fu.result() or []) for fu in as_completed(fs)];\n"
             "print(f'Raw: {len(all_p)}', flush=True);\n"
             "# Deduplicate by name+headline, prioritise named persons, cap at 40\n"
             "seen=set(); deduped=[];\n"
@@ -1911,7 +1913,7 @@ def trigger_pipeline():
             "d=datetime.utcnow().strftime('%%Y-%%m-%%d');\n"
             "r=DailyReport(date_label=d, persons=scored,\n"
             "  total_signals=sum(p.signal_count for p in scored),\n"
-            "  sources_active=['News','LinkedIn','GitHub']);\n"
+            "  sources_active=['News','Exa','ProductHunt','GitHub']);\n"
             "r.executive_summary=write_executive_summary(scored,d);\n"
             "generate_report(r);\n"
             "print(f'DONE:{len(scored)}', flush=True);\n"
@@ -1931,7 +1933,7 @@ def trigger_pipeline():
                 import re as _re
                 m = _re.search(r"DONE:(\d+)", result.stdout or "")
                 n = int(m.group(1)) if m else 0
-                _pipeline_state["last_result"] = {"persons_found": n, "sources": ["News", "LinkedIn", "GitHub"]}
+                _pipeline_state["last_result"] = {"persons_found": n, "sources": ["News", "Exa", "ProductHunt", "GitHub"]}
                 log.info("Fast pipeline complete — %d founders", n)
         except _sp.TimeoutExpired:
             log.warning("Pipeline timed out after 300s")
