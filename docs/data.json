@@ -1,47 +1,47 @@
 {
-  "generated_at": "2026-04-09T08:25:04.466021",
+  "generated_at": "2026-04-09T10:30:57.362747",
   "date_label": "2026-04-09",
-  "total_signals": 34,
-  "total_persons": 34,
+  "total_signals": 40,
+  "total_persons": 40,
   "sources_active": [
-    "News",
-    "GitHub"
+    "Product Hunt",
+    "News (RSS + Google News)"
   ],
-  "executive_summary": "Pipeline surfaced 34 founders above threshold on 2026-04-09. 1 flagged for immediate investigation, 5 added to watchlist. Top lead: Unknown (score 53, India, ex-?) — deeptech sector. Rule-based scoring active (LLM quota reset at midnight UTC).",
+  "executive_summary": "Pipeline surfaced 40 founders above threshold on 2026-04-09. 0 flagged for immediate investigation, 7 added to watchlist. Top lead: Unknown (score 48, India, ex-?) — unknown sector. Rule-based scoring active (LLM quota reset at midnight UTC).",
   "persons": [
     {
       "name": "Unknown",
-      "score": 53,
+      "score": 48,
       "action": "watchlist",
       "recommended_action": "watchlist",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
       "location": "India",
-      "sector": "deeptech",
+      "sector": "unknown",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
       "signal_count": 1,
       "signal_types": [
-        "stealth_founder"
+        "executive_departure"
       ],
       "signals": [
         {
           "source": "news",
-          "type": "stealth_founder",
-          "description": "[YourStory] How two Bengaluru brothers are building a GitHub alternative for the AI age from Finland",
-          "url": "https://yourstory.com/2026/04/bengaluru-brothers-building-github-alternative-ai-age-finland"
+          "type": "executive_departure",
+          "description": "[Inc42] What’s Driving Startup Investors’ Shift Towards Domestic LPs?",
+          "url": "https://inc42.com/features/whats-driving-startup-investors-shift-towards-domestic-lps/"
         }
       ],
       "confidence": "low",
       "founder_type": "unknown",
       "key_strengths": [
-        "Active departure / stealth signal"
+        "Signal detected from sourcing pipeline"
       ],
       "risks": [
         "Single signal — needs corroboration",
@@ -77,6 +77,88 @@
           "type": "executive_departure",
           "description": "[Inc42] New Unicorn Unlocked, Policybazaar CEO Quits & More",
           "url": "https://inc42.com/buzz/new-unicorn-unlocked-policybazaar-ceo-quits-more/"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Previous role unclear"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Nadur",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-Nadur, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "executive_departure",
+          "description": "[YourStory] BP Ventures Asia and Middle East Managing Director Sophia Nadur exits",
+          "url": "https://yourstory.com/2026/04/bp-ventures-asia-and-middle-east-managing-director-sophia-nadur-exits"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Previous role unclear"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "saas",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "executive_departure",
+          "description": "[YourStory] Former Delhivery, Naspers execs join Bay Capital as Partners",
+          "url": "https://yourstory.com/2026/04/former-delhivery-naspers-bain-capital-co-founders"
         }
       ],
       "confidence": "low",
@@ -216,18 +298,18 @@
     },
     {
       "name": "Tin Men",
-      "score": 45,
-      "action": "investigate",
-      "recommended_action": "investigate",
+      "score": 42,
+      "action": "pass",
+      "recommended_action": "pass",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
       "location": "Singapore",
-      "sector": "Construction Tech",
+      "sector": "deeptech",
       "geography": "Singapore",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "OnSite has successfully raised a seed round, indicating early traction and investor confidence in their solution for the construction industry. While the founder's background is currently unknown, the funding news itself is a positive signal for a pre-seed/seed stage fund.",
+      "investment_thesis": "Tin Men shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -246,14 +328,14 @@
       "confidence": "low",
       "founder_type": "unknown",
       "key_strengths": [
-        "Secured seed funding"
+        "Signal detected from sourcing pipeline"
       ],
       "risks": [
-        "Founder experience unknown",
-        "Not a second-time founder",
-        "Limited information on founder background"
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Previous role unclear"
       ],
-      "company_url": "https://onsite.sg/"
+      "company_url": ""
     },
     {
       "name": "Unknown",
@@ -323,6 +405,47 @@
           "type": "funding_news",
           "description": "[Inc42] Indian Unicorn Tracker: Funding, Investors, Revenue And More",
           "url": "https://inc42.com/features/indian-unicorn-tracker-funding-investors-revenue-and-more/"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Previous role unclear"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 42,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "funding_news",
+          "description": "[e27] India is slowing down but Southeast Asia is falling behind faster",
+          "url": "https://e27.co/india-is-slowing-down-but-southeast-asia-is-falling-behind-faster-20260409/"
         }
       ],
       "confidence": "low",
@@ -502,7 +625,89 @@
       "company_url": ""
     },
     {
-      "name": "Tarun Mathur",
+      "name": "Rish Agarwal",
+      "score": 40,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "deeptech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Rish Agarwal shows early signals but insufficient data to prioritise at this stage. Signals include product launch.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "product_launch"
+      ],
+      "signals": [
+        {
+          "source": "Product Hunt",
+          "type": "product_launch",
+          "description": "[Product Hunt] Rish Agarwal launched Cutsio: Your entire video library, now searchable and editable by AI\n           \n           \n             Discussion \n            |\n             Link",
+          "url": "https://www.producthunt.com/products/cutsio"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Alekh Landhe",
+      "score": 40,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "deeptech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Alekh Landhe shows early signals but insufficient data to prioritise at this stage. Signals include executive departure.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "executive_departure",
+          "description": "[Google News] Ex-Swiggy CTO’s stock trading app Sahi said to raise up to $80m - Tech in Asia",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPOFJVSEF2TFpEWm9zOG85SnZFY2F3OXI4RXhHWUh0cmV1NTR0bDVFMllrOHkxVGh0Wmxzd1hER1pxUjVwUUloXzY2QktwZUx4aWRNeHBUOEt6cUx5N0hjQ1RCUWktSGZUNS1VSEZ1d0ttZHBTMU9YU1p2X1BZM21tOGIwMDg?oc=5"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
       "score": 40,
       "action": "pass",
       "recommended_action": "pass",
@@ -514,7 +719,7 @@
       "geography": "Unknown",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Tarun Mathur shows early signals but insufficient data to prioritise at this stage. Signals include executive departure.",
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include executive departure.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -528,88 +733,6 @@
           "type": "executive_departure",
           "description": "[Inc42] Tarun Mathur Quits As Policybazaar CEO, Sajja Praveen Chowdary Takes Charge",
           "url": "https://inc42.com/buzz/tarun-mathur-quits-as-policybazaar-ceo-sajja-praveen-chowdary-takes-charge/"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Geography unconfirmed"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Aman Gupta",
-      "score": 40,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "deeptech",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Aman Gupta shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "funding_news"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "funding_news",
-          "description": "[YourStory] boAt co-founder Aman Gupta’s OFF/BEAT raises Rs 100 Cr led by Bessemer Venture Partners",
-          "url": "https://yourstory.com/2026/04/aman-gupta-startup-offbeat-rs-100-crore-bessemer-venture-partners"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Geography unconfirmed"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Devesh Sachdev",
-      "score": 40,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "deeptech",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Devesh Sachdev shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "funding_news"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "funding_news",
-          "description": "[YourStory] GLAAS raises $5M from co-founder Devesh Sachdev",
-          "url": "https://yourstory.com/2026/04/glass-raises-5-million-from-co-founder-devesh-sachdev"
         }
       ],
       "confidence": "low",
@@ -797,6 +920,47 @@
       "previous_title": "",
       "current_company": "",
       "location": "",
+      "sector": "saas",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "funding_news",
+          "description": "[Inc42] Former OYO Executive’s Startup Nava Raises $22 Mn To Build Neocloud Platform",
+          "url": "https://inc42.com/buzz/former-oyo-executives-startup-nava-raises-22-mn-to-build-neocloud-platform/"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 34,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
       "sector": "consumer",
       "geography": "Unknown",
       "experience_years": 0,
@@ -879,7 +1043,7 @@
       "previous_title": "",
       "current_company": "",
       "location": "",
-      "sector": "saas",
+      "sector": "deeptech",
       "geography": "Unknown",
       "experience_years": 0,
       "is_second_time_founder": false,
@@ -895,8 +1059,8 @@
         {
           "source": "news",
           "type": "funding_news",
-          "description": "[Inc42] Former OYO Executive’s Startup Nava Raises $22 Mn To Build Neocloud Platform",
-          "url": "https://inc42.com/buzz/former-oyo-executives-startup-nava-raises-22-mn-to-build-neocloud-platform/"
+          "description": "[Inc42] RoshAi Raises ₹22 Cr To Develop Autonomous Vehicles For Industrial Use",
+          "url": "https://inc42.com/buzz/roshai-raises-%e2%82%b922-cr-to-develop-autonomous-vehicles-for-industrial-use/"
         }
       ],
       "confidence": "low",
@@ -938,47 +1102,6 @@
           "type": "funding_news",
           "description": "[Inc42] [Update] Exclusive: ClayCo Raises ₹35 Cr To Expand Product Portfolio",
           "url": "https://inc42.com/buzz/exclusive-d2c-brand-clayco-raises-%e2%82%b930-cr-from-twenty-nine-capital-partners/"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Geography unconfirmed"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Unknown",
-      "score": 34,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "deeptech",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "funding_news"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "funding_news",
-          "description": "[Inc42] RoshAi Raises ₹22 Cr To Develop Autonomous Vehicles For Industrial Use",
-          "url": "https://inc42.com/buzz/roshai-raises-%e2%82%b922-cr-to-develop-autonomous-vehicles-for-industrial-use/"
         }
       ],
       "confidence": "low",
@@ -1125,47 +1248,6 @@
       "previous_title": "",
       "current_company": "",
       "location": "",
-      "sector": "unknown",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "funding_news"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "funding_news",
-          "description": "[Inc42] Ecoil Bags $2.5 Mn To Turn Waste Cooking Oil Into Biofuel",
-          "url": "https://inc42.com/buzz/ecoil-bags-2-5-mn-to-turn-waste-cooking-oil-into-biofuel/"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Geography unconfirmed"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Unknown",
-      "score": 34,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
       "sector": "deeptech",
       "geography": "Unknown",
       "experience_years": 0,
@@ -1225,6 +1307,47 @@
           "type": "funding_news",
           "description": "[YourStory] Astranova Mobility raises Rs 60 Cr in funding round led by IvyCap Ventures",
           "url": "https://yourstory.com/2026/04/astranova-mobility-raises-rs-60-cr-funding-round-ivycap-ventures"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 34,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "saas",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "funding_news",
+          "description": "[YourStory] Business services platform SILA raises $100M from Permira",
+          "url": "https://yourstory.com/2026/04/business-services-platform-sila-raises-usd-100m-from-permira"
         }
       ],
       "confidence": "low",
@@ -1330,7 +1453,7 @@
       "previous_title": "",
       "current_company": "",
       "location": "",
-      "sector": "saas",
+      "sector": "unknown",
       "geography": "Unknown",
       "experience_years": 0,
       "is_second_time_founder": false,
@@ -1346,8 +1469,8 @@
         {
           "source": "news",
           "type": "funding_news",
-          "description": "[YourStory] Business services platform SILA raises $100M from Permira",
-          "url": "https://yourstory.com/2026/04/business-services-platform-sila-raises-usd-100m-from-permira"
+          "description": "[e27] Ecosystem Roundup: Boom or turning point?",
+          "url": "https://e27.co/ecosystem-roundup-boom-or-turning-point-20260407/"
         }
       ],
       "confidence": "low",
@@ -1402,10 +1525,134 @@
         "Geography unconfirmed"
       ],
       "company_url": ""
+    },
+    {
+      "name": "Sayuj Suresh",
+      "score": 32,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "unknown",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Sayuj Suresh shows early signals but insufficient data to prioritise at this stage. Signals include product launch.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "product_launch"
+      ],
+      "signals": [
+        {
+          "source": "Product Hunt",
+          "type": "product_launch",
+          "description": "[Product Hunt] Sayuj Suresh launched Smuggl: Share your localhost as an invite only link\n           \n           \n             Discussion \n            |\n             Link",
+          "url": "https://www.producthunt.com/products/smuggl"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Gaurav Sharma",
+      "score": 32,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "deeptech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Gaurav Sharma shows early signals but insufficient data to prioritise at this stage. Signals include product launch.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "product_launch"
+      ],
+      "signals": [
+        {
+          "source": "Product Hunt",
+          "type": "product_launch",
+          "description": "[Product Hunt] Gaurav Sharma launched OpenResource: Discover open-source tools with an AI chat assistant\n           \n           \n             Discussion \n            |\n             Link",
+          "url": "https://www.producthunt.com/products/openresource"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Krishna Akhil Allumolu",
+      "score": 32,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "unknown",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Krishna Akhil Allumolu shows early signals but insufficient data to prioritise at this stage. Signals include product launch.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "product_launch"
+      ],
+      "signals": [
+        {
+          "source": "Product Hunt",
+          "type": "product_launch",
+          "description": "[Product Hunt] Krishna Akhil Allumolu launched PillFloat: Move the Wispr Flow pill anywhere on your screen   \n           \n           \n             Discussion \n            |\n             Link",
+          "url": "https://www.producthunt.com/products/pillfloat"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
     }
   ],
   "source_breakdown": {
-    "news": 34
+    "news": 36,
+    "Product Hunt": 4
   },
   "score_threshold": 30,
   "intelligence": {
@@ -1517,10 +1764,24 @@
           "summary": "Anthropic on Tuesday announced Project Glasswing, a sweeping cybersecurity initiative that pairs an unreleased frontier AI model — Claude Mythos Preview — with a coalition of twelve major technology a"
         }
       ],
-      "cached_at": "2026-04-09T08:25:06.934982"
+      "cached_at": "2026-04-09T10:30:59.768944"
     },
     "india_sea": {
       "articles": [
+        {
+          "title": "Bay Capital Onboards Sandeep Barasia, Tej Kapoor As Partners To Launch New Digital Fund",
+          "url": "https://inc42.com/buzz/bay-capital-onboards-sandeep-barasia-tej-kapoor-as-partners-to-launch-new-digital-fund/",
+          "source": "inc42.com",
+          "pub_date": "2026-04-09T10:28:05+00:00",
+          "summary": "Investment firm Bay Capital Partners has appointed Sandeep Barasia (former Delhivery CBO) and Tej Kapoor (former IvyCap Ventures MD) as&#8230;"
+        },
+        {
+          "title": "What’s Driving Startup Investors’ Shift Towards Domestic LPs?",
+          "url": "https://inc42.com/features/whats-driving-startup-investors-shift-towards-domestic-lps/",
+          "source": "inc42.com",
+          "pub_date": "2026-04-09T09:43:01+00:00",
+          "summary": "Amid an increasingly volatile macroeconomic situation and geopolitical uncertainty, Indian venture investors are leaning towards domestic capital as against the&#8230;"
+        },
         {
           "title": "Former OYO Executive’s Startup Nava Raises $22 Mn To Build Neocloud Platform",
           "url": "https://inc42.com/buzz/former-oyo-executives-startup-nava-raises-22-mn-to-build-neocloud-platform/",
@@ -1564,39 +1825,18 @@
           "summary": "EV asset management and leasing startup Astranova Mobility (previously known as Electrifi Mobility) has secured ₹60 Cr (about $6.4 Mn)&#8230;"
         },
         {
-          "title": "New Unicorn Unlocked, Policybazaar CEO Quits & More",
-          "url": "https://inc42.com/buzz/new-unicorn-unlocked-policybazaar-ceo-quits-more/",
-          "source": "inc42.com",
-          "pub_date": "2026-04-09T02:30:48+00:00",
-          "summary": "India Gets Its 128th Unicorn KreditBee has become the second Indian unicorn of 2026. Despite ongoing geopolitical tensions, the lending&#8230;"
-        },
-        {
-          "title": "Nexus Venture Partners Sells Delhivery Shares Worth ₹530 Cr",
-          "url": "https://inc42.com/buzz/nexus-venture-partners-sells-delhivery-shares-worth-%e2%82%b9530-cr/",
-          "source": "inc42.com",
-          "pub_date": "2026-04-08T17:45:29+00:00",
-          "summary": "Venture capital (VC) firm Nexus Venture Partners offloaded 1.2 Cr shares of logistics major Delhivery via multiple block deals for&#8230;"
-        },
-        {
-          "title": "NVIDIA DGX Spark brings sovereign AI to your desktop",
-          "url": "https://yourstory.com/2026/04/nvidia-dgx-spark-brings-sovereign-ai-to-your-desktop",
+          "title": "BP Ventures Asia and Middle East Managing Director Sophia Nadur exits",
+          "url": "https://yourstory.com/2026/04/bp-ventures-asia-and-middle-east-managing-director-sophia-nadur-exits",
           "source": "yourstory.com",
-          "pub_date": "2026-04-09T06:46:54+00:00",
-          "summary": "Learn how to deploy models like Sarvam 30B and Param-2-17B on a personal AI supercomputer in an upcoming technical session hosted by RP Tech, an NVIDIA partner."
+          "pub_date": "2026-04-09T09:32:08+00:00",
+          "summary": "Nadur led investments in BluSmart, Magenta Mobility and Zingbus in India"
         },
         {
-          "title": "What happened when scale met the farm reality",
-          "url": "https://yourstory.com/2026/04/what-happened-when-scale-met-the-farm-reality",
+          "title": "Former Delhivery, Naspers execs join Bay Capital as Partners",
+          "url": "https://yourstory.com/2026/04/former-delhivery-naspers-bain-capital-co-founders",
           "source": "yourstory.com",
-          "pub_date": "2026-04-08T07:29:34+00:00",
-          "summary": "A post-boom correction reveals why venture-backed models struggled against the realities of smallholder farming, weak monetisation, and costly distribution."
-        },
-        {
-          "title": "What it takes to run AI in the real world: Lessons from Akamai Digital Leadership Summit",
-          "url": "https://yourstory.com/2026/04/real-world-lessons-akamai-digital-leadership-summit",
-          "source": "yourstory.com",
-          "pub_date": "2026-04-08T06:04:11+00:00",
-          "summary": "From inference costs and voice AI to API security and sovereign models, the Akamai Digital Leadership Summit examined what it really takes to run AI systems in production at India’s scale."
+          "pub_date": "2026-04-09T08:20:29+00:00",
+          "summary": "The move comes as the firm prepares to launch a Digital Opportunities Fund, which is a Category II Alternative Investment Fund aimed at backing late-stage, high-growth companies in the digital and tec"
         },
         {
           "title": "Pluckk raises Rs 100 Cr from Euro Gulf, targets profitability in 12 months",
@@ -1606,11 +1846,25 @@
           "summary": "The latest infusion takes the company’s total funding to $26 million and comes amid steady growth, with Pluckk reporting an average 25% year-on-year increase over the past two years."
         },
         {
-          "title": "Beyond the cloud: NVIDIA explores local AI systems at DevSparks Pune 2026, with RP Tech, an NVIDIA partner",
-          "url": "https://yourstory.com/2026/04/nvidia-explores-local-ai-systems-devsparks-pune-2026-rp-tech-nvidia-partner",
+          "title": "NVIDIA DGX Spark brings sovereign AI to your desktop",
+          "url": "https://yourstory.com/2026/04/nvidia-dgx-spark-brings-sovereign-ai-to-your-desktop",
           "source": "yourstory.com",
-          "pub_date": "2026-04-07T13:57:52+00:00",
-          "summary": "At NVIDIA’s DevSparks Pune 2026 masterclass session, attendees explored the software stack and built a Video Search and Summarization agent with NVIDIA DGX Spark, learning how compact AI systems addre"
+          "pub_date": "2026-04-09T06:46:54+00:00",
+          "summary": "Learn how to deploy models like Sarvam 30B and Param-2-17B on a personal AI supercomputer in an upcoming technical session hosted by RP Tech, an NVIDIA partner."
+        },
+        {
+          "title": "How VirtueLife makes home physiotherapy actually work",
+          "url": "https://yourstory.com/2026/04/virtuelife-ai-home-physiotherapy-app-india",
+          "source": "yourstory.com",
+          "pub_date": "2026-04-09T01:50:00+00:00",
+          "summary": "Built from a founder’s recovery struggle, VirtueLife combines video guidance, clinician tools, and AI-assisted planning to bring structure and accountability to home-based rehab."
+        },
+        {
+          "title": "Startup news and updates: Daily Roundup (April 9, 2026)",
+          "url": "https://yourstory.com/2026/04/startup-news-and-updates-daily-roundup-april-9-2026",
+          "source": "yourstory.com",
+          "pub_date": "2026-04-09T08:09:12+00:00",
+          "summary": "YourStory presents the daily news roundup from the Indian startup ecosystem and beyond. Here's the roundup for Thursday, April 9, 2026."
         },
         {
           "title": "A platform for home chefs; Agritech’s post-boom correction",
@@ -1620,18 +1874,25 @@
           "summary": "Tocco helps home chefs, especially women, turn their cooking into income. Meanwhile, in the world of agritech there's a structural correction in how investors understand the segment."
         },
         {
-          "title": "CRED upgrades its wealth management platform Kuvera",
-          "url": "https://yourstory.com/2026/04/cred-upgrades-its-wealth-management-platform-kuvera",
+          "title": "Startup news and updates: Daily Roundup (April 8, 2026)",
+          "url": "https://yourstory.com/2026/04/startup-news-and-updates-daily-roundup-april-8-2026",
           "source": "yourstory.com",
-          "pub_date": "2026-04-07T15:07:53+00:00",
-          "summary": "CRED acquired Kuvera in 2024\n\nThe upgraded features in Kuvera is aimed at enabling affluent individuals to make prudent investment decisions and maximising returns\n\nThe payment fintech unicorn CRED ha"
+          "pub_date": "2026-04-08T12:15:53+00:00",
+          "summary": "YourStory presents the daily news roundup from the Indian startup ecosystem and beyond. Here's the roundup for Wednesday, April 8, 2026."
         },
         {
-          "title": "Astranova Mobility raises Rs 60 Cr in funding round led by IvyCap Ventures",
-          "url": "https://yourstory.com/2026/04/astranova-mobility-raises-rs-60-cr-funding-round-ivycap-ventures",
-          "source": "yourstory.com",
-          "pub_date": "2026-04-09T06:12:39+00:00",
-          "summary": "The company will use a significant portion of the capital to deepen its data, AI, and engineering capabilities."
+          "title": "From hype to silence: Why Vietnam’s Clubhouse-like app OnMic couldn’t survive",
+          "url": "https://e27.co/from-hype-to-silence-why-onmic-couldnt-survive-20260409/",
+          "source": "e27.co",
+          "pub_date": "2026-04-09T09:51:48+00:00",
+          "summary": "OnMic, the Vietnamese social-audio startup that once tried to build a local answer to Clubhouse, is shutting down. In a LinkedIn post, co-founder Trung Nguyen said: “Today, we’re making a difficult an"
+        },
+        {
+          "title": "India is slowing down but Southeast Asia is falling behind faster",
+          "url": "https://e27.co/india-is-slowing-down-but-southeast-asia-is-falling-behind-faster-20260409/",
+          "source": "e27.co",
+          "pub_date": "2026-04-09T08:48:06+00:00",
+          "summary": "India’s tech funding story is no longer one of breakneck exuberance. It is now a story of filtration. Tracxn’s latest annual report shows Indian startups pulled in US$11.7 billion in FY2025-26, down 1"
         },
         {
           "title": "Why institutional money isn’t saving crypto from this sell-off",
@@ -1674,26 +1935,40 @@
           "source": "e27.co",
           "pub_date": "2026-04-09T02:17:12+00:00",
           "summary": "Real estate transactions have historically relied on a network of trusted intermediaries &#8212; brokers, lawyers, lenders, home inspectors, and escrow agents &#8212; to ensure that property deals are"
-        },
-        {
-          "title": "The equity gap in strategy: Why the people who know most have the least say",
-          "url": "https://e27.co/equity-gap-in-strategy-20260317/",
-          "source": "e27.co",
-          "pub_date": "2026-04-09T02:14:43+00:00",
-          "summary": "I’ve seen this too many times: the people fixing the business every day are rarely the ones allowed to shape its direction. Most companies don’t have a strategy problem — they have a listening problem"
-        },
-        {
-          "title": "Singapore ranks second globally in AI readiness, leading Asia Pacific",
-          "url": "https://e27.co/singapore-ranks-second-globally-in-ai-readiness-leading-asia-pacific-20250731/",
-          "source": "e27.co",
-          "pub_date": "2026-04-08T12:00:19+00:00",
-          "summary": "Singapore has ranked second globally—and first in Asia Pacific—for overall AI readiness, according to Salesforce’s newly released Global AI Readiness Index. The recognition reinforces Singapore’s long"
         }
       ],
-      "cached_at": "2026-04-09T08:25:06.934982"
+      "cached_at": "2026-04-09T10:30:59.768944"
     },
     "emerging": {
       "articles": [
+        {
+          "title": "Politicians Are Spending More Money on Security as They Increasingly Become Targets",
+          "url": "https://www.wired.com/story/political-campaign-security-spending/",
+          "source": "wired.com",
+          "pub_date": "2026-04-09T10:00:00+00:00",
+          "summary": "Political candidates are purchasing more home alarms, bulletproof vests, and other protections amid rising fears of political violence."
+        },
+        {
+          "title": "TCL NXTVISION Art TV Review: Just Fine",
+          "url": "https://www.wired.com/review/tcl-nxtvision-2025/",
+          "source": "wired.com",
+          "pub_date": "2026-04-09T10:00:00+00:00",
+          "summary": "This low-cost art display can’t compete with the Samsung Frame Pro."
+        },
+        {
+          "title": "This AI Wearable From Ex-Apple Engineers Looks Like an iPod Shuffle",
+          "url": "https://www.wired.com/story/this-ai-button-wearable-from-ex-apple-engineers-looks-like-an-ipod-shuffle/",
+          "source": "wired.com",
+          "pub_date": "2026-04-09T09:30:00+00:00",
+          "summary": "Two former Apple Vision Pro developers made an AI wearable that only listens when you tap it. They hope to win where other AI gadgets have fumbled: privacy."
+        },
+        {
+          "title": "Artemis II Astronauts Witnessed 6 Meteorites Colliding With the Moon",
+          "url": "https://www.wired.com/story/artemis-ii-astronauts-witnessed-6-meteorites-collide-with-the-moon/",
+          "source": "wired.com",
+          "pub_date": "2026-04-09T09:00:00+00:00",
+          "summary": "The moon gets hit by space debris all the time, but some of it is so large that the impact generates light that can be seen thousands of kilometers away."
+        },
         {
           "title": "Medicube Coupon Code: Top Promo Codes and Discounts for April 2026",
           "url": "https://www.wired.com/story/medicube-coupon-code/",
@@ -1721,34 +1996,6 @@
           "source": "wired.com",
           "pub_date": "2026-04-09T05:00:00+00:00",
           "summary": "Get 10% off with verified Dell promo code, plus today’s coupons for up to $600 off laptops, Alienware monitors, and all things tech."
-        },
-        {
-          "title": "Peacock Promo Codes: 40% Off April 2026",
-          "url": "https://www.wired.com/story/peacock-promo-code/",
-          "source": "wired.com",
-          "pub_date": "2026-04-09T05:00:00+00:00",
-          "summary": "Stream your favorite shows for up to $80 off this month, and save on subscription plans with the latest Peacock TV coupons from WIRED."
-        },
-        {
-          "title": "NordVPN Coupons and Deals: 77% Off in April 2026",
-          "url": "https://www.wired.com/story/nordvpn-coupon/",
-          "source": "wired.com",
-          "pub_date": "2026-04-09T05:00:00+00:00",
-          "summary": "Save up to 77% on 2-year plans and get 3 free months with our NordVPN discount codes."
-        },
-        {
-          "title": "20% Off Brooks Promo Code & Deals for | April 2026",
-          "url": "https://www.wired.com/story/brooks-promo-code/",
-          "source": "wired.com",
-          "pub_date": "2026-04-09T05:00:00+00:00",
-          "summary": "Enjoy 20% off your first order with a Brooks coupon code, plus top discounts and deals on our favorite Brooks running shoes."
-        },
-        {
-          "title": "Google Workspace Promo Code: Up to 14% Off in 2026",
-          "url": "https://www.wired.com/story/google-workspace-promo-code/",
-          "source": "wired.com",
-          "pub_date": "2026-04-09T05:00:00+00:00",
-          "summary": "Boost your productivity and save with exclusive Google Workspace coupons from WIRED. Get up to 14% off plans for three months, including Starter, Standard, and Plus tiers."
         },
         {
           "title": "The Moon is already on Google Maps—did Artemis II really tell us anything new?",
@@ -1807,26 +2054,21 @@
           "summary": "Musk won’t seek a “single dollar” in OpenAI suit after asking to pocket up to $134 billion."
         }
       ],
-      "cached_at": "2026-04-09T08:25:06.934982"
+      "cached_at": "2026-04-09T10:30:59.768944"
     },
     "sector_heatmap": [
       {
         "name": "AI / ML",
-        "signals": 32,
+        "signals": 33,
         "sentiment": "bullish"
       },
       {
         "name": "Climate / Clean",
-        "signals": 16,
+        "signals": 15,
         "sentiment": "bullish"
       },
       {
         "name": "SaaS / B2B",
-        "signals": 3,
-        "sentiment": "neutral"
-      },
-      {
-        "name": "Fintech",
         "signals": 2,
         "sentiment": "neutral"
       },
@@ -1836,9 +2078,9 @@
         "sentiment": "neutral"
       },
       {
-        "name": "Logistics",
-        "signals": 1,
-        "sentiment": "neutral"
+        "name": "Fintech",
+        "signals": 0,
+        "sentiment": "quiet"
       },
       {
         "name": "Healthtech",
@@ -1847,6 +2089,11 @@
       },
       {
         "name": "Edtech",
+        "signals": 0,
+        "sentiment": "quiet"
+      },
+      {
+        "name": "Logistics",
         "signals": 0,
         "sentiment": "quiet"
       },
