@@ -1,33 +1,28 @@
 {
-  "generated_at": "2026-04-05T09:40:21.476036",
-  "date_label": "2026-04-05",
-  "total_signals": 59,
-  "total_persons": 59,
+  "generated_at": "2026-04-09T05:39:13.998484",
+  "date_label": "2026-04-09",
+  "total_signals": 7,
+  "total_persons": 7,
   "sources_active": [
     "News",
     "GDELT",
-    "Exa",
-    "LinkedIn",
-    "Twitter",
-    "crawl4ai-structured",
-    "Registry",
     "GitHub"
   ],
-  "executive_summary": "Today's top VC sourcing signals for 2026-04-05 indicate a strong presence of stealth mode founders in India, with a notable focus on the fintech sector. The majority of signals are concentrated in India, with no significant leads emerging from Southeast Asia, suggesting a geography split that is heavily skewed towards the Indian market. The strongest archetypes are second-time founders and senior operators with 10+ years of experience, with two compelling leads being former executives from Razorpay who have moved into stealth mode, scoring 65 and 60 respectively, and demonstrating potential for significant investment opportunities. Overall, the total number of signals above the threshold stands at 59, highlighting a vibrant and active startup ecosystem in India.",
+  "executive_summary": "Today's top VC sourcing signals are predominantly from India, with a notable absence of signals from Southeast Asia. The strongest archetypes emerging are second-time founders and senior executives with 10+ years of experience, particularly in the fintech and consumer electronics sectors. Aman Gupta stands out as a compelling lead, scoring 80 with a stealth mode company in the consumer electronics/audio space, while Tarun Mathur also shows promise with a score of 60 in the fintech/insurance sector, potentially benefiting from our intelligence feed's identified hot sectors. Overall, these leads warrant further investigation to uncover potential investment opportunities.",
   "persons": [
     {
-      "name": "Unknown",
-      "score": 70,
+      "name": "Aman Gupta",
+      "score": 80,
       "action": "investigate",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
       "location": "",
-      "sector": "SaaS",
-      "geography": "Unknown",
+      "sector": "Consumer Electronics/Audio",
+      "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": true,
-      "investment_thesis": "This signal indicates a second-time founder who has successfully raised a substantial seed round for their new venture, Noon. The significant funding suggests strong investor confidence and potential for rapid scaling in the AI-native product design tool space. Further investigation into the founder's background and the venture's geography is warranted.",
+      "investment_thesis": "Aman Gupta, co-founder of boAt, has raised ₹100 Cr for his new venture OFF/BEAT, indicating a strong potential for growth and a promising investment opportunity. His experience and success with boAt make him an attractive founder to invest in. Further investigation is needed to understand the details of OFF/BEAT and its market potential.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -39,199 +34,34 @@
         {
           "source": "news",
           "type": "funding_news",
-          "description": "[Inc42] Leap Cofounder’s New Venture Noon Raises $44 Mn To Scale AI-Native Product Design Tool",
-          "url": "https://inc42.com/buzz/noon-raises-44-mn-to-reinvent-product-design/"
+          "description": "[Inc42] boAt Cofounder Aman Gupta’s New Venture OFF/BEAT Raises ₹100 Cr",
+          "url": "https://inc42.com/buzz/boat-cofounder-aman-guptas-new-venture-off-beat-raises-%e2%82%b9100-cr/"
         }
       ],
-      "confidence": "medium",
+      "confidence": "high",
       "founder_type": "second_time_founder",
       "key_strengths": [
-        "Significant funding raised ($44 Mn) for a new venture",
-        "Implied co-founder of a successful previous venture (Leap)"
+        "Successful exit with boAt",
+        "Ability to raise significant funding"
       ],
       "risks": [
-        "Founder's identity and experience are unknown",
-        "Geography of the new venture is not specified"
+        "Unclear details about new venture OFF/BEAT"
       ],
       "company_url": ""
     },
     {
       "name": "Unknown",
-      "score": 70,
-      "action": "investigate",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "Fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "The former CTO of Swiggy is building a stock trading app that is reportedly raising a substantial amount. This indicates a highly experienced operator moving into a new venture within the Fintech space, a sector we are interested in. The significant funding news is a strong positive signal.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "executive_departure",
-          "description": "[Google News] Ex-Swiggy CTO’s stock trading app Sahi said to raise up to $80m - Tech in Asia",
-          "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOSGhIRmh0NFpVanNPMDhKcVlZSmJaWFFHbTRQcXFHRWRWeGZKcEIxTWpGWUhXWktMdGg4X3VyOU5WSGVadnhJUWlFSUpKVG5FeFlxRkU0NjRyX00tOUVQUWpwYmFIaTY5enAyU1VtazM0ZlRqYnpYbUxic1FYbzJfYXhIQzduU19GdHdr?oc=5"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Previous CTO of a major Indian startup (Swiggy)",
-        "Building a stock trading app, indicating domain expertise in Fintech",
-        "Significant funding news ($80m raise) suggests strong traction and investor interest"
-      ],
-      "risks": [
-        "Founder's name and full experience are unknown",
-        "Geographic location is not explicitly stated, though Swiggy implies India",
-        "Second-time founder status is explicitly stated as false, but this is likely a misinterpretation as the CTO is building a new venture"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "",
-      "score": 65,
-      "action": "investigate",
-      "previous_company": "Razorpay",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "Fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "This individual is an ex-Razorpay executive operating in stealth mode, indicating a potential venture in the Fintech space. Their educational background from IIM Ahmedabad and BITS Goa suggests strong foundational capabilities. Further investigation is warranted to understand their specific role at Razorpay and the nature of their current venture.",
-      "linkedin_url": "https://www.linkedin.com/in/singhalakshat",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Razorpay exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/singhalakshat"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Previous experience at a leading Fintech company (Razorpay)",
-        "Stealth mode startup signal",
-        "IIM A | BITS Goa pedigree"
-      ],
-      "risks": [
-        "Experience years unknown",
-        "Previous title unknown",
-        "Location unknown"
-      ],
-      "company_url": "razorpay.com"
-    },
-    {
-      "name": "",
       "score": 60,
-      "action": "investigate",
-      "previous_company": "Razorpay",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Chunmun Gupta's experience in enterprise GTM at Stripe and previous role at Razorpay makes them a strong candidate for building a successful fintech company. Their departure from Razorpay could indicate a new venture in the works. Further investigation is needed to determine the scope of their new project.",
-      "linkedin_url": "https://www.linkedin.com/in/guptachunmun",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from Razorpay — LinkedIn profile flagged",
-          "url": "https://www.linkedin.com/in/guptachunmun"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "experience in enterprise GTM",
-        "background in payments industry"
-      ],
-      "risks": [
-        "unknown experience in years",
-        "no clear indication of new venture"
-      ],
-      "company_url": "razorpay.com"
-    },
-    {
-      "name": "Unknown",
-      "score": 45,
-      "action": "investigate",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "Fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Aditya Kumar's departure as CFO from Zaggle, a prominent fintech company, suggests a potential move into entrepreneurship. While details are scarce, his financial leadership experience could be valuable in building a new venture, likely within the fintech space in India.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "executive_departure",
-          "description": "[Inc42] Zaggle CFO Aditya Kumar Steps Down",
-          "url": "https://inc42.com/buzz/zaggle-cfo-aditya-kumar-steps-down/"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "CFO experience at a known company (Zaggle)"
-      ],
-      "risks": [
-        "Unknown individual, no direct signal of new company formation",
-        "Experience years unknown",
-        "Location unknown"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Unknown",
-      "score": 45,
       "action": "investigate",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
       "location": "India",
-      "sector": "Fintech",
+      "sector": "Fintech/Insurance",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "This individual is signaling a strong intent to build a new fintech startup in India, focusing on areas beyond UPI. While the founder's identity and experience are currently unknown, the clear sector focus and ambition warrant further investigation to understand their background and the specific venture they are building.",
+      "investment_thesis": "The former CEO of Policybazaar has quit, indicating potential for a new venture. With their experience in the fintech/insurance space, they could be building something innovative. Their departure is a strong signal worth investigating.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -243,36 +73,34 @@
         {
           "source": "news",
           "type": "executive_departure",
-          "description": "[YourStory] Building fintech startups beyond UPI: Where the next wave of innovation will come from",
-          "url": "https://yourstory.com/2026/04/building-fintech-startups-beyond-upi-where-the-next-wave-of-innovation-will-come-from"
+          "description": "[Inc42] New Unicorn Unlocked, Policybazaar CEO Quits & More",
+          "url": "https://inc42.com/buzz/new-unicorn-unlocked-policybazaar-ceo-quits-more/"
         }
       ],
-      "confidence": "low",
-      "founder_type": "unknown",
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
       "key_strengths": [
-        "Focus on fintech innovation beyond UPI",
-        "Implied interest in building new ventures"
+        "Executive experience",
+        "Domain expertise"
       ],
       "risks": [
-        "Founder identity and experience are unknown",
-        "No corroborating signals like company registration or previous exits",
-        "Headline is aspirational, not a concrete signal of a registered entity"
+        "Unknown plans post-departure"
       ],
       "company_url": ""
     },
     {
-      "name": "Unknown",
-      "score": 45,
+      "name": "Tarun Mathur",
+      "score": 60,
       "action": "investigate",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
       "location": "",
-      "sector": "SaaS",
-      "geography": "Unknown",
+      "sector": "Fintech/Insurance",
+      "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "The headline suggests a deep understanding of a critical enterprise problem related to technology debt, potentially indicating a strong domain expert or seasoned operator looking to build a solution. While the founder's identity and experience are currently unknown, the clear articulation of a significant market pain point warrants further investigation.",
+      "investment_thesis": "Tarun Mathur's departure as CEO of Policybazaar presents an opportunity to investigate a potential new venture, given his extensive experience in the insurance sector. His background and expertise could be leveraged to build a successful startup in the fintech or insurance space. Further research is needed to determine his plans and potential for a new company.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -284,35 +112,74 @@
         {
           "source": "news",
           "type": "executive_departure",
-          "description": "[e27] Technology debt is the risk company boards keep deferring – until it becomes a crisis",
-          "url": "https://e27.co/technology-debt-is-the-risk-company-boards-keep-deferring-until-it-becomes-a-crisis-20260213/"
+          "description": "[Inc42] Tarun Mathur Quits As Policybazaar CEO, Sajja Praveen Chowdary Takes Charge",
+          "url": "https://inc42.com/buzz/tarun-mathur-quits-as-policybazaar-ceo-sajja-praveen-chowdary-takes-charge/"
         }
       ],
-      "confidence": "low",
-      "founder_type": "unknown",
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
       "key_strengths": [
-        "Identified a significant pain point for boards (technology debt)"
+        "Executive experience",
+        "Domain expertise in insurance"
       ],
       "risks": [
-        "Founder identity and experience are unknown",
-        "No corroborating signals (company registration, previous roles, experience)",
-        "Geographic location is unknown"
+        "Unknown plans after departure"
       ],
       "company_url": ""
     },
     {
       "name": "Unknown",
-      "score": 45,
+      "score": 60,
       "action": "investigate",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
-      "location": "Singapore",
-      "sector": "Robotics/Automation",
-      "geography": "Singapore",
+      "location": "India",
+      "sector": "Aviation/Transportation",
+      "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "This individual, based in Singapore, appears to have significant expertise in the practical application of robotics. While the provided news link is a thought leadership piece and not a funding announcement, the headline suggests a focus on a critical area within the robotics sector. Further investigation is needed to identify the founder and their current venture.",
+      "investment_thesis": "The recent departure of the Air India CEO could indicate a potential new venture in the aviation or transportation sector, leveraging their executive experience and industry expertise. This individual's background and experience make them a worthwhile candidate for investigation. However, more information is needed to determine the viability of their potential new venture.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "executive_departure",
+          "description": "[Google News] Air India CEO Steps Down, Say Reports. Third Airline CEO Exit in a Month - Skift",
+          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOaTg4X0luWkstelk4TGJMcl9JUi1LbFB1S0pxaEtiSmFIVEJyenpydnR3SmhIQlY5UHpCRnlDTWdCUHJrMGs3YmVWUlFaRXkyZFZ2emF1Q29GdlpDNDdDZldRdWhxcFVqNXQ3RkcxVHJvSzJCYVV3Ry1CdFNiQXRJdHI2Vm54RnRCWGRqcmZrYnpTT0RfSy03OGs1S05fOXdnU2c?oc=5"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
+      "key_strengths": [
+        "Executive experience",
+        "Industry expertise"
+      ],
+      "risks": [
+        "Unknown intentions",
+        "Lack of information on new venture"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 40,
+      "action": "investigate",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "Autonomous Vehicles",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "RoshAi has secured significant funding to develop autonomous vehicles for industrial use, indicating a promising idea with potential for growth. However, the unknown founder and team pose a risk. Further investigation is needed to understand the founder's experience and the company's potential.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -324,2048 +191,105 @@
         {
           "source": "news",
           "type": "funding_news",
-          "description": "[e27] From pilot to production: Where robotics actually breaks",
-          "url": "https://e27.co/from-pilot-to-production-where-robotics-actually-breaks-20260402/"
+          "description": "[Inc42] RoshAi Raises ₹22 Cr To Develop Autonomous Vehicles For Industrial Use",
+          "url": "https://inc42.com/buzz/roshai-raises-%e2%82%b922-cr-to-develop-autonomous-vehicles-for-industrial-use/"
         }
       ],
-      "confidence": "low",
-      "founder_type": "domain_expert",
+      "confidence": "medium",
+      "founder_type": "unknown",
       "key_strengths": [
-        "Headline suggests deep domain expertise in robotics, moving from 'pilot to production'",
-        "Location in Singapore is within our investment mandate"
+        "Secured funding",
+        "Innovative idea"
       ],
       "risks": [
-        "Founder identity is unknown, making background verification difficult",
-        "Experience level is unknown, potentially below our 10+ year threshold",
-        "No clear signal of company registration or team building",
-        "The news article appears to be a thought leadership piece rather than a funding announcement for a new venture"
+        "Unknown founder experience",
+        "Unknown team"
       ],
       "company_url": ""
     },
     {
       "name": "Unknown",
-      "score": 45,
+      "score": 40,
       "action": "investigate",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
-      "location": "India",
-      "sector": "Consumer Electronics",
+      "location": "",
+      "sector": "AI",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "The former CEO of OnePlus India stepping down presents an interesting signal. While the exact circumstances of the departure and the individual's experience are unclear, a CEO of a major consumer electronics brand in India likely possesses significant operational expertise and market knowledge. This individual could be exploring a new venture within a related sector.",
+      "investment_thesis": "The funding news of WorkOnGrid, an AI startup, indicates a potentially promising venture, but the lack of information about the founder's background and experience raises concerns. Further investigation is needed to determine the founder's fit with our investment mandate. The alignment with the AI sector, a current hot sector, is a positive signal.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
       "signal_count": 1,
       "signal_types": [
-        "executive_departure"
+        "funding_news"
       ],
       "signals": [
         {
           "source": "news",
-          "type": "executive_departure",
-          "description": "[Google News] Oneplus CEO Resigns: OnePlus India CEO Robin Liu steps down amid shipment decline - Storyboard18",
-          "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQRTN4SnJfdTdYanZYRUl0OU1UclhIR3dfVmxfTDlzdVZDTzlIRm1feEZvZTBjRkNoY3diREpiYVVwanV4Z1JDV3huM0MtWGU2OFluN3ZPYVVodVNmeWxMcmRlUHB2aVlTQ0pIVVJNVWstYURGbnRuVzhXVUNBdkhKcmE3YVVablNycERuOGZCVXVaMmt2Nks3cUtQN0Q4dmtPZHBUZkZZY2Q2THBRdk9xWjVrNnpVREpMdVN4b2hBaUs1eU5WdlgtbW1pZ9IB0AFBVV95cUxNMDV1UnZnRGt6WFZlNlA3LVFjX3dFa1BhaVZ1cUdQdnBvNkxIbk1Way1qVU0ycFUyc19LTERVOVNZemRld2VFU0w4ZXU5YkRoTWUxb25GXzlBYUNVaURzQ05vZVVDN2M5OFFCYk1XUE1HeUhaUkR2VmJuaGNUVldmdkF1ai1nUzd6Tkk0Rkc4Z2Rqbm5UTE40V0NuclNteklsWjhkRXJJTjQ0Ql9DX3FJVHp4ZEF0QVZPbEhubzMyOVhMRFNxYXJtVERnMjZycnZ3?oc=5"
+          "type": "funding_news",
+          "description": "[Inc42] AI Startup WorkOnGrid Nets ₹22.5 Cr To Fuel International Expansion",
+          "url": "https://inc42.com/buzz/ai-startup-workongrid-nets-%e2%82%b922-5-cr-to-fuel-international-expansion/"
         }
       ],
-      "confidence": "low",
-      "founder_type": "seasoned_operator",
+      "confidence": "medium",
+      "founder_type": "unknown",
       "key_strengths": [
-        "CEO level experience at a major consumer electronics brand (OnePlus India)",
-        "Deep understanding of the Indian market for consumer electronics"
+        "funding news",
+        "AI sector alignment"
       ],
       "risks": [
-        "Founder's name is unknown, making further due diligence difficult",
-        "Reason for departure (shipment decline) might indicate challenges in the sector or leadership",
-        "No information on current venture or experience duration"
+        "unknown founder background",
+        "limited information"
       ],
       "company_url": ""
     },
     {
-      "name": "Yash Raj",
-      "score": 45,
-      "action": "watchlist",
-      "previous_company": "PhonePe",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "Fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Yash Raj, an ex-PhonePe executive, is going stealth, indicating a potential new venture. With experience in the fintech sector, Yash may be building something innovative. However, the lack of information on their experience and no indication of being a second-time founder raises some concerns.",
-      "linkedin_url": "https://www.linkedin.com/in/yash-raj-240915136",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-PhonePe exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/yash-raj-240915136"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Experience at PhonePe",
-        "Stealth mode indication"
-      ],
-      "risks": [
-        "Unknown experience years",
-        "Lack of second-time founder signal"
-      ],
-      "company_url": "phonepe.com"
-    },
-    {
-      "name": "",
+      "name": "Unknown",
       "score": 40,
       "action": "investigate",
-      "previous_company": "Razorpay",
+      "previous_company": "",
       "previous_title": "",
       "current_company": "",
       "location": "",
-      "sector": "fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Ankur Jaiswal, a former Razorpay executive, is going stealth, indicating a potential new venture in the fintech space. With experience at a successful fintech company, Ankur may be well-positioned to identify and solve meaningful problems in the industry. Further investigation is needed to understand the specifics of their new venture and its potential for growth.",
-      "linkedin_url": "https://www.linkedin.com/in/imankurj",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Razorpay exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/imankurj"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "experience at Razorpay",
-        "technical expertise as a founding engineer"
-      ],
-      "risks": [
-        "unknown experience years",
-        "lack of information on current venture"
-      ],
-      "company_url": "razorpay.com"
-    },
-    {
-      "name": "",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "Razorpay",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Praveen Chavali, an ex-Razorpay executive, is building something new, indicating potential for a promising startup in the fintech sector. His experience in the payments industry could be a significant strength. However, more information is needed to fully assess the opportunity.",
-      "linkedin_url": "https://www.linkedin.com/in/praveench",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Razorpay exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/praveench"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "experience in payments industry",
-        "strong network"
-      ],
-      "risks": [
-        "lack of information on new venture"
-      ],
-      "company_url": "razorpay.com"
-    },
-    {
-      "name": "Rishi Isola",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "Razorpay",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
+      "sector": "AI",
       "geography": "Unknown",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Rishi Isola, an ex-Razorpay executive, is going stealth, indicating a potential new venture in the fintech space. With experience in a successful fintech company, Rishi may be well-positioned to build a new company. However, more information is needed to fully assess the opportunity.",
-      "linkedin_url": "https://www.linkedin.com/in/rishi-isola",
+      "investment_thesis": "H2LooP has secured $2 Mn in funding to scale its AI platform, indicating a promising startup with potential for growth. The focus on AI for embedded systems is a current hot sector, aligning with our intelligence feed. However, the lack of information on the founder's background and experience is a significant risk.",
+      "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
       "signal_count": 1,
       "signal_types": [
-        "stealth_founder"
+        "funding_news"
       ],
       "signals": [
         {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Razorpay exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/rishi-isola"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "experience in fintech",
-        "executive experience at Razorpay"
-      ],
-      "risks": [
-        "unknown location",
-        "lack of information on current venture"
-      ],
-      "company_url": "razorpay.com"
-    },
-    {
-      "name": "Mishal Raj",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "Razorpay",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "Fintech/AI",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Mishal Raj is building Pukaar.ai, and his experience at Razorpay and Grab suggests he may have valuable insights in the fintech or AI space. However, more information is needed to fully assess his potential. His LinkedIn headline indicates he is actively working on a new project, which could be an interesting opportunity.",
-      "linkedin_url": "https://www.linkedin.com/in/mishal-raj-b74137169",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Razorpay exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/mishal-raj-b74137169"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Experience at Razorpay",
-        "Building a new company (Pukaar.ai)"
-      ],
-      "risks": [
-        "Unknown experience years",
-        "Unknown location"
-      ],
-      "company_url": "razorpay.com"
-    },
-    {
-      "name": "Utkarsh Yadav",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "Razorpay",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Utkarsh Yadav's experience at Razorpay and current stealth mode indicate potential for a promising fintech startup, but more information is needed to confirm their experience and founder type. Further investigation could uncover a strong founder signal. With the right team and idea, this could be a compelling investment opportunity in the Indian fintech sector.",
-      "linkedin_url": "https://www.linkedin.com/in/utkarsh-yadav-04773a1a1",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Razorpay exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/utkarsh-yadav-04773a1a1"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "experience at Razorpay",
-        "stealth mode indication"
-      ],
-      "risks": [
-        "unknown experience years",
-        "lack of second-time founder signal"
-      ],
-      "company_url": "https://izuma.co"
-    },
-    {
-      "name": "Yashraj 01",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "Razorpay",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Yashraj's background at Razorpay suggests potential for fintech expertise, but more information is needed to fully assess their prospects. Further investigation could uncover a promising founder with a strong understanding of the Indian fintech landscape. However, the lack of available data makes it difficult to determine the viability of their current venture.",
-      "linkedin_url": "https://www.linkedin.com/in/yashraj-01",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Razorpay exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/yashraj-01"
+          "source": "news",
+          "type": "funding_news",
+          "description": "[Inc42] H2LooP Secures $2 Mn To Scale AI Platform For Embedded Systems",
+          "url": "https://inc42.com/buzz/h2loop-secures-2-mn-to-scale-ai-platform-for-embedded-systems/"
         }
       ],
       "confidence": "low",
       "founder_type": "unknown",
       "key_strengths": [
-        "experience at Razorpay",
-        "potential for domain expertise"
+        "secured funding",
+        "AI expertise"
       ],
       "risks": [
-        "lack of information on current venture",
-        "unknown experience level"
-      ],
-      "company_url": "razorpay.com"
-    },
-    {
-      "name": "Karan Pratap Singh Gill",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "Razorpay",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Karan Pratap Singh Gill, an ex-Razorpay executive, is going stealth, indicating potential for a new venture in the fintech space. With experience at a prominent fintech company, Gill may possess valuable insights and expertise. Further investigation is needed to determine the scope and viability of their new endeavor.",
-      "linkedin_url": "https://www.linkedin.com/in/karan-pratap-singh-gill",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Razorpay exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/karan-pratap-singh-gill"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "experience at Razorpay",
-        "potential for domain expertise in fintech"
-      ],
-      "risks": [
-        "unknown experience years",
-        "lack of additional signals"
-      ],
-      "company_url": "razorpay.com"
-    },
-    {
-      "name": "Apoorva Agarwal",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "Razorpay",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Apoorva Agarwal's background at Razorpay suggests potential for fintech expertise, but more information is needed to determine the viability of their current venture. Further investigation could uncover a promising founder with a strong understanding of the fintech space. If Apoorva has a clear vision and a solid team, this could be an interesting opportunity to explore.",
-      "linkedin_url": "https://www.linkedin.com/in/apoorva-agarwal-design",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Razorpay exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/apoorva-agarwal-design"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "experience at Razorpay",
-        "potential for domain expertise"
-      ],
-      "risks": [
-        "lack of information on current venture",
-        "unknown experience level"
-      ],
-      "company_url": "razorpay.com"
-    },
-    {
-      "name": "",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "Razorpay",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "This individual has experience at Razorpay, a well-known fintech company in India, which could indicate a strong understanding of the sector. Their decision to go stealth may signal the start of a new venture, potentially leveraging their existing network and expertise. Further investigation is needed to determine the specifics of their new company and its potential for growth.",
-      "linkedin_url": "https://www.linkedin.com/in/prabhathmurthy",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Razorpay exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/prabhathmurthy"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "experience at Razorpay",
-        "potential for strong network"
-      ],
-      "risks": [
-        "unknown experience years",
-        "lack of clear company information"
-      ],
-      "company_url": "razorpay.com"
-    },
-    {
-      "name": "",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "Razorpay",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "Fintech/AI",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Neeraj Kanuri, an ex-Razorpay executive, is going stealth and building Decisional AI, a YC-backed company. This signals a potential high-growth startup in the fintech/AI space. Further investigation is needed to determine the founder's experience and company details.",
-      "linkedin_url": "https://www.linkedin.com/in/neerajkanuri",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Razorpay exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/neerajkanuri"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Ex-Razorpay exec",
-        "YC affiliation"
-      ],
-      "risks": [
-        "Unknown experience",
-        "Limited information"
-      ],
-      "company_url": "razorpay.com"
-    },
-    {
-      "name": "",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "Razorpay",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Ankit Kumar's departure from Razorpay, a prominent fintech company, could signal the start of a new venture, potentially leveraging his experience and network in the fintech sector. His senior role at Razorpay suggests he has the expertise and knowledge to build a successful company. Further investigation is needed to understand his current plans and potential for a new startup.",
-      "linkedin_url": "https://www.linkedin.com/in/ankitkumar31",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from Razorpay — LinkedIn profile flagged",
-          "url": "https://www.linkedin.com/in/ankitkumar31"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "experience in fintech",
-        "senior role at Razorpay"
-      ],
-      "risks": [
-        "unknown current endeavors"
-      ],
-      "company_url": "razorpay.com"
-    },
-    {
-      "name": "Venkat Krishnan",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "PhonePe",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Venkat Krishnan, an ex-PhonePe executive, is going stealth, indicating a potential new venture in the fintech space. With experience at a prominent Indian fintech company, Krishnan may be well-positioned to tackle industry challenges. However, more information is needed to fully assess their potential.",
-      "linkedin_url": "https://www.linkedin.com/in/venkat-krishnan-0537b71b0",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-PhonePe exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/venkat-krishnan-0537b71b0"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "experience at PhonePe",
-        "stealth mode indication"
-      ],
-      "risks": [
-        "lack of information on experience and current venture"
-      ],
-      "company_url": "phonepe.com"
-    },
-    {
-      "name": "",
-      "score": 40,
-      "action": "watchlist",
-      "previous_company": "PhonePe",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Ayush Singh, an ex-PhonePe executive, is going stealth, indicating a potential new venture. With experience in the fintech sector, Ayush may be building something innovative. However, the lack of information on their current company and experience years raises some concerns.",
-      "linkedin_url": "https://www.linkedin.com/in/heyayush22",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-PhonePe exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/heyayush22"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "experience at PhonePe",
-        "stealth mode indication"
-      ],
-      "risks": [
-        "unknown experience years",
-        "lack of information on current venture"
-      ],
-      "company_url": "phonepe.com"
-    },
-    {
-      "name": "Vaibhav Singh 1409",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "PhonePe",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Vaibhav Singh's experience as a senior executive at PhonePe, a leading fintech company in India, suggests he has valuable insights and expertise in the sector. His departure from PhonePe could indicate he is exploring new opportunities, potentially as a founder. Further investigation is needed to determine his current endeavors and potential for a new venture.",
-      "linkedin_url": "https://www.linkedin.com/in/vaibhav-singh-1409",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from PhonePe — LinkedIn profile flagged",
-          "url": "https://www.linkedin.com/in/vaibhav-singh-1409"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "experience in fintech",
-        "senior role at PhonePe"
-      ],
-      "risks": [
-        "unknown current endeavors"
-      ],
-      "company_url": "phonepe.com"
-    },
-    {
-      "name": "",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "PhonePe",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Harshit Lata's experience at PhonePe and current stealth mode suggest potential for an interesting startup, particularly in the fintech sector. However, more information is needed to fully assess their potential. Further investigation could uncover a promising founder with a strong background in the Indian startup ecosystem.",
-      "linkedin_url": "https://www.linkedin.com/in/harshitlata",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-PhonePe exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/harshitlata"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "experience at PhonePe",
-        "stealth mode indication"
-      ],
-      "risks": [
-        "lack of information on previous title and experience"
-      ],
-      "company_url": "phonepe.com"
-    },
-    {
-      "name": "",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "PhonePe",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "Consumer-Tech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Parth Bhushan, an ex-PhonePe executive, is going stealth and building something in the consumer-tech and gaming space. With a strong LinkedIn presence and a clear indication of his next venture, he is worth investigating. His experience at PhonePe could bring valuable insights to his new venture.",
-      "linkedin_url": "https://www.linkedin.com/in/parthbhushan",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-PhonePe exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/parthbhushan"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Experience at PhonePe",
-        "Gaming industry knowledge"
-      ],
-      "risks": [
-        "Lack of information on previous title and experience"
-      ],
-      "company_url": "phonepe.com"
-    },
-    {
-      "name": "",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "PhonePe",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Rajat Kothari's experience as an SDE2 at PhonePe and his previous founding experience make him an interesting candidate, but more information is needed to fully assess his potential, his background in fintech and technical expertise are notable strengths",
-      "linkedin_url": "https://www.linkedin.com/in/rajatkothari9199",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from PhonePe — LinkedIn profile flagged",
-          "url": "https://www.linkedin.com/in/rajatkothari9199"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "experience in fintech",
-        "technical expertise"
-      ],
-      "risks": [
-        "lack of information on current endeavors"
-      ],
-      "company_url": "phonepe.com"
-    },
-    {
-      "name": "Surya Pratap",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "PhonePe",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Surya Pratap Singh, an ex-PhonePe executive, is going stealth, indicating a potential new venture. With experience in the fintech sector, this could be an interesting opportunity. However, more information is needed to fully assess the potential of this founder.",
-      "linkedin_url": "https://www.linkedin.com/in/surya-pratap-singh095",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-PhonePe exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/surya-pratap-singh095"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "experience at PhonePe",
-        "stealth mode indication"
-      ],
-      "risks": [
-        "unknown experience years",
-        "lack of information on current venture"
-      ],
-      "company_url": "phonepe.com"
-    },
-    {
-      "name": "Rahul Sharma",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "PhonePe",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Rahul Sharma's experience at PhonePe, a prominent fintech company, could indicate a strong understanding of the industry, making him a potential founder worth investigating. However, the lack of clear information about his experience years and current company makes it difficult to assess his full potential. Further research is needed to determine his fit for our investment mandate.",
-      "linkedin_url": "https://www.linkedin.com/in/rahul-sharma-9058a5228",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-PhonePe exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/rahul-sharma-9058a5228"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "experience at PhonePe",
-        "potential for domain expertise"
-      ],
-      "risks": [
-        "unknown experience years",
-        "lack of clear company information"
-      ],
-      "company_url": "phonepe.com"
-    },
-    {
-      "name": "",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "PhonePe",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "Fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Manika Tiwari's experience at PhonePe and McKinsey suggests a strong understanding of the fintech sector, making her a potential founder worth investigating. Her departure from PhonePe could indicate a new venture. However, more information is needed to confirm her current endeavors.",
-      "linkedin_url": "https://www.linkedin.com/in/manika0704",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from PhonePe — LinkedIn profile flagged",
-          "url": "https://www.linkedin.com/in/manika0704"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Experience at PhonePe",
-        "McKinsey background"
-      ],
-      "risks": [
-        "Unknown current company or project"
-      ],
-      "company_url": "phonepe.com"
-    },
-    {
-      "name": "",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "Swiggy",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "Food Delivery",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Aditya Radhakrishnan Nair, an ex-Swiggy executive, is going stealth, indicating a potential new venture in the food delivery or related sector. With experience in a successful Indian startup, Aditya may leverage this expertise to build a compelling new business. However, more information is needed to fully assess this opportunity.",
-      "linkedin_url": "https://www.linkedin.com/in/adityaradhakrishnan",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Swiggy exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/adityaradhakrishnan"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Experience in food delivery sector",
-        "Potential network in Indian startup ecosystem"
-      ],
-      "risks": [
-        "Lack of information on new venture",
-        "Unknown experience level"
-      ],
-      "company_url": "swiggy.com"
-    },
-    {
-      "name": "",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "Swiggy",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "Food Delivery/Tech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "The individual's background in growth marketing and product at Swiggy, a prominent food delivery company, suggests potential for a strong understanding of the tech and food delivery space. However, without more information on their experience and current venture, it's difficult to assess their full potential. Further investigation could uncover a compelling founder story.",
-      "linkedin_url": "https://www.linkedin.com/in/kumararayan",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Swiggy exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/kumararayan"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Growth Marketing",
-        "Product expertise"
-      ],
-      "risks": [
-        "Lack of information on experience and current venture"
-      ],
-      "company_url": "swiggy.com"
-    },
-    {
-      "name": "Yogesh Pandey",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "Swiggy",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "Food Delivery/Tech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Yogesh Pandey, an ex-Swiggy executive, is going stealth, indicating a potential new venture. With experience in a successful startup, Pandey may bring valuable insights to a new project. However, the lack of information on their experience and new company details requires further investigation.",
-      "linkedin_url": "https://www.linkedin.com/in/yogesh-pandey-8942b24",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Swiggy exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/yogesh-pandey-8942b24"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Experience in a prominent startup (Swiggy)",
-        "Stealth mode indication of new venture"
-      ],
-      "risks": [
-        "Unknown experience years",
-        "Lack of clear information on new venture"
-      ],
-      "company_url": "swiggy.com"
-    },
-    {
-      "name": "",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "Swiggy",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "foodtech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Shirin Bansal's experience at Swiggy and product strategy skills make them an interesting candidate, but more information is needed to determine their current project's viability. As an early-stage product strategist, they may be well-positioned to identify and tackle key challenges in the foodtech sector. Further investigation could uncover a compelling investment opportunity.",
-      "linkedin_url": "https://www.linkedin.com/in/shirinbansal",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Swiggy exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/shirinbansal"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "experience at Swiggy",
-        "product strategy skills"
-      ],
-      "risks": [
-        "lack of information on current endeavors"
-      ],
-      "company_url": "swiggy.com"
-    },
-    {
-      "name": "Supreeta Jha",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "Swiggy",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "Food Delivery",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Supreeta Jha's experience at Swiggy and McKinsey suggests a strong understanding of the food delivery and operations space, making her a potential founder worth investigating, especially if she is building something new in this sector. Her departure from Swiggy could indicate a new venture. However, more information is needed to confirm her plans and experience.",
-      "linkedin_url": "https://www.linkedin.com/in/supreeta-jha",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from Swiggy — LinkedIn profile flagged",
-          "url": "https://www.linkedin.com/in/supreeta-jha"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Experience in food delivery sector",
-        "Background in consulting and operations"
-      ],
-      "risks": [
-        "Unknown experience years",
-        "No clear indication of new venture"
-      ],
-      "company_url": "swiggy.com"
-    },
-    {
-      "name": "Anmol Agarwal Pf",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "Swiggy",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "FoodTech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Anmol Agarwal's departure from Swiggy, a leading food delivery company, could indicate a new venture in the same sector. With experience in the food delivery space, Anmol may be well-positioned to identify opportunities for innovation. Further investigation is needed to understand the specifics of their new venture.",
-      "linkedin_url": "https://www.linkedin.com/in/anmol-agarwal-pf",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from Swiggy — LinkedIn profile flagged",
-          "url": "https://www.linkedin.com/in/anmol-agarwal-pf"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "experience in food delivery sector",
-        "leadership potential"
-      ],
-      "risks": [
-        "lack of information on new venture"
-      ],
-      "company_url": "swiggy.com"
-    },
-    {
-      "name": "",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "Swiggy",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "Food Delivery/Tech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Neerav Chirimar's experience as a senior executive at Swiggy and Uber makes him a seasoned operator in the food delivery and tech space. His departure from Swiggy could indicate a new venture, but more information is needed to confirm. Investigating his plans and new company could lead to a potential investment opportunity.",
-      "linkedin_url": "https://www.linkedin.com/in/neeravchirimar",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from Swiggy — LinkedIn profile flagged",
-          "url": "https://www.linkedin.com/in/neeravchirimar"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Experience in food delivery industry",
-        "Leadership experience at Swiggy and Uber"
-      ],
-      "risks": [
-        "Unknown experience in years",
-        "No clear indication of new venture"
-      ],
-      "company_url": "swiggy.com"
-    },
-    {
-      "name": "",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "Swiggy",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "Food Delivery/Tech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Sandeep Jindal, an ex-Swiggy executive, is going stealth, indicating potential for a new venture. With experience as an engineering leader, he may be well-equipped to build a strong tech company. However, more information is needed to confirm his experience and company details.",
-      "linkedin_url": "https://www.linkedin.com/in/jindalsandeep47",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Swiggy exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/jindalsandeep47"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Ex-Swiggy exec",
-        "Engineering leader"
-      ],
-      "risks": [
-        "Unknown experience years",
-        "No clear company registration signal"
-      ],
-      "company_url": "swiggy.com"
-    },
-    {
-      "name": "Uttkarsha S",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "Swiggy",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "Food Delivery/Tech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Uttkarsha S, with experience as a brand and social marketeer at Swiggy, has the potential to leverage their skills in the tech or food delivery sector, making them worth investigating for a potential startup venture. Their departure from Swiggy could signal the start of a new entrepreneurial endeavor. However, more information is needed to fully assess their potential.",
-      "linkedin_url": "https://www.linkedin.com/in/uttkarsha-s-267b15212",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from Swiggy — LinkedIn profile flagged",
-          "url": "https://www.linkedin.com/in/uttkarsha-s-267b15212"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Experience in marketing at a prominent startup",
-        "Strong LinkedIn presence"
-      ],
-      "risks": [
-        "Lack of information on current endeavors"
-      ],
-      "company_url": "swiggy.com"
-    },
-    {
-      "name": "Lovekesh Dhamija Ld7",
-      "score": 40,
-      "action": "watchlist",
-      "previous_company": "Swiggy",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "Food Delivery",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Lovekesh Dhamija, an ex-Swiggy executive, is going stealth, indicating a potential new venture in the food delivery sector. With a strong LinkedIn presence and experience in the sector, he may be worth investigating. However, more information is needed to determine the viability of his new venture.",
-      "linkedin_url": "https://www.linkedin.com/in/lovekesh-dhamija-ld7",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Swiggy exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/lovekesh-dhamija-ld7"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Experience in food delivery sector",
-        "Strong LinkedIn presence"
-      ],
-      "risks": [
-        "Lack of information on current venture"
-      ],
-      "company_url": "swiggy.com"
-    },
-    {
-      "name": "",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "Groww",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Manish Sugandhi's experience at Groww, a well-known fintech company, and his product expertise make him an interesting candidate to investigate, especially given the potential for a new venture in the fintech space. His departure from Groww could signal the start of something new and innovative. Further research is needed to understand his current plans and potential for a new company.",
-      "linkedin_url": "https://www.linkedin.com/in/manishsugandhi",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from Groww — LinkedIn profile flagged",
-          "url": "https://www.linkedin.com/in/manishsugandhi"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "product expertise",
-        "experience in a high-growth company"
-      ],
-      "risks": [
-        "unknown current venture or plans"
-      ],
-      "company_url": "groww.in"
-    },
-    {
-      "name": "",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "Groww",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Param Aggarwal is a seasoned operator with experience in the fintech sector, having worked at Groww. His stealth mode indicates a potential new venture, which could be an interesting investment opportunity. However, more information is needed to confirm his experience and the details of his new company.",
-      "linkedin_url": "https://www.linkedin.com/in/paramaggarwal",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Groww exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/paramaggarwal"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "experience in fintech",
-        "leadership role at Groww"
-      ],
-      "risks": [
-        "unknown experience years",
-        "lack of clear company information"
-      ],
-      "company_url": "groww.in"
-    },
-    {
-      "name": "",
-      "score": 40,
-      "action": "watchlist",
-      "previous_company": "Groww",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Prakhar Vyas, an ex-Groww executive, is going stealth, indicating a potential new venture. With experience in the fintech sector, Prakhar may be building something noteworthy. However, the lack of information on their experience years and no indication of being a second-time founder reduces the score.",
-      "linkedin_url": "https://www.linkedin.com/in/prakharv149",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Groww exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/prakharv149"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "experience at Groww",
-        "stealth mode indication"
-      ],
-      "risks": [
-        "unknown experience years",
-        "lack of second-time founder signal"
-      ],
-      "company_url": "groww.in"
-    },
-    {
-      "name": "",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "Groww",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Arushi Upmanyu's experience at Groww, a well-known fintech company, could be leveraged to build a new venture in the same sector. Although there is limited information available, the stealth mode indication on LinkedIn suggests that she may be working on a new project. Further investigation is needed to determine the potential of this founder and their new venture.",
-      "linkedin_url": "https://www.linkedin.com/in/arushiupmanyu",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Groww exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/arushiupmanyu"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "experience at Groww",
-        "potential for innovation in fintech"
-      ],
-      "risks": [
-        "lack of information on current venture",
-        "unknown experience level"
-      ],
-      "company_url": "groww.in"
-    },
-    {
-      "name": "Satwik Singh",
-      "score": 40,
-      "action": "watchlist",
-      "previous_company": "Groww",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "Fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Satwik Singh, an ex-Groww executive, is going stealth, indicating a potential new venture. With experience in a growth-stage company like Groww, Singh may be well-equipped to navigate the challenges of building a startup. However, more information is needed to fully assess their potential.",
-      "linkedin_url": "https://www.linkedin.com/in/satwik-singh-9779401b0",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Groww exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/satwik-singh-9779401b0"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Experience in a growth-stage company",
-        "Technical expertise as a Software Development Engineer"
-      ],
-      "risks": [
-        "Lack of information on current endeavors",
-        "Unknown experience level"
-      ],
-      "company_url": "groww.in"
-    },
-    {
-      "name": "Shardul",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "Groww",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Shardul Tamane's departure from Groww, a well-known fintech company, could indicate a potential entrepreneurial venture. His product expertise and experience in a growth-stage company make him an interesting candidate to investigate. However, without more information on his plans, it's difficult to assess his potential as a founder.",
-      "linkedin_url": "https://www.linkedin.com/in/shardul-tamane",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from Groww — LinkedIn profile flagged",
-          "url": "https://www.linkedin.com/in/shardul-tamane"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "product expertise",
-        "experience in growth-stage company"
-      ],
-      "risks": [
-        "unknown entrepreneurial intentions"
-      ],
-      "company_url": "groww.in"
-    },
-    {
-      "name": "Abhijit Sethi",
-      "score": 40,
-      "action": "watchlist",
-      "previous_company": "Groww",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Abhijit Sethi's departure from Groww, a prominent fintech company, could indicate a potential entrepreneurial venture in the same sector. His technical expertise as a full stack software engineer is a valuable asset. However, the lack of information on his current endeavors and entrepreneurial experience makes this a moderate-risk opportunity.",
-      "linkedin_url": "https://www.linkedin.com/in/abhijit-sethi",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from Groww — LinkedIn profile flagged",
-          "url": "https://www.linkedin.com/in/abhijit-sethi"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "technical expertise",
-        "experience in fintech"
-      ],
-      "risks": [
-        "lack of entrepreneurial experience"
-      ],
-      "company_url": "groww.in"
-    },
-    {
-      "name": "",
-      "score": 40,
-      "action": "watchlist",
-      "previous_company": "Groww",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Sarthak Sarin's departure from Groww, a well-known fintech company, could indicate a new venture in the same sector. With a significant following on LinkedIn, Sarin may have a strong network to leverage. However, without more information on their experience and new company, it's difficult to assess their potential as a founder.",
-      "linkedin_url": "https://www.linkedin.com/in/sarthaksarin",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from Groww — LinkedIn profile flagged",
-          "url": "https://www.linkedin.com/in/sarthaksarin"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "experience in fintech",
-        "senior departure from Groww"
-      ],
-      "risks": [
-        "unknown experience years",
-        "no clear indication of new venture"
-      ],
-      "company_url": "groww.in"
-    },
-    {
-      "name": "Akarshi",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "Groww",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Akarshi, an ex-Groww exec, is going stealth, indicating potential for a new venture in the fintech space. With experience at a notable company, Akarshi may possess valuable insights and expertise. However, the lack of information on their current venture and experience level warrants further investigation.",
-      "linkedin_url": "https://www.linkedin.com/in/akarshi-aggarwal",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Groww exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/akarshi-aggarwal"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "experience at Groww",
-        "potential for domain expertise"
-      ],
-      "risks": [
-        "unknown experience level",
-        "lack of information on current venture"
-      ],
-      "company_url": "groww.in"
-    },
-    {
-      "name": "",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "Groww",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "The executive's departure from Groww and stealth mode on LinkedIn suggest a potential new venture, which could be an interesting opportunity given the growth of the fintech sector in India. However, more information is needed to fully assess the founder's experience and the new company's prospects. Further investigation could uncover a promising investment opportunity.",
-      "linkedin_url": "https://www.linkedin.com/in/kaushikmurali98",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Groww exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/kaushikmurali98"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "experience at Groww",
-        "potential for innovation"
-      ],
-      "risks": [
-        "lack of information on current venture"
-      ],
-      "company_url": "groww.in"
-    },
-    {
-      "name": "Pradheep",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "Groww",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Pradheep, an ex-Groww exec, is going stealth, indicating potential for a new venture in the fintech space. With experience at a notable company, Pradheep may bring valuable insights to a new startup. However, more information is needed to fully assess their potential.",
-      "linkedin_url": "https://www.linkedin.com/in/pradheep-manivel",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Groww exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/pradheep-manivel"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "experience at Groww",
-        "potential for domain expertise"
-      ],
-      "risks": [
-        "lack of information on current venture",
-        "unknown experience level"
-      ],
-      "company_url": "groww.in"
-    },
-    {
-      "name": "Vaishali",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "Groww",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Vaishali, an ex-Groww exec, is going stealth, indicating potential for a new venture in the fintech space. With experience at a prominent Indian fintech company, Vaishali may possess valuable domain knowledge. However, the lack of information on their current venture and experience level warrants further investigation.",
-      "linkedin_url": "https://www.linkedin.com/in/vaishali-jamwal",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Groww exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/vaishali-jamwal"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "experience at Groww",
-        "potential for domain expertise"
-      ],
-      "risks": [
-        "lack of information on current venture",
-        "unknown experience level"
-      ],
-      "company_url": "groww.in"
-    },
-    {
-      "name": "shareAI-Lab",
-      "score": 40,
-      "action": "investigate",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "Singapore",
-      "sector": "AI/ML",
-      "geography": "Singapore",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "The founder has shown strong technical capabilities through their popular GitHub project, but their experience and background are unknown. Further investigation is needed to determine their potential as a founder. If they have a strong track record, they could be an interesting investment opportunity in the AI/ML space.",
-      "linkedin_url": "",
-      "github_url": "https://github.com/shareAI-lab",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "github_launch"
-      ],
-      "signals": [
-        {
-          "source": "github",
-          "type": "github_launch",
-          "description": "GitHub Trending (monthly): shareAI-lab/learn-claude-code — 48399★ (+27301 today) — Bash is all you need - A nano claude code–like 「agent harness」, built from 0 to ",
-          "url": "https://github.com/shareAI-lab/learn-claude-code"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Strong GitHub presence",
-        "Popular open-source project"
-      ],
-      "risks": [
-        "Unknown experience and background"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Abhimanyu Saharan",
-      "score": 40,
-      "action": "watchlist",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "Onemind-Services-LLC ",
-      "location": "India",
-      "sector": "AI/Technology",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Abhimanyu Saharan is a potential founder with a strong technical background, as evidenced by his trending GitHub repository. His project, openclaw-mission-control, has gained significant traction, indicating a promising idea. However, his experience and ability to scale a business are unknown, making him a higher-risk investment.",
-      "linkedin_url": "",
-      "github_url": "https://github.com/abhi1693",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "github_launch"
-      ],
-      "signals": [
-        {
-          "source": "github",
-          "type": "github_launch",
-          "description": "GitHub Trending (monthly): abhi1693/openclaw-mission-control — 3476★ (+2064 today) — AI Agent Orchestration Dashboard - Manage AI agents, assign tasks, and coordinat",
-          "url": "https://github.com/abhi1693/openclaw-mission-control"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Technical expertise",
-        "Innovation"
-      ],
-      "risks": [
-        "Lack of experience",
-        "Unknown team and resources"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Udit Goenka",
-      "score": 40,
-      "action": "watchlist",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "TinyCheque",
-      "location": "Mumbai, India",
-      "sector": "AI/Technology",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Udit Goenka is building TinyCheque, India's first AI Venture Studio, and has shown technical expertise through his GitHub repository. Although he is a first-time founder, his focus on AI and product building could lead to innovative solutions. Further investigation is needed to understand his vision and potential for growth.",
-      "linkedin_url": "",
-      "github_url": "https://github.com/uditgoenka",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "github_launch"
-      ],
-      "signals": [
-        {
-          "source": "github",
-          "type": "github_launch",
-          "description": "New GitHub repo with traction: uditgoenka/autoresearch (3208★) — Claude Autoresearch Skill — Autonomous goal-directed iteration for Claude Code. Inspired by Karpathy",
-          "url": "https://github.com/uditgoenka/autoresearch"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Technical expertise",
-        "Product building experience"
-      ],
-      "risks": [
-        "Lack of experience as a founder"
-      ],
-      "company_url": "https://tinycheque.com"
-    },
-    {
-      "name": "AMIT SHEKHAR",
-      "score": 40,
-      "action": "watchlist",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "OutcomeSchool",
-      "location": "New Delhi, India",
-      "sector": "Education Technology",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Amit Shekhar is building OutcomeSchool, which focuses on teaching AI, ML, and software engineering, and has shown strong open-source presence with a popular GitHub repository. However, the lack of information on his experience level and previous company background raises some concerns. Further investigation is needed to understand his potential as a founder.",
-      "linkedin_url": "",
-      "github_url": "https://github.com/amitshekhariitbhu",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "github_launch"
-      ],
-      "signals": [
-        {
-          "source": "github",
-          "type": "github_launch",
-          "description": "New GitHub repo with traction: amitshekhariitbhu/ai-engineering-interview-questions (941★) — Your Cheat Sheet for AI Engineering Interview – Questions and Answers.",
-          "url": "https://github.com/amitshekhariitbhu/ai-engineering-interview-questions"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Strong open-source presence",
-        "Relevant experience in AI and ML"
-      ],
-      "risks": [
-        "Unknown experience level",
-        "Lack of second-time founder or L1/L2 exit credentials"
-      ],
-      "company_url": "https://outcomeschool.io/"
-    },
-    {
-      "name": "Md Shariar Shanaz Shuvon",
-      "score": 40,
-      "action": "watchlist",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "AwareXone.com",
-      "location": "Malaysia ",
-      "sector": "cybersecurity",
-      "geography": "Malaysia",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Md Shariar Shanaz Shuvon is building AwareXone, an AI-powered safety and trust infrastructure company, and has demonstrated expertise in cybersecurity research and AI-powered bug bounty hunting through his GitHub repository. His ability to attract traction on GitHub is a positive signal. However, the lack of information on his experience level is a concern.",
-      "linkedin_url": "",
-      "github_url": "https://github.com/shuvonsec",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "github_launch"
-      ],
-      "signals": [
-        {
-          "source": "github",
-          "type": "github_launch",
-          "description": "New GitHub repo with traction: shuvonsec/claude-bug-bounty (1447★) — AI-powered bug bounty hunting from your terminal - recon, 20 vuln classes,   autonomous hunting, and",
-          "url": "https://github.com/shuvonsec/claude-bug-bounty"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "AI-powered bug bounty hunting expertise",
-        "GitHub traction"
-      ],
-      "risks": [
-        "unknown experience level"
-      ],
-      "company_url": "https://awarexone.com"
-    },
-    {
-      "name": "Lark Technologies Pte. Ltd.",
-      "score": 40,
-      "action": "watchlist",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "Singapore",
-      "sector": "productivity/software",
-      "geography": "Singapore",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Lark Technologies Pte. Ltd. has launched a popular GitHub repository, indicating technical expertise and potential for a strong product. However, the team's experience and background are unknown, making it a higher-risk investment. Further research is needed to understand the company's vision and potential for growth.",
-      "linkedin_url": "",
-      "github_url": "https://github.com/larksuite",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "github_launch"
-      ],
-      "signals": [
-        {
-          "source": "github",
-          "type": "github_launch",
-          "description": "New GitHub repo with traction: larksuite/cli (6670★) — The official Lark/Feishu CLI tool, maintained by the larksuite team — built for humans and AI Agents",
-          "url": "https://github.com/larksuite/cli"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "technical expertise",
-        "open-source traction"
-      ],
-      "risks": [
-        "unknown team and experience"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Abhigyan Patwari",
-      "score": 35,
-      "action": "watchlist",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "Guwahati, Assam, India",
-      "sector": "AI/Technology",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Abhigyan Patwari is a talented AI engineer and CS student who has created a trending GitHub project, indicating potential for innovation and technical expertise. However, the lack of experience and track record as a founder raises concerns about their ability to scale and lead a company. Further investigation is needed to assess their potential as a founder.",
-      "linkedin_url": "",
-      "github_url": "https://github.com/abhigyanpatwari",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "github_launch"
-      ],
-      "signals": [
-        {
-          "source": "github",
-          "type": "github_launch",
-          "description": "GitHub Trending (monthly): abhigyanpatwari/GitNexus — 21960★ (+12140 today) — GitNexus: The Zero-Server Code Intelligence Engine - GitNexus is a client-side k",
-          "url": "https://github.com/abhigyanpatwari/GitNexus"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Technical expertise in AI and systems",
-        "Ability to create trending GitHub projects"
-      ],
-      "risks": [
-        "Lack of experience and track record as a founder"
+        "unknown founder background",
+        "limited information"
       ],
       "company_url": ""
     }
   ],
   "source_breakdown": {
-    "news": 7,
-    "linkedin": 45,
-    "github": 7
+    "news": 7
   },
-  "score_threshold": 30
+  "score_threshold": 40
 }
