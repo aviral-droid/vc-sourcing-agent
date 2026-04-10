@@ -1,69 +1,28 @@
 {
-  "generated_at": "2026-04-09T12:32:14.265767",
-  "date_label": "2026-04-09",
-  "total_signals": 40,
-  "total_persons": 40,
+  "generated_at": "2026-04-10T08:19:07.585235",
+  "date_label": "2026-04-10",
+  "total_signals": 15,
+  "total_persons": 15,
   "sources_active": [
     "Product Hunt",
     "News (RSS + Google News)"
   ],
-  "executive_summary": "Pipeline surfaced 40 founders above threshold on 2026-04-09. 2 flagged for immediate investigation, 9 added to watchlist. Top lead: Sophia Nadur (score 48, India, ex-Nadur) — unknown sector. Rule-based scoring active (LLM quota reset at midnight UTC).",
+  "executive_summary": "Today's top VC sourcing signals are predominantly from India, with 15 leads surpassing the threshold, and none from Southeast Asia. The strongest archetypes emerging are seasoned executives transitioning into stealth mode, particularly in the Fintech sector, which aligns with our current hot sector intelligence. Notable leads include Alekh Landhe, who is pursuing a stealth Fintech venture in India, scoring 75, and another compelling lead is an unknown founder, also in India's Fintech space, with a score of 70, indicating potential for a high-growth startup. These leads warrant further investigation to uncover more information about the founders and their ventures.",
   "persons": [
     {
-      "name": "Sophia Nadur",
-      "score": 48,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Nadur",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Sophia Nadur (ex-Nadur, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "executive_departure",
-          "description": "[YourStory] BP Ventures Asia and Middle East Managing Director Sophia Nadur exits",
-          "url": "https://yourstory.com/2026/04/bp-ventures-asia-and-middle-east-managing-director-sophia-nadur-exits"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Previous role unclear"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Campbell Wilson",
-      "score": 48,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
+      "name": "Alekh Landhe",
+      "score": 75,
+      "action": "investigate",
+      "recommended_action": "investigate",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
-      "location": "India",
-      "sector": "deeptech",
+      "location": "",
+      "sector": "Fintech",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Campbell Wilson (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "investment_thesis": "Alekh Landhe, former CTO of Swiggy, is reportedly building a stock trading app called Sahi, which is looking to raise a substantial amount. This indicates a strong founder with deep operational experience in a leading tech company, now venturing into the high-potential Fintech space in India.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -75,77 +34,81 @@
         {
           "source": "news",
           "type": "executive_departure",
-          "description": "[Google News] Air India CEO Campbell Wilson steps down - Reuters",
-          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQNm5RYmhpOUZod1RWbHZvWlFybGphYkpiNkszUFZ1TGgzUFFUU1BWQUU3OUh1aEw1UHBETW1CVGhBY2VLYnlhcFR2SVp3TU9qQ2duYlVRQ2wyNHJqcXVmTWNWdWlTUEdxSF9DRVVxQTdmNk9QVFpJSzNjMW53dnN5eEo3aWNYYmMzOS11V3NOVl9MeWVMZE9aQXRmbjBzazE1aVFsbEM2WEd3TmVHZGhSVmRQb3JZbW8?oc=5"
+          "description": "[Google News] Ex-Swiggy CTO’s stock trading app Sahi said to raise up to $80m - Tech in Asia",
+          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPOFJVSEF2TFpEWm9zOG85SnZFY2F3OXI4RXhHWUh0cmV1NTR0bDVFMllrOHkxVGh0Wmxzd1hER1pxUjVwUUloXzY2QktwZUx4aWRNeHBUOEt6cUx5N0hjQ1RCUWktSGZUNS1VSEZ1d0ttZHBTMU9YU1p2X1BZM21tOGIwMDg?oc=5"
         }
       ],
-      "confidence": "low",
-      "founder_type": "unknown",
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
       "key_strengths": [
-        "Signal detected from sourcing pipeline"
+        "Former CTO of a prominent tech company (Swiggy)",
+        "Building a new venture in a high-growth sector (Fintech)",
+        "Significant funding potential indicated ($80m raise)"
       ],
       "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Previous role unclear"
+        "Founder's experience level (years) is unknown",
+        "Location is unknown",
+        "Previous company and title are not explicitly stated in the signal"
       ],
       "company_url": ""
     },
     {
       "name": "Unknown",
-      "score": 48,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
+      "score": 70,
+      "action": "investigate",
+      "recommended_action": "investigate",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
-      "location": "India",
-      "sector": "unknown",
+      "location": "",
+      "sector": "Cloud Infrastructure",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "investment_thesis": "This is a promising signal due to the substantial $22 Mn funding raised by Nava, a startup founded by a former OYO executive. While the founder's specific background and experience level are currently unknown, the significant capital infusion and the focus on a 'Neocloud Platform' indicate strong potential and market validation. Further investigation into the founder's identity and prior roles is warranted.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
       "signal_count": 1,
       "signal_types": [
-        "executive_departure"
+        "funding_news"
       ],
       "signals": [
         {
           "source": "news",
-          "type": "executive_departure",
-          "description": "[Inc42] What’s Driving Startup Investors’ Shift Towards Domestic LPs?",
-          "url": "https://inc42.com/features/whats-driving-startup-investors-shift-towards-domestic-lps/"
+          "type": "funding_news",
+          "description": "[Inc42] Former OYO Executive’s Startup Nava Raises $22 Mn To Build Neocloud Platform",
+          "url": "https://inc42.com/buzz/former-oyo-executives-startup-nava-raises-22-mn-to-build-neocloud-platform/"
         }
       ],
-      "confidence": "low",
-      "founder_type": "unknown",
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
       "key_strengths": [
-        "Signal detected from sourcing pipeline"
+        "Significant funding raised ($22 Mn)",
+        "Previous executive experience at a prominent startup (OYO)",
+        "Building a 'Neocloud Platform' suggests a focus on modern infrastructure"
       ],
       "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Previous role unclear"
+        "Founder's name and specific prior role at OYO are unknown",
+        "Founder's total years of experience are unknown",
+        "Second-time founder status is explicitly stated as false"
       ],
       "company_url": ""
     },
     {
       "name": "Unknown",
-      "score": 48,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
+      "score": 70,
+      "action": "investigate",
+      "recommended_action": "investigate",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
       "location": "India",
-      "sector": "unknown",
+      "sector": "Fintech",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "investment_thesis": "The departure of a CEO from a major unicorn like Policybazaar is a strong signal of a seasoned operator potentially starting a new venture. Given the fintech background of Policybazaar, this individual is likely to leverage their experience in a related or adjacent sector, making them a compelling candidate for investigation.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -161,32 +124,74 @@
           "url": "https://inc42.com/buzz/new-unicorn-unlocked-policybazaar-ceo-quits-more/"
         }
       ],
-      "confidence": "low",
-      "founder_type": "unknown",
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
       "key_strengths": [
-        "Signal detected from sourcing pipeline"
+        "Executive departure from a prominent unicorn (Policybazaar)",
+        "CEO title indicates significant leadership experience",
+        "Headline suggests a potential new venture in a high-growth area"
       ],
       "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Previous role unclear"
+        "Founder's name and specific experience details are unknown",
+        "No direct signal of a new company registration or stealth mode yet"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Sophia Nadur",
+      "score": 65,
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "Nadur",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Venture Capital",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Sophia Nadur's departure from BP Ventures Asia and Middle East as Managing Director is a strong signal of a seasoned operator potentially moving to build something new. Her experience in venture capital, particularly in the region, suggests a deep understanding of the startup ecosystem.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "executive_departure",
+          "description": "[YourStory] BP Ventures Asia and Middle East Managing Director Sophia Nadur exits",
+          "url": "https://yourstory.com/2026/04/bp-ventures-asia-and-middle-east-managing-director-sophia-nadur-exits"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
+      "key_strengths": [
+        "Executive departure from a prominent venture arm (BP Ventures)"
+      ],
+      "risks": [
+        "Experience years unknown",
+        "No clear signal of new company registration or stealth activity",
+        "Not explicitly a second-time founder"
       ],
       "company_url": ""
     },
     {
       "name": "Unknown",
-      "score": 48,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
+      "score": 65,
+      "action": "investigate",
+      "recommended_action": "investigate",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
       "location": "India",
-      "sector": "saas",
+      "sector": "Venture Capital/Investment",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "investment_thesis": "This signal indicates experienced executives from notable companies (Delhivery, Naspers) are moving into venture capital. While not a direct startup founder signal, their operational background and move to a VC firm suggest they may have strong networks and insights into building companies, potentially leading to future founder roles or investments. Further investigation is needed to identify the individuals and their specific roles.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -202,114 +207,34 @@
           "url": "https://yourstory.com/2026/04/former-delhivery-naspers-bain-capital-co-founders"
         }
       ],
-      "confidence": "low",
-      "founder_type": "unknown",
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
       "key_strengths": [
-        "Signal detected from sourcing pipeline"
+        "Executive departure from prominent companies (Delhivery, Naspers)",
+        "Joining a VC firm as a Partner suggests credibility and network"
       ],
       "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Previous role unclear"
+        "Founder identity is unknown",
+        "Experience level is unknown",
+        "No direct signal of building a new company (joining a VC firm)",
+        "Sector is not a typical startup focus for early-stage VC"
       ],
       "company_url": ""
     },
     {
       "name": "Unknown",
-      "score": 48,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
+      "score": 60,
+      "action": "investigate",
+      "recommended_action": "investigate",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
       "location": "India",
-      "sector": "fintech",
+      "sector": "Aviation/Transportation",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "executive_departure",
-          "description": "[YourStory] CRED upgrades its wealth management platform Kuvera",
-          "url": "https://yourstory.com/2026/04/cred-upgrades-its-wealth-management-platform-kuvera"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Previous role unclear"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Unknown",
-      "score": 48,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "Singapore",
-      "sector": "healthtech",
-      "geography": "Singapore",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "executive_departure",
-          "description": "[e27] Why corporate mental health fails and how AI can fix it",
-          "url": "https://e27.co/why-corporate-mental-health-strategies-fail-and-how-ai-can-support-more-personalised-proactive-care-20250511/"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Previous role unclear"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Unknown",
-      "score": 48,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "deeptech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "investment_thesis": "The recent departure of the Air India CEO could indicate a potential new venture in the aviation or transportation sector, leveraging their executive experience and industry expertise. This person may be worth investigating as a seasoned operator with a strong background. However, more information is needed to confirm their intentions and the potential of their new venture.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -325,15 +250,15 @@
           "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOaTg4X0luWkstelk4TGJMcl9JUi1LbFB1S0pxaEtiSmFIVEJyenpydnR3SmhIQlY5UHpCRnlDTWdCUHJrMGs3YmVWUlFaRXkyZFZ2emF1Q29GdlpDNDdDZldRdWhxcFVqNXQ3RkcxVHJvSzJCYVV3Ry1CdFNiQXRJdHI2Vm54RnRCWGRqcmZrYnpTT0RfSy03OGs1S05fOXdnU2c?oc=5"
         }
       ],
-      "confidence": "low",
-      "founder_type": "unknown",
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
       "key_strengths": [
-        "Signal detected from sourcing pipeline"
+        "Executive experience",
+        "Industry expertise"
       ],
       "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Previous role unclear"
+        "Unknown intentions",
+        "Lack of information on new venture"
       ],
       "company_url": ""
     },
@@ -350,7 +275,7 @@
       "geography": "Singapore",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "OnSite has successfully raised US$1.3M, indicating early traction and investor confidence in their solution for the construction industry. While the founder's background is currently unknown, the funding news itself is a positive signal for a pre-seed/seed stage investment.",
+      "investment_thesis": "OnSite has successfully raised a seed round, indicating early traction and investor confidence in their solution for the construction industry. While the founder's background is currently unknown, the funding news itself is a positive signal for a pre-seed/seed stage fund.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -374,762 +299,24 @@
       "risks": [
         "Founder experience unknown",
         "Not a second-time founder",
-        "Limited information on the individual"
-      ],
-      "company_url": "https://onsite.tech/"
-    },
-    {
-      "name": "Sandeep Barasia",
-      "score": 42,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "Delhivery CBO",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "saas",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Sandeep Barasia shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "funding_news"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "funding_news",
-          "description": "[Inc42] Bay Capital Onboards Sandeep Barasia, Tej Kapoor As Partners To Launch New Digital Fund",
-          "url": "https://inc42.com/buzz/bay-capital-onboards-sandeep-barasia-tej-kapoor-as-partners-to-launch-new-digital-fund/"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Previous role unclear"
+        "Limited information beyond funding news"
       ],
       "company_url": ""
     },
     {
       "name": "Unknown",
-      "score": 42,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "Singapore",
-      "sector": "saas",
-      "geography": "Singapore",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "funding_news"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "funding_news",
-          "description": "[Inc42] Atlas Nets $6 Mn To Scale Its Accounting-Focused AI Platform",
-          "url": "https://inc42.com/buzz/atlas-nets-6-mn-to-scale-its-accounting-focused-ai-platform/"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Previous role unclear"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Unknown",
-      "score": 42,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "climate",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "funding_news"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "funding_news",
-          "description": "[Inc42] Indian Unicorn Tracker: Funding, Investors, Revenue And More",
-          "url": "https://inc42.com/features/indian-unicorn-tracker-funding-investors-revenue-and-more/"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Previous role unclear"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Unknown",
-      "score": 42,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "Singapore",
-      "sector": "healthtech",
-      "geography": "Singapore",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "funding_news"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "funding_news",
-          "description": "[e27] Singapore AI health startup injewelme raises US$1.2M to scale contactless vital-signs technology",
-          "url": "https://e27.co/singapore-ai-health-startup-injewelme-raises-us1-2m-to-scale-contactless-vital-signs-technology-20260409/"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Previous role unclear"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Unknown",
-      "score": 42,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "funding_news"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "funding_news",
-          "description": "[e27] India is slowing down but Southeast Asia is falling behind faster",
-          "url": "https://e27.co/india-is-slowing-down-but-southeast-asia-is-falling-behind-faster-20260409/"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Previous role unclear"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Unknown",
-      "score": 42,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "unknown",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "funding_news"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "funding_news",
-          "description": "[e27] Secondary sales in SEA: The liquidity lifeline when exits are scarce",
-          "url": "https://e27.co/secondary-sales-in-sea-the-liquidity-lifeline-when-exits-are-scarce-20260402/"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Geography unconfirmed"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Unknown",
-      "score": 42,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "Singapore",
-      "sector": "deeptech",
-      "geography": "Singapore",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "funding_news"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "funding_news",
-          "description": "[e27] Muun AI expands industrial AI push with US$700K pre-seed funding",
-          "url": "https://e27.co/muun-ai-funding-20260408/"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Previous role unclear"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Unknown",
-      "score": 42,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "saas",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "funding_news"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "funding_news",
-          "description": "[e27] AI hype, hard lessons: Where SEA’s startup capital is really going",
-          "url": "https://e27.co/ai-hype-hard-lessons-where-seas-startup-capital-is-really-going-20260406/"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Geography unconfirmed"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Tarun Mathur",
-      "score": 40,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "unknown",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Tarun Mathur shows early signals but insufficient data to prioritise at this stage. Signals include executive departure.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "executive_departure",
-          "description": "[Inc42] Tarun Mathur Quits As Policybazaar CEO, Sajja Praveen Chowdary Takes Charge",
-          "url": "https://inc42.com/buzz/tarun-mathur-quits-as-policybazaar-ceo-sajja-praveen-chowdary-takes-charge/"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Geography unconfirmed"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Unknown",
-      "score": 40,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "saas",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include executive departure.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "executive_departure",
-          "description": "[YourStory] Masters’ Union launches Rs 100 Cr early-stage investment platform",
-          "url": "https://yourstory.com/2026/04/masters-union-100-crore-early-stage-investment-platform"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Geography unconfirmed"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Unknown",
-      "score": 40,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "fintech",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include executive departure.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "executive_departure",
-          "description": "[e27] Why institutional money isn’t saving crypto from this sell-off",
-          "url": "https://e27.co/why-institutional-money-isnt-saving-crypto-from-this-sell-off-20260409/"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Geography unconfirmed"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Unknown",
-      "score": 40,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "unknown",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include executive departure.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "executive_departure",
-          "description": "[e27] The equity gap in strategy: Why the people who know most have the least say",
-          "url": "https://e27.co/equity-gap-in-strategy-20260317/"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Geography unconfirmed"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Unknown",
-      "score": 40,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "saas",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include executive departure.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "executive_departure",
-          "description": "[e27] How Hasan Venture Capital uses AI to build an ethically grounded investment future",
-          "url": "https://e27.co/hasan-venture-capital-feature-20250522/"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Geography unconfirmed"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Unknown",
-      "score": 40,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "unknown",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include executive departure.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "executive_departure",
-          "description": "[e27] Beyond inclusion: Why equity matters in the digital economy",
-          "url": "https://e27.co/beyond-inclusion-why-equity-matters-in-the-digital-economy-20260326/"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Geography unconfirmed"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Unknown",
-      "score": 40,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "deeptech",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include executive departure.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "executive_departure",
-          "description": "[Google News] Ex-Swiggy CTO’s stock trading app Sahi said to raise up to $80m - Tech in Asia",
-          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPOFJVSEF2TFpEWm9zOG85SnZFY2F3OXI4RXhHWUh0cmV1NTR0bDVFMllrOHkxVGh0Wmxzd1hER1pxUjVwUUloXzY2QktwZUx4aWRNeHBUOEt6cUx5N0hjQ1RCUWktSGZUNS1VSEZ1d0ttZHBTMU9YU1p2X1BZM21tOGIwMDg?oc=5"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Geography unconfirmed"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Ankit Narang",
-      "score": 35,
+      "score": 45,
       "action": "investigate",
       "recommended_action": "investigate",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
       "location": "",
-      "sector": "AI",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Ankit Narang has launched Awshar AI, an AI product focused on understanding Indian digital conversations. While the signals are currently weak due to unknown experience and previous founder status, the AI sector and India focus are promising. Further investigation into his background and the traction of Awshar AI is warranted.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "product_launch"
-      ],
-      "signals": [
-        {
-          "source": "Product Hunt",
-          "type": "product_launch",
-          "description": "[Product Hunt] Ankit Narang launched Awshar AI: Understands India's nuanced digital conversations\n           \n           \n             Discussion \n            |\n             Link",
-          "url": "https://www.producthunt.com/products/awshar-ai"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Product Hunt launch indicates initiative and ability to bring a product to market."
-      ],
-      "risks": [
-        "Experience and previous founder status are unknown.",
-        "Location is unknown.",
-        "Limited signals beyond a single product launch."
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Unknown",
-      "score": 34,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "deeptech",
+      "sector": "Autonomous Vehicles / Industrial Automation",
       "geography": "Unknown",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "funding_news"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "funding_news",
-          "description": "[Inc42] EV Financing & Asset Management Startup Astranova Mobility Raises ₹60 Cr",
-          "url": "https://inc42.com/buzz/ev-financing-asset-management-startup-astranova-mobility-raises-%e2%82%b960-cr/"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Geography unconfirmed"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Unknown",
-      "score": 34,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "saas",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "funding_news"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "funding_news",
-          "description": "[Inc42] Former OYO Executive’s Startup Nava Raises $22 Mn To Build Neocloud Platform",
-          "url": "https://inc42.com/buzz/former-oyo-executives-startup-nava-raises-22-mn-to-build-neocloud-platform/"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Geography unconfirmed"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Unknown",
-      "score": 34,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "deeptech",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "investment_thesis": "RoshAi has secured substantial pre-seed/seed funding to develop autonomous vehicles for industrial use, indicating strong investor confidence in the venture. While the founder's background is currently unknown, the significant capital raise suggests a potentially compelling vision and market opportunity in the autonomous vehicle space.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -1148,29 +335,29 @@
       "confidence": "low",
       "founder_type": "unknown",
       "key_strengths": [
-        "Signal detected from sourcing pipeline"
+        "Significant funding raised (₹22 Cr) for a new venture."
       ],
       "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Geography unconfirmed"
+        "Founder identity and experience are unknown.",
+        "Company's operational geography is unclear.",
+        "No information on previous entrepreneurial experience or operator background."
       ],
       "company_url": ""
     },
     {
       "name": "Unknown",
-      "score": 34,
-      "action": "pass",
-      "recommended_action": "pass",
+      "score": 45,
+      "action": "investigate",
+      "recommended_action": "investigate",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
       "location": "",
-      "sector": "deeptech",
+      "sector": "Deeptech",
       "geography": "Unknown",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "investment_thesis": "This signal points to a deeptech startup named Kluisz with a growth plan, as reported by YourStory. While the founder's identity and experience are currently unknown, the mention of 'deeptech' and a 'growth plan' warrants further investigation to understand the team and their vision.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -1182,36 +369,37 @@
         {
           "source": "news",
           "type": "funding_news",
-          "description": "[Inc42] [Update] Exclusive: ClayCo Raises ₹35 Cr To Expand Product Portfolio",
-          "url": "https://inc42.com/buzz/exclusive-d2c-brand-clayco-raises-%e2%82%b930-cr-from-twenty-nine-capital-partners/"
+          "description": "[YourStory] The race to control compute; Deeptech startup Kluisz’s growth plan",
+          "url": "https://yourstory.com/2026/04/race-to-control-compute-deeptech-startup-kluisz-growth-plan"
         }
       ],
       "confidence": "low",
       "founder_type": "unknown",
       "key_strengths": [
-        "Signal detected from sourcing pipeline"
+        "Headline mentions 'Deeptech startup Kluisz’s growth plan'",
+        "News article discusses growth plan, indicating a real venture"
       ],
       "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Geography unconfirmed"
+        "Founder identity and experience are unknown",
+        "Geography is unknown",
+        "No direct signal of founder's background or previous exits"
       ],
       "company_url": ""
     },
     {
       "name": "Unknown",
-      "score": 34,
-      "action": "pass",
-      "recommended_action": "pass",
+      "score": 40,
+      "action": "investigate",
+      "recommended_action": "investigate",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
-      "location": "",
-      "sector": "unknown",
-      "geography": "Unknown",
+      "location": "Singapore",
+      "sector": "AI Health",
+      "geography": "Singapore",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "investment_thesis": "The founder has secured $1.2M in funding for their AI health startup, indicating some level of validation for their idea. However, the lack of information about the founder's experience and background is a concern. Further investigation is needed to determine the founder's potential and the company's growth prospects.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -1223,405 +411,75 @@
         {
           "source": "news",
           "type": "funding_news",
-          "description": "[Inc42] KreditBee Enters Unicorn Club With $280 Mn Funding",
-          "url": "https://inc42.com/buzz/kreditbee-enters-unicorn-club-with-280-mn-funding/"
+          "description": "[e27] Singapore AI health startup injewelme raises US$1.2M to scale contactless vital-signs technology",
+          "url": "https://e27.co/singapore-ai-health-startup-injewelme-raises-us1-2m-to-scale-contactless-vital-signs-technology-20260409/"
         }
       ],
-      "confidence": "low",
+      "confidence": "medium",
       "founder_type": "unknown",
       "key_strengths": [
-        "Signal detected from sourcing pipeline"
+        "secured funding",
+        "innovative technology"
       ],
       "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Geography unconfirmed"
+        "unknown founder experience and background"
       ],
       "company_url": ""
     },
     {
       "name": "Unknown",
-      "score": 34,
-      "action": "pass",
-      "recommended_action": "pass",
+      "score": 40,
+      "action": "investigate",
+      "recommended_action": "investigate",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
-      "location": "",
-      "sector": "deeptech",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "funding_news"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "funding_news",
-          "description": "[YourStory] Pluckk raises Rs 100 Cr from Euro Gulf, targets profitability in 12 months",
-          "url": "https://yourstory.com/2026/04/funding-pluckk-rs-100-cr-euro-gulf-targets-profitability-12-months"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Geography unconfirmed"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Unknown",
-      "score": 34,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "deeptech",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "funding_news"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "funding_news",
-          "description": "[YourStory] Astranova Mobility raises Rs 60 Cr in funding round led by IvyCap Ventures",
-          "url": "https://yourstory.com/2026/04/astranova-mobility-raises-rs-60-cr-funding-round-ivycap-ventures"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Geography unconfirmed"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Unknown",
-      "score": 34,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "saas",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "funding_news"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "funding_news",
-          "description": "[YourStory] Business services platform SILA raises $100M from Permira",
-          "url": "https://yourstory.com/2026/04/business-services-platform-sila-raises-usd-100m-from-permira"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Geography unconfirmed"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Unknown",
-      "score": 34,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "deeptech",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "funding_news"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "funding_news",
-          "description": "[YourStory] Atlas raises $6M in seed funding round led by Stellaris and Accel",
-          "url": "https://yourstory.com/2026/04/atlas-raises-seed-funding-round-led-by-stellaris-and-accel"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Geography unconfirmed"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Unknown",
-      "score": 34,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "unknown",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "funding_news"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "funding_news",
-          "description": "[e27] Ecosystem Roundup: Boom or turning point?",
-          "url": "https://e27.co/ecosystem-roundup-boom-or-turning-point-20260407/"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Geography unconfirmed"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Unknown",
-      "score": 34,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "unknown",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "funding_news"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "funding_news",
-          "description": "[e27] Why easy money kills startups",
-          "url": "https://e27.co/why-easy-money-kills-startups-20260326/"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Geography unconfirmed"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Sayuj Suresh",
-      "score": 32,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "unknown",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Sayuj Suresh shows early signals but insufficient data to prioritise at this stage. Signals include product launch.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "product_launch"
-      ],
-      "signals": [
-        {
-          "source": "Product Hunt",
-          "type": "product_launch",
-          "description": "[Product Hunt] Sayuj Suresh launched Smuggl: Share your localhost as an invite only link\n           \n           \n             Discussion \n            |\n             Link",
-          "url": "https://www.producthunt.com/products/smuggl"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Geography unconfirmed"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Asim Sk",
-      "score": 32,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "unknown",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Asim Sk shows early signals but insufficient data to prioritise at this stage. Signals include product launch.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "product_launch"
-      ],
-      "signals": [
-        {
-          "source": "Product Hunt",
-          "type": "product_launch",
-          "description": "[Product Hunt] Asim Sk launched ZenX: Your Twitter feed, finally peaceful\n           \n           \n             Discussion \n            |\n             Link",
-          "url": "https://www.producthunt.com/products/zenx"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Geography unconfirmed"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Talha Masood",
-      "score": 32,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "unknown",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Talha Masood shows early signals but insufficient data to prioritise at this stage. Signals include product launch.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "product_launch"
-      ],
-      "signals": [
-        {
-          "source": "Product Hunt",
-          "type": "product_launch",
-          "description": "[Product Hunt] Talha Masood launched Onform.work: Build forms with Claude\n           \n           \n             Discussion \n            |\n             Link",
-          "url": "https://www.producthunt.com/products/onform-work"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Signal detected from sourcing pipeline"
-      ],
-      "risks": [
-        "Single signal — needs corroboration",
-        "Limited experience (<7 yrs)",
-        "Geography unconfirmed"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "varun pratap Bhardwaj",
-      "score": 30,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
+      "location": "Singapore",
       "sector": "AI",
+      "geography": "Singapore",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Muun AI has secured pre-seed funding and is expanding its industrial AI push, indicating a promising start. However, the founder's experience and background are unknown, requiring further investigation. The company's focus on AI aligns with current hot sectors, making it worth exploring further.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "funding_news",
+          "description": "[e27] Muun AI expands industrial AI push with US$700K pre-seed funding",
+          "url": "https://e27.co/muun-ai-funding-20260408/"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "secured pre-seed funding",
+        "focus on industrial AI"
+      ],
+      "risks": [
+        "unknown founder experience and background"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Sujal Kumar",
+      "score": 35,
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "Developer Tools",
       "geography": "Unknown",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Varun Pratap Bhardwaj has launched a product on Product Hunt, indicating some level of entrepreneurial drive and technical expertise. The product, Slm-mesh, is AI-focused, which aligns with current hot sectors. However, the lack of information on experience and location raises concerns.",
+      "investment_thesis": "Sujal Kumar has launched a product called Codentis on Product Hunt, suggesting an entrepreneurial drive and ability to bring a product to market. However, significant information gaps exist regarding his experience, previous roles, and geographic focus, making it difficult to assess his founder archetype and potential.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -1633,86 +491,227 @@
         {
           "source": "Product Hunt",
           "type": "product_launch",
-          "description": "[Product Hunt] varun pratap Bhardwaj launched Slm-mesh: Your AI coding sessions can finally talk to each other\n           \n           \n             Discussion \n            |\n             Link",
-          "url": "https://www.producthunt.com/products/slm-mesh"
+          "description": "[Product Hunt] Sujal Kumar launched Codentis: Run intelligent workflows directly in your terminal\n           \n           \n             Discussion \n            |\n             Link",
+          "url": "https://www.producthunt.com/products/codentis"
         }
       ],
       "confidence": "low",
       "founder_type": "first_time_founder",
       "key_strengths": [
-        "Product Hunt launch",
-        "AI-focused product"
+        "Product Hunt launch indicates initiative and product development capability"
       ],
       "risks": [
-        "Unknown experience",
-        "Unknown location"
+        "Lack of information on experience, previous roles, and geography",
+        "No clear signal of prior entrepreneurial success or senior operator background",
+        "Second-time founder status is explicitly false"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Rohan Chaubey",
+      "score": 35,
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "Fintech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Rohan Chaubey has launched a new product, 'Google Finance', on Product Hunt, which appears to leverage AI for financial queries. This indicates potential domain expertise in Fintech and product development. However, critical information regarding his experience, previous roles, and geography is missing, making it difficult to assess his founder archetype.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "product_launch"
+      ],
+      "signals": [
+        {
+          "source": "Product Hunt",
+          "type": "product_launch",
+          "description": "[Product Hunt] Rohan Chaubey launched Google Finance: Ask complex finance questions, get AI-grounded answers\n           \n           \n             Discussion \n            |\n             Link",
+          "url": "https://www.producthunt.com/products/google"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Product launch on Product Hunt"
+      ],
+      "risks": [
+        "Unknown experience level",
+        "Unknown previous roles",
+        "Unknown geography",
+        "No clear indication of second-time founder status or previous exit"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 35,
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "Fintech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "The headline suggests an individual with an interest in leveraging AI for investment, potentially within the fintech space. However, critical information regarding their background, experience, and the actual venture is missing, making it difficult to assess their founder potential.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "executive_departure",
+          "description": "[e27] How Hasan Venture Capital uses AI to build an ethically grounded investment future",
+          "url": "https://e27.co/hasan-venture-capital-feature-20250522/"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Headline mentions AI and investment future, suggesting a focus on a hot sector."
+      ],
+      "risks": [
+        "Name is unknown.",
+        "Location is unknown.",
+        "Previous company and title are unknown.",
+        "Years of experience are unknown.",
+        "No clear signal of a new company registration or departure from a tracked company.",
+        "The 'news' appears to be a self-published article or blog post, not an independent news report of a departure."
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Sandeep Barasia",
+      "score": 30,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Delhivery CBO",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Venture Capital",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Sandeep Barasia's previous role as CBO at Delhivery suggests operational experience in a significant Indian company. However, the current signal indicates he is joining Bay Capital to launch a new digital fund, rather than founding a startup himself. This makes him a less direct fit for our pre-seed/seed founder mandate.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "funding_news",
+          "description": "[Inc42] Bay Capital Onboards Sandeep Barasia, Tej Kapoor As Partners To Launch New Digital Fund",
+          "url": "https://inc42.com/buzz/bay-capital-onboards-sandeep-barasia-tej-kapoor-as-partners-to-launch-new-digital-fund/"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Previous role as CBO at Delhivery (a prominent logistics company)"
+      ],
+      "risks": [
+        "Experience years unknown",
+        "Not a founder, but joining a VC fund",
+        "No clear signal of building a new company"
       ],
       "company_url": ""
     }
   ],
   "source_breakdown": {
-    "news": 35,
-    "Product Hunt": 5
+    "news": 13,
+    "Product Hunt": 2
   },
   "score_threshold": 30,
   "intelligence": {
     "ai_ml": {
       "articles": [
         {
-          "title": "Ex-Tesla engineer’s startup taps Pronto to help automate a copper mine",
-          "url": "https://techcrunch.com/2026/04/09/mariana-minerals-taps-pronto-to-help-automate-a-copper-mine/",
+          "title": "Florida AG to probe OpenAI, alleging possible connection to FSU shooting",
+          "url": "https://techcrunch.com/2026/04/09/florida-ag-to-probe-openai-alleging-possible-connection-to-fsu-shooting/",
           "source": "techcrunch.com",
-          "pub_date": "2026-04-09T12:00:00+00:00",
-          "summary": "Pronto's autonomous haulage trucks are about to start operating at Mariana Minerals's Utah copper mine -- the first such deal since Pronto got acquired by Travis Kalanick's Atoms Inc."
+          "pub_date": "2026-04-09T22:13:26+00:00",
+          "summary": "Florida Attorney General James Uthmeier plans to investigate OpenAI for its alleged harm to minors, potential to threaten national security, and its possible link to a shooting at Florida State Univer"
         },
         {
-          "title": "WireGuard VPN developer can’t ship software updates after Microsoft locks account",
-          "url": "https://techcrunch.com/2026/04/08/wireguard-vpn-developer-cant-ship-software-updates-after-microsoft-locks-account/",
+          "title": "ChatGPT finally offers $100/month Pro plan",
+          "url": "https://techcrunch.com/2026/04/09/chatgpt-pro-plan-100-month-codex/",
           "source": "techcrunch.com",
-          "pub_date": "2026-04-08T21:50:41+00:00",
-          "summary": "The popular open source VPN maker is the second high-profile developer to say Microsoft locked his account without notifying him and is blocking their ability to send software updates to users."
+          "pub_date": "2026-04-09T21:29:11+00:00",
+          "summary": "OpenAI announced on Thursday something that power users have been asking for: a $100/month plan. Previously, subscriptions jumped from $20 to $200 per month."
         },
         {
-          "title": "A self-driving car in Texas hit and killed a mother duck, sparking neighborhood outrage",
-          "url": "https://techcrunch.com/2026/04/08/avride-self-driving-car-austin-kills-duck-mueller/",
+          "title": "EFF is the latest organization to leave X",
+          "url": "https://techcrunch.com/2026/04/09/eff-is-the-latest-organization-to-leave-x/",
           "source": "techcrunch.com",
-          "pub_date": "2026-04-08T21:19:07+00:00",
-          "summary": "An Avride autonomous vehicle near Austin hit the duck, facing backlash from the community. \"It didn't slow down or hesitate at all, just steamrolled right through,\" according to a witness."
+          "pub_date": "2026-04-09T21:26:18+00:00",
+          "summary": "The EFF follows the departure of various news organizations and others who no longer find X a viable source of traffic."
         },
         {
-          "title": "Poke makes using AI agents as easy as sending a text",
-          "url": "https://techcrunch.com/2026/04/08/poke-makes-ai-agents-as-easy-as-sending-a-text/",
+          "title": "What founders can learn from Anjuna’s layoffs and recovery",
+          "url": "https://techcrunch.com/2026/04/09/what-founders-can-learn-from-anjunas-layoffs-and-recovery/",
           "source": "techcrunch.com",
-          "pub_date": "2026-04-08T21:05:13+00:00",
-          "summary": "Poke brings AI agents to everyday users via text message by handling tasks and automations without complex setup, apps, or technical know-how."
+          "pub_date": "2026-04-09T21:17:30+00:00",
+          "summary": "In 2021, Anjuna Security was growing fast, hiring aggressively, and chasing a market that seemed limitless. By the end of that year, the venture-backed cybersecurity company had scaled to around 75 em"
         },
         {
-          "title": "Canva doubles down on AI and marketing automation with Simtheory, Ortto acquisitions",
-          "url": "https://techcrunch.com/2026/04/08/canva-doubles-down-on-ai-and-marketing-automation-with-simtheory-ortto-acquisitions/",
+          "title": "Volkswagen drops all-electric ID.4 in the US in pivot back to gas SUVs",
+          "url": "https://techcrunch.com/2026/04/09/volkswagen-drops-all-electric-id-4-in-the-us-in-pivot-back-to-gas-suvs/",
           "source": "techcrunch.com",
-          "pub_date": "2026-04-08T21:00:00+00:00",
-          "summary": "Canva says the acquisitions add strengths in agentic AI, data infrastructure, marketing automation, and customer engagement."
+          "pub_date": "2026-04-09T21:01:36+00:00",
+          "summary": "All resources at its U.S. factory are aimed at the upcoming Atlas SUV."
         },
         {
-          "title": "AWS boss explains why investing billions in both Anthropic and OpenAI is an OK conflict",
-          "url": "https://techcrunch.com/2026/04/08/aws-boss-explains-why-investing-billions-in-both-anthropic-and-openai-is-an-ok-conflict/",
+          "title": "Florida AG announces investigation into OpenAI over shooting that allegedly involved ChatGPT",
+          "url": "https://techcrunch.com/2026/04/09/florida-ag-investigation-openai-chatgpt-shooting/",
           "source": "techcrunch.com",
-          "pub_date": "2026-04-08T20:09:14+00:00",
-          "summary": "AWS has an ingrained culture of handling competition, he explained, because the cloud giant also competes with its partners."
+          "pub_date": "2026-04-09T20:11:55+00:00",
+          "summary": "ChatGPT had reportedly been used to plan the attack that killed two and injured five at Florida State University last April. The family of one victim has said that they plan to sue OpenAI over the inc"
         },
         {
-          "title": "Amazon to end support for older Kindle devices",
-          "url": "https://techcrunch.com/2026/04/08/amazon-to-end-support-for-older-kindle-devices-2012/",
+          "title": "StubHub to pay $10M to settle FTC allegations over ‘deceptive’ ticket pricing",
+          "url": "https://techcrunch.com/2026/04/09/stubhub-to-pay-10m-to-settle-ftc-allegations-over-deceptive-ticket-pricing/",
           "source": "techcrunch.com",
-          "pub_date": "2026-04-08T19:56:16+00:00",
-          "summary": "Amazon told Kindle owners this week that it's ending support for all e-readers released in 2012 or earlier, making them virtually unable to load any new content."
+          "pub_date": "2026-04-09T20:04:12+00:00",
+          "summary": "The consumer protection agency says the company violated the FTC Act and its Rule on Unfair or Deceptive Fees by \"deceptively\" advertising ticket prices on its website without clearly disclosing upfro"
         },
         {
-          "title": "Meta debuts the Muse Spark model in a ‘ground-up overhaul’ of its AI",
-          "url": "https://techcrunch.com/2026/04/08/meta-debuts-the-muse-spark-model-in-a-ground-up-overhaul-of-its-ai/",
+          "title": "After data breach, $10B-valued startup Mercor is having a month",
+          "url": "https://techcrunch.com/2026/04/09/after-data-breach-10b-valued-startup-mercor-is-having-a-month/",
           "source": "techcrunch.com",
-          "pub_date": "2026-04-08T18:53:19+00:00",
-          "summary": "This is the first model Meta has released under its Superintelligence Labs, led by former Scale AI CEO Alexandr Wang."
+          "pub_date": "2026-04-09T19:33:54+00:00",
+          "summary": "After falling victim to a hacker, Mercor is facing lawsuits and reportedly losing big-name customers."
+        },
+        {
+          "title": "OpenAI introduces ChatGPT Pro $100 tier with 5X usage limits for Codex compared to Plus",
+          "url": "https://venturebeat.com/orchestration/openai-introduces-chatgpt-pro-usd100-tier-with-5x-usage-limits-for-codex",
+          "source": "venturebeat.com",
+          "pub_date": "2026-04-09T23:07:00+00:00",
+          "summary": "OpenAI is making moves to try and court more developers and vibe coders (those who build software using AI models and natural language) away from rivals like Anthropic.Today, the firm arguably most sy"
+        },
+        {
+          "title": "Mythos autonomously exploited vulnerabilities that survived 27 years of human review. Security teams need a new detection playbook",
+          "url": "https://venturebeat.com/security/mythos-detection-ceiling-security-teams-new-playbook",
+          "source": "venturebeat.com",
+          "pub_date": "2026-04-09T18:30:00+00:00",
+          "summary": "A 27-year-old bug sat inside OpenBSD’s TCP stack while auditors reviewed the code, fuzzers ran against it, and the operating system earned its reputation as one of the most security-hardened platforms"
         },
         {
           "title": "Claude, OpenClaw and the new reality: AI agents are here — and so is the chaos",
@@ -1748,26 +747,47 @@
           "source": "venturebeat.com",
           "pub_date": "2026-04-07T22:14:30+00:00",
           "summary": "Block today unveiled Managerbot, a new AI agent embedded in the Square platform that proactively monitors a seller&#x27;s business, identifies emerging problems, and proposes actionable solutions — wi"
-        },
-        {
-          "title": "Amazon S3 Files gives AI agents a native file system workspace, ending the object-file split that breaks multi-agent pipelines",
-          "url": "https://venturebeat.com/data/amazon-s3-files-gives-ai-agents-a-native-file-system-workspace-ending-the",
-          "source": "venturebeat.com",
-          "pub_date": "2026-04-07T21:36:00+00:00",
-          "summary": "AI agents run on file systems using standard tools to navigate directories and read file paths. The challenge, however, is that there is a lot of enterprise data in object storage systems, notably Ama"
-        },
-        {
-          "title": "Anthropic says its most powerful AI cyber model is too dangerous to release publicly — so it built Project Glasswing",
-          "url": "https://venturebeat.com/technology/anthropic-says-its-most-powerful-ai-cyber-model-is-too-dangerous-to-release",
-          "source": "venturebeat.com",
-          "pub_date": "2026-04-07T21:35:44+00:00",
-          "summary": "Anthropic on Tuesday announced Project Glasswing, a sweeping cybersecurity initiative that pairs an unreleased frontier AI model — Claude Mythos Preview — with a coalition of twelve major technology a"
         }
       ],
-      "cached_at": "2026-04-09T12:32:16.699873"
+      "cached_at": "2026-04-10T08:19:10.152718"
     },
     "india_sea": {
       "articles": [
+        {
+          "title": "Software’s Re-Founding Moment: What Separates Transformation from Theatre",
+          "url": "https://inc42.com/resources/softwares-re-founding-moment-what-separates-transformation-from-theatre/",
+          "source": "inc42.com",
+          "pub_date": "2026-04-10T07:34:47+00:00",
+          "summary": "Every major software company in the world is asking the same question right now: do we bolt AI onto what&#8230;"
+        },
+        {
+          "title": "Ola Electric Redemption Arc, Libas’ Next Frontier & More",
+          "url": "https://inc42.com/buzz/ola-electric-redemption-arc-libas-next-frontier-more/",
+          "source": "inc42.com",
+          "pub_date": "2026-04-10T02:30:06+00:00",
+          "summary": "Ola Electric On Recovery Path Ola Electric appears to be on its redemption arc. After months of sliding market share&#8230;"
+        },
+        {
+          "title": "AI Is India’s Hottest Bet, But Why Are Investors Holding Back?",
+          "url": "https://inc42.com/features/ai-is-indias-hottest-bet-but-why-are-investors-holding-back/",
+          "source": "inc42.com",
+          "pub_date": "2026-04-10T01:30:39+00:00",
+          "summary": "From a futuristic idea to crafting narratives now, AI has come a long way in a very short span of&#8230;"
+        },
+        {
+          "title": "RBI Mulls 1-Hour Delay For Digital Transactions Above ₹10,000",
+          "url": "https://inc42.com/buzz/rbi-mulls-1-hour-delay-for-digital-transactions-above-%e2%82%b910000/",
+          "source": "inc42.com",
+          "pub_date": "2026-04-09T16:48:19+00:00",
+          "summary": "Amid an ongoing increase in digital financial theft, the Reserve Bank of India (RBI) has introduced a time lag for&#8230;"
+        },
+        {
+          "title": "Libas’ Next Big Thing After Hitting The ₹600 Cr Revenue Mark",
+          "url": "https://inc42.com/startups/libas-next-big-thing-after-hitting-the-%e2%82%b9600-cr-revenue-mark/",
+          "source": "inc42.com",
+          "pub_date": "2026-04-09T13:59:00+00:00",
+          "summary": "Imagine trying to build a fashion brand in a market where consumers don’t really believe in brands, there is little&#8230;"
+        },
         {
           "title": "Mumbai Edition Of D2CX Converge Decodes The ₹100 Cr Playbook For D2C Brands",
           "url": "https://inc42.com/buzz/mumbai-edition-of-d2cx-converge-decodes-the-%e2%82%b9100-cr-playbook-for-d2c-brands/",
@@ -1790,60 +810,18 @@
           "summary": "Investment firm Bay Capital Partners has appointed Sandeep Barasia (former Delhivery CBO) and Tej Kapoor (former IvyCap Ventures MD) as&#8230;"
         },
         {
-          "title": "What’s Driving Startup Investors’ Shift Towards Domestic LPs?",
-          "url": "https://inc42.com/features/whats-driving-startup-investors-shift-towards-domestic-lps/",
-          "source": "inc42.com",
-          "pub_date": "2026-04-09T09:43:01+00:00",
-          "summary": "Amid an increasingly volatile macroeconomic situation and geopolitical uncertainty, Indian venture investors are leaning towards domestic capital as against the&#8230;"
-        },
-        {
-          "title": "Former OYO Executive’s Startup Nava Raises $22 Mn To Build Neocloud Platform",
-          "url": "https://inc42.com/buzz/former-oyo-executives-startup-nava-raises-22-mn-to-build-neocloud-platform/",
-          "source": "inc42.com",
-          "pub_date": "2026-04-09T08:18:56+00:00",
-          "summary": "Former OYO senior executive Abhinav Sinha’s AI startup Nava, earlier known as Kluisz.ai, has raised $22 Mn (about ₹204 Cr)&#8230;"
-        },
-        {
-          "title": "TR Capital Appoints Umang Agarwal As India MD, To Invest $1 Bn Over 5 Years",
-          "url": "https://inc42.com/buzz/tr-capital-appoints-umang-agarwal-as-india-md-to-invest-1-bn-over-5-years/",
-          "source": "inc42.com",
-          "pub_date": "2026-04-09T08:06:27+00:00",
-          "summary": "PE firm TR Capital is deepening its presence in India and has committed to invest $1 Bn in the country&#8230;"
-        },
-        {
-          "title": "Honasa Surges Over 11% After Company Projects Early-20s Revenue Growth In Q4",
-          "url": "https://inc42.com/buzz/honasa-surges-over-11-after-company-projects-early-20s-revenue-growth-in-q4/",
-          "source": "inc42.com",
-          "pub_date": "2026-04-09T07:32:55+00:00",
-          "summary": "Shares of Mamaearth parent entity Honasa Consumer jumped 11.49% during the intraday trading to ₹348.75 apiece on the BSE after&#8230;"
-        },
-        {
-          "title": "Is Algae The Answer To Carbon Capture? Intrinsic Foundries’ Green Fix For Toxic Waste",
-          "url": "https://inc42.com/startups/algae-for-carbon-capture-intrinsic-foundries-green-toxic-waste/",
-          "source": "inc42.com",
-          "pub_date": "2026-04-09T07:31:42+00:00",
-          "summary": "Believe it or not, the simplest form of life can actually outsmart the most complex life form when it comes&#8230;"
-        },
-        {
-          "title": "Masters’ Union launches Rs 100 Cr early-stage investment platform",
-          "url": "https://yourstory.com/2026/04/masters-union-100-crore-early-stage-investment-platform",
-          "source": "yourstory.com",
-          "pub_date": "2026-04-09T10:34:24+00:00",
-          "summary": "The platform is designed to support founders under the age of 25, focusing on the very beginning of their journey. Beyond providing cheques ranging from Rs 5 lakh to Rs 50 lakh, the initiative plans t"
-        },
-        {
           "title": "BP Ventures Asia and Middle East Managing Director Sophia Nadur exits",
           "url": "https://yourstory.com/2026/04/bp-ventures-asia-and-middle-east-managing-director-sophia-nadur-exits",
           "source": "yourstory.com",
-          "pub_date": "2026-04-09T09:32:08+00:00",
+          "pub_date": "2026-04-09T15:16:05+00:00",
           "summary": "Nadur led investments in BluSmart, Magenta Mobility and Zingbus in India"
         },
         {
-          "title": "PM Narendra Modi makes the case for 33% reservation to unlock Nari Shakti",
-          "url": "https://yourstory.com/2026/04/modi-women-reservation-nari-shakti-vandan-act-33-percent-2047",
+          "title": "How VirtueLife makes home physiotherapy actually work",
+          "url": "https://yourstory.com/2026/04/virtuelife-ai-home-physiotherapy-app-india",
           "source": "yourstory.com",
-          "pub_date": "2026-04-09T08:23:59+00:00",
-          "summary": "As India sets its sights on becoming a developed nation by 2047, the conversation around inclusive growth is once again taking center stage."
+          "pub_date": "2026-04-09T01:50:00+00:00",
+          "summary": "Built from a founder’s recovery struggle, VirtueLife combines video guidance, clinician tools, and AI-assisted planning to bring structure and accountability to home-based rehab."
         },
         {
           "title": "Former Delhivery, Naspers execs join Bay Capital as Partners",
@@ -1860,6 +838,13 @@
           "summary": "The latest infusion takes the company’s total funding to $26 million and comes amid steady growth, with Pluckk reporting an average 25% year-on-year increase over the past two years."
         },
         {
+          "title": "Masters’ Union launches Rs 100 Cr early-stage investment platform",
+          "url": "https://yourstory.com/2026/04/masters-union-100-crore-early-stage-investment-platform",
+          "source": "yourstory.com",
+          "pub_date": "2026-04-09T10:34:24+00:00",
+          "summary": "The platform is designed to support founders under the age of 25, focusing on the very beginning of their journey. Beyond providing cheques ranging from Rs 5 lakh to Rs 50 lakh, the initiative plans t"
+        },
+        {
           "title": "NVIDIA DGX Spark brings sovereign AI to your desktop",
           "url": "https://yourstory.com/2026/04/nvidia-dgx-spark-brings-sovereign-ai-to-your-desktop",
           "source": "yourstory.com",
@@ -1867,18 +852,67 @@
           "summary": "Learn how to deploy models like Sarvam 30B and Param-2-17B on a personal AI supercomputer in an upcoming technical session hosted by RP Tech, an NVIDIA partner."
         },
         {
-          "title": "How VirtueLife makes home physiotherapy actually work",
-          "url": "https://yourstory.com/2026/04/virtuelife-ai-home-physiotherapy-app-india",
+          "title": "The race to control compute; Deeptech startup Kluisz’s growth plan",
+          "url": "https://yourstory.com/2026/04/race-to-control-compute-deeptech-startup-kluisz-growth-plan",
           "source": "yourstory.com",
-          "pub_date": "2026-04-09T01:50:00+00:00",
-          "summary": "Built from a founder’s recovery struggle, VirtueLife combines video guidance, clinician tools, and AI-assisted planning to bring structure and accountability to home-based rehab."
+          "pub_date": "2026-04-10T02:00:00+00:00",
+          "summary": "Intel is joining Elon Musk’s chipmaking plan with SpaceX, Tesla and xAI. Its role would help speed up a project aimed at producing vast volumes of advanced compute for AI and robotics. Meanwhile, Deep"
         },
         {
-          "title": "Astranova Mobility raises Rs 60 Cr in funding round led by IvyCap Ventures",
-          "url": "https://yourstory.com/2026/04/astranova-mobility-raises-rs-60-cr-funding-round-ivycap-ventures",
+          "title": "What it takes to run AI in the real world: Lessons from Akamai Digital Leadership Summit",
+          "url": "https://yourstory.com/2026/04/real-world-lessons-akamai-digital-leadership-summit",
           "source": "yourstory.com",
-          "pub_date": "2026-04-09T06:12:39+00:00",
-          "summary": "The company will use a significant portion of the capital to deepen its data, AI, and engineering capabilities."
+          "pub_date": "2026-04-08T06:04:11+00:00",
+          "summary": "From inference costs and voice AI to API security and sovereign models, the Akamai Digital Leadership Summit examined what it really takes to run AI systems in production at India’s scale."
+        },
+        {
+          "title": "The cheap labour era is dead, here’s how SEA companies win now",
+          "url": "https://e27.co/the-cheap-labour-era-is-dead-heres-how-sea-companies-win-now-20260410/",
+          "source": "e27.co",
+          "pub_date": "2026-04-10T04:09:41+00:00",
+          "summary": "Let me say something that&#8217;s going to make a lot of founders in the region uncomfortable. Your business model is broken. Not because your product is bad. Not because your market is wrong. But bec"
+        },
+        {
+          "title": "The hidden risk in AI adoption: Unchecked agent privileges",
+          "url": "https://e27.co/the-hidden-risk-in-ai-adoption-unchecked-agent-privileges-20260410/",
+          "source": "e27.co",
+          "pub_date": "2026-04-10T03:53:34+00:00",
+          "summary": "The deepest argument in &#8220;The AI Agent Governance Gap&#8221; report by US-based API management company Gravitee is not really about AI hype, or even security budgets. It is about identity. More p"
+        },
+        {
+          "title": "Beyond the US$70K level: Why Bitcoin’s real test isn’t price yet",
+          "url": "https://e27.co/beyond-the-us70k-level-why-bitcoins-real-test-isnt-price-yet-20260410/",
+          "source": "e27.co",
+          "pub_date": "2026-04-10T03:51:44+00:00",
+          "summary": "Bitcoin&#8217;s ability to hold above US$70K while ETF outflows cooled provided the essential foundation. The Fear and Greed Index resting at a neutral 45 signalled neither panic nor euphoria, conditi"
+        },
+        {
+          "title": "Data minimisation vs AI context maximisation: The battle defining the future of smart systems",
+          "url": "https://e27.co/data-minimisation-vs-ai-context-maximisation-20260402/",
+          "source": "e27.co",
+          "pub_date": "2026-04-10T02:50:57+00:00",
+          "summary": "AI product teams are under constant pressure to make systems more accurate, more personalised, and more “helpful.” The simplest path is obvious: give the model more context. Ingest more documents. Ret"
+        },
+        {
+          "title": "Inside the next phase of AI-driven banking in Southeast Asia",
+          "url": "https://e27.co/inside-the-next-phase-of-ai-driven-banking-in-southeast-asia-20260326/",
+          "source": "e27.co",
+          "pub_date": "2026-04-10T02:50:23+00:00",
+          "summary": "Across Southeast Asia, banks and financial institutions are entering a new phase of digital transformation. Customers increasingly expect financial services to be available instantly, whether they are"
+        },
+        {
+          "title": "What NVIDIA GTC 2026 reveals about the future of embodied AI",
+          "url": "https://e27.co/what-nvidia-gtc-2026-reveals-about-the-future-of-embodied-ai-20260402/",
+          "source": "e27.co",
+          "pub_date": "2026-04-10T02:22:08+00:00",
+          "summary": "Artificial intelligence is stepping off the screen. At NVIDIA GTC 2026, one theme stood out across announcements, demos, and developer activity: AI is moving beyond cloud-based software into robots, e"
+        },
+        {
+          "title": "Board diversity 2.0: The strategic advantage Asian boards are still underestimating",
+          "url": "https://e27.co/board-diversity-2-0-the-strategic-advantage-asian-boards-are-still-underestimating-20260213/",
+          "source": "e27.co",
+          "pub_date": "2026-04-10T01:00:09+00:00",
+          "summary": "Board diversity in Asia has improved meaningfully over the last decade, especially in the areas of gender representation and sector experience. But as companies enter an era defined by AI, geopolitics"
         },
         {
           "title": "Singapore AI health startup injewelme raises US$1.2M to scale contactless vital-signs technology",
@@ -1886,190 +920,146 @@
           "source": "e27.co",
           "pub_date": "2026-04-09T10:57:38+00:00",
           "summary": "Singapore-based AI health tech company injewelme has closed a US$1.2 million funding round led by Catalytic Capital for Climate and Health (C3H), a catalytic vehicle of Temasek Trust, with co-investme"
-        },
-        {
-          "title": "From hype to silence: Why Vietnam’s Clubhouse-like app OnMic couldn’t survive",
-          "url": "https://e27.co/from-hype-to-silence-why-onmic-couldnt-survive-20260409/",
-          "source": "e27.co",
-          "pub_date": "2026-04-09T09:51:48+00:00",
-          "summary": "OnMic, the Vietnamese social-audio startup that once tried to build a local answer to Clubhouse, is shutting down. In a LinkedIn post, co-founder Trung Nguyen said: “Today, we’re making a difficult an"
-        },
-        {
-          "title": "India is slowing down but Southeast Asia is falling behind faster",
-          "url": "https://e27.co/india-is-slowing-down-but-southeast-asia-is-falling-behind-faster-20260409/",
-          "source": "e27.co",
-          "pub_date": "2026-04-09T08:48:06+00:00",
-          "summary": "India’s tech funding story is no longer one of breakneck exuberance. It is now a story of filtration. Tracxn’s latest annual report shows Indian startups pulled in US$11.7 billion in FY2025-26, down 1"
-        },
-        {
-          "title": "Why institutional money isn’t saving crypto from this sell-off",
-          "url": "https://e27.co/why-institutional-money-isnt-saving-crypto-from-this-sell-off-20260409/",
-          "source": "e27.co",
-          "pub_date": "2026-04-09T05:38:51+00:00",
-          "summary": "While traditional equity markets celebrated a historic relief rally, the cryptocurrency market posted a 1.42 per cent decline, settling at US$2.41T. This divergence tells a compelling story about the "
-        },
-        {
-          "title": "Networking was the topic, alignment was the outcome",
-          "url": "https://e27.co/networking-was-the-topic-alignment-was-the-outcome-20260409/",
-          "source": "e27.co",
-          "pub_date": "2026-04-09T05:30:10+00:00",
-          "summary": "Most people don&#8217;t have a networking problem. They have an environmental problem. Networking remains one of the most talked-about skills in business, yet the way it is commonly approached has bar"
-        },
-        {
-          "title": "It’s not the chatbot but the access: Why AI agents are the real threat",
-          "url": "https://e27.co/its-not-the-chatbot-but-is-the-access-why-ai-agents-are-the-real-threat-20260409/",
-          "source": "e27.co",
-          "pub_date": "2026-04-09T03:37:51+00:00",
-          "summary": "Every technology boom produces its own version of unauthorised adoption. Cloud had it. SaaS had it. Messaging apps had it. Now, AI agents are doing it at machine speed. That is one of the most explosi"
-        },
-        {
-          "title": "Secondary sales in SEA: The liquidity lifeline when exits are scarce",
-          "url": "https://e27.co/secondary-sales-in-sea-the-liquidity-lifeline-when-exits-are-scarce-20260402/",
-          "source": "e27.co",
-          "pub_date": "2026-04-09T02:40:34+00:00",
-          "summary": "During Southeast Asia’s fundraising boom, oversubscribed rounds were common and later-stage investors often wanted larger allocations than primary rounds could accommodate. Secondary share sales were "
-        },
-        {
-          "title": "Why inclusive AI is the next frontier of product strategy",
-          "url": "https://e27.co/why-inclusive-ai-is-the-next-frontier-of-product-strategy-20260326/",
-          "source": "e27.co",
-          "pub_date": "2026-04-09T02:22:22+00:00",
-          "summary": "Every product is designed for someone. But the real question for those of us building in the AI space is: who is that someone—and who are we quietly leaving behind? In the race to build faster, smarte"
         }
       ],
-      "cached_at": "2026-04-09T12:32:16.699873"
+      "cached_at": "2026-04-10T08:19:10.152718"
     },
     "emerging": {
       "articles": [
         {
-          "title": "Fi Mini for Cats Review: Track Your Pets and Monitor Their Activity",
-          "url": "https://www.wired.com/review/fi-mini-for-cats/",
+          "title": "Surfshark Promo Codes: 87% Off | April 2026",
+          "url": "https://www.wired.com/story/surfshark-coupon/",
           "source": "wired.com",
-          "pub_date": "2026-04-09T11:00:00+00:00",
-          "summary": "This tracker attaches to your pet’s collar to monitor location and activity, charting trends over time to better understand your pet’s health."
+          "pub_date": "2026-04-10T05:00:00+00:00",
+          "summary": "Save up to 87% with a Surfshark coupon code, 3 months of VPN free today, and more from WIRED."
         },
         {
-          "title": "Meta Cafeteria Workers Did What Execs Won’t: Took on ICE and Won",
-          "url": "https://www.wired.com/story/how-meta-cafeteria-workers-rallied-to-take-on-ice/",
+          "title": "Naturepedic Promo Codes and Deals: 20% Off",
+          "url": "https://www.wired.com/story/naturepedic-promo-code/",
           "source": "wired.com",
-          "pub_date": "2026-04-09T11:00:00+00:00",
-          "summary": "In Seattle, activists inside tech giants are leaning into grassroots fundraising and peer support as petitions and protests draw little response from executives."
+          "pub_date": "2026-04-10T05:00:00+00:00",
+          "summary": "Shop the Naturepedic sale this April."
         },
         {
-          "title": "I Asked Netflix’s Reality TV Boss Why So Many Men On Dating Shows Are Terrible",
-          "url": "https://www.wired.com/story/netflix-love-is-blind-brandon-riegg-on-why-so-many-men-on-dating-shows-are-terrible/",
+          "title": "20% Off Sephora Promo Code | April 2026",
+          "url": "https://www.wired.com/story/sephora-promo-code/",
           "source": "wired.com",
-          "pub_date": "2026-04-09T10:30:00+00:00",
-          "summary": "Brandon Riegg tells WIRED he empathizes with the struggle to find “quality men” and that Love Is Blind has no MAGA agenda."
+          "pub_date": "2026-04-10T05:00:00+00:00",
+          "summary": "Earn more points on skincare purchases when you use our Sephora coupon."
         },
         {
-          "title": "Politicians Are Spending More Money on Security as They Increasingly Become Targets",
-          "url": "https://www.wired.com/story/political-campaign-security-spending/",
+          "title": "Hungryroot Coupon Codes: 30% Off This April",
+          "url": "https://www.wired.com/story/hungryroot-promo-code/",
           "source": "wired.com",
-          "pub_date": "2026-04-09T10:00:00+00:00",
-          "summary": "Political candidates are purchasing more home alarms, bulletproof vests, and other protections amid rising fears of political violence."
+          "pub_date": "2026-04-10T05:00:00+00:00",
+          "summary": "Get up to 30% off your first order and free gifts using a Hungryroot promo code today. Discover our best coupons and discounts to let you save on your healthy groceries as a new or returning customer."
         },
         {
-          "title": "TCL NXTVISION Art TV Review: Just Fine",
-          "url": "https://www.wired.com/review/tcl-nxtvision-2025/",
+          "title": "Govee Discount Codes and Deals: 30% Off",
+          "url": "https://www.wired.com/story/govee-discount-code/",
           "source": "wired.com",
-          "pub_date": "2026-04-09T10:00:00+00:00",
-          "summary": "This low-cost art display can’t compete with the Samsung Frame Pro."
+          "pub_date": "2026-04-10T05:00:00+00:00",
+          "summary": "New to Govee? Get a $5 coupon on your first purchase just for signing up."
         },
         {
-          "title": "This AI Wearable From Ex-Apple Engineers Looks Like an iPod Shuffle",
-          "url": "https://www.wired.com/story/this-ai-button-wearable-from-ex-apple-engineers-looks-like-an-ipod-shuffle/",
+          "title": "Walmart Promo Codes and Coupons: Up to 65% Off",
+          "url": "https://www.wired.com/story/top-walmart-promo-codes/",
           "source": "wired.com",
-          "pub_date": "2026-04-09T09:30:00+00:00",
-          "summary": "Two former Apple Vision Pro developers made an AI wearable that only listens when you tap it. They hope to win where other AI gadgets have fumbled: privacy."
+          "pub_date": "2026-04-10T05:00:00+00:00",
+          "summary": "Score $10 off with our Walmart promo codes and coupon, and shop flash deals up to 65% off today."
         },
         {
-          "title": "Artemis II Astronauts Witnessed 6 Meteorites Colliding With the Moon",
-          "url": "https://www.wired.com/story/artemis-ii-astronauts-witnessed-6-meteorites-collide-with-the-moon/",
+          "title": "We-Vibe Discount Codes and Deals: Up to 60% Off",
+          "url": "https://www.wired.com/story/we-vibe-discount-code/",
           "source": "wired.com",
-          "pub_date": "2026-04-09T09:00:00+00:00",
-          "summary": "The moon gets hit by space debris all the time, but some of it is so large that the impact generates light that can be seen thousands of kilometers away."
+          "pub_date": "2026-04-10T05:00:00+00:00",
+          "summary": "Save on We-Vibe, including app-controlled bestsellers and popular gift sets designed for couples, connection, and shared pleasure."
         },
         {
-          "title": "Medicube Coupon Code: Top Promo Codes and Discounts for April 2026",
-          "url": "https://www.wired.com/story/medicube-coupon-code/",
+          "title": "Top Nomad Goods Promo Codes: Get 25% Off in April 2026",
+          "url": "https://www.wired.com/story/nomad-discount-code/",
           "source": "wired.com",
-          "pub_date": "2026-04-09T05:00:00+00:00",
-          "summary": "Upgrade your K-beauty routine with these active Medicube promo codes. Save on Age-R devices, serums, and masks with student discounts and referral rewards."
+          "pub_date": "2026-04-10T05:00:00+00:00",
+          "summary": "Save up to 25% on Nomad Goods accessories such as Nomad phone cases, Nomad wallets, and more this April."
         },
         {
-          "title": "The Moon is already on Google Maps—did Artemis II really tell us anything new?",
-          "url": "https://arstechnica.com/space/2026/04/the-moon-is-already-on-google-maps-did-artemis-ii-really-tell-us-anything-new/",
+          "title": "Orion helium leak no threat to Artemis II reentry, but will require redesign",
+          "url": "https://arstechnica.com/space/2026/04/nasa-homes-in-on-likely-redesign-to-fix-orion-spacecrafts-leaky-valves/",
           "source": "arstechnica.com",
-          "pub_date": "2026-04-09T03:44:24+00:00",
-          "summary": "\"I think the biggest value here is the PR. I mean, it's getting the public excited.\""
+          "pub_date": "2026-04-10T00:55:51+00:00",
+          "summary": "After leaks on Artemis I and II, Orion's next flight to the Moon will need new valves."
         },
         {
-          "title": "Trump admin makes sweeping request for medical records of federal workers",
-          "url": "https://arstechnica.com/health/2026/04/trump-admin-seeks-medical-records-of-federal-workers-for-vague-reasons/",
+          "title": "RFK Jr. rewrites CDC panel's charter, opening door to anti-vaccine quacks",
+          "url": "https://arstechnica.com/health/2026/04/rfk-jr-rewrites-cdc-panels-charter-opening-door-to-anti-vaccine-quacks/",
           "source": "arstechnica.com",
-          "pub_date": "2026-04-08T22:00:11+00:00",
-          "summary": "The unprecedented proposal would give the Trump admin access to doctors' notes."
+          "pub_date": "2026-04-09T22:32:37+00:00",
+          "summary": "ACIP's charter now full of anti-vaccine terms and welcomes fringe groups to CDC."
         },
         {
-          "title": "LinkedIn scanning users' browser extensions sparks controversy and two lawsuits",
-          "url": "https://arstechnica.com/tech-policy/2026/04/linkedin-scanning-users-browser-extensions-sparks-controversy-and-two-lawsuits/",
+          "title": "AI on the couch: Anthropic gives Claude 20 hours of psychiatry",
+          "url": "https://arstechnica.com/ai/2026/04/why-anthropic-sent-its-claude-ai-to-an-actual-psychiatrist/",
           "source": "arstechnica.com",
-          "pub_date": "2026-04-08T21:08:06+00:00",
-          "summary": "LinkedIn says claims fabricated by extension maker suspended for scraping data."
+          "pub_date": "2026-04-09T21:20:31+00:00",
+          "summary": "Mythos is \"the most psychologically settled model we have trained to date.\""
         },
         {
-          "title": "Iran-linked hackers disrupt operations at US critical infrastructure sites",
-          "url": "https://arstechnica.com/security/2026/04/iran-linked-hackers-disrupt-operations-at-us-critical-infrastructure-sites/",
+          "title": "Clinical trial shows gene editing works for β-Thalassaemia, too",
+          "url": "https://arstechnica.com/science/2026/04/clinical-trial-shows-gene-editing-works-for-%ce%b2-thalassaemia-too/",
           "source": "arstechnica.com",
-          "pub_date": "2026-04-08T20:49:11+00:00",
-          "summary": "As the US and Israel's war has ramped up, so too have hacks on US industrial sites."
+          "pub_date": "2026-04-09T20:28:48+00:00",
+          "summary": "Improved gene editing process reactivates the fetal version of a hemoglobin gene."
         },
         {
-          "title": "Meta's Superintelligence Lab unveils its first public model, Muse Spark",
-          "url": "https://arstechnica.com/ai/2026/04/metas-superintelligence-lab-unveils-its-first-public-model-muse-spark/",
+          "title": "“Negative” views of Broadcom driving thousands of VMware migrations, rival says",
+          "url": "https://arstechnica.com/information-technology/2026/04/nutanix-claims-it-has-poached-30000-vmware-customers/",
           "source": "arstechnica.com",
-          "pub_date": "2026-04-08T19:59:10+00:00",
-          "summary": "Meta touts strong benchmarks but admits \"performance gaps\" in agentic and coding systems."
+          "pub_date": "2026-04-09T19:44:31+00:00",
+          "summary": "Western Union exec says there were \"challenges\" working with Broadcom."
         },
         {
-          "title": "How our digital devices are putting our right to privacy at risk",
-          "url": "https://arstechnica.com/culture/2026/04/how-our-digital-devices-are-putting-our-right-to-privacy-at-risk/",
+          "title": "Ugandan chimps split into two factions, then killed rivals",
+          "url": "https://arstechnica.com/science/2026/04/ugandan-chimps-split-into-two-factions-then-killed-rivals/",
           "source": "arstechnica.com",
-          "pub_date": "2026-04-08T19:17:30+00:00",
-          "summary": "Law professor Andrew Guthrie Ferguson chats with Ars about his new book, Your Data Will Be Used Against You."
+          "pub_date": "2026-04-09T19:21:59+00:00",
+          "summary": "Rare event suggests relational dynamics may play a role in collective violence, along with cultural markers."
         },
         {
-          "title": "Motorola suddenly raises budget phone prices up to 50%—you can probably thank AI",
-          "url": "https://arstechnica.com/gadgets/2026/04/motorolas-budget-phones-are-now-up-to-50-more-expensive-as-memory-shortage-drags-on/",
+          "title": "The gravity of their experience hasn't quite set in for the Artemis II astronauts",
+          "url": "https://arstechnica.com/space/2026/04/astronauts-recall-the-sci-fi-experience-of-flying-in-the-shadow-of-the-moon/",
           "source": "arstechnica.com",
-          "pub_date": "2026-04-08T18:39:08+00:00",
-          "summary": "Motorola's budget phones are much less budget-friendly today."
+          "pub_date": "2026-04-09T18:19:49+00:00",
+          "summary": "\"I'm actually getting chills right now just thinking about it. My palms are sweating.\""
         },
         {
-          "title": "To beat Altman in court, Musk offers to give all damages to OpenAI nonprofit",
-          "url": "https://arstechnica.com/tech-policy/2026/04/to-beat-altman-in-court-musk-offers-to-give-all-damages-to-open-ai-nonprofit/",
+          "title": "Trump-appointed judges refuse to block Trump blacklisting of Anthropic AI tech",
+          "url": "https://arstechnica.com/tech-policy/2026/04/trump-appointed-judges-refuse-to-block-trump-blacklisting-of-anthropic-ai-tech/",
           "source": "arstechnica.com",
-          "pub_date": "2026-04-08T17:37:06+00:00",
-          "summary": "Musk won’t seek a “single dollar” in OpenAI suit after asking to pocket up to $134 billion."
+          "pub_date": "2026-04-09T18:07:56+00:00",
+          "summary": "Appeals court denies Anthropic's emergency motion for a stay."
         }
       ],
-      "cached_at": "2026-04-09T12:32:16.699873"
+      "cached_at": "2026-04-10T08:19:10.152718"
     },
     "sector_heatmap": [
       {
         "name": "AI / ML",
-        "signals": 32,
+        "signals": 29,
         "sentiment": "bullish"
       },
       {
         "name": "Climate / Clean",
-        "signals": 17,
+        "signals": 11,
         "sentiment": "bullish"
       },
       {
         "name": "Consumer / D2C",
-        "signals": 2,
+        "signals": 3,
+        "sentiment": "neutral"
+      },
+      {
+        "name": "Fintech",
+        "signals": 1,
         "sentiment": "neutral"
       },
       {
@@ -2083,9 +1073,9 @@
         "sentiment": "neutral"
       },
       {
-        "name": "Fintech",
-        "signals": 0,
-        "sentiment": "quiet"
+        "name": "Deep Tech",
+        "signals": 1,
+        "sentiment": "neutral"
       },
       {
         "name": "Edtech",
@@ -2094,11 +1084,6 @@
       },
       {
         "name": "Logistics",
-        "signals": 0,
-        "sentiment": "quiet"
-      },
-      {
-        "name": "Deep Tech",
         "signals": 0,
         "sentiment": "quiet"
       }
