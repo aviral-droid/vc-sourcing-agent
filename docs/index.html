@@ -1783,7 +1783,10 @@ function _renderArticles(containerId, articles, emptyMsg) {
   el.innerHTML = articles.map(a => `
     <div class="news-item">
       <a href="${a.url||'#'}" target="_blank" rel="noopener" class="news-title">${a.title||'Untitled'}</a>
-      <div class="news-meta">${a.source||''} · ${a.pub_date ? new Date(a.pub_date).toLocaleDateString() : ''}</div>
+      <div class="news-meta">
+        ${a.company ? `<span style="background:var(--accent-dim);color:var(--accent);padding:1px 6px;border-radius:4px;font-size:9px;font-weight:700;margin-right:4px">${a.company}</span>` : ''}
+        ${a.source||''} · ${a.pub_date ? new Date(a.pub_date).toLocaleDateString() : ''}
+      </div>
       ${a.summary ? `<div class="news-summary">${a.summary}</div>` : ''}
     </div>`).join('');
 }
@@ -2041,33 +2044,11 @@ function loadDemand(force=false) {
 
 // ── Portfolio Intelligence ────────────────────────────────────
 function loadPortfolio(force=false) {
-  const el = document.getElementById('portfolio-scroll');
-  if (!el) return;
-  // Show portfolio companies from config with a "track manually" message
-  const companies = [
-    'Distil','Sanlayan','Esc Plan','Nirog Street','Enerzolve',
-    'GetRight','Coto','Dat Bike','Prosperr'
-  ];
-  el.innerHTML = `
-    <div style="padding:14px 18px">
-      <div style="font-size:11px;color:var(--muted);margin-bottom:10px">
-        Portfolio monitoring via news signals — refreshes each pipeline run.
-      </div>
-      <div style="display:flex;flex-wrap:wrap;gap:6px">
-        ${companies.map(c=>`
-          <a href="https://www.google.com/search?q=${encodeURIComponent(c+' startup news')}" target="_blank"
-             style="padding:4px 10px;border-radius:20px;background:var(--surface2);border:1px solid var(--border);
-                    font-size:11px;color:var(--text2);text-decoration:none;transition:all .15s"
-             onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
-            ${c}
-          </a>`).join('')}
-      </div>
-      <div style="margin-top:12px;font-size:10px;color:var(--muted)">
-        💡 Click any company to see latest news · Run pipeline to refresh signals
-      </div>
-    </div>`;
+  const intel = (_data && _data.intelligence) || {};
+  const articles = (intel.portfolio_news || {}).articles || [];
+  _renderArticles('portfolio-scroll', articles, 'Run pipeline to fetch portfolio company news.');
   const ts = document.getElementById('portfolio-ts');
-  if(ts && _data?.generated_at) ts.textContent = new Date(_data.generated_at).toLocaleDateString();
+  if (ts && _data?.generated_at) ts.textContent = new Date(_data.generated_at).toLocaleDateString();
 }
 
 // ── Init & auto-refresh ───────────────────────────────────────

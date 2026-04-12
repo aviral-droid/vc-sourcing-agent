@@ -303,6 +303,42 @@ def _fetch_intel_for_static() -> dict:
     heatmap.sort(key=lambda x: -x["signals"])
 
     result["sector_heatmap"] = heatmap
+
+    # ── Portfolio company news ─────────────────────────────────────────────────
+    # Each company gets a Google News RSS query; results merged + sorted by date
+    PORTFOLIO_COMPANIES = [
+        ("Distil", "Distil startup specialty chemicals"),
+        ("Sanlayan", "Sanlayan defence electronics startup"),
+        ("Escape Plan", "Escape Plan startup travel lifestyle"),
+        ("NirogStreet", "NirogStreet ayurveda healthtech"),
+        ("Enerzolve", "Enerzolve energy startup"),
+        ("GetRight", "GetRight startup India"),
+        ("Coto", "Coto startup community wellness"),
+        ("Dat Bike", "Dat Bike electric motorbike Vietnam"),
+        ("Prosperr", "Prosperr tax fintech startup"),
+    ]
+    from urllib.parse import quote_plus as _qp
+    import time as _time
+    portfolio_articles: list = []
+    for display_name, query in PORTFOLIO_COMPANIES:
+        gn_url = f"https://news.google.com/rss/search?q={_qp(query)}&hl=en-IN&gl=IN&ceid=IN:en"
+        arts = _parse_feed(gn_url, max_items=4)
+        # Tag each article with the portfolio company name
+        for a in arts:
+            a["company"] = display_name
+        portfolio_articles.extend(arts)
+        _time.sleep(0.25)
+
+    # Sort by pub_date descending, keep up to 40 articles
+    def _pub_key(a):
+        try:
+            from datetime import datetime
+            return datetime.fromisoformat(a.get("pub_date", "") or "1970-01-01")
+        except Exception:
+            return datetime(1970, 1, 1)
+    portfolio_articles.sort(key=_pub_key, reverse=True)
+    result["portfolio_news"] = {"articles": portfolio_articles[:40], "cached_at": now_iso}
+
     return result
 
 
