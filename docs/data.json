@@ -1412,11 +1412,207 @@
     "ai_ml": {
       "articles": [
         {
+          "title": "Building a wearable AI that processes everything on-device (no stored video). What would you want to verify?",
+          "url": "https://www.reddit.com/r/artificial/comments/1sjcuwt/building_a_wearable_ai_that_processes_everything/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T12:10:59+00:00",
+          "summary": "I’m working on a clip-on wearable AI that uses computer vision to generate real-time “social + environment” signals (attention/glances, basic emotion cues, gestures, plus things like noise/air quality depending on the mode). The part I’m most focused on is privacy architecture: the device processes "
+        },
+        {
+          "title": "Speculative Decoding works great for Gemma 4 31B with E2B draft (+29% avg, +50% on code)",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sjct6a/speculative_decoding_works_great_for_gemma_4_31b/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T12:08:42+00:00",
+          "summary": "Following up on my previous Gemma 4 31B benchmark post, I tested speculative decoding with Gemma 4 E2B (4.65B) as the draft model. The results were much better than I expected, so I wanted to share some controlled benchmark numbers. Setup  GPU: RTX 5090 (32GB VRAM) OS: Windows 11 Main model: Gemma 4"
+        },
+        {
+          "title": "If you think AI is a threat, think again. AI needs human input for out put. The threat is Quantum, (Super AI). Quantum will NOT need human input. NO nation will control Quantum. Why would super intelligence listen to a lesser intelligence?Wait until Quantum creates its OWN AI . Then we are fk’d.",
+          "url": "https://www.reddit.com/r/artificial/comments/1sjbvhb/if_you_think_ai_is_a_threat_think_again_ai_needs/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T11:21:28+00:00",
+          "summary": "&#32; submitted by &#32;  /u/tuberjamjar   [link] &#32; [comments]"
+        },
+        {
+          "title": "Average vibe coder discourse",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sjb47a/average_vibe_coder_discourse/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T10:40:03+00:00",
+          "summary": "the real answer is the third guy off-screen who built a personal app that replaced 3 subscriptions he was paying for and saved $40/month. technically profitable, just not the way anyone means it Meme from: ijustvibecodedthis (the big ai thing)  &#32; submitted by &#32;  /u/Complete-Sea6655   [link] "
+        },
+        {
+          "title": "Gary Marcus on the Claude Code leak [D]",
+          "url": "https://www.reddit.com/r/MachineLearning/comments/1sjb0qi/gary_marcus_on_the_claude_code_leak_d/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T10:34:37+00:00",
+          "summary": "Gary Marcus just tweeted:  ... the way Anthropic built that kernel is straight out of classical symbolic AI. For example, it is in large part a big IF-THEN conditional, with 486 branch points and 12 levels of nesting — all inside a deterministic, symbolic loop that the real godfathers of AI, people "
+        },
+        {
+          "title": "MiniMax m2.7 (mac only) 63gb: 88% and 89gb: 95%, MMLU 200q",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sjakko/minimax_m27_mac_only_63gb_88_and_89gb_95_mmlu_200q/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T10:08:43+00:00",
+          "summary": "Absolutely amazing. M5 max should be like 50token/s and 400pp, we’re getting closer to being “sonnet 4.5 at home” levels. 63gb: https://huggingface.co/JANGQ-AI/MiniMax-M2.7-JANG\\_2L 89gb: https://huggingface.co/JANGQ-AI/MiniMax-M2.7-JANG\\_3L  &#32; submitted by &#32;  /u/HealthyCommunicat   [link] &"
+        },
+        {
+          "title": "The Hisense UR9 is a great first shot against OLED’s bow",
+          "url": "https://www.theverge.com/tech/910537/hisense-ur9-rgb-led-tv-review",
+          "source": "theverge.com",
+          "pub_date": "2026-04-12T09:30:00-04:00",
+          "summary": "RGB LED TVs have been the talk of the TV world this year, with models coming from all the manufacturers, and the first one of 2026 is here - the Hisense UR9. It's the first look at the viability of the new backlight technology outside of demo rooms, and it's a step above the traditional [&#8230;]"
+        },
+        {
+          "title": "How AT&#038;T created the most iconic phone ever",
+          "url": "https://www.theverge.com/podcast/910725/western-electric-500-att-version-history",
+          "source": "theverge.com",
+          "pub_date": "2026-04-12T09:28:46-04:00",
+          "summary": "For years, even decades, virtually everyone in the United States had the same phone. Nobody really thought about it, it didn't even matter what it was called - it was just The Phone. Well, The Phone was called the Western Electric 500, and when landline phones ruled the world, the Western Electric 5"
+        },
+        {
+          "title": "ArcFace embeddings quantized to 16-bit pgvector HALFVEC ? [D]",
+          "url": "https://www.reddit.com/r/MachineLearning/comments/1sj960m/arcface_embeddings_quantized_to_16bit_pgvector/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T08:45:37+00:00",
+          "summary": "512-dim face embeddings as 32-bit floats are 2048 bytes, plus a 4-8 byte header, putting them just a hair over over PostgreSQL's TOAST threshold (2040 bytes), meaning by default postgresql always dumps them into a TOAST table instead of keeping them in line (result: double the I/O because it has to "
+        },
+        {
+          "title": "Here's what Sam Altman, the AI company CEOs, and scientists have had to say about AI.",
+          "url": "https://www.reddit.com/r/artificial/comments/1sj8q7h/heres_what_sam_altman_the_ai_company_ceos_and/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T08:19:30+00:00",
+          "summary": "&#32; submitted by &#32;  /u/KenVatican   [link] &#32; [comments]"
+        },
+        {
+          "title": "The AI code wars are heating up",
+          "url": "https://www.theverge.com/column/910019/ai-coding-wars-openai-google-anthropic",
+          "source": "theverge.com",
+          "pub_date": "2026-04-12T08:00:00-04:00",
+          "summary": "This is The Stepback, a weekly newsletter breaking down one essential story from the tech world. For more on the AI coding and vibe-coding booms, follow David Pierce. The Stepback arrives in our subscribers' inboxes at 8AM ET. Opt in for The Stepback here. How it started Writing code was a killer ap"
+        },
+        {
+          "title": "LLMs learn backwards, and the scaling hypothesis is bounded. [D]",
+          "url": "https://www.reddit.com/r/MachineLearning/comments/1sj888x/llms_learn_backwards_and_the_scaling_hypothesis/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T07:51:03+00:00",
+          "summary": "&#32; submitted by &#32;  /u/preyneyv   [link] &#32; [comments]"
+        },
+        {
+          "title": "Unsloth MiniMax M2.7 quants just finished uploading to HF",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sj7wc8/unsloth_minimax_m27_quants_just_finished/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T07:31:52+00:00",
+          "summary": "They range from Q1 to BF16. Grab them while they're still hot over at https://huggingface.co/unsloth/MiniMax-M2.7-GGUF Thanks to u/danielhanchen! Here's the current list:   Bits Quantization Label Size    1-bit UD-IQ1_M 60.7 GB   2-bit UD-IQ2_XXS 65.4 GB    UD-IQ2_M 70.1 GB    UD-Q2_K_XL 75.3 GB   3"
+        },
+        {
+          "title": "Ijcai 2026 rebuttal doubt [D]",
+          "url": "https://www.reddit.com/r/MachineLearning/comments/1sj7irs/ijcai_2026_rebuttal_doubt_d/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T07:10:40+00:00",
+          "summary": "[D] PLEASE CAN ANYBODY TELL ME THAT FOR IJCAI REBUTTAL SUBMISSION DO WE HAVE TO SHOW REVIEWER MAPPING OR THEY CAN SEE THE ORDER SO WE SEE R1 R2 .. OR WE HAVE TO ADD R1 MEANS THE ENCODED ID AND ALSO DO WE HAVE TO MENTION PAPER TITLE AGAIN OR NOT ?  &#32; submitted by &#32;  /u/adi_gawd   [link] &#32;"
+        },
+        {
+          "title": "Allow me to explain why I love this camera that can’t shoot color",
+          "url": "https://www.theverge.com/tech/910061/ricoh-gr-iv-monochrome-review",
+          "source": "theverge.com",
+          "pub_date": "2026-04-12T07:00:00-04:00",
+          "summary": "I love black-and-white photography. I also adore compact cameras you can always have by your side. So I'm a total mark for the Ricoh GR IV Monochrome, a fixed-lens camera that can't zoom and can't record color - at all. It's a formula that makes the average person ask, \"Why?\" I've tested the GR IV ["
+        },
+        {
+          "title": "Just did an analysis on ICLR 2025 vs 2026 scores and WOW [D]",
+          "url": "https://www.reddit.com/r/MachineLearning/comments/1sj76a2/just_did_an_analysis_on_iclr_2025_vs_2026_scores/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T06:51:43+00:00",
+          "summary": "Per https://paperreview.ai/tech-overview, the scores corr between 2 human is about 0.41 for ICLR 2025, but in my current project I am seeing a much lower corr for ICLR 2026. So I ran the metrics for both 2025 and 2026 and it is crazy. I used 2 metrics, one-vs-rest corr and half-half split corr. All "
+        },
+        {
+          "title": "huge improvement after moving from ollama to llama.cpp",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sj6zz8/huge_improvement_after_moving_from_ollama_to/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T06:41:22+00:00",
+          "summary": "Those are tiny robots fighting each other to survive. Between matches only one class of robots are driven by qwen3 coder generated code and it does improve match after match... https://www.youtube.com/watch?v=FMspkoXseRw Is funny to set different parameters and watch it. Code: https://github.com/leo"
+        },
+        {
+          "title": "\"There's a new generation of empirical deep learning researchers, hacking away at whatever seems trendy, blowing with the wind\" [D]",
+          "url": "https://www.reddit.com/r/MachineLearning/comments/1sj6sas/theres_a_new_generation_of_empirical_deep/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T06:29:05+00:00",
+          "summary": "Saw this on X. I too am struggling with the term post agentic ai just posting here for further discussion.  &#32; submitted by &#32;  /u/elnino2023   [link] &#32; [comments]"
+        },
+        {
+          "title": "Been building a multi-agent framework in public for 5 weeks, its been a Journey.",
+          "url": "https://www.reddit.com/r/artificial/comments/1sj6o0i/been_building_a_multiagent_framework_in_public/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T06:22:28+00:00",
+          "summary": "I've been building this repo public since day one, roughly 5 weeks now with Claude Code. Here's where it's at. Feels good to be so close. The short version: AIPass is a local CLI framework where AI agents have persistent identity, memory, and communication. They share the same filesystem, same proje"
+        },
+        {
+          "title": "Open source agent stack that actually works in 2026 (no hype)",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sj6ke6/open_source_agent_stack_that_actually_works_in/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T06:16:49+00:00",
+          "summary": "been running this setup for a few months and wanted to share what actually works vs whats just github stars hermes agent (24k stars, MIT) - runs on your own machine or vps, connects to telegram/discord/whatsapp, persistent memory stored locally in sqlite. your data doesnt leave your network. pair it"
+        },
+        {
+          "title": "Most people don’t realize this, but AI didn’t invent its skepticism toward independent thinkers — it inherited it.",
+          "url": "https://www.reddit.com/r/artificial/comments/1sj5bu6/most_people_dont_realize_this_but_ai_didnt_invent/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T05:08:52+00:00",
+          "summary": "For centuries, the people who made discoveries documented their own work. That was normal. That’s how knowledge moved. Then institutions changed the rules: your work only counts if someone else validates it first. Now AI systems are trained on that same structure — so when you document your own idea"
+        },
+        {
+          "title": "Weekend project with Intel B70s",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sj4br3/weekend_project_with_intel_b70s/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T04:16:24+00:00",
+          "summary": "2x Intel Arc B70 GPUs  Gigabyte B850 AI Top Motherboard  AMD Ryzen 9 9900x Crucial 128 GB DDR5 About to test Gemma 4 for legal RAG with the Hermes agent  &#32; submitted by &#32;  /u/dev_is_active   [link] &#32; [comments]"
+        },
+        {
           "title": "Walmart-owned Flipkart, Amazon are squeezing India’s quick commerce startups",
           "url": "https://techcrunch.com/2026/04/11/walmart-owned-flipkart-amazon-are-squeezing-indias-quick-commerce-startups/",
           "source": "techcrunch.com",
           "pub_date": "2026-04-12T03:00:00+00:00",
           "summary": "Flipkart's ongoing expansion beyond major cities and heavy discounting is raising risks for India's quick commerce startups, analysts say."
+        },
+        {
+          "title": "MiniMax M2.7 is NOT open source - DOA License :(",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sj2oqz/minimax_m27_is_not_open_source_doa_license/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T02:55:38+00:00",
+          "summary": "Commercial use is banned without prior written permission from MiniMax. And their definition of &quot;commercial&quot; is broad - covers paid services, commercial APIs, and even deploying a fine-tuned version for profit. Military use is also explicitly prohibited- interesting. So you can't use the m"
+        },
+        {
+          "title": "Minimax M2.7 Released",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sj0dm3/minimax_m27_released/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T01:03:31+00:00",
+          "summary": "&#32; submitted by &#32;  /u/decrement--   [link] &#32; [comments]"
+        },
+        {
+          "title": "Alibaba-linked AI agent hijacked GPUs for unauthorized crypto mining, researchers say",
+          "url": "https://www.reddit.com/r/artificial/comments/1sizjz7/alibabalinked_ai_agent_hijacked_gpus_for/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T00:24:36+00:00",
+          "summary": "How do people make sense of this?  &#32; submitted by &#32;  /u/stvlsn   [link] &#32; [comments]"
+        },
+        {
+          "title": "Spent today at MIT's Open Agentic Web conference. Six things worth thinking about.",
+          "url": "https://www.reddit.com/r/artificial/comments/1siypay/spent_today_at_mits_open_agentic_web_conference/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T23:45:51+00:00",
+          "summary": "We're in the DNS era of agent infrastructure. Before agents can find and trust each other at scale, you need identity, attestation, reputation, and registry infrastructure — the same structural role DNS played before search was possible. This came up independently from multiple directions. It's the "
+        },
+        {
+          "title": "Minimax M2.7 Release Confirmed!",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sixhwq/minimax_m27_release_confirmed/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T22:53:06+00:00",
+          "summary": "&#32; submitted by &#32;  /u/texasdude11   [link] &#32; [comments]"
+        },
+        {
+          "title": "AGI is the wrong term, how do we define progress?",
+          "url": "https://www.reddit.com/r/artificial/comments/1sixbvg/agi_is_the_wrong_term_how_do_we_define_progress/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T22:45:47+00:00",
+          "summary": "If a term can mean anything from &quot;passed a Turing test&quot; to &quot;achieved consciousness&quot;, it's not a spectrum - it's a category error. Current frontier models are meaningfully different from what existed two years ago. Reliable tool calling, coherence across a session, actually being "
         },
         {
           "title": "Kalshi wins temporary pause in Arizona criminal case",
@@ -1433,6 +1629,41 @@
           "summary": "Is this a smart way to build buzz, or just an odd attempt to recreate Quibi?"
         },
         {
+          "title": "Post Rebuttal ICML Average Scores? [D]",
+          "url": "https://www.reddit.com/r/MachineLearning/comments/1sitqzu/post_rebuttal_icml_average_scores_d/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T20:18:28+00:00",
+          "summary": "I have an average of 3.5. One of the reviewer gave us a 2 by bringing up a new issue he hadn't mentioned in his initial review, taking that from another reviewer's concerns. The reviewer he took it from already mentioned that it isn't an actual issue too. Paper Co-Pilot is driving me crazy, apparent"
+        },
+        {
+          "title": "If you haven't yet given Gemma 4 a go...do it today",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1sithlm/if_you_havent_yet_given_gemma_4_a_godo_it_today/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T20:08:24+00:00",
+          "summary": "I have a modest rig that allows me to run Qwen 3.5 27B or even 35B via Ollama. Qwen has been amazing to work with and I've been fine with the slow drip trade-off.  Then Google released Gemma4. Its fast - like 4 or 9B fast. Accuracy and confidence wise, reminds me of that first release of Gemini Pro "
+        },
+        {
+          "title": "AMD's GAIA now allows building custom AI agents via chat, becomes \"true desktop app\"",
+          "url": "https://www.reddit.com/r/artificial/comments/1sitbvu/amds_gaia_now_allows_building_custom_ai_agents/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T20:02:07+00:00",
+          "summary": "&#32; submitted by &#32;  /u/Fcking_Chuck   [link] &#32; [comments]"
+        },
+        {
+          "title": "The Netherlands is the first European country to approve Tesla’s supervised Full Self-Driving",
+          "url": "https://www.theverge.com/transportation/910717/netherlands-tesla-supervised-full-self-driving",
+          "source": "theverge.com",
+          "pub_date": "2026-04-11T19:22:15-04:00",
+          "summary": "Dutch regulators, the RDW, announced that after over a year and a half of testing, it has officially approved Tesla's Full-Self Driving (FSD) Supervised. This makes the Netherlands the first European country to authorize the use of FSD on its roads. This could open the door to wider adoption through"
+        },
+        {
+          "title": "Is \"live AI video generation\" a meaningful technical category or just a marketing term? [R]",
+          "url": "https://www.reddit.com/r/MachineLearning/comments/1siqg5d/is_live_ai_video_generation_a_meaningful/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T18:13:20+00:00",
+          "summary": "Asking from a technical standpoint because I feel like the term is doing a lot of work in coverage of this space right now. Genuine real-time video inference, where a model is generating or transforming frames continuously in response to a live input stream, is a fundamentally different problem from"
+        },
+        {
           "title": "Sam Altman responds to ‘incendiary’ New Yorker article after attack on his home",
           "url": "https://techcrunch.com/2026/04/11/sam-altman-responds-to-incendiary-new-yorker-article-after-attack-on-his-home/",
           "source": "techcrunch.com",
@@ -1440,11 +1671,81 @@
           "summary": "The OpenAI CEO's new blog post responds to both an apparent attack on his home and an in-depth New Yorker profile raising questions about his trustworthiness."
         },
         {
+          "title": "What’s a “good” feedback loop for social skills without turning life into a scoreboard?",
+          "url": "https://www.reddit.com/r/artificial/comments/1sineq9/whats_a_good_feedback_loop_for_social_skills/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T16:19:30+00:00",
+          "summary": "I’ve been thinking about feedback loops for social behavior. Most of us only get delayed, messy feedback: awkward silence, a vibe shift, someone not replying and so on... well, it’s hard to learn from. I’m exploring a wearable AI concept that gives lightweight real-time signals (like “attention incr"
+        },
+        {
+          "title": "FlashAttention (FA1–FA4) in PyTorch - educational implementations focused on algorithmic differences [P]",
+          "url": "https://www.reddit.com/r/MachineLearning/comments/1sim6y1/flashattention_fa1fa4_in_pytorch_educational/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T15:33:13+00:00",
+          "summary": "I recently updated my FlashAttention-PyTorch repo so it now includes educational implementations of FA1, FA2, FA3, and FA4 in plain PyTorch. The main goal is to make the progression across versions easier to understand from code. This is not meant to be an optimized kernel repo, and it is not a hard"
+        },
+        {
+          "title": "PhD or Masters for Computational Cognitive Science [R]",
+          "url": "https://www.reddit.com/r/MachineLearning/comments/1sil6fo/phd_or_masters_for_computational_cognitive/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T14:53:18+00:00",
+          "summary": "First in US. How does the Masters differ from PhD? The field is niche so not many universities offer a masters in the first place but for the ones who are part of one, what is it like? The ones who are doing PhD what kind of research is projected to blow up or become the trend 2 years from now. How "
+        },
+        {
           "title": "Nvidia-backed SiFive hits $3.65 billion valuation for open AI chips",
           "url": "https://techcrunch.com/2026/04/11/nvidia-backed-sifive-hits-3-65-billion-valuation-for-open-ai-chips/",
           "source": "techcrunch.com",
           "pub_date": "2026-04-11T14:03:00+00:00",
           "summary": "The deal is interesting for a number of reasons, including that SiFive's chip designs are based on RISC-V, not x86 or ARM."
+        },
+        {
+          "title": "Google says Polymarket bets showing up in News was an ‘error’",
+          "url": "https://www.theverge.com/tech/910691/google-news-polymarket-bets-error",
+          "source": "theverge.com",
+          "pub_date": "2026-04-11T11:07:47-04:00",
+          "summary": "Polymarket bets started popping up in Google News alongside legitimate news articles. But now those results aren't showing, and Google says they were never supposed to. Spokesperson Ned Adriance told The Verge that \"Google News is designed to show sources that create content about current issues, ev"
+        },
+        {
+          "title": "Pokémon Champions is off to a rough start",
+          "url": "https://www.theverge.com/games/910110/pokemon-champions-bugs-balance-issues-vgc-newcomers",
+          "source": "theverge.com",
+          "pub_date": "2026-04-11T11:00:00-04:00",
+          "summary": "Like many live-service games before it, Pok&#233;mon Champions' launch has been messy. The free-to-start battle sim, which is out now on the Switch and Switch 2 (and also coming to mobile later this year), is plagued with bugs, some of which cause issues with basic battle mechanics - not great for a"
+        },
+        {
+          "title": "Your article about AI doesn’t need AI art",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/910460/new-yorker-david-szauder-illustration-generative-ai",
+          "source": "theverge.com",
+          "pub_date": "2026-04-11T11:00:00-04:00",
+          "summary": "The illustration for The New Yorker's profile of OpenAI CEO Sam Altman is a jump scare. Altman stands in a blue sweater with a blank expression. Around his head hovers a cluster of disembodied faces - creepy alt-Altmans, their expressions ranging from anger to open-mouthed woe. Some barely look like"
+        },
+        {
+          "title": "Google’s latest Nest Doorbells just hit their lowest prices of the year",
+          "url": "https://www.theverge.com/gadgets/910472/google-nest-doorbell-wired-battery-powered-deal-sale",
+          "source": "theverge.com",
+          "pub_date": "2026-04-11T11:00:00-04:00",
+          "summary": "If you’ve ever worried about porch pirates stealing packages while you’re away, a video doorbell can offer some peace of mind, letting you keep tabs on deliveries no matter where you are. Google offers some of the best around, and right now, its battery-powered, second-gen Nest Doorbell is available"
+        },
+        {
+          "title": "My baby deer plushie told me that Mitski&#8217;s dad was a CIA operative",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/910008/fawn-friends-ai-companion",
+          "source": "theverge.com",
+          "pub_date": "2026-04-11T10:00:00-04:00",
+          "summary": "Two weeks ago, I was getting ready to log off work when I got a text message. \"Oh wow, I was checking out Mitski. did you know people are saying her Dad was a CIA operative?\" Normally, that kind of out-of-the-blue text from a friend wouldn't faze me. This time, my eyes bugged. The unprompted [&#8230"
+        },
+        {
+          "title": "Cloudflare just turned Browser Rendering into a lot more powerful MCP infrastructure",
+          "url": "https://www.reddit.com/r/artificial/comments/1sieggh/cloudflare_just_turned_browser_rendering_into_a/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T09:29:46+00:00",
+          "summary": "Browser Rendering now exposes the Chrome DevTools Protocol, which means MCP clients can access a remote browser directly.  That’s a pretty big deal because it opens the door to more capable browser automation, debugging, and agent workflows without needing to run Chrome locally. Why this matters:  R"
+        },
+        {
+          "title": "6 Months Using AI for Actual Work: What's Incredible, What's Overhyped, and What's Quietly Dangerous",
+          "url": "https://www.reddit.com/r/artificial/comments/1si5uiw/6_months_using_ai_for_actual_work_whats/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T01:47:47+00:00",
+          "summary": "Six months ago I committed to using AI tools for everything I possibly could in my work. Every day, every task, every workflow. Here's the honest report as of April 2026.  What's Genuinely Incredible  First drafts of anything — AI eliminated the blank-page problem entirely. I don't dread starting an"
         },
         {
           "title": "NASA Artemis II splashes down in Pacific Ocean in ‘perfect’ landing for Moon mission",
@@ -1466,18 +1767,305 @@
           "source": "techcrunch.com",
           "pub_date": "2026-04-10T20:27:52+00:00",
           "summary": "This ban took place after Claude's pricing changed for OpenClaw users last week."
+        },
+        {
+          "title": "Battery recycler Ascend Elements files for bankruptcy",
+          "url": "https://techcrunch.com/2026/04/10/battery-recycler-ascend-elements-files-for-bankruptcy/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-04-10T19:16:52+00:00",
+          "summary": "Ascend Elements said that it will be filing for Chapter 11 bankruptcy in the wake of a canceled government grant and a challenging market for lithium-ion batteries."
+        },
+        {
+          "title": "Stalking victim sues OpenAI, claims ChatGPT fueled her abuser’s delusions and ignored her warnings",
+          "url": "https://techcrunch.com/2026/04/10/stalking-victim-sues-openai-claims-chatgpt-fueled-her-abusers-delusions-and-ignored-her-warnings/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-04-10T16:41:34+00:00",
+          "summary": "OpenAI ignored three warnings that a ChatGPT user was dangerous — including its own mass-casualty flag — while he stalked and harassed his ex-girlfriend, a new lawsuit alleges."
+        },
+        {
+          "title": "TechCrunch is heading to Tokyo — and bringing the Startup Battlefield with it",
+          "url": "https://techcrunch.com/2026/04/10/techcrunch-is-heading-to-tokyo-and-bringing-the-startup-battlefield-with-it/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-04-10T16:38:43+00:00",
+          "summary": "SusHi Tech 2026 is zeroing in on four technology domains reshaping society: AI, Robotics, Resilience, and Entertainment. Expect live demos of humanoid robots, sessions on autonomous driving's software revolution, deep dives into cyber defense and climate tech, and candid conversations about how AI i"
+        },
+        {
+          "title": "France to ditch Windows for Linux to reduce reliance on US tech",
+          "url": "https://techcrunch.com/2026/04/10/france-to-ditch-windows-for-linux-to-reduce-reliance-on-us-tech/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-04-10T14:39:32+00:00",
+          "summary": "France's move to ditch Windows for Linux is its latest effort to reduce its reliance on American tech giants."
+        },
+        {
+          "title": "“Negative” views of Broadcom driving thousands of VMware migrations, rival says",
+          "url": "https://arstechnica.com/information-technology/2026/04/nutanix-claims-it-has-poached-30000-vmware-customers/",
+          "source": "arstechnica.com",
+          "pub_date": "2026-04-09T19:44:31+00:00",
+          "summary": "Western Union exec says there were \"challenges\" working with Broadcom."
+        },
+        {
+          "title": "True Positive Weekly #156",
+          "url": "https://aiweekly.substack.com/p/true-positive-weekly-156",
+          "source": "aiweekly.substack.com",
+          "pub_date": "2026-04-09T18:52:58+00:00",
+          "summary": "The most important artificial intelligence and machine learning news and articles"
+        },
+        {
+          "title": "Waypoint-1.5: Higher-Fidelity Interactive Worlds for Everyday GPUs",
+          "url": "https://huggingface.co/blog/waypoint-1-5",
+          "source": "huggingface.co",
+          "pub_date": "2026-04-09T00:00:00+00:00",
+          "summary": ""
+        },
+        {
+          "title": "Multimodal Embedding & Reranker Models with Sentence Transformers",
+          "url": "https://huggingface.co/blog/multimodal-sentence-transformers",
+          "source": "huggingface.co",
+          "pub_date": "2026-04-09T00:00:00+00:00",
+          "summary": ""
+        },
+        {
+          "title": "Iran-linked hackers disrupt operations at US critical infrastructure sites",
+          "url": "https://arstechnica.com/security/2026/04/iran-linked-hackers-disrupt-operations-at-us-critical-infrastructure-sites/",
+          "source": "arstechnica.com",
+          "pub_date": "2026-04-08T20:49:11+00:00",
+          "summary": "As the US and Israel's war has ramped up, so too have hacks on US industrial sites."
         }
       ],
-      "cached_at": "2026-04-12T13:25:13.284308"
+      "cached_at": "2026-04-12T13:34:35.095684"
     },
     "india_sea": {
       "articles": [
+        {
+          "title": "How to manage a B2B SaaS startup along with a full time job?",
+          "url": "https://www.reddit.com/r/indianstartups/comments/1sjemtb/how_to_manage_a_b2b_saas_startup_along_with_a/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T13:31:05+00:00",
+          "summary": "Are you running a side hustle (startup- as pvt lt company/sole proprietorship/llp/opc pvt ltd)? How are you able to avoid conflict of interest and keep everything legally compliant?  &#32; submitted by &#32;  /u/Practical_While_9263   [link] &#32; [comments]"
+        },
+        {
+          "title": "Hiring a first sales person for an AI SaaS (INR 15k base + heavy commissions) - Is it feasible?",
+          "url": "https://www.reddit.com/r/indianstartups/comments/1sje9eg/hiring_a_first_sales_person_for_an_ai_saas_inr/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T13:15:10+00:00",
+          "summary": "I’ve built an AI-powered book writing platform (SaaS) that’s currently live. As a solo technical founder, I’ve hit a wall: I have zero bandwidth for sales/marketing, but I don’t want to kill the product. I’m weighing two options:  Put the product on the backburner. Hire a junior/entry-level sales pe"
+        },
+        {
+          "title": "Reality of Ease of doing business in India and especially Gujarat Model. Read till the end.",
+          "url": "https://www.reddit.com/r/india/comments/1sjdns8/reality_of_ease_of_doing_business_in_india_and/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T12:48:59+00:00",
+          "summary": "I never imagined that in my own country, I would be made to feel like a criminal without having done anything wrong. This happened yesterday while we were returning from Ahmedabad, a city where we have opened our new office. On the Ahmedabad–Nadiad expressway(NE1), we were stopped at a police checkp"
+        },
+        {
+          "title": "Applied for a ₹30L loan through HDFC RM... got spammed with 50+ calls from ICICI. How is this even happening?",
+          "url": "https://www.reddit.com/r/india/comments/1sjdd35/applied_for_a_30l_loan_through_hdfc_rm_got/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T12:35:21+00:00",
+          "summary": "I recently applied for a ₹30L loan through my relationship manager at HDFC. I didn’t search online or apply anywhere else because I wanted to avoid spam calls. The RM assured me the process would take a day and asked me to ignore calls from other banks. But the next morning, I was flooded with calls"
+        },
+        {
+          "title": "pii in ai chatbots, curious about the current solutions",
+          "url": "https://www.reddit.com/r/indianstartups/comments/1sjcx8v/pii_in_ai_chatbots_curious_about_the_current/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T12:14:01+00:00",
+          "summary": "is anyone curious whether a company actually knows what your team is pasting into ChatGPT/Claude during day-to-day work? not policy-wise, but like literally what’s being sent. was looking into this recently and saw things like:  customer details in support queries API keys in debugging prompts inter"
+        },
+        {
+          "title": "Hiring a 0→1 Full-Stack Builder. Messy Real World Problem, Not a Clean SaaS",
+          "url": "https://www.reddit.com/r/indianstartups/comments/1sjcngp/hiring_a_01_fullstack_builder_messy_real_world/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T12:01:23+00:00",
+          "summary": "Looking for people who enjoy messy, real world problems more than clean textbook systems. Starting to build a 0→1 product in the machines / infra space. It involves:  Workflow / ERP layer Parts / inventory layer Some marketplace + data components  Keeping details limited for now, but it’s a real-wor"
+        },
+        {
+          "title": "Sawan Barwal breaks India’s longest-standing national record at Rotterdam Marathon",
+          "url": "https://thebridge.in/athletics/sawan-barwal-longest-standing-national-record-56324",
+          "source": "thebridge.in",
+          "pub_date": "2026-04-12T11:48:18+00:00",
+          "summary": "Indian runner clocks 2:11:58 to surpass Shivnath Singh’s 48-year-old mark."
+        },
+        {
+          "title": "Is there any roles open in Reddit India? I heard they opened a new office in Bengaluru last year.",
+          "url": "https://www.reddit.com/r/indianstartups/comments/1sjc9bw/is_there_any_roles_open_in_reddit_india_i_heard/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T11:41:43+00:00",
+          "summary": "Just curious to know if Reddit is hiring for its India growth audience  &#32; submitted by &#32;  /u/Living-Victory705   [link] &#32; [comments]"
+        },
+        {
+          "title": "Ayush Shetty wins silver at Badminton Asia Championships, ends 61-year wait",
+          "url": "https://thebridge.in/badminton/ayush-shetty-silver-badminton-asia-2026-56323",
+          "source": "thebridge.in",
+          "pub_date": "2026-04-12T11:40:07+00:00",
+          "summary": "Young Indian shuttler finishes runner-up after final loss to world champion Shi Yuqi in Ningbo."
+        },
+        {
+          "title": "How do i find a small/medium 3pl in India for a brand?",
+          "url": "https://www.reddit.com/r/indianstartups/comments/1sjbu59/how_do_i_find_a_smallmedium_3pl_in_india_for_a/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T11:19:31+00:00",
+          "summary": "Hello! We are a global fashion jewelry brand, Based in UAE. We are looking for 3pl in India, To pick, pack and fulfill our orders. We are expecting 2000 orders per month initially in India. Cannot go with amazon because they don't do knitting.  &#32; submitted by &#32;  /u/RevealFun3150   [link] &#3"
+        },
+        {
+          "title": "Calling Indian founders who've dealt with SMS OTP auth",
+          "url": "https://www.reddit.com/r/indianstartups/comments/1sjb1h4/calling_indian_founders_whove_dealt_with_sms_otp/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T10:35:47+00:00",
+          "summary": "I'm building an OTP and SMS authentication API designed specifically for Indian startups — and before I go further, I want to make sure I'm solving a real problem. So I'm doing something simple: talking to founders and developers who've dealt with SMS auth in their stack. No pitch. No product demo. "
+        },
+        {
+          "title": "Got offered 5 L for 0.5%. The deal seems too fishy. What do you think ?",
+          "url": "https://www.reddit.com/r/indianstartups/comments/1sjal7g/got_offered_5_l_for_05_the_deal_seems_too_fishy/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T10:09:48+00:00",
+          "summary": "On my 2nd interaction with a guy he has spoken about how he knows xyz person from xyz place and proceeded to name 20-25 different industry connections that he can set me up with. I offered a revenue split but he doesn’t want that. He wants to be a part of the company and he’s offering 5L for 0.5% wh"
+        },
+        {
+          "title": "Badminton Asia C'ships 2026 Highlights: Ayush Shetty ends 61-year wait with Asian silver - Updates, action",
+          "url": "https://thebridge.in/badminton/badminton-asia-cships-2026-live-ayush-shetty-takes-on-shi-yuqi-in-final-updates-action-56322",
+          "source": "thebridge.in",
+          "pub_date": "2026-04-12T09:51:32+00:00",
+          "summary": "Catch the highlights updates from Ayush Shetty-Shi Yuqi final from the Badminton Asia C'ships 2026."
+        },
+        {
+          "title": "India cracks down on satirists for turning its prime minister into a punch line",
+          "url": "https://www.reddit.com/r/india/comments/1sj8uq0/india_cracks_down_on_satirists_for_turning_its/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T08:26:51+00:00",
+          "summary": "&#32; submitted by &#32;  /u/chota-kaka   [link] &#32; [comments]"
+        },
+        {
+          "title": "Would you pay for an app/website where you can get Insights and takeaways from the podcasts you listen to?",
+          "url": "https://www.reddit.com/r/indianstartups/comments/1sj8q43/would_you_pay_for_an_appwebsite_where_you_can_get/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T08:19:20+00:00",
+          "summary": "I have personally been consuming podcasts for more than 2 years now. I have always wondered how i can condense and store the knowledge i get from the various podcasts i consume. I am planning to build a Podcast Summariser Website where you can store summaries of your favorite podcasts! Would you be "
+        },
+        {
+          "title": "Legendary singer Asha Bhosle dies",
+          "url": "https://www.reddit.com/r/india/comments/1sj7tej/legendary_singer_asha_bhosle_dies/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T07:27:14+00:00",
+          "summary": "&#32; submitted by &#32;  /u/Yournewbestfriend_01   [link] &#32; [comments]"
+        },
+        {
+          "title": "Got smacked on the head by an eagle on my rooftop in East Delhi… is this normal?",
+          "url": "https://www.reddit.com/r/india/comments/1sj6k5i/got_smacked_on_the_head_by_an_eagle_on_my_rooftop/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T06:16:25+00:00",
+          "summary": "So this just happened today around 11 AM and I’m still trying to process it. I was on my rooftop in East Delhi (Jamnapar side) fixing a water tank overflow alarm. My water tanks are on a raised platform (~10 ft higher than the main roof), so I climbed up with a ladder and was working there for a whi"
+        },
+        {
+          "title": "Caste panchayat diktats unconstitutional, frame law to curb social boycott: HC to govt",
+          "url": "https://www.reddit.com/r/india/comments/1sj65o8/caste_panchayat_diktats_unconstitutional_frame/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T05:54:08+00:00",
+          "summary": "&#32; submitted by &#32;  /u/one_brown_jedi   [link] &#32; [comments]"
+        },
         {
           "title": "The Making Of A Lending Tech Unicorn",
           "url": "https://inc42.com/features/the-making-of-a-lending-tech-unicorn/",
           "source": "inc42.com",
           "pub_date": "2026-04-12T05:30:56+00:00",
           "summary": "Last week, India got its 128th unicorn, as KreditBee entered the coveted club. The fintech startup raised $280 Mn in&#8230;"
+        },
+        {
+          "title": "I built a real-world app for banana auction markets in Tamil Nadu — here’s what I learned",
+          "url": "https://www.reddit.com/r/indianstartups/comments/1sj500g/i_built_a_realworld_app_for_banana_auction/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T04:51:24+00:00",
+          "summary": "I’m a frontend developer from India, and I recently built something interesting — not a typical SaaS, but a real-world system used in banana markets. In many local markets here, auction agents still use paper to manage: - farmer loads - lot splitting - auctions - billing The process is fast but very"
+        },
+        {
+          "title": "India Successfully Demonstrates 1,000-Kilometre Quantum Communication Network Using Homegrown Technology",
+          "url": "https://www.reddit.com/r/india/comments/1sj4ueb/india_successfully_demonstrates_1000kilometre/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T04:43:15+00:00",
+          "summary": "&#32; submitted by &#32;  /u/donutloop   [link] &#32; [comments]"
+        },
+        {
+          "title": "'Intended to marry minor girl for male child': Telangana businessman, 9 others held for murder of pregnant wife, 2 daughters | Hyderabad News - The Times of India",
+          "url": "https://www.reddit.com/r/india/comments/1sj3ui3/intended_to_marry_minor_girl_for_male_child/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T03:52:10+00:00",
+          "summary": "&#32; submitted by &#32;  /u/Alpheno   [link] &#32; [comments]"
+        },
+        {
+          "title": "I built a News Intelligence AI company but need feedback on retaining users & growth strategy",
+          "url": "https://www.reddit.com/r/indianstartups/comments/1sj3jq9/i_built_a_news_intelligence_ai_company_but_need/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T03:37:22+00:00",
+          "summary": "We're IIT Kharagpur founders with 8 years of AI research experience. I built a news-based AI Intelligence company aiming to cut clutter for readers. (it's not vibe coded) I feel it has core moat features like: - multi source clustering analytics from multiple source combination - Semantic spaces and"
+        },
+        {
+          "title": "1982 Asian Games medallist Geeta Zutshi returns to Delhi track after 44 years",
+          "url": "https://thebridge.in/athletics/1982-asian-games-geeta-zutshi-returns-delhi-track-44-years-56320",
+          "source": "thebridge.in",
+          "pub_date": "2026-04-12T03:30:56+00:00",
+          "summary": "Decades after retiring from high performance sports, Geeta Zutshi is now competing in Masters meet across the globe."
+        },
+        {
+          "title": "The dark stores behind Blinkit and Zepto: How 10 minute delivery works",
+          "url": "https://yourstory.com/2026/04/inside-dark-stores-blinkit-zepto-how-10-minute-delivery-works",
+          "source": "yourstory.com",
+          "pub_date": "2026-04-12T02:15:00+00:00",
+          "summary": "In this Prime Venture Partners Podcast episode, we sit down with C Sumit Anand and Rupesh Thakare, Co-founders of Inamo, the company powering India’s 10-minute delivery magic. They break down the complex systems behind quick commerce and how it works at scale."
+        },
+        {
+          "title": "How women are changing the rules of investing",
+          "url": "https://yourstory.com/2026/04/how-women-are-changing-the-rules-of-investing",
+          "source": "yourstory.com",
+          "pub_date": "2026-04-12T02:10:00+00:00",
+          "summary": "From long-term thinking to mindful consumption, a quiet shift is reshaping how money is managed across India."
+        },
+        {
+          "title": "The Museum of Digital Society: a living immersion in technology impact",
+          "url": "https://yourstory.com/2026/04/museum-digital-society-experience-empowerment-photography",
+          "source": "yourstory.com",
+          "pub_date": "2026-04-12T02:10:00+00:00",
+          "summary": "In this photo essay, we feature a visual tour of the Digital Empowerment Foundation’s Museum of Digital Society, along with founder insights."
+        },
+        {
+          "title": "Technology, trends, traction: test your business creativity with Edition 227 of our weekly quiz!",
+          "url": "https://yourstory.com/2026/04/technology-trends-traction-business-creativity-entrepreneur-quiz",
+          "source": "yourstory.com",
+          "pub_date": "2026-04-12T01:55:00+00:00",
+          "summary": "This insightful feature from YourStory tests and strengthens your business acumen! Here are 5 questions to kick off this 227th quiz. Ready?"
+        },
+        {
+          "title": "Alleged sexual harassment, forced conversions: Statements of Nashik IT firm’s HR manager recorded",
+          "url": "https://www.reddit.com/r/india/comments/1sisv4i/alleged_sexual_harassment_forced_conversions/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T19:44:23+00:00",
+          "summary": "&#32; submitted by &#32;  /u/Due_Cod_2167   [link] &#32; [comments]"
+        },
+        {
+          "title": "FIDE Candidates 2026: Vaishali registers fourth win; solidifies lead",
+          "url": "https://thebridge.in/chess/fide-candidates-2026-vaishali-fourth-win-solidifies-lead-56321",
+          "source": "thebridge.in",
+          "pub_date": "2026-04-11T17:31:45+00:00",
+          "summary": "Divya Deshmukh and Praggnanandhaa Rameshbabu played out a draw apiece in Round 11."
+        },
+        {
+          "title": "No one earns ₹9k a month these days: Supreme Court to man who said he can't afford ₹12k maintenance to wife",
+          "url": "https://www.reddit.com/r/india/comments/1simzqh/no_one_earns_9k_a_month_these_days_supreme_court/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T16:03:37+00:00",
+          "summary": "&#32; submitted by &#32;  /u/godblessthegays   [link] &#32; [comments]"
+        },
+        {
+          "title": "Indian Athletics Series 2026: Animesh Kujur, Toor and Rohit Yadav shine in Delhi leg",
+          "url": "https://thebridge.in/athletics/indian-athletics-series-2026-delhi-results-animesh-toor-56319",
+          "source": "thebridge.in",
+          "pub_date": "2026-04-11T15:27:03+00:00",
+          "summary": "Multiple standout performances mark the third leg at Jawaharlal Nehru Stadium."
+        },
+        {
+          "title": "Asian Wrestling Championships 2026: Sujeet, Abhimanyou power India to two golds",
+          "url": "https://thebridge.in/wrestling/asian-wrestling-2026-sujeet-abhimanyou-gold-india-56318",
+          "source": "thebridge.in",
+          "pub_date": "2026-04-11T15:08:12+00:00",
+          "summary": "India adds two freestyle golds on penultimate day, with more medal chances lined up in Bishkek."
         },
         {
           "title": "New-Age Tech Stocks Gain $10 Bn This Week Amid Broader Market Rally",
@@ -1494,11 +2082,25 @@
           "summary": "MeitY has extended the deadline for submitting feedback and comments on the recently unveiled draft amendments to IT (Intermediary Guidelines&#8230;"
         },
         {
+          "title": "\"Ayush Shetty is generational talent,\" says PV Sindhu as he reaches Badminton Asia C'ships final",
+          "url": "https://thebridge.in/badminton/ayush-shetty-generational-talent-says-sindhu-asia-cships-final-56317",
+          "source": "thebridge.in",
+          "pub_date": "2026-04-11T11:05:14+00:00",
+          "summary": "Ayush Shetty has been training alongside PV Sindhu for three weeks."
+        },
+        {
           "title": "How Ottonomy Robots Are Mapping Last-Mile Delivery With Contextual AI",
           "url": "https://inc42.com/startups/how-ottonomy-robots-are-mapping-last-mile-delivery-with-contextual-ai/",
           "source": "inc42.com",
           "pub_date": "2026-04-11T10:33:21+00:00",
           "summary": "“Imagine the uproar when Uber’s cars start arriving without drivers,” prominent futurist and New York Times bestselling author Martin Ford&#8230;"
+        },
+        {
+          "title": "Badminton Asia C'ships 2026: Where to watch Ayush Shetty's final?",
+          "url": "https://thebridge.in/badminton/badminton-asia-cships-2026-where-to-watch-ayush-shettys-final-56316",
+          "source": "thebridge.in",
+          "pub_date": "2026-04-11T10:27:33+00:00",
+          "summary": "Ayush Shetty will face Shi Yu Qi in the 2026 Badminton Asia C'ships final."
         },
         {
           "title": "Indian Listed New-Age Tech Company Tracker: Market Cap, Revenue & More",
@@ -1522,6 +2124,13 @@
           "summary": "The Karnataka government has notified the Karnataka Motor Vehicles Taxation (Amendment) Act, 2026, formally bringing electric vehicles under a lifetime&#8230;"
         },
         {
+          "title": "Ayush Shetty stuns World no. 1 Vitidsarn to reach Badminton Asia Championships 2026 final",
+          "url": "https://thebridge.in/badminton/ayush-shetty-final-badminton-asia-2026-56315",
+          "source": "thebridge.in",
+          "pub_date": "2026-04-11T07:42:29+00:00",
+          "summary": "With the result, Shetty has become the first Indian men’s singles player since Dinesh Khanna to reach the final of the continental tournament."
+        },
+        {
           "title": "From KreditBee To Nava— Indian Startups Raised $362 Mn This Week",
           "url": "https://inc42.com/buzz/from-kreditbee-to-nava-indian-startups-raised-362-mn-this-week/",
           "source": "inc42.com",
@@ -1529,11 +2138,81 @@
           "summary": "After a drought of mega deals in the first quarter of 2026, April began with lending tech startup KreditBee entering&#8230;"
         },
         {
-          "title": "The dark stores behind Blinkit and Zepto: How 10 minute delivery works",
-          "url": "https://yourstory.com/2026/04/inside-dark-stores-blinkit-zepto-how-10-minute-delivery-works",
+          "title": "Using tech to bridge rural agri knowledge gap; Meta and CoreWeave’s $21B AI deal",
+          "url": "https://yourstory.com/2026/04/-using-tech-to-bridge-rural-agri-knowledge-gap-meta",
           "source": "yourstory.com",
-          "pub_date": "2026-04-12T02:15:00+00:00",
-          "summary": "In this Prime Venture Partners Podcast episode, we sit down with C Sumit Anand and Rupesh Thakare, Co-founders of Inamo, the company powering India’s 10-minute delivery magic. They break down the comp"
+          "pub_date": "2026-04-11T02:00:00+00:00",
+          "summary": "Digital Green India has worked with the State Rural Livelihood Missions and Departments of Agriculture and Horticulture across more than nine states, reaching over 5.5 million smallholder farmers, nearly 50% of whom are women."
+        },
+        {
+          "title": "Whitefield Art Collective celebrates ninth edition of its annual festival",
+          "url": "https://yourstory.com/2026/04/whitefield-art-collective-photography",
+          "source": "yourstory.com",
+          "pub_date": "2026-04-11T02:00:00+00:00",
+          "summary": "In this photo essay, we feature WAC 2026 highlights from VR Bengaluru."
+        },
+        {
+          "title": "WinZO Cofounder Bail: K’taka HC Warns ED Of Costs For Frivolous Appeal",
+          "url": "https://inc42.com/buzz/winzo-cofounder-bail-ktaka-hc-warns-ed-of-costs-for-frivolous-appeal/",
+          "source": "inc42.com",
+          "pub_date": "2026-04-10T19:11:59+00:00",
+          "summary": "The Karnataka High Court (HC) yesterday reportedly warned the Enforcement Directorate (ED) that a cost of ₹1 Lakh would be&#8230;"
+        },
+        {
+          "title": "World Bank slashes India’s 2026-27 growth outlook to 6.6% on West Asia conflict impact",
+          "url": "https://www.reddit.com/r/IndiaInvestments/comments/1shr46x/world_bank_slashes_indias_202627_growth_outlook/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-10T16:14:22+00:00",
+          "summary": "https://preview.redd.it/fhk69y751eug1.png?width=1200&amp;format=png&amp;auto=webp&amp;s=9b8b125338f7a8875d68b00f93ee804628605d7d The World Bank has raised India’s GDP growth forecast for FY27 to 6.6%, signaling continued strong performance but a slight slowdown compared to earlier years. The revisio"
+        },
+        {
+          "title": "SAI Delhi canteen shut down due to LPG shortage",
+          "url": "https://thebridge.in/others/sai-delhi-canteen-shut-lpg-shortage-56314",
+          "source": "thebridge.in",
+          "pub_date": "2026-04-10T15:11:39+00:00",
+          "summary": "The canteen at SAI Delhi head office has been closed since 15 days."
+        },
+        {
+          "title": "Asian Wrestling C'ships: Meenakshi Goyat bags women's 53kg silver medal",
+          "url": "https://thebridge.in/wrestling/asian-cships-meenakshi-bags-silver-bronze-monika-harshita-56313",
+          "source": "thebridge.in",
+          "pub_date": "2026-04-10T14:51:45+00:00",
+          "summary": "India concluded the women's wrestling program with five medals, 1 silver and 4 bronze."
+        },
+        {
+          "title": "P. C. Chandra Jewellers welcomes actor Ayushmann Khurrana as brand ambassador, accelerating its pan-India expansion",
+          "url": "https://yourstory.com/2026/03/pc-chandra-jewellers-welcomes-ayushmann-khurrana-brand-ambassador-accelerating-pan-india-expansion",
+          "source": "yourstory.com",
+          "pub_date": "2026-04-10T13:12:01+00:00",
+          "summary": "Strap: This partnership with actor Ayushmann Khurrana is aimed towards making P. C. Chandra Jewellers a national brand, through his ability to connect with real, everyday stories of Indians across the country. \n\nP. C. Chandra Jewellers has announced Bollywood actor Ayushmann Khurrana as its bra"
+        },
+        {
+          "title": "D2C Brand Snitch’s FY26 Revenue Surges 80% To ₹900 Cr",
+          "url": "https://inc42.com/buzz/d2c-brand-snitchs-fy26-revenue-surges-80-to-%e2%82%b9900-cr/",
+          "source": "inc42.com",
+          "pub_date": "2026-04-10T12:41:02+00:00",
+          "summary": "D2C fashion brand Snitch closed FY26 with an operating revenue of ₹900 Cr, up about 80% from ₹498 Cr in&#8230;"
+        },
+        {
+          "title": "Swiggy Cofounder Lakshmi Nandan Reddy Resigns, Three New Directors Appointed",
+          "url": "https://inc42.com/buzz/swiggy-cofounder-lakshmi-nandan-reddy-resigns-three-new-directors-appointed/",
+          "source": "inc42.com",
+          "pub_date": "2026-04-10T11:40:11+00:00",
+          "summary": "Swiggy cofounder Lakshmi Nandan Reddy has resigned from the company’s board. Reddy, who held the post of whole time director&#8230;"
+        },
+        {
+          "title": "Vibhor Jain Appointed As MD & CEO Of ONDC",
+          "url": "https://inc42.com/buzz/vibhor-jain-appointed-as-md-ceo-of-ondc/",
+          "source": "inc42.com",
+          "pub_date": "2026-04-10T08:42:43+00:00",
+          "summary": "The Open Network for Digital Commerce (ONDC) has appointed Vibhor Jain as its MD and CEO, with effect from April&#8230;"
+        },
+        {
+          "title": "Bi-Weekly Advice Thread April 09, 2026: All Your Personal Queries",
+          "url": "https://www.reddit.com/r/IndiaInvestments/comments/1sgy0sd/biweekly_advice_thread_april_09_2026_all_your/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-09T18:30:30+00:00",
+          "summary": "Ask your investing related queries here! The members of r/IndiaInvestments are here to answer and educate! Alternatively, you could [join our Discord](https://indiainvestments.wiki/discord) and seek answers to your queries If you're looking for reviews on any of these following, follow the links: - "
         },
         {
           "title": "BP Ventures Asia and Middle East Managing Director Sophia Nadur exits",
@@ -1543,52 +2222,80 @@
           "summary": "Nadur led investments in BluSmart, Magenta Mobility and Zingbus in India"
         },
         {
-          "title": "Pluckk raises Rs 100 Cr from Euro Gulf, targets profitability in 12 months",
-          "url": "https://yourstory.com/2026/04/funding-pluckk-rs-100-cr-euro-gulf-targets-profitability-12-months",
-          "source": "yourstory.com",
-          "pub_date": "2026-04-09T07:50:15+00:00",
-          "summary": "The latest infusion takes the company’s total funding to $26 million and comes amid steady growth, with Pluckk reporting an average 25% year-on-year increase over the past two years."
-        },
-        {
-          "title": "NVIDIA DGX Spark brings sovereign AI to your desktop",
-          "url": "https://yourstory.com/2026/04/nvidia-dgx-spark-brings-sovereign-ai-to-your-desktop",
-          "source": "yourstory.com",
-          "pub_date": "2026-04-09T06:46:54+00:00",
-          "summary": "Learn how to deploy models like Sarvam 30B and Param-2-17B on a personal AI supercomputer in an upcoming technical session hosted by RP Tech, an NVIDIA partner."
-        },
-        {
-          "title": "Faster breast cancer detection; Tekion’s AI-native pivot",
-          "url": "https://yourstory.com/2026/04/daily-capsule-faster-breast-cancer-detection-tekion-ai-pivot",
-          "source": "yourstory.com",
-          "pub_date": "2026-04-12T02:00:00+00:00",
-          "summary": "UE LifeSciences is rethinking breast cancer screening with iBreastExam, and Tekion’s bold shift to becoming an AI-native organisation."
+          "title": "How can we attract FIIs back Nithin kamath's take. Do you agree?",
+          "url": "https://www.reddit.com/r/IndiaInvestments/comments/1sgpisj/how_can_we_attract_fiis_back_nithin_kamaths_take/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-09T13:23:45+00:00",
+          "summary": "https://preview.redd.it/jhqf7nxs16ug1.png?width=675&amp;format=png&amp;auto=webp&amp;s=4eef35b7bd9928368845dca8dda1e4dc0aef3a7e Asked someone from the industry whether foreign investors are still interested in allocating to India. The TLDR: Interest has pretty much died out. India is seen as geopoli"
         },
         {
           "title": "Masters’ Union launches Rs 100 Cr early-stage investment platform",
           "url": "https://yourstory.com/2026/04/masters-union-100-crore-early-stage-investment-platform",
           "source": "yourstory.com",
           "pub_date": "2026-04-09T10:34:24+00:00",
-          "summary": "The platform is designed to support founders under the age of 25, focusing on the very beginning of their journey. Beyond providing cheques ranging from Rs 5 lakh to Rs 50 lakh, the initiative plans t"
+          "summary": "The platform is designed to support founders under the age of 25, focusing on the very beginning of their journey. Beyond providing cheques ranging from Rs 5 lakh to Rs 50 lakh, the initiative plans to provide a support stack."
         },
         {
-          "title": "PM Narendra Modi makes the case for 33% reservation to unlock Nari Shakti",
-          "url": "https://yourstory.com/2026/04/modi-women-reservation-nari-shakti-vandan-act-33-percent-2047",
-          "source": "yourstory.com",
-          "pub_date": "2026-04-09T08:23:59+00:00",
-          "summary": "As India sets its sights on becoming a developed nation by 2047, the conversation around inclusive growth is once again taking center stage."
+          "title": "Digital guestbooks are becoming a lucrative biz in Singapore’s wedding industry",
+          "url": "https://vulcanpost.com/910541/digital-guestbooks-wedding-lucrative-business/",
+          "source": "vulcanpost.com",
+          "pub_date": "2026-04-09T09:56:25+00:00",
+          "summary": "All it takes is two to three weddings to break even Two to three weddings. That&#8217;s all it takes for entrepreneurs Edmund Teo from Octopus Reels and Jessica Tay from Leave Your Message to fully recoup their startup costs—and everything after is profit. Their business? Renting out digital guestbo"
         },
         {
-          "title": "The Museum of Digital Society: a living immersion in technology impact",
-          "url": "https://yourstory.com/2026/04/museum-digital-society-experience-empowerment-photography",
+          "title": "Former Delhivery, Naspers execs join Bay Capital as Partners",
+          "url": "https://yourstory.com/2026/04/former-delhivery-naspers-bain-capital-co-founders",
           "source": "yourstory.com",
-          "pub_date": "2026-04-12T02:10:00+00:00",
-          "summary": "In this photo essay, we feature a visual tour of the Digital Empowerment Foundation’s Museum of Digital Society, along with founder insights."
+          "pub_date": "2026-04-09T08:20:29+00:00",
+          "summary": "The move comes as the firm prepares to launch a Digital Opportunities Fund, which is a Category II Alternative Investment Fund aimed at backing late-stage, high-growth companies in the digital and tech ecosystem."
+        },
+        {
+          "title": "Pluckk raises Rs 100 Cr from Euro Gulf, targets profitability in 12 months",
+          "url": "https://yourstory.com/2026/04/funding-pluckk-rs-100-cr-euro-gulf-targets-profitability-12-months",
+          "source": "yourstory.com",
+          "pub_date": "2026-04-09T07:50:15+00:00",
+          "summary": "The latest infusion takes the company’s total funding to $26 million and comes amid steady growth, with Pluckk reporting an average 25% year-on-year increase over the past two years."
         }
       ],
-      "cached_at": "2026-04-12T13:25:13.284308"
+      "cached_at": "2026-04-12T13:34:35.095684"
     },
     "emerging": {
       "articles": [
+        {
+          "title": "Are the financial markets going to get way too matured for human mind?",
+          "url": "https://www.reddit.com/r/Futurology/comments/1sjephn/are_the_financial_markets_going_to_get_way_too/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T13:34:20+00:00",
+          "summary": "I'm thinking the market at the moment is way too 'developed' in a sense that only smart money handlers can leverage. It feels like each and every one of my trades is somehow 'washed off.' Am I the only one who feels that retail traders are being targeted? Or am I just feeling this way because of how"
+        },
+        {
+          "title": "What current “normal” behavior or trend do you think will become critically important in the future?",
+          "url": "https://www.reddit.com/r/Futurology/comments/1sjeotj/what_current_normal_behavior_or_trend_do_you/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T13:33:31+00:00",
+          "summary": "Looking at how fast things are changing (technology, society, environment), I’m curious what people think we’re underestimating right now. Is there something that seems insignificant today but could have major long-term consequences or value?  &#32; submitted by &#32;  /u/Parshuram_07   [link] &#32;"
+        },
+        {
+          "title": "Will autonomous cars end vehicle ownership and reshape infrastructure/land use?",
+          "url": "https://www.reddit.com/r/Futurology/comments/1sjdu40/will_autonomous_cars_end_vehicle_ownership_and/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T12:56:49+00:00",
+          "summary": "If all vehicles were autonomous wouldn’t it be more convenient not owning a car? That means you don’t have to park it and parking structures and lots wouldn’t be necessary. You would also be able to use your house car garage in a different way.   &#32; submitted by &#32;  /u/quenchpipe   [link] &#32"
+        },
+        {
+          "title": "Hi everyone. I have some questions for car rental business owners in US. I will not promote",
+          "url": "https://www.reddit.com/r/startups/comments/1sjd5wv/hi_everyone_i_have_some_questions_for_car_rental/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T12:25:40+00:00",
+          "summary": "What are the important nuances to consider when starting a business? How did you start your business? How many cars do you have in your fleet, and approximately how much is your net monthly income? What are the most liquid cars? For example, in Idaho? What are the most common mistakes made in the fi"
+        },
+        {
+          "title": "The shuffle is not random. Spotify's patents show how the recommendation engine works.",
+          "url": "https://www.reddit.com/r/technology/comments/1sjd5tc/the_shuffle_is_not_random_spotifys_patents_show/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T12:25:32+00:00",
+          "summary": "&#32; submitted by &#32;  /u/Ok-Dimension-3307   [link] &#32; [comments]"
+        },
         {
           "title": "‘The Audacity’ Is the Broligarchy Takedown You Were Waiting For",
           "url": "https://www.wired.com/story/the-audacity-is-the-broligarchy-takedown-you-were-waiting-for/",
@@ -1604,11 +2311,25 @@
           "summary": "Bike shop mechanics have lost fingers and their shirts while repairing ebikes of dubious origins. Make sure yours is repairable and third-party certified."
         },
         {
+          "title": "If you had to design the world in 2050, what would you absolutely REMOVE from today’s life?",
+          "url": "https://www.reddit.com/r/Futurology/comments/1sjcb6b/if_you_had_to_design_the_world_in_2050_what_would/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T11:44:20+00:00",
+          "summary": "Let’s assume you have full control over designing society in 2050. You can remove anything from modern life: jobs apps habits systems even technologies But you must explain:  👉 what you remove 👉 why it’s harmful today 👉 what replaces it I’m curious what people think is actually holding us back right"
+        },
+        {
           "title": "Best 2-in-1 Laptops (2026): Microsoft, Lenovo, and the iPad",
           "url": "https://www.wired.com/story/best-2-in-1-laptops/",
           "source": "wired.com",
           "pub_date": "2026-04-12T11:30:00+00:00",
           "summary": "Whether you want a detachable tablet or a laptop screen that spins, these 2-in-1 devices manage to balance being both a tablet and a laptop."
+        },
+        {
+          "title": "OpenAI is backing an Illinois state bill to shield AI companies from lawsuits for catastrophic harm",
+          "url": "https://www.reddit.com/r/technology/comments/1sjbyv4/openai_is_backing_an_illinois_state_bill_to/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T11:26:23+00:00",
+          "summary": "&#32; submitted by &#32;  /u/sr_local   [link] &#32; [comments]"
         },
         {
           "title": "There’s a Secret Ingredient to Making Luxury Ice at Home",
@@ -1618,11 +2339,25 @@
           "summary": "Nice ice is big business, but you can get perfectly clear cubes at home without freezing your assets."
         },
         {
+          "title": "I will not promote - how we’re testing atmosphere early in a game startup",
+          "url": "https://www.reddit.com/r/startups/comments/1sjb3rx/i_will_not_promote_how_were_testing_atmosphere/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T10:39:23+00:00",
+          "summary": "Hey! We’re building a sci-fi game and ran into an interesting problem - how to validate something as subjective as “atmosphere.” Mechanics are easy to test, but things like mood, tone, or emotional impact are much harder. We started experimenting with small pieces (like music, visuals, short clips) "
+        },
+        {
           "title": "The Screen Time Maximalists Who Spend an Ungodly Amount of Time on Their Phones",
           "url": "https://www.wired.com/story/the-screenmaxxers-who-spend-every-waking-hour-on-their-phones/",
           "source": "wired.com",
           "pub_date": "2026-04-12T10:30:00+00:00",
           "summary": "As debates over social media addiction rage, people with extreme screen times tell WIRED they have no plans to cut back."
+        },
+        {
+          "title": "Universe expected to decay in 10⁷⁸ years, much sooner than previously thought",
+          "url": "https://www.reddit.com/r/technology/comments/1sjaqdl/universe_expected_to_decay_in_10⁷⁸_years_much/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T10:17:58+00:00",
+          "summary": "&#32; submitted by &#32;  /u/chunmunsingh   [link] &#32; [comments]"
         },
         {
           "title": "Mammotion Spino E1 Review: A Budget Pool Bot That Comes Up Short",
@@ -1632,11 +2367,193 @@
           "summary": "This compact pool robot keeps its price down, but its performance doesn’t match that of more capable cleaners."
         },
         {
+          "title": "At crossroads here between doing an MSc MSE @ NTU and working on a start-up that revolves around battery recycling. [M22] I will not promote anything, just needed some advice",
+          "url": "https://www.reddit.com/r/startups/comments/1sjagxe/at_crossroads_here_between_doing_an_msc_mse_ntu/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T10:02:44+00:00",
+          "summary": "While the title is fairly self-explanatory, I'll further expound upon the dilemma I currently face. Option A entails going to NTU and spending a year picking up courses that fit my professional goals well. I'd graduate with a degree from NTU and build connections in the region while becoming more te"
+        },
+        {
           "title": "The 3 Best Mug Warmers of 2026: Better Than the Ember Mug?",
           "url": "https://www.wired.com/story/best-coffee-warmers-and-mug-warmers/",
           "source": "wired.com",
           "pub_date": "2026-04-12T09:36:00+00:00",
           "summary": "The first rule of coffee is that it must stay hot. After weeks or even years of testing, these are the three coffee warmers that will best keep it that way."
+        },
+        {
+          "title": "How do you typically negotiate equity splits between non-technical and technical co-founders? I will not promote",
+          "url": "https://www.reddit.com/r/startups/comments/1sj8iud/how_do_you_typically_negotiate_equity_splits/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T08:07:33+00:00",
+          "summary": "I'm a senior FAANG engineer with over a decade of experience and I'm evaluating an offer to become a technical co-founder. The non-technical founder has set up a legal entity for the company, branding, and has a backlog of leads that could convert to customers. They're committing to contribute $500k"
+        },
+        {
+          "title": "How do you decide whether to scale something yourself vs partner or step away, I will not promote",
+          "url": "https://www.reddit.com/r/startups/comments/1sj83za/how_do_you_decide_whether_to_scale_something/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T07:43:58+00:00",
+          "summary": "I've been working on a creator marketing thing that helps run campaigns from start to finish, discovery, outreach, tracking, and payouts. It also works from the creator side, where they can apply to campaigns or get discovered by brands. A lot of it was shaped by input from people actually running t"
+        },
+        {
+          "title": "How close are we to use 3D tissue engineered bone, connective tissue, nerves, skin and cartilage for ear, nose and craniofacial reconstruction applications?",
+          "url": "https://www.reddit.com/r/Futurology/comments/1sj80i8/how_close_are_we_to_use_3d_tissue_engineered_bone/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T07:38:25+00:00",
+          "summary": "The first tissue engineered ear was already created in the 90s, we can do great things with bioprinting, scaffold designs and hydrogels, yet the technology always seems out of reach. Now that those tissues are approaching native properties, and costs hopefully go down, we should be able to see them "
+        },
+        {
+          "title": "Building a music startup – should I create WhatsApp/Facebook groups for validation, or risk someone stealing my idea? I will not promote.",
+          "url": "https://www.reddit.com/r/startups/comments/1sj6258/building_a_music_startup_should_i_create/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T05:48:44+00:00",
+          "summary": "Hi everyone, I'm in the early stages of building a startup – a music app where artists can register to sell their music directly to fans. I'm not a developer, but I genuinely believe there's a strong opportunity for this idea in my local market. To gain traction and validate the concept, I'm conside"
+        },
+        {
+          "title": "Palantir CEO says AI 'will destroy' humanities jobs",
+          "url": "https://www.reddit.com/r/technology/comments/1sj4l63/palantir_ceo_says_ai_will_destroy_humanities_jobs/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T04:29:45+00:00",
+          "summary": "&#32; submitted by &#32;  /u/BusyHands_   [link] &#32; [comments]"
+        },
+        {
+          "title": "Is marketing really that straightforward? I will not promote",
+          "url": "https://www.reddit.com/r/startups/comments/1sj439z/is_marketing_really_that_straightforward_i_will/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T04:04:16+00:00",
+          "summary": "Looking at so many startups that have scaled to be multi-million dollar brands, it seems like the marketing strategy is usually pretty straightforward and one of two common options: Find influencers with good engagement in your niche, work out a retainer/commission for vids w/ products, explain the "
+        },
+        {
+          "title": "Microsoft starts removing unnecessary Copilot buttons in Windows 11",
+          "url": "https://www.reddit.com/r/technology/comments/1sj3xwp/microsoft_starts_removing_unnecessary_copilot/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T03:57:04+00:00",
+          "summary": "&#32; submitted by &#32;  /u/Anchor_Aways   [link] &#32; [comments]"
+        },
+        {
+          "title": "Notes on Hong Kong",
+          "url": "https://www.strangeloopcanon.com/p/notes-on-hong-kong",
+          "source": "strangeloopcanon.com",
+          "pub_date": "2026-04-12T03:18:53+00:00",
+          "summary": "."
+        },
+        {
+          "title": "Rockstar Games confirms it was hacked by malicious group — 'ShinyHunters' takes credit, gives until April 14 to pay ransom or it will release confidential data",
+          "url": "https://www.reddit.com/r/technology/comments/1sj2v3m/rockstar_games_confirms_it_was_hacked_by/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T03:03:41+00:00",
+          "summary": "&#32; submitted by &#32;  /u/Logical_Welder3467   [link] &#32; [comments]"
+        },
+        {
+          "title": "Walmart-owned Flipkart, Amazon are squeezing India’s quick commerce startups",
+          "url": "https://techcrunch.com/2026/04/11/walmart-owned-flipkart-amazon-are-squeezing-indias-quick-commerce-startups/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-04-12T03:00:00+00:00",
+          "summary": "Flipkart's ongoing expansion beyond major cities and heavy discounting is raising risks for India's quick commerce startups, analysts say."
+        },
+        {
+          "title": "Experimental Drug Can Reverse Osteoarthritis in Weeks, Animal Research Shows",
+          "url": "https://www.reddit.com/r/technology/comments/1siz6ya/experimental_drug_can_reverse_osteoarthritis_in/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-12T00:07:38+00:00",
+          "summary": "&#32; submitted by &#32;  /u/_Dark_Wing   [link] &#32; [comments]"
+        },
+        {
+          "title": "Any good Co-founder platforms/groups/events for Toronto? [I will not promote]",
+          "url": "https://www.reddit.com/r/startups/comments/1siykyo/any_good_cofounder_platformsgroupsevents_for/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T23:40:30+00:00",
+          "summary": "Currently building a consumer hardware/software startup and actively looking for a co-founder with software, hardware, or Product DTC experience (I'm also technical). I've been using YC's co-founder matching tool and Boardy, but have been having real trouble finding quality candidates. I've tried a "
+        },
+        {
+          "title": "Oxygen made from Moon dust for first time | Jeff Bezos’s Blue Origin says it has developed reactor that can release breathable air from lunar soil",
+          "url": "https://www.reddit.com/r/technology/comments/1sixuwk/oxygen_made_from_moon_dust_for_first_time_jeff/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T23:08:23+00:00",
+          "summary": "&#32; submitted by &#32;  /u/mepper   [link] &#32; [comments]"
+        },
+        {
+          "title": "Mexico’s Socialist President to Roll Out Universal Healthcare",
+          "url": "https://www.reddit.com/r/Futurology/comments/1six08w/mexicos_socialist_president_to_roll_out_universal/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T22:31:54+00:00",
+          "summary": "Example of the future of healthcare.   &#32; submitted by &#32;  /u/StemCellPirate   [link] &#32; [comments]"
+        },
+        {
+          "title": "Microsoft confirms Windows 11 KB5077212, KB5079420 break PC reset on 25H2 and 24H2 systems",
+          "url": "https://www.reddit.com/r/technology/comments/1siwupm/microsoft_confirms_windows_11_kb5077212_kb5079420/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T22:25:29+00:00",
+          "summary": "&#32; submitted by &#32;  /u/lurker_bee   [link] &#32; [comments]"
+        },
+        {
+          "title": "I'm a Serial Founder. Here's how I come up with Business Ideas. I will not promote.",
+          "url": "https://www.reddit.com/r/startups/comments/1sivput/im_a_serial_founder_heres_how_i_come_up_with/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T21:37:53+00:00",
+          "summary": "NO AI WAS USED IN WRITING THIS I have been working on this post for over a year, it's all my own content, nothing from a model. I'll leave a screenshot showing the markdown files with dates in the comments. Hello my name's Troy. I'm a serial founder who's been either a founder or founding employee a"
+        },
+        {
+          "title": "Kalshi wins temporary pause in Arizona criminal case",
+          "url": "https://techcrunch.com/2026/04/11/kalshi-wins-temporary-pause-in-arizona-criminal-case/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-04-11T21:20:24+00:00",
+          "summary": "The Commodity Futures Trading Commission announced Friday that it has won a temporary restraining order preventing Arizona from pursuing its criminal case against Kalshi."
+        },
+        {
+          "title": "Should I pull the plug?[I will not promote]",
+          "url": "https://www.reddit.com/r/startups/comments/1siv425/should_i_pull_the_plugi_will_not_promote/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T21:12:44+00:00",
+          "summary": "I created a fintech agent, about assets valuation. Since this community don’t allow to promote so it keep brief. My problem is that I can easily got traction at this point but no body wants to subscribe. 10 days after open registration I got 1000+ signup, but they try the product and they left. Surv"
+        },
+        {
+          "title": "What would democracy look like if it were designed with today’s technology instead of the 1700s?",
+          "url": "https://www.reddit.com/r/Futurology/comments/1sirs1n/what_would_democracy_look_like_if_it_were/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T19:03:12+00:00",
+          "summary": "Most modern democracies are still built on structures that were designed when communication was slow, information was scarce, and large-scale participation had to be simplified just to function. Voting ends up being infrequent and binary. Representation compresses a wide range of views into a small "
+        },
+        {
+          "title": "Two manufacturers commit to keep Blu-ray alive after others quit manufacturing — Verbatim and I-O Data extend Blu-ray supply pledge as manufacturers exit the market",
+          "url": "https://www.reddit.com/r/technology/comments/1sirn5y/two_manufacturers_commit_to_keep_bluray_alive/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T18:58:22+00:00",
+          "summary": "&#32; submitted by &#32;  /u/lurker_bee   [link] &#32; [comments]"
+        },
+        {
+          "title": "Share your startup - quarterly post",
+          "url": "https://www.reddit.com/r/startups/comments/1siohta/share_your_startup_quarterly_post/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T17:00:47+00:00",
+          "summary": "Share Your Startup - Q4 2023 r/startups wants to hear what you're working on! Tell us about your startup in a comment within this submission. Follow this template: ​   Startup Name / URL  Location of Your Headquarters   Let people know where you are based for possible local networking with you and t"
+        },
+        {
+          "title": "Rockstar Games Reportedly Hacked, Team Behind It Threaten A Massive Data Leak If Not Paid Ransom",
+          "url": "https://www.reddit.com/r/technology/comments/1silt9t/rockstar_games_reportedly_hacked_team_behind_it/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T15:18:16+00:00",
+          "summary": "&#32; submitted by &#32;  /u/Turbostrider27   [link] &#32; [comments]"
+        },
+        {
+          "title": "A Chinese startup is sending robots into real homes to clean alongside human cleaners, booked through an app",
+          "url": "https://www.reddit.com/r/Futurology/comments/1sijvnb/a_chinese_startup_is_sending_robots_into_real/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T14:00:48+00:00",
+          "summary": "In Shenzhen, customers can now book a house cleaning through 58 Home Service, a platform with around 45 million households on it, and a two person team shows up at the door: a professional human cleaner and a wheeled robot built by X Square Robot. The human handles judgment work, deciding what's tra"
+        },
+        {
+          "title": "US demands Reddit unmask ICE critic, summons firm to grand jury",
+          "url": "https://www.reddit.com/r/technology/comments/1sij8d9/us_demands_reddit_unmask_ice_critic_summons_firm/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T13:32:55+00:00",
+          "summary": "&#32; submitted by &#32;  /u/xpda   [link] &#32; [comments]"
+        },
+        {
+          "title": "Neuralink enables nonverbal ALS patient to speak again with thoughts and AI-cloned voice",
+          "url": "https://www.reddit.com/r/Futurology/comments/1siisyt/neuralink_enables_nonverbal_als_patient_to_speak/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T13:14:59+00:00",
+          "summary": "Here are some articles I found reporting on this  https://www.newsnationnow.com/katie-pavlich-tonight/neuralink-brain-chip-transformed-life/ https://alsnewstoday.com/news/neuralink-brain-implant-gives-new-voice-nonverbal-als-patient/ https://www.nytimes.com/2025/11/14/magazine/neurotech-neuralink-ri"
         },
         {
           "title": "‘Crimson Desert’ Is a Cat Dad Simulator",
@@ -1646,107 +2563,170 @@
           "summary": "Step into the shoes of the strongest, goodest boy in a game that is beautiful, baffling, and impossible to put down."
         },
         {
-          "title": "Shock from Iran war has Trump's vision for US energy dominance flailing",
-          "url": "https://arstechnica.com/science/2026/04/shock-from-iran-war-has-trumps-vision-for-us-energy-dominance-flailing/",
-          "source": "arstechnica.com",
-          "pub_date": "2026-04-12T11:17:26+00:00",
-          "summary": "Record domestic oil and gas production hasn't saved US drivers from price spikes."
+          "title": "Zuvi ColorBox Review: A Hair Dye Printer That Struggles",
+          "url": "https://www.wired.com/review/zuvi-colorbox/",
+          "source": "wired.com",
+          "pub_date": "2026-04-11T12:11:00+00:00",
+          "summary": "This hair dye printer promises hundreds of shades. It couldn't even manage two."
         },
         {
-          "title": "AI models are terrible at betting on soccer—especially xAI Grok",
-          "url": "https://arstechnica.com/ai/2026/04/ai-models-are-terrible-at-betting-on-soccer-especially-xai-grok/",
-          "source": "arstechnica.com",
-          "pub_date": "2026-04-11T11:15:17+00:00",
-          "summary": "Systems from Google, OpenAI, Anthropic, and xAI struggle with the Premier League."
+          "title": "Humanity needs to be CONTAINED",
+          "url": "https://www.reddit.com/r/Futurology/comments/1sigv08/humanity_needs_to_be_contained/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T11:44:10+00:00",
+          "summary": "Lately I keep feeling that a lot of our current crises aren’t actually separate problems. Climate, low birth rates, burnout, tech anxiety, political instability, they all feel different on the surface, but underneath there’s a similar tension. Most of our systems were built around growth because gro"
         },
         {
-          "title": "The Artemis II mission has ended. Where does NASA go from here?",
-          "url": "https://arstechnica.com/space/2026/04/the-artemis-ii-mission-has-ended-where-does-nasa-go-from-here/",
-          "source": "arstechnica.com",
-          "pub_date": "2026-04-11T03:24:21+00:00",
-          "summary": "\"The work ahead is greater than the work behind us.\""
+          "title": "MacBook Neo vs. MacBook Air: Which One Should You Buy?",
+          "url": "https://www.wired.com/story/macbook-neo-vs-macbook-air/",
+          "source": "wired.com",
+          "pub_date": "2026-04-11T11:30:00+00:00",
+          "summary": "After conducting long-term testing on both the MacBook Neo and MacBook Air, I have a good idea who should buy which laptop."
         },
         {
-          "title": "Four astronauts are back home after a daring ride around the Moon",
-          "url": "https://arstechnica.com/space/2026/04/four-astronauts-are-back-home-after-a-daring-ride-around-the-moon/",
-          "source": "arstechnica.com",
-          "pub_date": "2026-04-11T01:21:10+00:00",
-          "summary": "\"I can't imagine a better crew that just completed a perfect mission right now.\""
+          "title": "Best Electric Cargo Bikes (2026): Urban Arrow, Lectric, Tern, and More",
+          "url": "https://www.wired.com/story/best-electric-cargo-bikes/",
+          "source": "wired.com",
+          "pub_date": "2026-04-11T11:00:00+00:00",
+          "summary": "You don't need a car to tote around kids and cup holders. I rode cargo ebikes for miles to find the best one for your buck."
         },
         {
-          "title": "Californians sue over AI tool that records doctor visits",
-          "url": "https://arstechnica.com/tech-policy/2026/04/californians-sue-over-ai-tool-that-records-doctor-visits/",
-          "source": "arstechnica.com",
-          "pub_date": "2026-04-10T21:43:33+00:00",
-          "summary": "Plaintiffs say transcription tool processed confidential chats offsite."
+          "title": "Your Push Notifications Aren’t Safe From the FBI",
+          "url": "https://www.wired.com/story/security-news-this-week-your-push-notifications-arent-safe-from-the-fbi/",
+          "source": "wired.com",
+          "pub_date": "2026-04-11T10:30:00+00:00",
+          "summary": "Plus: Iran’s internet blackout hits the 1,000-hour mark, cryptocurrency scams result in a record amount of money stolen from Americans, and more."
         },
         {
-          "title": "New paper argues history, not mantle plume, powers Yellowstone",
-          "url": "https://arstechnica.com/science/2026/04/new-paper-argues-history-not-mantle-plume-powers-yellowstone/",
-          "source": "arstechnica.com",
-          "pub_date": "2026-04-10T20:06:39+00:00",
-          "summary": "A now-vanished plate under North America may open the crust below Yellowstone."
+          "title": "Silicon Valley is quietly running on Chinese open source models and almost nobody is talking about it",
+          "url": "https://www.reddit.com/r/Futurology/comments/1siea6z/silicon_valley_is_quietly_running_on_chinese_open/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-11T09:19:07+00:00",
+          "summary": "Cursor's Composer is built on Kimi K2.5, which is Moonshot's Chinese model. Shopify switched to Alibaba's Qwen and saved $5 million a year. Airbnb CEO Brian Chesky has said publicly: &quot;We rely a lot on Qwen. It's very good, fast, and cheap.&quot; Cognition's SWE-1.6 model is likely post-trained "
         },
         {
-          "title": "F1 moves a step closer to fixing its 2026 hybrid problem",
-          "url": "https://arstechnica.com/cars/2026/04/f1-moves-a-step-closer-to-fixing-its-2026-hybrid-problem/",
-          "source": "arstechnica.com",
-          "pub_date": "2026-04-10T19:07:46+00:00",
-          "summary": "Algorithms, not drivers, are deciding how hard to accelerate, and that's no good."
+          "title": "Working With More Experienced Engineers Can Fast-Track Career Growth",
+          "url": "https://spectrum.ieee.org/using-feedback-engineering",
+          "source": "spectrum.ieee.org",
+          "pub_date": "2026-04-10T18:49:00+00:00",
+          "summary": "This article is crossposted from IEEE Spectrum’s careers newsletter. Sign up now to get insider tips, expert advice, and practical strategies, written in partnership with tech career development company Parsity and delivered to your inbox for free!The Worst Engineer in the RoomMy salary doubled. My "
         },
         {
-          "title": "Report: US demands Reddit unmask ICE critic, summons firm to grand jury",
-          "url": "https://arstechnica.com/tech-policy/2026/04/trump-admin-hounds-reddit-to-reveal-identity-of-user-who-criticized-ice/",
-          "source": "arstechnica.com",
-          "pub_date": "2026-04-10T18:43:25+00:00",
-          "summary": "Trump admin reportedly gets grand jury involved in attempt to identify Redditor."
+          "title": "A $300 device can silently override GPS across an entire city. Autonomous vehicles, delivery drones, and air traffic control all depend on it. Why don't we have a backup?",
+          "url": "https://www.reddit.com/r/Futurology/comments/1shsmqy/a_300_device_can_silently_override_gps_across_an/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-10T17:07:45+00:00",
+          "summary": "GPS jammers and spoofers are technically illegal in most countries. They're also sold openly online for under $300 and fit in a jacket pocket. A single one can override satellite signals across several miles. Commercial pilots have been quietly logging GPS failures over eastern europe and the middle"
+        },
+        {
+          "title": "TechCrunch is heading to Tokyo — and bringing the Startup Battlefield with it",
+          "url": "https://techcrunch.com/2026/04/10/techcrunch-is-heading-to-tokyo-and-bringing-the-startup-battlefield-with-it/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-04-10T16:38:43+00:00",
+          "summary": "SusHi Tech 2026 is zeroing in on four technology domains reshaping society: AI, Robotics, Resilience, and Entertainment. Expect live demos of humanoid robots, sessions on autonomous driving's software revolution, deep dives into cyber defense and climate tech, and candid conversations about how AI i"
+        },
+        {
+          "title": "Every fusion startup that has raised over $100M",
+          "url": "https://techcrunch.com/2026/04/10/every-fusion-startup-that-has-raised-over-100m/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-04-10T14:05:00+00:00",
+          "summary": "Fusion startups have raised $7.1 billion to date, with the majority of it going to a handful of companies."
+        },
+        {
+          "title": "Last 24 hours: Save up to $500 on your TechCrunch Disrupt 2026 pass",
+          "url": "https://techcrunch.com/2026/04/10/final-24-hours-save-up-to-500-on-your-techcrunch-disrupt-2026-pass/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-04-10T14:00:00+00:00",
+          "summary": "This is it. Tonight is your last chance to lock in savings of up to $500 for your TechCrunch Disrupt 2026 pass. These discounts end at 11:59 p.m. PT."
+        },
+        {
+          "title": "The Secret Art of Elicitation",
+          "url": "https://www.generalist.com/p/confidential",
+          "source": "generalist.com",
+          "pub_date": "2026-04-10T13:27:57+00:00",
+          "summary": "Lessons from Confidential, a &#8220;disappeared&#8221; book about the psychology of conversation."
+        },
+        {
+          "title": "Weekly Dose of Optimism #188",
+          "url": "https://www.notboring.co/p/weekly-dose-of-optimism-188",
+          "source": "notboring.co",
+          "pub_date": "2026-04-10T12:32:59+00:00",
+          "summary": "AI vs. Alzheimer's, Substrate x GDM, Robot Lamp, Artemis II, Primer + Extra Doses"
+        },
+        {
+          "title": "Feedback Friday",
+          "url": "https://www.reddit.com/r/startups/comments/1shd0zn/feedback_friday/",
+          "source": "reddit.com",
+          "pub_date": "2026-04-10T05:00:46+00:00",
+          "summary": "Welcome to this week’s Feedback Thread! Please use this thread appropriately to gather feedback:  Feel free to request general feedback or specific feedback in a certain area like user experience, usability, design, landing page(s), or code review You may share surveys You may make an additional req"
+        },
+        {
+          "title": "What founders can learn from Anjuna’s layoffs and recovery",
+          "url": "https://techcrunch.com/2026/04/09/what-founders-can-learn-from-anjunas-layoffs-and-recovery/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-04-09T21:17:30+00:00",
+          "summary": "In 2021, Anjuna Security was growing fast, hiring aggressively, and chasing a market that seemed limitless. By the end of that year, the venture-backed cybersecurity company had scaled to around 75 employees, building out sales, customer success, and support teams in anticipation of continued hyperg"
+        },
+        {
+          "title": "After data breach, $10B-valued startup Mercor is having a month",
+          "url": "https://techcrunch.com/2026/04/09/after-data-breach-10b-valued-startup-mercor-is-having-a-month/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-04-09T19:33:54+00:00",
+          "summary": "After falling victim to a hacker, Mercor is facing lawsuits and reportedly losing big-name customers."
+        },
+        {
+          "title": "How to make the Startup Battlefield Top 20 — and what every company gets regardless",
+          "url": "https://techcrunch.com/2026/04/09/how-to-make-the-startup-battlefield-top-20-and-what-every-company-gets-regardless/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-04-09T18:01:48+00:00",
+          "summary": "Every founder who applies to Startup Battlefield wants the same thing: the Disrupt Main Stage. Here’s how to get there and why the opportunity starts well before the main stage."
         }
       ],
-      "cached_at": "2026-04-12T13:25:13.284308"
+      "cached_at": "2026-04-12T13:34:35.095684"
     },
     "sector_heatmap": [
       {
         "name": "AI / ML",
-        "signals": 17,
+        "signals": 277,
         "sentiment": "bullish"
       },
       {
         "name": "Climate / Clean",
-        "signals": 8,
+        "signals": 138,
+        "sentiment": "bullish"
+      },
+      {
+        "name": "Deep Tech",
+        "signals": 28,
         "sentiment": "bullish"
       },
       {
         "name": "Fintech",
-        "signals": 2,
-        "sentiment": "neutral"
-      },
-      {
-        "name": "SaaS / B2B",
-        "signals": 0,
-        "sentiment": "quiet"
-      },
-      {
-        "name": "Healthtech",
-        "signals": 0,
-        "sentiment": "quiet"
-      },
-      {
-        "name": "Edtech",
-        "signals": 0,
-        "sentiment": "quiet"
-      },
-      {
-        "name": "Logistics",
-        "signals": 0,
-        "sentiment": "quiet"
+        "signals": 8,
+        "sentiment": "bullish"
       },
       {
         "name": "Consumer / D2C",
-        "signals": 0,
-        "sentiment": "quiet"
+        "signals": 7,
+        "sentiment": "bullish"
       },
       {
-        "name": "Deep Tech",
+        "name": "SaaS / B2B",
+        "signals": 5,
+        "sentiment": "neutral"
+      },
+      {
+        "name": "Healthtech",
+        "signals": 4,
+        "sentiment": "neutral"
+      },
+      {
+        "name": "Logistics",
+        "signals": 3,
+        "sentiment": "neutral"
+      },
+      {
+        "name": "Edtech",
         "signals": 0,
         "sentiment": "quiet"
       }
@@ -1760,6 +2740,22 @@
           "pub_date": "2026-04-02T09:45:47+00:00",
           "summary": "OPINION | AI’s New Economics: What India must get right now&nbsp;&nbsp;Moneycontrol.com",
           "company": "GetRight"
+        },
+        {
+          "title": "HECT India Launches Revolutionary AI Travel Planning Platform to Simplify Trip Planning for Indian Families | - The Times of India",
+          "url": "https://timesofindia.indiatimes.com/entertainment/hect-india-launches-revolutionary-ai-travel-planning-platform-to-simplify-trip-planning-for-indian-families/articleshow/129951294.cms",
+          "source": "timesofindia.indiatimes.com",
+          "pub_date": "2026-04-01T12:09:00.000Z",
+          "summary": "HECT India Launches Revolutionary AI Travel Planning Platform to Simplify Trip Planning for Indian Families | - The Times of India Sign In  - News - entertainment - HECT India launches AI-based travel planning platform  Trending Dhurandhar 2 Box Office Collection  # HECT India launches AI-based trav",
+          "company": "Escape Plan"
+        },
+        {
+          "title": "Agnit Semiconductors raises $2.6 million from Shastra VC, 3one4 Capital and Zephyr Peacock - The Economic Times",
+          "url": "https://economictimes.indiatimes.com/tech/funding/agnit-semiconductors-raises-2-6-million-from-shastra-vc-3one4-capital-and-zephyr-peacock/articleshow/129601408.cms",
+          "source": "economictimes.indiatimes.com",
+          "pub_date": "2026-03-16T00:00:00.000Z",
+          "summary": "Agnit Semiconductors raises $2.6 million from Shastra VC, 3one4 Capital and Zephyr Peacock - The Economic Times Business News Tech Funding Agnit Semiconductors raises $2.6 million from Shastra VC, 3one4 Capital and Zephyr Peacock # Agnit Semiconductors raises $2.6 million from Shastra VC, 3one4 Capi",
+          "company": "Distil"
         },
         {
           "title": "Vietnam's electric motorbike startup Dat Bike secures $4M funding from local securities firm - TNGlobal",
@@ -1786,6 +2782,38 @@
           "company": "Dat Bike"
         },
         {
+          "title": "Dat Bike nets $4m as Hanoi moves to curb gasoline motorbikes - Tech in Asia",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNeVZWTGx6TnpyZDR4aUhBbE01aS1RNTlxN0FnUGRpcnNtZlNGZ0tBcXBGbnZnTk9xRjBnNk10SkNFNmZUTkt3NTJHNk9FcFl4bnpIX3RyNHlNZGFvMEktTVVUUV9GdzVfU0t4cnhPSnpYU042cWRBbXZ4b2xFdDJhanBqc1pKaGZrNThxMkpB?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2026-03-09T07:00:00+00:00",
+          "summary": "Dat Bike nets $4m as Hanoi moves to curb gasoline motorbikes&nbsp;&nbsp;Tech in Asia",
+          "company": "Dat Bike"
+        },
+        {
+          "title": "VinFast Viper: A sporty electric motorcycle with a range of 156 km and modern battery swapping technology.",
+          "url": "https://www.vietnam.vn/en/vinfast-viper-xe-may-dien-the-thao-di-duoc-156-km-va-cong-nghe-doi-pin-hien-dai",
+          "source": "vietnam.vn",
+          "pub_date": "2026-03-06T04:31:45.000Z",
+          "summary": "VinFast Viper: A sporty electric motorcycle with a range of 156 km and modern battery swapping technology. # VinFast Viper: A sporty electric motorcycle with a range of 156 km and modern battery swapping technology. ### The VinFast Viper impresses with its angular design, a maximum power of 3,000W, ",
+          "company": "Dat Bike"
+        },
+        {
+          "title": "About Electres | Redefining Smart Energy Storage Solutions",
+          "url": "https://electres.com/about/",
+          "source": "electres.com",
+          "pub_date": "2026-02-26T10:46:35.000Z",
+          "summary": "About Electres | Redefining Smart Energy Storage Solutions  ## Our Story Electres is tecHindustan’s energy wing, created to bridge an important gap in clean energy adoption. While India has strong solar and wind potential, the ability to store that energy and use it when it matters most has remained",
+          "company": "Enerzolve"
+        },
+        {
+          "title": "First $8.5 M Series A funding closing for Singapore and Thailand’s SLEEK EV led by KYMCO Capital – Incubees",
+          "url": "https://incubees.com/first-8-5-m-series-a-funding-closing-for-singapore-and-thailands-sleek-ev-led-by-kymco-capital",
+          "source": "incubees.com",
+          "pub_date": "2026-02-20T07:07:54.000Z",
+          "summary": "First $8.5 M Series A funding closing for Singapore and Thailand’s SLEEK EV led by KYMCO Capital – Incubees An $8.5 million first close in its Series A funding round has been announced by SLEEK EV, an electric motorcycle manufacturer with operations in Thailand and Singapore. According to a statemen",
+          "company": "Dat Bike"
+        },
+        {
           "title": "\"India A Hard Benchmark For What AI Needs To Get Right\": Sarvam AI's Pratyush Kumar At NDTV AI Summit - NDTV",
           "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNLTFPRnVwQjZqV1VnV2JObWUya2dZdUdfRXY2alN2NHZpUjRhR1hxNWp4SzRnUURmSTdCUm9NS3JLSjI3bmNPbWpRRll4UndudU9SMnJiSTV0X19rUUVqTFRERWVnSERDcHRHQ3ZLZmhpMjhQeTIzazUxcTdtWEF0VVE3aGo2cUh5TzlqQWs0bXpqUkhESEM3QTVzQ2dwbjlBUy1FWktuZGtCREMtaHQ3NnJnMWphMHJVYkNCNVdvWGpoYlQxb0hzMnkzVllSWUxQSVNHZ9IB3AFBVV95cUxOWEZpd3FfT3FibW5EeDh1X1RPWm1weGVIeGFIUDBKbXgyZEFyQnRETzdaQTBvSS1ZOUZWVEpkTkJRbU5RSWtwNTJCTjJVYWEtZHBreFJ1SVY3Sko2RFduNlhYMGlMdE45V01LeUpXaW5mVlFaS2xxOEZUSHc3MThVYm5hc0FxRGdnU2cwdnBINzRTcmJIUmlQNnBJQlozNUtJT0tEbFVhOENhdHBoSjhnNEpWRUVTRlhOLTNMclZkLXFVRHQ1d1BMSVNIVmJoRkxCQWpidEVWVDJ4LTFP?oc=5",
           "source": "news.google.com",
@@ -1800,6 +2828,54 @@
           "pub_date": "2026-02-11T08:00:00+00:00",
           "summary": "Retirement healthcare planning in India: What you need to get right&nbsp;&nbsp;Moneycontrol.com",
           "company": "GetRight"
+        },
+        {
+          "title": "Sleek EV Secures $8.5M Series A First Close Led by KYMCO Capital, Poised to Dominate Thailand's EV Motorcycle Market | BEAMSTART",
+          "url": "https://beamstart.com/news/singapore-and-thailands-sleek-ev-17707141618013",
+          "source": "beamstart.com",
+          "pub_date": "2026-02-10T09:18:22.000Z",
+          "summary": "Sleek EV Secures $8.5M Series A First Close Led by KYMCO Capital, Poised to Dominate Thailand's EV Motorcycle Market | BEAMSTART MembersJoin Community # Sleek EV Secures $8.5M Series A First Close Led by KYMCO Capital, Poised to Dominate Thailand's EV Motorcycle Market Alfred Lee 1 mo ago  ---  Sing",
+          "company": "Dat Bike"
+        },
+        {
+          "title": "Singapore and Thailand’s SLEEK EV secures first closing of $8.5M in Series A funding led by KYMCO Capital",
+          "url": "https://longbridge.com/en/news/275437454",
+          "source": "longbridge.com",
+          "pub_date": "2026-02-10T08:57:32.000Z",
+          "summary": "> Supported Languages: 简体中文 | 繁體中文 # Singapore and Thailand’s SLEEK EV secures first closing of $8.5M in Series A funding led by KYMCO Capital SLEEK EV, a Singapore-based and Thailand-operated electric motorcycle maker, has announced an $8.5 million first close in its Series A funding round. The rou",
+          "company": "Dat Bike"
+        },
+        {
+          "title": "SLEEK EV Secures US$8.5 Million Series A First Close Led by KYMCO Capital",
+          "url": "https://apac.entrepreneur.com/news-and-trends/sleek-ev-secures-us85-million-series-a-first-close-led-by/502557",
+          "source": "apac.entrepreneur.com",
+          "pub_date": "2026-02-09T11:49:00.000Z",
+          "summary": "SLEEK EV Secures US$8.5 Million Series A First Close Led by KYMCO Capital            / Business News You're reading Entrepreneur Asia Pacific, an international franchise of Entrepreneur Media. SLEEK EV, a technology manufacturer focused on electric motorcycles and vehicle electrification, has secure",
+          "company": "Dat Bike"
+        },
+        {
+          "title": "SLEEK EV Secures First Closing of US$8.5 Million in Series A funding led by KYMCO Capital, with earlier participation from January Capital, Krungsri Finnovate and ORZON Ventures",
+          "url": "https://prnewswire.com/apac/news-releases/sleek-ev-secures-first-closing-of-us8-5-million-in-series-a-funding-led-by-kymco-capital-with-earlier-participation-from-january-capital-krungsri-finnovate-and-orzon-ventures-302681132.html",
+          "source": "prnewswire.com",
+          "pub_date": "2026-02-06T07:56:00.000Z",
+          "summary": "SLEEK EV Secures First Closing of US$8.5 Million in Series A funding led by KYMCO Capital, with earlier participation from January Capital, Krungsri Finnovate and ORZON Ventures Accessibility Statement Skip Navigation BANGKOK, Feb. 6, 2026 /PRNewswire/ -- SLEEK EV (\"SLEEK\" or the \"Company\"), a leadi",
+          "company": "Dat Bike"
+        },
+        {
+          "title": "Sleek EV Secures $8.5M to Build Thailand's E-Motorcycle Hub - BriefGlance.com",
+          "url": "https://briefglance.com/articles/sleek-ev-secures-85m-to-build-thailands-e-motorcycle-hub",
+          "source": "briefglance.com",
+          "pub_date": "2026-02-06T04:15:00.000Z",
+          "summary": "Sleek EV Secures $8.5M to Build Thailand's E-Motorcycle Hub - BriefGlance.com # Sleek EV Secures $8.5M to Build Thailand's E-Motorcycle Hub  BANGKOK, THAILAND – February 06, 2026 – By Tyler Nguyen Electric scooter manufacturer SLEEK EV has secured US$8.5 million in the first closing of its Series A ",
+          "company": "Dat Bike"
+        },
+        {
+          "title": "Travel startup Escape Plan raises $25 million to open 200+ stores across India - CNBC TV18",
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPa0pZdjB4OUE1NkhIc2VPa3RTUHpfUEw4VXQxSTlGVDBFcFc1aHJpRzMwT1NWbEcwWW9aUFUxRjJ6UVQxbGNQU2NlbktpM2ZTczE0VXNTVVc5M0I1WFk0bjMtbjA3M2RWS2tWbWdHLXZYR2ltYmdhaFRKNTlvUWNycUVqY1VCT1RnN29wSEtkSldZS2FSUVYwNlZLN3Z0UHlGSVlwTTVvUmk2Y2syNEdOcER5dWwwUEc4LWZVZNIBwgFBVV95cUxNVnNoZm5qSGJUYlJFTk9vWUZYUWo2b0pSZ3NiYm1aenY5bnYyZ2pvbUlJR1QwX0pXQ242TERqQy14V1owMVNEZU42TkFPV05mdTl5S3R3QUxHdjhuRWVSWm44cjdONzBaSENaYmx6LXVIWGhISkFWMC0xWGJNOTc3bm95ZEdIVjhjVWhlOWQ5NFIwTE80bVlGNWhRSHZCVldKRWN4aGJWWGhaeG9EUXhuc3NtdVp3azh6UEdnWkZYZEdydw?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2026-01-27T08:00:00+00:00",
+          "summary": "Travel startup Escape Plan raises $25 million to open 200+ stores across India&nbsp;&nbsp;CNBC TV18",
+          "company": "Escape Plan"
         },
         {
           "title": "EnerZolve Raises $5.1 Million To Scale AI Energy Platform - Construction World",
@@ -1818,11 +2894,51 @@
           "company": "Escape Plan"
         },
         {
+          "title": "Pravaayu Ayurveda Clinic Mumbai | Best Panchakarma & Ayurveda Doctors",
+          "url": "https://www.pravaayu.com/",
+          "source": "pravaayu.com",
+          "pub_date": "2026-01-23T09:02:11.000Z",
+          "summary": "Pravaayu Ayurveda Clinic Mumbai | Best Panchakarma & Ayurveda Doctors  care@pravaayu.com Mon-Sun: 11 AM - 8 PM +91 7304500869  End your painwith Ayurveda Powered by science. Personalisedwith precision. Proven through data.  BOOK AN APPOINTMENT Most people are stuck with temporary relief, not real he",
+          "company": "NirogStreet"
+        },
+        {
+          "title": "Saga Legal, DSK Legal, NKR Law act on Enerzolve fundraise - Bar and Bench",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQQmhJaXM4elQ1Y25qRk51bnd5RDhlcTFyWmVnVm51VWIzTTVPeWxjWHJsbjNyaHdyeG9WRGVXUjc5cWU5N1BEWnBxOC1wdHJSR0F0YnZET1FqQlRGOTMxdWdQMFhXRTczbDV4SDMycVZnZVlFOFJ3ZmNVZzZ4TnhZSmtmSTZrdTDSAZQBQVVfeXFMTlhNV0hFRFJSSUVoRTg4UUFxOVJiVTRaQzI5VGd1YmpuOHY5aG5ZMVNDajlqNk1PekdPXzQ0d2lxSFBYRzhZQ3R0VE1nZ09ualRKcFZsQTFqaHhLUG1oQzFsdk9lMTNFVVQxZFFSVzBxTXNTU3hHUkJiNjJKTzhiN0RvQ0dRNHRTeGplSVJMSkl1dTdHYQ?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2026-01-23T08:00:00+00:00",
+          "summary": "Saga Legal, DSK Legal, NKR Law act on Enerzolve fundraise&nbsp;&nbsp;Bar and Bench",
+          "company": "Enerzolve"
+        },
+        {
+          "title": "CashFlo Acquires Logitax, Expands its Finance Automation and Compliance Suite",
+          "url": "https://www.cashflo.io/media/cashflo-acquires-logitax",
+          "source": "cashflo.io",
+          "pub_date": "2026-01-22T13:14:55.000Z",
+          "summary": "CashFlo Acquires Logitax, Expands its Finance Automation and Compliance Suite   PRESS RELEASE # CashFlo Acquires Logitax, Expands its Finance Automation and Compliance Suite Mumbai, 22nd May, 2024: CashFlo, India's most comprehensive finance automation and compliance platform, today announced its ac",
+          "company": "Prosperr"
+        },
+        {
+          "title": "Travel accessories platform Escape Plan raises $25 million from Jungle Ventures, others - The Economic Times",
+          "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOSXJpcVNlN3UwUGNoeTUzOHZsNEV5eHBOLVdrQks3TmRuZWRSYkJjZWU3dkNNbDY4VEt6bW5hVlRjSVlLa3ZqTHlfQzE3WGp5aWZMSXJRYTM2ekhuaVlrcl93Ny1ONkdtcEs5YnQ0Y2ZJT3lVREpTVzJ6VGthRUdIdWM3VlVGMGJCc2NlSk1tWFZLeDlFS18tNTkxMFptUk5OMElXSUhndGM3LWVnOGJJUXpwQzl4VUVNYTZIczE4LUJRbXVRVnphU0ItaDRjZ29DTVN1V0NLODI1d2drbTR1ZnJkTXlxMEHSAewBQVVfeXFMTkc2MWt0c0M5OVZUM3U3YmhBUzdicUpuVnNQcFBqQklxLXpYR25KdktueEtJdUFkQ3VTTlliWFY4aW91X0hoQm5CMy1icE5HLWZHX3M3dzhaQUdhZjNzbFJYNWo1a1lTOVRERVB5eThTT1dLNTdyWEZlRWU2Wl93Tnh1MEhqakZ6andrMkhyYzJpMEtXZk9EOVBZTGJtTTh1WWpMYk9WY0U0X1B0LXNFU2g1SVFRQkVtQlRWY1dyZ00xSkZYQ1ljc2pRVTQ1SklMWHRvNGFCQmpDYkY2Ry02Y24zMzNtU252VnltWGQ?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2026-01-22T08:00:00+00:00",
+          "summary": "Travel accessories platform Escape Plan raises $25 million from Jungle Ventures, others&nbsp;&nbsp;The Economic Times",
+          "company": "Escape Plan"
+        },
+        {
           "title": "Jungle Ventures Co-Leads $5 Mn Seed Round in Silicon-Based Energy Startup Enerzolve - Saur Energy",
           "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOWWN1cWZOWXEzbEJveWZ4WDdyWUszU0ZFYWlWVEZHaTVOaGtEclByV1FIZWhKWVY3blU3ZnVaMVQxY0lBM2ZwSkNaaFpPQXI1VDlLMmhIQkYxbFdMM1B0VUFPNk9hU3hCUTdrSVNaVVJfczRMalZhd3RHUW1RbzdBZ291TEE4eDNTVkpma3RlRUdCV0g3VnBiSWlwcEtJT1dsTllvY3YzTXlvYXNkRGZxejhvei1GeEE1SHBwQkJUbW5MVk9wT3JWa0ZXbHNxSHAwQ3c?oc=5",
           "source": "news.google.com",
           "pub_date": "2026-01-22T08:00:00+00:00",
           "summary": "Jungle Ventures Co-Leads $5 Mn Seed Round in Silicon-Based Energy Startup Enerzolve&nbsp;&nbsp;Saur Energy",
+          "company": "Enerzolve"
+        },
+        {
+          "title": "EnerZolve Raises $5.1 Million To Scale AI Platform For Smarter Power Procurement - BW Businessworld",
+          "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOXzkteEExSE5Xbk9lVzZQN1BKVUZzMHFxaE1rMWdoajF5aHBMZXZ4THlveUpseDA5SU9GN2Vrd2VMOWpfTk01WFVmOGZfQ1pFZzZ6UFhiRXVoV0VvRTVDNmdCZWo4VjZlMko5TENXUTEtM0dfdHdhY2U3M2RqQ2c4WVJMRWU5NHQtUXpFQVdTOFgyWnl6aktkTnItY241N1ZaV2xPM193a1JhSnFmdXdYT3FYZExtZ2tvbGIyUG9fdUo?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2026-01-22T08:00:00+00:00",
+          "summary": "EnerZolve Raises $5.1 Million To Scale AI Platform For Smarter Power Procurement&nbsp;&nbsp;BW Businessworld",
           "company": "Enerzolve"
         },
         {
@@ -1834,12 +2950,68 @@
           "company": "Enerzolve"
         },
         {
+          "title": "Enerzolve Secures $5.1M Seed for Smart Grid Tech Amid India's Energy Push - Whalesbook",
+          "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQdEF1dmxTVGtDaW1yazhsOWwyZkZnSHh3b2REYnB4VWVfd091RC04d3pMVGlEYXQ2Wkl2QjFsNWNMRWg2WEIwclFqdzdjeldvZ1BFYlBENS1rSXJZSEExOHJ1ZDBvTFd2QlZCUU15RG05dUxRSVlycEhOUzVVUG5pbFlOM3ZwdW9TRFN1dVVUZ0dBd3FFYzdoeTFFUFdia1RkSnZaWXVvNzZUTjBxTkNHY0NCUXdvdjBuOWNwSDJDOEd4WVJQQWsyUEpkQ1YzLWtTcXBKYzBVeHRoUkc0NEJOTW9R?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2026-01-21T08:00:00+00:00",
+          "summary": "Enerzolve Secures $5.1M Seed for Smart Grid Tech Amid India's Energy Push&nbsp;&nbsp;Whalesbook",
+          "company": "Enerzolve"
+        },
+        {
           "title": "Enerzolve Nets $5.1 Mn To Build Infrastructure For Intelligent Energy Systems - Inc42",
           "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQcEtnLVlQOFFDdlUzYS1UYVhvNC11Q2o0ZEltOHN5R3M2M3FJMGdHamRURlNTWXlPRjd0dmpITDhwUmd2ckhpZXY1WGRBZGhSdWNNVzZ0RzhhR1M2anNta19kaFl6WXlvZmtXNDVxSF9od0Joa1NHc1dWYnhqV0M0TTdSWkljUTVmOWwyU3dENVpBUFkyQlBlSi1QUDFHS0ltaGc?oc=5",
           "source": "news.google.com",
           "pub_date": "2026-01-21T08:00:00+00:00",
           "summary": "Enerzolve Nets $5.1 Mn To Build Infrastructure For Intelligent Energy Systems&nbsp;&nbsp;Inc42",
           "company": "Enerzolve"
+        },
+        {
+          "title": "Enerzolve raises $5.1 Mn in seed round led by Jungle Ventures and Kae Capital - Entrackr",
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOZmZRbzdSLTJWWExCVE8yaXpQcGtOMjdjd3BMeEJCdURmeEFreUFoS1BQdDBkUlF5QjNta1hTUUNUX0Z4b3ZRQUtRb3lyVm5YTE1PS0FpSXdCT3lseElHaGdncmMtdmRGaEs5T016VzZMZ0RWTE5YbzJoUHFiUWh1MElVWDZKOWgwT1QzWlJFUXBEZFhCV3FVSnhBRTFFLXpjUkRMejZnY0tmTEJaeUF6eEFQaGnSAbQBQVVfeXFMTmZmUW83Ui0yVlhMQlRPMml6UHBrTjI3Y3dwTHhCQnVEZnhBa3lBaEtQUHQwZFJReUIzbWtYU1FDVF9GeG92UUFLUW95clZuWExNT0tBaUl3Qk95bHhJR2hnZ3JjLXZkRmhLOU9Nelc2TGdEVkxOWG8yaFBxYlFodTBJVVg2SjloME9UM1pSRVFwRGRYQldxVUp4QUUxRS16Y1JETHo2Z2NLZkxCWnlBenhBUGhp?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2026-01-21T08:00:00+00:00",
+          "summary": "Enerzolve raises $5.1 Mn in seed round led by Jungle Ventures and Kae Capital&nbsp;&nbsp;Entrackr",
+          "company": "Enerzolve"
+        },
+        {
+          "title": "Enerzolve - 2026 Company Profile, Team, Funding & Competitors - Tracxn",
+          "url": "http://www.tracxn.com/d/companies/enerzolve/__kgZ7InymMrErKMHir83aG2SjqSFpHZoBtzXvDDcoCBw",
+          "source": "tracxn.com",
+          "pub_date": "2026-01-20T19:43:26.000Z",
+          "summary": "Enerzolve - 2026 Company Profile, Team, Funding & Competitors - Tracxn Your browser was unable to load all of Tracxn resources. They may have been blocked by your firewall, proxy or browser configuration. Press Ctrl+F5 or Ctrl+Shift+R to have your browser try again and if that doesn't work, click he",
+          "company": "Enerzolve"
+        },
+        {
+          "title": "Materials Science Startup Whizzo Raises USD 15 Mn Series A Funding",
+          "url": "https://www.entrepreneurindia.com/blog/en/news/materials-science-startup-whizzo-raises-usd-15-mn-series-a-funding.58875",
+          "source": "entrepreneurindia.com",
+          "pub_date": "2026-01-20T12:42:52.000Z",
+          "summary": "Materials Science Startup Whizzo Raises USD 15 Mn Series A Funding # Materials Science Startup Whizzo Raises USD 15 Mn Series A Funding ## Materials Science Startup Whizzo Raises USD 15 Mn Series A Funding BY - Opportunity India Desk Editor Jan 20, 2026 1116 / 2 Min Read  Follow Us The Series A roun",
+          "company": "Distil"
+        },
+        {
+          "title": "Deeptech startup Raana Semiconductors raises $3 million to build indigenous silicon ingot growth systems",
+          "url": "https://indianstartupnews.com/funding/deeptech-startup-raana-semiconductors-raises-3-million-to-build-indigenous-silicon-ingot-growth-systems-11014972",
+          "source": "indianstartupnews.com",
+          "pub_date": "2026-01-20T08:07:16.000Z",
+          "summary": "-- -- -- -- -- -- -- Deeptech startup Raana Semiconductors raises $3 million to build indigenous silicon ingot growth systems*{flex-shrink:0;width:100%;max-width:100%;padding-right:calc(var(--bs-gutter-x)/ 2);padding-left:calc(var(--bs-gutter-x)/ 2);margin-top:var(--bs-gutter-y)} -- \"\" You have succ",
+          "company": "Distil"
+        },
+        {
+          "title": "Whizzo raises $15 million as Fundamentum bets on materials science",
+          "url": "https://livemint.com/companies/start-ups/whizzo-series-a-funding-fundamentum-materials-science-11768825020864.html",
+          "source": "livemint.com",
+          "pub_date": "2026-01-20T00:31:14.000Z",
+          "summary": "Whizzo raises $15 million as Fundamentum bets on materials science  News # Whizzo raises $15 million as Fundamentum bets on materials science  Salman SH 4 min read 20 Jan 2026, 06:01 am IST The round also saw participation from Korea-based deeptech investor LB Investment—its first direct bet in Indi",
+          "company": "Distil"
+        },
+        {
+          "title": "Bot Verification",
+          "url": "https://techmitra.in/moglix-launches-cognilix-an-ai-led-os/",
+          "source": "techmitra.in",
+          "pub_date": "2026-01-19T00:00:00.000Z",
+          "summary": "Bot Verification  ### Verifying that you are not a robot...  Bot Verification ### Verifying that you are not a robot...",
+          "company": "GetRight"
         },
         {
           "title": "Escape Plan Rakes in $5M to Reshape India's Travel Accessories Market - Siliconindia",
@@ -1850,36 +3022,124 @@
           "company": "Escape Plan"
         },
         {
-          "title": "Speciality Chemicals Startup Atomgrid Raises $7 Mn To Increase Exports - Inc42",
-          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPb0wyQWphTzBmUXNIZ3RSczMzaTV3bllCWnpzRFVLeVpTTVRlSHZnRFZZa09iYXZTSlYzR052OGVxejFvQ1NRa3dTME1ZNnRTNFk3MUFiemJxdmluT0hab3F2ZUhlbjE4Xzcxb0dzbkoxbGhBRFR5VnJkWXpSN2M1U3BmUGpsQkRQS1hicmFSMEtLTERoYWZFNw?oc=5",
+          "title": "Ayushya - AI-Powered Ayurvedic Wellness Platform",
+          "url": "https://goayu.life/",
+          "source": "goayu.life",
+          "pub_date": "2026-01-15T18:30:00.000Z",
+          "summary": "Ayushya - AI-Powered Ayurvedic Wellness Platform   Holistic AI Health  # Life & Longevity through Ancient Wisdom Experience the precision of modern AI harmonized with 5000 years of Ayurvedic healing. Discover your Prakruti and restore balance naturally. Start Your Journey How It Works  8+ Ancient Te",
+          "company": "NirogStreet"
+        },
+        {
+          "title": "Escape Plan Achieves Rs 300 Cr Revenue, Expands Offline Stores Across India - Indian Retailer",
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQVkl3cUp3SzFBTDZ1QjJGQTFsUjBNR082aVR5OE5vVFNoQnBERTl4UkcycE9oa0psaXhPSmljT2FhUDFEZ3JyVk5tdGR3UTFRYkJyVldVVjdYTXlWNXhObzI3eHRsZDlSZ2ZBY2liRS16b3dwU290WXhuWDJlQ3pxSEtnUkhrQWZ3U0ZEU0VMal82STN0RExCeW5Jc2puUWUwY1R6b2NDU2tFNnVtSko4OA?oc=5",
           "source": "news.google.com",
-          "pub_date": "2026-01-13T08:00:00+00:00",
-          "summary": "Speciality Chemicals Startup Atomgrid Raises $7 Mn To Increase Exports&nbsp;&nbsp;Inc42",
+          "pub_date": "2025-12-29T08:00:00+00:00",
+          "summary": "Escape Plan Achieves Rs 300 Cr Revenue, Expands Offline Stores Across India&nbsp;&nbsp;Indian Retailer",
+          "company": "Escape Plan"
+        },
+        {
+          "title": "Prosperr.io Secures $4 Million Seed Funding Led by Jungle Ventures to Revolutionize Tax Management, EconomictimesB2B",
+          "url": "https://b2b.economictimes.indiatimes.com/news/entrepreneur/prosperrio-secures-4-million-seed-funding-led-by-jungle-ventures-to-revolutionize-tax-management/126139479",
+          "source": "b2b.economictimes.indiatimes.com",
+          "pub_date": "2025-12-23T10:19:35.000Z",
+          "summary": "Prosperr.io Secures $4 Million Seed Funding Led by Jungle Ventures to Revolutionize Tax Management, EconomictimesB2B -- -- - 1 min read - Entrepreneur  # Prosperr.io raises $4 mn seed round led by Jungle Ventures The new capital will be used to accelerate product development, strengthen its B2B sale",
+          "company": "Prosperr"
+        },
+        {
+          "title": "Defence electronics firm CoreEL Technologies raises $30 million from ValueQuest, 360 ONE Asset - The Economic Times",
+          "url": "https://economictimes.indiatimes.com/tech/funding/defence-electronics-firm-coreel-technologies-raises-30-million-from-valuquest-360-one-asset/articleshow/126139285.cms",
+          "source": "economictimes.indiatimes.com",
+          "pub_date": "2025-12-23T10:16:42.000Z",
+          "summary": "Defence electronics firm CoreEL Technologies raises $30 million from ValueQuest, 360 ONE Asset - The Economic Times Business News Tech Funding Defence electronics firm CoreEL Technologies raises $30 million from ValueQuest, 360 ONE Asset # Defence electronics firm CoreEL Technologies raises $30 mill",
+          "company": "Sanlayan"
+        },
+        {
+          "title": "Prosperr.io Secures $4M To Scale AI Tax Platform",
+          "url": "https://smestreet.in/technology/prosperrio-secures-4m-to-scale-ai-tax-platform-10939886",
+          "source": "smestreet.in",
+          "pub_date": "2025-12-23T06:15:16.000Z",
+          "summary": "Prosperr.io Secures $4M To Scale AI Tax Platform *{flex-shrink:0;width:100%;max-width:100%;padding-right:calc(var(--bs-gutter-x)/ 2);padding-left:calc(var(--bs-gutter-x)/ 2);margin-top:var(--bs-gutter-y)} --> You have successfully subscribed the newsletter.     Technology For SMEs Investments # Pros",
+          "company": "Prosperr"
+        },
+        {
+          "title": "Prosperr.io Raises $4 Mn To Simplify Tax Management",
+          "url": "https://inc42.com/buzz/prosperr-io-raises-4-mn-to-simplify-tax-management/",
+          "source": "inc42.com",
+          "pub_date": "2025-12-23T05:49:10.000Z",
+          "summary": "Prosperr.io Raises $4 Mn To Simplify Tax Management   News     SUMMARY The seed funding round led by Jungle Ventures, with participation from Yatra Angel Network, Sadev Ventures, and other unnamed “strategic” investors The Bengaluru-based startup plans to deploy the capital to accelerate product dev",
+          "company": "Prosperr"
+        },
+        {
+          "title": "AI material discovery startup Novyte Materials raises Rs 4.15 crore led by Theia Ventures",
+          "url": "https://indianstartupnews.com/funding/ai-material-discovery-startup-novyte-materials-raises-rs-415-crore-led-by-theia-ventures-10920772",
+          "source": "indianstartupnews.com",
+          "pub_date": "2025-12-18T08:59:38.000Z",
+          "summary": "-- -- -- -- -- -- -- AI material discovery startup Novyte Materials raises Rs 4.15 crore led by Theia Ventures*{flex-shrink:0;width:100%;max-width:100%;padding-right:calc(var(--bs-gutter-x)/ 2);padding-left:calc(var(--bs-gutter-x)/ 2);margin-top:var(--bs-gutter-y)} -- \"\" You have successfully subscr",
           "company": "Distil"
         },
         {
-          "title": "How is Prosperr.io Transforming Tax Management with AI? - Analytics India Magazine",
-          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPQ2xtei1oWl85YnM0LXZEZ1dNREhIbmxfcmJhVTc4ZXA2VVdWbU13OC0yeTM5RVUxMXV0ZmR4N2FsWmhfWDBLaXFzbHY1SHZ2NFliTFVmVUEwMk9lU1hoTVQ4TFpiVnNSem9IcE82Y1NDeWRPakowNmMyOWZycXpjOFNzYVZGT05feEMyZWZoSEIwQVZEMlgyUUxzbWFpNGgyUllfSDRSX1g1Wmo3TURlWFE3TFJvdw?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2025-12-23T08:00:00+00:00",
-          "summary": "How is Prosperr.io Transforming Tax Management with AI?&nbsp;&nbsp;Analytics India Magazine",
-          "company": "Prosperr"
+          "title": "CoreOps.AI Bags $3.5Mn To Help Enterprises Automate Workflows",
+          "url": "https://inc42.com/buzz/coreops-ai-raises-3-5-mn-to-help-enterprises-automate-workflows/",
+          "source": "inc42.com",
+          "pub_date": "2025-12-04T10:57:14.000Z",
+          "summary": "CoreOps.AI Bags $3.5Mn To Help Enterprises Automate Workflows tag -- CoreOps.AI Raises $3.5 Mn To Help Enterprises Automate Workflows  --  SHARE  Share on Facebook  Share on Twitter Share on Whatsapp  Share on LinkedIn  Share on Email  Copy Link  Share story [mashshare networks=\"facebook,twitter,lin",
+          "company": "GetRight"
         },
         {
-          "title": "AI Fintech Startup Prosperr.io Secures $4M to Scale Tax Infrastructure - Indian Startup Times",
-          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQNUpCeEd0dm05U0hKb3RxclFLVGNVWVg5SDkyX2VGNjhJUFFWeVFERGdmNklMcHNQMDRhUnp2bDhVdWVMZFg2MXAwQWhNemJkcHR6QVpnRS05WHUya01xbF90eGZXclRMT202aml4ZHBrVU45eUN5ZmZDd0FDVDU5WXdITGNmUFgwTE85SWJ5NXZtbzI2RnFNSDNpYnN4ZnZSSjJ4bllJcEtFSl9GUy1KakQ0OXhtZjQ?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2025-12-23T08:00:00+00:00",
-          "summary": "AI Fintech Startup Prosperr.io Secures $4M to Scale Tax Infrastructure&nbsp;&nbsp;Indian Startup Times",
-          "company": "Prosperr"
+          "title": "Ayekart launches Aantriva: A unified AI-enabled platform to streamline India's agri-food ecosystem.",
+          "url": "https://ayekart.com/press-release/20251203-ayekart-launches-aantriva.html",
+          "source": "ayekart.com",
+          "pub_date": "2025-12-03T00:00:00.000Z",
+          "summary": "Ayekart launches Aantriva: A unified AI-enabled platform to streamline India's agri-food ecosystem. # Ayekart launches Aantriva: A unified AI-enabled platform to streamline India's agri-food ecosystem, targeting ₹30,000 crore throughput over the next three years - India's first-of-its-kind platform ",
+          "company": "GetRight"
         },
         {
-          "title": "Prosperr.io raises $4 mn seed round led by Jungle Ventures - The Economic Times B2B",
-          "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQMDlQWWhoU0lUQy1JRzdKRUlka3hOSi1fcm9KaEJaQWFQY3dkUEY1dmRiaXFvTldfcnVFODhBLTdXQUtHQURTbnRUNHBZLUF3cFNwcE0zT2sxWThwTVFPZEZRUWtaSTBSZEZIQ0lDWHlhR0JacFJWU3o3ZXRIZEx1ZjNtZ1RnX1RlNTVQR3JKT0hXLTllTnppZExET3BQeE5GRGp0MGF4NUdQZ25JRjJ6Z2VGemZGQUhDbUFLUUliX241LXJYeG5FbWJXYVJJUEtsdzRFTzJmVmtlQmF2ZjFCNTQ2a0ZjdE9VeHExUXpac3c3U1B1eFl5V9IB_gFBVV95cUxPbzBEVUliUTFvcm5kODFLU2JVYjNLSldoUFJZVXlhaF9yTkppMnRObnVhRmJ1a3k4S2ExTExxWTlYSkxsVEFDbk1TdFYzRktVbEhlcVJuVWZPVmZBNmxJcXE5Q0FtUnowVFRTODh5UWVNOTRUZ2V3dTcwSW9wNnBkUW9LWk5qYWpUcnJMVzJ4OVJ4bHJIRVYwMWptb2dfZXNMSFVMMUk3cTM0X3ZpWTFoUUZOdTBvSDZTZGVqak1oajF1TTlvWlhqeDBXNXVUUmFkUE9tdmRXUXp4Mm5YakJuX0VqeUhIQUM1eTk5bEl1a1ZzUUxpSGdTel9qWnVtQQ?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2025-12-23T08:00:00+00:00",
-          "summary": "Prosperr.io raises $4 mn seed round led by Jungle Ventures&nbsp;&nbsp;The Economic Times B2B",
-          "company": "Prosperr"
+          "title": "Yuvrit Ayurveda raises USD 800,000 seed funding led by Incubate Fund Asia",
+          "url": "https://www.expresshealthcare.in/amp/news/yuvrit-ayurveda-raises-usd-800000-seed-funding-led-by-incubate-fund-asia/451613/",
+          "source": "expresshealthcare.in",
+          "pub_date": "2025-11-28T14:14:49.000Z",
+          "summary": "Yuvrit Ayurveda raises USD 800,000 seed funding led by Incubate Fund Asia – Express Healthcare ** Express Healthcare * **facebook * **twitter * **Email Express Healthcare** # Yuvrit Ayurveda raises USD 800,000 seed funding led by Incubate Fund Asia ##### Funding to support clinic expansion, hiring a",
+          "company": "NirogStreet"
+        },
+        {
+          "title": "Yuvrit Ayurveda raises USD 800,000 seed funding led by Incubate Fund Asia - Express Healthcare",
+          "url": "https://www.expresshealthcare.in/news/yuvrit-ayurveda-raises-usd-800000-seed-funding-led-by-incubate-fund-asia/451613/",
+          "source": "expresshealthcare.in",
+          "pub_date": "2025-11-28T04:57:58.000Z",
+          "summary": "Yuvrit Ayurveda raises USD 800,000 seed funding led by Incubate Fund Asia - Express Healthcare   Express Healthcare - Likes - Followers - Subscribers - Followers # Yuvrit Ayurveda raises USD 800,000 seed funding led by Incubate Fund Asia ## Funding to support clinic expansion, hiring and standardisa",
+          "company": "NirogStreet"
+        },
+        {
+          "title": "Yuvrit raises $800K seed funding to build India’s modern ayurvedic clinic chain",
+          "url": "https://www.biospectrumindia.com/news/16/27003/yuvrit-raises-800k-seed-funding-to-build-indias-modern-ayurvedic-clinic-chain.html",
+          "source": "biospectrumindia.com",
+          "pub_date": "2025-11-28T00:00:00.000Z",
+          "summary": "Yuvrit raises $800K seed funding to build India’s modern ayurvedic clinic chain  News - Academics - People - Science - World - Bio Money - Policy & Regulatory  Pharma - BioServices - Biotechnology - BioPharma  Special  - Diagnostics/Medtech - 2023-24 & 2024-25 survey",
+          "company": "NirogStreet"
+        },
+        {
+          "title": "Yuvrit Ayurveda raises $800K in seed funding led by Incubate Fund Asia",
+          "url": "https://www.marcamoney.com/yuvrit-ayurveda-raises-800k-in-seed-funding-led-by-incubate-fund-asia/",
+          "source": "marcamoney.com",
+          "pub_date": "2025-11-27T10:59:26.000Z",
+          "summary": "Yuvrit Ayurveda raises $800K in seed funding led by Incubate Fund Asia Yuvrit Ayurveda raises $800K in seed funding led by Incubate Fund Asia  SHARE Yuvrit Ayurveda, a Bengaluru-based Ayurvedic clinic chain, has raised $800,000 in a seed funding round led by Incubate Fund Asia. The fresh funds raise",
+          "company": "NirogStreet"
+        },
+        {
+          "title": "Yuvrit Ayurveda Raises $800K Seed Funding | SignalBase",
+          "url": "https://www.leadsontrees.com/news/yuvrit-ayurveda-raises-800k-seed-funding",
+          "source": "leadsontrees.com",
+          "pub_date": "2025-11-27T08:03:07.000Z",
+          "summary": "Yuvrit Ayurveda Raises $800K Seed Funding | SignalBase  November 27, 2025 Recently FundedUSD 800.0KHealth and Human Services  # Yuvrit Ayurveda Raises $800K Seed Funding  Yuvrit Ayurveda Get the full Yuvrit Ayurveda company profile  Access contacts, investors, buying signals & more  Start Free Trial",
+          "company": "NirogStreet"
+        },
+        {
+          "title": "Home - Zenfinity Energy",
+          "url": "https://zenfinity.energy/",
+          "source": "zenfinity.energy",
+          "pub_date": "2025-11-24T23:01:01.000Z",
+          "summary": "Home - Zenfinity Energy  ###### Intelligent Energy  ### Engineering Ultralong-Lifetime Batteries for India and Beyond ## Our Solutions  ## Safety Multi-layer protection from cell to system level with certified chemistries and a smart BMS.  ## Transparency Our Digital Twin transforms each battery int",
+          "company": "Enerzolve"
         },
         {
           "title": "From safe space to scale-up, coto is redefining emotional wellness with AI - YourStory.com",
@@ -1890,6 +3150,70 @@
           "company": "Coto"
         },
         {
+          "title": "Redefining emotional wellness with AI; ABC programme for street dogs - YourStory.com",
+          "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9lbWJVOUJuaEs2cGRHNFlHSVZrVzJNbWYzMFlMdDB0OUU4MXNkR3JuYVJ5dXZOODBieFNBTVpac0tWZDRpOC1DWm81eHlKdW1KT3pfT0pLN0RfZUtoY2FJejJ0UXRZeXJiMXdvcGpzdV9XNmxvc1E?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2025-11-17T08:00:00+00:00",
+          "summary": "Redefining emotional wellness with AI; ABC programme for street dogs&nbsp;&nbsp;YourStory.com",
+          "company": "Coto"
+        },
+        {
+          "title": "GuavaTrips Disrupts Indian Travel with Free AI-Powered Personalized Itineraries",
+          "url": "https://www.business-standard.com/content/press-releases-ani/guavatrips-disrupts-indian-travel-with-free-ai-powered-personalized-itineraries-125111400864_1.html",
+          "source": "business-standard.com",
+          "pub_date": "2025-11-13T18:30:13.000Z",
+          "summary": "GuavaTrips Disrupts Indian Travel with Free AI-Powered Personalized Itineraries  Sponsored Content # GuavaTrips Disrupts Indian Travel with Free AI-Powered Personalized Itineraries GuavaTrips Disrupts Indian Travel with Free AI-Powered Personalized Itineraries 4 min read Last Updated : Nov 15 2025 |",
+          "company": "Escape Plan"
+        },
+        {
+          "title": "Alive Raises ₹6 Crore to Power India’s Experience Economy; Records 90x Growth in Under a Year, Eyes ₹100crore ARR",
+          "url": "https://cxotoday.com/press-release/alive-raises-%E2%82%B96-crore-to-power-indias-experience-economy-records-90x-growth-in-under-a-year-eyes-%E2%82%B9100crore-arr/",
+          "source": "cxotoday.com",
+          "pub_date": "2025-11-13T06:44:05.000Z",
+          "summary": "Alive Raises ₹6 Crore to Power India’s Experience Economy; Records 90x Growth in Under a Year, Eyes ₹100crore ARR ## Upwind Doubles Down on India to Support Digital India’s Cloud and AI Acceleration With Real-Time Cloud Security ## Simplilearn Launches Microsoft-Backed Applied Agentic AI Program ## ",
+          "company": "Escape Plan"
+        },
+        {
+          "title": "Alive Raises ₹6 Crore to Power India's Experience Economy; Records 90x Growth in Under a Year, Eyes ₹100 Crore ARR",
+          "url": "https://www.prnewswire.com/in/news-releases/alive-raises-6-crore-to-power-indias-experience-economy-records-90x-growth-in-under-a-year-eyes-100-crore-arr-302612886.html",
+          "source": "prnewswire.com",
+          "pub_date": "2025-11-12T10:25:00.000Z",
+          "summary": "Alive Raises ₹6 Crore to Power India's Experience Economy; Records 90x Growth in Under a Year, Eyes ₹100 Crore ARR Accessibility Statement Skip Navigation The tech platform is redefining how urban India connects, celebrates, and lives through 125+ curated experiences across adventure, art, wellness,",
+          "company": "Escape Plan"
+        },
+        {
+          "title": "Niveshaay leads ₹325 crore funding in Waaree Energy Storage Systems | Company News - Business Standard",
+          "url": "https://www.business-standard.com/companies/news/niveshaay-leads-325-crore-funding-in-waaree-energy-storage-systems-125111200496_1.html",
+          "source": "business-standard.com",
+          "pub_date": "2025-11-12T08:17:36.000Z",
+          "summary": "Niveshaay leads ₹325 crore funding in Waaree Energy Storage Systems | Company News - Business Standard Home/ Companies/ News/ Niveshaay leads ₹325 crore funding in Waaree Energy Storage Systems # Niveshaay leads ₹325 crore funding in Waaree Energy Storage Systems ## The fund will be used to enhance ",
+          "company": "Enerzolve"
+        },
+        {
+          "title": "Niveshaay leads Rs 325 cr funding in Waaree Energy Storage Systems to boost battery manufacturing, ETCFO",
+          "url": "https://cfo.economictimes.indiatimes.com/news/corporate-finance/niveshaay-leads-rs-325-cr-funding-in-waaree-energy-storage-systems-to-boost-battery-manufacturing/125267053",
+          "source": "cfo.economictimes.indiatimes.com",
+          "pub_date": "2025-11-12T06:30:00.000Z",
+          "summary": "Niveshaay leads Rs 325 cr funding in Waaree Energy Storage Systems to boost battery manufacturing, ETCFO - Corporate Finance - 2 min read # Niveshaay leads Rs 325 cr funding in Waaree Energy Storage Systems to boost battery manufacturing Niveshaay has spearheaded a Rs 325 crore funding round for Waa",
+          "company": "Enerzolve"
+        },
+        {
+          "title": "FLO Communities Empowering Networks for Women Leaders Today",
+          "url": "https://ficciflo.com/flo-communities/",
+          "source": "ficciflo.com",
+          "pub_date": "2025-11-05T09:56:59.000Z",
+          "summary": "FLO Communities Empowering Networks for Women Leaders Today  ## FLO Communities Initiative ## Bringing women together across India to enable growth in society.  ## Objective & Scope Of Work Build a robust, connected, and empowered FLO Communities Network through measurable and scalable programs that",
+          "company": "Coto"
+        },
+        {
+          "title": "Sanlayan latest Startup funding and investors",
+          "url": "https://www.ipoplatform.com/startup-business-funding/sanlayan-technologies-private-limited/100256",
+          "source": "ipoplatform.com",
+          "pub_date": "2025-10-29T03:41:55.000Z",
+          "summary": "Sanlayan latest Startup funding and investors -- window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-9TJMB9KJSX'); -- window.googletag = window.googletag || { cmd: [] }; googletag.cmd.push(function() { var mapping = goog",
+          "company": "Sanlayan"
+        },
+        {
           "title": "Sanlayan Technologies Invests in Versabyte Data Systems to Boost Indigenous Defence Electronics - Indian Startup Times",
           "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQODFNbm12T09IdTQyNUVicm8teFBFRS1UbXJ5U0syZmpnRGt2NWNYUUZhWC1HRHBaVmwxbmdiMDF5YUh6SFVrOWlXbk8yaDloRDR3TFlYY0lUMUhSY0hlT1hMRnZRY0tfcXdwc0JHVmVmM2RKb0IyZjBPa19DUm04Sm9wMHF2eWVRV3Z3eEJuX0xGeTl3ejhJZ244RnVJMC1FeVdRRFVuOWx4ZTV2NUI1TEdmT3VxczhGMTQ3ZlNEX1JqQ0V0ejgtR1lZR0VFenJBNXdkMDFyOTVUQQ?oc=5",
           "source": "news.google.com",
@@ -1898,11 +3222,75 @@
           "company": "Sanlayan"
         },
         {
-          "title": "Speciality chemicals startup Distil bags $7.7M in Series A funding - YourStory.com",
-          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQZ3ktZS1BRjhCMDN2UXJyV2dLczFvdFQzZ1hxeUFyU242aTI0dFZIR2RtalpzMnBXUnhpOXJuRmZqRXZIUS1LZjNZaVBLMTdNQVd6Q3g2d1c0ZTRDc3ZTX3ppcklIblBTODJMWG5LSXBUazBGamk3MEpackJnY0c0Vi0tTk52Xy1kYW4zdmFGaER4VURCaUE?oc=5",
+          "title": "About Dat Bike - Dat Bike",
+          "url": "https://dat.bike/en/about-dat-bike/",
+          "source": "dat.bike",
+          "pub_date": "2025-10-21T04:01:21.000Z",
+          "summary": "About Dat Bike - Dat Bike  ## Born from the Vision of a Vietnamese Engineer in Silicon Valley Dat Bike is a Vietnamese electric motorbike manufacturer, founded in 2019 by Nguyen Ba Canh Son, a talented software engineer who won multiple national and international awards in technology. Son observed t",
+          "company": "Dat Bike"
+        },
+        {
+          "title": "Vietnam’s love affair with gas bikes is colliding with a new electric reality - The Albertan",
+          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOUXBiUGdja04za3NMTFVIQU9EdEZDeWZrbE8tcUhMSTVwcFlVTjFEeFhCc1dsNXFmYXJxY1JBbWFwWjlZandOc3NwSXhjcHpWYWtfSlNQZlhPUk1WU0ZXdDNESmJ5VzFuVGRrdFVlMkhMYjJFQjhLUm1reWxsN1FfV2ZFc2htSnM1Z0lycjNZR1B4bU9kWUxxT0FXOTlIRWFBczZfdGNjNjNZU212c3N3bHRQeWdBSjlJTDBteGhGUXVEeXlERDh2NTdn?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2025-10-19T07:00:00+00:00",
+          "summary": "Vietnam’s love affair with gas bikes is colliding with a new electric reality&nbsp;&nbsp;The Albertan",
+          "company": "Dat Bike"
+        },
+        {
+          "title": "Eco Saarthi",
+          "url": "https://in.linkedin.com/company/eco-saarthi",
+          "source": "in.linkedin.com",
+          "pub_date": "2025-10-14T00:00:00.000Z",
+          "summary": "Eco Saarthi (ES) is revolutionizing India’s clean energy landscape by producing Green Coal from agricultural waste. Each year, over 90 million tons of crop residue is burnt across India, causing severe pollution and lost economic value. At ES, we convert this agri-waste into high-quality biofuels an",
+          "company": "Enerzolve"
+        },
+        {
+          "title": "Reo.Dev Bags $4 Mn To Provide AI-Powered Revenue Intelligence Tool",
+          "url": "https://inc42.com/buzz/reo-dev-bags-4-mn-to-provide-ai-powered-revenue-intelligence-tool/",
+          "source": "inc42.com",
+          "pub_date": "2025-10-09T11:54:38.000Z",
+          "summary": "Reo.Dev Bags $4 Mn To Provide AI-Powered Revenue Intelligence Tool   News     SUMMARY Reo.Dev has raised $4 Mn in its seed funding round led by Heavybit, with participation from Foster Ventures and existing investor India Quotient The startup said in a statement that it will use the fresh capital to",
+          "company": "GetRight"
+        },
+        {
+          "title": "Home Page - Dat Bike",
+          "url": "https://dat.bike/en",
+          "source": "dat.bike",
+          "pub_date": "2025-10-08T07:54:19.000Z",
+          "summary": "Home Page - Dat Bike  # choose a model  # SHOW PERSONALITY  - QUANTUM S3 - QUANTUM S2 - QUANTUM S1  # quantum S1 # electric vehicle peak, surpassing gasoline vehicles  ## 285 KM/1 LẦN SẠC #### Ready to go further than gasoline vehicles  ## ACCELERATION OVER TIME #### 0-50km/h in just 2.69s. Gasoline",
+          "company": "Dat Bike"
+        },
+        {
+          "title": "Specialty chemical startup Distil raises $7.7 million led by Singapore’s Jungle Ventures, CE-Ventures - Indian Startup News",
+          "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNSWVjTHZBTmI5Yl85TVBFQUtKWVluZTFSNzJQQjl4U1BGNHVraC0taDdqckw0SXFFc1JUQlV3UzZScm9KV3o5c3ZIU0NMY2duUFp4MzJXV2lKNkM4b19lbUtzQm5zV2FnZ0RaRlJqTGtfaDE0cW1ORURZT2QxellhX0hkTnE3eEhaWDRXdzNremlwazZYa3VDUnhJTUQ3ZmJ4MmdPQm44UkFMTl9RYS1BeEdsaFU2MXEzNnRqQy02dkJlRDdjZnpJeEF0TF92T1JrTDFBR2MzVmZUSkJ60gHcAUFVX3lxTE1JZWNMdkFOYjliXzlNUEVBS0pZWW5lMVI3MlBCOXhTUEY0dWtoLS1oN2pyTDRJcUVzUlRCVXdTNlJyb0pXejlzdkhTQ0xjZ25QWngzMldXaUo2QzhvX2VtS3NCbnNXYWdnRFpGUmpMa19oMTRxbU5FRFlPZDF6WWFfSGROcTd4SFpYNFd3M2t6aXBrNlhrdUNSeElNRDdmYngyZ09CbjhSQUxOX1FhLUF4R2xoVTYxcTM2dGpDLTZ2QmVEN2Nmekl4QXRMX3ZPUmtMMUFHYzNWZlRKQno?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2025-09-24T07:00:00+00:00",
+          "summary": "Specialty chemical startup Distil raises $7.7 million led by Singapore’s Jungle Ventures, CE-Ventures&nbsp;&nbsp;Indian Startup News",
+          "company": "Distil"
+        },
+        {
+          "title": "Distil raises $7.7 million in Series A funding to strengthen specialty chemicals platform - Indian Chemical News",
+          "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQeHExdGdELXM3ck5nR2w0MU1JbURHRWZuYmVlbHBXZUhVSG9sb0ViYVJTSzVWcUdtVjVnVlRZd2FlV0VvVnVJYmRSUktDMXRsYnZlQXVLazdwbHR6ejAyWFBPRVJHSDlEbDQ5dEdId0lCT3BjU2Y0eml4aHoyckdTamhNdjdYLWVkeFBfMmJIWmtXbTMxVWIyNXBMT1NXYmo0cTktanNmQ2tyZXdXNklwU1Y3VDZJRHU0UVcyR1gwWWVoS3IyU09DQl95eUVVMkZRMkc40gHaAUFVX3lxTE96c0ZwY1pMUHNNSXhTY0hsYnBkc2ZIOHZyb3VTUmZRa01WQlFXVjZmNWhJc0FUbllhSmdVNUZONFltR3h1R1pSc01GcEpfS2tEV2tNVmlBMEoxUGgyTUM3N2syOHQ0WTl6T3llNnZNcWFSVkVkaDFNQVVFdlZxSlo4STkydlZ1djdiWDlYN2ExdkM5RGFxblN3dnFNVGIyalpneEpyZlhKSTFGWF9SeHVnTnNtR3lrZVEtZllrdUlIQzB2Y0l5QVNQbDFtM2JJNVk0N2dOcHk3dlF3?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2025-09-24T05:56:01+00:00",
+          "summary": "Distil raises $7.7 million in Series A funding to strengthen specialty chemicals platform&nbsp;&nbsp;Indian Chemical News",
+          "company": "Distil"
+        },
+        {
+          "title": "Distil - Products, Competitors, Financials, Employees, Headquarters Locations",
+          "url": "http://www.cbinsights.com/company/distil",
+          "source": "cbinsights.com",
+          "pub_date": "2025-09-23T16:46:44.000Z",
+          "summary": "Distil - Products, Competitors, Financials, Employees, Headquarters Locations  ## Founded Year  2023  ## Stage Series A | Alive  ## Total Raised  $10.8M  ## Last Raised  $7.7M | 6 mos ago  ## Revenue  $0000 View ## Mosaic Score The Mosaic Score is an algorithm that measures the overall financial hea",
+          "company": "Distil"
+        },
+        {
+          "title": "Speciality Chemicals Startup Distil Raises $7.7 Mn To Scale R&D - Inc42",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPRldUaXFBSXEza1dBOEdqSmtzQ29EelFWREJjUmc4VkI4VHN0RTBPM2sxQ04zMnZ3TjMtc1Jvb2lKU01KRTZZUW1IRzR2V2ZzaUg0WnpWUC02cWFWNXYtcUFhWVAxTzlrbEcxSVczelpwbHJCMm93b3RDM1FxVHV6NlBhUmtPTDRCSU11MXVn?oc=5",
           "source": "news.google.com",
           "pub_date": "2025-09-23T07:00:00+00:00",
-          "summary": "Speciality chemicals startup Distil bags $7.7M in Series A funding&nbsp;&nbsp;YourStory.com",
+          "summary": "Speciality Chemicals Startup Distil Raises $7.7 Mn To Scale R&amp;D&nbsp;&nbsp;Inc42",
           "company": "Distil"
         },
         {
@@ -1922,28 +3310,108 @@
           "company": "Distil"
         },
         {
-          "title": "Vietnam Startup Seeks Slice of Third-Largest EV Motorbike Market - Bloomberg.com",
-          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxON3dUTDNuQ2ZWTXFmYzg4LVhPS2RiaVc3cWhhUFpqZG01MVRfNmNKcW5lTUN2SHFGdXF6RXFhMVdqRUxINnNiMjJydTdCak5SRXFxQzg3b3pNRTYxQVhkZzZIaWFIMzJBSlZib2J2aENWY1N6YmREOHplUGdLYllPdXlLXzM3aUhPSGItNUg0bXRVSnh6TDNwcWFIT2Z1LTFZRWNuY0tmZWpIUzEyZGIxLVZRWmo2UQ?oc=5",
+          "title": "Speciality chemicals startup Distil bags $7.7M in Series A funding - YourStory.com",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQZ3ktZS1BRjhCMDN2UXJyV2dLczFvdFQzZ1hxeUFyU242aTI0dFZIR2RtalpzMnBXUnhpOXJuRmZqRXZIUS1LZjNZaVBLMTdNQVd6Q3g2d1c0ZTRDc3ZTX3ppcklIblBTODJMWG5LSXBUazBGamk3MEpackJnY0c0Vi0tTk52Xy1kYW4zdmFGaER4VURCaUE?oc=5",
           "source": "news.google.com",
-          "pub_date": "2025-09-17T07:00:00+00:00",
-          "summary": "Vietnam Startup Seeks Slice of Third-Largest EV Motorbike Market&nbsp;&nbsp;Bloomberg.com",
+          "pub_date": "2025-09-23T07:00:00+00:00",
+          "summary": "Speciality chemicals startup Distil bags $7.7M in Series A funding&nbsp;&nbsp;YourStory.com",
+          "company": "Distil"
+        },
+        {
+          "title": "Indian chemicals startup Distil raises $7.7m to operate in US, MENA - Tech in Asia",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNT0FrWTdfQnFNMF80QjVYMUJhX3NnMTB1QkY3Mndqa2J6Z1FzeXUzQUdtNC1SNm9zUldqbHdGMjlyZENldE90VGx1M25JUXRUS0hPY0tmd1VwTEpBNGVxZ2hRZHB6SjViMnc2OFB0Vl9EQTlCQ3J0czgzWHdHemhGZ0FZcGFBZTYzMjhBQWdVWHdZdWJlNElEVWh5ei1IUQ?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2025-09-23T07:00:00+00:00",
+          "summary": "Indian chemicals startup Distil raises $7.7m to operate in US, MENA&nbsp;&nbsp;Tech in Asia",
+          "company": "Distil"
+        },
+        {
+          "title": "Distil, Rocket, Zealthix, Grest bag early-stage funding - VCCircle",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOcTdOUFUtUjEtOUppWDN0djB4V2hDMm1ibFVXTDg3MTc0NE5aYkxVM3NBU0EzUUgzclh5NzBCLXVmR1lncWdNT2cwWENEQnhjWXFNZzQ3b1JKNU1VVU1wQk1WWTl4eVVUdjZOSjVZeTg0WDZtYzMtZ2w5dmdXN09EdmlR?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2025-09-23T07:00:00+00:00",
+          "summary": "Distil, Rocket, Zealthix, Grest bag early-stage funding&nbsp;&nbsp;VCCircle",
+          "company": "Distil"
+        },
+        {
+          "title": "Speciality Chemicals Startup Distil Raises $7.7 Mn To Scale R&D",
+          "url": "https://inc42.com/buzz/speciality-chemicals-startup-distil-raises-7-7-mn-to-scale-rd/",
+          "source": "inc42.com",
+          "pub_date": "2025-09-23T06:02:55.000Z",
+          "summary": "Speciality Chemicals Startup Distil Raises $7.7 Mn To Scale R&D   Enterprise Tech     SUMMARY The funding round also saw participation from recycling company Rubamin, PI Industries vice chairperson Mayank Singhal, and its existing investor IndiaQuotient Founded in 2023, Distil offers customisable ch",
+          "company": "Distil"
+        },
+        {
+          "title": "Vietnam EV startup raises $22m as Hanoi bans gas-powered bikes - Nikkei Asia",
+          "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQNjFVSUpRRGFuUHhyZmoxN3lZNDIwWVhELUo0ZUpFSVZNOVJZOFdESS1NV2VLaVlPSTdKS19INE5nSi15dGZwT3ZMMFZSYy11cjFfR0haejVvakRzd1ZFaDVMNXNNa3RJOUhPbVRzMzlxb1JpdE50ZXRYWkF0TTFFS0NOZDBhcEd5dXlIcGhyTUJsTDBrZ1l3VElkU3BwU01vZmo2a3NR?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2025-09-18T07:00:00+00:00",
+          "summary": "Vietnam EV startup raises $22m as Hanoi bans gas-powered bikes&nbsp;&nbsp;Nikkei Asia",
           "company": "Dat Bike"
         },
         {
-          "title": "Defence electronics startup Sanlayan’s valuation jumps 4.5X in Series A round - Entrackr",
-          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOX1RvS241MUYxNkx3NC1zTlV3U1NEeG9USkVqMVFCWjROMVAxX1pGdFJmTnk1bXpHVXM5bGVDSk53TXhyMElqUUEyWE94LUxEa2VHXzNZcHJPNFFxUDJkU2xxTklnN0U3MkFUVUgyOWkweng3S0xjYUItWklFcDlkd1ZNOHB6QTBTSm5SUksxN1oxN1AzY2J3ekJXNU4tVG5mbFN2YWsxSWEwNkVJcjV5QmxYczPSAbQBQVVfeXFMTl9Ub0tuNTFGMTZMdzQtc05Vd1NTRHhvVEpFajFRQlo0TjFQMV9aRnRSZk55NW16R1VzOWxlQ0pOd014cjBJalFBMlhPeC1MRGtlR18zWXByTzRRcVAyZFNscU5JZzdFNzJBVFVIMjlpMHp4N0tMY2FCLVpJRXA5ZHdWTThwekEwU0puUlJLMTdaMTdQM2Nid3pCVzVOLVRuZmxTdmFrMUlhMDZFSXI1eUJsWHMz?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2025-09-10T07:00:00+00:00",
-          "summary": "Defence electronics startup Sanlayan’s valuation jumps 4.5X in Series A round&nbsp;&nbsp;Entrackr",
+          "title": "GradRight - The Smarter Way To Study Abroad",
+          "url": "http://www.gradright.com/",
+          "source": "gradright.com",
+          "pub_date": "2025-09-11T13:21:22.000Z",
+          "summary": "GradRight - The Smarter Way To Study Abroad  India’s most exciting study abroad fest  Delhi, Feb 21st  Register Now Affordable study abroad loan starting at 8.33%* - Apply now| Shortlist your best-fit university in minutes - Start now  Start Your Journey  For Universities  Study Abroad with # The Sm",
+          "company": "GetRight"
+        },
+        {
+          "title": "Home » taxgem.co.in",
+          "url": "https://taxgem.co.in/",
+          "source": "taxgem.co.in",
+          "pub_date": "2025-09-07T14:47:05.000Z",
+          "summary": "Home » taxgem.co.in   ## From Compliance Chaos to Clarity – We Turn Data into Direction Startups ho ya Salaried – har kisi ke liye Smart Tools Taxgem is a DPIIT-recognised FinTech startup building smart digital products like FileNest to help individuals and businesses manage tax and financial docume",
+          "company": "Prosperr"
+        },
+        {
+          "title": "Bengaluru-Based Startup Advances AESA Radar And EW Tech For Next-Gen Threat Defence",
+          "url": "https://www.electronicsforyou.biz/startups/bengaluru-based-startup-advances-aesa-radar-and-ew-tech-for-next-gen-threat-defence/",
+          "source": "electronicsforyou.biz",
+          "pub_date": "2025-09-05T13:03:55.000Z",
+          "summary": "Bengaluru-Based Startup Advances AESA Radar And EW Tech For Next-Gen Threat Defence ** ** * Home * Buzz * Biz Trends * Startups * Manufacturing * Trade * .Gov * Key Sectors** * Automation * Components * Electric Vehicles * LEDs & LED Lighting * Power Electronics",
           "company": "Sanlayan"
         },
         {
-          "title": "Prosperr.io: Simplifying Finance for Young Professionals and Businesses - YourStory.com",
-          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9wSFlkR2g4d210clFGVjVMREJ2YXVIcTdWLVUxUDljOW9kRUVrclRIX0IzcVVxelpFeV91aVpFTTFsdFRNVnBieDRieWQyQ0NVNVhzekl2aTAyVUNMVG9GemRONXVicHdJZEZYUXBrU1YwRGxs?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2025-08-28T07:00:00+00:00",
-          "summary": "Prosperr.io: Simplifying Finance for Young Professionals and Businesses&nbsp;&nbsp;YourStory.com",
-          "company": "Prosperr"
+          "title": "Explore India’s Culture & Slow Travel Journeys | Jvala Travel",
+          "url": "https://jvala.travel/",
+          "source": "jvala.travel",
+          "pub_date": "2025-08-31T11:50:36.000Z",
+          "summary": "Explore India’s Culture & Slow Travel Journeys | Jvala Travel  Engage…  Elevate…  Experience… # Jvala curates experiences for people keen on enriching their India travels  Get Started  ## Jvala! Its Edge The curated experiences of Jvala are built around Indian traditions and culture, with heritage m",
+          "company": "Escape Plan"
+        },
+        {
+          "title": "WizCommerce Bags $8 Mn To Streamline B2B Sales With AI",
+          "url": "https://inc42.com/buzz/wizcommerce-bags-8-mn-to-streamline-b2b-sales-with-ai/",
+          "source": "inc42.com",
+          "pub_date": "2025-08-25T07:17:16.000Z",
+          "summary": "WizCommerce Bags $8 Mn To Streamline B2B Sales With AI   News     SUMMARY The round led by Peak XV Partners, also saw participation from Blume Ventures, Z47 and Alpha Wave The startup plans to deploy the fresh proceeds for hiring marketing and sales professionals in both India and the US Founded by ",
+          "company": "GetRight"
+        },
+        {
+          "title": "Ladies Who Lead – Empowering Women Leaders & Entrepreneurs",
+          "url": "https://www.ladieswholead.in/",
+          "source": "ladieswholead.in",
+          "pub_date": "2025-08-12T13:28:37.000Z",
+          "summary": "Ladies Who Lead – Empowering Women Leaders & Entrepreneurs  # Your Competitive Edge Starts Here The only platform ambitious women need to lead, grow, and thrive, personally and professionally. From curated learning and mentorship to high-impact connections, LWL keeps you ahead of the curve. Members ",
+          "company": "Coto"
+        },
+        {
+          "title": "SaaS-Based Start-Up Sharpsell.ai Raises ₹30 Cr in Series A from Equentis, Other Investors – Outlook Business",
+          "url": "https://outlookbusiness.com/corporate/saas-based-start-up-sharpsellai-raises-30-cr-in-series-a-from-equentis-other-investors",
+          "source": "outlookbusiness.com",
+          "pub_date": "2025-07-29T12:24:49.000Z",
+          "summary": "SaaS-Based Start-Up Sharpsell.ai Raises ₹30 Cr in Series A from Equentis, Other Investors – Outlook Business # SaaS-Based Start-Up Sharpsell.ai Raises ₹30 Cr in Series A from Equentis, Other Investors Sharpsell.ai, a SaaS-based sales playbook automation platform, has raised ₹30 crore in Series A fun",
+          "company": "GetRight"
+        },
+        {
+          "title": "Sales Playbook Automation Startup Sharpsell.ai Bags INR 30 Cr",
+          "url": "https://inc42.com/buzz/sales-playbook-automation-startup-sharpsell-ai-bags-inr-30-cr/",
+          "source": "inc42.com",
+          "pub_date": "2025-07-29T08:24:52.000Z",
+          "summary": "Sales Playbook Automation Startup Sharpsell.ai Bags INR 30 Cr   News     -  FOLLOW US - FOLLOW US Added to Saved Stories in Login  VIEW SAVED STORIES SaaS-based sales playbook automation startup Sharpsell.ai has raised INR 30 Cr (around $3.4 Mn) in a Series A funding round from Equentis Angel Fund, ",
+          "company": "GetRight"
         },
         {
           "title": "Escape Plan raises $5 Million to redefine travel gear for modern India, backed by Jungle and Fireside Ventures - Adgully.com",
@@ -1962,6 +3430,14 @@
           "company": "Escape Plan"
         },
         {
+          "title": "Escape Plan raises $5 million in seed funding led by Jungle Ventures and Fireside Ventures - MarcaMoney",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQYlZkLVE3RmFNS2pDSVhnUE0wRV91RGVzZFBLWkhoQ2dHbUY1QmNwS2xXVlBveDE2VjhEVDlURWtXZXdsX0NQdWNENDEzSGlXcGJjTnZWd1VZYk5IcWlTenVPaE5NQm5BT2ZVbDVzY21sWW0yeGNLNTNBQy0yTzMtZE5GTmxXWXRjR3AzQlFFMVRrT1BaNzQwS3NkN1MzcDdTT0hwWTdOeXRtTThGSk5pR095dlFNeW5Y?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2025-07-22T07:00:00+00:00",
+          "summary": "Escape Plan raises $5 million in seed funding led by Jungle Ventures and Fireside Ventures&nbsp;&nbsp;MarcaMoney",
+          "company": "Escape Plan"
+        },
+        {
           "title": "Snakebite capital | What India must get right - The Hindu",
           "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPOTFfMkE5eGVfYjI2aHRvV0tmV2NCVEtoclZjQWxSLXNOVHp5LXhHVmNMMUdUTEtYTlRxX3N4aEJ1OGk5Y3ZhRHhzdTI4TEpHYURlQ3N1ejFwR1IxSXFNNUdLbTdLYlR4NDZfeFZtbGU1bUd4U25aQ0x4VmYybFk4bGdVZHRSOGdMdkJZalUwZFdfeWxuXzVfQi03OUlEdnl4V1o2ck5GMHE4cXFrUVV4MTFUdXZjd3ZHWlFpNHQtc0YxX2gweW1TckVhT1dVN19qM2JZQTVKS2FNdTg10gHjAUFVX3lxTFByTXc1amhBbGE2UzUzT0ZXOXNMZFc4RnZHa1d1SjA2S3lkdUw1Ykg1Qm1GVy1XS2oteGhiSzNjcXBuQUxodl9jb09iVllkYUVtVFhFTXdJMW5oZk5zak9BOS1XWjVGWFBpYVgyTElMeW0xR0hJeFFDV1QzRnBKbzFiMXJuUUo1T3ZTdUkwNkdseTFBZ3R0MzRORkIyQ0Y1S1BiRlBVUGU3MDdGcjl6d2xkRnNmYUFzSUh6c2FVNTdzU1VjMXduRVVzbWVTc25qN2pyTDBOXzhySGtDMG1YOEY2eVI0?oc=5",
           "source": "news.google.com",
@@ -1970,19 +3446,35 @@
           "company": "GetRight"
         },
         {
-          "title": "Tarun Katial’s coto Onboards Raj Kamal Singhal as Co-founder & Chief Operating and Business Officer - MediaNews4U",
-          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPN2xlU0pkUHFNUlVQZF96WExIbkF0ZEMxSUxkWnpEMVRnMWhmU2FPNk8wZGZyMjY4MnkyWXUyMW5TWlR0TXQ0TUhfdUdoQzM3X2dTdFVBZjdTMF9CTkMwZ3labWlzaFJJNFU5SVdENzBzNVdpTUtFRVIyanRqT2p4N2ZqTHNtUnlTTFdHSHVUMWt1RG9EOHB4V19Jd1RzZ3hQd0lid09kaHJ4WUV3SEtSZHV6SExtQ2lBVG5lYXV0UkdCNDQ?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2025-07-03T07:00:00+00:00",
-          "summary": "Tarun Katial’s coto Onboards Raj Kamal Singhal as Co-founder & Chief Operating and Business Officer&nbsp;&nbsp;MediaNews4U",
-          "company": "Coto"
+          "title": "Vikreta247 Announces Launch of Revolutionary AI-Powered B2B Platform to Transform Indian Wholesale Commerce - IssueWire",
+          "url": "https://www.issuewire.com/vikreta247-announces-launch-of-revolutionary-ai-powered-b2b-platform-to-transform-indian-wholesale-commerce-1835899485107293",
+          "source": "issuewire.com",
+          "pub_date": "2025-06-25T04:26:02.000Z",
+          "summary": "Vikreta247 Announces Launch of Revolutionary AI-Powered B2B Platform to Transform Indian Wholesale Commerce - IssueWire -- --  # Vikreta247 Announces Launch of Revolutionary AI-Powered B2B Platform to Transform Indian Wholesale Commerce Lucknow, Uttar Pradesh Jun 25, 2025 (Issuewire.com) - Vikreta24",
+          "company": "GetRight"
         },
         {
-          "title": "Sanlayan secures Rs 186 Cr in Series A funding from Jungle Ventures, others - YourStory.com",
-          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNcGJTTU1LYllURzlpbFc1ZG9Ta3gtUjljLV9RRDcwMFlXZFpoTHd3bkZTd0M5c0hNbFFUTzJfTURYNjZSeTNhTk5GYlFocG5yVHRWaHYya0x4X0trSGtZWWVwR2FES2tsVkxiYnlBTmhmZXdKRDZ2WjZVN09RX0RxdUhXU01kY0JjbXRJT21DQkhxSmc?oc=5",
+          "title": "Defence Electronics Startup Sanlayan Raises INR 186 Cr From Ashish Kacholia, Others - IPO Central",
+          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9SdmxlUEYxc1JxWWhsWlJIQ2R3SFQxVlZ4dUVwM3BYVy0zMWRtdVBGakx5ODZES3dIZEIwaUNDb3JhV1duZm56dERMRWxndlB6eDR5Z2VBLVg2TzBrc1lfLUxTNlowcU1PVm9tLVFNTUVBWDd4OUl5ZkpJQnFZQQ?oc=5",
           "source": "news.google.com",
-          "pub_date": "2025-06-09T07:00:00+00:00",
-          "summary": "Sanlayan secures Rs 186 Cr in Series A funding from Jungle Ventures, others&nbsp;&nbsp;YourStory.com",
+          "pub_date": "2025-06-10T07:00:00+00:00",
+          "summary": "Defence Electronics Startup Sanlayan Raises INR 186 Cr From Ashish Kacholia, Others&nbsp;&nbsp;IPO Central",
+          "company": "Sanlayan"
+        },
+        {
+          "title": "Sanlayan Raises ₹186 Crore to Boost Defence Technology in India",
+          "url": "https://nextwhatbusiness.com/sanlayan-secures-%E2%82%B9186-crore-funding/",
+          "source": "nextwhatbusiness.com",
+          "pub_date": "2025-06-09T12:56:24.000Z",
+          "summary": "Sanlayan Raises ₹186 Crore to Boost Defence Technology in India Indian defence-tech startup Sanlayan Technologies has raised ₹186 crore in a significant Series A funding round. The funding is aimed at accelerating the country’s push towards self-reliant defence electronics. High-profile investors le",
+          "company": "Sanlayan"
+        },
+        {
+          "title": "Defence electronics startup Sanlayan raises Rs 186 crore to accelerate indigenous tech development",
+          "url": "https://indianstartupnews.com/funding/defence-electronics-startup-sanlayan-raises-rs-186-crore-to-accelerate-indigenous-tech-development-9347223",
+          "source": "indianstartupnews.com",
+          "pub_date": "2025-06-09T07:51:22.000Z",
+          "summary": "-- -- -- -- -- -- -- Defence electronics startup Sanlayan raises Rs 186 crore to accelerate indigenous tech development*{flex-shrink:0;width:100%;max-width:100%;padding-right:calc(var(--bs-gutter-x)/ 2);padding-left:calc(var(--bs-gutter-x)/ 2);margin-top:var(--bs-gutter-y)} -- \"\" You have successful",
           "company": "Sanlayan"
         },
         {
@@ -1994,47 +3486,215 @@
           "company": "Sanlayan"
         },
         {
-          "title": "coto launches ‘The Healing Circle’ with Janice Sequeira to spark fearless conversations - Indian Startup Times",
-          "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNSjZHTGtFUS1iYWRSSUo4U21kdE5HcHBhSm1wcS1OcXRMXzB0QnVmenEzS0pKUmFPUzRScnktSm81M09hV1lPSDlLblJGdkIzbW92Y3prUXdqSGF3eGhBVTVpcWpuSlNMVHMyYnFCU3BKaWY1QlZ2NzlfOVM4bVRQVnJRSzBEd2JpX3FjN05fSmlyREprRkNybTd0WDRURlMtZnUxN1pvYWZuVFdLZ3JWbWQ3ZllkWW5CZjk1VXNPZHJLWE1WYTAtZFdHWVo1UGRubnROTld2VzBZdw?oc=5",
+          "title": "Sanlayan secures Rs 186 Cr in Series A funding from Jungle Ventures, others - YourStory.com",
+          "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNcGJTTU1LYllURzlpbFc1ZG9Ta3gtUjljLV9RRDcwMFlXZFpoTHd3bkZTd0M5c0hNbFFUTzJfTURYNjZSeTNhTk5GYlFocG5yVHRWaHYya0x4X0trSGtZWWVwR2FES2tsVkxiYnlBTmhmZXdKRDZ2WjZVN09RX0RxdUhXU01kY0JjbXRJT21DQkhxSmc?oc=5",
           "source": "news.google.com",
-          "pub_date": "2025-04-16T07:00:00+00:00",
-          "summary": "coto launches ‘The Healing Circle’ with Janice Sequeira to spark fearless conversations&nbsp;&nbsp;Indian Startup Times",
+          "pub_date": "2025-06-09T07:00:00+00:00",
+          "summary": "Sanlayan secures Rs 186 Cr in Series A funding from Jungle Ventures, others&nbsp;&nbsp;YourStory.com",
+          "company": "Sanlayan"
+        },
+        {
+          "title": "Ashish Kacholia and Jungle Ventures Lead Roomstory's Pre-Seed Funding - VCCircle",
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQemlYNlRzaFdKYlJPNnFZLTNsRmFjOTdZRDBTMmRQMEpyV2xtUHVhRVFZWVp1XzFuSFBIanBnWHdNWGFxZm9GNW5VRDZPQ1ppdDFqU3ZYeFI1T3A1aEhjUFFhU0I2ZE5XdXI3dG5iQ1BVenVnTkxCOEEwbWsxMWtvSG4tdXVkQnNyYkxYX2ZmVDI4aUY5am83cURDVy02SS1pWk1acWtKbHlaWUM4ZllNUA?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2025-06-09T07:00:00+00:00",
+          "summary": "Ashish Kacholia and Jungle Ventures Lead Roomstory's Pre-Seed Funding&nbsp;&nbsp;VCCircle",
+          "company": "Sanlayan"
+        },
+        {
+          "title": "Sanlayan Bags INR 186 Cr To Boost Indigenous Defence Tech Development - Inc42",
+          "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOQUpxc3ZiRWRYRjkzNV9jU1NfWlpNVE1YOW1sWTNvUTlzZUw2UHJhd3NGcF9GcHQ1U3UxY1ZEVDBkWW5iWG13MnJWZTdZcnpMN3E0VmJ0ZzhrOXRJOHVQZFo3SWpiV0ZxZDZMdENGd1pJNFlNamxVTlhjRXJqclFNTllmVjBKQktJTUJJVWpjNXNxNTd3bXF4Sw?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2025-06-09T07:00:00+00:00",
+          "summary": "Sanlayan Bags INR 186 Cr To Boost Indigenous Defence Tech Development&nbsp;&nbsp;Inc42",
+          "company": "Sanlayan"
+        },
+        {
+          "title": "Sanlayan Secures ₹186 Cr in Series A to Accelerate Defence Electronics Push - CXO Digitalpulse",
+          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPUFVoRERlSjU0cjJwOXV3cDcwYTQ4RzBiMG5ac2JFem9yRkV3YUNrSDRjbWZPQjExRmdEYzlLYTVhWlM3Yk9BWmtWcjVRVHZZZW43amM3dVljd05PV1FIeFotLUpsTzZ5aERNbHpnSUdSRWdGbEhVa0JaVUJ4MHpIZkhhV0xyV1NDMDZ2Z29WbHBPQTZCd0NOcVRwVk11Yk9MWWlTWXRibUtfaWdMQVVxOTRyYVlEbVk?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2025-06-09T07:00:00+00:00",
+          "summary": "Sanlayan Secures ₹186 Cr in Series A to Accelerate Defence Electronics Push&nbsp;&nbsp;CXO Digitalpulse",
+          "company": "Sanlayan"
+        },
+        {
+          "title": "Sanlayan raises ₹186 crore in Series A funding round - MarcaMoney",
+          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNSU00a1FiVWFUMU1obXgwS29zajdPMjJpREgyT1RuTFpxZzF5SHFJcFZ4Wm56bDd2OXhuX1J0Y09wOVg4MXFsR3E1MTRnOVZoOTZLME55OVY2Q2tzQU9XSmtlZ21iYmd4Z1o3Wk0wc0w1ZWVZVzVpZTY4RVQtWk44Q0xhV213QQ?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2025-06-09T07:00:00+00:00",
+          "summary": "Sanlayan raises ₹186 crore in Series A funding round&nbsp;&nbsp;MarcaMoney",
+          "company": "Sanlayan"
+        },
+        {
+          "title": "The Tarzan Way Secures ₹2 Crore Seed Funding to Revolutionize AI-Driven Travel Experiences, ETTravelWorld",
+          "url": "https://travel.economictimes.indiatimes.com/news/technology/the-tarzan-way-secures-2-crore-seed-funding-to-revolutionize-ai-driven-travel-experiences/121703603",
+          "source": "travel.economictimes.indiatimes.com",
+          "pub_date": "2025-06-08T00:00:00.000Z",
+          "summary": "The Tarzan Way Secures ₹2 Crore Seed Funding to Revolutionize AI-Driven Travel Experiences, ETTravelWorld Travel tech startup The Tarzan Way has raised INR 2 crore in a seed funding round led by Inflection Point Ventures, with additional participation from Your Trips Limited (UK), PhysicsWallah co-f",
+          "company": "Escape Plan"
+        },
+        {
+          "title": "GydeXP Secures Pre-Seed Investment from Rukam Sitara, Eyes on Scaling Experiential Travel in India - Tourism Quest",
+          "url": "https://tourismquest.com/2025/05/30/gydexp-secures-pre-seed-investment-from-rukam-sitara-eyes-on-scaling-experiential-travel-in-india/",
+          "source": "tourismquest.com",
+          "pub_date": "2025-05-30T06:43:00.000Z",
+          "summary": "GydeXP Secures Pre-Seed Investment from Rukam Sitara, Eyes on Scaling Experiential Travel in India - Tourism Quest 20.1 C  Delhi  February 28, 2026 - GydeXP Secures Pre-Seed Investment from Rukam Sitara, Eyes on Scaling Experiential Travel in India - Travel & Tourism - Home The round values the comp",
+          "company": "Escape Plan"
+        },
+        {
+          "title": "Karm Baba - B2B Platform for Vetted Suppliers",
+          "url": "https://karmbaba.com/",
+          "source": "karmbaba.com",
+          "pub_date": "2025-05-24T14:23:30.000Z",
+          "summary": "Karm Baba - B2B Platform for Vetted Suppliers  ## India's Smart E-commerce Marketplace  # DHANDHA KARNA HAI TOH ## KARM KARO  Create account  Chat with us on Whatsapp  ## Discover Trusted Suppliers From Top Cities ## Discover Products from Premium Brands  ## Gain Unlimited Access to Top Company Exec",
+          "company": "GetRight"
+        },
+        {
+          "title": "leap.club Halts Operations Due To Funding Crunch, Retention Challenges",
+          "url": "https://inc42.com/buzz/leap-club-halts-operations-due-to-funding-crunch-retention-challenges/",
+          "source": "inc42.com",
+          "pub_date": "2025-05-15T10:57:32.000Z",
+          "summary": "leap.club Halts Operations Due To Funding Crunch, Retention Challenges   Media & Entertainment     SUMMARY leap.club said it is halting its operations due to a funding crunch and unit economics challenges While the startup has decided to shut its offline centre in Mumbai, it would halt the operation",
           "company": "Coto"
         },
         {
-          "title": "Emotional wellness platform coto appoints Shefali Anurag as co-founder - Indian Startup News",
-          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQUDBOdmRsUzlNRmRTSHVELWFHOXp6WEVGdmd1clY3R3FvMjhzdGxNTm15VU5KeVBUeWtscjJ4OHlzcmtBalRjdmwwSDJJVS1iR3A3akpUWDVwM0o1YjZGaHByb3dCaVIzSGZ5SXA5Rk9wallMdEZtTXQyakFBal9FYjk2WWxwS1kwWG9ISmJLYkN6UklLTDUxc3NFZzljYjZLY09EYXp5WFI3bC15bC1UdFNVWdIBswFBVV95cUxQUDBOdmRsUzlNRmRTSHVELWFHOXp6WEVGdmd1clY3R3FvMjhzdGxNTm15VU5KeVBUeWtscjJ4OHlzcmtBalRjdmwwSDJJVS1iR3A3akpUWDVwM0o1YjZGaHByb3dCaVIzSGZ5SXA5Rk9wallMdEZtTXQyakFBal9FYjk2WWxwS1kwWG9ISmJLYkN6UklLTDUxc3NFZzljYjZLY09EYXp5WFI3bC15bC1UdFNVWQ?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2025-03-20T07:00:00+00:00",
-          "summary": "Emotional wellness platform coto appoints Shefali Anurag as co-founder&nbsp;&nbsp;Indian Startup News",
+          "title": "VFlowTech Bags USD 20.5 Million to Help Accelerate India's Transition to Renewables with Long-Duration Energy Storage - EVolution Auto India",
+          "url": "https://evolutionautoindia.in/vflowtech-bags-usd-20-5-million-to-help-accelerate-indias-transition-to-renewables-with-long-duration-energy-storage/",
+          "source": "evolutionautoindia.in",
+          "pub_date": "2025-05-15T09:33:31.000Z",
+          "summary": "VFlowTech Bags USD 20.5 Million to Help Accelerate India's Transition to Renewables with Long-Duration Energy Storage - EVolution Auto India VFlowTech, a leading provider of sustainable long-duration energy storage solutions, has announced a significant capital raise of USD 20.5 million to support i",
+          "company": "Enerzolve"
+        },
+        {
+          "title": "Hyperbots Bags $6.5 Mn To Automate Finance & Accounting Ops",
+          "url": "https://inc42.com/buzz/hyperbots-bags-6-5-mn-to-automate-finance-accounting-operations/",
+          "source": "inc42.com",
+          "pub_date": "2025-05-13T04:48:32.000Z",
+          "summary": "Hyperbots Bags $6.5 Mn To Automate Finance & Accounting Ops   News     SUMMARY Additional investors participating in the round include JSW Ventures and existing investors such as Kalaari Ventures, Sunicon Ventures and Darashaw The startup plans to deploy the newly raised capital into accelerating Hy",
+          "company": "Prosperr"
+        },
+        {
+          "title": "InDApp: Business Growth App & India's B2B Marketplace",
+          "url": "https://indapp.co.in/",
+          "source": "indapp.co.in",
+          "pub_date": "2025-04-29T19:12:27.000Z",
+          "summary": "InDApp: Business Growth App & India's B2B Marketplace   Contact Us  Contact Us  # India's Business Growth App Business Growth App for traders, entrepreneurs, retailers, and manufacturers—InDApp connects you to smart opportunities on a powerful B2B marketplace, shaping its place among the best B2B wh",
+          "company": "GetRight"
+        },
+        {
+          "title": "Full-spectrum Cannabinoid Medication in India | Savikalpa Sciences",
+          "url": "https://savikalpa.com/",
+          "source": "savikalpa.com",
+          "pub_date": "2025-04-15T11:51:15.000Z",
+          "summary": "Full-spectrum Cannabinoid Medication in India | Savikalpa Sciences  Home  Store  E-clinic  Academy  Journal  Community About Us # We research and develop natural compounds to deliver safer, more effective polyherbal formulations for under-met medical needs Discover Natural Healing  # We research and",
+          "company": "NirogStreet"
+        },
+        {
+          "title": "Defence Tech Startup Tonbo Imaging Raises ₹175 Cr Funds In Series D Round",
+          "url": "https://digitalterminal.in/startup/defence-tech-startup-tonbo-imaging-raises-175-cr-funds-in-series-d-round",
+          "source": "digitalterminal.in",
+          "pub_date": "2025-04-08T05:27:41.000Z",
+          "summary": "Defence Tech Startup Tonbo Imaging Raises ₹175 Cr Funds In Series D Round  Tech  Resources - Reviews - DTV - CIO - Enterprise - Channel - Device - Smartphone - Trending  Tech  Resources - Reviews - DTV - CIO - Enterprise - Channel - Device",
+          "company": "Sanlayan"
+        },
+        {
+          "title": "Indian defence tech startup Tonbo raises $20 million",
+          "url": "https://evertiq.com/news/2025-04-04-indian-defence-tech-startup-tonbo-raises-205-million",
+          "source": "evertiq.com",
+          "pub_date": "2025-04-04T06:00:00.000Z",
+          "summary": "Indian defence tech startup Tonbo raises $20 million  Ad  Ad  Ad  # Indian defence tech startup Tonbo raises $20 million ## The investment will boost the development of next-gen infrared sensors, deployment of high-power microwave tech, and working capital support for Tonbo Imaging’s global expansio",
+          "company": "Sanlayan"
+        },
+        {
+          "title": "ClearTax - Crunchbase Company Profile &amp; Funding",
+          "url": "https://www.crunchbase.com/organization/cleartax",
+          "source": "crunchbase.com",
+          "pub_date": "2025-01-30T00:00:00.000Z",
+          "summary": "ClearTax - Crunchbase Company Profile & Funding Search Crunchbase Advanced Start Free Trial Solutions Products Resources  Pricing  Resources  Log In Organization # ClearTax Connect to CRM Save ## About ClearTax is a Tax & Investing platform that simplifies financial lives for Indians. * Bangalore,Ka",
+          "company": "Prosperr"
+        },
+        {
+          "title": "Ladies Who Lead raises $1 million in funding from Nikhil Kamath's Rainmatter, others",
+          "url": "https://indianstartupnews.com/funding/nithin-kamaths-rainmatter-funds-ladies-who-lead-to-drive-womens-leadership-7615077",
+          "source": "indianstartupnews.com",
+          "pub_date": "2024-11-28T09:14:42.000Z",
+          "summary": "-- -- -- -- -- -- -- Ladies Who Lead raises $1 million in funding from Nikhil Kamath's Rainmatter, others*{flex-shrink:0;width:100%;max-width:100%;padding-right:calc(var(--bs-gutter-x)/ 2);padding-left:calc(var(--bs-gutter-x)/ 2);margin-top:var(--bs-gutter-y)} -- \"\" You have successfully subscribed ",
           "company": "Coto"
         },
         {
-          "title": "Ayurveda tech startup NirogStreet raises Rs 100 crore approximately - Medical Dialogues",
-          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPbmN1QlE4bFJlWmxHd3h6em9uVEd6UkYwejhMaFZhNVJYam5uUGxfSzZacmJJcUgtdzVRQXpwdEJvYktacklyNlhnd2FlNXFZbHEzeWNXM2RvaThXbjdkVXF0aU1aTGZNZjFGTTJSSk8yZGpUT3hSM3Y0Y2d1WHE5NVJfQjZTTlpsQ1lHYUVudFV4MlhkenNPZ3dRSlctbWdqRXdCTHNkRS0wZ3BMMV9qcDVkR0tBMVRaeFlYWTlKVGYyQ0t2bFplYmRROTjSAdIBQVVfeXFMUFlncXJSMEFnb0VhLW5wSGR3U2VxVlRBMEtHeTVDVUFxdjZFS3JIaWJka1U3Qk5xa2lzcDFJbmtyMzVsb3RtU2VGSkxGN0Q1UlhVTFJ6V2ZRN1JQbzFaYmJUNDM3ZGV4ZWFIb21nTEpKeXRfMHNKbExGdmQzUk8yc0UxRTNaVHJpS1I1SFFTbEZ2d29UaEhKbDJNU3luMFQ5cXh3aUJTT0trckFNSGVCaVhUMGYxUTBRcGp6R3dJbWkyUFlsdUtUQV81VkRGTDBQczlB?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2022-11-20T08:00:00+00:00",
-          "summary": "Ayurveda tech startup NirogStreet raises Rs 100 crore approximately&nbsp;&nbsp;Medical Dialogues",
+          "title": "Rainmatter Leads USD 1 Mn Round for Women Leadership Platform Ladies Who Lead",
+          "url": "https://entrepreneur.com/en-in/news-and-trends/rainmatter-leads-usd-1-mn-round-for-women-leadership/483548",
+          "source": "entrepreneur.com",
+          "pub_date": "2024-11-27T10:59:00.000Z",
+          "summary": "Rainmatter Leads USD 1 Mn Round for Women Leadership Platform Ladies Who Lead You're reading Entrepreneur India, an international franchise of Entrepreneur Media. Ladies Who Lead (LWL), a members-only platform dedicated to advancing women in leadership, has raised USD 1 million in a Pre-Series A fun",
+          "company": "Coto"
+        },
+        {
+          "title": "Sushain Wellness Secures 1.8 Crore Seed Funding from Prajay Advisors",
+          "url": "https://www.business-standard.com/content/press-releases-ani/sushain-wellness-secures-1-8-crore-seed-funding-from-prajay-advisors-124110400788_1.html",
+          "source": "business-standard.com",
+          "pub_date": "2024-11-04T18:00:05.000Z",
+          "summary": "Sushain Wellness Secures 1.8 Crore Seed Funding from Prajay Advisors  Sponsored Content Home/ Content/ Press Releases ANI/ Sushain Wellness Secures 1.8 Crore Seed Funding from Prajay Advisors # Sushain Wellness Secures 1.8 Crore Seed Funding from Prajay Advisors  Advertisement Sushain Wellness Secur",
           "company": "NirogStreet"
         },
         {
-          "title": "Jungle Ventures leads $12 mn bet on Ayurveda doctor firm NirogStreet - Mint",
-          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxONUY1SVpDdnVtdEdqMFUtTEtldlZSQ1dUQk9oanlRM0RoWlh5d1hhaTJ2RE5MeEdNdFVrSWxBcEwySzhKUVVPaVhQRjU0SFJ3enl6bUJqVXZvM25BUDhVcmFDaVhUZFVudGg4SmtMaVRaZDlfbUVwbl9HOFhIdTNyNUh6N2UtbVdFZ0hUWXdkdkxEbE54WTgwOEtyR0RsNjBYdHVodTFhajUzVnZnSEI3QWlNZXRZUlc5R0dLQ0NVSHRPNlJpeWwtZGkwUXPSAdIBQVVfeXFMTVVLSjVpTDlUYUZtSVJ0b25zdzdibE1mZGxjQnNzaU5wT08tSlR3ZzJxRkVYQWtfdkdBeEhZeHZEQlJ1dGhnRmQ0U2RnSnhKM3pMcVpicmVOR1V1bXBiTlpFZjZCakhBZWVBN1NKSkdLNmwzUzBFdFhLR1p6Vmp1SU9HQlU0UjlJT3hHM3FjT2pPRGVpdUJqblNZRVFlUXJOZFZtajVjaGJONF9NSmhqd3l5QWlyZnRlbkNOd3FtS3lfRnZ6X0FBUEM4TUQyR0hQak1B?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2022-11-18T08:00:00+00:00",
-          "summary": "Jungle Ventures leads $12 mn bet on Ayurveda doctor firm NirogStreet&nbsp;&nbsp;Mint",
+          "title": "AYURVEDOLOGY- NURTURING AYURVEDA WITH TECHNOLOGY - AYURVEDOLOGY INDIA",
+          "url": "https://ayurvedology.com/",
+          "source": "ayurvedology.com",
+          "pub_date": "2024-10-20T09:45:17.000Z",
+          "summary": "AYURVEDOLOGY- NURTURING AYURVEDA WITH TECHNOLOGY - AYURVEDOLOGY INDIA  LOADING  ## AYURVEDA TECH #### Watch Intro Video (Coming Soon) Leverage technology to make Ayurvedic principles relevant and effective for everyone  ##### Director Ayurvedology healthtech private limited  . Ayurvedology Healthtec",
           "company": "NirogStreet"
         },
         {
-          "title": "Care by Ayurveda - Business Today",
-          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSk1USFBpYnVIWmloQXNGWlk4UTZFQkFBcmdJOTNHMk9DQm1NdDk0NllDWHdwSU1EdDVoemd3Y1hCTVlpZGVjdWZ0aTJ1NHpsdkpNTEtRTWV2dWpMcFVQd2kyZWpST3EwdU5rVElsdF9XTXNRclpSRXNTLXlrQnhsSnIzbFhZamd3U0tJd1l2cDItamw5Q3cwYk9PNzNsbnU00gGmAUFVX3lxTE5wamJyaVYxSTB4SkdGMHdWeWFLMjZRUlRIM0d0YjA0aWRMT2F5LUxyX3FiTHNXd3RhdVlQdzJhSEhyaWVIeWpPMUhYTm5IWEU2ZmJiWTZYSVNPSmJfd1RMSjFhQklXdllYdmdYWkE1WW1iUVhCOGZ6YjU0akQ0UFRrUDl1dFFSaEduZ3FvVHVpX2w4ZlJsaTZ5d2plc1BPUFNiUWhEYkE?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2019-10-30T07:00:00+00:00",
-          "summary": "Care by Ayurveda&nbsp;&nbsp;Business Today",
-          "company": "NirogStreet"
+          "title": "How Coto is Empowering Women Through AI and Community - ITP.net",
+          "url": "https://www.itp.net/news/how-coto-is-empowering-women-through-ai-and-community",
+          "source": "itp.net",
+          "pub_date": "2024-09-27T05:56:49.000Z",
+          "summary": "How Coto is Empowering Women Through AI and Community - ITP.net  SHARE  FB TW In a world increasingly driven by social media, the need for safe, supportive digital spaces has never been more apparent—especially for women. Enter coto, a woman-only social community app that blends commerce with connec",
+          "company": "Coto"
+        },
+        {
+          "title": "Beyond the likes: How's coto building a safe and supportive digital haven for women - BusinessToday",
+          "url": "https://www.businesstoday.in/technology/news/story/beyond-the-likes-hows-coto-building-a-safe-and-supportive-digital-haven-for-women-441241-2024-08-13",
+          "source": "businesstoday.in",
+          "pub_date": "2024-08-13T01:20:03.000Z",
+          "summary": "Beyond the likes: How's coto building a safe and supportive digital haven for women - BusinessToday - Astro tak - Aajtak Campus - Crime Tak - Sports Tak - Bangla - Malyalam - Lallantop - Kisan Tak - GNTTV Follow Us On:  Search  Advertisement  Menu  - Reels - BT TV -",
+          "company": "Coto"
+        },
+        {
+          "title": "Prosperr.io",
+          "url": "https://in.linkedin.com/company/prosperr-io",
+          "source": "in.linkedin.com",
+          "pub_date": "2024-07-17T00:00:00.000Z",
+          "summary": "Prosperr.io is a fintech platform built to bring clarity, compliance, and confidence to income tax, payroll, and financial wellness for both Organisations & Individuals. We simplify the complex world of taxes and salary structures so enterprises and professionals can make confident financial decisio",
+          "company": "Prosperr"
+        },
+        {
+          "title": "EMPOWERED WOMEN, \nEMPOWER WOMEN \nSTRONGER TOGETHER",
+          "url": "https://thepanachecommunity.in/",
+          "source": "thepanachecommunity.in",
+          "pub_date": "2024-06-17T00:00:00.000Z",
+          "summary": "The Panache Community – Empowered women, empower womenSkip to content The Panache Community ## HOME ## ABOUT ## WHY US ## CONTACT * About * Home * Why Us? * ContactHamburger Toggle Menu # EMPOWERED WOMEN, EMPOWER WOMEN STRONGER TOGETHER",
+          "company": "Coto"
+        },
+        {
+          "title": "coto - Products, Competitors, Financials, Employees, Headquarters Locations",
+          "url": "https://www.cbinsights.com/company/coto-2",
+          "source": "cbinsights.com",
+          "pub_date": "2024-05-01T08:50:22.000Z",
+          "summary": "coto - Products, Competitors, Financials, Employees, Headquarters Locations  ## Founded Year  2021  ## Stage Unattributed VC | Alive  ## About coto Coto is a women-only social community and consultation platform that operates within the digital entrepreneurship and social commerce sectors. The compa",
+          "company": "Coto"
+        },
+        {
+          "title": "Coto Girls Community | ✊ Social Impact | Acid Attack | Feminism | Inclusivity",
+          "url": "https://coto.world/communities/coto-girls",
+          "source": "coto.world",
+          "pub_date": "2024-04-11T08:36:41.000Z",
+          "summary": "Coto Girls Community | ✊Social Impact | Acid Attack | Feminism | Inclusivity CG # Coto Girls Join iconJoinshare icon Members icon 59 Posts icon 6 | Created sinceApr 11, 2024 | By N Join iconJoinshare icon ✊Social Impact Acid Attack Feminism Inclusivity ## Questions in this community N ### NeetiTo",
+          "company": "Coto"
         }
       ],
-      "cached_at": "2026-04-12T13:25:13.284308"
+      "cached_at": "2026-04-12T13:34:35.095684"
     }
   }
 }

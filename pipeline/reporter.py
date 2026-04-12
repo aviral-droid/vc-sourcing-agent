@@ -183,161 +183,416 @@ def _generate_markdown(report: DailyReport) -> None:
 
 
 def _fetch_intel_for_static() -> dict:
-    """Fetch RSS intelligence data for embedding in data.json (static mode)."""
+    """
+    Multi-source intelligence fetch:
+      • 30+ RSS/Atom feeds (news, Substacks, Reddit, arXiv, industry blogs)
+      • Exa neural search across entire web (LinkedIn, Substack, Twitter, forums)
+        for both intelligence categories and each portfolio company
+    Results are merged, deduped by URL, and sorted newest-first.
+    """
     import re as _re
+    import time as _time
+    from concurrent.futures import ThreadPoolExecutor, as_completed as _asc
+    from urllib.parse import urlparse as _up, quote_plus as _qp
+
     try:
         import feedparser
     except ImportError:
         logger.warning("feedparser not installed — skipping intelligence fetch")
-        return {
-            "ai_ml": {"articles": [], "cached_at": datetime.utcnow().isoformat()},
-            "india_sea": {"articles": [], "cached_at": datetime.utcnow().isoformat()},
-            "emerging": {"articles": [], "cached_at": datetime.utcnow().isoformat()},
-            "sector_heatmap": [],
+        empty = {"articles": [], "cached_at": datetime.utcnow().isoformat()}
+        return {k: empty for k in ("ai_ml", "india_sea", "emerging")} | {
+            "sector_heatmap": [], "portfolio_news": empty
         }
 
-    FEEDS = {
+    now_iso = datetime.utcnow().isoformat()
+
+    # ── Expanded RSS / Atom feeds ──────────────────────────────────────────────
+    FEEDS: dict = {
         "ai_ml": [
+            # Tech news
             "https://techcrunch.com/feed/",
             "https://venturebeat.com/feed/",
-            "https://www.theinformation.com/feed",
+            "https://feeds.arstechnica.com/arstechnica/technology-lab",
+            "https://www.theverge.com/rss/index.xml",
+            # AI / ML newsletters (Substack + beehiiv)
+            "https://bensbites.beehiiv.com/feed",            # Ben's Bites
+            "https://www.deeplearning.ai/the-batch/feed/",   # The Batch
+            "https://jack-clark.net/feed.xml",               # Import AI
+            "https://www.oneusefulthing.org/feed",           # Ethan Mollick
+            "https://aiweekly.substack.com/feed",            # AI Weekly
+            "https://theaibriefing.substack.com/feed",       # AI Briefing
+            "https://every.to/feed",                         # Every.to
+            # Research
+            "https://arxiv.org/rss/cs.AI",
+            "https://arxiv.org/rss/cs.LG",
+            "https://huggingface.co/blog/feed.xml",          # HuggingFace blog
+            # Reddit
+            "https://www.reddit.com/r/artificial/.rss",
+            "https://www.reddit.com/r/MachineLearning/.rss",
+            "https://www.reddit.com/r/LocalLLaMA/.rss",
         ],
         "india_sea": [
+            # India news
             "https://inc42.com/feed/",
             "https://yourstory.com/feed",
+            "https://entrackr.com/feed/",
+            "https://thebridge.in/feed/",
+            "https://vccircle.com/feed/",
+            "https://economictimes.indiatimes.com/tech/rss.cms",
+            "https://www.business-standard.com/rss/technology-10.rss",
+            # India VC / Substack newsletters
+            "https://sajithpai.substack.com/feed",           # Sajith Pai / Indus Valley
+            "https://theindusvalley.substack.com/feed",      # Indus Valley Report
+            "https://prarambh.substack.com/feed",            # Prarambh — early India
+            "https://blumeindia.substack.com/feed",          # Blume Ventures
+            "https://thedecibel.substack.com/feed",          # The Decibel — India startup
+            "https://indianstartupnews.substack.com/feed",   # Indian Startup News
+            # SEA news
             "https://e27.co/feed/",
+            "https://kr.asia/feed/",
+            "https://www.techinasia.com/feed",
+            "https://www.dealstreetasia.com/feed/",
+            "https://vulcanpost.com/feed/",
+            # Reddit
+            "https://www.reddit.com/r/india/.rss",
+            "https://www.reddit.com/r/IndiaInvestments/.rss",
+            "https://www.reddit.com/r/indianstartups/.rss",
         ],
         "emerging": [
+            # Deep tech / frontier
             "https://www.wired.com/feed/rss",
-            "https://feeds.arstechnica.com/arstechnica/index",
+            "https://spectrum.ieee.org/rss/fulltext",
+            "https://techcrunch.com/category/startups/feed/",
+            # VC / macro newsletters
+            "https://www.notboring.co/feed",                 # Not Boring — Packy McCormick
+            "https://thegeneralist.substack.com/feed",       # The Generalist
+            "https://pivotal.substack.com/feed",             # Pivotal
+            "https://www.strangeloopcanon.com/feed",         # Strange Loop Canon
+            "https://www.readthegeneralist.com/briefing/rss",
+            # Climate / deep tech blogs
+            "https://www.climatetechvc.org/feed/",
+            "https://www.spaceref.com/rss/spacenews.xml",
+            # Reddit
+            "https://www.reddit.com/r/startups/.rss",
+            "https://www.reddit.com/r/technology/.rss",
+            "https://www.reddit.com/r/Futurology/.rss",
         ],
     }
 
-    SECTOR_KEYWORDS = {
-        "fintech": ["fintech", "payment", "banking", "neobank", "lending", "insurance", "insurtech", "wealthtech"],
-        "ai": ["ai", "artificial intelligence", "machine learning", "llm", "generative", "gpt", "deep learning", "neural"],
-        "saas": ["saas", "b2b software", "enterprise software", "cloud software", "subscription"],
-        "health": ["healthtech", "health tech", "medtech", "digital health", "biotech", "pharma", "telemedicine"],
-        "edtech": ["edtech", "education tech", "e-learning", "online learning", "upskilling"],
-        "logistics": ["logistics", "supply chain", "fulfillment", "last mile", "freight", "shipping"],
-        "climate": ["climate", "cleantech", "sustainability", "renewable", "carbon", "green energy", "ev", "electric vehicle"],
-        "consumer": ["consumer", "d2c", "direct to consumer", "retail tech", "e-commerce", "marketplace"],
-        "deeptech": ["deeptech", "deep tech", "semiconductor", "robotics", "drone", "space tech", "quantum", "bioengineering"],
+    # ── Exa neural queries per category (full web: LinkedIn, Substack, Twitter) ─
+    EXA_CATEGORY_QUERIES: dict = {
+        "ai_ml": [
+            "new AI startup raised seed funding product launch 2025",
+            "LLM agent application enterprise startup announced 2025",
+            "foundation model benchmark new capability released 2025",
+            "AI infrastructure tooling startup India Series A 2025",
+            "generative AI use case deployment enterprise blog post",
+        ],
+        "india_sea": [
+            "Indian startup raised pre-seed seed funding announcement 2025",
+            "ex-unicorn executive leaves to build new startup India 2025",
+            "Southeast Asia startup B2B SaaS fintech funding 2025",
+            "founder stealth launch new company India Singapore Indonesia 2025",
+            "Bangalore Mumbai Delhi early stage startup product launch 2025",
+        ],
+        "emerging": [
+            "deep tech hardware robotics space startup funding 2025",
+            "climate cleantech carbon capture startup raised seed 2025",
+            "biotech drug discovery AI startup announced 2025",
+            "semiconductor chip design startup new product 2025",
+            "defense dual-use technology startup seed funding 2025",
+        ],
     }
 
-    SECTOR_DISPLAY = {
-        "fintech": "Fintech",
-        "ai": "AI / ML",
-        "saas": "SaaS / B2B",
-        "health": "Healthtech",
-        "edtech": "Edtech",
-        "logistics": "Logistics",
-        "climate": "Climate / Clean",
-        "consumer": "Consumer / D2C",
-        "deeptech": "Deep Tech",
-    }
+    # ── Portfolio companies: company name + sector for Exa + Google News ───────
+    PORTFOLIO_COMPANIES: list = [
+        {
+            "name": "Distil",
+            "rss_query": "Distil startup specialty chemicals India",
+            "exa_queries": [
+                "Distil specialty chemicals materials science startup India",
+                "specialty chemicals green chemistry startup India 2025",
+                "advanced materials deep tech startup India funding",
+            ],
+            "sector_exa": "specialty chemicals materials science sustainable chemistry startup India",
+        },
+        {
+            "name": "Sanlayan",
+            "rss_query": "Sanlayan defence electronics startup India",
+            "exa_queries": [
+                "Sanlayan defence electronics startup India",
+                "Indian defence tech electronics startup funding 2025",
+                "India defense startup electronics systems Make in India",
+            ],
+            "sector_exa": "defence electronics defense tech startup India 2025",
+        },
+        {
+            "name": "Escape Plan",
+            "rss_query": "Escape Plan travel lifestyle startup India",
+            "exa_queries": [
+                "Escape Plan travel startup India lifestyle experiences",
+                "experiential travel startup India funding 2025",
+                "India travel experience booking startup new launch",
+            ],
+            "sector_exa": "experiential travel lifestyle startup India 2025",
+        },
+        {
+            "name": "NirogStreet",
+            "rss_query": "NirogStreet ayurveda healthtech India",
+            "exa_queries": [
+                "NirogStreet ayurveda healthtech startup India",
+                "ayurveda digital health platform India funding 2025",
+                "alternative medicine traditional medicine startup India",
+            ],
+            "sector_exa": "ayurveda healthtech alternative medicine startup India 2025",
+        },
+        {
+            "name": "Enerzolve",
+            "rss_query": "Enerzolve energy startup India",
+            "exa_queries": [
+                "Enerzolve energy startup India cleantech",
+                "energy storage battery startup India funding 2025",
+                "India cleantech renewable energy startup seed 2025",
+            ],
+            "sector_exa": "energy cleantech storage startup India 2025",
+        },
+        {
+            "name": "GetRight",
+            "rss_query": "GetRight startup India",
+            "exa_queries": [
+                "GetRight startup India platform",
+                "India B2B platform startup 2025 product launch",
+                "Indian SaaS B2B startup new product funding 2025",
+            ],
+            "sector_exa": "B2B platform startup India product launch 2025",
+        },
+        {
+            "name": "Coto",
+            "rss_query": "Coto startup community women India",
+            "exa_queries": [
+                "Coto community platform women India startup",
+                "women community social platform India startup funding 2025",
+                "India women creator economy community startup",
+            ],
+            "sector_exa": "women community social platform India creator economy 2025",
+        },
+        {
+            "name": "Dat Bike",
+            "rss_query": "Dat Bike electric motorbike Vietnam",
+            "exa_queries": [
+                "Dat Bike electric motorbike startup Vietnam",
+                "Vietnam electric vehicle startup EV motorbike 2025",
+                "Southeast Asia EV two-wheeler startup funding news",
+            ],
+            "sector_exa": "electric motorbike EV startup Vietnam Southeast Asia 2025",
+        },
+        {
+            "name": "Prosperr",
+            "rss_query": "Prosperr tax fintech startup India",
+            "exa_queries": [
+                "Prosperr tax fintech startup India",
+                "India tax compliance fintech startup funding 2025",
+                "SME tax filing accounting fintech India startup",
+            ],
+            "sector_exa": "tax fintech compliance startup India SME 2025",
+        },
+    ]
+
+    # ── Helpers ────────────────────────────────────────────────────────────────
 
     def _strip_html(text: str) -> str:
         return _re.sub(r"<[^>]+>", "", text or "").strip()
 
-    def _parse_feed(url: str, max_items: int = 8) -> list:
+    def _parse_date(entry) -> str:
+        for attr in ("published", "updated"):
+            raw = getattr(entry, attr, None)
+            if raw:
+                try:
+                    import email.utils
+                    return email.utils.parsedate_to_datetime(raw).isoformat()
+                except Exception:
+                    return str(raw)
+        return ""
+
+    def _parse_feed(url: str, max_items: int = 12, tag: str = "") -> list:
         articles = []
         try:
             feed = feedparser.parse(url)
             for entry in feed.entries[:max_items]:
-                title = _strip_html(entry.get("title", ""))
+                title = _strip_html(entry.get("title", "")).strip()
+                if not title:
+                    continue
                 link = entry.get("link", "")
-                summary_raw = entry.get("summary", entry.get("description", ""))
-                summary = _strip_html(summary_raw)[:200]
-                pub = ""
-                if hasattr(entry, "published"):
-                    try:
-                        import email.utils
-                        t = email.utils.parsedate_to_datetime(entry.published)
-                        pub = t.isoformat()
-                    except Exception:
-                        pub = entry.published
-                from urllib.parse import urlparse
-                domain = urlparse(link).netloc.replace("www.", "") if link else urlparse(url).netloc.replace("www.", "")
-                articles.append({
+                summary = _strip_html(
+                    entry.get("summary", entry.get("description", ""))
+                )[:300]
+                domain = _up(link).netloc.replace("www.", "") if link else _up(url).netloc.replace("www.", "")
+                art = {
                     "title": title,
                     "url": link,
                     "source": domain,
-                    "pub_date": pub,
+                    "pub_date": _parse_date(entry),
                     "summary": summary,
-                })
+                }
+                if tag:
+                    art["company"] = tag
+                articles.append(art)
         except Exception as exc:
             logger.warning("Feed fetch failed %s: %s", url, exc)
         return articles
 
+    def _exa_search(exa, query: str, num: int = 12, tag: str = "") -> list:
+        """Exa neural search — searches LinkedIn, Substack, Twitter, entire web."""
+        articles = []
+        try:
+            results = exa.search_and_contents(
+                query,
+                type="neural",
+                num_results=num,
+                text={"max_characters": 400},
+                highlights={"num_sentences": 2, "highlights_per_url": 1},
+            )
+            for r in results.results:
+                url = getattr(r, "url", "") or ""
+                title = getattr(r, "title", "") or ""
+                if not title or not url:
+                    continue
+                # Get best available text: highlights > text > empty
+                highlights = getattr(r, "highlights", []) or []
+                body = getattr(r, "text", "") or ""
+                summary = (highlights[0] if highlights else body[:300]).replace("\n", " ").strip()
+                pub = getattr(r, "published_date", "") or ""
+                domain = _up(url).netloc.replace("www.", "") if url else ""
+                art = {
+                    "title": title,
+                    "url": url,
+                    "source": domain,
+                    "pub_date": pub,
+                    "summary": summary[:300],
+                }
+                if tag:
+                    art["company"] = tag
+                articles.append(art)
+        except Exception as exc:
+            logger.warning("Exa search failed [%s]: %s", query[:60], exc)
+        return articles
+
+    def _dedup(articles: list) -> list:
+        seen: set = set()
+        out = []
+        for a in articles:
+            key = a.get("url") or a.get("title", "")[:80]
+            if key and key not in seen:
+                seen.add(key)
+                out.append(a)
+        return out
+
+    def _pub_key(a) -> datetime:
+        raw = a.get("pub_date", "") or ""
+        for fmt in (None,):  # try fromisoformat
+            try:
+                return datetime.fromisoformat(raw[:19])
+            except Exception:
+                return datetime(1970, 1, 1)
+
+    # ── Initialise Exa client if key available ─────────────────────────────────
+    exa_client = None
+    if config.EXA_API_KEY:
+        try:
+            from exa_py import Exa
+            exa_client = Exa(api_key=config.EXA_API_KEY)
+            logger.info("Exa client initialised for intelligence fetch")
+        except Exception as exc:
+            logger.warning("Exa init failed: %s", exc)
+
     result: dict = {}
     all_articles: list = []
-    now_iso = datetime.utcnow().isoformat()
 
+    # ── Fetch each category: RSS in parallel + Exa supplement ─────────────────
     for category, feed_urls in FEEDS.items():
-        articles: list = []
-        for feed_url in feed_urls:
-            articles.extend(_parse_feed(feed_url))
-        result[category] = {"articles": articles, "cached_at": now_iso}
-        all_articles.extend(articles)
+        cat_articles: list = []
 
-    # Compute sector heatmap from all articles
+        # RSS feeds — parallel
+        with ThreadPoolExecutor(max_workers=8) as pool:
+            futs = {pool.submit(_parse_feed, url, 12): url for url in feed_urls}
+            for fut in _asc(futs):
+                cat_articles.extend(fut.result())
+
+        # Exa supplement — entire web for this category
+        if exa_client and EXA_CATEGORY_QUERIES.get(category):
+            for q in EXA_CATEGORY_QUERIES[category]:
+                cat_articles.extend(_exa_search(exa_client, q, num=10))
+                _time.sleep(0.3)
+
+        cat_articles = _dedup(cat_articles)
+        cat_articles.sort(key=_pub_key, reverse=True)
+        result[category] = {"articles": cat_articles[:60], "cached_at": now_iso}
+        all_articles.extend(cat_articles)
+        logger.info("Category %s: %d articles", category, len(cat_articles))
+
+    # ── Sector heatmap ─────────────────────────────────────────────────────────
+    SECTOR_KEYWORDS = {
+        "fintech":  ["fintech", "payment", "banking", "neobank", "lending", "insurance", "insurtech", "wealthtech"],
+        "ai":       ["ai", "artificial intelligence", "machine learning", "llm", "generative", "gpt", "deep learning", "neural"],
+        "saas":     ["saas", "b2b software", "enterprise software", "cloud software", "subscription"],
+        "health":   ["healthtech", "health tech", "medtech", "digital health", "biotech", "pharma", "telemedicine"],
+        "edtech":   ["edtech", "education tech", "e-learning", "online learning", "upskilling"],
+        "logistics":["logistics", "supply chain", "fulfillment", "last mile", "freight", "shipping"],
+        "climate":  ["climate", "cleantech", "sustainability", "renewable", "carbon", "green energy", "ev", "electric vehicle"],
+        "consumer": ["consumer", "d2c", "direct to consumer", "retail tech", "e-commerce", "marketplace"],
+        "deeptech": ["deeptech", "deep tech", "semiconductor", "robotics", "drone", "space tech", "quantum", "bioengineering"],
+    }
+    SECTOR_DISPLAY = {
+        "fintech": "Fintech", "ai": "AI / ML", "saas": "SaaS / B2B",
+        "health": "Healthtech", "edtech": "Edtech", "logistics": "Logistics",
+        "climate": "Climate / Clean", "consumer": "Consumer / D2C", "deeptech": "Deep Tech",
+    }
     sector_counts: dict = {k: 0 for k in SECTOR_KEYWORDS}
     for article in all_articles:
         text = (article.get("title", "") + " " + article.get("summary", "")).lower()
         for sector, keywords in SECTOR_KEYWORDS.items():
-            for kw in keywords:
-                if kw in text:
-                    sector_counts[sector] += 1
-                    break  # count each article once per sector
-
-    SENTIMENTS = ["bullish", "bullish", "neutral", "neutral", "bullish", "neutral", "bullish", "neutral", "bullish"]
+            if any(kw in text for kw in keywords):
+                sector_counts[sector] += 1
     heatmap = []
-    for i, (sector_key, count) in enumerate(sorted(sector_counts.items(), key=lambda x: -x[1])):
-        sentiment = "bullish" if count > 3 else "neutral" if count > 0 else "quiet"
-        heatmap.append({
-            "name": SECTOR_DISPLAY.get(sector_key, sector_key),
-            "signals": count,
-            "sentiment": sentiment,
-        })
-    heatmap.sort(key=lambda x: -x["signals"])
-
+    for sector_key, count in sorted(sector_counts.items(), key=lambda x: -x[1]):
+        sentiment = "bullish" if count > 5 else "neutral" if count > 1 else "quiet"
+        heatmap.append({"name": SECTOR_DISPLAY.get(sector_key, sector_key), "signals": count, "sentiment": sentiment})
     result["sector_heatmap"] = heatmap
 
-    # ── Portfolio company news ─────────────────────────────────────────────────
-    # Each company gets a Google News RSS query; results merged + sorted by date
-    PORTFOLIO_COMPANIES = [
-        ("Distil", "Distil startup specialty chemicals"),
-        ("Sanlayan", "Sanlayan defence electronics startup"),
-        ("Escape Plan", "Escape Plan startup travel lifestyle"),
-        ("NirogStreet", "NirogStreet ayurveda healthtech"),
-        ("Enerzolve", "Enerzolve energy startup"),
-        ("GetRight", "GetRight startup India"),
-        ("Coto", "Coto startup community wellness"),
-        ("Dat Bike", "Dat Bike electric motorbike Vietnam"),
-        ("Prosperr", "Prosperr tax fintech startup"),
-    ]
-    from urllib.parse import quote_plus as _qp
-    import time as _time
+    # ── Portfolio company deep-search ──────────────────────────────────────────
+    # Layer 1: Google News RSS (always)
+    # Layer 2: Exa neural search across entire web (LinkedIn, Substack, Twitter, blogs)
+    # Layer 3: Exa sector context (broader industry articles tagged to company)
     portfolio_articles: list = []
-    for display_name, query in PORTFOLIO_COMPANIES:
-        gn_url = f"https://news.google.com/rss/search?q={_qp(query)}&hl=en-IN&gl=IN&ceid=IN:en"
-        arts = _parse_feed(gn_url, max_items=4)
-        # Tag each article with the portfolio company name
-        for a in arts:
-            a["company"] = display_name
-        portfolio_articles.extend(arts)
-        _time.sleep(0.25)
 
-    # Sort by pub_date descending, keep up to 40 articles
-    def _pub_key(a):
-        try:
-            from datetime import datetime
-            return datetime.fromisoformat(a.get("pub_date", "") or "1970-01-01")
-        except Exception:
-            return datetime(1970, 1, 1)
+    for co in PORTFOLIO_COMPANIES:
+        name = co["name"]
+        company_arts: list = []
+
+        # Layer 1 — Google News RSS
+        gn_url = f"https://news.google.com/rss/search?q={_qp(co['rss_query'])}&hl=en-IN&gl=IN&ceid=IN:en"
+        rss_arts = _parse_feed(gn_url, max_items=8, tag=name)
+        company_arts.extend(rss_arts)
+
+        # Layer 2 & 3 — Exa full-web search
+        if exa_client:
+            for q in co.get("exa_queries", []):
+                company_arts.extend(_exa_search(exa_client, q, num=8, tag=name))
+                _time.sleep(0.25)
+            # Sector context (no name filter — broader industry lens)
+            if co.get("sector_exa"):
+                company_arts.extend(_exa_search(exa_client, co["sector_exa"], num=6, tag=name))
+                _time.sleep(0.25)
+
+        # Dedup within company
+        company_arts = _dedup(company_arts)
+        company_arts.sort(key=_pub_key, reverse=True)
+        portfolio_articles.extend(company_arts[:15])  # up to 15 per company
+        logger.info("Portfolio %s: %d articles", name, len(company_arts[:15]))
+
+    portfolio_articles = _dedup(portfolio_articles)
     portfolio_articles.sort(key=_pub_key, reverse=True)
-    result["portfolio_news"] = {"articles": portfolio_articles[:40], "cached_at": now_iso}
+    result["portfolio_news"] = {"articles": portfolio_articles[:120], "cached_at": now_iso}
 
     return result
 
