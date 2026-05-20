@@ -106,113 +106,65 @@ def _build_signals_text(person: Person) -> str:
 
 # ── LLM callers ────────────────────────────────────────────────────────────────
 
-def _call_gemini(prompt: str) -> Optional[str]:
-    """Primary LLM — Gemini Flash (free tier, multiple model fallbacks)."""
-    if not config.GEMINI_API_KEY:
-        return None
-    import warnings
-    warnings.filterwarnings("ignore")
-    import google.generativeai as genai
-    genai.configure(api_key=config.GEMINI_API_KEY)
-    for model_name in ("gemini-2.5-flash-lite", "gemini-2.5-flash", "gemini-2.0-flash-lite", "gemini-2.0-flash"):
-        wait = 30
-        for attempt in range(4):
-            try:
-                model = genai.GenerativeModel(
-                    model_name=model_name,
-                    system_instruction=SYSTEM_PROMPT,
-                )
-                resp = model.generate_content(
-                    prompt,
-                    generation_config={"temperature": 0.1, "max_output_tokens": 1024},
-                )
-                # finish_reason == 2 means MAX_TOKENS — response is truncated, try next model
-                if resp.candidates and resp.candidates[0].finish_reason == 2:
-                    logger.warning("Gemini %s output truncated (MAX_TOKENS), trying next model", model_name)
-                    break
-                return resp.text.strip()
-            except Exception as e:
-                err = str(e)
-                if "quota" in err.lower() or "429" in err or "rate" in err.lower() or "RESOURCE_EXHAUSTED" in err:
-                    if "PerDay" in err or "per day" in err.lower() or "PerDayPerProject" in err:
-                        logger.warning("Gemini %s daily quota exhausted, trying next model", model_name)
-                        break
-                    if attempt < 3:
-                        import re as _re
-                        m2 = _re.search(r'seconds:\s*(\d+)', err)
-                        if m2:
-                            wait = min(int(m2.group(1)) + 2, 120)
-                        logger.info("Gemini %s rate limit — waiting %ds…", model_name, wait)
-                        time.sleep(wait)
-                        wait = min(wait * 2, 120)
-                    else:
-                        break
-                else:
-                    logger.warning("Gemini scoring error [%s]: %s", model_name, e)
-                    break
-    return None
-
-
-def _call_claude(prompt: str) -> Optional[str]:
-    """Secondary LLM — Claude (fallback if Gemini unavailable)."""
-    if not config.ANTHROPIC_API_KEY:
-        return None
-    try:
-        import anthropic
-        client = anthropic.Anthropic(api_key=config.ANTHROPIC_API_KEY)
-        resp = client.messages.create(
-            model="claude-sonnet-4-6",
-            max_tokens=1024,
-            system=SYSTEM_PROMPT,
-            messages=[{"role": "user", "content": prompt}],
-        )
-        return resp.content[0].text.strip()
-    except Exception as e:
-        logger.warning("Claude scoring error: %s", e)
-        return None
-
-
-def _call_groq(prompt: str, retries: int = 5) -> Optional[str]:
-    """Tertiary LLM — Groq (fallback when Gemini+Claude unavailable)."""
+def _check_groq_available() -> bool:
+    """Quick non-blocking check: can we call Groq right now?"""
     if not config.GROQ_API_KEY:
+        return False
+    from groq import Groq
+    try:
+        groq_wait()
+        client = Groq(api_key=config.GROQ_API_KEY)
+        resp = client.chat.completions.create(
+            model="llama-3.3-70b-versatile",
+            messages=[{"role": "user", "content": "Reply with the word OK only."}],
+            max_tokens=5, temperature=0,
+        )
+        return bool(resp.choices[0].message.content)
+    except Exception as e:
+        logger.info("Groq health check failed (%s) — rule-based scoring will be used", str(e)[:60])
+        return False
+
+
+def _call_groq(prompt: str) -> Optional[str]:
+    """Single-attempt Groq call — on 429 disables itself for the rest of the run."""
+    global _GROQ_SCORING_OK
+    if not config.GROQ_API_KEY or not _GROQ_SCORING_OK:
         return None
     from groq import Groq
-    client = Groq(api_key=config.GROQ_API_KEY)
-    wait = 20
-    for attempt in range(retries):
-        try:
-            groq_wait()
-            resp = client.chat.completions.create(
-                model="llama-3.3-70b-versatile",
-                messages=[
-                    {"role": "system", "content": SYSTEM_PROMPT},
-                    {"role": "user", "content": prompt},
-                ],
-                temperature=0.1,
-                max_tokens=1024,
-            )
-            return resp.choices[0].message.content.strip()
-        except Exception as e:
-            err_str = str(e)
-            if "429" in err_str or "rate_limit" in err_str.lower():
-                import re as _re
-                m = _re.search(r"try again in (\d+)m(\d+)", err_str)
-                if m:
-                    suggested = int(m.group(1)) * 60 + int(m.group(2)) + 5
-                    if "tokens per day" in err_str.lower():
-                        logger.warning("Groq daily token limit exhausted")
-                        return None
-                    wait = min(suggested, 120)
-                if attempt < retries - 1:
-                    logger.info("Groq 429 — waiting %ds before retry (%d/%d)…", wait, attempt + 1, retries)
-                    time.sleep(wait)
-                    wait = min(wait * 2, 120)
-                else:
-                    logger.warning("Groq rate limit exhausted after %d retries", retries)
-            else:
-                logger.warning("Groq scoring error: %s", e)
-                break
-    return None
+    try:
+        groq_wait()
+        client = Groq(api_key=config.GROQ_API_KEY)
+        resp = client.chat.completions.create(
+            model="llama-3.3-70b-versatile",
+            messages=[
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "user", "content": prompt},
+            ],
+            temperature=0.1,
+            max_tokens=1024,
+        )
+        return resp.choices[0].message.content.strip()
+    except Exception as e:
+        err = str(e)
+        if "429" in err or "rate_limit" in err.lower() or "quota" in err.lower():
+            # Disable for rest of this pipeline run — no more wasted API roundtrips
+            _GROQ_SCORING_OK = False
+            logger.info("Groq 429 on scoring — switching to rule-based for remainder of run")
+        else:
+            logger.warning("Groq scoring error: %s", err[:120])
+        return None
+
+
+# Module-level flag: set to True only if Groq responds to health check at pipeline start
+_GROQ_SCORING_OK: bool = False
+
+
+def enable_groq_scoring() -> bool:
+    """Call once at pipeline start to check if Groq is available for scoring."""
+    global _GROQ_SCORING_OK
+    _GROQ_SCORING_OK = _check_groq_available()
+    logger.info("Groq scoring: %s", "ENABLED" if _GROQ_SCORING_OK else "DISABLED (rule-based fallback)")
+    return _GROQ_SCORING_OK
 
 
 def _parse_score_response(raw: str) -> Optional[dict]:
@@ -516,29 +468,34 @@ def _rule_based_score(person: Person) -> dict:
 # ── Core scoring ───────────────────────────────────────────────────────────────
 
 def score_person(person: Person) -> None:
-    """Score a person in-place. LLMs tried first; rule-based scorer always runs as fallback."""
-    prompt = USER_PROMPT_TEMPLATE.format(
-        name=person.name,
-        location=person.location or "Unknown",
-        linkedin_url=person.linkedin_url or "",
-        github_url=person.github_url or "",
-        twitter_handle=person.twitter_handle or "",
-        headline=person.headline or "",
-        previous_company=person.previous_company or "",
-        previous_title=person.previous_title or "",
-        current_company=person.current_company or "",
-        experience_years=person.experience_years or "Unknown",
-        is_second_time_founder=person.is_second_time_founder,
-        signal_count=person.signal_count,
-        signals_text=_build_signals_text(person),
-    )
+    """
+    Score a person in-place.
+    Rule-based scoring runs first (instant, always works).
+    Groq LLM is used only when _GROQ_SCORING_OK is True (confirmed live at startup).
+    """
+    data: Optional[dict] = None
 
-    raw = _call_gemini(prompt) or _call_claude(prompt) or _call_groq(prompt)
-    data = _parse_score_response(raw) if raw else None
+    # Try Groq only if health check passed at pipeline start
+    if _GROQ_SCORING_OK:
+        prompt = USER_PROMPT_TEMPLATE.format(
+            name=person.name,
+            location=person.location or "Unknown",
+            linkedin_url=person.linkedin_url or "",
+            github_url=person.github_url or "",
+            twitter_handle=person.twitter_handle or "",
+            headline=person.headline or "",
+            previous_company=person.previous_company or "",
+            previous_title=person.previous_title or "",
+            current_company=person.current_company or "",
+            experience_years=person.experience_years or "Unknown",
+            is_second_time_founder=person.is_second_time_founder,
+            signal_count=person.signal_count,
+            signals_text=_build_signals_text(person),
+        )
+        raw = _call_groq(prompt)
+        data = _parse_score_response(raw) if raw else None
 
     if not data:
-        # All LLMs exhausted or unavailable — use rule-based scorer
-        logger.info("Using rule-based scorer for %s (no LLM available)", person.name)
         data = _rule_based_score(person)
 
     person.score = float(data.get("score", 0))
@@ -572,7 +529,12 @@ def score_person(person: Person) -> None:
 
 
 def score_all(persons: List[Person]) -> List[Person]:
-    """Score all persons in parallel, filter by threshold, sort by score desc."""
+    """Score all persons, filter by threshold, sort by score desc.
+
+    Rule-based scoring is instant so we run sequentially (no API concurrency
+    needed). If Groq is live (_GROQ_SCORING_OK), we use up to 2 threads to
+    stay well within the 30 RPM cap.
+    """
     from concurrent.futures import ThreadPoolExecutor, as_completed
     threshold = max(config.MIN_SCORE_THRESHOLD, 30)
     scored = []
@@ -583,10 +545,21 @@ def score_all(persons: List[Person]) -> List[Person]:
             return person
         except Exception as e:
             logger.warning("Scoring error for %s: %s", person.name, e)
+            # Fall back to rule-based directly
+            try:
+                data = _rule_based_score(person)
+                person.score = float(data.get("score", 0))
+                person.recommended_action = data.get("recommended_action", "pass")
+                person.investment_thesis = data.get("investment_thesis", "")
+            except Exception:
+                pass
             return person
 
-    # Use up to 4 parallel threads — Groq allows ~30 RPM so 4 threads = ~15 RPM safe
-    with ThreadPoolExecutor(max_workers=4) as pool:
+    # If Groq is live use 2 threads (30 RPM limit, 2.5s spacing → safe at 2 threads)
+    # otherwise score sequentially (rule-based is pure CPU, no I/O)
+    max_workers = 2 if _GROQ_SCORING_OK else 1
+
+    with ThreadPoolExecutor(max_workers=max_workers) as pool:
         futures = {pool.submit(_score_one, p): p for p in persons}
         done = 0
         for fut in as_completed(futures):
@@ -603,51 +576,45 @@ def score_all(persons: List[Person]) -> List[Person]:
 
 
 def write_executive_summary(persons: List[Person], date_label: str) -> str:
-    """Generate a short executive summary. Uses LLM if available, templates otherwise."""
+    """Generate a short executive summary (rule-based; Groq used if confirmed live)."""
     if not persons:
         return "No signals above threshold today."
 
-    top = persons[:10]
-    summary_lines = []
-    for p in top[:5]:
-        rationale = {}
-        try:
-            rationale = json.loads(p.score_rationale) if p.score_rationale else {}
-        except Exception:
-            pass
-        sector = rationale.get("sector", "")
-        geo = rationale.get("geography", "")
-        summary_lines.append(
-            f"{p.name} ({p.previous_company or '?'} → {p.current_company or 'stealth'}, {geo}, {sector}, score {p.score:.0f})"
-        )
-
-    prompt = f"""Write a 3-4 sentence executive summary of today's top VC sourcing signals for {date_label}.
-
-Top signals today:
-{chr(10).join(summary_lines)}
-
-Total signals above threshold: {len(persons)}
-
-Write as a crisp analyst briefing. Mention geography (India/SEA split), strongest archetypes, and 1-2 most compelling leads by name. No bullet points."""
-
-    raw = _call_gemini(prompt) or _call_claude(prompt) or _call_groq(prompt)
-    if raw:
-        return raw.strip()
-
-    # Rule-based summary fallback
     investigate = [p for p in persons if p.recommended_action == "investigate"]
-    watchlist = [p for p in persons if p.recommended_action == "watchlist"]
+    watchlist   = [p for p in persons if p.recommended_action == "watchlist"]
     top1 = persons[0]
-    rationale = {}
+    rationale: dict = {}
     try:
         rationale = json.loads(top1.score_rationale) if top1.score_rationale else {}
     except Exception:
         pass
 
+    # Try Groq summary only if health check passed at startup
+    if _GROQ_SCORING_OK:
+        summary_lines = []
+        for p in persons[:5]:
+            try:
+                r = json.loads(p.score_rationale) if p.score_rationale else {}
+            except Exception:
+                r = {}
+            summary_lines.append(
+                f"{p.name} ({p.previous_company or '?'} → {p.current_company or 'stealth'}, "
+                f"{r.get('geography','?')}, {r.get('sector','?')}, score {p.score:.0f})"
+            )
+        prompt = (
+            f"Write a 3-4 sentence executive summary of today's top VC sourcing signals for {date_label}.\n\n"
+            f"Top signals:\n" + "\n".join(summary_lines) +
+            f"\n\nTotal above threshold: {len(persons)}. "
+            "Crisp analyst briefing, mention India/SEA split, archetypes, 1-2 named leads. No bullets."
+        )
+        raw = _call_groq(prompt)
+        if raw:
+            return raw.strip()
+
+    # Rule-based fallback (always works)
     return (
         f"Pipeline surfaced {len(persons)} founders above threshold on {date_label}. "
         f"{len(investigate)} flagged for immediate investigation, {len(watchlist)} added to watchlist. "
         f"Top lead: {top1.name} (score {top1.score:.0f}, {rationale.get('geography','?')}, "
-        f"ex-{top1.previous_company or '?'}) — {rationale.get('sector','unknown')} sector. "
-        f"Rule-based scoring active (LLM quota reset at midnight UTC)."
+        f"ex-{top1.previous_company or '?'}) — {rationale.get('sector','unknown')} sector."
     )

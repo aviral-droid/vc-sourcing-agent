@@ -37,6 +37,13 @@ def main():
     all_p = []
     sources_used = []
 
+    # ── One-time LLM health check (fast, non-blocking) ─────────────────────────
+    # Rule-based scoring always works. Groq LLM scoring is used ONLY if it passes
+    # a quick health check here — avoids wasting minutes on retries against
+    # rate-limited / quota-exhausted APIs.
+    from pipeline.enricher import enable_groq_scoring
+    enable_groq_scoring()  # sets _GROQ_SCORING_OK flag — takes ~3s or skips fast
+
     # ── Run all sources in parallel ────────────────────────────────────────────
     from sources.news_source import search_news_signals
     from sources.exa_source import search_exa_signals

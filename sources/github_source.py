@@ -443,22 +443,31 @@ def _search_github_impl(days_back: int = 30) -> List[Person]:
 
 
 def search_github_signals(days_back: int = 30) -> List[Person]:
-    """Main entry point — 45-second hard budget to prevent pipeline hangs."""
+    """Main entry point — 45-second hard budget to prevent pipeline hangs.
+
+    NOTE: we do NOT use 'with ThreadPoolExecutor' because the context manager
+    calls shutdown(wait=True) on exit, blocking until the thread finishes even
+    after future.cancel(). Instead we call shutdown(wait=False) on timeout so
+    the pipeline continues immediately.
+    """
     import concurrent.futures
     logger.info("GitHub source: running with 45s budget…")
+    ex = concurrent.futures.ThreadPoolExecutor(max_workers=1)
     try:
-        with concurrent.futures.ThreadPoolExecutor(max_workers=1) as ex:
-            future = ex.submit(_search_github_impl, days_back)
-            try:
-                persons = future.result(timeout=45)
-                logger.info("GitHub source: %d signals found", len(persons))
-                return persons
-            except concurrent.futures.TimeoutError:
-                logger.warning("GitHub source: timed out after 45s — returning partial results")
-                future.cancel()
-                return []
+        future = ex.submit(_search_github_impl, days_back)
+        try:
+            persons = future.result(timeout=45)
+            ex.shutdown(wait=False)
+            logger.info("GitHub source: %d signals found", len(persons))
+            return persons
+        except concurrent.futures.TimeoutError:
+            logger.warning("GitHub source: timed out after 45s — continuing without GitHub signals")
+            future.cancel()
+            ex.shutdown(wait=False)  # don't wait — let thread die in background
+            return []
     except Exception as e:
         logger.warning("GitHub source failed: %s", e)
+        ex.shutdown(wait=False)
         return []
 
 

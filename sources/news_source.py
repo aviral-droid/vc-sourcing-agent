@@ -376,12 +376,14 @@ def _groq_extract_names_batch(entries: List[dict]) -> dict:
     """Ask Groq to identify founder/executive names from article headlines.
     entries: list of {"title": str, "url": str}
     Returns: {url: name_or_unknown}
+    Single attempt only — NO retries on 429 so the pipeline doesn't hang.
     """
     try:
         import config as _cfg
         if not _cfg.GROQ_API_KEY:
             return {}
         from groq import Groq
+        from sources.groq_limiter import groq_wait
         client = Groq(api_key=_cfg.GROQ_API_KEY)
 
         headlines = "\n".join(
@@ -397,6 +399,7 @@ def _groq_extract_names_batch(entries: List[dict]) -> dict:
             "Return ONLY a JSON array of strings, one name per headline, in the same order. "
             'Example: ["Ankit Agarwal", "Unknown", "Dale Vaz"]'
         )
+        groq_wait()
         resp = client.chat.completions.create(
             model="llama-3.3-70b-versatile",
             messages=[{"role": "user", "content": prompt}],
@@ -415,7 +418,11 @@ def _groq_extract_names_batch(entries: List[dict]) -> dict:
                 result[e["url"]] = n if n and n.lower() != "unknown" else "Unknown"
         return result
     except Exception as ex:
-        logger.debug("Groq batch name extraction error: %s", ex)
+        err = str(ex)
+        if "429" in err or "rate_limit" in err.lower():
+            logger.info("Groq 429 on name extraction — skipping (regex names will be used)")
+        else:
+            logger.debug("Groq batch name extraction error: %s", ex)
         return {}
 
 
