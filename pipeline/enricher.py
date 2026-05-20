@@ -106,39 +106,92 @@ def _build_signals_text(person: Person) -> str:
 
 # ── LLM callers ────────────────────────────────────────────────────────────────
 
-def _check_groq_available() -> bool:
-    """Quick non-blocking check: can we call Groq right now?"""
-    if not config.GROQ_API_KEY:
-        return False
-    from groq import Groq
-    try:
-        groq_wait()
-        client = Groq(api_key=config.GROQ_API_KEY)
-        resp = client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
-            messages=[{"role": "user", "content": "Reply with the word OK only."}],
-            max_tokens=5, temperature=0,
-        )
-        return bool(resp.choices[0].message.content)
-    except Exception as e:
-        logger.info("Groq health check failed (%s) — rule-based scoring will be used", str(e)[:60])
-        return False
+# ── Multi-provider free LLM pool ───────────────────────────────────────────────
+#
+# All providers use the OpenAI SDK with a custom base_url — no extra packages.
+# Providers are tried in order; one 429 / quota error removes it for the run.
+# Rule-based scoring is always the final fallback (zero API calls, instant).
+#
+# Provider priority (fastest / most generous free tier first):
+#   1. Cerebras   — Llama 3.3 70B on wafer silicon, ~2 000 tok/s, free tier
+#   2. DeepSeek   — DeepSeek-V3, very capable, free tier ($5 credit on signup)
+#   3. Zhipu/GLM  — GLM-4-Flash, 1 M free tokens/day, no credit card
+#   4. SambaNova  — Llama 3.1 405B, free tier, OpenAI-compat
+#   5. OpenRouter  — :free models (DeepSeek R1, Llama 3.3 70B), no credit card
+#   6. Groq        — Llama 3.3 70B, 30 RPM free (already have key)
+
+_PROVIDERS: list[dict] = [
+    {
+        "name":     "Cerebras",
+        "base_url": "https://api.cerebras.ai/v1",
+        "model":    "llama-3.3-70b",
+        "key_attr": "CEREBRAS_API_KEY",
+        "signup":   "cloud.cerebras.ai",
+    },
+    {
+        "name":     "DeepSeek",
+        "base_url": "https://api.deepseek.com",
+        "model":    "deepseek-chat",
+        "key_attr": "DEEPSEEK_API_KEY",
+        "signup":   "platform.deepseek.com",
+    },
+    {
+        "name":     "Zhipu/GLM",
+        "base_url": "https://open.bigmodel.cn/api/paas/v4/",
+        "model":    "glm-4-flash",
+        "key_attr": "ZHIPU_API_KEY",
+        "signup":   "bigmodel.cn  (1M free tokens/day)",
+    },
+    {
+        "name":     "SambaNova",
+        "base_url": "https://api.sambanova.ai/v1",
+        "model":    "Meta-Llama-3.1-405B-Instruct",
+        "key_attr": "SAMBANOVA_API_KEY",
+        "signup":   "cloud.sambanova.ai",
+    },
+    {
+        "name":     "OpenRouter",
+        "base_url": "https://openrouter.ai/api/v1",
+        "model":    "meta-llama/llama-3.3-70b-instruct:free",
+        "key_attr": "OPENROUTER_API_KEY",
+        "signup":   "openrouter.ai  (free :free models)",
+    },
+    {
+        "name":     "Groq",
+        "base_url": "https://api.groq.com/openai/v1",
+        "model":    "llama-3.3-70b-versatile",
+        "key_attr": "GROQ_API_KEY",
+        "signup":   "console.groq.com  (30 RPM free)",
+        "rate_limit_hook": True,   # call groq_wait() before each request
+    },
+]
+
+# Providers confirmed live at startup; removed when they 429/quota during a run
+_LIVE_PROVIDERS: set[str] = set()
+
+# Module-level flag kept for backward compat with score_person / score_all
+_GROQ_SCORING_OK: bool = False
 
 
-def _call_groq(prompt: str) -> Optional[str]:
-    """Single-attempt Groq call — on 429 disables itself for the rest of the run."""
-    global _GROQ_SCORING_OK
-    if not config.GROQ_API_KEY or not _GROQ_SCORING_OK:
+def _get_openai_client(base_url: str, api_key: str):
+    from openai import OpenAI
+    return OpenAI(base_url=base_url, api_key=api_key, timeout=20)
+
+
+def _provider_call(provider: dict, prompt: str) -> Optional[str]:
+    """Single attempt against one provider. Returns text or None."""
+    key = getattr(config, provider["key_attr"], "") or ""
+    if not key:
         return None
-    from groq import Groq
-    try:
+    if provider.get("rate_limit_hook"):
         groq_wait()
-        client = Groq(api_key=config.GROQ_API_KEY)
+    try:
+        client = _get_openai_client(provider["base_url"], key)
         resp = client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
+            model=provider["model"],
             messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": prompt},
+                {"role": "user",   "content": prompt},
             ],
             temperature=0.1,
             max_tokens=1024,
@@ -146,24 +199,82 @@ def _call_groq(prompt: str) -> Optional[str]:
         return resp.choices[0].message.content.strip()
     except Exception as e:
         err = str(e)
-        if "429" in err or "rate_limit" in err.lower() or "quota" in err.lower():
-            # Disable for rest of this pipeline run — no more wasted API roundtrips
-            _GROQ_SCORING_OK = False
-            logger.info("Groq 429 on scoring — switching to rule-based for remainder of run")
+        if any(x in err for x in ("429", "rate_limit", "quota", "RESOURCE_EXHAUSTED",
+                                   "insufficient_quota", "credit")):
+            logger.info("%s rate-limited/quota — removing for this run", provider["name"])
+            _LIVE_PROVIDERS.discard(provider["name"])
         else:
-            logger.warning("Groq scoring error: %s", err[:120])
+            logger.warning("%s error: %s", provider["name"], err[:140])
         return None
 
 
-# Module-level flag: set to True only if Groq responds to health check at pipeline start
-_GROQ_SCORING_OK: bool = False
+def _call_llm(prompt: str) -> Optional[str]:
+    """Try each live provider in priority order; return first successful response."""
+    for p in _PROVIDERS:
+        if p["name"] not in _LIVE_PROVIDERS:
+            continue
+        result = _provider_call(p, prompt)
+        if result:
+            return result
+    return None  # all providers exhausted → rule-based scorer kicks in
+
+
+def _quick_health_check(provider: dict) -> bool:
+    """Ping a provider with a 1-token request to see if it's up."""
+    key = getattr(config, provider["key_attr"], "") or ""
+    if not key:
+        return False
+    if provider.get("rate_limit_hook"):
+        groq_wait()
+    try:
+        client = _get_openai_client(provider["base_url"], key)
+        resp = client.chat.completions.create(
+            model=provider["model"],
+            messages=[{"role": "user", "content": "Reply OK"}],
+            max_tokens=3,
+            temperature=0,
+        )
+        return bool(resp.choices[0].message.content)
+    except Exception as e:
+        err = str(e)
+        if any(x in err for x in ("429", "rate_limit", "quota", "credit")):
+            logger.info("%s unavailable at startup (%s)", provider["name"], err[:80])
+        else:
+            logger.debug("%s health-check error: %s", provider["name"], err[:80])
+        return False
 
 
 def enable_groq_scoring() -> bool:
-    """Call once at pipeline start to check if Groq is available for scoring."""
-    global _GROQ_SCORING_OK
-    _GROQ_SCORING_OK = _check_groq_available()
-    logger.info("Groq scoring: %s", "ENABLED" if _GROQ_SCORING_OK else "DISABLED (rule-based fallback)")
+    """
+    Probe all configured providers once at pipeline start.
+    Populates _LIVE_PROVIDERS; returns True if at least one provider is live.
+    The name 'enable_groq_scoring' is kept for backward compatibility.
+    """
+    global _LIVE_PROVIDERS, _GROQ_SCORING_OK
+
+    configured = [p for p in _PROVIDERS if getattr(config, p["key_attr"], "")]
+    if not configured:
+        logger.info("No LLM API keys configured — rule-based scoring only")
+        _GROQ_SCORING_OK = False
+        return False
+
+    logger.info("Probing %d LLM provider(s)…", len(configured))
+    live = []
+    for p in configured:
+        ok = _quick_health_check(p)
+        status = "✓ LIVE" if ok else "✗ unavailable"
+        logger.info("  %s [%s]: %s", p["name"], p["model"], status)
+        if ok:
+            _LIVE_PROVIDERS.add(p["name"])
+            live.append(p["name"])
+
+    if live:
+        logger.info("LLM scoring enabled via: %s", ", ".join(live))
+        _GROQ_SCORING_OK = True
+    else:
+        logger.info("All providers unavailable — rule-based scoring will be used")
+        _GROQ_SCORING_OK = False
+
     return _GROQ_SCORING_OK
 
 
@@ -475,7 +586,7 @@ def score_person(person: Person) -> None:
     """
     data: Optional[dict] = None
 
-    # Try Groq only if health check passed at pipeline start
+    # Try LLM only when at least one provider is confirmed live
     if _GROQ_SCORING_OK:
         prompt = USER_PROMPT_TEMPLATE.format(
             name=person.name,
@@ -492,7 +603,7 @@ def score_person(person: Person) -> None:
             signal_count=person.signal_count,
             signals_text=_build_signals_text(person),
         )
-        raw = _call_groq(prompt)
+        raw = _call_llm(prompt)
         data = _parse_score_response(raw) if raw else None
 
     if not data:
@@ -589,8 +700,8 @@ def write_executive_summary(persons: List[Person], date_label: str) -> str:
     except Exception:
         pass
 
-    # Try Groq summary only if health check passed at startup
-    if _GROQ_SCORING_OK:
+    # Try LLM summary only if a provider is live
+    if _GROQ_SCORING_OK and _LIVE_PROVIDERS:
         summary_lines = []
         for p in persons[:5]:
             try:
@@ -607,7 +718,7 @@ def write_executive_summary(persons: List[Person], date_label: str) -> str:
             f"\n\nTotal above threshold: {len(persons)}. "
             "Crisp analyst briefing, mention India/SEA split, archetypes, 1-2 named leads. No bullets."
         )
-        raw = _call_groq(prompt)
+        raw = _call_llm(prompt)
         if raw:
             return raw.strip()
 

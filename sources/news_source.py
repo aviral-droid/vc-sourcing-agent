@@ -372,42 +372,70 @@ def _fetch_article_text(url: str, timeout: int = 7) -> str:
         return ""
 
 
-def _groq_extract_names_batch(entries: List[dict]) -> dict:
-    """Ask Groq to identify founder/executive names from article headlines.
+def _extract_names_via_llm(entries: List[dict]) -> dict:
+    """
+    Extract founder/exec names from headlines using the best available free LLM.
+    Tries the same provider pool as the enricher (Cerebras → DeepSeek → GLM → etc.)
+    Falls back gracefully to regex extraction on any failure.
     entries: list of {"title": str, "url": str}
     Returns: {url: name_or_unknown}
-    Single attempt only — NO retries on 429 so the pipeline doesn't hang.
     """
-    try:
-        import config as _cfg
-        if not _cfg.GROQ_API_KEY:
-            return {}
-        from groq import Groq
-        from sources.groq_limiter import groq_wait
-        client = Groq(api_key=_cfg.GROQ_API_KEY)
+    headlines = "\n".join(f"{i+1}. {e['title'][:120]}" for i, e in enumerate(entries))
+    prompt = (
+        "You are analyzing Indian/Southeast Asian tech startup news headlines.\n"
+        "For each numbered headline below, identify the FULL NAME of the individual "
+        "founder/executive being discussed (the person who left, founded something, or raised money).\n"
+        "If the headline does not mention or imply a specific named person, return 'Unknown'.\n"
+        "Use your knowledge of Indian and SEA tech ecosystem executives.\n\n"
+        f"Headlines:\n{headlines}\n\n"
+        "Return ONLY a JSON array of strings, one name per headline, in the same order. "
+        'Example: ["Ankit Agarwal", "Unknown", "Dale Vaz"]'
+    )
 
-        headlines = "\n".join(
-            f"{i+1}. {e['title'][:120]}" for i, e in enumerate(entries)
-        )
-        prompt = (
-            "You are analyzing Indian/Southeast Asian tech startup news headlines.\n"
-            "For each numbered headline below, identify the FULL NAME of the individual "
-            "founder/executive being discussed (the person who left, founded something, or raised money).\n"
-            "If the headline does not mention or imply a specific named person, return 'Unknown'.\n"
-            "Use your knowledge of Indian and SEA tech ecosystem executives.\n\n"
-            f"Headlines:\n{headlines}\n\n"
-            "Return ONLY a JSON array of strings, one name per headline, in the same order. "
-            'Example: ["Ankit Agarwal", "Unknown", "Dale Vaz"]'
-        )
-        groq_wait()
-        resp = client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
-            messages=[{"role": "user", "content": prompt}],
-            max_tokens=300,
-            temperature=0.1,
-        )
-        raw = resp.choices[0].message.content.strip()
-        m = re.search(r"\[.*\]", raw, re.DOTALL)
+    # ── Provider rotation (same pool as enricher, cheapest/fastest first) ──────
+    import config as _cfg
+    from openai import OpenAI
+
+    _NAME_PROVIDERS = [
+        ("Cerebras",  "https://api.cerebras.ai/v1",               "llama-3.3-70b",                        "CEREBRAS_API_KEY",   False),
+        ("DeepSeek",  "https://api.deepseek.com",                  "deepseek-chat",                         "DEEPSEEK_API_KEY",   False),
+        ("Zhipu/GLM", "https://open.bigmodel.cn/api/paas/v4/",    "glm-4-flash",                           "ZHIPU_API_KEY",      False),
+        ("SambaNova", "https://api.sambanova.ai/v1",               "Meta-Llama-3.1-405B-Instruct",          "SAMBANOVA_API_KEY",  False),
+        ("OpenRouter","https://openrouter.ai/api/v1",              "meta-llama/llama-3.3-70b-instruct:free","OPENROUTER_API_KEY", False),
+        ("Groq",      "https://api.groq.com/openai/v1",           "llama-3.3-70b-versatile",               "GROQ_API_KEY",       True),
+    ]
+
+    raw_text = None
+    for name, base_url, model, key_attr, needs_rate_limit in _NAME_PROVIDERS:
+        api_key = getattr(_cfg, key_attr, "") or ""
+        if not api_key:
+            continue
+        try:
+            if needs_rate_limit:
+                from sources.groq_limiter import groq_wait
+                groq_wait()
+            client = OpenAI(base_url=base_url, api_key=api_key, timeout=15)
+            resp = client.chat.completions.create(
+                model=model,
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=300,
+                temperature=0.1,
+            )
+            raw_text = resp.choices[0].message.content.strip()
+            logger.debug("Name extraction via %s", name)
+            break
+        except Exception as ex:
+            err = str(ex)
+            if "429" in err or "rate_limit" in err.lower() or "quota" in err.lower():
+                logger.info("%s 429/quota on name extraction — trying next provider", name)
+            else:
+                logger.debug("%s name extraction error: %s", name, err[:80])
+
+    if not raw_text:
+        return {}
+
+    try:
+        m = re.search(r"\[.*\]", raw_text, re.DOTALL)
         if not m:
             return {}
         names = json.loads(m.group(0))
@@ -418,12 +446,13 @@ def _groq_extract_names_batch(entries: List[dict]) -> dict:
                 result[e["url"]] = n if n and n.lower() != "unknown" else "Unknown"
         return result
     except Exception as ex:
-        err = str(ex)
-        if "429" in err or "rate_limit" in err.lower():
-            logger.info("Groq 429 on name extraction — skipping (regex names will be used)")
-        else:
-            logger.debug("Groq batch name extraction error: %s", ex)
+        logger.debug("Name extraction JSON parse error: %s", ex)
         return {}
+
+
+# Backward-compat alias used elsewhere in this file
+def _groq_extract_names_batch(entries: List[dict]) -> dict:
+    return _extract_names_via_llm(entries)
 
 
 def _collect_google_news(days_back: int) -> List[Person]:

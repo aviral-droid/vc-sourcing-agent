@@ -9,12 +9,25 @@ load_dotenv(Path(__file__).parent / ".env", override=True)
 
 # ── API keys ───────────────────────────────────────────────────────────────────
 ANTHROPIC_API_KEY: str = os.getenv("ANTHROPIC_API_KEY", "")
-GROQ_API_KEY: str = os.getenv("GROQ_API_KEY", "")
+GROQ_API_KEY: str = os.getenv("GROQ_API_KEY", "")          # console.groq.com — free 30 RPM
 GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
 FIRECRAWL_API_KEY: str = os.getenv("FIRECRAWL_API_KEY", "")
 GITHUB_TOKEN: str = os.getenv("GITHUB_TOKEN", "")
 EXA_API_KEY: str = os.getenv("EXA_API_KEY", "")
 BRAVE_API_KEY: str = os.getenv("BRAVE_API_KEY", "")
+
+# ── Free LLM providers (OpenAI-compatible, no credit card required) ────────────
+# Add any or all — the pipeline rotates through whichever are configured.
+# Cerebras  : cloud.cerebras.ai     — Llama 3.3 70B, very fast, free tier
+# DeepSeek  : platform.deepseek.com — DeepSeek V3 chat, free tier ($5 credit)
+# GLM/Zhipu : bigmodel.cn           — GLM-4-Flash, 1M free tokens/day
+# OpenRouter: openrouter.ai         — access to :free models (DeepSeek R1, Llama 70B)
+# SambaNova : cloud.sambanova.ai    — Llama 3.1 405B, free tier
+CEREBRAS_API_KEY: str   = os.getenv("CEREBRAS_API_KEY", "")
+DEEPSEEK_API_KEY: str   = os.getenv("DEEPSEEK_API_KEY", "")
+ZHIPU_API_KEY: str      = os.getenv("ZHIPU_API_KEY", "")
+OPENROUTER_API_KEY: str = os.getenv("OPENROUTER_API_KEY", "")
+SAMBANOVA_API_KEY: str  = os.getenv("SAMBANOVA_API_KEY", "")
 
 # ── Feature flags ──────────────────────────────────────────────────────────────
 FIRECRAWL_ENABLED: bool = bool(FIRECRAWL_API_KEY)
