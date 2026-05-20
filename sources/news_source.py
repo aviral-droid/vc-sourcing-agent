@@ -397,7 +397,7 @@ def _extract_names_via_llm(entries: List[dict]) -> dict:
     from openai import OpenAI
 
     _NAME_PROVIDERS = [
-        ("Cerebras",  "https://api.cerebras.ai/v1",               "llama-3.3-70b",                        "CEREBRAS_API_KEY",   False),
+        ("Cerebras",  "https://api.cerebras.ai/v1",               "qwen-3-235b-a22b-instruct-2507",       "CEREBRAS_API_KEY",   False),
         ("DeepSeek",  "https://api.deepseek.com",                  "deepseek-chat",                         "DEEPSEEK_API_KEY",   False),
         ("Zhipu/GLM", "https://open.bigmodel.cn/api/paas/v4/",    "glm-4-flash",                           "ZHIPU_API_KEY",      False),
         ("SambaNova", "https://api.sambanova.ai/v1",               "DeepSeek-V3.2",                         "SAMBANOVA_API_KEY",  False),

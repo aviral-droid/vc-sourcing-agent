@@ -124,9 +124,10 @@ _PROVIDERS: list[dict] = [
     {
         "name":     "Cerebras",
         "base_url": "https://api.cerebras.ai/v1",
-        "model":    "llama-3.3-70b",
+        "model":    "qwen-3-235b-a22b-instruct-2507",  # 235B MoE on wafer silicon, very fast
         "key_attr": "CEREBRAS_API_KEY",
         "signup":   "cloud.cerebras.ai",
+        "no_think": True,   # disable CoT for speed on scoring tasks
     },
     {
         "name":     "DeepSeek",
@@ -185,18 +186,23 @@ def _provider_call(provider: dict, prompt: str) -> Optional[str]:
         return None
     if provider.get("rate_limit_hook"):
         groq_wait()
+    # Qwen3 on Cerebras: prepend /no_think to skip chain-of-thought for speed
+    user_prompt = ("/no_think\n" + prompt) if provider.get("no_think") else prompt
     try:
         client = _get_openai_client(provider["base_url"], key)
         resp = client.chat.completions.create(
             model=provider["model"],
             messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user",   "content": prompt},
+                {"role": "user",   "content": user_prompt},
             ],
             temperature=0.1,
             max_tokens=1024,
         )
-        return resp.choices[0].message.content.strip()
+        # Strip any <think>…</think> block Qwen3 might still emit
+        text = resp.choices[0].message.content or ""
+        text = re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL).strip()
+        return text or None
     except Exception as e:
         err = str(e)
         if any(x in err for x in ("429", "rate_limit", "quota", "RESOURCE_EXHAUSTED",
