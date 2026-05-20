@@ -176,7 +176,8 @@ _GROQ_SCORING_OK: bool = False
 
 def _get_openai_client(base_url: str, api_key: str):
     from openai import OpenAI
-    return OpenAI(base_url=base_url, api_key=api_key, timeout=20)
+    # max_retries=0: never let the SDK sleep-and-retry on 429 — we handle failover ourselves
+    return OpenAI(base_url=base_url, api_key=api_key, timeout=20, max_retries=0)
 
 
 def _provider_call(provider: dict, prompt: str) -> Optional[str]:
@@ -226,14 +227,19 @@ def _call_llm(prompt: str) -> Optional[str]:
 
 
 def _quick_health_check(provider: dict) -> bool:
-    """Ping a provider with a 1-token request to see if it's up."""
+    """Ping a provider with a 1-token request to see if it's up.
+    Uses max_retries=0 so a 429 fails immediately — no sleep loops in health check.
+    """
     key = getattr(config, provider["key_attr"], "") or ""
     if not key:
         return False
     if provider.get("rate_limit_hook"):
         groq_wait()
     try:
-        client = _get_openai_client(provider["base_url"], key)
+        from openai import OpenAI
+        # max_retries=0 prevents the SDK from sleeping and retrying on 429
+        client = OpenAI(base_url=provider["base_url"], api_key=key,
+                        timeout=10, max_retries=0)
         resp = client.chat.completions.create(
             model=provider["model"],
             messages=[{"role": "user", "content": "Reply OK"}],
