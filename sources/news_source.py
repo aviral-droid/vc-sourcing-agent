@@ -400,7 +400,7 @@ def _extract_names_via_llm(entries: List[dict]) -> dict:
         ("Cerebras",  "https://api.cerebras.ai/v1",               "llama-3.3-70b",                        "CEREBRAS_API_KEY",   False),
         ("DeepSeek",  "https://api.deepseek.com",                  "deepseek-chat",                         "DEEPSEEK_API_KEY",   False),
         ("Zhipu/GLM", "https://open.bigmodel.cn/api/paas/v4/",    "glm-4-flash",                           "ZHIPU_API_KEY",      False),
-        ("SambaNova", "https://api.sambanova.ai/v1",               "Meta-Llama-3.1-405B-Instruct",          "SAMBANOVA_API_KEY",  False),
+        ("SambaNova", "https://api.sambanova.ai/v1",               "DeepSeek-V3.2",                         "SAMBANOVA_API_KEY",  False),
         ("OpenRouter","https://openrouter.ai/api/v1",              "meta-llama/llama-3.3-70b-instruct:free","OPENROUTER_API_KEY", False),
         ("Groq",      "https://api.groq.com/openai/v1",           "llama-3.3-70b-versatile",               "GROQ_API_KEY",       True),
     ]

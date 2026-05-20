@@ -145,7 +145,7 @@ _PROVIDERS: list[dict] = [
     {
         "name":     "SambaNova",
         "base_url": "https://api.sambanova.ai/v1",
-        "model":    "Meta-Llama-3.1-405B-Instruct",
+        "model":    "DeepSeek-V3.2",          # also has Llama-4-Maverick, Meta-Llama-3.3-70B
         "key_attr": "SAMBANOVA_API_KEY",
         "signup":   "cloud.sambanova.ai",
     },
