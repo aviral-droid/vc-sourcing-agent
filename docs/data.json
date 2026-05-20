@@ -11,6 +11,48 @@
   "executive_summary": "Pipeline surfaced 46 founders above threshold on 2026-05-20. 0 flagged for immediate investigation, 40 added to watchlist. Top lead: Unknown (score 54, India, ex-?) — fintech sector.",
   "persons": [
     {
+      "name": "Sumit Jain",
+      "score": 85,
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "EdTech",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": true,
+      "investment_thesis": "Sumit Jain is a co-founder of Unacademy, a highly successful EdTech company in India. His departure signals a potential new venture. As a second-time founder with a proven track record, he warrants investigation despite the lack of immediate signals for his next move.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "executive_departure",
+          "description": "[Inc42] Unacademy Cofounder Sumit Jain Exits, Gaurav Munjal To Take Charge",
+          "url": "https://inc42.com/buzz/unacademy-cofounder-sumit-jain-exits-gaurav-munjal-to-take-charge/"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "second_time_founder",
+      "key_strengths": [
+        "Co-founder of a prominent EdTech company (Unacademy)",
+        "Previous experience building and scaling a large startup"
+      ],
+      "risks": [
+        "Location unknown",
+        "Experience years unknown",
+        "No explicit signal of new company registration or stealth mode"
+      ],
+      "company_url": ""
+    },
+    {
       "name": "Unknown",
       "score": 54,
       "action": "watchlist",
@@ -638,13 +680,13 @@
       "geography": "Singapore",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
       "signal_count": 1,
       "signal_types": [
-        "executive_departure"
+        "stealth_founder"
       ],
       "signals": [
         {
@@ -657,7 +699,7 @@
       "confidence": "low",
       "founder_type": "unknown",
       "key_strengths": [
-        "Signal detected from sourcing pipeline"
+        "Active departure / stealth signal"
       ],
       "risks": [
         "Single signal — needs corroboration",
@@ -668,7 +710,48 @@
     },
     {
       "name": "Unknown",
-      "score": 48,
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Philippines",
+      "sector": "unknown",
+      "geography": "Philippines",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in Philippines) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "Exa",
+          "type": "stealth_founder",
+          "description": "[Exa] edamama started as an e-commerce startup in the Philippines.\n\nThen, they started opening physical stores. Why?\n\nThe Realistic Optimist recently published an exclusive interview with Bela Gupta… | Timo — edamama started as an e-commerce startup in the Philippines. Then, they started opening physical stores. Why? The Realistic Optimist recently",
+          "url": "https://www.linkedin.com/posts/timothy-motte-27470a169_edamama-started-as-an-e-commerce-startup-activity-7454864010518208512-UsuS"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Previous role unclear"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 45,
       "action": "watchlist",
       "recommended_action": "watchlist",
       "previous_company": "",
@@ -685,7 +768,7 @@
       "twitter_handle": "",
       "signal_count": 1,
       "signal_types": [
-        "executive_departure"
+        "stealth_founder"
       ],
       "signals": [
         {
@@ -1802,10 +1885,11 @@
           "url": "https://inc42.com/buzz/dil-foods-bags-%E2%82%B972-cr-to-expand-footprint-launch-more-cuisine/"
         }
       ],
-      "confidence": "low",
+      "confidence": "medium",
       "founder_type": "unknown",
       "key_strengths": [
-        "Signal detected from sourcing pipeline"
+        "experience in pet food industry",
+        "CFO background"
       ],
       "risks": [
         "Single signal — needs corroboration",
@@ -1858,13 +1942,13 @@
     {
       "name": "Igor Yusupov",
       "score": 40,
-      "action": "pass",
-      "recommended_action": "pass",
+      "action": "investigate",
+      "recommended_action": "investigate",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
       "location": "",
-      "sector": "deeptech",
+      "sector": "AI",
       "geography": "Unknown",
       "experience_years": 0,
       "is_second_time_founder": false,
@@ -3212,8 +3296,8 @@
       },
       {
         "name": "SaaS / B2B",
-        "signals": 5,
-        "sentiment": "neutral"
+        "signals": 6,
+        "sentiment": "bullish"
       },
       {
         "name": "Healthtech",
@@ -3507,6 +3591,14 @@
           "pub_date": "2026-01-22T13:14:55.000Z",
           "summary": "Mumbai, 22nd May, 2024: CashFlo, India's most comprehensive finance automation and compliance platform, today announced its acquisition of Logitax, an all-in-one GST & E-invoicing Compliance platform for an undisclosed amount, solidifying its position as a leader in finance automation and compliance",
           "company": "Prosperr"
+        },
+        {
+          "title": "{Funding Alert} Escape Plan Raises $25 Mn to Expand to 200+ Stores and New Markets - Indian Retailer",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNUWJKQ1Jqc1g1UnE1ZzRVdkxUTGx3LTlyeWZIc1BONm1PME44c3k1TE1QckszWEpqMlhHaUMzd2ItOGQxWGhWdktGTlF6M043bmY1S0tzUnBRTWhRdDR4RjBEZldjSDJSM18wSktMNEc1cHFMTU5acWZBOU1BS3k0T0xBZVJsTFdxbWF6M25tS1Flc2JfVllBODlrMGVSZXdkWVBnYmNkbw?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2026-01-22T08:00:00+00:00",
+          "summary": "{Funding Alert} Escape Plan Raises $25 Mn to Expand to 200+ Stores and New Markets&nbsp;&nbsp;Indian Retailer",
+          "company": "Escape Plan"
         },
         {
           "title": "{Funding Alert} Escape Plan Raises $25 Mn to Expand to 200+ Stores and New Markets - Indian Retailer",
