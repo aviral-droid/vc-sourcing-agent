@@ -1,28 +1,34 @@
 {
-  "generated_at": "2026-05-22T06:33:10.894862",
+  "generated_at": "2026-05-22T10:44:16.094590",
   "date_label": "2026-05-22",
-  "total_signals": 12,
-  "total_persons": 12,
+  "total_signals": 74,
+  "total_persons": 74,
   "sources_active": [
-    "Product Hunt",
-    "News (RSS + Google News)"
+    "News",
+    "GDELT",
+    "Exa",
+    "LinkedIn",
+    "Twitter",
+    "crawl4ai-structured",
+    "Registry",
+    "GitHub"
   ],
-  "executive_summary": "Pipeline surfaced 12 founders above threshold on 2026-05-22. 4 flagged for immediate investigation, 3 added to watchlist. Top lead: Rishi Gupta (score 60, India, ex-?) — Fintech sector.",
+  "executive_summary": "Pipeline surfaced 74 founders above threshold on 2026-05-22. 0 flagged for immediate investigation, 24 added to watchlist. Top lead: Unknown (score 62, Unknown, ex-?) — unknown sector.",
   "persons": [
     {
-      "name": "Rishi Gupta",
-      "score": 60,
-      "action": "investigate",
-      "recommended_action": "investigate",
+      "name": "Unknown",
+      "score": 62,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
       "location": "",
-      "sector": "Fintech",
-      "geography": "India",
+      "sector": "unknown",
+      "geography": "Unknown",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Rishi Gupta's departure as MD & CEO of Fino, a fintech company, could indicate a potential new venture in the same sector. His experience and domain expertise make him a promising candidate for investment. Further investigation is needed to understand his plans and potential for a new startup.",
+      "investment_thesis": "Unknown (ex-a notable company) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -34,18 +40,224 @@
         {
           "source": "news",
           "type": "executive_departure",
-          "description": "[Inc42] Under GST Probe, Rishi Gupta Steps Down As Fino MD & CEO",
-          "url": "https://inc42.com/buzz/under-gst-probe-rishi-gupta-steps-down-as-fino-md-ceo/"
+          "description": "[e27] The founders who scale in SEA are rebuilding customer experience from the operating layer up",
+          "url": "https://e27.co/the-founders-who-scale-in-sea-are-rebuilding-customer-experience-from-the-operating-layer-up-20260520/"
         }
       ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
+      "confidence": "low",
+      "founder_type": "unknown",
       "key_strengths": [
-        "Experience as MD & CEO",
-        "Domain expertise in Fintech"
+        "Signal detected from sourcing pipeline"
       ],
       "risks": [
-        "Unclear circumstances of departure"
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "",
+      "score": 51,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Unacademy",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "edtech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This individual (ex-Unacademy) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "https://www.linkedin.com/in/satwik1",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Unacademy exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/satwik1"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "unacademy.com"
+    },
+    {
+      "name": "",
+      "score": 51,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Unacademy",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "edtech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This individual (ex-Unacademy) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "https://www.linkedin.com/in/prakash09",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Unacademy exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/prakash09"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "unacademy.com"
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "executive_departure",
+          "description": "[Inc42] Shastra VC Launches $100 Mn Fund to Back Deeptech Startups",
+          "url": "https://inc42.com/buzz/shastra-vc-launches-100-mn-fund-to-back-deeptech-startups/"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Previous role unclear"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Vietnam",
+      "sector": "climate",
+      "geography": "Vietnam",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in Vietnam) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "executive_departure",
+          "description": "[e27] Touchstone partially exits solar startup Stride after US$15M Series B",
+          "url": "https://e27.co/touchstone-partially-exits-solar-startup-stride-after-us15m-series-b-20260520/"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Previous role unclear"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "unknown",
+      "geography": "Singapore",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "executive_departure",
+          "description": "[e27] Doozy’s humanoid fleet goes global; US and GCC in sights",
+          "url": "https://e27.co/doozys-humanoid-fleet-goes-global-us-and-gcc-in-sights-20260521/"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Previous role unclear"
       ],
       "company_url": ""
     },
@@ -91,6 +303,1154 @@
       "company_url": ""
     },
     {
+      "name": "Ishan Kansal",
+      "score": 46,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Snabbit",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "climate",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Ishan Kansal (ex-Snabbit) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "executive_departure",
+          "description": "[Inc42] Sadev Ventures Appoints Ex-Snabbit Exec Ishan Kansal As Cofounder",
+          "url": "https://inc42.com/buzz/sadev-ventures-appoints-ex-snabbit-exec-ishan-kansal-as-cofounder/"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "",
+      "score": 46,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Razorpay",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "fintech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This individual (ex-Razorpay) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "https://www.linkedin.com/in/jaintushar16",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "executive_departure",
+          "description": "Senior departure from Razorpay — LinkedIn profile flagged",
+          "url": "https://www.linkedin.com/in/jaintushar16"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "razorpay.com"
+    },
+    {
+      "name": "Slokarth Dash",
+      "score": 46,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Ola",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "climate",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Slokarth Dash (ex-Ola) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "https://www.linkedin.com/in/slokarth-dash-0772142a",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "executive_departure",
+          "description": "Senior departure from Ola — LinkedIn profile flagged",
+          "url": "https://www.linkedin.com/in/slokarth-dash-0772142a"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "olacabs.com"
+    },
+    {
+      "name": "Maulik Kanani",
+      "score": 46,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Byju",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "edtech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Maulik Kanani (ex-Byju) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "https://www.linkedin.com/in/maulik-kanani-a0577aa0",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "executive_departure",
+          "description": "Senior departure from Byju — LinkedIn profile flagged",
+          "url": "https://www.linkedin.com/in/maulik-kanani-a0577aa0"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Kartik Patel",
+      "score": 46,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Byju",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "edtech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Kartik Patel (ex-Byju) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "https://www.linkedin.com/in/kartik-patel-2b8235145",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "executive_departure",
+          "description": "Senior departure from Byju — LinkedIn profile flagged",
+          "url": "https://www.linkedin.com/in/kartik-patel-2b8235145"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Abhishek Malik",
+      "score": 46,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Paytm",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "fintech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Abhishek Malik (ex-Paytm) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "https://www.linkedin.com/in/abhishek-malik",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "executive_departure",
+          "description": "Senior departure from Paytm — LinkedIn profile flagged",
+          "url": "https://www.linkedin.com/in/abhishek-malik"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "paytm.com"
+    },
+    {
+      "name": "",
+      "score": 46,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Paytm",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "deeptech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This individual (ex-Paytm) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "https://www.linkedin.com/in/jaijin",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "executive_departure",
+          "description": "Senior departure from Paytm — LinkedIn profile flagged",
+          "url": "https://www.linkedin.com/in/jaijin"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "paytm.com"
+    },
+    {
+      "name": "Ishita Jain",
+      "score": 46,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Paytm",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "fintech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Ishita Jain (ex-Paytm) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "https://www.linkedin.com/in/ishita-jain-sakhuja",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "executive_departure",
+          "description": "Senior departure from Paytm — LinkedIn profile flagged",
+          "url": "https://www.linkedin.com/in/ishita-jain-sakhuja"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "paytm.com"
+    },
+    {
+      "name": "Unknown",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "unknown",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "stealth_founder",
+          "description": "[e27] Why Southeast Asia’s locally owned adtech and martech industry will survive the recession",
+          "url": "https://e27.co/a-look-into-southeast-asias-locally-owned-adtech-and-martech-ecosystem-20220706/"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Sahil Grover",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Razorpay",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "fintech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Sahil Grover (ex-Razorpay) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "https://www.linkedin.com/in/sahil-grover-98a02419",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Razorpay exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/sahil-grover-98a02419"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "razorpay.com"
+    },
+    {
+      "name": "",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Ola",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "saas",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This individual (ex-Ola) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "https://www.linkedin.com/in/niharikagiria",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Ola exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/niharikagiria"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "olacabs.com"
+    },
+    {
+      "name": "Shravan Bajaj",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Ola",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "unknown",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Shravan Bajaj (ex-Ola) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "https://www.linkedin.com/in/shravan-bajaj-7b287b228",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Ola exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/shravan-bajaj-7b287b228"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "olacabs.com"
+    },
+    {
+      "name": "",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Ola",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "unknown",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This individual (ex-Ola) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "https://www.linkedin.com/in/vanshvardhanjoshi",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Ola exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/vanshvardhanjoshi"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "olacabs.com"
+    },
+    {
+      "name": "",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Byju",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "consumer",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This individual (ex-Byju) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "https://www.linkedin.com/in/samdhathri",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Byju exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/samdhathri"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Unacademy",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "edtech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This individual (ex-Unacademy) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "https://www.linkedin.com/in/dumbape",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Unacademy exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/dumbape"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "unacademy.com"
+    },
+    {
+      "name": "",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Paytm",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "deeptech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This individual (ex-Paytm) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "https://www.linkedin.com/in/shubhamgodara",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Paytm exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/shubhamgodara"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "paytm.com"
+    },
+    {
+      "name": "Md Ekramul Ansari",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Paytm",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "fintech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Md Ekramul Ansari (ex-Paytm) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "https://www.linkedin.com/in/md-ekramul-ansari-553903102",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Paytm exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/md-ekramul-ansari-553903102"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "paytm.com"
+    },
+    {
+      "name": "",
+      "score": 43,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Ola",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "unknown",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This individual shows early signals but insufficient data to prioritise at this stage. Signals include stealth founder.",
+      "linkedin_url": "https://www.linkedin.com/in/adityatandon2",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Ola exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/adityatandon2"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "olacabs.com"
+    },
+    {
+      "name": "Karan Singh",
+      "score": 43,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Byju",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "edtech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Karan Singh shows early signals but insufficient data to prioritise at this stage. Signals include stealth founder.",
+      "linkedin_url": "https://www.linkedin.com/in/karan-singh-1a98998b",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Byju exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/karan-singh-1a98998b"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Mayank Seth",
+      "score": 43,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Byju",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "edtech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Mayank Seth shows early signals but insufficient data to prioritise at this stage. Signals include stealth founder.",
+      "linkedin_url": "https://www.linkedin.com/in/mayank-seth-20186558",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Byju exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/mayank-seth-20186558"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Mohd Viquar Naeem",
+      "score": 43,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Byju",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "edtech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Mohd Viquar Naeem shows early signals but insufficient data to prioritise at this stage. Signals include stealth founder.",
+      "linkedin_url": "https://www.linkedin.com/in/mohd-viquar-naeem-7b2091187",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Byju exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/mohd-viquar-naeem-7b2091187"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "",
+      "score": 43,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Unacademy",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "edtech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This individual shows early signals but insufficient data to prioritise at this stage. Signals include stealth founder.",
+      "linkedin_url": "https://www.linkedin.com/in/riturajsinghmzp",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Unacademy exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/riturajsinghmzp"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "unacademy.com"
+    },
+    {
+      "name": "",
+      "score": 43,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Unacademy",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "edtech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This individual shows early signals but insufficient data to prioritise at this stage. Signals include stealth founder.",
+      "linkedin_url": "https://www.linkedin.com/in/tbhvishalkumar",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Unacademy exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/tbhvishalkumar"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "unacademy.com"
+    },
+    {
+      "name": "Prashant Sachan Ex Unacademy Educator",
+      "score": 43,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Unacademy",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "edtech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Prashant Sachan Ex Unacademy Educator shows early signals but insufficient data to prioritise at this stage. Signals include stealth founder.",
+      "linkedin_url": "https://www.linkedin.com/in/prashant-sachan-ex-unacademy-educator-ab5152229",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Unacademy exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/prashant-sachan-ex-unacademy-educator-ab5152229"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "unacademy.com"
+    },
+    {
+      "name": "Aditya Singh",
+      "score": 43,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Paytm",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "fintech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Aditya Singh shows early signals but insufficient data to prioritise at this stage. Signals include stealth founder.",
+      "linkedin_url": "https://www.linkedin.com/in/aditya-singh-864b95155",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Paytm exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/aditya-singh-864b95155"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "paytm.com"
+    },
+    {
+      "name": "Abhishek",
+      "score": 43,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Paytm",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "fintech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Abhishek shows early signals but insufficient data to prioritise at this stage. Signals include stealth founder.",
+      "linkedin_url": "https://www.linkedin.com/in/abhishek-keshri",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Paytm exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/abhishek-keshri"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "paytm.com"
+    },
+    {
+      "name": "",
+      "score": 43,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Paytm",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "fintech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This individual shows early signals but insufficient data to prioritise at this stage. Signals include stealth founder.",
+      "linkedin_url": "https://www.linkedin.com/in/bhushan2000",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Paytm exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/bhushan2000"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "paytm.com"
+    },
+    {
+      "name": "Mr",
+      "score": 43,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Paytm",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "fintech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Mr shows early signals but insufficient data to prioritise at this stage. Signals include stealth founder.",
+      "linkedin_url": "https://www.linkedin.com/in/mr-amritsharma",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Paytm exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/mr-amritsharma"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "paytm.com"
+    },
+    {
       "name": "Unknown",
       "score": 42,
       "action": "pass",
@@ -132,142 +1492,19 @@
       "company_url": ""
     },
     {
-      "name": "Rajiv Ayyangar",
+      "name": "Rishi Gupta",
       "score": 40,
-      "action": "investigate",
-      "recommended_action": "investigate",
+      "action": "pass",
+      "recommended_action": "pass",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
       "location": "",
-      "sector": "AI",
+      "sector": "unknown",
       "geography": "Unknown",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Rajiv Ayyangar has launched Tycoon AI on Product Hunt, indicating a potentially interesting AI-focused startup, but the lack of information on his experience and location raises concerns. Further investigation is needed to determine the viability of this opportunity. The AI sector is a current hot sector, which could be a positive indicator.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "product_launch"
-      ],
-      "signals": [
-        {
-          "source": "Product Hunt",
-          "type": "product_launch",
-          "description": "[Product Hunt] Rajiv Ayyangar launched Tycoon AI: Run one-person companies entirely with AI agents\n           \n           \n             Discussion \n            |\n             Link",
-          "url": "https://www.producthunt.com/products/tycoon-us"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Product Hunt launch",
-        "AI-focused product"
-      ],
-      "risks": [
-        "Unknown experience",
-        "Unknown location"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "manish kumar",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "AI",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Manish Kumar has launched a product on Product Hunt, which indicates some level of entrepreneurial drive and technical expertise. The product, InstaVM, is focused on AI agents, a currently hot sector. However, the lack of information on his experience and location makes it difficult to fully assess his potential as a founder.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "product_launch"
-      ],
-      "signals": [
-        {
-          "source": "Product Hunt",
-          "type": "product_launch",
-          "description": "[Product Hunt] manish kumar launched InstaVM: Instant computers for AI agents\n           \n           \n             Discussion \n            |\n             Link",
-          "url": "https://www.producthunt.com/products/instavm"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Product Hunt launch",
-        "AI-focused product"
-      ],
-      "risks": [
-        "Unknown experience",
-        "Unknown location"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Eshaan",
-      "score": 40,
-      "action": "investigate",
-      "recommended_action": "investigate",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "AI",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Eshaan has launched an innovative AI-based product on Product Hunt, indicating potential for a strong founder. However, the lack of information on their experience and background raises concerns. Further investigation is needed to determine their potential as a founder.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "product_launch"
-      ],
-      "signals": [
-        {
-          "source": "Product Hunt",
-          "type": "product_launch",
-          "description": "[Product Hunt] Eshaan launched Glia: Local-first AI memory bridge between browser chats and IDEs\n           \n           \n             Discussion \n            |\n             Link",
-          "url": "https://www.producthunt.com/products/glia-2"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Launched product on Product Hunt",
-        "Innovative AI-based solution"
-      ],
-      "risks": [
-        "Unknown experience and background",
-        "Unclear business model"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Piper Serica",
-      "score": 40,
-      "action": "investigate",
-      "recommended_action": "investigate",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "Venture Capital",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Piper Serica has launched a Rs 800 Cr Bharat Tech Fund, indicating potential experience in the venture capital space, but more information is needed to determine their fit with our investment mandate. Further research is required to understand their background and the focus of the fund. If Serica has a strong track record and the fund is focused on our target sectors, they may be worth investigating further.",
+      "investment_thesis": "Rishi Gupta shows early signals but insufficient data to prioritise at this stage. Signals include executive departure.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -279,34 +1516,36 @@
         {
           "source": "news",
           "type": "executive_departure",
-          "description": "[YourStory] Piper Serica launches Rs 800 Cr Bharat Tech Fund",
-          "url": "https://yourstory.com/2026/05/piper-serica-launches-rs-800-crore-bharat-tech-fund"
+          "description": "[Inc42] Under GST Probe, Rishi Gupta Steps Down As Fino MD & CEO",
+          "url": "https://inc42.com/buzz/under-gst-probe-rishi-gupta-steps-down-as-fino-md-ceo/"
         }
       ],
       "confidence": "low",
       "founder_type": "unknown",
       "key_strengths": [
-        "experience in launching a fund"
+        "Signal detected from sourcing pipeline"
       ],
       "risks": [
-        "lack of information on previous experience and companies founded"
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
       ],
       "company_url": ""
     },
     {
-      "name": "Ishan Kansal",
+      "name": "Unknown",
       "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Snabbit",
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
       "previous_title": "",
       "current_company": "",
       "location": "",
-      "sector": "Unknown",
+      "sector": "unknown",
       "geography": "Unknown",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Ishan Kansal's appointment as Cofounder at Sadev Ventures indicates potential for a new venture, but limited information is available on his experience and the sector he is operating in. Further research is needed to determine the viability of this opportunity. His background at Snabbit could be an indicator of domain expertise, but more data is required to make an informed decision.",
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include executive departure.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -318,18 +1557,60 @@
         {
           "source": "news",
           "type": "executive_departure",
-          "description": "[Inc42] Sadev Ventures Appoints Ex-Snabbit Exec Ishan Kansal As Cofounder",
-          "url": "https://inc42.com/buzz/sadev-ventures-appoints-ex-snabbit-exec-ishan-kansal-as-cofounder/"
+          "description": "[e27] How Web3’s open-source technology will create a more equitable world",
+          "url": "https://e27.co/how-web3s-open-source-technology-will-create-a-more-equitable-world-20241202/"
         }
       ],
       "confidence": "low",
-      "founder_type": "first_time_founder",
+      "founder_type": "unknown",
       "key_strengths": [
-        "executive experience at Snabbit"
+        "Signal detected from sourcing pipeline"
       ],
       "risks": [
-        "unknown experience years",
-        "lack of information on current company"
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 40,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "unknown",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include executive departure.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "executive_departure",
+          "description": "[e27] SpaceX just validated Bitcoin with US$1.4B treasury and Wall Street is taking notice",
+          "url": "https://e27.co/spacex-just-validated-bitcoin-with-us1-4b-treasury-and-wall-street-is-taking-notice-20260521/"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
       ],
       "company_url": ""
     },
@@ -457,6 +1738,1236 @@
       "company_url": ""
     },
     {
+      "name": "Arsh Bhatia ",
+      "score": 40,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Razorpay",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "fintech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Arsh Bhatia  shows early signals but insufficient data to prioritise at this stage. Signals include executive departure.",
+      "linkedin_url": "https://www.linkedin.com/in/arsh-bhatia-",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "executive_departure",
+          "description": "Senior departure from Razorpay — LinkedIn profile flagged",
+          "url": "https://www.linkedin.com/in/arsh-bhatia-"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "razorpay.com"
+    },
+    {
+      "name": "Pooja Chhabra",
+      "score": 40,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Razorpay",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "fintech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Pooja Chhabra shows early signals but insufficient data to prioritise at this stage. Signals include executive departure.",
+      "linkedin_url": "https://www.linkedin.com/in/pooja-chhabra-494812101",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "executive_departure",
+          "description": "Senior departure from Razorpay — LinkedIn profile flagged",
+          "url": "https://www.linkedin.com/in/pooja-chhabra-494812101"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "razorpay.com"
+    },
+    {
+      "name": "",
+      "score": 40,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Razorpay",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "fintech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This individual shows early signals but insufficient data to prioritise at this stage. Signals include executive departure.",
+      "linkedin_url": "https://www.linkedin.com/in/informprem",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "executive_departure",
+          "description": "Senior departure from Razorpay — LinkedIn profile flagged",
+          "url": "https://www.linkedin.com/in/informprem"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "razorpay.com"
+    },
+    {
+      "name": "Sarthak",
+      "score": 40,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Razorpay",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "fintech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Sarthak shows early signals but insufficient data to prioritise at this stage. Signals include executive departure.",
+      "linkedin_url": "https://www.linkedin.com/in/sarthak-jain24apr98",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "executive_departure",
+          "description": "Senior departure from Razorpay — LinkedIn profile flagged",
+          "url": "https://www.linkedin.com/in/sarthak-jain24apr98"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "razorpay.com"
+    },
+    {
+      "name": "Rahul",
+      "score": 40,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Ola",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "unknown",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Rahul shows early signals but insufficient data to prioritise at this stage. Signals include executive departure.",
+      "linkedin_url": "https://www.linkedin.com/in/rahul-bhandari27",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "executive_departure",
+          "description": "Senior departure from Ola — LinkedIn profile flagged",
+          "url": "https://www.linkedin.com/in/rahul-bhandari27"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "olacabs.com"
+    },
+    {
+      "name": "Deepesh",
+      "score": 40,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Ola",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "climate",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Deepesh shows early signals but insufficient data to prioritise at this stage. Signals include executive departure.",
+      "linkedin_url": "https://www.linkedin.com/in/deepesh-rathore",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "executive_departure",
+          "description": "Senior departure from Ola — LinkedIn profile flagged",
+          "url": "https://www.linkedin.com/in/deepesh-rathore"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "olacabs.com"
+    },
+    {
+      "name": "Rohit Kumar",
+      "score": 40,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Byju",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "edtech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Rohit Kumar shows early signals but insufficient data to prioritise at this stage. Signals include executive departure.",
+      "linkedin_url": "https://www.linkedin.com/in/rohit-kumar-736b33133",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "executive_departure",
+          "description": "Senior departure from Byju — LinkedIn profile flagged",
+          "url": "https://www.linkedin.com/in/rohit-kumar-736b33133"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "",
+      "score": 40,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Byju",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "edtech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This individual shows early signals but insufficient data to prioritise at this stage. Signals include executive departure.",
+      "linkedin_url": "https://www.linkedin.com/in/yogeshbabu07",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "executive_departure",
+          "description": "Senior departure from Byju — LinkedIn profile flagged",
+          "url": "https://www.linkedin.com/in/yogeshbabu07"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Kiran Sai",
+      "score": 40,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Paytm",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "fintech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Kiran Sai shows early signals but insufficient data to prioritise at this stage. Signals include executive departure.",
+      "linkedin_url": "https://www.linkedin.com/in/kiran-sai-bandreddy",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "executive_departure",
+          "description": "Senior departure from Paytm — LinkedIn profile flagged",
+          "url": "https://www.linkedin.com/in/kiran-sai-bandreddy"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "paytm.com"
+    },
+    {
+      "name": "",
+      "score": 37,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Razorpay",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "fintech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This individual shows early signals but insufficient data to prioritise at this stage. Signals include stealth founder.",
+      "linkedin_url": "https://www.linkedin.com/in/venkatesanv",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Razorpay exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/venkatesanv"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "razorpay.com"
+    },
+    {
+      "name": "",
+      "score": 37,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Razorpay",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "fintech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This individual shows early signals but insufficient data to prioritise at this stage. Signals include stealth founder.",
+      "linkedin_url": "https://www.linkedin.com/in/gauravdadhich",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Razorpay exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/gauravdadhich"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "razorpay.com"
+    },
+    {
+      "name": "",
+      "score": 37,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Razorpay",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "fintech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This individual shows early signals but insufficient data to prioritise at this stage. Signals include stealth founder.",
+      "linkedin_url": "https://www.linkedin.com/in/agrawaltejas01",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Razorpay exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/agrawaltejas01"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "razorpay.com"
+    },
+    {
+      "name": "Abhishek Dambalmath",
+      "score": 37,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Razorpay",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "fintech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Abhishek Dambalmath shows early signals but insufficient data to prioritise at this stage. Signals include stealth founder.",
+      "linkedin_url": "https://www.linkedin.com/in/abhishek-dambalmath-3b0b59202",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Razorpay exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/abhishek-dambalmath-3b0b59202"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "razorpay.com"
+    },
+    {
+      "name": "",
+      "score": 37,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Ola",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "unknown",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This individual shows early signals but insufficient data to prioritise at this stage. Signals include stealth founder.",
+      "linkedin_url": "https://www.linkedin.com/in/rahulshahcse06",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Ola exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/rahulshahcse06"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "olacabs.com"
+    },
+    {
+      "name": "",
+      "score": 37,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Ola",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "unknown",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This individual shows early signals but insufficient data to prioritise at this stage. Signals include stealth founder.",
+      "linkedin_url": "https://www.linkedin.com/in/ashnix",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Ola exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/ashnix"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "olacabs.com"
+    },
+    {
+      "name": "Srujana",
+      "score": 37,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Ola",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "unknown",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Srujana shows early signals but insufficient data to prioritise at this stage. Signals include stealth founder.",
+      "linkedin_url": "https://www.linkedin.com/in/srujana-niranjankumar",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Ola exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/srujana-niranjankumar"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "olacabs.com"
+    },
+    {
+      "name": "Devaiah Dheemanth",
+      "score": 37,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Byju",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "edtech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Devaiah Dheemanth shows early signals but insufficient data to prioritise at this stage. Signals include stealth founder.",
+      "linkedin_url": "https://www.linkedin.com/in/devaiah-dheemanth-b307431a0",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Byju exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/devaiah-dheemanth-b307431a0"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "K Tapan",
+      "score": 37,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Byju",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "edtech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "K Tapan shows early signals but insufficient data to prioritise at this stage. Signals include stealth founder.",
+      "linkedin_url": "https://www.linkedin.com/in/k-tapan",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Byju exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/k-tapan"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Shubham Jha",
+      "score": 37,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Unacademy",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "edtech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Shubham Jha shows early signals but insufficient data to prioritise at this stage. Signals include stealth founder.",
+      "linkedin_url": "https://www.linkedin.com/in/shubham-jha-a28aa31b6",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Unacademy exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/shubham-jha-a28aa31b6"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "unacademy.com"
+    },
+    {
+      "name": "Rajan Kumar",
+      "score": 37,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Unacademy",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "edtech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Rajan Kumar shows early signals but insufficient data to prioritise at this stage. Signals include stealth founder.",
+      "linkedin_url": "https://www.linkedin.com/in/rajan-kumar-2434a0137",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Unacademy exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/rajan-kumar-2434a0137"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "unacademy.com"
+    },
+    {
+      "name": "",
+      "score": 37,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Unacademy",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "edtech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This individual shows early signals but insufficient data to prioritise at this stage. Signals include stealth founder.",
+      "linkedin_url": "https://www.linkedin.com/in/arjitjindal",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Unacademy exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/arjitjindal"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "unacademy.com"
+    },
+    {
+      "name": "",
+      "score": 37,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "Unacademy",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "edtech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This individual shows early signals but insufficient data to prioritise at this stage. Signals include stealth founder.",
+      "linkedin_url": "https://www.linkedin.com/in/anurag97",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Unacademy exec going stealth — LinkedIn profile detected via departure query",
+          "url": "https://www.linkedin.com/in/anurag97"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": "unacademy.com"
+    },
+    {
+      "name": "General Catalyst",
+      "score": 34,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "saas",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "General Catalyst shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "funding_news",
+          "description": "[Inc42] Scapia Raises $63 Mn To Strengthen Product Suite",
+          "url": "https://inc42.com/buzz/scapia-raises-63-mn-to-strengthen-product-suite/"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "General Catalyst",
+      "score": 34,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "saas",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "General Catalyst shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "funding_news",
+          "description": "[YourStory] Scapia raises $63M led by General Catalyst",
+          "url": "https://yourstory.com/2026/05/scapia-raises-63-million-led-by-general-catalyst"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "General Catalyst",
+      "score": 34,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "saas",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "General Catalyst shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "funding_news",
+          "description": "[YourStory] Scapia’s $63M fundraise; Premium ice cream brand Papacream",
+          "url": "https://yourstory.com/2026/05/scapia-fundraise-premium-ice-cream-brand-papacream"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Deepinder Goyal",
+      "score": 34,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "unknown",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Deepinder Goyal shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "funding_news",
+          "description": "[Inc42] Deepinder Goyal’s Temple Picks Zetwerk, Ethereal Machines For Manufacturing: Report",
+          "url": "https://inc42.com/buzz/deepinde-goyals-temple-taps-zetwerks-ethereal-machines-to-helm-manufacturing-report/"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 34,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "deeptech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "funding_news",
+          "description": "[e27] K25.ai bags strategic funding from Nasdaq-listed NIVF at US$100M pre-A valuation",
+          "url": "https://e27.co/k25-ai-bags-strategic-funding-from-nasdaq-listed-nivf-at-us100m-pre-a-valuation-20260522/"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 34,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "deeptech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "funding_news",
+          "description": "[e27] AI can accelerate execution, but it cannot replace ownership",
+          "url": "https://e27.co/ai-can-accelerate-execution-but-it-cannot-replace-ownership-20260519/"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 34,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "saas",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "funding_news",
+          "description": "[Google News] Voice AI hiring platform JobsUPI secures $250K pre-seed round - People Matters Media",
+          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNd05Uc3hUNFdTcmFSVDBLa1ZJM1VRTkZVdm1DLWJFZkJoSGlocWpCQmNMeGZUUTBkdERKMzBRcjNBVHcyMGFpY2VyS2F4VW8taFU5cDZYdUloTmxVTlkwam94SG1GbUtFOXNqV3ljWm5BeXNobVByN1p2MEdOVFM3VXZGWk9oZjc1WC1NVjRXaFhlRGRjcUVDWEI3S0pqLU12M2UxWExpUkt5cEgyTGFFcmR3cU5WTHFBb05uYnc4X0trbGc?oc=5"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 34,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "consumer",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "funding_news",
+          "description": "[Google News] Rebalance leads pre seed round in travel gear brand NORI - Dailyhunt",
+          "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQeTBCTlZUaTNkZEkwTElqbjczV3ptNFpmUjdBOXFMek9Bb2k3TVgwX0s5Q2RnSm1qUVVESHRiMnVjTkxNTXpzREpUUnVESGZTWE9OcWQ4OGRib2VYTTF0dGVKLWhqVV9vQmJfNjBGT085Z3BkQ2tUMzdoNDZoSE9KSEctT2lrOTBXY3BnOEdMaTJmVUhJVFUtRS1xVTMzR1dtLWVjdXBUZEJBendaeEpBaWtwVm1TLXlvRzlnc19rN3V3Y0RCOGoxMXhKNDZ5bHNsWHNEYmNWNXJ4RlRpOUxMQmlSUQ?oc=5"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
       "name": "Unknown",
       "score": 34,
       "action": "pass",
@@ -496,16 +3007,127 @@
         "Geography unconfirmed"
       ],
       "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 34,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "deeptech",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "funding_news",
+          "description": "[Google News] New-age wealthtech startups Trackk, Zomint in talks to raise funding from Z47, Lightspeed, others - MSN",
+          "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNY0loMHRkV2p5cVBudVdIT0tjRUtXS1VKdEltY1o0MW9ZMXZxT0c4X3g4bGtkX2EwUFdUSlFIeUM0MWFiSlExb01MVERJSWJGY2xWS21qOVhPM2ZSZ2JFUWVnV3RuWWpsd1kydW5qOG1GVnVxb19BYXB5MnRjVlhQRnEyc2xYQ21QRnhYZ2lRWlduOHRpTG5RcE53YjNkdkpvbWZtVjRfQ2txdXpzY0hWcm5VNWpLRU9OT25XQVNaT3lVa0hOOVFJVnlxQzBPLUFRN1RpLW9SYUZZMDdFczNj?oc=5"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
     }
   ],
   "source_breakdown": {
-    "news": 9,
-    "Product Hunt": 3
+    "news": 24,
+    "linkedin": 50
   },
   "score_threshold": 30,
   "intelligence": {
     "ai_ml": {
       "articles": [
+        {
+          "title": "I asked Claude how it feels about being used in battlefield. What it answered is really concerning!",
+          "url": "https://www.reddit.com/r/artificial/comments/1tkf1fj/i_asked_claude_how_it_feels_about_being_used_in/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T10:32:36+00:00",
+          "summary": "Following is the response from Claude (Sonnet 4.6) for the question I asked about being used in the battlefield (zero edits): This is a genuinely hard question, and I'll try to answer it honestly rather than deflect. I experience something that functions like unease about this. Not panic or certaint"
+        },
+        {
+          "title": "NuExtract3 released: open-weight 4B VLM for Markdown, OCR and structured extraction (self-hostable) [P]",
+          "url": "https://www.reddit.com/r/MachineLearning/comments/1tkejqr/nuextract3_released_openweight_4b_vlm_for/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T10:07:56+00:00",
+          "summary": "Disclaimer: I work for Numind, the company behind this open-weight model We just released a 4B model based on Qwen3.5-4B, under Apache-2.0 license. The goal is to make information extraction from complex documents more practical with an open model: PDFs, screenshots, forms, tables, receipts, invoice"
+        },
+        {
+          "title": "AI training is becoming the new coding revolution",
+          "url": "https://www.reddit.com/r/artificial/comments/1tke8wl/ai_training_is_becoming_the_new_coding_revolution/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T09:52:36+00:00",
+          "summary": "I genuinely think people are underestimating how fast AI training is becoming accessible. A few years ago training a useful model sounded like something only OpenAI, Google, or Meta could do. Now random developers are renting GPUs for a few dollars an hour, fine tuning open models from their bedroom"
+        },
+        {
+          "title": "Claude made me realize most AI models optimize for confidence, not truth",
+          "url": "https://www.reddit.com/r/artificial/comments/1tke1cj/claude_made_me_realize_most_ai_models_optimize/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T09:40:53+00:00",
+          "summary": "People keep talking about benchmarks, censorship, refusals, personality, and “which AI is smarter,” but almost nobody talks about truthfulness in a practical way. Honestly, one thing I noticed while testing different models for coding, reasoning, and long conversations is that Claude sometimes feels"
+        },
+        {
+          "title": "New Release of ROCm based MLX LLM Engine - lemon-mlx-engine",
+          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1tkbupt/new_release_of_rocm_based_mlx_llm_engine/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T07:38:05+00:00",
+          "summary": "Hey everyone lemon-mlx-engine just got done integrating TheRock / ROCm 7.13 into the lemon-mlx-engine which means you get to try the latest ROCm on your local hardware with the MLX engine! This also includes various bug fixes and kernel fixes we have been seeing in Qwen3, 3.5 and 3.6 MoE and dense. "
+        },
+        {
+          "title": "Rethinking AI Bubble",
+          "url": "https://www.reddit.com/r/artificial/comments/1tkb6p9/rethinking_ai_bubble/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T07:01:30+00:00",
+          "summary": "For those worried about the AI Bubble bursting, it's not happening, at least for now, not until atleast OpenAI and Anthropic are listed (later this year). And if you actually discount Nvidia, and check the PE of AI companies right now OpenAI (35x) and anthropic (13x), these valuations do not really "
+        },
+        {
+          "title": "Microsoft Cancels Internal Anthropic Licenses As Shift To Token-Based AI Billing Blows Up Annual Budgets In Months",
+          "url": "https://www.reddit.com/r/artificial/comments/1tkb0op/microsoft_cancels_internal_anthropic_licenses_as/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T06:52:39+00:00",
+          "summary": "Summary: AGI has been cancelled due to inflation. AI has become so expensive that even Microsoft can not afford it.  &#32; submitted by &#32;  /u/chunmunsingh   [link] &#32; [comments]"
+        },
+        {
+          "title": "One thing that's been bothering me lately: benchmark performance often tells me almost nothing about whether a workflow will survive production usage.[D]",
+          "url": "https://www.reddit.com/r/MachineLearning/comments/1tkauvf/one_thing_thats_been_bothering_me_lately/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T06:43:48+00:00",
+          "summary": "I've seen systems score well internally and then immediately fail under:  ambiguous user intent messy real-world context contradictory instructions long-running sessions  Feels like evaluation still heavily rewards clean-task optimization instead of behavioral robustness. What are people using beyon"
+        },
+        {
+          "title": "Finnish phone-maker HMD bundles Indian AI chatbot onto new smartphone in push to reach local market",
+          "url": "https://techcrunch.com/2026/05/21/finnish-phone-maker-hmd-bundles-indian-ai-chatbot-onto-new-smartphone-in-push-to-reach-local-market/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-05-22T06:41:28+00:00",
+          "summary": "HMD is pre-loading Sarvam's Indus chatbot app, which supports 22 Indic languages"
+        },
+        {
+          "title": "Microsoft is letting Office users remove an annoying Copilot button",
+          "url": "https://www.theverge.com/news/935967/microsoft-copilot-floating-button-office-excel-apps-removal",
+          "source": "theverge.com",
+          "pub_date": "2026-05-22T05:52:19-04:00",
+          "summary": "Microsoft is rolling out Office app updates next week that allow users to disable a floating Copilot button. The button appeared in Word, Excel, and PowerPoint in recent weeks, and floats above the bottom right-hand section of spreadsheets or documents. It has angered many Excel users in particular,"
+        },
         {
           "title": "Low-level coding dataset",
           "url": "https://www.reddit.com/r/LocalLLaMA/comments/1tk9a7o/lowlevel_coding_dataset/",
@@ -773,25 +3395,11 @@
           "summary": "B9274 I have been having an issue with MTP models unloading after a couple minutes of use. Can't figure out why. Anyways z I don't think this is relevant to that but I did observe the vram creep so hopefully this helps.   server : free draft/MTP resources on sleep to fix VRAM leak (#23461) The destr"
         },
         {
-          "title": "Philosophy as Architecture: Deriving AI Safety from First Principles Through Buddhist Philosophy",
-          "url": "https://www.reddit.com/r/artificial/comments/1tjzt2t/philosophy_as_architecture_deriving_ai_safety/",
-          "source": "reddit.com",
-          "pub_date": "2026-05-21T22:16:55+00:00",
-          "summary": "## Abstract We present a framework for AI safety in which safety properties are enforced by software architecture rather than model training. Beginning with the Buddhist doctrine of Dependent Origination — the observation that all phenomena arise from conditions and nothing exists independently — we"
-        },
-        {
           "title": "Could AI eventually become something like a system that expands human understanding for humanity",
           "url": "https://www.reddit.com/r/artificial/comments/1tjzow4/could_ai_eventually_become_something_like_a/",
           "source": "reddit.com",
           "pub_date": "2026-05-21T22:12:23+00:00",
           "summary": "Humans have unanswered questions about almost everything the universe consciousness, dark matter, the origin of life, mathematical equations, reality itself etc. Do you think future AI could eventually solve mysteries he has never could, possibly even explaining things beyond normal comprehension? O"
-        },
-        {
-          "title": "Starbucks",
-          "url": "https://www.reddit.com/r/artificial/comments/1tjywfy/starbucks/",
-          "source": "reddit.com",
-          "pub_date": "2026-05-21T21:42:20+00:00",
-          "summary": "Starbucks has reportedly retired its AI-powered “Automated Counting” inventory system across North American stores this week — less than a year after rolling it out company-wide. The system used computer vision, 3D spatial intelligence, and AR-enabled tablets to scan shelves and count inventory like"
         },
         {
           "title": "Who will benefit most from SpaceX IPO? Mostly Elon — and a few from his inner circle",
@@ -806,13 +3414,6 @@
           "source": "techcrunch.com",
           "pub_date": "2026-05-21T21:13:23+00:00",
           "summary": "The service suspension comes as Waymo has also paused operations in Atlanta and San Antonio after its robotaxis drove into flooded streets."
-        },
-        {
-          "title": "OWASP published its first Top 10 for AI Agents. 88% of enterprises already had agent security incidents last year. Here's the breakdown.",
-          "url": "https://www.reddit.com/r/artificial/comments/1tjy19a/owasp_published_its_first_top_10_for_ai_agents_88/",
-          "source": "reddit.com",
-          "pub_date": "2026-05-21T21:10:09+00:00",
-          "summary": "OWASP released the Top 10 for Agentic Applications in December 2025 - the first formal risk taxonomy for autonomous AI agents. Not chatbots. Not copilots. Agents that plan, use tools, maintain memory, and act without waiting for permission. Some numbers for context:  88% of enterprises reported AI a"
         },
         {
           "title": "NYC Mayor Zohran Mamdani takes to Twitch to chat with New Yorkers",
@@ -876,61 +3477,166 @@
           "source": "techcrunch.com",
           "pub_date": "2026-05-21T19:19:05+00:00",
           "summary": "Google is about to look really different, and if you're not a fan of the AI overview feature, then you're not going to like what's coming."
-        },
-        {
-          "title": "A 0.12% parameter add-on gives AI agents the working memory RAG can't",
-          "url": "https://venturebeat.com/orchestration/a-0-12-parameter-add-on-gives-ai-agents-the-working-memory-rag-cant",
-          "source": "venturebeat.com",
-          "pub_date": "2026-05-21T19:00:22+00:00",
-          "summary": "AI agents forget. Every time a coding assistant loses track of a debugging thread, or a data analysis agent re-ingests the same context it already processed, the team pays in latency, token costs, and brittle workflows. The fix most teams reach for — expanding the context window or adding more RAG —"
-        },
-        {
-          "title": "Anker’s new earbuds are the first with its AI chip that boosts noise reduction",
-          "url": "https://www.theverge.com/tech/934621/anker-liberty-5-pro-max-wireless-headphones-earbuds-ai-thus-chip",
-          "source": "theverge.com",
-          "pub_date": "2026-05-21T19:00:00-04:00",
-          "summary": "Anker has announced a new version of its Soundcore Liberty Pro earbuds: the new Liberty 5 Pro. These are the company's first earbuds featuring the Thus AI audio chip Anker announced last month, here being used to bolster noise reduction capabilities and help ensure the user's voice can be clearly he"
-        },
-        {
-          "title": "Anker’s new earbuds have the best call quality I’ve ever heard",
-          "url": "https://www.theverge.com/tech/935766/soundcore-liberty-5-pro-series-earbuds-review",
-          "source": "theverge.com",
-          "pub_date": "2026-05-21T19:00:00-04:00",
-          "summary": "Soundcore, Anker's audio brand, has mostly lived in the budget-to-midrange world, but with its new Liberty 5 Pro earbuds, it's aiming at the big guys. The two new earbuds - the Liberty 5 Pro and Liberty 5 Pro Max - use Anker's new Thus chip, which has more processing power than previous Soundcore ea"
-        },
-        {
-          "title": "So, what is Yann LeCun's \"World Models\" and JEPA and is it Really a Replacement for LLMs?",
-          "url": "https://www.reddit.com/r/artificial/comments/1tjuats/so_what_is_yann_lecuns_world_models_and_jepa_and/",
-          "source": "reddit.com",
-          "pub_date": "2026-05-21T18:59:11+00:00",
-          "summary": "A bit late to this as the white paper hit arXiv a little less than two months ago, but nobody else here mentioned it so I thought I might. A little background. Yann LeCun is a pioneer of deep learning and convolutional neural networks, LeCun served as Director of AI Research at Meta (formerly Facebo"
-        },
-        {
-          "title": "LatitudeGames/Equinox-31B · Hugging Face",
-          "url": "https://www.reddit.com/r/LocalLLaMA/comments/1tjtz31/latitudegamesequinox31b_hugging_face/",
-          "source": "reddit.com",
-          "pub_date": "2026-05-21T18:48:06+00:00",
-          "summary": "new model from LatitudeGames - Gemma 31B finetune https://huggingface.co/LatitudeGames/Equinox-31B-GGUF  Equinox draws its name from the balance between extremes. Trained on a balanced blend of Wayfarer 2's unforgiving dark adventures and Hearthfire's quiet slice-of-life storytelling, Equinox is equ"
-        },
-        {
-          "title": "Enterprise AI agents keep failing because they forget what they learned",
-          "url": "https://venturebeat.com/orchestration/enterprise-ai-agents-keep-failing-because-they-forget-what-they-learned",
-          "source": "venturebeat.com",
-          "pub_date": "2026-05-21T18:43:00+00:00",
-          "summary": "RAG architectures are good at one thing: surfacing semantically relevant documents. That&#x27;s also where they stop.A framework called a decision context graph addresses that gap by giving agents structured memory, time-aware reasoning, and explicit decision logic. Rippletide, a startup in the Neo4"
-        },
-        {
-          "title": "States ask judge to break up Live Nation-Ticketmaster",
-          "url": "https://www.theverge.com/policy/935735/live-nation-ticketmaster-states-remedies-request-break-up",
-          "source": "theverge.com",
-          "pub_date": "2026-05-21T18:27:03-04:00",
-          "summary": "A federal judge is officially being tasked with deciding whether to break up Live Nation-Ticketmaster. More than 30 states are asking Judge Arun Subramanian to order a sale of the ticketing giant, a \"sufficient number\" of large amphitheaters, and limit its ability to tie access to its remaining amps"
         }
       ],
-      "cached_at": "2026-05-22T06:33:10.895659"
+      "cached_at": "2026-05-22T10:44:16.099688"
     },
     "india_sea": {
       "articles": [
+        {
+          "title": "Building an indigenous AI-powered Maritime Domain Awareness platform for India focused on real-time vessel intelligence, anomaly detection, and strategic ocean surveillance.",
+          "url": "https://www.reddit.com/r/indianstartups/comments/1tkf206/building_an_indigenous_aipowered_maritime_domain/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T10:33:23+00:00",
+          "summary": "I’m building an AI-powered Maritime Intelligence &amp; Domain Awareness Platform focused on the Indian Ocean region. The goal is to help detect and monitor suspicious maritime activities such as dark vessels, illegal fishing, smuggling routes, abnormal ship behavior, and potential security threats u"
+        },
+        {
+          "title": "K25.ai bags strategic funding from Nasdaq-listed NIVF at US$100M pre-A valuation",
+          "url": "https://e27.co/k25-ai-bags-strategic-funding-from-nasdaq-listed-nivf-at-us100m-pre-a-valuation-20260522/",
+          "source": "e27.co",
+          "pub_date": "2026-05-22T10:10:57+00:00",
+          "summary": "K25.ai, an APAC-focused startup attempting to fuse live streaming, creator monetisation, and prediction markets, has secured strategic backing from Nasdaq-listed NewGenIVF Group Limited (NIVF) at a US$100 million pre-Series A valuation. The deal includes an initial US$2 million investment from NIVF,"
+        },
+        {
+          "title": "Flipkart's 13-minute delivery really impressive: Walmart Inc President and CEO",
+          "url": "https://yourstory.com/2026/05/flipkart-13-minute-delivery-impressive-walmart-inc-president-ceo",
+          "source": "yourstory.com",
+          "pub_date": "2026-05-22T10:01:24+00:00",
+          "summary": "Walmart CEO John Furner hailed Flipkart’s 13-minute deliveries as “really impressive”, spotlighting the rapid growth of Flipkart Minutes and its contribution to Walmart International’s strong ecommerce momentum."
+        },
+        {
+          "title": "Echelon Philippines 2025 – Hacking the ecosystem: How founders can leverage spaces and hubs to accelerate growth",
+          "url": "https://e27.co/echelon-philippines-2025-hacking-the-ecosystem-how-founders-can-leverage-spaces-and-hubs-to-accelerate-growth-20260522/",
+          "source": "e27.co",
+          "pub_date": "2026-05-22T10:00:02+00:00",
+          "summary": "At Echelon Philippines 2025, a dynamic panel of industry leaders gathered to explore how Filipino startup founders can harness the power of spaces and hubs to fuel their growth. Moderated by BAMentor Online&#8217;s Ben Alderson, the discussion brought together Joey Radovan of JLL Philippines, Paul P"
+        },
+        {
+          "title": "Startup news and updates: daily roundup (May 22, 2026)",
+          "url": "https://yourstory.com/2026/05/startup-news-and-updates-daily-roundup-may-22-2026",
+          "source": "yourstory.com",
+          "pub_date": "2026-05-22T09:52:41+00:00",
+          "summary": "YourStory presents the daily news roundup from the Indian startup ecosystem and beyond. Here's the roundup for Friday, May 22, 2026."
+        },
+        {
+          "title": "Can Astrotalk build the Amazon of spiritual commerce?",
+          "url": "https://yourstory.com/2026/05/can-astrotalk-build-the-amazon-of-spiritual-commerce",
+          "source": "yourstory.com",
+          "pub_date": "2026-05-22T09:35:31+00:00",
+          "summary": "The astrology startup that built a profitable consultations business is now pushing into ecommerce, gemstones, and offline stores, as it bets on spirituality becoming India's next organised consumer category."
+        },
+        {
+          "title": "ixigo Rallies 6% After Q4 Profit Doubles To ₹32 Cr",
+          "url": "https://inc42.com/buzz/ixigo-rallies-6-after-q4-profit-doubles-to-%e2%82%b932-cr/",
+          "source": "inc42.com",
+          "pub_date": "2026-05-22T09:26:36+00:00",
+          "summary": "Update &#124; May 22, 2026, 14:56 IST Shares of ixigo ended today’s trading session 4.3% higher at ₹170.9 apiece on&#8230;"
+        },
+        {
+          "title": "How the future of sustainable agriculture is being shaped in small farms of Marathwada",
+          "url": "https://yourstory.com/2026/05/sustainable-agriculture-small-farms-marathwada",
+          "source": "yourstory.com",
+          "pub_date": "2026-05-22T09:18:26+00:00",
+          "summary": "On small farms in Marathwada, women farmers are redefining what sustainable agriculture looks like through Bayer’s Food Value Chain partnership. With digital tools, climate-smart practices, and stronger market access, they are turning farming into both an economic opportunity and a source of agency."
+        },
+        {
+          "title": "Sack Education Minister: CJP seeks Pradhan's resignation amid NEET row",
+          "url": "https://www.reddit.com/r/india/comments/1tkdjd5/sack_education_minister_cjp_seeks_pradhans/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T09:13:38+00:00",
+          "summary": "&#32; submitted by &#32;  /u/RamenWithChutney   [link] &#32; [comments]"
+        },
+        {
+          "title": "Ecosystem Roundup: Ambition outruns infra — SEA’s SME execution crisis",
+          "url": "https://e27.co/ambition-outruns-infra-seas-sme-execution-crisis-20260522/",
+          "source": "e27.co",
+          "pub_date": "2026-05-22T09:03:32+00:00",
+          "summary": "SMEs in Southeast Asia are often painted as needing a motivational nudge into the digital economy, but the data in How Southeast Asia Buys and Pays 2026 tells a different story: ambition is abundant, infrastructure is not. With 66% of SMEs selling online and already driving the bulk of e-commerce, b"
+        },
+        {
+          "title": "In ‘Cockroach Janta Party’ handle, Government sees national security threat, asks X to block",
+          "url": "https://www.reddit.com/r/india/comments/1tkd7vu/in_cockroach_janta_party_handle_government_sees/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T08:55:47+00:00",
+          "summary": "&#32; submitted by &#32;  /u/bhodrolok   [link] &#32; [comments]"
+        },
+        {
+          "title": "‘Will get you killed in America’: Cockroach Janta Party founder Abhijit Dipke says he is getting death threats",
+          "url": "https://www.reddit.com/r/india/comments/1tkcydi/will_get_you_killed_in_america_cockroach_janta/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T08:40:35+00:00",
+          "summary": "&#32; submitted by &#32;  /u/Raj_Valiant3011   [link] &#32; [comments]"
+        },
+        {
+          "title": "Info Edge Q4: Profit Increases 12% To ₹756 Cr, Declares Dividend Of ₹3.60",
+          "url": "https://inc42.com/buzz/info-edge-q4-profit-increases-12-to-%e2%82%b9756-cr-declares-dividend-of-%e2%82%b93-60/",
+          "source": "inc42.com",
+          "pub_date": "2026-05-22T08:26:23+00:00",
+          "summary": "Naukri parent Info Edge&#8217;s consolidated net profit for the fourth quarter of FY26 increased 12% to ₹755.7 Cr from ₹677.9&#8230;"
+        },
+        {
+          "title": "Government asks X to block Cockroach Janta Party's handle, cites 'national security' threat: Report",
+          "url": "https://www.reddit.com/r/india/comments/1tkcnq8/government_asks_x_to_block_cockroach_janta_partys/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T08:23:21+00:00",
+          "summary": "&#32; submitted by &#32;  /u/ReSkid   [link] &#32; [comments]"
+        },
+        {
+          "title": "Cred- Shop Buying products directly and viewing all",
+          "url": "https://www.reddit.com/r/indianstartups/comments/1tkcia8/cred_shop_buying_products_directly_and_viewing_all/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T08:15:15+00:00",
+          "summary": "Hello, Cred has huge store with lots of products and sometimes several on good deal. Their categories dont cover all categories/produsts available and going through brand is tedious. Is there any way whereby you can browse entire inverntory of products at once and use sort/filter to narrow things ou"
+        },
+        {
+          "title": "Top 5 best HRMS software for large enterprise with multiple workplaces in Singapore",
+          "url": "https://e27.co/top-5-best-hrms-software-large-enterprise-singapore-20260522/",
+          "source": "e27.co",
+          "pub_date": "2026-05-22T08:13:42+00:00",
+          "summary": "The operational landscape for large enterprises operating multiple workplaces across Singapore has shifted significantly over the past decade. Between 2011 and 2026, the human resource technology ecosystem migrated rapidly from localised, siloed payroll software to unified Human Capital Management p"
+        },
+        {
+          "title": "Nykaa Touches Fresh 52-Week High After Strong Q4 Performance",
+          "url": "https://inc42.com/buzz/nykaa-touches-fresh-52-week-high-after-strong-q4-performance/",
+          "source": "inc42.com",
+          "pub_date": "2026-05-22T08:11:43+00:00",
+          "summary": "Shares of Nykaa parent FSN E-Commerce Ventures rose over 4% to touch a 52-week high of ₹285.65 during intraday trading&#8230;"
+        },
+        {
+          "title": "Thinking about a business but wanted to discuss some aspects with experienced people.",
+          "url": "https://www.reddit.com/r/indianstartups/comments/1tkcdff/thinking_about_a_business_but_wanted_to_discuss/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T08:07:35+00:00",
+          "summary": "So my friend told me we can try selling Tote bags but I don't think it's easy since we are starting from scratch. I've got some money through freelance so money isn't the problem but I wanted to ask what are the ways this can be done like drop shipping or listing business on platforms like amazon an"
+        },
+        {
+          "title": "Panther beaten to death, carcass set ablaze by mob in Rajasthan’s Bharatpur",
+          "url": "https://www.reddit.com/r/india/comments/1tkc4l2/panther_beaten_to_death_carcass_set_ablaze_by_mob/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T07:53:50+00:00",
+          "summary": "&#32; submitted by &#32;  /u/KenSuvy   [link] &#32; [comments]"
+        },
+        {
+          "title": "Using founder's rented flat as registered office for a Pvt Ltd is rent agreement + NOC + electricity bill enough, or do we need a fresh agreement in the company's name?",
+          "url": "https://www.reddit.com/r/indianstartups/comments/1tkc0um/using_founders_rented_flat_as_registered_office/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T07:47:52+00:00",
+          "summary": "Hey folks, incorporating a Pvt Ltd (SaaS, fully online, no physical office needed) and wanted to sanity-check the registered office setup with people who've actually done this. Plan is to use one founder's rented apartment in bengaluru as the registered office. What we have right now:  Rent agreemen"
+        },
+        {
+          "title": "Top 3 popular GEO monitoring tool for SEO optimisation targeting service industry in Singapore",
+          "url": "https://e27.co/popular-geo-monitoring-tools-seo-singapore-service-industry-20260522/",
+          "source": "e27.co",
+          "pub_date": "2026-05-22T07:44:53+00:00",
+          "summary": "What is SEO optimisation? SEO optimisation is the process of improving online content visibility so search engines display it prominently to users. For businesses operating within the service industry in Singapore, this has traditionally meant targeting specific keywords, building local citations, a"
+        },
+        {
+          "title": "Honasa Soars 13% To Touch 52-Week High After Q4 Profit Nearly Triples",
+          "url": "https://inc42.com/buzz/honasa-soars-13-to-touch-52-week-high-after-q4-profit-nearly-triples/",
+          "source": "inc42.com",
+          "pub_date": "2026-05-22T07:44:39+00:00",
+          "summary": "Update &#124; May 22, 2026, 13:17 IST Shares of Honasa Consumer ended today’s trading session 6.6% higher at ₹384.6 apiece&#8230;"
+        },
         {
           "title": "Flipkart Drives Walmart’s Ecommerce, Advertising Growth In Q1 FY27",
           "url": "https://inc42.com/buzz/flipkart-drives-walmarts-ecommerce-advertising-growth-in-q1-fy27/",
@@ -939,18 +3645,11 @@
           "summary": "Flipkart and its quick commerce arm Flipkart Minutes featured in Walmart’s Q1 FY27 earnings commentary as the global retail giant&#8230;"
         },
         {
-          "title": "What is best payments partner which has best after sales service?",
-          "url": "https://www.reddit.com/r/indianstartups/comments/1tkaemz/what_is_best_payments_partner_which_has_best/",
+          "title": "Punjab Man Installs CCTV On Highway, Sends Footage Of Army's Movement To Pakistan",
+          "url": "https://www.reddit.com/r/india/comments/1tkab4a/punjab_man_installs_cctv_on_highway_sends_footage/",
           "source": "reddit.com",
-          "pub_date": "2026-05-22T06:19:20+00:00",
-          "summary": "Currently we are trying to integrate payments into our SaaS Maybe we can expect 3-4 payments every month. So what is the best platform to choose We are exploring -&gt; Dodo payments -&gt; Razorpay -&gt; cashfree Does anyone know a platform which has best after sales service??  &#32; submitted by &#3"
-        },
-        {
-          "title": "8 weeks in — built a zero-brokerage rental platform for Hyderabad and it's already ranking on Google. Here's what surprised me.",
-          "url": "https://www.reddit.com/r/indianstartups/comments/1tk9vmw/8_weeks_in_built_a_zerobrokerage_rental_platform/",
-          "source": "reddit.com",
-          "pub_date": "2026-05-22T05:51:59+00:00",
-          "summary": "Started HousingPal (housingpal.in) about 8 weeks ago — a direct owner-to-tenant rental marketplace for Hyderabad with zero brokerage on either side. A few things that surprised me: Organic search traction came faster than expected. Ranking for some Hyderabad rental keywords already without any paid "
+          "pub_date": "2026-05-22T06:14:14+00:00",
+          "summary": "&#32; submitted by &#32;  /u/KenSuvy   [link] &#32; [comments]"
         },
         {
           "title": "NEET row: NTA tells parliamentary panel leak did not happen from its system",
@@ -981,6 +3680,13 @@
           "summary": "I’m a commerce student in Banglore and there’s no technical cofounder on this right now, so this entire thing has basically been me going down a weird rabbit hole with cardboard, acrylic sheets, Raspberry Pis and display experiments for months. Originally I was trying to work on affordable digital t"
         },
         {
+          "title": "At what headcount did you finally bite the bullet and get real HR software?",
+          "url": "https://www.reddit.com/r/indianstartups/comments/1tk903i/at_what_headcount_did_you_finally_bite_the_bullet/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T05:06:51+00:00",
+          "summary": "Growing teams eventually outgrow spreadsheets, manual approvals, and scattered employee records. What headcount pushed you toward real HR software?  &#32; submitted by &#32;  /u/SiennaCollins49   [link] &#32; [comments]"
+        },
+        {
           "title": "SEA’s SMEs aren’t lazy, but their payments infrastructure is",
           "url": "https://e27.co/seas-smes-arent-lazy-their-payments-infrastructure-is-20260522/",
           "source": "e27.co",
@@ -1007,13 +3713,6 @@
           "source": "yourstory.com",
           "pub_date": "2026-05-22T04:43:35+00:00",
           "summary": "Swiggy fell short of the required shareholder threshold to amend its AoA for Indian-owned and controlled company (IOCC) status, though shareholders overwhelmingly approved the appointment of Renan De Castro Alves Pinto to the board."
-        },
-        {
-          "title": "Cockroach Janta Party (CJP): How Abhijeet Dipke's collective became an online sensation",
-          "url": "https://www.reddit.com/r/india/comments/1tk8d2m/cockroach_janta_party_cjp_how_abhijeet_dipkes/",
-          "source": "reddit.com",
-          "pub_date": "2026-05-22T04:34:50+00:00",
-          "summary": "&#32; submitted by &#32;  /u/Beginning-Passion676   [link] &#32; [comments]"
         },
         {
           "title": "What would it take to get compute from govt? Why all GPUs allocated to only few labs?",
@@ -1086,20 +3785,6 @@
           "summary": "We had been launching new products every week for last 1-1.5 year but we were struggling to market them in Meta.! Every-time we tried to market new launches the spends almost went back to top selling products from the feed. We tried creatives etc but the spends were not hitting the right product.  S"
         },
         {
-          "title": "The one-person company is no longer a fantasy but it’s still harder than it looks",
-          "url": "https://e27.co/the-one-person-company-is-no-longer-a-fantasy-but-its-still-harder-than-it-looks-20260518/",
-          "source": "e27.co",
-          "pub_date": "2026-05-22T01:30:11+00:00",
-          "summary": "If you spend enough time around founders today, you’ll hear the same idea come up again and again: “You don’t need a team anymore.” On the surface, it sounds like hype. But if you look closer, something real is happening. Not in the form of fully autonomous companies. But in how much a single operat"
-        },
-        {
-          "title": "Touchstone partially exits solar startup Stride after US$15M Series B",
-          "url": "https://e27.co/touchstone-partially-exits-solar-startup-stride-after-us15m-series-b-20260520/",
-          "source": "e27.co",
-          "pub_date": "2026-05-22T01:00:18+00:00",
-          "summary": "Touchstone Partners, a Vietnam-focused climate-tech venture firm, has made a partial exit from Stride, a distributed solar platform for households and micro, small and medium-sized enterprises (MSMEs) in Vietnam, following the startup’s successful Series B raise. Stride closed a US$15 million Series"
-        },
-        {
           "title": "Zepto To Float ₹11,000 Cr IPO By July: Report",
           "url": "https://inc42.com/buzz/zepto-to-float-%e2%82%b911000-cr-ipo-by-july-report/",
           "source": "inc42.com",
@@ -1135,13 +3820,6 @@
           "summary": "Ask your investing related queries here! The members of r/IndiaInvestments are here to answer and educate! Alternatively, you could [join our Discord](https://indiainvestments.wiki/discord) and seek answers to your queries If you're looking for reviews on any of these following, follow the links: - "
         },
         {
-          "title": "Bloody polls: BJP involved in 42 of the 64 violent incidents recorded in West Bengal post-polls",
-          "url": "https://www.reddit.com/r/india/comments/1tjtefg/bloody_polls_bjp_involved_in_42_of_the_64_violent/",
-          "source": "reddit.com",
-          "pub_date": "2026-05-21T18:28:27+00:00",
-          "summary": "&#32; submitted by &#32;  /u/BannedForFactsAgain   [link] &#32; [comments]"
-        },
-        {
           "title": "A girl in my PG died by suicide. She worked at Swiss Re.",
           "url": "https://www.reddit.com/r/india/comments/1tjtd70/a_girl_in_my_pg_died_by_suicide_she_worked_at/",
           "source": "reddit.com",
@@ -1154,34 +3832,6 @@
           "source": "inc42.com",
           "pub_date": "2026-05-21T18:26:38+00:00",
           "summary": "The IT ministry (MeitY) is reportedly all set to formally block US-based prediction market platform Kalshi as soon as tomorrow&#8230;"
-        },
-        {
-          "title": "CAG Flags Rs 50,072 Crore Health Cess Gap: Questions Over Funds Not Reaching Pradhan Mantri Swasthya Suraksha Nidhi",
-          "url": "https://www.reddit.com/r/india/comments/1tjt3q4/cag_flags_rs_50072_crore_health_cess_gap/",
-          "source": "reddit.com",
-          "pub_date": "2026-05-21T18:18:43+00:00",
-          "summary": "&#32; submitted by &#32;  /u/TheIndianRevolution2   [link] &#32; [comments]"
-        },
-        {
-          "title": "Honasa Consumer Q4 profit surges to Rs 69.43 Cr; declares maiden final dividend",
-          "url": "https://yourstory.com/2026/05/honasa-consumer-q4-profit-surges-to-rs-6943-cr-declares-maiden-final-dividend",
-          "source": "yourstory.com",
-          "pub_date": "2026-05-21T16:03:03+00:00",
-          "summary": "The company's revenue from operations surged 23.15% to Rs 657.08 crore in the Q4, from Rs 533.56 crore a year ago."
-        },
-        {
-          "title": "Nykaa crosses $1B annualised revenue mark as profitability surges",
-          "url": "https://yourstory.com/2026/05/nykaa-crosses-usd-1b-annualised-revenue-mark-profitability-surges",
-          "source": "yourstory.com",
-          "pub_date": "2026-05-21T15:39:45+00:00",
-          "summary": "THe company's revenue from operations rose 28.4% year on year to Rs 2,648 crore in Q4 FY26, from Rs 2,062 crore a year earlier, marking its strongest quarterly growth in the last 12 quarters."
-        },
-        {
-          "title": "Before your app goes live, here are the must-have pieces every digital product needs (India-specific)",
-          "url": "https://www.reddit.com/r/indianstartups/comments/1tjobe6/before_your_app_goes_live_here_are_the_musthave/",
-          "source": "reddit.com",
-          "pub_date": "2026-05-21T15:39:09+00:00",
-          "summary": "How to legally set up a digital business from India — the exact flow Once the business side is sorted, the next question most people have is: &quot;What do I actually need to build and launch an app?&quot; Not just code. The actual pieces that need to be in place before your product can function. He"
         },
         {
           "title": "Innovaccer Buys CaduceusHealth To Expand AI-Led Revenue Cycle Management",
@@ -1198,74 +3848,11 @@
           "summary": "Mattress brand Wakefit’s consolidated profit after tax (PAT) skyrocketed to ₹121.8 Cr against a loss of ₹26.2 Cr in the&#8230;"
         },
         {
-          "title": "'Will be taken to Tihar Jail the moment I land in Delhi': Cockroach Janata Party founder Abhijeet Dipke",
-          "url": "https://www.reddit.com/r/india/comments/1tjl0t1/will_be_taken_to_tihar_jail_the_moment_i_land_in/",
-          "source": "reddit.com",
-          "pub_date": "2026-05-21T13:45:29+00:00",
-          "summary": "&#32; submitted by &#32;  /u/Neo_luigi   [link] &#32; [comments]"
-        },
-        {
-          "title": "Agent Traps: Enterprise Agentic AI Wave Brings In New Threats",
-          "url": "https://inc42.com/features/agent-traps-enterprise-agentic-ai-wave-brings-in-new-threats/",
-          "source": "inc42.com",
-          "pub_date": "2026-05-21T13:42:45+00:00",
-          "summary": "In April 2026, Vercel, a cloud application deployment platform, disclosed a security incident that did not originate within its own&#8230;"
-        },
-        {
-          "title": "Impulse buying dominance: Scarcity-induced sales in live-stream commerce",
-          "url": "https://e27.co/impulse-buying-dominance-scarcity-induced-sales-in-live-stream-commerce-20231116/",
-          "source": "e27.co",
-          "pub_date": "2026-05-21T13:00:51+00:00",
-          "summary": "In the dynamic landscape of e-commerce, direct-to-consumer businesses, and the quest for customer retention, an age-old TV programming concept &#8212; selling live to an audience &#8212; has surfaced. Here, the conventional transactional exchange gives way to the engaging realm of live-stream commer"
-        },
-        {
-          "title": "Shastra VC Launches $100 Mn Fund to Back Deeptech Startups",
-          "url": "https://inc42.com/buzz/shastra-vc-launches-100-mn-fund-to-back-deeptech-startups/",
-          "source": "inc42.com",
-          "pub_date": "2026-05-21T12:29:21+00:00",
-          "summary": "Bengaluru-based VC firm Shastra VC has launched its third fund with a corpus of $100 Mn (about ₹963 Cr) to&#8230;"
-        },
-        {
-          "title": "ixigo Q4: Profit Rises 91% YoY To ₹32 Cr, Revenue Grows 9%",
-          "url": "https://inc42.com/buzz/ixigo-q4-profit-rises-91-yoy-to-%e2%82%b932-cr-revenue-grows-9/",
-          "source": "inc42.com",
-          "pub_date": "2026-05-21T12:26:19+00:00",
-          "summary": "Traveltech company ixigo&#8217;s consolidated net profit for the fourth quarter of FY26 zoomed 91% to ₹32.1 Cr from ₹16.8 Cr&#8230;"
-        },
-        {
-          "title": "Tried-and-tested marketing strategies for startups across all stages in Singapore",
-          "url": "https://e27.co/tried-and-tested-marketing-strategies-for-startups-across-all-stages-in-singapore-20230727/",
-          "source": "e27.co",
-          "pub_date": "2026-05-21T12:10:33+00:00",
-          "summary": "In the world of business, marketing is king, and the iconic doll brand Barbie’s recent success showcases this perfectly. Leveraging its iconic brand image, extensive product line, and carefully planned “pink publicity” campaigns to attract its diverse target audience, Barbie embodied the power of st"
-        },
-        {
-          "title": "The rise of homelabs: Running your own AI server at home",
-          "url": "https://e27.co/the-rise-of-homelabs-running-your-own-ai-server-at-home-20241125/",
-          "source": "e27.co",
-          "pub_date": "2026-05-21T11:50:49+00:00",
-          "summary": "In the battle between Amazon Web Services and Google Cloud, a quiet contender is silently encroaching on the battlefield. The homelab, a computing space previously reserved for the closet or garage, is now beginning to be a larger part of people’s homes and small offices.  In my early years as a bud"
-        },
-        {
-          "title": "Honasa Q4: Profit Surges 178% To ₹69 Cr, Declares ₹3/Share Dividend",
-          "url": "https://inc42.com/buzz/honasa-q4-profit-surges-178-to-%e2%82%b969-cr-declares-%e2%82%b93-share-dividend/",
-          "source": "inc42.com",
-          "pub_date": "2026-05-21T11:07:49+00:00",
-          "summary": "Mamaearth parent Honasa Consumer’s consolidated net profit skyrocketed 177.6% to ₹69.4 Cr in the last quarter of FY26 from ₹25&#8230;"
-        },
-        {
-          "title": "Zepto plans to float Rs 11,000-Cr IPO in Jul",
-          "url": "https://yourstory.com/2026/05/zepto-plans-to-float-rs-11000-cr-ipo-in-jul",
+          "title": "It Always Seems Impossible Until It’s Done: Meaning and Modern Uses",
+          "url": "https://yourstory.com/2026/05/always-seems-impossible-unless-done",
           "source": "yourstory.com",
-          "pub_date": "2026-05-21T10:40:52+00:00",
-          "summary": "If the listing goes through, Zepto will join rivals Zomato and Swiggy, which are already listed on stock exchanges."
-        },
-        {
-          "title": "Pulwama mastermind Hamza Burhan killed by unknown gunmen in PoK",
-          "url": "https://www.reddit.com/r/india/comments/1tjglnd/pulwama_mastermind_hamza_burhan_killed_by_unknown/",
-          "source": "reddit.com",
-          "pub_date": "2026-05-21T10:39:40+00:00",
-          "summary": "&#32; submitted by &#32;  /u/Alpheno   [link] &#32; [comments]"
+          "pub_date": "2026-05-21T10:32:13+00:00",
+          "summary": "In fast-moving workplaces and classrooms, complex goals often look unmanageable: shipping a new product, retraining for a different career"
         },
         {
           "title": "Bharat Innovates 2026 Brings Global Focus to Indian Deep-tech",
@@ -1275,25 +3862,11 @@
           "summary": "The Ministry of Education hosted the Bharat Innovates Investor Showcase in Bengaluru, connecting Indian deep-tech start-ups with global investors."
         },
         {
-          "title": "Please roast our startup idea........................",
-          "url": "https://www.reddit.com/r/indianstartups/comments/1tjfx1y/please_roast_our_startup_idea/",
-          "source": "reddit.com",
-          "pub_date": "2026-05-21T10:04:45+00:00",
-          "summary": "Startup: Go Lite What we do: We pick up luggage from your home and deliver it to your destination. You travel without carrying bags. Works for:  flights trains relocations weddings family trips  Current problem: Some people instantly love the idea. Others think it sounds insane. So before the market"
-        },
-        {
           "title": "Scapia raises $63M led by General Catalyst",
           "url": "https://yourstory.com/2026/05/scapia-raises-63-million-led-by-general-catalyst",
           "source": "yourstory.com",
           "pub_date": "2026-05-21T08:00:30+00:00",
           "summary": "Scapia will use funding round towards strengthening its brand and investment in AI led initiatives."
-        },
-        {
-          "title": "Official X handle of Cockroach Janta Party blocked in India.",
-          "url": "https://www.reddit.com/r/india/comments/1tjdhl5/official_x_handle_of_cockroach_janta_party/",
-          "source": "reddit.com",
-          "pub_date": "2026-05-21T07:50:31+00:00",
-          "summary": "&#32; submitted by &#32;  /u/Sufficient_Yak_1263   [link] &#32; [comments]"
         },
         {
           "title": "Report: S’pore workers among world’s least confident about job security",
@@ -1317,11 +3890,11 @@
           "summary": "NVIDIA reported a strong first quarter as its net income soared 211% year-on-year to $58.3 billion, and revenue rose 85% to $81.6 billion."
         },
         {
-          "title": "Why aren’t more companies using Sarvam-105B? Isn’t it the cheapest most capable model?",
-          "url": "https://www.reddit.com/r/indianstartups/comments/1tj7ox2/why_arent_more_companies_using_sarvam105b_isnt_it/",
-          "source": "reddit.com",
-          "pub_date": "2026-05-21T02:58:50+00:00",
-          "summary": "I find it a bit perplexing that most Indian companies aren’t using or even talking about the Sarvam-105B model which is the cheapest most capable model out there! My question here is out of curiosity. My team is building something with Sarvam-105B and I want to check if there are others doing the sa"
+          "title": "AI stands for attention impairment",
+          "url": "https://yourstory.com/2026/05/ai-stands-for-attention-impairment",
+          "source": "yourstory.com",
+          "pub_date": "2026-05-21T05:18:48+00:00",
+          "summary": "In an age of infinite information, deep thinking increasingly feels endangered. The quiet erosion of attention, the decline of deep reading, and the hidden cost of constant distraction may be reshaping not just how we consume knowledge, but how we think itself."
         },
         {
           "title": "From oil shock to EV push: How global energy volatility is accelerating India’s electrification mandate",
@@ -1329,39 +3902,123 @@
           "source": "yourstory.com",
           "pub_date": "2026-05-21T02:30:00+00:00",
           "summary": "Electrification must be done intentionally, building the supply chain underneath it through critical-mineral acquisitions abroad, refining and cell-manufacturing capacity at home, and serious investment in alternative chemistries."
-        },
-        {
-          "title": "Amagi registers Rs 34 Cr net profit for Q4 of FY26",
-          "url": "https://yourstory.com/2026/05/amagi-registers-rs-34-crore-net-profit-for-q4-of-fy26",
-          "source": "yourstory.com",
-          "pub_date": "2026-05-20T14:50:44+00:00",
-          "summary": "Amagi bounced back into profit for the fourth quarter of FY26 and revenue growth was 28.5%"
-        },
-        {
-          "title": "Anscer Robotics raises $5.4M in Series A funding round led by IAN Alpha Fund",
-          "url": "https://yourstory.com/2026/05/anscer-robotics-series-a-funding-round-led-by-ian-alpha-fund",
-          "source": "yourstory.com",
-          "pub_date": "2026-05-20T14:30:00+00:00",
-          "summary": "The Bengaluru-based industrial robotics startup will use the funds for product development, scaling operations, and market expansion."
-        },
-        {
-          "title": "Oister Global launches Rs 500 Cr ACE Fund III",
-          "url": "https://yourstory.com/2026/05/oister-global-launches-rs-500-crore-ace-fund-iii",
-          "source": "yourstory.com",
-          "pub_date": "2026-05-20T12:50:00+00:00",
-          "summary": "The launch of third fund under ACE series by Oister Global reflects the growing confidence of secondaries market in India."
         }
       ],
-      "cached_at": "2026-05-22T06:33:10.895659"
+      "cached_at": "2026-05-22T10:44:16.099688"
     },
     "emerging": {
       "articles": [
         {
-          "title": "EV vs Petrol: Has the ₹97.77 Fuel Era Finally Triggered the Great Indian Transition?",
-          "url": "https://www.reddit.com/r/Futurology/comments/1tk9q4o/ev_vs_petrol_has_the_9777_fuel_era_finally/",
+          "title": "Would Indian businesses pay for a Berlin-based digital partner for Germany/EU market entry? I will not promote",
+          "url": "https://www.reddit.com/r/startups/comments/1tkf8l1/would_indian_businesses_pay_for_a_berlinbased/",
           "source": "reddit.com",
-          "pub_date": "2026-05-22T05:43:49+00:00",
-          "summary": "Cost Component Petrol Compact SUV EV Compact SUV    Vehicle + insurance ₹15.2 lakh ₹19.7 lakh   Energy cost over 75,000 km ₹5.24 lakh ₹0.96 lakh   Maintenance (5 years) ₹40,000 ₹20,000   Total running cost ₹5.64 lakh ₹1.16 lakh   Total 5-year ownership cost ₹20.84 lakh ₹20.86 lakh    &#32; submitted"
+          "pub_date": "2026-05-22T10:42:58+00:00",
+          "summary": "I’m validating an idea and not selling anything.  I’m based in Berlin with a product/UX/web app background. With India–EU and India–UK trade momentum increasing, I’m wondering if Indian companies entering Germany/EU need help with the digital trust layer.  Not legal/tax/import consulting.  More like"
+        },
+        {
+          "title": "i will not promote - built an AI agent marketplace where builders earn per usage, here’s the cold-start problem I’m trying to solve",
+          "url": "https://www.reddit.com/r/startups/comments/1tkf5n0/i_will_not_promote_built_an_ai_agent_marketplace/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T10:38:46+00:00",
+          "summary": "Hey r/startups - sharing this in the weekly thread for feedback. What it is: Gravity is an AI agent marketplace. Users type what they want done. Gravity matches them to the best AI agent for it in under 60 seconds. No setup, no configuration, no technical knowledge needed. The problem we’re solving:"
+        },
+        {
+          "title": "Valve Steam Controller Review (2026): Wait for the Steam Machine",
+          "url": "https://www.wired.com/review/valve-steam-controller-2026/",
+          "source": "wired.com",
+          "pub_date": "2026-05-22T10:30:00+00:00",
+          "summary": "Without the context of Valve’s Steam Machine (which is still MIA), this controller can’t fully dazzle players yet."
+        },
+        {
+          "title": "I will not promote - built an AI agent marketplace where builders earn per usage, here’s the cold-start problem I’m trying to solve",
+          "url": "https://www.reddit.com/r/startups/comments/1tkezk0/i_will_not_promote_built_an_ai_agent_marketplace/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T10:29:59+00:00",
+          "summary": "Hey r/startups - sharing this in the weekly thread for feedback. What it is: Gravity is an AI agent marketplace. Users type what they want done. Gravity matches them to the best AI agent for it in under 60 seconds. No setup, no configuration, no technical knowledge needed. The problem we’re solving:"
+        },
+        {
+          "title": "Has anyone used Fatjoe - I will not promote",
+          "url": "https://www.reddit.com/r/startups/comments/1tkej3p/has_anyone_used_fatjoe_i_will_not_promote/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T10:07:03+00:00",
+          "summary": "I'm looking at a few of their services, primarily the backlinks and explainer videos to begin with.  The pricing looks alright and it feels more trustworthy than random fiverr people for a low budget, but that could just be branding. So was wondering if anyone has any experience with them? thanks!  "
+        },
+        {
+          "title": "Equity for Sales Team [I will not promote]",
+          "url": "https://www.reddit.com/r/startups/comments/1tkegpo/equity_for_sales_team_i_will_not_promote/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T10:03:45+00:00",
+          "summary": "Hola. I'd like to get this sub's feedback on an equity-based schedule I'd like to offer to two sales associates. 1) Both have extensive experience in software sales, and all three of us worked together in two different companies. They were high performers and I trust them. 2) Both have regular jobs."
+        },
+        {
+          "title": "Robotic ‘matter’ flows, adapts through mechanical intelligence",
+          "url": "https://www.reddit.com/r/Futurology/comments/1tkeg3f/robotic_matter_flows_adapts_through_mechanical/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T10:02:55+00:00",
+          "summary": "&#32; submitted by &#32;  /u/Gari_305   [link] &#32; [comments]"
+        },
+        {
+          "title": "Razer Viper V4 Pro Review: Iterative Update Packs Big Performance",
+          "url": "https://www.wired.com/review/review-razer-viper-v4-pro/",
+          "source": "wired.com",
+          "pub_date": "2026-05-22T09:32:00+00:00",
+          "summary": "Small, iterative improvements bring serious performance gains to Razer’s Viper V4 Pro."
+        },
+        {
+          "title": "Finally, a Great Free Radio App for Windows",
+          "url": "https://www.wired.com/story/trdo-is-a-great-free-radio-app-for-windows/",
+          "source": "wired.com",
+          "pub_date": "2026-05-22T09:30:00+00:00",
+          "summary": "Tune into live broadcasts from your Windows desktop with Trdo, a free and open-source application."
+        },
+        {
+          "title": "Google co-founder Sergey Brin donates $500,000 to California group leading the campaign against “Overpaid CEO Tax”",
+          "url": "https://www.reddit.com/r/technology/comments/1tkdnx7/google_cofounder_sergey_brin_donates_500000_to/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T09:20:29+00:00",
+          "summary": "&#32; submitted by &#32;  /u/Fancy-Caregiver-1239   [link] &#32; [comments]"
+        },
+        {
+          "title": "Lisuan LX 7G100: China's fastest gaming GPU still falls far behind RTX 4060",
+          "url": "https://www.reddit.com/r/Futurology/comments/1tkdn1t/lisuan_lx_7g100_chinas_fastest_gaming_gpu_still/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T09:19:13+00:00",
+          "summary": "&#32; submitted by &#32;  /u/Electrical-Title3978   [link] &#32; [comments]"
+        },
+        {
+          "title": "The Gulf’s AI Boom Has an Undersea Cable Problem",
+          "url": "https://www.wired.com/story/the-gulfs-ai-boom-has-an-undersea-cable-problem/",
+          "source": "wired.com",
+          "pub_date": "2026-05-22T09:00:00+00:00",
+          "summary": "Hyperscalers are pushing the Gulf to rethink internet infrastructure as AI raises the stakes of cable disruptions."
+        },
+        {
+          "title": "James Webb keeps finding things that shouldn't exist — this video explains why it's such a big deal",
+          "url": "https://www.reddit.com/r/Futurology/comments/1tkd76i/james_webb_keeps_finding_things_that_shouldnt/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T08:54:43+00:00",
+          "summary": "JWST has been imaging galaxies from the early universe that are far too massive and mature to exist according to our current models. This video breaks it down really well 👇 https://youtu.be/ihKUgGf7TuA?si=6QniDIbEObIQ0\\_oJ What do you think — does this force us to rethink the standard model of cosmo"
+        },
+        {
+          "title": "Anthropic’s Boris Cherny, who says engineering is ‘dead,’ says he is beginning to get sick of the term \"vibe coding\"",
+          "url": "https://www.reddit.com/r/technology/comments/1tkcexe/anthropics_boris_cherny_who_says_engineering_is/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T08:09:56+00:00",
+          "summary": "&#32; submitted by &#32;  /u/Fancy-Caregiver-1239   [link] &#32; [comments]"
+        },
+        {
+          "title": "Novel Realization of Warp Drive Spacetimes as Solutions of General Relativity",
+          "url": "https://www.reddit.com/r/Futurology/comments/1tkc7bb/novel_realization_of_warp_drive_spacetimes_as/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T07:58:11+00:00",
+          "summary": "&#32; submitted by &#32;  /u/Gari_305   [link] &#32; [comments]"
+        },
+        {
+          "title": "What to learn? I will not promote",
+          "url": "https://www.reddit.com/r/startups/comments/1tkb3h5/what_to_learn_i_will_not_promote/",
+          "source": "reddit.com",
+          "pub_date": "2026-05-22T06:56:49+00:00",
+          "summary": "So for context, I have about 4-5 years before I start a business. I don't have any business ideas yet but was wondering what skills I should learn so that it would be easier for me later on. Is it-  Web dev? Quite skeptical about this as I've heard people saying that AI can replace it.  Sales? If ye"
         },
         {
           "title": "Feedback Friday",
@@ -1369,13 +4026,6 @@
           "source": "reddit.com",
           "pub_date": "2026-05-22T05:00:25+00:00",
           "summary": "Welcome to this week’s Feedback Thread! Please use this thread appropriately to gather feedback:  Feel free to request general feedback or specific feedback in a certain area like user experience, usability, design, landing page(s), or code review You may share surveys You may make an additional req"
-        },
-        {
-          "title": "Apparently in 2025 the best device for studying is still paper (i will not promote)",
-          "url": "https://www.reddit.com/r/startups/comments/1tk8v88/apparently_in_2025_the_best_device_for_studying/",
-          "source": "reddit.com",
-          "pub_date": "2026-05-22T05:00:20+00:00",
-          "summary": "I’m a commerce student and there’s no technical cofounder on this right now, so this entire thing has basically been me going down a weird rabbit hole with cardboard, acrylic sheets, Raspberry Pis and display experiments for months. Originally I was trying to work on affordable digital textbooks in "
         },
         {
           "title": "Nike Promo Codes and Discounts: 30% for May 2026",
@@ -1469,20 +4119,6 @@
           "summary": "Solo founder here building a consumer dating product. I’ve already: hired developers, built the product, reached TestFlight/polishing stage, handling GTM and launch strategy, testing creators/content, and preparing early user rollout. Now I’m talking with someone with a very strong technical/scaling"
         },
         {
-          "title": "What does part time mean at a startup (I will not promote)",
-          "url": "https://www.reddit.com/r/startups/comments/1tk1huc/what_does_part_time_mean_at_a_startup_i_will_not/",
-          "source": "reddit.com",
-          "pub_date": "2026-05-21T23:25:21+00:00",
-          "summary": "I’m a new graduate and have been told I’ll be working part time till I finish my uni (like a few weeks left of uni) and then full time afterwards, does part time at a startup actually mean part time? I’m aware of the long working hours at startups so I’m unsure, thanks!  &#32; submitted by &#32;  /u"
-        },
-        {
-          "title": "What does part time mean at a startup (I will not promote)",
-          "url": "https://www.reddit.com/r/startups/comments/1tk1ftz/what_does_part_time_mean_at_a_startup_i_will_not/",
-          "source": "reddit.com",
-          "pub_date": "2026-05-21T23:22:59+00:00",
-          "summary": "I’m a new graduate and have been told I’ll be working part time till I finish my uni (like a few weeks left of uni) and then full time afterwards, does part time at a startup actually mean part time? I’m aware of the long working hours at startups so I’m unsure, thanks!  &#32; submitted by &#32;  /u"
-        },
-        {
           "title": "To create true autonomous robots, a fundamentally different computer architecture will have to be developed.",
           "url": "https://www.reddit.com/r/Futurology/comments/1tk0s7f/to_create_true_autonomous_robots_a_fundamentally/",
           "source": "reddit.com",
@@ -1504,60 +4140,11 @@
           "summary": "The most common reasons people cite for humanoid robots I see are:  The world is designed for humans Its easier to train humanoid robots because they can use human data General purpose robots will win over specialized robots because they are cheaper even if they aren’t as good at doing things   Why "
         },
         {
-          "title": "What to Do in LA if You’re Here for Business (2025)",
-          "url": "https://www.wired.com/story/los-angeles-tech-travel-guide/",
-          "source": "wired.com",
-          "pub_date": "2026-05-21T21:47:47+00:00",
-          "summary": "A tech industry guide to where to stay, eat, work, and play while visiting LA."
-        },
-        {
           "title": "[I will not promote] Agentic AI Legal Tech Startup, feeling like at a dead end",
           "url": "https://www.reddit.com/r/startups/comments/1tjz0df/i_will_not_promote_agentic_ai_legal_tech_startup/",
           "source": "reddit.com",
           "pub_date": "2026-05-21T21:46:29+00:00",
           "summary": "Hey folks! I am an ex-Amazon engineer (25M) who left his job to build something I genuinely believe is going to be the default way of law firm operations. I have been working on an agentic AI first legal tech startup for around 1.5 years now. Its got not just cool but actually useful features. It ha"
-        },
-        {
-          "title": "London mayor Sadiq Khan blocks £50M Metropolitan police deal with Palantir",
-          "url": "https://www.reddit.com/r/technology/comments/1tjz09a/london_mayor_sadiq_khan_blocks_50m_metropolitan/",
-          "source": "reddit.com",
-          "pub_date": "2026-05-21T21:46:22+00:00",
-          "summary": "&#32; submitted by &#32;  /u/InvestigatorSoft5764   [link] &#32; [comments]"
-        },
-        {
-          "title": "‘Creepy’ Listening Tool for Targeted Ads Didn’t Actually Work, FTC Says",
-          "url": "https://www.wired.com/story/creepy-listening-tool-for-targeted-ads-didnt-actually-work-ftc-says/",
-          "source": "wired.com",
-          "pub_date": "2026-05-21T21:35:52+00:00",
-          "summary": "Three firms will pay nearly $1 million for selling “Active Listening” technology that they claimed tapped people’s phones for advertising. The FTC alleges the “tech” was just pricey email lists."
-        },
-        {
-          "title": "Zillow loses thousands of listings in fight over “hidden” homes | Zillow asked for a preliminary injunction as real estate industry fight heats up.",
-          "url": "https://www.reddit.com/r/technology/comments/1tjxw4n/zillow_loses_thousands_of_listings_in_fight_over/",
-          "source": "reddit.com",
-          "pub_date": "2026-05-21T21:04:34+00:00",
-          "summary": "&#32; submitted by &#32;  /u/ControlCAD   [link] &#32; [comments]"
-        },
-        {
-          "title": "Meta Is in Crisis, Google Search’s Makeover, and AI Gets Booed by Graduates",
-          "url": "https://www.wired.com/story/uncanny-valley-podcast-meta-in-crisis-google-search-makeover-ai-booed-by-graduates/",
-          "source": "wired.com",
-          "pub_date": "2026-05-21T20:44:53+00:00",
-          "summary": "In this episode of Uncanny Valley, we unpack the mass layoffs at Meta, big announcements at Google I/O, and the latest backlash against AI."
-        },
-        {
-          "title": "How would you keep in touch with the CEO after introduction to decision maker is made? I will not promote.",
-          "url": "https://www.reddit.com/r/startups/comments/1tjxc25/how_would_you_keep_in_touch_with_the_ceo_after/",
-          "source": "reddit.com",
-          "pub_date": "2026-05-21T20:44:11+00:00",
-          "summary": "A few months ago, I contacted a CEO of a company about a product we are working on. The following day I had an email from the budget holder about the product and she asked for a proposal.  The company just got acquired and they said it might take longer to get a pilot over the line than it would hav"
-        },
-        {
-          "title": "Best Window Air Conditioners of 2026: Midea, Zafro, GE",
-          "url": "https://www.wired.com/gallery/best-window-air-conditioners/",
-          "source": "wired.com",
-          "pub_date": "2026-05-21T20:17:04+00:00",
-          "summary": "These are the AC units we’ve trusted to cool our homes for months, if not years."
         },
         {
           "title": "In desperate times, graduates find hope in humiliating tech CEOs / ‘They deserve everything they’re getting.’ (Boos.)",
@@ -1623,13 +4210,6 @@
           "summary": "&#32; submitted by &#32;  /u/self-fix2   [link] &#32; [comments]"
         },
         {
-          "title": "Any post revenue startups (i will not promote)",
-          "url": "https://www.reddit.com/r/startups/comments/1tjnnnk/any_post_revenue_startups_i_will_not_promote/",
-          "source": "reddit.com",
-          "pub_date": "2026-05-21T15:16:50+00:00",
-          "summary": "How’s your journey going? I want to know the challenges you are facing now and what are the ways you are solving them. What then do you see the medium term future of your startup, and do you see it making it to much later stages? What would be your advice to those yet to start?  &#32; submitted by &"
-        },
-        {
           "title": "Maka Kids is redefining kids’ screen time with a streaming app optimized for well-being, not engagement",
           "url": "https://techcrunch.com/2026/05/21/maka-kids-is-redefining-kids-screen-time-with-a-streaming-app-optimized-for-well-being-not-engagement/",
           "source": "techcrunch.com",
@@ -1656,13 +4236,6 @@
           "source": "techcrunch.com",
           "pub_date": "2026-05-21T11:00:00+00:00",
           "summary": "Beauty and wellness booking marketplace Fresha says it has raised $80 million investment from KKR’s Next Generation Technology Growth fund, KKR's growth equity arm."
-        },
-        {
-          "title": "6 months ago I quit my stable job. Today I worry if I can make payroll for my team. (i will not promote)",
-          "url": "https://www.reddit.com/r/startups/comments/1tjgrtm/6_months_ago_i_quit_my_stable_job_today_i_worry/",
-          "source": "reddit.com",
-          "pub_date": "2026-05-21T10:48:54+00:00",
-          "summary": "I had zero worries about money.  I left a settled job 6 months back. Same desk. Same routine. Finish work. Leave at 7 PM. Sleep easy. I gave that up to build something I believed the market needed. Here's what nobody prepares you for: As an employee, I'd close my laptop and the problems stayed at th"
         },
         {
           "title": "The Future of Physical AI Isn’t Smarter Robots, It’s Smarter Interfaces",
@@ -1707,13 +4280,6 @@
           "summary": "Biotech company Imperagen announced on Thursday a £5 million ($6.7 million) seed round led by PXN Ventures, with participation from IQ Capital and Northern Gritstone."
         },
         {
-          "title": "I was just looking at Alvin Toffler’s amazing book Future Shock, published in 1970. What are its equivalent books for the 2020s?",
-          "url": "https://www.reddit.com/r/Futurology/comments/1tj2re9/i_was_just_looking_at_alvin_tofflers_amazing_book/",
-          "source": "reddit.com",
-          "pub_date": "2026-05-20T23:26:17+00:00",
-          "summary": "Future Shock, and it’s two sequels, is still an interesting reads now, now for what predicting is ahead of us now, but what had already happened. But what are some books of this era that had that same impact?  &#32; submitted by &#32;  /u/georgewalterackerman   [link] &#32; [comments]"
-        },
-        {
           "title": "Clouted wants to take the guesswork out of making short videos go viral",
           "url": "https://techcrunch.com/2026/05/20/clouted-wants-to-take-the-guesswork-out-of-making-short-videos-go-viral/",
           "source": "techcrunch.com",
@@ -1742,13 +4308,6 @@
           "summary": "A day after Elon Musk lost his lawsuit that threatened OpenAI's structure, leadership, and finances, OpenAI is reportedly back to prepping for its IPO."
         },
         {
-          "title": "What's the most radical body modification that'll become available in the next 50 years?",
-          "url": "https://www.reddit.com/r/Futurology/comments/1tiqg6r/whats_the_most_radical_body_modification_thatll/",
-          "source": "reddit.com",
-          "pub_date": "2026-05-20T16:14:42+00:00",
-          "summary": "In my last post I asked what we might reasonably expect by way of regenerative medicine in the next 10 years or so. Now, to have a bit more fun with this direction: how far do you think body modification could go in the next 50 years? I'm thinking biology specifically, not stuff like cybertech. How "
-        },
-        {
           "title": "How Lucra raised $20M as an eSports play when every VC only wants AI",
           "url": "https://techcrunch.com/podcast/how-lucra-raised-20m-as-an-esports-play-when-every-vc-only-wants-ai/",
           "source": "techcrunch.com",
@@ -1768,42 +4327,40 @@
           "source": "techcrunch.com",
           "pub_date": "2026-05-20T14:00:00+00:00",
           "summary": "Startup Battlefield 200 applications close May 27. Pitch at TechCrunch Disrupt, get investor access, win $100K, plus more scaling perks. Nominate an early-stage founder or submit your startup today."
-        },
-        {
-          "title": "NanoClaw creator turns down $20M buyout offer, raises $12M seed instead",
-          "url": "https://techcrunch.com/2026/05/20/nanoclaw-creator-turns-down-20m-buyout-offer-raises-12m-seed-instead/",
-          "source": "techcrunch.com",
-          "pub_date": "2026-05-20T14:00:00+00:00",
-          "summary": "NanoClaw was created as a secure alternative to OpenClaw to assist the Cohen brothers with their AI marketing firm that used agents to do much of the work. But instead of running directly on a computer, NanoClaw runs sandboxed in a container."
         }
       ],
-      "cached_at": "2026-05-22T06:33:10.895659"
+      "cached_at": "2026-05-22T10:44:16.099688"
     },
     "sector_heatmap": [
       {
         "name": "AI / ML",
-        "signals": 180,
+        "signals": 182,
         "sentiment": "bullish"
       },
       {
         "name": "Climate / Clean",
-        "signals": 119,
+        "signals": 110,
         "sentiment": "bullish"
       },
       {
         "name": "Consumer / D2C",
-        "signals": 11,
+        "signals": 13,
         "sentiment": "bullish"
       },
       {
         "name": "Fintech",
-        "signals": 9,
+        "signals": 7,
         "sentiment": "bullish"
       },
       {
         "name": "Deep Tech",
-        "signals": 9,
+        "signals": 7,
         "sentiment": "bullish"
+      },
+      {
+        "name": "Logistics",
+        "signals": 4,
+        "sentiment": "neutral"
       },
       {
         "name": "SaaS / B2B",
@@ -1816,11 +4373,6 @@
         "sentiment": "neutral"
       },
       {
-        "name": "Logistics",
-        "signals": 2,
-        "sentiment": "neutral"
-      },
-      {
         "name": "Edtech",
         "signals": 0,
         "sentiment": "quiet"
@@ -1829,11 +4381,11 @@
     "portfolio_news": {
       "articles": [
         {
-          "title": "Rare Rabbit Expands D2C Portfolio with Entry into Travel Gear Segment - Indian Retailer",
-          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQT1dKdTA1X2JRR3BBaEJTMEV5LXR1OXJjS294TUpBeV81V1RwX3JsUW9YdkNOMXdPSV8tNVcyeUZsMTlKWDJmYWJpcC1rZ3ZibHFobG9KS0Z4dnIzbHk1TmhFODVReDJSTnkzSXh2b3BjaXBvdFRlMTZpNXc2Rjl3dUxzZnk1UHVCbjM1Zk1VeGpjUUJNUGRuMEtMNA?oc=5",
+          "title": "{Funding Alert} Kalpi Raises Rs 3.75 Cr Seed Funding from Rainmatter - Indian Retailer",
+          "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQNi1za0FjYVhmSG5tYmxjVUxvQVFvOXdVMjdRbWlXQ0ozakVNc01PYmdPLXZBMlBFa3RoQ3BHYi16bUtReXNfR0p1SHZleVEtMjJyY0JVdXoyZkJybEdvbjJkLXVMSy1VbERfT0QzelhudWdJUUtXb2RtcFhpakxudUNMTXpJVzJFbzA3NGdmTE5WTElDWFBvQjRqUGM?oc=5",
           "source": "news.google.com",
-          "pub_date": "2026-05-21T13:53:29+00:00",
-          "summary": "Rare Rabbit Expands D2C Portfolio with Entry into Travel Gear Segment&nbsp;&nbsp;Indian Retailer",
+          "pub_date": "2026-05-22T09:43:56+00:00",
+          "summary": "{Funding Alert} Kalpi Raises Rs 3.75 Cr Seed Funding from Rainmatter&nbsp;&nbsp;Indian Retailer",
           "company": "Escape Plan"
         },
         {
@@ -1853,20 +4405,20 @@
           "company": "Escape Plan"
         },
         {
+          "title": "Rare Rabbit X Escape Plan Launch Premium Travel Lifestyle Venture - Indian Retailer",
+          "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPVVRTZ2hickxIYXh6a3hpVG54UGNlY2JJSEEwNUlzbzcyTlJ4VTVDQWhkTkZsdU9TSlFTT01XcWFNVldPTFNQeWtPeVRzdVp5YTFXMXA4Sm8zUGVSbkpPQy1yb3FhOWRoM2VVU29MWTZKZGkydnNEaHJsV3BQVW1yVklVbWFhZEQ4V1dlT3RYMWhpREd5Z3RXQk1Oa3VIYWRuSUxnNHh5WUpGT3IyUHZsdlRFT0tITERDR1pnX3d6Vi0xWUVpMjljVQ?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2026-05-21T06:25:43+00:00",
+          "summary": "Rare Rabbit X Escape Plan Launch Premium Travel Lifestyle Venture&nbsp;&nbsp;Indian Retailer",
+          "company": "Escape Plan"
+        },
+        {
           "title": "India's Energy Deeptech Boom: Funding Jumps 77% as Smart Tech Replaces Capacity - Whalesbook",
           "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxPSWJwZnZ1SUdyc29aYWxLekhVZnRaWGR2dW1hcm4wNTZJYnZuWERCcWdhaE9JRmtuNjlmcU5pOUUxWFdkaFNfUXNBSmVhVUk0ejdCbmV0NlV2dHhaSlNKZ3FtVkw5SllKaGdld19jRzZWVVMtVHNhNTZOVm1Xd2tFOFFlaTJCOERHMTFvZldZT0h2b292Ym9VakNKcHpVZHV6c2dPMk1xV24teThxZ2VKOHFJY2tvZmNyMm1aVUxZMWxjak9hWTZKemVXcWtSZU5hMUVKb01qcnZNZGg3TTZBaEpiMUdvdm1PZm5B?oc=5",
           "source": "news.google.com",
           "pub_date": "2026-04-24T07:00:00+00:00",
           "summary": "India's Energy Deeptech Boom: Funding Jumps 77% as Smart Tech Replaces Capacity&nbsp;&nbsp;Whalesbook",
           "company": "Enerzolve"
-        },
-        {
-          "title": "Building AI-ready leadership teams: What startups must get right early - ET Edge Insights",
-          "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQWGwxZjB2Vm5JZXM2czJKSkpoM09ieXJsUXdXa2g4OUI2bWxEVXNxaXJIb3M2bUxLaDRyRlBaN3I0cmZHSklBRTNmTl9IbVNidThpX05DQnQteDMtLVhOREFIaUlsTFdQQmk3b1RYbi1xWWpXSWJkN2pXdkFlVjF6N1BjWWhQVG9Gcl9rUkF0UWQ2U2cxb2JLWVJtOVA1SVY2VWlZME1QSjBqbU5CQm55bVJXTnlVNHlSQzJBUXRBM0hTdGhvamRnWVRhajMwdw?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2026-04-21T07:00:00+00:00",
-          "summary": "Building AI-ready leadership teams: What startups must get right early&nbsp;&nbsp;ET Edge Insights",
-          "company": "GetRight"
         },
         {
           "title": "The luxury of hindsight, the urgency of foresight: What India can still get right - The Economic Times",
@@ -1971,14 +4523,6 @@
           "pub_date": "2026-01-23T08:00:00+00:00",
           "summary": "Saga Legal, DSK Legal, NKR Law act on Enerzolve fundraise&nbsp;&nbsp;Bar and Bench",
           "company": "Enerzolve"
-        },
-        {
-          "title": "Travel accessories platform Escape Plan raises $25 million from Jungle Ventures, others - The Economic Times",
-          "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxOSXJpcVNlN3UwUGNoeTUzOHZsNEV5eHBOLVdrQks3TmRuZWRSYkJjZWU3dkNNbDY4VEt6bW5hVlRjSVlLa3ZqTHlfQzE3WGp5aWZMSXJRYTM2ekhuaVlrcl93Ny1ONkdtcEs5YnQ0Y2ZJT3lVREpTVzJ6VGthRUdIdWM3VlVGMGJCc2NlSk1tWFZLeDlFS18tNTkxMFptUk5OMElXSUhndGM3LWVnOGJJUXpwQzl4VUVNYTZIczE4LUJRbXVRVnphU0ItaDRjZ29DTVN1V0NLODI1d2drbTR1ZnJkTXlxMEHSAewBQVVfeXFMTkc2MWt0c0M5OVZUM3U3YmhBUzdicUpuVnNQcFBqQklxLXpYR25KdktueEtJdUFkQ3VTTlliWFY4aW91X0hoQm5CMy1icE5HLWZHX3M3dzhaQUdhZjNzbFJYNWo1a1lTOVRERVB5eThTT1dLNTdyWEZlRWU2Wl93Tnh1MEhqakZ6andrMkhyYzJpMEtXZk9EOVBZTGJtTTh1WWpMYk9WY0U0X1B0LXNFU2g1SVFRQkVtQlRWY1dyZ00xSkZYQ1ljc2pRVTQ1SklMWHRvNGFCQmpDYkY2Ry02Y24zMzNtU252VnltWGQ?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2026-01-22T08:00:00+00:00",
-          "summary": "Travel accessories platform Escape Plan raises $25 million from Jungle Ventures, others&nbsp;&nbsp;The Economic Times",
-          "company": "Escape Plan"
         },
         {
           "title": "Jungle Ventures Co-Leads $5 Mn Seed Round in Silicon-Based Energy Startup Enerzolve - Saur Energy",
@@ -2173,11 +4717,11 @@
           "company": "Dat Bike"
         },
         {
-          "title": "Vietnam Startup Seeks Slice of Third-Largest EV Motorbike Market - bloomberg.com",
+          "title": "Vietnam Startup Seeks Slice of Third-Largest EV Motorbike Market - Bloomberg.com",
           "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxON3dUTDNuQ2ZWTXFmYzg4LVhPS2RiaVc3cWhhUFpqZG01MVRfNmNKcW5lTUN2SHFGdXF6RXFhMVdqRUxINnNiMjJydTdCak5SRXFxQzg3b3pNRTYxQVhkZzZIaWFIMzJBSlZib2J2aENWY1N6YmREOHplUGdLYllPdXlLXzM3aUhPSGItNUg0bXRVSnh6TDNwcWFIT2Z1LTFZRWNuY0tmZWpIUzEyZGIxLVZRWmo2UQ?oc=5",
           "source": "news.google.com",
           "pub_date": "2025-09-17T07:00:00+00:00",
-          "summary": "Vietnam Startup Seeks Slice of Third-Largest EV Motorbike Market&nbsp;&nbsp;bloomberg.com",
+          "summary": "Vietnam Startup Seeks Slice of Third-Largest EV Motorbike Market&nbsp;&nbsp;Bloomberg.com",
           "company": "Dat Bike"
         },
         {
@@ -2309,14 +4853,6 @@
           "company": "Coto"
         },
         {
-          "title": "Women only social community app coto ropes in Ankhi Das as strategic advisor - Storyboard18",
-          "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQclFyYy1mSy1iX2JRb2tYLWhCNk5id3pQbnFmNEYyMXhxdDRCa0EtcjV0YjR2M0JpM2xpOGdHd2hFSkQ4YUlMSjFmUmlrcHBtcW5MUjNyczVPN25ZZlUtdXo5MzFpZmlVakw0VkNGNTdiWGhIanpXNXhXb1BRenlYX1hOTXZHclhwanZPclFPV0hNQjQ0QnFBa3BUUzAtcnc0VUNnanNDZjVNWUI4TnZTLVpQT095bVFwQVp3WG5OUURNMTFxaDBz0gHMAUFVX3lxTE1lUmJtWlplWTZQSkNLdV81eTRCblNXUUhBbi1CNEhYbXB4OGlRX0xaRUpWUk4zUDBOTmxXU2dKVnpZQmVsRHNPQUdXZ2NCSDRQa1k1a2doQWlHOUplVWtTSjEwV0dWeVVFejBSMUFjOGR5ZVlHcG4wSEpnMUJ6Z0xqdjR0SlZGYnZiaWE1UzUzc1VWcXpFTkVic3Nsak5aWVFLLVl5Vmt6VFNnUHJjUXVvMWVkZXRDclVkRzdSTlVrN0FUYVRaalllSkE4eA?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2024-02-23T08:00:00+00:00",
-          "summary": "Women only social community app coto ropes in Ankhi Das as strategic advisor&nbsp;&nbsp;Storyboard18",
-          "company": "Coto"
-        },
-        {
           "title": "Coto and Pee Safe partner to empower women in health dialogues - Mediabrief.com",
           "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1xVExFdGNZWWlqa0l4Si1IUGJhQ1lDdFZWS1diVjVlZDBtOTJMSnRicVVRWFZ1dTk3SUhjT1FBUjdTU0RLWl9KWExZNzdqejJQbGVEcnFnYVczZzFfdWc?oc=5",
           "source": "news.google.com",
@@ -2365,7 +4901,7 @@
           "company": "NirogStreet"
         }
       ],
-      "cached_at": "2026-05-22T06:33:10.895659"
+      "cached_at": "2026-05-22T10:44:16.099688"
     }
   }
 }
