@@ -173,24 +173,21 @@ def _query_gdelt(query: str, timespan_days: int, max_records: int = 100) -> list
         "timespan": f"{timespan_days}d",
         "sort": "DateDesc",
     }
-    for attempt in range(3):
-        try:
-            resp = requests.get(GDELT_BASE, params=params, timeout=8)
-            if resp.status_code == 429:
-                logger.debug("GDELT rate-limited (429), sleeping 15s (attempt %d)", attempt + 1)
-                time.sleep(15)
-                continue
-            if resp.status_code != 200:
-                logger.debug("GDELT HTTP %d for query: %s", resp.status_code, query[:60])
-                return []
-            if not resp.content:
-                return []
-            data = resp.json()
-            return data.get("articles") or []
-        except Exception as e:
-            logger.debug("GDELT error [%s]: %s", query[:50], e)
+    try:
+        resp = requests.get(GDELT_BASE, params=params, timeout=8)
+        if resp.status_code == 429:
+            logger.debug("GDELT rate-limited (429) — skipping this query")
+            return []  # don't retry; the 5s inter-query sleep prevents most 429s
+        if resp.status_code != 200:
+            logger.debug("GDELT HTTP %d for query: %s", resp.status_code, query[:60])
             return []
-    return []
+        if not resp.content:
+            return []
+        data = resp.json()
+        return data.get("articles") or []
+    except Exception as e:
+        logger.debug("GDELT error [%s]: %s", query[:50], e)
+        return []
 
 
 def search_gdelt_signals(days_back: int = 30) -> List[Person]:

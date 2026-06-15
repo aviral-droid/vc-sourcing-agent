@@ -61,18 +61,36 @@ def main():
         ("GitHub", search_github_signals, {"days_back": DAYS_BACK}),
     ]
 
+    # Source-level timeouts — keep each source from blocking the whole pipeline
+    SOURCE_TIMEOUTS = {
+        "GDELT (global news events)": 120,    # 12 queries × (5s sleep + 1s) = safe at 120s
+        "News (RSS + Google News)":   90,
+        "LinkedIn (stealth + departures)": 150,
+    }
+
     # Run in parallel threads (each source is I/O-bound)
-    with ThreadPoolExecutor(max_workers=6) as pool:
-        futures = {
-            pool.submit(_run_source, name, fn, **kwargs): name
-            for name, fn, kwargs in source_fns
-        }
-        for fut in as_completed(futures):
+    import concurrent.futures as _cf
+    pool = _cf.ThreadPoolExecutor(max_workers=6)
+    futures = {
+        pool.submit(_run_source, name, fn, **kwargs): name
+        for name, fn, kwargs in source_fns
+    }
+    deadline = {fut: SOURCE_TIMEOUTS.get(name) for fut, name in futures.items()}
+
+    try:
+        for fut in _cf.as_completed(futures, timeout=200):
             name = futures[fut]
-            persons = fut.result()
-            if persons:
-                all_p.extend(persons)
-                sources_used.append(name)
+            try:
+                persons = fut.result()
+                if persons:
+                    all_p.extend(persons)
+                    sources_used.append(name)
+            except Exception as e:
+                logger.error("✗ %s error: %s", name, e)
+    except _cf.TimeoutError:
+        logger.warning("Global 200s timeout — some sources still running; proceeding with partial results")
+    finally:
+        pool.shutdown(wait=False)   # let straggler threads die in background
 
     logger.info("Raw signals: %d from %d sources", len(all_p), len(sources_used))
 
@@ -117,7 +135,7 @@ def main():
                 continue
             if nm and nm != "unknown" and nm in existing_names:
                 continue
-            # Reconstruct a minimal Person-like object from the DB row
+            # Reconstruct a minimal Person from the DB row
             from models import Person as _P, Signal as _S
             import json as _json
             p = _P(
@@ -128,14 +146,13 @@ def main():
                 previous_company=row["previous_company"] or "",
                 previous_title=row["previous_title"] or "",
                 location=row["location"] or "",
-                geography=row["geography"] or "",
-                sector=row["sector"] or "",
                 experience_years=row["experience_years"] or 0,
                 is_second_time_founder=bool(row["is_second_time_founder"]),
                 score=float(row["score"] or 0),
-                recommended_action=row["recommended_action"] or "pass",
                 investment_thesis=row["investment_thesis"] or "",
             )
+            # These fields are set post-scoring, not in __init__
+            p.recommended_action = row["recommended_action"] or "pass"
             sig_types = _json.loads(row["signal_types"] or "[]")
             for st in sig_types:
                 p.signals.append(_S(source="db_cache", signal_type=st,
