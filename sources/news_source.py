@@ -342,7 +342,7 @@ def _collect_rss(days_back: int) -> List[Person]:
 
     # Batch Groq extraction for unknown RSS entries
     if pending_unknown:
-        groq_names = _groq_extract_names_batch(pending_unknown[:20])
+        groq_names = _groq_extract_names_batch(pending_unknown[:50])
         for item in pending_unknown:
             p = item["person"]
             n = groq_names.get(item["url"], "Unknown")
@@ -431,7 +431,7 @@ def _extract_names_via_llm(entries: List[dict]) -> dict:
     from openai import OpenAI
 
     _NAME_PROVIDERS = [
-        ("Cerebras",  "https://api.cerebras.ai/v1",               "qwen-3-235b-a22b-instruct-2507",       "CEREBRAS_API_KEY",   False),
+        ("Cerebras",  "https://api.cerebras.ai/v1",               "gpt-oss-120b",                          "CEREBRAS_API_KEY",   False),
         ("DeepSeek",  "https://api.deepseek.com",                  "deepseek-chat",                         "DEEPSEEK_API_KEY",   False),
         ("Zhipu/GLM", "https://open.bigmodel.cn/api/paas/v4/",    "glm-4-flash",                           "ZHIPU_API_KEY",      False),
         ("SambaNova", "https://api.sambanova.ai/v1",               "DeepSeek-V3.2",                         "SAMBANOVA_API_KEY",  False),
@@ -520,7 +520,7 @@ def _collect_google_news(days_back: int) -> List[Person]:
     if pending_unknown:
         logger.info("Groq name extraction: %d unknown Google News entries…", len(pending_unknown))
         # Batch Groq call for first 30 entries
-        batch = pending_unknown[:30]
+        batch = pending_unknown[:50]
         groq_names = _groq_extract_names_batch(batch)
 
         # Apply Groq names and add ALL pending entries to persons list
