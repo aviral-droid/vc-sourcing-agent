@@ -201,6 +201,7 @@ def search_gdelt_signals(days_back: int = 30) -> List[Person]:
 
     for query, hint_signal_type in GDELT_QUERIES:
         articles = _query_gdelt(query, timespan_days=min(days_back, 90), max_records=50)
+        time.sleep(5)  # GDELT requires ≥5s between requests
         for art in articles:
             url     = art.get("url", "")
             title   = art.get("title", "")

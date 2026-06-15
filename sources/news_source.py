@@ -83,23 +83,35 @@ RSS_FEEDS = {
 
 # Google News queries — highly specific to surface named founders
 GOOGLE_NEWS_QUERIES = [
-    # India executive departures with names
-    '"steps down" India startup founder 2025',
-    '"left" India unicorn VP director "new startup" 2025',
-    '"co-founded" India "pre-seed" OR "seed funding" 2025',
-    '"ex-Razorpay" OR "ex-Zepto" OR "ex-Swiggy" OR "ex-CRED" founder 2025',
-    '"ex-Zomato" OR "ex-Meesho" OR "ex-Flipkart" founder 2025',
-    '"ex-PhonePe" OR "ex-Paytm" OR "ex-BrowserStack" founder 2025',
-    '"former" "VP" OR "director" India startup launch 2025',
-    '"second-time founder" India 2025',
+    # India executive departures — named company + founder signal
+    '"steps down" India startup founder 2025 OR 2026',
+    '"left" India unicorn "VP" OR "director" "new startup" 2025 OR 2026',
+    '"co-founded" India "pre-seed" OR "seed funding" 2025 OR 2026',
+    '"ex-Razorpay" OR "ex-Zepto" OR "ex-Swiggy" OR "ex-CRED" founder 2025 OR 2026',
+    '"ex-Zomato" OR "ex-Meesho" OR "ex-Flipkart" founder 2025 OR 2026',
+    '"ex-PhonePe" OR "ex-Paytm" OR "ex-BrowserStack" founder 2025 OR 2026',
+    '"ex-Groww" OR "ex-Zerodha" OR "ex-CRED" OR "ex-Darwinbox" founder 2025 OR 2026',
+    '"ex-Cars24" OR "ex-Delhivery" OR "ex-Zetwerk" OR "ex-Udaan" founder 2025 OR 2026',
+    '"ex-Urban Company" OR "ex-Rapido" OR "ex-Khatabook" founder 2025 OR 2026',
+    '"former" "VP" OR "director" India startup launch 2025 OR 2026',
+    '"second-time founder" India 2025 OR 2026',
+    '"serial entrepreneur" India "new company" 2025 OR 2026',
+    '"left" "to build" OR "to start" India startup 2025 OR 2026',
+    '"resigned" "to start" OR "to found" India tech 2025 OR 2026',
+    '"building in stealth" India 2025 OR 2026',
+    'India "stealth startup" "raised" OR "backed" 2025 OR 2026',
     # SEA executive departures
-    '"ex-Grab" OR "ex-Gojek" OR "ex-Sea Group" founder 2025',
-    '"ex-Tokopedia" OR "ex-GoTo" OR "ex-Nium" founder 2025',
-    'Singapore "steps down" startup founder 2025',
-    'Indonesia "new startup" "former" 2025',
-    # Funding news — seed stage
-    'India "seed round" OR "pre-seed" founder 2025',
-    'Singapore "seed funding" founder 2025',
+    '"ex-Grab" OR "ex-Gojek" OR "ex-Sea Group" founder 2025 OR 2026',
+    '"ex-Tokopedia" OR "ex-GoTo" OR "ex-Nium" founder 2025 OR 2026',
+    '"ex-Traveloka" OR "ex-Lazada" OR "ex-Carousell" founder 2025 OR 2026',
+    '"ex-Xendit" OR "ex-PropertyGuru" OR "ex-Aspire" founder 2025 OR 2026',
+    'Singapore "steps down" startup founder 2025 OR 2026',
+    'Indonesia "new startup" "former" director 2025 OR 2026',
+    'Singapore "stealth startup" OR "building in stealth" 2025 OR 2026',
+    # Seed funding — surfaces named founders
+    'India "seed round" OR "pre-seed" "former" OR "ex-" founder 2025 OR 2026',
+    'Singapore Indonesia "seed funding" "former" OR "ex-" founder 2025 OR 2026',
+    'India "raised" "pre-seed" "co-founder" 2025 OR 2026',
 ]
 
 

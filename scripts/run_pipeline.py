@@ -18,7 +18,7 @@ from datetime import datetime
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
 
-DAYS_BACK = int(os.getenv("DAYS_BACK", "14"))   # look back 14 days by default
+DAYS_BACK = int(os.getenv("DAYS_BACK", "90"))   # look back 90 days — stealth signals build over months
 
 
 def _run_source(name: str, fn, **kwargs):
@@ -49,16 +49,20 @@ def main():
     from sources.exa_source import search_exa_signals
     from sources.producthunt_source import search_producthunt_signals
     from sources.github_source import search_github_signals
+    from sources.linkedin_source import search_linkedin_signals
+    from sources.gdelt_source import search_gdelt_signals
 
     source_fns = [
         ("News (RSS + Google News)", search_news_signals, {"days_back": DAYS_BACK}),
+        ("LinkedIn (stealth + departures)", search_linkedin_signals, {"days_back": DAYS_BACK}),
         ("Exa (LinkedIn + Web Search)", search_exa_signals, {"days_back": DAYS_BACK}),
+        ("GDELT (global news events)", search_gdelt_signals, {"days_back": DAYS_BACK}),
         ("Product Hunt", search_producthunt_signals, {"days_back": DAYS_BACK}),
         ("GitHub", search_github_signals, {"days_back": DAYS_BACK}),
     ]
 
     # Run in parallel threads (each source is I/O-bound)
-    with ThreadPoolExecutor(max_workers=4) as pool:
+    with ThreadPoolExecutor(max_workers=6) as pool:
         futures = {
             pool.submit(_run_source, name, fn, **kwargs): name
             for name, fn, kwargs in source_fns
@@ -83,7 +87,7 @@ def main():
     deduped.sort(key=lambda p: (0 if p.name else 1,
                                 0 if (p.linkedin_url or p.twitter_handle or p.github_url) else 1,
                                 -p.signal_count))
-    deduped = deduped[:60]   # cap at 60 before scoring
+    deduped = deduped[:150]   # cap at 150 before scoring — don't throw away good leads
 
     logger.info("After entity resolution: %d persons", len(deduped))
 
@@ -92,10 +96,70 @@ def main():
     scored = score_all(deduped)
     logger.info("Scored above threshold: %d", len(scored))
 
-    # ── Save to DB + data.json ────────────────────────────────────────────────
+    # ── Save to DB ────────────────────────────────────────────────────────────
     import database
     database.init_db()
     database.cache_persons(scored, days_back=DAYS_BACK)
+
+    # ── Merge with historical DB persons so the dashboard always has volume ───
+    # Load all previously cached persons (up to 90 days) and add them as
+    # background context if they're not already in the current scored set.
+    all_for_report = list(scored)
+    try:
+        existing_urls  = {p.linkedin_url for p in scored if p.linkedin_url}
+        existing_names = {(p.name or "").strip().lower() for p in scored if p.name and p.name != "Unknown"}
+        hist_rows = database.get_cached_persons(days_back=90, min_score=40)
+        added = 0
+        for row in hist_rows:
+            li = row["linkedin_url"] or ""
+            nm = (row["name"] or "").strip().lower()
+            if li and li in existing_urls:
+                continue
+            if nm and nm != "unknown" and nm in existing_names:
+                continue
+            # Reconstruct a minimal Person-like object from the DB row
+            from models import Person as _P, Signal as _S
+            import json as _json
+            p = _P(
+                name=row["name"] or "Unknown",
+                linkedin_url=row["linkedin_url"] or "",
+                github_url=row["github_url"] or "",
+                twitter_handle=row["twitter_handle"] or "",
+                previous_company=row["previous_company"] or "",
+                previous_title=row["previous_title"] or "",
+                location=row["location"] or "",
+                geography=row["geography"] or "",
+                sector=row["sector"] or "",
+                experience_years=row["experience_years"] or 0,
+                is_second_time_founder=bool(row["is_second_time_founder"]),
+                score=float(row["score"] or 0),
+                recommended_action=row["recommended_action"] or "pass",
+                investment_thesis=row["investment_thesis"] or "",
+            )
+            sig_types = _json.loads(row["signal_types"] or "[]")
+            for st in sig_types:
+                p.signals.append(_S(source="db_cache", signal_type=st,
+                                    description=f"Historical signal: {st}"))
+            if p.score >= 40:
+                all_for_report.append(p)
+                if li:
+                    existing_urls.add(li)
+                if nm and nm != "unknown":
+                    existing_names.add(nm)
+                added += 1
+        if added:
+            logger.info("Merged %d historical persons from DB (total for report: %d)",
+                        added, len(all_for_report))
+    except Exception as e:
+        logger.warning("Could not load historical persons from DB: %s", e)
+        all_for_report = scored
+
+    # Sort merged set: investigate first, then watchlist, then by score
+    _action_rank = {"investigate": 0, "watchlist": 1, "pass": 2}
+    all_for_report.sort(key=lambda p: (
+        _action_rank.get(p.recommended_action, 2),
+        -(p.score or 0),
+    ))
 
     from pipeline.reporter import generate_report
     from models import DailyReport
@@ -103,15 +167,16 @@ def main():
     date_label = datetime.utcnow().strftime("%Y-%m-%d")
     report = DailyReport(
         date_label=date_label,
-        persons=scored,
-        total_signals=sum(p.signal_count for p in scored),
+        persons=all_for_report,
+        total_signals=sum(p.signal_count for p in all_for_report),
         sources_active=sources_used or ["News"],
     )
     report.executive_summary = write_executive_summary(scored, date_label)
     generate_report(report)
 
-    logger.info("✅ Done — data.json updated with %d founders (from %d raw signals)",
-                len(scored), len(all_p))
+    logger.info("✅ Done — data.json updated with %d founders (%d from today + %d historical, %d raw signals)",
+                len(all_for_report), len(scored),
+                len(all_for_report) - len(scored), len(all_p))
 
 
 if __name__ == "__main__":

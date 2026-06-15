@@ -61,6 +61,9 @@ DEEPSEEK_API_KEY: str   = os.getenv("DEEPSEEK_API_KEY", "")
 ZHIPU_API_KEY: str      = os.getenv("ZHIPU_API_KEY", "")
 OPENROUTER_API_KEY: str = os.getenv("OPENROUTER_API_KEY", "")
 SAMBANOVA_API_KEY: str  = os.getenv("SAMBANOVA_API_KEY", "")
+# Search APIs — unlock LinkedIn stealth discovery when configured
+SERPER_API_KEY: str     = os.getenv("SERPER_API_KEY", "")  # serper.dev — 2500 free/month
+# BRAVE_API_KEY is already declared above (from os.getenv)
 
 # ── Feature flags ──────────────────────────────────────────────────────────────
 FIRECRAWL_ENABLED: bool = bool(FIRECRAWL_API_KEY)

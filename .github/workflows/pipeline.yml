@@ -33,6 +33,8 @@ jobs:
           ZHIPU_API_KEY: ${{ secrets.ZHIPU_API_KEY }}
           SAMBANOVA_API_KEY: ${{ secrets.SAMBANOVA_API_KEY }}
           EXA_API_KEY: ${{ secrets.EXA_API_KEY }}
+          SERPER_API_KEY: ${{ secrets.SERPER_API_KEY }}
+          BRAVE_API_KEY: ${{ secrets.BRAVE_API_KEY }}
           MIN_SCORE_THRESHOLD: "40"   # raised from 30: rule-based floor is ~30, which let noise through
         run: python scripts/run_pipeline.py
 

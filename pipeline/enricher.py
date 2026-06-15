@@ -133,7 +133,7 @@ _PROVIDERS: list[dict] = [
     {
         "name":     "Cerebras",
         "base_url": "https://api.cerebras.ai/v1",
-        "model":    "qwen-3-235b-a22b-instruct-2507",  # 235B MoE on wafer silicon, very fast
+        "model":    "gpt-oss-120b",  # Cerebras current model (zai-glm-4.7 also available)
         "key_attr": "CEREBRAS_API_KEY",
         "signup":   "cloud.cerebras.ai",
         "no_think": True,   # disable CoT for speed on scoring tasks
@@ -196,7 +196,7 @@ def _provider_call(provider: dict, prompt: str) -> Optional[str]:
         return None
     if provider.get("rate_limit_hook"):
         groq_wait()
-    # Qwen3 on Cerebras: prepend /no_think to skip chain-of-thought for speed
+    # Qwen3/no_think: prepend /no_think for models that support chain-of-thought suppression
     user_prompt = ("/no_think\n" + prompt) if provider.get("no_think") else prompt
     try:
         client = _get_openai_client(provider["base_url"], key)
@@ -359,13 +359,34 @@ _SECTOR_KEYWORDS = {
 }
 
 
+_INDIA_COMPANIES = {
+    "razorpay", "phonepe", "zepto", "swiggy", "zomato", "cred", "meesho",
+    "ola", "byju", "byjus", "unacademy", "paytm", "freshworks", "browserstack",
+    "darwinbox", "groww", "zerodha", "flipkart", "nykaa", "mamaearth", "cars24",
+    "urban company", "urbancompany", "lenskart", "oyo", "mswipe", "delhivery",
+    "infosys", "wipro", "tcs", "hcl", "google india", "amazon india",
+    "microsoft india", "meta india", "uber india", "ola cabs", "inmobi",
+    "sharechat", "moj", "koo", "dream11", "games24x7", "juspay", "setu",
+    "open financial", "m2p fintech", "the good glamm", "boat lifestyle",
+    "vedantu", "classplus", "kreditbee", "moneyview", "slice", "jupiter",
+    "niyo", "fampay", "smallcase", "fi money", "ep group",
+}
+_SEA_COMPANIES = {
+    "grab", "sea group", "sea limited", "shopee", "garena", "forrest",
+    "gojek", "goto", "tokopedia", "traveloka", "lazada", "nium", "carousell",
+    "propertyguru", "xendit", "kredivo", "aspire", "ovo", "dana",
+    "gcash", "maya", "paymongo", "vnpay", "vng", "momo", "ninja van",
+    "airasia", "ipay88", "funding societies", "carro", "homecredit",
+    "akulaku", "kredivore", "trustana", "anchanto",
+}
+
+
 def _detect_geography(person: Person) -> str:
-    """Detect geography from location field."""
+    """Detect geography from location, previous_company, and signal text."""
     loc = (person.location or "").lower()
     if not loc:
-        # try signals
         for s in person.signals:
-            loc += s.description.lower()
+            loc += " " + (s.description or "").lower()
 
     geo_map = {
         "Singapore": ["singapore"],
@@ -380,9 +401,24 @@ def _detect_geography(person: Person) -> str:
     for geo, keywords in geo_map.items():
         if any(k in loc for k in keywords):
             return geo
-    # Regional fallback — outlet-level inference (e27, Tech in Asia, etc.)
     if "southeast asia" in loc or "south east asia" in loc:
         return "Southeast Asia"
+
+    # Company-name fallback — LinkedIn profiles often have no location field
+    # but the previous_company or query description reveals origin.
+    company_text = " ".join([
+        (person.previous_company or "").lower(),
+        (person.current_company or "").lower(),
+        (person.headline or "").lower(),
+        " ".join((s.description or "").lower() for s in person.signals[:3]),
+    ])
+    for c in _INDIA_COMPANIES:
+        if c in company_text:
+            return "India"
+    for c in _SEA_COMPANIES:
+        if c in company_text:
+            return "Southeast Asia"
+
     return "Unknown"
 
 
@@ -466,9 +502,40 @@ def _rule_based_score(person: Person) -> dict:
     elif exp >= 7:
         score += 5
 
+    # LinkedIn URL = concrete, clickable identity anchor (not just a news mention)
+    if person.linkedin_url:
+        score += 7
+
     title = (person.previous_title or "").strip()
-    if title and _is_senior_title(title):
+    if not title:
+        # Infer seniority from signal descriptions / headlines when title field is blank
+        all_text = " ".join([
+            (person.headline or "").lower(),
+            " ".join((s.description or "").lower() for s in person.signals),
+        ])
+        for senior_kw in ["vp ", "vice president", " cto", " ceo", " coo", " cfo", " cpo",
+                          "head of", "director", "general manager", "business head",
+                          "country head", "partner", "svp", "evp"]:
+            if senior_kw in all_text:
+                score += 10
+                break
+    elif _is_senior_title(title):
         score += 10
+
+    # pedigree company bonus (prominent unicorn alumni)
+    company_text = " ".join([
+        (person.previous_company or "").lower(),
+        (person.headline or "").lower(),
+        " ".join((s.description or "").lower() for s in person.signals[:2]),
+    ])
+    _TOP_PEDIGREE = {
+        "razorpay", "phonepe", "zepto", "swiggy", "zomato", "cred", "meesho",
+        "grab", "gojek", "sea group", "shopee", "tokopedia", "stripe", "google",
+        "amazon", "meta", "microsoft", "paytm", "freshworks", "groww", "zerodha",
+        "ola", "unacademy", "flipkart", "nykaa", "urban company", "delhivery",
+    }
+    if any(c in company_text for c in _TOP_PEDIGREE):
+        score += 8
 
     # headline signals
     headline = (person.headline or "").lower()
@@ -476,6 +543,13 @@ def _rule_based_score(person: Person) -> dict:
         score += 8
     if "founder" in headline or "co-founder" in headline:
         score += 6
+
+    # stealth / departure keyword in any signal description
+    sig_text = " ".join((s.description or "").lower() for s in person.signals)
+    if "stealth" in sig_text or "building something" in sig_text:
+        score += 6
+    if "ex-" in sig_text or "former" in sig_text or "left" in sig_text:
+        score += 4
 
     # multi-source corroboration bonus
     sources = {s.source for s in person.signals}
