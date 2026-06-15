@@ -1,53 +1,141 @@
 {
-  "generated_at": "2026-06-15T05:59:31.644705",
+  "generated_at": "2026-06-15T07:11:48.006854",
   "date_label": "2026-06-15",
-  "total_signals": 6,
-  "total_persons": 5,
+  "total_signals": 103,
+  "total_persons": 99,
   "sources_active": [
     "Product Hunt",
     "News (RSS + Google News)"
   ],
-  "executive_summary": "Today's top VC sourcing signals for 2026-06-15 reveal a strong presence of Indian founders, with four out of five leads originating from India, and the remaining one's geography unknown. The leads are primarily stealth mode founders, with archetypes including potential second-time founders and senior operators, such as Wilson and Ajay Pratap Singh, who are pursuing opportunities in aviation and sports, respectively. Notably, Rohit Sharma and Indus Appstore are also on the radar, exploring fintech and healthtech, with the former scoring lower due to incomplete information. Overall, Wilson and Ajay Pratap Singh are the top leads, each scoring 60, and warrant further investigation to determine their potential fit with our investment mandate.",
+  "executive_summary": "Today's top VC sourcing signals for 2026-06-15 highlight a strong trend of stealth operations in India, with a focus on Mobility/Electric Vehicles and Education Technology sectors. Notable leads include Himanshu Ratnoo, a potential second-time founder with a 75-point score, and Sumit Jain, also targeting the Education Technology space with a 60-point score, reflecting a mix of experienced operators and emerging sectors in the India/SEA region.",
   "persons": [
     {
-      "name": "Wilson",
-      "score": 60,
+      "name": "Unknown",
+      "score": 85,
       "action": "investigate",
       "recommended_action": "investigate",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
       "location": "India",
-      "sector": "Aviation/Airlines",
-      "geography": "India",
+      "sector": "",
+      "geography": "",
       "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Wilson's departure as CEO of Air India and reflection on the company's rebuilding process suggests a seasoned operator with significant industry experience. This could be an opportunity to invest in a new venture led by someone with a strong track record, although more information is needed to confirm their plans and entrepreneurial potential. Further investigation is warranted to determine the viability of a potential investment.",
+      "is_second_time_founder": true,
+      "investment_thesis": "Sumit Gwalani is a second-time founder with deep fintech experience as co-founder of Fi Money, a well-funded neobank. His departure amid company challenges is a classic signal of a seasoned operator preparing to build something new, likely leveraging his expertise in digital banking, consumer finance, and product leadership for the Indian market.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
       "signal_count": 1,
       "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Himanshu Ratnoo",
+      "score": 75,
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Mobility/Electric Vehicles",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Himanshu Ratnoo's experience as a CEO in the automotive industry and his move to a new e-cycle company suggests a potential for innovation in the mobility sector. His track record and the current trend towards electric vehicles make him a promising candidate for further investigation.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 4,
+      "signal_types": [
+        "stealth_founder",
         "executive_departure"
       ],
       "signals": [
         {
           "source": "news",
+          "type": "stealth_founder",
+          "description": "[Google News] Ex-CARS24 CEO Himanshu Ratnoo joins EMotorad as co-founder - Indian Television Dot Com",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOdmphMzMxcHhvM2pxN3Bab29GVy00Uzc2NmVNMTFCQWFPS3gtd0RUYlFmUnhaa01HeWNSUlppR1BHMllSV2NET3duU2pPRnNkeUdyZlVfdHRtYnFTRWs1Yk83SXBtZWE5LXVlR0xTWHYtYmRxLWx5bzNFWU9WTWhVTXgxcFgteHVheWx4TVJ3RU1LMWl1R3g0?oc=5"
+        },
+        {
+          "source": "news",
           "type": "executive_departure",
-          "description": "[Google News] Air India Rebuilt: CEO Wilson Reflects, Steps Down - Rediff MoneyWiz",
-          "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPNlZUdHBrLXFwRURJajFEUnk1dlljNlhEamFOQzgtV0dfTE5XbVVyWFBSZTJfWnBqWHgzOHhOVW5WQ3htMzhTTTNHMjVvNEFKLWFMSkNoSTdHNDlLMXdBREFQNFZqUHk1MlRJZEJxbmlQdXpmbzd0d242VWVGY1RUcWVtYXU2ZnhjYlNhNTQ1Z2lkMUtyclIyd1pMUE15TWMtOXfSAacBQVVfeXFMTVVIbkx2SHVnMWZyUng1ZjNzSnN2eEVsRmhkXy1uQklWNm5WQW5xR2JOclVwTnZ0OGtjcWg4ZWlGWmhBQkU1NmJ1REswaUZ2dWk5N3oyVUR5SEFqM3oxYXFpNVVOMmJyazVGMmlmS3BaTVpSQmR1ZHR2cTg4eTlLSUdzVXFJbldfS2lCZEI5T0pUV21KR0RuSW1fbnBLRmF4TzFvcEk0bEE?oc=5"
+          "description": "[Google News] Ex-Cars24 India CEO Himanshu Ratnoo joins e-cycle company EMotorad as cofounder - The Economic Times",
+          "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxQMDExOGw3REFxTloxQy1zVTljVTh0aUs4VmNTSWhxcFNWQmlBWTBSUElTb2kyN2l4c1lTc19mMFowamtCOUpoRWMxNXlqM1dZMENXVXlFenZ2QjNWaGVyVUxMSEtBV2xIT04tX25CNWQ3ME5kLVNLT0pBQ21sNmVxRXdMT19RY255aHNLWXA5TXdyeWMxWHBZNWJhcEFRTU9DUmU1NmJPWkRTMnhjb05MZGJJUXdYcXpURkFmUi1NVDVPeWVtUUNnNFhTVlFWazVUYjBLMXlsb0JvdTM1aUxBallwONIB6AFBVV95cUxNRXhrcG5ZTVlwUmNNbjlYcVYwcEpsVnhfZUJCQWVDZFY5RnRZWWNzTlZVVUdob1VfZGhibTJPLWJfSHZuTFFjVFVEejh3Vko2MHlpRTlESVpTS0NRSFJGOGJXZDhwbktmc2pOSWt3MlVialJwWWY3QXpmTXplYkliQmRLVG9qT1pHNS1zTzBVQmxoN0UzUGVJdWZmZGI2d24wSENxYkNod09HZWZtMHYxbUhQVmJlMWZhbjZGcEtfeF9vX1lDQkpZREh4dXpiZGNHLTZKOTRaa2FWdlR5Q1E1UUluM1ptT1V4?oc=5"
+        },
+        {
+          "source": "news",
+          "type": "executive_departure",
+          "description": "[Google News] Ex-CARS24 Exec Himanshu Ratnoo Joins EMotorad As Cofounder - Inc42",
+          "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQZWFmNktpX2YwellvZWN3TFZJSmlzaWFyQmtxMllTRzBQX3pHVWF5Ul9mOXk2dlJUeURWWFI1eDdMWVJmdThRbFFqWm83V2ozVVF1QmU3STZ6ZG41d2tQb0std1BlU3ZrdGF1aExxRVR6aGhfbnIwNWFGTUYyLWl4amJtMl9YMUd4Rnc?oc=5"
+        },
+        {
+          "source": "news",
+          "type": "stealth_founder",
+          "description": "[Google News] Ex-CARS24 executive Himanshu Ratnoo joins EMotorad as co-founder - Indian Startup News",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOYXlMeFpheV9sYWJkYnAteWhicFJTLWprdmtfMm1OWThCX0lVbUczRklhQXBKUVV1S2FQM2taV3Q0ZXFQeWNsTTR1YWp1R1dfYnY5cEQ3cWFNVWFXc0hFVFdZcWU4cF9jVktnNnVQOGN2NDhNMlV4MExDSkdBNHpkMl9LaTF5OUVyS2RTajRGNFZWdkxxSDcyTG1fbUg0dHlyVjU3Wml5UDlMV2dF0gGsAUFVX3lxTE5heUx4WmF5X2xhYmRicC15aGJwUlMtamt2a18ybU5ZOEJfSVVtRzNGSWFBcEpRVXVLYVAza1pXdDRlcVB5Y2xNNHVhanVHV19idjlwRDdxYU1VYVdzSEVUV1lxZThwX2NWS2c2dVA4Y3Y0OE0yVXgwTENKR0E0emQyX0tpMXk5RXJLZFNqNEY0VlZ2THFINzJMbV9tSDR0eXJWNTdaaXlQOUxXZ0U?oc=5"
         }
       ],
       "confidence": "medium",
       "founder_type": "seasoned_operator",
       "key_strengths": [
-        "Executive experience",
-        "Industry expertise"
+        "Executive departure from a well-known company",
+        "Credible background in the mobility sector"
       ],
       "risks": [
-        "Unknown entrepreneurial experience",
-        "Unclear plans for new venture"
+        "Unknown experience years"
       ],
+      "company_url": "https://www.emotorad.com/"
+    },
+    {
+      "name": "Unknown",
+      "score": 75,
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": true,
+      "investment_thesis": "Pawan Gupta is a proven co-founder from Fashinza, a B2B manufacturing platform that raised significant venture capital. His deliberate departure to build in the AI space aligns with current investment trends and suggests he has identified a substantial market opportunity, likely leveraging his B2B and supply chain expertise into an AI-enabled solution.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
       "company_url": ""
     },
     {
@@ -59,11 +147,11 @@
       "previous_title": "",
       "current_company": "",
       "location": "India",
-      "sector": "Sports",
+      "sector": "Unknown",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Ajay Pratap Singh's departure as CEO of Absolute Sports and announcement of an entrepreneurial journey suggests a potential new venture, leveraging his domain expertise in the sports sector. His previous experience as a CEO indicates strong operational capabilities. Further investigation is needed to understand his plans and potential for a scalable business.",
+      "investment_thesis": "Ajay Pratap Singh's departure from Absolute Sports as CEO suggests a potential for a new venture. With a credible news outlet reporting his plans to begin an entrepreneurial journey, there is a signal of intent that warrants further investigation.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -82,33 +170,31 @@
       "confidence": "medium",
       "founder_type": "seasoned_operator",
       "key_strengths": [
-        "Previous CEO experience",
-        "Domain expertise in sports"
+        "Executive departure with credible news outlet reporting"
       ],
       "risks": [
-        "Unknown experience years",
-        "No clear indication of new venture"
+        "Unknown experience level, sector fit, and specific plans"
       ],
       "company_url": ""
     },
     {
-      "name": "Rohit Sharma",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
+      "name": "Sumit Jain",
+      "score": 60,
+      "action": "investigate",
+      "recommended_action": "investigate",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
       "location": "India",
-      "sector": "Fintech/Healthtech",
+      "sector": "Education Technology",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Rohit Sharma's investments in FITTR and involvement in a hackathon suggest he may be building something in the healthtech or fintech space, and his network in the startup ecosystem could be an asset. However, more information is needed to determine his potential as a founder. His experience and current projects are unclear, making it difficult to assess his strengths and weaknesses.",
+      "investment_thesis": "Sumit Jain's departure from Unacademy, a well-known test-prep platform, suggests a potential move into a new venture. His experience in the education technology sector could be a valuable asset for a new startup, especially if it aligns with current trends in online learning and educational technology.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
-      "signal_count": 2,
+      "signal_count": 1,
       "signal_types": [
         "executive_departure"
       ],
@@ -116,82 +202,76 @@
         {
           "source": "news",
           "type": "executive_departure",
-          "description": "[Inc42] Rohit Sharma Backs Fitness Startup Fittr",
-          "url": "https://inc42.com/buzz/rohit-sharma-backs-fitness-startup-fittr/"
-        },
-        {
-          "source": "news",
-          "type": "executive_departure",
-          "description": "[YourStory] A hackathon to empower girl innovators; Rohit Sharma’s investment in FITTR",
-          "url": "https://yourstory.com/2026/06/a-hackathon-to-empower-girl-innovators-rohit-sharma-investment-in-fittr"
+          "description": "[Google News] India: Sumit Jain steps down as Unacademy test-prep CEO - DealStreetAsia",
+          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBzMWNubHg1NjhNV241bUpHZ2ZjTjFHa0pqVUZ4MXR4VzdnRnFCR1ZLV0RYTkxiNF9FY3B3VGxsWWNPdks0bWUxb3FkVkVTdzFpWUtGZm5yOGFUYTIyMWFzOVNQSk5YNmVCRkVYNUs0TEdobGpy?oc=5"
         }
       ],
-      "confidence": "low",
-      "founder_type": "unknown",
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
       "key_strengths": [
-        "investment experience",
-        "network in the startup ecosystem"
+        "Executive departure from a notable company",
+        "Credible background"
       ],
       "risks": [
-        "lack of information on previous experience and current endeavors"
+        "Unknown experience years"
       ],
       "company_url": ""
     },
     {
-      "name": "Worathiti Pung",
-      "score": 40,
+      "name": "Sudipto Sannigrahi",
+      "score": 60,
       "action": "investigate",
       "recommended_action": "investigate",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
-      "location": "",
-      "sector": "AI",
-      "geography": "Unknown",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Worathiti Pung has launched an innovative AI product on Product Hunt, indicating potential for a strong founder. However, the lack of information on their experience and background, as well as unclear geography, raises concerns. Further investigation is needed to determine their fit with our investment mandate.",
+      "investment_thesis": "Sudipto Sannigrahi's successful exit from Rentomojo with a substantial return suggests a strong track record in the startup ecosystem. Further investigation is warranted to assess his current venture's potential and alignment with current hot sectors.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
       "signal_count": 1,
       "signal_types": [
-        "product_launch"
+        "executive_departure"
       ],
       "signals": [
         {
-          "source": "Product Hunt",
-          "type": "product_launch",
-          "description": "[Product Hunt] Worathiti Pung launched CakewordAI: Point at anything to learn its name in any language\n           \n           \n             Discussion \n            |\n             Link",
-          "url": "https://www.producthunt.com/products/cakewordai-snap-learn"
+          "source": "news",
+          "type": "executive_departure",
+          "description": "[Google News] Venture catalysts exits rentomojo with 3 4x return - Indiatimes",
+          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxONC1TR0oxRE42VXFMSnVVM1ZlUm4wb0U4LXl6SGtSeEtKX0Jkd1dzTEFGQXlMQ3MzQUl6WGQ1YkhUdFBfdFBnSjc2cEZjQzB1MmRWUW4wTG93dmhRSXREVTJZTHVCTUl1LTBFeTlpR0h5enkzYUo1OV9aT19nbTRPdjdvd3d0RUk1RGpXdm4xVWZZWVo5dFFnV2NZenFxM3hBNlNoSEgyRzZadmVyeUd3TjkwU2lWNlpFeE80SDVBSTFET0gxQWc?oc=5"
         }
       ],
       "confidence": "medium",
-      "founder_type": "first_time_founder",
+      "founder_type": "seasoned_operator",
       "key_strengths": [
-        "Product Hunt launch",
-        "Innovative product idea"
+        "Strong exit from previous venture",
+        "Significant return on investment"
       ],
       "risks": [
-        "Unknown experience and background",
-        "Unclear geography"
+        "Unknown experience years",
+        "No current company or sector information"
       ],
-      "company_url": "https://www.producthunt.com/posts/cakewordai"
+      "company_url": ""
     },
     {
       "name": "Indus Appstore",
-      "score": 40,
-      "action": "investigate",
-      "recommended_action": "investigate",
+      "score": 60,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
       "location": "",
-      "sector": "Fintech",
-      "geography": "India",
+      "sector": "Unknown",
+      "geography": "Unknown",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Akash Dongre, co-founder of PhonePe-owned Indus Appstore, has stepped down, indicating a potential new venture. With experience in a prominent fintech company, Dongre may be well-positioned to create a successful startup in the fintech space. Further investigation is needed to determine the founder's experience and the new venture's potential.",
+      "investment_thesis": "Akash Dongre's departure from PhonePe-owned Indus Appstore suggests a potential for a new venture, though the lack of information on his experience, the sector he is entering, and his current location makes it difficult to assess the opportunity fully.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -208,19 +288,3264 @@
         }
       ],
       "confidence": "medium",
-      "founder_type": "unknown",
+      "founder_type": "seasoned_operator",
       "key_strengths": [
-        "experience in a prominent fintech company",
-        "potential network and knowledge in the fintech space"
+        "Executive departure from a tracked company",
+        "Credible background"
       ],
       "risks": [
-        "lack of information on the founder's experience and new venture"
+        "Unknown experience",
+        "Unknown geography",
+        "Unknown sector fit"
       ],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 54,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Delip",
+      "score": 51,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Delip (ex-a notable company) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "https://www.linkedin.com/in/delip",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 51,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 51,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company) shows promising signals worth monitoring. Signals include funding news. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "funding_news",
+          "description": "Historical signal: funding_news",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Fractal",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-Fractal, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in Singapore) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 48,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 46,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 45,
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This signal indicates an active pivot into the high-potential AI for Pharma sector in India, which aligns with current investment trends. The rebrand from Swish Club to SwishX suggests strategic repositioning and potential founder commitment, but the complete lack of founder identity prevents proper assessment of operator quality.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 43,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include stealth founder.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "stealth_founder",
+          "description": "Historical signal: stealth_founder",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 42,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "funding_news",
+          "description": "Historical signal: funding_news",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 42,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "funding_news",
+          "description": "Historical signal: funding_news",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 42,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "funding_news",
+          "description": "Historical signal: funding_news",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 42,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "funding_news",
+          "description": "Historical signal: funding_news",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 42,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "funding_news",
+          "description": "Historical signal: funding_news",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 42,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "funding_news",
+          "description": "Historical signal: funding_news",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 42,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "funding_news",
+          "description": "Historical signal: funding_news",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 42,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "funding_news",
+          "description": "Historical signal: funding_news",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 42,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "funding_news",
+          "description": "Historical signal: funding_news",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 42,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "funding_news",
+          "description": "Historical signal: funding_news",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 42,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "funding_news",
+          "description": "Historical signal: funding_news",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 42,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "funding_news",
+          "description": "Historical signal: funding_news",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Exponent Energy",
+      "score": 40,
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Sanjay Jagannath's departure from Exponent Energy amid restructuring suggests a potential for a new venture. With credible news sources reporting his exit, there is a possibility of a stealth startup being formed. Further investigation is warranted to assess his experience, the sector he is targeting, and the potential for alignment with current hot sectors.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 2,
+      "signal_types": [
+        "stealth_founder",
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "executive_departure",
+          "description": "[Google News] Exponent Energy cofounder Sanjay Jagannath steps down amid restructuring - Indiatimes",
+          "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxONGY4a2t2UGppWkNDUjd4YnhmWjNOMm1ybFdhQUlVWDh6RkllY2RyUm4tMndDNGE4aW9ObEd3bnNsWEdPLWhKeVlMOUhmdkdNZEdmMjVJaUFmMUJ3WGt1NXBtQ3NJem9tLXM5ZVFOQmtZWW9yZ3Z6VEExemNLQ1Rjdlg0NkZrR2NaRlJfMzlpd3FfRTRvOGEtWVdFLXI1VERwMVctanNORDJfNVkwX1dqVWdGdGdVZU1LeVVhQ2w4SFJwSnkyd19kQV9MSXBTdzhjSjdoQjFFTkJwQVluLTdEcllqZw?oc=5"
+        },
+        {
+          "source": "news",
+          "type": "stealth_founder",
+          "description": "[Google News] Exponent Energy co-founder Sanjay Jagannath exits operational role - BusinessLine",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQcG95NENYTUhsUkFzUlhmdDhKUFl2UXU1Y09RejdwVVlnXzd5OTFlMXlBakVfRjlvX3c2QkRkTUxzWnVyYmw1TWw1S0FwaHRwTndrQU5QbVc3c0lCcGVoenBoZDczcXVzUDlZUnJUalVMNXBVNTB1WXFESXlWRmtTVzVvVVN6UDVSdk9iNTRTYVEwNkFZQ2M0MGFKbHdMRUJOdDVTVlRUMUJlcFdhRnI0bGlHY1FXdlpTUHhSSFZ30gHEAUFVX3lxTE5oZS1FQnYyTXhmZFRFQm1DbkdtbmZYdUtfMXZPaUxlNFd2cGRQSXA4dTN1MldJallMRmJjdlJKdmhnQXVmMzU5RW5IYlFTSDZ2TjZKYmg3Ty1WZDFIODUtdGkxS1BWOFpBU0VLY1E2eXA2TTA4azJWek84UnQ5MUJCWnlBLS1iSXhDNXFSVEl3dlBMMVZ0U1p4c21NQmxpTkYzV0ZhRGZOTWFCWERwOWtVYzk3eXppZE81RndpblcyOGF4REs?oc=5"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
+      "key_strengths": [
+        "Executive departure with credible news source",
+        "Potential for stealth startup"
+      ],
+      "risks": [
+        "Lack of information on experience and sector alignment"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Mehul",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "AI",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Mehul's launch of AEVS on Product Hunt indicates an interest in AI, but without additional information on his background and experience, it's unclear if he fits the investment criteria. Further investigation is needed to assess his potential as a founder.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "product_launch"
+      ],
+      "signals": [
+        {
+          "source": "Product Hunt",
+          "type": "product_launch",
+          "description": "[Product Hunt] Mehul launched AEVS: proof-of-execution for AI agents\n           \n           \n             Discussion \n            |\n             Link",
+          "url": "https://www.producthunt.com/products/aevs-by-fetch-ai"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Proof-of-execution for AI agents"
+      ],
+      "risks": [
+        "Unknown experience, no previous exit, and no clear geography"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Vertex Ventures",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "AI/ML",
+      "geography": "Singapore",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This signal indicates a potential new venture in the AI/ML sector, with notable backing from Vertex Ventures. Further investigation is warranted to assess the founder's background and level of involvement in the new company.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "funding_news",
+          "description": "[Google News] Singapore's FORMAS.AI raises $3.98M in pre-seed round led by Vertex Ventures Southeast Asia & India - TNGlobal",
+          "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQdGhXWVkwODM5ODQ3SE1iYkxPcVZXWS00VHJqcTlXS3RnQ3YtVE9CUEx5Rm1MZnpkVkVjeTNNZnU0eTV3MlNfdi16NlZYVGQ5Z1BGSjdqcFFuT1VRN2hzckd6YjNpTERaQThLM21LUEFHeU5WU3RhbmhXQ0tpT1Jhb24zZVRNS19oREdhdE1mNTI1dTQydkhMSlhoZE9zTUhXOXdpT2Vja2tCNWRZM3dsWjB5b2hSM1dFMWhSU1RXMk0yaUQ0QmhlUm9JSQ?oc=5"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Vertex Ventures involvement",
+        "pre-seed funding"
+      ],
+      "risks": [
+        "Unknown founder experience",
+        "Potential lack of direct founder involvement"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Meridian Ventures",
+      "score": 40,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Meridian Ventures shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "funding_news",
+          "description": "Historical signal: funding_news",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 40,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include executive departure.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
+      "company_url": ""
+    },
+    {
+      "name": "Unknown",
+      "score": 40,
+      "action": "pass",
+      "recommended_action": "pass",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "",
+      "geography": "",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Unknown shows early signals but insufficient data to prioritise at this stage. Signals include executive departure.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "db_cache",
+          "type": "executive_departure",
+          "description": "Historical signal: executive_departure",
+          "url": ""
+        }
+      ],
+      "confidence": "",
+      "founder_type": "",
+      "key_strengths": [],
+      "risks": [],
       "company_url": ""
     }
   ],
   "source_breakdown": {
-    "news": 5,
+    "db_cache": 91,
+    "news": 11,
     "Product Hunt": 1
   },
   "score_threshold": 40,
@@ -228,130 +3553,11 @@
     "ai_ml": {
       "articles": [
         {
-          "title": "AI slop in Aestethics",
-          "url": "https://www.reddit.com/r/artificial/comments/1u6801d/ai_slop_in_aestethics/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-15T05:56:45+00:00",
-          "summary": "&#32; submitted by &#32;  /u/arttime9776   [link] &#32; [comments]"
-        },
-        {
-          "title": "My AI tools kept forgetting everything, so I gave them a shared brain (local + open source)",
-          "url": "https://www.reddit.com/r/artificial/comments/1u66kb0/my_ai_tools_kept_forgetting_everything_so_i_gave/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-15T04:39:47+00:00",
-          "summary": "Hi there! this is my first small rant that turned into a project: every AI tool I use has its own memory. I tell Claude Desktop something, Cursor has no clue. New chat? Back to zero. It drove me nuts — so I built Centralaizer. This is an open source solution, so it's free with MIT license. It's a li"
-        },
-        {
           "title": "Orbio raises $21 million to automate hiring and onboarding for frontline workers",
           "url": "https://techcrunch.com/2026/06/14/orbio-raises-21-million-to-automate-hiring-and-onboarding-for-frontline-workers/",
           "source": "techcrunch.com",
           "pub_date": "2026-06-15T04:01:00+00:00",
           "summary": "Orbio announces $21 Million Series A in round led by Dawn Capital."
-        },
-        {
-          "title": "Making slides",
-          "url": "https://www.reddit.com/r/artificial/comments/1u65i37/making_slides/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-15T03:45:24+00:00",
-          "summary": "I know university professors are strict about AI and use AI detector when it’s essay writing, but what about powerpoint slides? Are there any ways for them to detect AI-made slides? What about videos?  &#32; submitted by &#32;  /u/HideOB   [link] &#32; [comments]"
-        },
-        {
-          "title": "the US just made frontier ai a controlled export, like nvidia chips",
-          "url": "https://www.reddit.com/r/artificial/comments/1u64nok/the_us_just_made_frontier_ai_a_controlled_export/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-15T03:04:03+00:00",
-          "summary": "the us government just told Anthropic to cut off its two most powerful models from every foreign national on earth, inside or outside america. Anthropic couldn't cleanly separate foreigners from americans, so it pulled fable 5 and mythos 5 for everyone. So this week anthropic shipped fable 5 and myt"
-        },
-        {
-          "title": "Most of this \"AI marketing\" drama is just prompting with better packaging. And it's a shame.",
-          "url": "https://www.reddit.com/r/artificial/comments/1u64099/most_of_this_ai_marketing_drama_is_just_prompting/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-15T02:32:52+00:00",
-          "summary": "Look, I get it. Marketing is exhausting. Ten hours building a feature feels productive. Ten hours &quot;marketing&quot; it feels like screaming into a void. That frustration is real and valid. But here's the thing — a lot of these tools being sold to you right now are not solving that problem. They'"
-        },
-        {
-          "title": "Can Editing 1 Neuron Fix Repetition Loops in LLMs?",
-          "url": "https://arxiv.org/abs/2606.13705",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-15T00:00:00-04:00",
-          "summary": "arXiv:2606.13705v1 Announce Type: new \nAbstract: Yes. Can it cure doom loops? Probably not.\n  The Gemma 4 instruction-tuned models share a reproducible failure: on long factual enumeration prompts, such as listing every episode of a TV series, the 88 IAU constellations, or the 151 original Pokemon, "
-        },
-        {
-          "title": "Efficient On-Device Diffusion LLM Inference with Mobile NPU",
-          "url": "https://arxiv.org/abs/2606.13740",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-15T00:00:00-04:00",
-          "summary": "arXiv:2606.13740v1 Announce Type: new \nAbstract: Diffusion large language models (dLLMs) accelerate generation by denoising multiple tokens in parallel, making them attractive for latency-sensitive mobile inference. However, repeated denoising introduces substantial computation on smartphones. Mobil"
-        },
-        {
-          "title": "High-Frequency Pricing at Scale for E-Commerce",
-          "url": "https://arxiv.org/abs/2606.13741",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-15T00:00:00-04:00",
-          "summary": "arXiv:2606.13741v1 Announce Type: new \nAbstract: This paper presents the design, development, and implementation of a specialized forecast-then-optimize algorithmic pricing tool for sales campaigns in fashion e-commerce. Sales events present unique challenges for pricing including volatile demand pa"
-        },
-        {
-          "title": "A fully GPU-based workflow for building physics emulators of hypersonic flows",
-          "url": "https://arxiv.org/abs/2606.13742",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-15T00:00:00-04:00",
-          "summary": "arXiv:2606.13742v1 Announce Type: new \nAbstract: The ability to resolve complex physical phenomena with high fidelity and at low computational cost is central to addressing key challenges in modern engineering. A prime example lies in hypersonic flows, where the precise prediction of the full flowfi"
-        },
-        {
-          "title": "FedSPC: Shared Parameter Correction for Personalized Federated Learning",
-          "url": "https://arxiv.org/abs/2606.13748",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-15T00:00:00-04:00",
-          "summary": "arXiv:2606.13748v1 Announce Type: new \nAbstract: Personalized federated learning (PFL) is one of the important approaches in federated learning for addressing statistical heterogeneity while enabling client-specific adaptation. Many PFL methods split the model into shared and personalized parameters"
-        },
-        {
-          "title": "The Weight Norm Sets the Grokking Timescale: A Causal Delay Law",
-          "url": "https://arxiv.org/abs/2606.13753",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-15T00:00:00-04:00",
-          "summary": "arXiv:2606.13753v1 Announce Type: new \nAbstract: Grokking is the delayed onset of generalization in neural networks, arising long after they fit the training data. Whether the weight norm causes this delay is disputed: some studies report a critical norm at the transition, others observe grokking wi"
-        },
-        {
-          "title": "D2H-AD: A Hybrid Model Utilizing Hyperdimensional Computing for Advanced Anomaly Detection",
-          "url": "https://arxiv.org/abs/2606.13754",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-15T00:00:00-04:00",
-          "summary": "arXiv:2606.13754v1 Announce Type: new \nAbstract: Anomaly detection is a fundamental component of intelligent systems with applications in healthcare, cybersecurity, smart grids, and IoT environments. Although conventional machine learning and deep learning methods have demonstrated effectiveness in "
-        },
-        {
-          "title": "Beyond LoRA: Is Sparsity-Induced Adaptation Better?",
-          "url": "https://arxiv.org/abs/2606.13767",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-15T00:00:00-04:00",
-          "summary": "arXiv:2606.13767v1 Announce Type: new \nAbstract: Low-rank adaptation (LoRA) and its variants provide a memory- and compute-efficient alternative to full fine-tuning of pre-trained models. However, questions remain about the comparative generalizability of these approaches and how the structural rest"
-        },
-        {
-          "title": "Diffusion Policy Optimization without Drifting Apart",
-          "url": "https://arxiv.org/abs/2606.13795",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-15T00:00:00-04:00",
-          "summary": "arXiv:2606.13795v1 Announce Type: new \nAbstract: RL post-training has become increasingly pivotal for improving diffusion policies, but existing diffusion policy-gradient methods are often unstable and cannot achieve reliable policy improvement. We identify the cause as the double-drift phenomenon: "
-        },
-        {
-          "title": "Neural Variability Enhances Artificial Network Robustness",
-          "url": "https://arxiv.org/abs/2606.13801",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-15T00:00:00-04:00",
-          "summary": "arXiv:2606.13801v1 Announce Type: new \nAbstract: Neural responses in cortex exhibit substantial trial-to-trial variability in response to repeated stimuli, while peripheral sensory neurons respond far more consistently, leading many to wonder whether stochasticity may carry meaning. Existing work ha"
-        },
-        {
-          "title": "Neural Slack Variables for Shape Constraints",
-          "url": "https://arxiv.org/abs/2606.13803",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-15T00:00:00-04:00",
-          "summary": "arXiv:2606.13803v1 Announce Type: new \nAbstract: Enforcing functional inequality constraints such as monotonicity and convexity in neural networks is a fundamental challenge in many industrial and scientific applications. Classical one-sided penalty methods, along with primal-dual methods gated by c"
-        },
-        {
-          "title": "Uncertainty Estimation and Generalization Bounds for Modern Deep Learning",
-          "url": "https://arxiv.org/abs/2606.13818",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-15T00:00:00-04:00",
-          "summary": "arXiv:2606.13818v1 Announce Type: new \nAbstract: This thesis investigates how Bayesian principles can deepen our understanding of modern deep learning systems. While neural networks achieve remarkable predictive performance, their ability to generalize and to quantify uncertainty remains only partly"
         },
         {
           "title": "A Deep Reinforcement Learning (DRL)-Based Transformer Method for Solving the Open Shop Scheduling Problem",
@@ -438,6 +3644,90 @@
           "summary": "arXiv:2606.13782v1 Announce Type: new \nAbstract: Large Language Models (LLMs) have made notable progress in automated theorem proving, yet existing formal benchmarks remain limited in both mathematical coverage and difficulty. Most are concentrated in areas that are easier to formalize, such as alge"
         },
         {
+          "title": "Can Editing 1 Neuron Fix Repetition Loops in LLMs?",
+          "url": "https://arxiv.org/abs/2606.13705",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-15T00:00:00-04:00",
+          "summary": "arXiv:2606.13705v1 Announce Type: new \nAbstract: Yes. Can it cure doom loops? Probably not.\n  The Gemma 4 instruction-tuned models share a reproducible failure: on long factual enumeration prompts, such as listing every episode of a TV series, the 88 IAU constellations, or the 151 original Pokemon, "
+        },
+        {
+          "title": "Efficient On-Device Diffusion LLM Inference with Mobile NPU",
+          "url": "https://arxiv.org/abs/2606.13740",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-15T00:00:00-04:00",
+          "summary": "arXiv:2606.13740v1 Announce Type: new \nAbstract: Diffusion large language models (dLLMs) accelerate generation by denoising multiple tokens in parallel, making them attractive for latency-sensitive mobile inference. However, repeated denoising introduces substantial computation on smartphones. Mobil"
+        },
+        {
+          "title": "High-Frequency Pricing at Scale for E-Commerce",
+          "url": "https://arxiv.org/abs/2606.13741",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-15T00:00:00-04:00",
+          "summary": "arXiv:2606.13741v1 Announce Type: new \nAbstract: This paper presents the design, development, and implementation of a specialized forecast-then-optimize algorithmic pricing tool for sales campaigns in fashion e-commerce. Sales events present unique challenges for pricing including volatile demand pa"
+        },
+        {
+          "title": "A fully GPU-based workflow for building physics emulators of hypersonic flows",
+          "url": "https://arxiv.org/abs/2606.13742",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-15T00:00:00-04:00",
+          "summary": "arXiv:2606.13742v1 Announce Type: new \nAbstract: The ability to resolve complex physical phenomena with high fidelity and at low computational cost is central to addressing key challenges in modern engineering. A prime example lies in hypersonic flows, where the precise prediction of the full flowfi"
+        },
+        {
+          "title": "FedSPC: Shared Parameter Correction for Personalized Federated Learning",
+          "url": "https://arxiv.org/abs/2606.13748",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-15T00:00:00-04:00",
+          "summary": "arXiv:2606.13748v1 Announce Type: new \nAbstract: Personalized federated learning (PFL) is one of the important approaches in federated learning for addressing statistical heterogeneity while enabling client-specific adaptation. Many PFL methods split the model into shared and personalized parameters"
+        },
+        {
+          "title": "The Weight Norm Sets the Grokking Timescale: A Causal Delay Law",
+          "url": "https://arxiv.org/abs/2606.13753",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-15T00:00:00-04:00",
+          "summary": "arXiv:2606.13753v1 Announce Type: new \nAbstract: Grokking is the delayed onset of generalization in neural networks, arising long after they fit the training data. Whether the weight norm causes this delay is disputed: some studies report a critical norm at the transition, others observe grokking wi"
+        },
+        {
+          "title": "D2H-AD: A Hybrid Model Utilizing Hyperdimensional Computing for Advanced Anomaly Detection",
+          "url": "https://arxiv.org/abs/2606.13754",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-15T00:00:00-04:00",
+          "summary": "arXiv:2606.13754v1 Announce Type: new \nAbstract: Anomaly detection is a fundamental component of intelligent systems with applications in healthcare, cybersecurity, smart grids, and IoT environments. Although conventional machine learning and deep learning methods have demonstrated effectiveness in "
+        },
+        {
+          "title": "Beyond LoRA: Is Sparsity-Induced Adaptation Better?",
+          "url": "https://arxiv.org/abs/2606.13767",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-15T00:00:00-04:00",
+          "summary": "arXiv:2606.13767v1 Announce Type: new \nAbstract: Low-rank adaptation (LoRA) and its variants provide a memory- and compute-efficient alternative to full fine-tuning of pre-trained models. However, questions remain about the comparative generalizability of these approaches and how the structural rest"
+        },
+        {
+          "title": "Diffusion Policy Optimization without Drifting Apart",
+          "url": "https://arxiv.org/abs/2606.13795",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-15T00:00:00-04:00",
+          "summary": "arXiv:2606.13795v1 Announce Type: new \nAbstract: RL post-training has become increasingly pivotal for improving diffusion policies, but existing diffusion policy-gradient methods are often unstable and cannot achieve reliable policy improvement. We identify the cause as the double-drift phenomenon: "
+        },
+        {
+          "title": "Neural Variability Enhances Artificial Network Robustness",
+          "url": "https://arxiv.org/abs/2606.13801",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-15T00:00:00-04:00",
+          "summary": "arXiv:2606.13801v1 Announce Type: new \nAbstract: Neural responses in cortex exhibit substantial trial-to-trial variability in response to repeated stimuli, while peripheral sensory neurons respond far more consistently, leading many to wonder whether stochasticity may carry meaning. Existing work ha"
+        },
+        {
+          "title": "Neural Slack Variables for Shape Constraints",
+          "url": "https://arxiv.org/abs/2606.13803",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-15T00:00:00-04:00",
+          "summary": "arXiv:2606.13803v1 Announce Type: new \nAbstract: Enforcing functional inequality constraints such as monotonicity and convexity in neural networks is a fundamental challenge in many industrial and scientific applications. Classical one-sided penalty methods, along with primal-dual methods gated by c"
+        },
+        {
+          "title": "Uncertainty Estimation and Generalization Bounds for Modern Deep Learning",
+          "url": "https://arxiv.org/abs/2606.13818",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-15T00:00:00-04:00",
+          "summary": "arXiv:2606.13818v1 Announce Type: new \nAbstract: This thesis investigates how Bayesian principles can deepen our understanding of modern deep learning systems. While neural networks achieve remarkable predictive performance, their ability to generalize and to quantify uncertainty remains only partly"
+        },
+        {
           "title": "Startup CEO Charlie Javice is reportedly angling for a Trump pardon",
           "url": "https://techcrunch.com/2026/06/14/startup-ceo-charlie-javice-is-reportedly-angling-for-a-trump-pardon/",
           "source": "techcrunch.com",
@@ -445,39 +3735,11 @@
           "summary": "JPMorgan can't be pleased by any of this."
         },
         {
-          "title": "How should people share agent-security tests without making it vendor spam?",
-          "url": "https://www.reddit.com/r/artificial/comments/1u5w45f/how_should_people_share_agentsecurity_tests/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-14T20:40:19+00:00",
-          "summary": "I’m asking because this topic gets messy fast. Prompt injection is more interesting once the model can use tools, but most posts end up as either scary headlines or someone sneaking in a product pitch. What would be a useful format here? My gut says small reproducible examples, clear limits, no “we "
-        },
-        {
           "title": "UK may ban social media for children under 16",
           "url": "https://techcrunch.com/2026/06/14/uk-may-ban-social-media-for-children-under-16/",
           "source": "techcrunch.com",
           "pub_date": "2026-06-14T20:17:00+00:00",
           "summary": "The U.K. seems to be following Australia's lead in banning a wide swath of social media for teens."
-        },
-        {
-          "title": "Has AI changed the way you approach creative work or problem-solving?",
-          "url": "https://www.reddit.com/r/artificial/comments/1u5s44x/has_ai_changed_the_way_you_approach_creative_work/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-14T18:04:47+00:00",
-          "summary": "I’ve noticed that using AI regularly has started changing how I think through problems or come up with ideas. Instead of spending a long time brainstorming on my own, I now often use it as a thinking partner to explore different angles quickly. It made me wonder how common this is. Has using AI noti"
-        },
-        {
-          "title": "Would super intelligent AI that can access the Internet be able to overcome any biases it’s creator put into it?",
-          "url": "https://www.reddit.com/r/artificial/comments/1u5rkfu/would_super_intelligent_ai_that_can_access_the/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-14T17:43:38+00:00",
-          "summary": "It seems inevitable that super intelligent AI will be an incredibly powerful force in the future, and its ability to predict and manipulate people would make it impossibly hard to control. I’m wondering if it would be able to overcome the biases that were instilled during its creation, or will it fo"
-        },
-        {
-          "title": "Am I going to spend the rest of my career reviewing AI generated code?",
-          "url": "https://www.reddit.com/r/artificial/comments/1u5qjy7/am_i_going_to_spend_the_rest_of_my_career/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-14T17:03:59+00:00",
-          "summary": "EDIT: please read all of the post before commenting, quite a few people understood nothing (or the opposite) of what I meant and it's sad I've been thinking, over the last year developers have started to rely on genAI quite a lot, I see people around me boast that they haven't written a single line "
         },
         {
           "title": "As AI companies race to go public, who else is along for the ride?",
@@ -536,32 +3798,11 @@
           "summary": "You don't really ever have to explain why a universal remote is a good idea. You have a bunch of stuff that needs controlling; this thing controls them all. Many companies have set out to build a product worthy of this idea, and one product came much closer than most. It was called the Harmony, [&#8"
         },
         {
-          "title": "Anthropic CEO Floats Tax on AI Firms to Fund Universal Income",
-          "url": "https://www.reddit.com/r/artificial/comments/1u5g1hz/anthropic_ceo_floats_tax_on_ai_firms_to_fund/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-14T08:53:54+00:00",
-          "summary": "Anthropic CEO Dario Amodei called on governments to tax AI companies to fund a universal basic income and introduce employee retention incentives to account for the potential impact the technology could have on the labor market. In a blog covering the potential policy responses to the “AI exponentia"
-        },
-        {
           "title": "Solid-state batteries still aren’t ready, but gels are",
           "url": "https://www.theverge.com/column/948594/solid-state-batteries-semi-solid-state",
           "source": "theverge.com",
           "pub_date": "2026-06-14T08:00:00-04:00",
           "summary": "This is The Stepback, a weekly newsletter breaking down one essential story from the tech world. For more on e-bikes, power stations, and how to work anywhere, follow Thomas Ricker. The Stepback arrives in our subscribers' inboxes at 8AM ET. Opt in for The Stepback here. How it started Lithium-ion b"
-        },
-        {
-          "title": "Our AI bills are subsidised, and I don't think many people have priced in what happens next",
-          "url": "https://www.reddit.com/r/artificial/comments/1u5edg8/our_ai_bills_are_subsidised_and_i_dont_think_many/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-14T07:11:54+00:00",
-          "summary": "This is something I keep thinking about as someone who's built AI into a few businesses. The price we pay for AI right now isn't the real cost. Altman said they lose money even on the $200/month plan. I read Anthropic had people on their $200 plan burning $1000+/day of compute until they brought in "
-        },
-        {
-          "title": "MCP solved tool calling. A2A solved coordination. What solves transport?",
-          "url": "https://venturebeat.com/orchestration/mcp-solved-tool-calling-a2a-solved-coordination-what-solves-transport",
-          "source": "venturebeat.com",
-          "pub_date": "2026-06-14T04:00:00+00:00",
-          "summary": "The history of distributed computing is one of protocol proliferation followed by consolidation. Common Object Request Broker Architecture (CORBA), Distributed Component Object Model (DCOM), Java remote method invocation (RMI), and early simple object access protocol (SOAP) competed for the enterpri"
         },
         {
           "title": "As Anthropic suspends access to new models, India debates its AI future",
@@ -583,13 +3824,6 @@
           "source": "techcrunch.com",
           "pub_date": "2026-06-13T20:42:31+00:00",
           "summary": "Once again, AI proves to be an unreliable source of information about AI."
-        },
-        {
-          "title": "Microsoft president says AI backlash at graduation events should be wake-up call for the tech industry",
-          "url": "https://www.reddit.com/r/artificial/comments/1u50mve/microsoft_president_says_ai_backlash_at/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-13T20:01:47+00:00",
-          "summary": "&#32; submitted by &#32;  /u/esporx   [link] &#32; [comments]"
         },
         {
           "title": "Amazon CEO reportedly raised Anthropic model concerns before government crackdown",
@@ -641,14 +3875,105 @@
           "summary": "Microsoft is preparing to lay off a significant chunk of its Xbox division and is reevaluating the plans for its next-generation Project Helix console. It's apparently also considering dramatically restructuring its relationship with Xbox, and hasn't ruled out spinning it off into a separate company"
         },
         {
-          "title": "Anthropic blocks all public access to Claude Fable 5, Mythos 5 following US government order — what enterprises should do",
-          "url": "https://venturebeat.com/technology/anthropic-blocks-all-public-access-to-claude-fable-5-mythos-5-following-us-government-order-what-enterprises-should-do",
-          "source": "venturebeat.com",
-          "pub_date": "2026-06-13T12:24:00+00:00",
-          "summary": "The US government last night issued an unprecedented export control directive ordering Anthropic to immediately suspend all access to its top-tier Claude Fable 5 and Claude Mythos 5 models for foreign nationals, citing unspecified national security authorities. In response, Anthropic has blocked all"
+          "title": "PeopleSoft 0-day affecting hundreds of organizations steals gigabytes of data",
+          "url": "https://arstechnica.com/security/2026/06/peoplesoft-0-day-affecting-hundreds-of-organizations-steals-gigabytes-of-data/",
+          "source": "arstechnica.com",
+          "pub_date": "2026-06-12T19:26:47+00:00",
+          "summary": "Vulnerability in the Oracle-owned PeopleSoft software is about as critical as they come."
+        },
+        {
+          "title": "olmo-eval: An evaluation workbench for the model development loop",
+          "url": "https://huggingface.co/blog/allenai/olmo-eval",
+          "source": "huggingface.co",
+          "pub_date": "2026-06-12T15:56:10+00:00",
+          "summary": ""
+        },
+        {
+          "title": "True Positive Weekly #165",
+          "url": "https://aiweekly.substack.com/p/true-positive-weekly-165",
+          "source": "aiweekly.substack.com",
+          "pub_date": "2026-06-11T19:52:24+00:00",
+          "summary": "The most important artificial intelligence and machine learning news and articles"
+        },
+        {
+          "title": "Profiling in PyTorch (Part 2): From nn.Linear to a Fused MLP",
+          "url": "https://huggingface.co/blog/torch-mlp-fusion",
+          "source": "huggingface.co",
+          "pub_date": "2026-06-11T00:00:00+00:00",
+          "summary": ""
+        },
+        {
+          "title": "Locked in heated rivalry with researcher, Microsoft fixes 0-day they disclosed",
+          "url": "https://arstechnica.com/security/2026/06/locked-in-heated-rivalry-with-researcher-microsoft-fixes-0-day-they-disclosed/",
+          "source": "arstechnica.com",
+          "pub_date": "2026-06-09T20:56:52+00:00",
+          "summary": "A separate zero-day also disclosed by Nightmare Eclipse appears to be patched as well."
+        },
+        {
+          "title": "What it feels like to work with Mythos",
+          "url": "https://www.oneusefulthing.org/p/what-it-feels-like-to-work-with-mythos",
+          "source": "oneusefulthing.org",
+          "pub_date": "2026-06-09T17:11:22+00:00",
+          "summary": "Claude Fable represents another big jump in AI"
+        },
+        {
+          "title": "High-severity vulnerability in Linux caused by a single faulty character",
+          "url": "https://arstechnica.com/security/2026/06/a-single-errant-character-in-the-linux-kernel-allows-attacker-to-gain-root/",
+          "source": "arstechnica.com",
+          "pub_date": "2026-06-09T15:12:43+00:00",
+          "summary": "Use-after-free bug can be exploited to evade sandbox defenses."
+        },
+        {
+          "title": "How an Agent Built a 3D Paris Gallery by Chaining Two Hugging Face Spaces",
+          "url": "https://huggingface.co/blog/mishig/spaces-agents-md",
+          "source": "huggingface.co",
+          "pub_date": "2026-06-09T10:46:19+00:00",
+          "summary": ""
+        },
+        {
+          "title": "Migrating Your GitHub CI to Hugging Face Jobs",
+          "url": "https://huggingface.co/blog/github-ci-hf-jobs",
+          "source": "huggingface.co",
+          "pub_date": "2026-06-09T00:00:00+00:00",
+          "summary": ""
+        },
+        {
+          "title": "For the 2nd time in weeks, Microsoft packages laced with credential stealer",
+          "url": "https://arstechnica.com/security/2026/06/for-the-2nd-time-in-weeks-microsoft-packages-laced-with-credential-stealer/",
+          "source": "arstechnica.com",
+          "pub_date": "2026-06-08T18:34:23+00:00",
+          "summary": "73 packages run self-replicating stealer as soon as they're opened by an AI agent."
+        },
+        {
+          "title": "The Open Source Community is backing OpenEnv for Agentic RL",
+          "url": "https://huggingface.co/blog/openenv-agentic-rl",
+          "source": "huggingface.co",
+          "pub_date": "2026-06-08T00:00:00+00:00",
+          "summary": ""
+        },
+        {
+          "title": "How a USB-connected speaker can infect a PC without ever being touched",
+          "url": "https://arstechnica.com/security/2026/06/highly-reviewed-speaker-can-be-hacked-over-the-air-to-infect-connected-devices/",
+          "source": "arstechnica.com",
+          "pub_date": "2026-06-05T21:00:29+00:00",
+          "summary": "Seller of the Sound Blaster Katana V2X doesn't consider the behavior a vulnerability."
+        },
+        {
+          "title": "Co-Existence and the End of Co-Intelligence",
+          "url": "https://www.oneusefulthing.org/p/co-existence-and-the-end-of-co-intelligence",
+          "source": "oneusefulthing.org",
+          "pub_date": "2026-06-04T21:13:42+00:00",
+          "summary": "Also: how pitch a book to an AI!"
+        },
+        {
+          "title": "Dashlane explains how attackers managed to download encrypted password vaults",
+          "url": "https://arstechnica.com/security/2026/06/dashlane-explains-how-attackers-managed-to-download-encrypted-password-vaults/",
+          "source": "arstechnica.com",
+          "pub_date": "2026-06-04T20:02:04+00:00",
+          "summary": "By targeting large numbers of users, attackers increased their chances of success."
         }
       ],
-      "cached_at": "2026-06-15T05:59:33.925308"
+      "cached_at": "2026-06-15T07:11:54.045449"
     },
     "india_sea": {
       "articles": [
@@ -660,18 +3985,11 @@
           "summary": "India’s tech story is entering a nuanced phase, with AI pushing deeper into filmmaking, cybersecurity, enterprise workflows and education. Recently,&#8230;"
         },
         {
-          "title": "48 PE investors, US$3.96B deployed, and not a single IPO exit in five years. Something is broken.",
-          "url": "https://e27.co/48-pe-investors-us3-96b-deployed-and-not-a-single-ipo-exit-in-five-years-something-is-broken-20260615/",
-          "source": "e27.co",
-          "pub_date": "2026-06-15T05:00:31+00:00",
-          "summary": "Vietnam&#8217;s private equity boom is real and impressive. So is the structural bottleneck quietly undermining it. On the surface, Vietnam&#8217;s private equity market had its best year on record in 2025. Dig one layer deeper, and a structural fault line comes into view that should give every inve"
-        },
-        {
-          "title": "Why Bitcoin just surged past US$65,000 while oil crashed 4%",
-          "url": "https://e27.co/why-bitcoin-just-surged-past-us65000-while-oil-crashed-4-20260615/",
-          "source": "e27.co",
-          "pub_date": "2026-06-15T04:14:23+00:00",
-          "summary": "The total cryptocurrency market capitalisation climbed 1.57 per cent to US$2.24 trillion over the past 24 hours. This movement highlights a fundamental reality I observed over my 15 years in the blockchain sector and my time advising governments on digital infrastructure. Digital assets no longer op"
+          "title": "Token costs are climbing. Developers can help fix that",
+          "url": "https://yourstory.com/2026/06/tokeconomics-ai-token-cost-jigar-halani-nvidia-devsparks-2026",
+          "source": "yourstory.com",
+          "pub_date": "2026-06-15T05:30:00+00:00",
+          "summary": "At DevSparks 2026 in Bengaluru, NVIDIA's Jigar Halani made the case that every model choice and agent a developer ships has a direct cost implication, and that understanding tokeconomics is now a core developer skill."
         },
         {
           "title": "Razorpay Files Confidential IPO Papers To Raise $600 Mn",
@@ -688,53 +4006,11 @@
           "summary": "Amazon’s AI Gameplan For Sellers After consumers, Amazon is now moving AI to the seller side. The ecommerce major is&#8230;"
         },
         {
-          "title": "Why investors are auditing your operation architecture, not your org chart",
-          "url": "https://e27.co/why-investors-are-auditing-your-operation-architecture-not-your-org-chart-20260614/",
-          "source": "e27.co",
-          "pub_date": "2026-06-15T02:30:33+00:00",
-          "summary": "The &#8220;Headcount Flex&#8221; is officially dead. Remember when founders used to walk into boardrooms in Singapore or Jakarta and lead with the size of their team? In 2021, that was a sign of prestige. In 2026, it sounds like a bankruptcy warning. Today, the most impressive flex in the ecosystem "
-        },
-        {
-          "title": "Funded: SEA climate tech has US$1.1B and a problem no one wants to name",
-          "url": "https://e27.co/funded-sea-climate-tech-has-us1-1b-and-a-problem-no-one-wants-to-name-20260614/",
-          "source": "e27.co",
-          "pub_date": "2026-06-15T02:00:37+00:00",
-          "summary": "I&#8217;ll be honest about why climate keeps me up at night, not in a professional way, but a personal one. I&#8217;m a dog dad. Rocky and Jasper, both 13, both heart patients, one blind. When people my age talk about 20-year plans, kids, property, legacy, I go quiet. Climate is part of that silence"
-        },
-        {
-          "title": "Voice AI is evolving beyond commands, and APAC businesses should pay attention",
-          "url": "https://e27.co/voice-ai-is-evolving-beyond-commands-and-apac-businesses-should-pay-attention-20260609/",
-          "source": "e27.co",
-          "pub_date": "2026-06-15T02:00:26+00:00",
-          "summary": "Across APAC, voice is quickly becoming a primary interface between people and technology. From customer support and telehealth to connected vehicles and AI agents, more interactions are happening through voice than ever before. But most systems today are still solving only part of the problem. They "
-        },
-        {
-          "title": "How BIRAC is shaping India’s biotech startup ecosystem",
-          "url": "https://yourstory.com/2026/06/how-birac-is-shaping-indias-biotech-startup-ecosystem",
-          "source": "yourstory.com",
-          "pub_date": "2026-06-15T02:00:00+00:00",
-          "summary": "The multipronged approach of Biotechnology Industry Research Assistance Council (BIRAC) encompassing funding, infrastructure, networks, market reach has led to expansion of biotech startups in India."
-        },
-        {
           "title": "Pints, professors, and packed houses: How Pint of View is turning bars into classrooms",
           "url": "https://yourstory.com/2026/06/pints-professors-packed-houses-how-pint-view-turning-bars-classrooms",
           "source": "yourstory.com",
           "pub_date": "2026-06-15T01:40:00+00:00",
           "summary": "Bengaluru-based Pint of View hosts sold-out academic lectures in bars across India, proving that curiosity doesn’t end with college — and that people will happily pay to learn with a drink in hand."
-        },
-        {
-          "title": "‘Aunties were invisible. AI helped me change that’: Wenhui Lim on the Antiverse",
-          "url": "https://e27.co/aunties-were-invisible-ai-helped-me-change-that-wenhui-lim-on-the-antiverse-20260615/",
-          "source": "e27.co",
-          "pub_date": "2026-06-15T01:25:55+00:00",
-          "summary": "Wenhui Lim, aka &#8216;niceaunties&#8217;, is a Singapore-based artist, designer, and public speaker whose practice centres on reimagining the cultural figure of the &#8220;auntie.&#8221; Through speculative storytelling, she places ageing women at the centre of everyday life, exploring themes of fo"
-        },
-        {
-          "title": "Responsible AI is a process, not a checkbox",
-          "url": "https://e27.co/responsible-ai-is-a-process-not-a-checkbox-20260606/",
-          "source": "e27.co",
-          "pub_date": "2026-06-15T01:00:40+00:00",
-          "summary": "One of the fastest ways to weaken an AI programme is to declare it responsible before the organisation has agreed on what that word means in practice. This is a common mistake because responsible AI sounds mature, board-ready, and difficult to argue against. It travels well in policy documents, gove"
         },
         {
           "title": "Can FirstCry Hold Investor Attention In A Quick Commerce World?",
@@ -756,6 +4032,13 @@
           "source": "inc42.com",
           "pub_date": "2026-06-14T09:30:54+00:00",
           "summary": "Dalal Street emerged as a founder’s paradise in 2025, with 18 Indian startups listing on the bourses and collectively mopping&#8230;"
+        },
+        {
+          "title": "How Zoho Labs pivoted to inference engineering",
+          "url": "https://yourstory.com/2026/06/devsparks-2026-zoho-labs-inference-engineering-open-weight-models-ramprakash-ramamoorthy",
+          "source": "yourstory.com",
+          "pub_date": "2026-06-14T07:00:00+00:00",
+          "summary": "At DevSparks 2026 in Bengaluru, Ramprakash Ramamoorthy, Director of AI Research at Zoho Corp, explained how open-weight models forced a rethink of what an in-house AI lab is actually for, and why inference engineering became Zoho Labs' answer."
         },
         {
           "title": "Why Jayant Chaudhary sees AI as India's open door, not its threat",
@@ -807,6 +4090,13 @@
           "summary": "Just three days after launching Claude Fable 5, which it described as its most capable AI system yet, Anthropic has&#8230;"
         },
         {
+          "title": "Innovating for India’s Rightful Place in the World",
+          "url": "https://yourstory.com/2026/06/indias-next-innovation-decade-n-chandrasekaran-deep-tech-sovereignty",
+          "source": "yourstory.com",
+          "pub_date": "2026-06-13T07:53:28+00:00",
+          "summary": "This Rigvedic invocation has guided India’s civilisational openness to knowledge. Today, it finds urgent expression in innovation."
+        },
+        {
           "title": "Beyond AI buzzwords: What employers are really looking for in 2026",
           "url": "https://yourstory.com/2026/06/beyond-ai-buzzwords-what-employers-are-really-looking-for-in-2026-toast-zoho-corp",
           "source": "yourstory.com",
@@ -835,25 +4125,11 @@
           "summary": "Cookies as hero product for dessert: the story of FES Cafe."
         },
         {
-          "title": "A hackathon to empower girl innovators; Rohit Sharma’s investment in FITTR",
-          "url": "https://yourstory.com/2026/06/a-hackathon-to-empower-girl-innovators-rohit-sharma-investment-in-fittr",
-          "source": "yourstory.com",
-          "pub_date": "2026-06-13T02:00:00+00:00",
-          "summary": "WitchHunt is a large-scale AI hackathon organised by HopeWorks Foundation in partnership with AI4India and the Karnataka Digital Economy Mission. In other news, cricketer Rohit Sharma has joined health and fitness platform FITTR as an investor and equity partner."
-        },
-        {
           "title": "(Weekly funding roundup June 6-12) Steady rise in VC inflow into Indian startups",
           "url": "https://yourstory.com/2026/06/weekly-funding-roundup-june-6-12-steady-rise-in-vc-inflow-into-indian-startups",
           "source": "yourstory.com",
           "pub_date": "2026-06-12T15:09:55+00:00",
           "summary": "Venture capital funding into Indian startups is showing a steady upward trend but this is unlikely to build into strong momentum given the current market conditions."
-        },
-        {
-          "title": "From the Ocean to the World: Bharat Innovates India’s Blue Economy Moment",
-          "url": "https://yourstory.com/2026/04/bharat-innovates-2026-iit-madras-india-blue-economy-france",
-          "source": "yourstory.com",
-          "pub_date": "2026-06-12T13:26:42+00:00",
-          "summary": "India will take its top 120 deep-tech ventures to Nice, France, for Bharat Innovates 2026, an initiative of the Ministry of Education of India."
         },
         {
           "title": "India’s next phase of growth will be driven by innovation",
@@ -870,46 +4146,11 @@
           "summary": "Bharat Innovates 2026 speakers include N. R. Narayana Murthy, Ajay Sood, Ritesh Agarwal and European Innovation Council President Michiel Scheffer. Here is who will take the stage in Nice."
         },
         {
-          "title": "SpaceX’s US$75B IPO will drain crypto liquidity. Here is what happens next",
-          "url": "https://e27.co/spacexs-us75b-ipo-will-drain-crypto-liquidity-here-is-what-happens-next-20260612/",
-          "source": "e27.co",
-          "pub_date": "2026-06-12T09:36:19+00:00",
-          "summary": "The cryptocurrency market recently climbed 1.85 per cent to reach a total valuation of US$2.17 trillion over a 24-hour period. Observers might mistake this movement for a sudden resurgence of blockchain-native innovation. This rally stems entirely from a broader macroeconomic rebound rather than any"
-        },
-        {
-          "title": "Ecosystem Roundup: Vietnam earned the seat. Now it must hold it",
-          "url": "https://e27.co/vietnam-earned-the-seat-now-it-must-hold-it-20260612/",
-          "source": "e27.co",
-          "pub_date": "2026-06-12T08:48:15+00:00",
-          "summary": "Vietnam&#8217;s FTSE Emerging Market upgrade is not a footnote; it is a structural rupture. For years, the country&#8217;s growth fundamentals told one story while its capital market classification told another. That contradiction is now resolved, and the consequences will be felt well beyond the tr"
-        },
-        {
           "title": "Fewer than 2 in 5 S’pore employers plan to hire in the next 3 months. Here’s who’s still recruiting.",
           "url": "https://vulcanpost.com/911768/singapore-hiring-outlook-five-year-low/",
           "source": "vulcanpost.com",
           "pub_date": "2026-06-12T08:13:32+00:00",
           "summary": "The city-state&#8217;s hiring outlook has fallen to a five-year low Singapore employers are turning more cautious on hiring for the third quarter of 2026. According to ManpowerGroup’s latest Employment Outlook Survey, only 35% of employers in Singapore plan to increase headcount between Jul and Sept"
-        },
-        {
-          "title": "Beyond the hype: How an AI Agent powered real connections at Echelon Singapore 2026",
-          "url": "https://e27.co/beyond-the-hype-how-an-ai-agent-powered-real-connections-at-echelon-singapore-2026-20260612/",
-          "source": "e27.co",
-          "pub_date": "2026-06-12T08:12:25+00:00",
-          "summary": "When the doors opened at the Suntec Singapore CEC on June 3 and 4, the energy was palpable. Echelon Singapore 2026 set an ambitious tone for the region with its central theme: Moving Southeast Asia from AI hype to real-world implementation. Ecosystem Convergence to Build an Intelligent Future. While"
-        },
-        {
-          "title": "Top 4 Best Inventory Management System for SMB in Singapore",
-          "url": "https://e27.co/top-4-best-inventory-management-system-for-smb-in-singapore-20260612/",
-          "source": "e27.co",
-          "pub_date": "2026-06-12T07:43:49+00:00",
-          "summary": "Evolution of the Singapore Small and Medium Business Landscape (2013–2026) The modern digital business environment for small and medium businesses (SMBs) across Singapore has transformed rapidly over the past thirteen years. From 2013 through 2026, the local ecosystem evolved from traditional deskto"
-        },
-        {
-          "title": "From frontier to emerging: How Vietnam’s stock market rewrote the ASEAN playbook in 2025",
-          "url": "https://e27.co/from-frontier-to-emerging-how-vietnams-stock-market-rewrote-the-asean-playbook-in-2025-20260612/",
-          "source": "e27.co",
-          "pub_date": "2026-06-12T04:50:38+00:00",
-          "summary": "The VN-Index did not merely perform well in 2025; it dominated. With a 41 per cent return over the year, Vietnam&#8217;s benchmark stock index outpaced every major market in Southeast Asia, leaving Singapore, Indonesia, Thailand, and the Philippines in the dust. For a country that spent years being "
         },
         {
           "title": "AI is quietly bankrupting your cloud budget. Here’s what savvy businesses are doing instead.",
@@ -973,12 +4214,110 @@
           "source": "vulcanpost.com",
           "pub_date": "2026-06-03T08:50:38+00:00",
           "summary": "Among those who turned down job offers, nearly a third did so because it didn&#8217;t pay enough If you&#8217;ve just graduated and are stressed about your starting salary, you&#8217;re not alone. According to a CNA report, a Ministry of Manpower (MOM) survey of residents aged 22 to 28 found that gr"
+        },
+        {
+          "title": "Bangalore, Barrels, Red Queen, Renaissance, & Bitcoin",
+          "url": "https://sajithpai.substack.com/p/bangalore-barrels-red-queen-renaissance",
+          "source": "sajithpai.substack.com",
+          "pub_date": "2026-04-19T03:31:09+00:00",
+          "summary": "Sajith Pai's irregular-ish newsletter #42"
+        },
+        {
+          "title": "Blue Oceans, Trader Joe's, Book Editing, and Annual Letters",
+          "url": "https://sajithpai.substack.com/p/blue-oceans-trader-joes-book-editing",
+          "source": "sajithpai.substack.com",
+          "pub_date": "2026-03-08T03:16:39+00:00",
+          "summary": "Sajith Pai's (now very) irregular newsletter #41"
+        },
+        {
+          "title": "Anaconda, Soulcycle, Power Law, and Top Soil",
+          "url": "https://sajithpai.substack.com/p/anaconda-soulcycle-power-law-and",
+          "source": "sajithpai.substack.com",
+          "pub_date": "2025-12-24T06:30:50+00:00",
+          "summary": "Sajith Pai's (was becoming somewhat regular but now again) irregular newsletter #40"
+        },
+        {
+          "title": "Moving parades, declining audacity, venture arrogance, and soda cans",
+          "url": "https://sajithpai.substack.com/p/moving-parades-declining-audacity",
+          "source": "sajithpai.substack.com",
+          "pub_date": "2025-10-19T11:19:49+00:00",
+          "summary": "Sajith Pai's increasingly less irregular newsletter #39"
+        },
+        {
+          "title": "PMF X-Rays, Extramarital Affairs, Sushi, and Kerala",
+          "url": "https://sajithpai.substack.com/p/pmf-x-rays-extramarital-affairs-sushi",
+          "source": "sajithpai.substack.com",
+          "pub_date": "2025-09-12T08:17:54+00:00",
+          "summary": "Sajith Pai's not so irregular newsletter #38"
+        },
+        {
+          "title": "Solo founders, Search funds, good writing as bad triaging, and AGI",
+          "url": "https://sajithpai.substack.com/p/solo-founders-search-funds-writing",
+          "source": "sajithpai.substack.com",
+          "pub_date": "2025-08-22T08:30:53+00:00",
+          "summary": "Sajith Pai's not so irregular yet not fully regular newsletter #37"
+        },
+        {
+          "title": "Chapter 2 of my PMF book! - The Pick",
+          "url": "https://sajithpai.substack.com/p/special-edition-2-chapter-ii-of-my",
+          "source": "sajithpai.substack.com",
+          "pub_date": "2025-08-08T08:31:14+00:00",
+          "summary": "Another special issue of Sajith Pai's somewhat irregular newsletter #36"
+        },
+        {
+          "title": "Special edition: Chapter 1 of my PMF book!",
+          "url": "https://sajithpai.substack.com/p/special-edition-chapter-1-of-my-pmf",
+          "source": "sajithpai.substack.com",
+          "pub_date": "2025-08-01T08:30:15+00:00",
+          "summary": "Sajith Pai's somewhat irregular newsletter #35"
+        },
+        {
+          "title": "Cold emails, Dunbar numbers, and non-alcoholic beer",
+          "url": "https://sajithpai.substack.com/p/cold-emails-dunbar-numbers-and-non",
+          "source": "sajithpai.substack.com",
+          "pub_date": "2025-07-03T04:40:48+00:00",
+          "summary": "Sajith Pai's still irregular newsletter #34"
+        },
+        {
+          "title": "Unicorn Origins, Algorithmic PMF, and Coca-Cola Servings",
+          "url": "https://sajithpai.substack.com/p/unicorn-origins-algorithmic-pmf-and",
+          "source": "sajithpai.substack.com",
+          "pub_date": "2025-05-03T01:37:29+00:00",
+          "summary": "Sajith Pai's somewhat irregular newsletter #33"
+        },
+        {
+          "title": "Context Collapse, Context Capital, and Capital Thoughts",
+          "url": "https://sajithpai.substack.com/p/context-collapse-context-capital",
+          "source": "sajithpai.substack.com",
+          "pub_date": "2025-04-04T07:45:44+00:00",
+          "summary": "Sajith Pai's regularly irregular newsletter #32"
+        },
+        {
+          "title": "My fave books, podcasts, and articles of 2024",
+          "url": "https://sajithpai.substack.com/p/my-fave-books-podcasts-and-articles",
+          "source": "sajithpai.substack.com",
+          "pub_date": "2024-12-27T08:12:15+00:00",
+          "summary": "Sajith Pai's somewhat irregular newsletter #31"
         }
       ],
-      "cached_at": "2026-06-15T05:59:33.925308"
+      "cached_at": "2026-06-15T07:11:54.045449"
     },
     "emerging": {
       "articles": [
+        {
+          "title": "Do you get scammers pretending to be VC companies or consultants for actual companies? I will not promote.",
+          "url": "https://www.reddit.com/r/startups/comments/1u66kze/do_you_get_scammers_pretending_to_be_vc_companies/",
+          "source": "reddit.com",
+          "pub_date": "2026-06-15T04:40:50+00:00",
+          "summary": "I am not the owner of the company. I do not work for the startup. People are mistaking me for the owner because we have the same name. For the past year I've been getting emails from what appeared to be consultants, venture capitalists, CFOs, etc looking to either work at my startup or provide fundi"
+        },
+        {
+          "title": "[Hiring/Seeking/Offering] Jobs / Co-Founders Weekly Thread",
+          "url": "https://www.reddit.com/r/startups/comments/1u65t72/hiringseekingoffering_jobs_cofounders_weekly/",
+          "source": "reddit.com",
+          "pub_date": "2026-06-15T04:01:01+00:00",
+          "summary": "[Hiring/Seeking/Offering] Jobs / Co-Founders Weekly Thread This is an experiment. We see there is a demand from the community to:  Find Co-Founders Hiring / Seeking Jobs Offering Your Skillset / Looking for Talent  Please use the following template:  **[SEEKING / HIRING / OFFERING]** (Choose one) **"
+        },
         {
           "title": "Orbio raises $21 million to automate hiring and onboarding for frontline workers",
           "url": "https://techcrunch.com/2026/06/14/orbio-raises-21-million-to-automate-hiring-and-onboarding-for-frontline-workers/",
@@ -987,11 +4326,67 @@
           "summary": "Orbio announces $21 Million Series A in round led by Dawn Capital."
         },
         {
+          "title": "Optimizing WebRTC media server costs on a self-funded budget (I will not promote)",
+          "url": "https://www.reddit.com/r/startups/comments/1u65q8n/optimizing_webrtc_media_server_costs_on_a/",
+          "source": "reddit.com",
+          "pub_date": "2026-06-15T03:57:03+00:00",
+          "summary": "Hey everyone, I am a full-stack engineer currently building a real-time, voice-first EdTech platform designed for spoken English practice. The core mechanism relies on high-throughput real-time voice interaction rather than traditional text interfaces. As a self-funded technical founder, I am trying"
+        },
+        {
+          "title": "Small medium business owners and micro influencers (I will not promote)",
+          "url": "https://www.reddit.com/r/startups/comments/1u64juh/small_medium_business_owners_and_micro/",
+          "source": "reddit.com",
+          "pub_date": "2026-06-15T02:59:06+00:00",
+          "summary": "Curious if there’s any small medium business owners here who have hired micro influencers or have thought about collaborating with them to get content for your business? Would love to chat and understand what your experience was like and if you didn’t hire them, why not?   &#32; submitted by &#32;  "
+        },
+        {
+          "title": "Need your help guys (i will not promote)",
+          "url": "https://www.reddit.com/r/startups/comments/1u5t9cg/need_your_help_guys_i_will_not_promote/",
+          "source": "reddit.com",
+          "pub_date": "2026-06-14T18:48:45+00:00",
+          "summary": "I’m Manthan. For the last few months, I’ve basically been a ghost. missing friend hangouts, just locked in my room coding and designing. My parents genuinely think I’m just playing video games all day. They don’t get it at all. The thing is, I love what I’m building. But trying to actually get clien"
+        },
+        {
+          "title": "Need your help guys (i will not promote)",
+          "url": "https://www.reddit.com/r/startups/comments/1u5ss9b/need_your_help_guys_i_will_not_promote/",
+          "source": "reddit.com",
+          "pub_date": "2026-06-14T18:30:23+00:00",
+          "summary": "I’m Manthan. For the last few months, I’ve basically been a ghost. missing friend hangouts, just locked in my room coding and designing. My parents genuinely think I’m just playing video games all day. They don’t get it at all. The thing is, I love what I’m building. But trying to actually get clien"
+        },
+        {
+          "title": "The best business idea is often to copy something that already exists. I will not promote.",
+          "url": "https://www.reddit.com/r/startups/comments/1u5qlvf/the_best_business_idea_is_often_to_copy_something/",
+          "source": "reddit.com",
+          "pub_date": "2026-06-14T17:06:07+00:00",
+          "summary": "A lot of aspiring founders think they need a revolutionary, never-before-seen idea to succeed. In reality, many successful businesses are just improved versions of products or services that were already on the market. &quot;This already exists&quot; is actually a terrible reason not to start a busin"
+        },
+        {
           "title": "As AI companies race to go public, who else is along for the ride?",
           "url": "https://techcrunch.com/2026/06/14/as-ai-companies-race-to-go-public-who-else-is-along-for-the-ride/",
           "source": "techcrunch.com",
           "pub_date": "2026-06-14T16:38:09+00:00",
           "summary": "Startups are trying to \"ride that SpaceX IPO wave.\""
+        },
+        {
+          "title": "What are some due diligence for investing in a startup? [I WILL NOT PROMOTE]",
+          "url": "https://www.reddit.com/r/startups/comments/1u5omxe/what_are_some_due_diligence_for_investing_in_a/",
+          "source": "reddit.com",
+          "pub_date": "2026-06-14T15:49:10+00:00",
+          "summary": "Hi, I am in talks of making investment at a very early stage startup that is bootstrapped in exchange for equity. I am a first time investor so not really aware of the things I should look for and any help would be appreciated. The startup is owned by my friend so I want to make the decision without"
+        },
+        {
+          "title": "I will not promote. What options a founder has, if they are over 40?",
+          "url": "https://www.reddit.com/r/startups/comments/1u5n57q/i_will_not_promote_what_options_a_founder_has_if/",
+          "source": "reddit.com",
+          "pub_date": "2026-06-14T14:50:30+00:00",
+          "summary": "Hello, &#x200b; &#x200b; I am finding it more and more difficult to secure a viable path forward after a gap of five years since I sold my last company in 2021. The market seems to have not evolved all that much in terms of mindset, but investment, hope, and general trust amongst fellow founders has"
+        },
+        {
+          "title": "I will not promote. What options a founder has, if they are over 40?",
+          "url": "https://www.reddit.com/r/startups/comments/1u5n1s8/i_will_not_promote_what_options_a_founder_has_if/",
+          "source": "reddit.com",
+          "pub_date": "2026-06-14T14:46:40+00:00",
+          "summary": "Hello, &#x200b; I am finding it more and more difficult to secure a viable path forward after a gap of five years since I sold my last company in 2021. The market seems to have not evolved all that much in terms of mindset, but investment, hope, and general trust amongst fellow founders has certainl"
         },
         {
           "title": "20 Best Gifts for Men, Manly Men, and Menly Man Men (2026)",
@@ -1013,6 +4408,13 @@
           "source": "wired.com",
           "pub_date": "2026-06-14T10:30:00+00:00",
           "summary": "Suunto swaps bone for air conduction, giving these open-ear earbuds a perfect fit for the great outdoors."
+        },
+        {
+          "title": "How do you keep track of product decisions while building? (I will not promote)",
+          "url": "https://www.reddit.com/r/startups/comments/1u5h6jz/how_do_you_keep_track_of_product_decisions_while/",
+          "source": "reddit.com",
+          "pub_date": "2026-06-14T10:03:39+00:00",
+          "summary": "I've been building side projects for a while and I've noticed a pattern. In the beginning everything is clear in my head:  The problem I'm solving The user flow Features I want to build Things I've intentionally decided not to build  But as the project grows, that context gets scattered. Some though"
         },
         {
           "title": "The Strait of Hormuz Has Been Closed for 100 Days. Why Aren’t Oil Prices Higher?",
@@ -1097,6 +4499,13 @@
           "source": "spectrum.ieee.org",
           "pub_date": "2026-06-12T18:00:01+00:00",
           "summary": "Yen-Ling Kuo always wanted to understand how things worked. When she was growing up in Taiwan, reading the story of Michael Faraday in elementary school piqued her curiosity about the natural world. During that time, she was introduced to Logo, a computer program with a turtle cursor to help childre"
+        },
+        {
+          "title": "Introducing Generalist Intelligence",
+          "url": "https://www.generalist.com/p/introducing-generalist-intelligence",
+          "source": "generalist.com",
+          "pub_date": "2026-06-12T16:14:13+00:00",
+          "summary": "Generalist Intelligence is a weekly intelligence briefing designed for tech&#8217;s most discerning professionals. It will arrive Friday mornings. Our hope is that it opens you up to perspectives you hadn&#8217;t considered and offers a look at fresh pockets of the future you might have missed."
         },
         {
           "title": "It’s hot IPO summer, and the MANGOS are ripe",
@@ -1253,6 +4662,13 @@
           "summary": "Antares Goes Critical, NewLimit, BioWeapon Letter, Helion, Alzheimer's x Mushrooms + Extra Doses"
         },
         {
+          "title": "Saplings: The Childhoods of Exceptional Entrepreneurs",
+          "url": "https://www.generalist.com/p/saplings-intro",
+          "source": "generalist.com",
+          "pub_date": "2026-06-04T15:23:05+00:00",
+          "summary": "A study of 260 founders."
+        },
+        {
           "title": "7 Ways New Engineers Can Flourish in the Age of AI",
           "url": "https://spectrum.ieee.org/7-ways-engineers-flourish-ai",
           "source": "spectrum.ieee.org",
@@ -1265,6 +4681,13 @@
           "source": "notboring.co",
           "pub_date": "2026-06-02T15:34:10+00:00",
           "summary": "Building the Electric Stack by making motors and actuators next to drones and robots"
+        },
+        {
+          "title": "What America Is Missing Between Sanctions and Nuclear War (Bryon Hargis, Co-Founder & CEO of Castelion)",
+          "url": "https://www.generalist.com/p/what-america-is-missing-between-sanctions",
+          "source": "generalist.com",
+          "pub_date": "2026-06-02T12:04:31+00:00",
+          "summary": "Listen now | Bryon Hargis on America&#8217;s eroding deterrence options, what SpaceX taught him about building hard things fast, and Castelion&#8217;s race to make hypersonic missiles affordable, scalable, and manufacturable."
         },
         {
           "title": "Weekly Dose of Optimism #195",
@@ -1300,117 +4723,19 @@
           "source": "notboring.co",
           "pub_date": "2026-05-22T12:51:22+00:00",
           "summary": "Reta Phase 3, Colossal Eggs, SpaceX, OpenAI x Erd&#337;s, SendCutSend + Extra Doses"
-        },
-        {
-          "title": "Homo Agenticus",
-          "url": "https://www.strangeloopcanon.com/p/homo-agenticus",
-          "source": "strangeloopcanon.com",
-          "pub_date": "2026-05-21T18:01:21+00:00",
-          "summary": "sapiens"
-        },
-        {
-          "title": "Cowboy Space Corporation",
-          "url": "https://www.notboring.co/p/cowboy-space-corporation",
-          "source": "notboring.co",
-          "pub_date": "2026-05-16T12:52:13+00:00",
-          "summary": "A Great Example of The Great Differentiation"
-        },
-        {
-          "title": "Weekly Dose of Optimism #193",
-          "url": "https://www.notboring.co/p/weekly-dose-of-optimism-193",
-          "source": "notboring.co",
-          "pub_date": "2026-05-15T12:42:13+00:00",
-          "summary": "Isomorphic, Varda, Pancreatic pt 3, Cerebras IPO, Cowboy Space + Extra Doses"
-        },
-        {
-          "title": "Artificial Life, Artificial Intelligence",
-          "url": "https://www.strangeloopcanon.com/p/artificial-life-artificial-intelligence",
-          "source": "strangeloopcanon.com",
-          "pub_date": "2026-05-14T18:36:21+00:00",
-          "summary": "."
-        },
-        {
-          "title": "Riding the Leopard",
-          "url": "https://www.notboring.co/p/riding-the-leopard",
-          "source": "notboring.co",
-          "pub_date": "2026-05-13T12:53:38+00:00",
-          "summary": "You are here to experience, or: why differentiation is a moral obligation."
-        },
-        {
-          "title": "Experiments with Vibe Science",
-          "url": "https://www.strangeloopcanon.com/p/the-spinosaurus-problem-or-exploring",
-          "source": "strangeloopcanon.com",
-          "pub_date": "2026-05-09T12:55:18+00:00",
-          "summary": "wherein I accidentally pursue an amateur paleontology phd"
-        },
-        {
-          "title": "Weekly Dose of Optimism #192",
-          "url": "https://www.notboring.co/p/weekly-dose-of-optimism-192",
-          "source": "notboring.co",
-          "pub_date": "2026-05-08T12:56:57+00:00",
-          "summary": "UFO Disclosure, GENE-26.5, Neuralink Brain Surgeon Robot, Magnesium, Aalo DSA, GDM x EVE + Extra Doses"
-        },
-        {
-          "title": "Legal Regulation & Compliance – Is Mahadev Book Safe?",
-          "url": "https://climatetechvc.org/is-mahadev-book-safe/",
-          "source": "climatetechvc.org",
-          "pub_date": "2026-05-06T08:38:05+00:00",
-          "summary": "The question Is Mahadev Book Safe has become one of the most searched queries among cricket followers and online betting\nThe post Legal Regulation &amp; Compliance &#8211; Is Mahadev Book Safe? appeared first on Mahadev Book."
-        },
-        {
-          "title": "Payment Options on Mahadev Book – What Works Best for You",
-          "url": "https://climatetechvc.org/payment-options-on-mahadev-book/",
-          "source": "climatetechvc.org",
-          "pub_date": "2026-05-06T08:36:38+00:00",
-          "summary": "Understanding Payment Options on Mahadev Book is one of the most searched topics among users exploring online cricket engagement platforms.\nThe post Payment Options on Mahadev Book &#8211; What Works Best for You appeared first on Mahadev Book."
-        },
-        {
-          "title": "Live Streaming on Mahadev Book – Watch While You Bet",
-          "url": "https://climatetechvc.org/live-streaming-on-mahadev-book/",
-          "source": "climatetechvc.org",
-          "pub_date": "2026-05-06T08:35:52+00:00",
-          "summary": "Live streaming has become a core feature on betting platforms, allowing users to watch matches and place bets at the\nThe post Live Streaming on Mahadev Book &#8211; Watch While You Bet appeared first on Mahadev Book."
-        },
-        {
-          "title": "Top Sports to Bet on Mahadev Book",
-          "url": "https://climatetechvc.org/top-sports-to-bet-on-mahadev-book/",
-          "source": "climatetechvc.org",
-          "pub_date": "2026-05-06T08:35:39+00:00",
-          "summary": "Sports engagement is no longer limited to watching matches for entertainment. Fans now follow player statistics, team performance, and match\nThe post Top Sports to Bet on Mahadev Book appeared first on Mahadev Book."
-        },
-        {
-          "title": "Mahadev Book IPL Betting Tips 2026 – Match Predictions",
-          "url": "https://climatetechvc.org/ipl-betting-tips/",
-          "source": "climatetechvc.org",
-          "pub_date": "2026-05-02T17:40:21+00:00",
-          "summary": "The demand for reliable IPL insights is growing every season. With the scale of the Indian Premier League expanding and\nThe post Mahadev Book IPL Betting Tips 2026 &#8211; Match Predictions  appeared first on Mahadev Book."
-        },
-        {
-          "title": "Why Coase needs Hayek",
-          "url": "https://www.strangeloopcanon.com/p/why-smart-planners-lose-to-simple",
-          "source": "strangeloopcanon.com",
-          "pub_date": "2026-05-02T12:02:11+00:00",
-          "summary": "sometimes smart planners lose to simple markets"
-        },
-        {
-          "title": "Blackjack Basic Strategy Explained: Minimizing the House Edge",
-          "url": "https://climatetechvc.org/blackjack-basic-strategy/",
-          "source": "climatetechvc.org",
-          "pub_date": "2026-05-01T16:49:46+00:00",
-          "summary": "Blackjack is one of the few casino games where decisions directly affect the outcome. Unlike pure chance games, players can\nThe post Blackjack Basic Strategy Explained: Minimizing the House Edge appeared first on Mahadev Book."
         }
       ],
-      "cached_at": "2026-06-15T05:59:33.925308"
+      "cached_at": "2026-06-15T07:11:54.045449"
     },
     "sector_heatmap": [
       {
         "name": "AI / ML",
-        "signals": 124,
+        "signals": 132,
         "sentiment": "bullish"
       },
       {
         "name": "Climate / Clean",
-        "signals": 78,
+        "signals": 72,
         "sentiment": "bullish"
       },
       {
@@ -1430,11 +4755,11 @@
       },
       {
         "name": "Healthtech",
-        "signals": 2,
-        "sentiment": "neutral"
+        "signals": 1,
+        "sentiment": "quiet"
       },
       {
-        "name": "Logistics",
+        "name": "Edtech",
         "signals": 1,
         "sentiment": "quiet"
       },
@@ -1444,7 +4769,7 @@
         "sentiment": "quiet"
       },
       {
-        "name": "Edtech",
+        "name": "Logistics",
         "signals": 0,
         "sentiment": "quiet"
       }
@@ -1497,6 +4822,22 @@
           "source": "news.google.com",
           "pub_date": "2026-03-10T07:00:00+00:00",
           "summary": "Vietnamese e-motorbike startup Dat Bike secures $4 mln Series B funding&nbsp;&nbsp;Theinvestor",
+          "company": "Dat Bike"
+        },
+        {
+          "title": "Deals in brief: Gobi Partners backs Cortical Labs, TVS invests in Vietnam’s Dat Bike, 11 China deals, and more - KrASIA",
+          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNdGROMEtTNnJmRFg0RnhQRE1HYzg1dmJCTk1PbTRYOWRiQnFWc3pGLXR0ckFQWG55ZHhEQ1VEMmQzRjJhX1lnOW8tQjBwQkNfS0lxcjB4Wl9MSlBsdVl3cTFuS3lTWFBEX1RyYno1d1Bpd2VsanNlZ1p0R2tnYmhTenFNekFLeDJITk5KdVNRVHV4dTUwaERFX3kzUlUtR2lBUnU3QmhhY24zdkNmNlNTb0Y2QzliektUcFhlZDRSMnRyVmM?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2026-03-10T07:00:00+00:00",
+          "summary": "Deals in brief: Gobi Partners backs Cortical Labs, TVS invests in Vietnam’s Dat Bike, 11 China deals, and more&nbsp;&nbsp;KrASIA",
+          "company": "Dat Bike"
+        },
+        {
+          "title": "TVS invests $4 million in Dat Bike - Vietnam Investment Review - VIR",
+          "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE0xM0pwVG4yOTBweFVHdTJXOGdPRlJwNzZheUZjTFBzV1JPREYzQk1MOFZETkdhRXh4YVBsRGtjdUxtMFRLSk80cVpnaFNCeFo5dGEyY2tLc0dLN0tnbDBzc0syTXRfWUQ3c2xrbVpRQXNLZw?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2026-03-09T07:00:00+00:00",
+          "summary": "TVS invests $4 million in Dat Bike&nbsp;&nbsp;Vietnam Investment Review - VIR",
           "company": "Dat Bike"
         },
         {
@@ -1756,22 +5097,6 @@
           "company": "Distil"
         },
         {
-          "title": "Vietnam shifts gears to e-bikes, ignites fierce race among mobility platforms, EV makers to win over riders - The Business Times",
-          "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQdUQxeGh4aTBDU203QU03bW5JUktjRkJXb3pXWU1KTXB2SjE2ZFVNRWpCLXdrNFYwelFKYnc1QzNpVFpvdXhrcjIwUlVST3MyR25WRl9CTUtmRFppSTE1aDBFU3l2YVFUdVFVVlpjWDZ1eTBabkNCOENtWU8tVUVyeW5iZXppMmN1VmZCRkxEU2oxd0FIWHl1d1RQN00zOG9pcjRTTlJfc29XVU50S2dqdHAzM3Z1N0UyNFZCbUZ1aUFEQWdoSlNGbS00WUdIMkx3VGtUVEl3MTBxY3pyYTV6MWVCaFNMUDQ?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2025-09-21T07:00:00+00:00",
-          "summary": "Vietnam shifts gears to e-bikes, ignites fierce race among mobility platforms, EV makers to win over riders&nbsp;&nbsp;The Business Times",
-          "company": "Dat Bike"
-        },
-        {
-          "title": "Vietnam Startup Seeks Slice of Third-Largest EV Motorbike Market - Bloomberg.com",
-          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxON3dUTDNuQ2ZWTXFmYzg4LVhPS2RiaVc3cWhhUFpqZG01MVRfNmNKcW5lTUN2SHFGdXF6RXFhMVdqRUxINnNiMjJydTdCak5SRXFxQzg3b3pNRTYxQVhkZzZIaWFIMzJBSlZib2J2aENWY1N6YmREOHplUGdLYllPdXlLXzM3aUhPSGItNUg0bXRVSnh6TDNwcWFIT2Z1LTFZRWNuY0tmZWpIUzEyZGIxLVZRWmo2UQ?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2025-09-17T07:00:00+00:00",
-          "summary": "Vietnam Startup Seeks Slice of Third-Largest EV Motorbike Market&nbsp;&nbsp;Bloomberg.com",
-          "company": "Dat Bike"
-        },
-        {
           "title": "Prosperr.io: Simplifying Finance for Young Professionals and Businesses - YourStory.com",
           "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9wSFlkR2g4d210clFGVjVMREJ2YXVIcTdWLVUxUDljOW9kRUVrclRIX0IzcVVxelpFeV91aVpFTTFsdFRNVnBieDRieWQyQ0NVNVhzekl2aTAyVUNMVG9GemRONXVicHdJZEZYUXBrU1YwRGxs?oc=5",
           "source": "news.google.com",
@@ -1932,7 +5257,7 @@
           "company": "NirogStreet"
         }
       ],
-      "cached_at": "2026-06-15T05:59:33.925308"
+      "cached_at": "2026-06-15T07:11:54.045449"
     }
   }
 }

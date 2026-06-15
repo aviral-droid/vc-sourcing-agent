@@ -428,9 +428,103 @@ def _brave_search(query: str) -> List[dict]:
         return []
 
 
+_SEARXNG_INSTANCES = [
+    "https://searx.be",
+    "https://search.inetol.net",
+    "https://searx.tiekoetter.com",
+]
+
+
+def _searxng_search(query: str) -> List[dict]:
+    """Search via public SearXNG instance JSON API. No key required."""
+    for base in _SEARXNG_INSTANCES:
+        try:
+            resp = requests.get(
+                f"{base}/search",
+                params={"q": query, "format": "json", "language": "en-US",
+                        "engines": "google,bing,duckduckgo", "safesearch": "0"},
+                headers={**_SEARCH_HEADERS, "Accept": "application/json"},
+                timeout=10,
+            )
+            if resp.status_code != 200:
+                continue
+            data = resp.json()
+            results = []
+            for item in data.get("results", []):
+                url = item.get("url", "")
+                if "linkedin.com/in/" in url:
+                    results.append({
+                        "url": url,
+                        "title": item.get("title", ""),
+                        "snippet": item.get("content", ""),
+                    })
+            if results:
+                return results
+        except Exception as e:
+            logger.debug("SearXNG error [%s] [%s]: %s", base, query[:40], e)
+    return []
+
+
+def _google_cse_search(query: str) -> List[dict]:
+    """Use Google Custom Search JSON API (100 free/day). Requires GOOGLE_CSE_API_KEY + GOOGLE_CSE_CX."""
+    key = getattr(config, "GOOGLE_CSE_API_KEY", "")
+    cx  = getattr(config, "GOOGLE_CSE_CX", "")
+    if not key or not cx:
+        return []
+    try:
+        resp = requests.get(
+            "https://www.googleapis.com/customsearch/v1",
+            params={"key": key, "cx": cx, "q": query, "num": 10},
+            timeout=10,
+        )
+        data = resp.json()
+        results = []
+        for item in data.get("items", []):
+            url = item.get("link", "")
+            if "linkedin.com/in/" in url:
+                results.append({
+                    "url": url,
+                    "title": item.get("title", ""),
+                    "snippet": item.get("snippet", ""),
+                })
+        return results
+    except Exception as e:
+        logger.debug("Google CSE search error: %s", e)
+        return []
+
+
+def _tavily_search(query: str) -> List[dict]:
+    """Use Tavily AI Search API (1000 free/month). Requires TAVILY_API_KEY."""
+    key = getattr(config, "TAVILY_API_KEY", "")
+    if not key:
+        return []
+    try:
+        resp = requests.post(
+            "https://api.tavily.com/search",
+            json={"api_key": key, "query": query, "search_depth": "basic",
+                  "max_results": 10, "include_domains": ["linkedin.com"]},
+            timeout=10,
+        )
+        data = resp.json()
+        results = []
+        for item in data.get("results", []):
+            url = item.get("url", "")
+            if "linkedin.com/in/" in url:
+                results.append({
+                    "url": url,
+                    "title": item.get("title", ""),
+                    "snippet": item.get("content", ""),
+                })
+        return results
+    except Exception as e:
+        logger.debug("Tavily search error: %s", e)
+        return []
+
+
 def _search_for_profiles(query: str) -> List[dict]:
-    """Try Serper → Brave → DuckDuckGo → Bing. Return first non-empty result set."""
-    for fn in (_serper_search, _brave_search, _duckduckgo_search, _bing_search):
+    """Try Serper → Brave → Google CSE → Tavily → SearXNG → DuckDuckGo → Bing."""
+    for fn in (_serper_search, _brave_search, _google_cse_search, _tavily_search,
+               _searxng_search, _duckduckgo_search, _bing_search):
         results = fn(query)
         if results:
             return results

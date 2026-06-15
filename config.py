@@ -62,7 +62,10 @@ ZHIPU_API_KEY: str      = os.getenv("ZHIPU_API_KEY", "")
 OPENROUTER_API_KEY: str = os.getenv("OPENROUTER_API_KEY", "")
 SAMBANOVA_API_KEY: str  = os.getenv("SAMBANOVA_API_KEY", "")
 # Search APIs — unlock LinkedIn stealth discovery when configured
-SERPER_API_KEY: str     = os.getenv("SERPER_API_KEY", "")  # serper.dev — 2500 free/month
+SERPER_API_KEY: str     = os.getenv("SERPER_API_KEY", "")     # serper.dev — 2500 free/month
+TAVILY_API_KEY: str     = os.getenv("TAVILY_API_KEY", "")     # tavily.com — 1000 free/month
+GOOGLE_CSE_API_KEY: str = os.getenv("GOOGLE_CSE_API_KEY", "") # Google Custom Search — 100 free/day
+GOOGLE_CSE_CX: str      = os.getenv("GOOGLE_CSE_CX", "")      # CSE ID from cse.google.com
 # BRAVE_API_KEY is already declared above (from os.getenv)
 
 # ── Feature flags ──────────────────────────────────────────────────────────────

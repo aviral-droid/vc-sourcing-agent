@@ -135,6 +135,10 @@ def main():
                 continue
             if nm and nm != "unknown" and nm in existing_names:
                 continue
+            # Skip anonymous records — no name AND no profile URL = unactionable noise
+            # (these exist in DB from pre-resolver runs where name extraction failed)
+            if not li and (not nm or nm == "unknown"):
+                continue
             # Reconstruct a minimal Person from the DB row
             from models import Person as _P, Signal as _S
             import json as _json
