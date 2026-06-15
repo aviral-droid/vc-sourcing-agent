@@ -103,6 +103,10 @@ GOOGLE_NEWS_QUERIES = [
 ]
 
 
+# Keep query years current
+GOOGLE_NEWS_QUERIES = [config.freshen_years(q) for q in GOOGLE_NEWS_QUERIES]
+
+
 def _parse_date(entry) -> datetime:
     for field in ("published_parsed", "updated_parsed"):
         val = getattr(entry, field, None)
@@ -242,6 +246,24 @@ def _extract_location(title: str, summary: str) -> str:
     return ""
 
 
+# Outlet -> default geography. Used when the article text itself carries no
+# location hint: an Inc42/Entrackr story is near-certainly about India, an
+# e27/Tech in Asia story about Southeast Asia. "Southeast Asia" keeps the
+# record inside the fund mandate without falsely pinning a country.
+OUTLET_GEO = {
+    "Inc42": "India",
+    "YourStory": "India",
+    "Entrackr": "India",
+    "VCCircle": "India",
+    "ET Tech": "India",
+    "e27": "Southeast Asia",
+    "KrASIA": "Southeast Asia",
+    "Tech in Asia": "Southeast Asia",
+    "Vulcan Post": "Southeast Asia",
+    "DealStreetAsia": "Southeast Asia",
+}
+
+
 def _extract_person_from_snippet(
     title: str, summary: str, url: str, source: str
 ) -> Optional[Person]:
@@ -263,7 +285,7 @@ def _extract_person_from_snippet(
     if _is_org_name(name):
         name = "Unknown"
     prev_company = _extract_company(title, summary)
-    location = _extract_location(title, summary)
+    location = _extract_location(title, summary) or OUTLET_GEO.get(source, "")
 
     person = Person(
         name=name,

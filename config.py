@@ -2,8 +2,41 @@
 Central configuration — loads .env and exposes typed settings.
 """
 import os
+import re as _re
+from datetime import datetime as _dt
 from pathlib import Path
 from dotenv import load_dotenv
+
+# ── Dynamic years for search queries ───────────────────────────────────────────
+# Many source queries reference a year (e.g. 'founder 2025'). These were once
+# hardcoded and went stale. freshen_years() rewrites any year token in a query
+# so the LATEST year mentioned becomes the current year and all earlier years
+# become last year. Apply it to every query list at module load.
+CURRENT_YEAR: int = _dt.utcnow().year
+PREVIOUS_YEAR: int = CURRENT_YEAR - 1
+
+_YEAR_RE = _re.compile(r"\b(20[2-3][0-9])\b")
+
+
+def freshen_years(text: str) -> str:
+    """Rewrite stale hardcoded years in a search query string.
+
+    '... founder 2025'         -> '... founder 2026'      (single year -> current)
+    '... 2024 OR 2025 ...'     -> '... 2025 OR 2026 ...'  (range shifts forward)
+    Strings already referencing the current year are returned unchanged.
+    """
+    years = [int(y) for y in _YEAR_RE.findall(text)]
+    if not years:
+        return text
+    latest = max(years)
+    if latest >= CURRENT_YEAR:
+        return text
+
+    def _sub(m: "_re.Match") -> str:
+        y = int(m.group(1))
+        return str(CURRENT_YEAR) if y == latest else str(PREVIOUS_YEAR)
+
+    return _YEAR_RE.sub(_sub, text)
 
 load_dotenv(Path(__file__).parent / ".env", override=True)
 

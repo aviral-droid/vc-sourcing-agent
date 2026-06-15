@@ -55,6 +55,12 @@ INDONESIA_REGISTRY_QUERIES = [
 ]
 
 
+# Keep query years current
+INDIA_REGISTRY_QUERIES = [config.freshen_years(q) for q in INDIA_REGISTRY_QUERIES]
+SINGAPORE_REGISTRY_QUERIES = [config.freshen_years(q) for q in SINGAPORE_REGISTRY_QUERIES]
+INDONESIA_REGISTRY_QUERIES = [config.freshen_years(q) for q in INDONESIA_REGISTRY_QUERIES]
+
+
 def _extract_company_signal(title: str, snippet: str, url: str, geography: str) -> Optional[Person]:
     """Parse a registry result into a company_registration signal."""
     text = f"{title} {snippet}".lower()

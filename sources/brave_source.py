@@ -67,6 +67,10 @@ NEWS_QUERIES: list[dict] = [
     {"q": 'India startup "raised" "seed" OR "pre-seed" 2025 announced', "signal_type": "funding_news"},
 ]
 
+# Keep query years current (years were once hardcoded and went stale)
+LINKEDIN_QUERIES = [{**q, "q": config.freshen_years(q["q"])} for q in LINKEDIN_QUERIES]
+NEWS_QUERIES = [{**q, "q": config.freshen_years(q["q"])} for q in NEWS_QUERIES]
+
 EXCLUDE_KEYWORDS = [
     "job opening", "we are hiring", "internship", "how to ", "lessons from",
     "advice for", "guide to", "why founders", "a founder's take", "balancing ambition",

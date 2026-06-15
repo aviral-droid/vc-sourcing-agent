@@ -122,6 +122,15 @@ def _build_signals_text(person: Person) -> str:
 
 _PROVIDERS: list[dict] = [
     {
+        "name":     "Gemini",
+        # OpenAI-compatible endpoint — uses the GEMINI_API_KEY that the GitHub
+        # Actions workflow already injects (previously unused by the scorer).
+        "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
+        "model":    "gemini-2.0-flash",   # 1500 free req/day; swap to a newer flash model if desired
+        "key_attr": "GEMINI_API_KEY",
+        "signup":   "aistudio.google.com  (1500 req/day free)",
+    },
+    {
         "name":     "Cerebras",
         "base_url": "https://api.cerebras.ai/v1",
         "model":    "qwen-3-235b-a22b-instruct-2507",  # 235B MoE on wafer silicon, very fast
@@ -371,6 +380,9 @@ def _detect_geography(person: Person) -> str:
     for geo, keywords in geo_map.items():
         if any(k in loc for k in keywords):
             return geo
+    # Regional fallback — outlet-level inference (e27, Tech in Asia, etc.)
+    if "southeast asia" in loc or "south east asia" in loc:
+        return "Southeast Asia"
     return "Unknown"
 
 
@@ -480,11 +492,14 @@ def _rule_based_score(person: Person) -> dict:
         score += 5
 
     # ── Cap and action ─────────────────────────────────────────────────────────
+    # Calibrated against observed score distribution: rule-based scores rarely
+    # exceed ~70, so investigate at 60 / watchlist at 42 keeps the Investigate
+    # bucket populated with genuinely corroborated leads.
     score = max(0, min(100, score))
 
-    if score >= 65:
+    if score >= 60:
         action = "investigate"
-    elif score >= 45:
+    elif score >= 42:
         action = "watchlist"
     else:
         action = "pass"
@@ -501,7 +516,7 @@ def _rule_based_score(person: Person) -> dict:
 
     # ── Sector + fit ───────────────────────────────────────────────────────────
     sector = _detect_sector(person)
-    sector_fit = "strong" if score >= 65 else ("moderate" if score >= 45 else "weak")
+    sector_fit = "strong" if score >= 60 else ("moderate" if score >= 42 else "weak")
 
     # ── Key strengths ──────────────────────────────────────────────────────────
     strengths = []

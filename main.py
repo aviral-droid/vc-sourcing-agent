@@ -232,6 +232,14 @@ def run_pipeline(
         len(all_persons), total_raw,
     )
 
+    # ── Entity resolution: clean names, merge duplicates across sources, ──────
+    #    drop un-actionable records. Merged signals enable the multi-source
+    #    corroboration bonus during scoring.
+    from pipeline.resolver import resolve
+    all_persons = resolve(all_persons)
+    logger.info("After entity resolution: %d persons (%d signals)",
+                len(all_persons), sum(p.signal_count for p in all_persons))
+
     # ── STEP 2: Score with Claude/Groq ────────────────────────────────────────
     logger.info("\n[Score] Scoring %d persons (Claude/Groq, mandate: India+SEA, all sectors)...",
                 len(all_persons))

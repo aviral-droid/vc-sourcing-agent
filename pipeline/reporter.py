@@ -521,7 +521,7 @@ def _fetch_intel_for_static() -> dict:
         # Exa supplement — entire web for this category
         if exa_client and EXA_CATEGORY_QUERIES.get(category):
             for q in EXA_CATEGORY_QUERIES[category]:
-                cat_articles.extend(_exa_search(exa_client, q, num=10))
+                cat_articles.extend(_exa_search(exa_client, config.freshen_years(q), num=10))
                 _time.sleep(0.3)
 
         cat_articles = _dedup(cat_articles)
@@ -577,11 +577,12 @@ def _fetch_intel_for_static() -> dict:
         # Layer 2 & 3 — Exa full-web search
         if exa_client:
             for q in co.get("exa_queries", []):
-                company_arts.extend(_exa_search(exa_client, q, num=8, tag=name))
+                company_arts.extend(_exa_search(exa_client, config.freshen_years(q), num=8, tag=name))
                 _time.sleep(0.25)
             # Sector context (no name filter — broader industry lens)
             if co.get("sector_exa"):
-                company_arts.extend(_exa_search(exa_client, co["sector_exa"], num=6, tag=name))
+                company_arts.extend(
+                    _exa_search(exa_client, config.freshen_years(co["sector_exa"]), num=6, tag=name))
                 _time.sleep(0.25)
 
         # Dedup within company

@@ -378,7 +378,7 @@ def scrape_reddit() -> List[Person]:
         "https://old.reddit.com/r/startups/search?q=India+OR+Singapore+founder+stealth&sort=new",
         "https://old.reddit.com/r/SideProject/search?q=India+OR+Singapore+OR+Indonesia&sort=new",
         "https://old.reddit.com/r/SaaS/search?q=India+OR+Southeast+Asia+founder&sort=new",
-        "https://old.reddit.com/r/entrepreneur/search?q=India+founder+launch+2025&sort=new",
+        config.freshen_years("https://old.reddit.com/r/entrepreneur/search?q=India+founder+launch+2025&sort=new"),
     ]
     persons = []
     # Subreddit new listings
@@ -465,7 +465,7 @@ def scrape_devto_hashnode() -> List[Person]:
     DEVTO_TAGS = [
         "https://dev.to/t/showdev?per_page=30",
         "https://dev.to/search?q=India+founder+launch&per_page=20",
-        "https://dev.to/search?q=building+startup+India+2025&per_page=20",
+        config.freshen_years("https://dev.to/search?q=building+startup+India+2025&per_page=20"),
     ]
     persons = []
     for url in DEVTO_TAGS:
@@ -478,7 +478,7 @@ def scrape_devto_hashnode() -> List[Person]:
     # Hashnode — building in public
     hashnode_urls = [
         "https://hashnode.com/explore",
-        "https://hashnode.com/search?q=startup+India+2025",
+        config.freshen_years("https://hashnode.com/search?q=startup+India+2025"),
     ]
     for url in hashnode_urls:
         content = _get_content_requests(url)

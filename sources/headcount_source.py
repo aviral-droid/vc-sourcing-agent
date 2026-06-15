@@ -37,11 +37,11 @@ logger = logging.getLogger(__name__)
 
 # Headcount growth detection via Google/LinkedIn
 def _headcount_queries(company_name: str) -> List[str]:
-    return [
+    return [config.freshen_years(q) for q in (
         f'"{company_name}" employees headcount "2024" OR "2025" growth hiring',
         f'site:linkedin.com/company "{company_name}" employees',
         f'"{company_name}" "team size" OR "headcount" 2025',
-    ]
+    )]
 
 
 # Companies known for rapid headcount growth (hot sectors worth monitoring)

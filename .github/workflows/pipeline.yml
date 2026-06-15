@@ -29,7 +29,11 @@ jobs:
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          MIN_SCORE_THRESHOLD: "30"
+          CEREBRAS_API_KEY: ${{ secrets.CEREBRAS_API_KEY }}
+          ZHIPU_API_KEY: ${{ secrets.ZHIPU_API_KEY }}
+          SAMBANOVA_API_KEY: ${{ secrets.SAMBANOVA_API_KEY }}
+          EXA_API_KEY: ${{ secrets.EXA_API_KEY }}
+          MIN_SCORE_THRESHOLD: "40"   # raised from 30: rule-based floor is ~30, which let noise through
         run: python scripts/run_pipeline.py
 
       - name: Commit updated data.json

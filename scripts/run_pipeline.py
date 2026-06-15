@@ -72,21 +72,20 @@ def main():
 
     logger.info("Raw signals: %d from %d sources", len(all_p), len(sources_used))
 
-    # ── Dedup: named persons first, unique by name or headline ────────────────
-    seen = set()
-    deduped = []
-    # Named first, then unnamed
-    for p in sorted(all_p, key=lambda x: 0 if x.name and x.name != "Unknown" else 1):
-        n = p.name or "Unknown"
-        # Use name[:30] for named persons, headline[:60] for unknown
-        k = n[:30] if n != "Unknown" else (p.headline or "")[:60]
-        if k and k not in seen:
-            seen.add(k)
-            deduped.append(p)
-        if len(deduped) >= 60:   # cap at 60 before scoring
-            break
+    # ── Entity resolution: clean names, merge same person across sources, ─────
+    #    drop records with no name and no profile URL (un-actionable noise).
+    #    Merging signals across sources is what triggers the multi-source
+    #    corroboration bonus in scoring — don't skip it.
+    from pipeline.resolver import resolve
+    deduped = resolve(all_p)
 
-    logger.info("After dedup: %d persons", len(deduped))
+    # Named + anchored persons first, then cap before scoring
+    deduped.sort(key=lambda p: (0 if p.name else 1,
+                                0 if (p.linkedin_url or p.twitter_handle or p.github_url) else 1,
+                                -p.signal_count))
+    deduped = deduped[:60]   # cap at 60 before scoring
+
+    logger.info("After entity resolution: %d persons", len(deduped))
 
     # ── Score ─────────────────────────────────────────────────────────────────
     from pipeline.enricher import score_all, write_executive_summary

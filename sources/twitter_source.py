@@ -50,6 +50,9 @@ TWITTER_QUERIES_GOOGLE = [
     'site:twitter.com "ex-Swiggy" OR "ex-Zomato" "new startup" OR "founder" 2025',
 ]
 
+# Keep query years current
+TWITTER_QUERIES_GOOGLE = [config.freshen_years(q) for q in TWITTER_QUERIES_GOOGLE]
+
 NITTER_INSTANCES = [
     "https://nitter.net",
     "https://nitter.cz",

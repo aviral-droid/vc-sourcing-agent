@@ -50,6 +50,9 @@ GDELT_QUERIES: list[tuple[str, str]] = [
     ('startup founder raises seed pre-seed India Singapore 2025', "funding_news"),
 ]
 
+# Keep query years current
+GDELT_QUERIES = [(config.freshen_years(q), t) for q, t in GDELT_QUERIES]
+
 # Trusted India + SEA tech news domains to prioritize
 PRIORITY_DOMAINS = {
     "yourstory.com", "inc42.com", "entrackr.com", "vccircle.com",

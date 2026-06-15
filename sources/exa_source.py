@@ -300,7 +300,7 @@ def search_exa_signals(days_back: int = 30) -> List[Person]:
 
     # Neural queries
     for qconf in EXA_NEURAL_QUERIES:
-        query       = qconf["query"]
+        query       = config.freshen_years(qconf["query"])
         signal_type = qconf["signal_type"]
         num_results = qconf.get("num_results", 10)
         domains     = qconf.get("include_domains", [])
@@ -334,7 +334,7 @@ def search_exa_signals(days_back: int = 30) -> List[Person]:
 
     # Keyword queries (LinkedIn profile discovery)
     for qconf in EXA_KEYWORD_QUERIES:
-        query       = qconf["query"]
+        query       = config.freshen_years(qconf["query"])
         signal_type = qconf["signal_type"]
         num_results = qconf.get("num_results", 10)
 

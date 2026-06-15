@@ -113,7 +113,8 @@ SEA_STEALTH_QUERIES = [
     'site:linkedin.com/in "ex-Xendit" "stealth" OR "founder" OR "building"',
 ]
 
-ALL_QUERIES = INDIA_STEALTH_QUERIES + SEA_STEALTH_QUERIES
+ALL_QUERIES = [config.freshen_years(q)
+               for q in INDIA_STEALTH_QUERIES + SEA_STEALTH_QUERIES]
 
 
 def _score_snippet(snippet: str) -> int:
