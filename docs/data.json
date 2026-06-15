@@ -1,35 +1,77 @@
 {
-  "generated_at": "2026-06-15T07:30:25.799395",
+  "generated_at": "2026-06-15T08:39:25.272392",
   "date_label": "2026-06-15",
-  "total_signals": 15,
-  "total_persons": 10,
+  "total_signals": 17,
+  "total_persons": 11,
   "sources_active": [
     "Product Hunt",
     "News (RSS + Google News)"
   ],
-  "executive_summary": "Today's top VC sourcing signals for 2026-06-15 feature a strong split between India and Southeast Asia, with a notable surge in stealth mode registrations. Leading the pack are Himanshu Ratnoo's mobility-focused venture from CARS, and a trio of Indian stealth startups, including Indus Appstore, Ajay Pratap Singh, and Sumit Jain, each with a score of 60, indicating credible backgrounds and potential for significant impact. Additionally, Sudipto Sannigrahi's education technology venture adds to the mix, showcasing a diverse range of sectors attracting experienced founders.",
+  "executive_summary": "Pipeline surfaced 11 founders above threshold on 2026-06-15. 6 flagged for immediate investigation, 5 added to watchlist. Top lead: Sumit Jain (score 66, India, ex-?) — edtech sector.",
   "persons": [
     {
+      "name": "Sumit Jain",
+      "score": 66,
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "edtech",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Sumit Jain (ex-a notable company, based in India) shows strong early-stage founder signals and fits the fund's pre-seed/seed mandate. Signals include executive departure. Recommend reaching out to understand what they are building.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "executive_departure",
+          "description": "[Google News] India: Sumit Jain steps down as Unacademy test-prep CEO - DealStreetAsia",
+          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBzMWNubHg1NjhNV241bUpHZ2ZjTjFHa0pqVUZ4MXR4VzdnRnFCR1ZLV0RYTkxiNF9FY3B3VGxsWWNPdks0bWUxb3FkVkVTdzFpWUtGZm5yOGFUYTIyMWFzOVNQSk5YNmVCRkVYNUs0TEdobGpy?oc=5"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Previous role unclear"
+      ],
+      "company_url": ""
+    },
+    {
       "name": "Himanshu Ratnoo",
-      "score": 75,
+      "score": 60,
       "action": "investigate",
       "recommended_action": "investigate",
       "previous_company": "CARS",
       "previous_title": "",
       "current_company": "",
       "location": "India",
-      "sector": "Mobility/Electric Vehicles",
+      "sector": "EV/Mobility",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Himanshu Ratnoo's experience as a CEO in the automotive sector and his move to cofound a new e-cycle company suggests a potential for innovation in the mobility space. His background in a high-profile role at Cars24 could indicate a strong understanding of the market and the ability to execute.",
+      "investment_thesis": "Himanshu Ratnoo, a seasoned operator with experience as ex-CARS24 India CEO, has joined EMotorad as a co-founder, indicating a strong signal for a potential investment opportunity in the EV/Mobility sector. His background and experience could bring significant value to the new venture. Further investigation is needed to determine the full potential of this opportunity.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
-      "signal_count": 5,
+      "signal_count": 6,
       "signal_types": [
-        "stealth_founder",
-        "executive_departure"
+        "executive_departure",
+        "funding_news",
+        "stealth_founder"
       ],
       "signals": [
         {
@@ -46,6 +88,18 @@
         },
         {
           "source": "news",
+          "type": "funding_news",
+          "description": "[Google News] BazaarNow Secures $8 Million in Series A Funding from Peak XV - Indiatimes",
+          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPLVpNMWYzV0Q3Tm1UWklfdTNMRTdiOWIzOVpSZDByVzhGT2VLR1hNdXNldzlqWnBlcVpGbklrLUJ6eWs4a0lTUXBDVVM3VzJiSUxtbG9TSy1DZkVzTWlFSUV1cnFaV0UzcVlULXFMREwzd1hyWThRd0k0T2JWY2lLeUlVQWZyMTY0ZXJaaE5qNTBBMnVrVmg1dW9iUFg3WGhTYWdNVUtRaFExTEhwbm1SdHFuWHVrS0RSd1I0elBqTTBsemRhWHRSQWVtcEh4eUE?oc=5"
+        },
+        {
+          "source": "news",
+          "type": "funding_news",
+          "description": "[Google News] sahi secures 33 million in series b tripling valuation in less than a year - Indiatimes",
+          "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxORWQzcEpNaWxRNXN2bkhmZjZDUjA4UFhfVDRrdi1Bd3YxWmpVRXQtUTVvZXJYcjRhN3ZZVmlrc3lpWGVNcmJBd05IMVdhNUd6THdLdTViRnl5aVBudWVPeWZaME9rajV3LVExTEpMY05BNDhQbXN6VnBCNEpzaWpfVXdhcklrNTFTN3VKM2JONjRNb0RJdG1uR3FjQlBVeDdOYU5SaDRvVjhSdXFUaXphN1k3aDNnLUtFWjdGWjFhMWNYUHFLVjNLdzZFX1B5Tm40NzBUNWZxOW5DREtaR3J5Ykh3?oc=5"
+        },
+        {
+          "source": "news",
           "type": "stealth_founder",
           "description": "[Google News] EMotorad appoints ex-CARS24 executive Himanshu Ratnoo as co-founder - Indiatimes",
           "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxOblBqb29tWjJ2dEN0VmRUdm43QzUzMjFJdDhfaU9xREthbHlXaE5GZzRwSThYU2YyZkZfQThEUXhtNDBqM3dVeXZQYmZkVmZ3RnN3WUxxMkpRTUYyUkhBTldYX2VFZ21ieXhWSUJwc0llaXcwUVdNOFRoWkNya05MSWJmNkxYbVhXWE94Tnh5TE9DcE4yNUtZNkdIYTVURGlDWHUtRmJndlNVSWJ2a0xpWUtGazNhdENTdFZXd0hFS3NHSl82MldLYnJiRmxteU9XU2htaWNsd0NIUVFL?oc=5"
@@ -55,161 +109,33 @@
           "type": "executive_departure",
           "description": "[Google News] Ex-CARS24 Exec Himanshu Ratnoo Joins EMotorad As Cofounder - Inc42",
           "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQZWFmNktpX2YwellvZWN3TFZJSmlzaWFyQmtxMllTRzBQX3pHVWF5Ul9mOXk2dlJUeURWWFI1eDdMWVJmdThRbFFqWm83V2ozVVF1QmU3STZ6ZG41d2tQb0std1BlU3ZrdGF1aExxRVR6aGhfbnIwNWFGTUYyLWl4amJtMl9YMUd4Rnc?oc=5"
-        },
-        {
-          "source": "news",
-          "type": "executive_departure",
-          "description": "[Google News] EMotorad Hires Ex-CARS24 Exec to Drive Global E-Bike Growth - Whalesbook",
-          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNbUo1QWJ3VXJUTWU2RzQ1NnFRUDZzcVdrcVh4b1pSWm9Wa2Qza2l6Zmh1V1lVY0FqQkFVal9NVWdzaEtKTzJiYTV6UDhReDRLdlJ1dzdXb1Z4bDdkanpISkg5dXBlcjZLcjZRblEwV3Q3aThfeTV2Vm9GTjZfeGp1VGR4dXRmelZsUXhWdVZ1VTFlYU15TWpHOVU0XzRIdHJ3Z2d4bk1DOFpOelBZQURvSThlZ2pkMS1zME5BWlRsVWQtWjBkcUNOUENhZUpTa00?oc=5"
         }
       ],
       "confidence": "medium",
       "founder_type": "seasoned_operator",
       "key_strengths": [
-        "Executive departure from a well-known company",
-        "Cofounder role in a new venture"
+        "ex-CARS24 India CEO",
+        "experience in automotive industry"
       ],
       "risks": [
-        "Unknown experience years"
-      ],
-      "company_url": "https://www.emotorad.com/"
-    },
-    {
-      "name": "Indus Appstore",
-      "score": 60,
-      "action": "investigate",
-      "recommended_action": "investigate",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Akash Dongre's departure from PhonePe-owned Indus Appstore suggests a potential for a new venture, leveraging his experience and background in the fintech sector. Further investigation is warranted to assess the opportunity.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "stealth_founder",
-          "description": "[Google News] PhonePe-owned Indus Appstore co-founder Akash Dongre steps down | Startup Story - Startup Story",
-          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQMG9DSDFSb3J6WEZsZ205bEZvODJ3M0Z2a0FfbVNTWi1mWE9lTnFubzl0a25LQjNMVGNPdHBkb05DMUlhbG5QVWxPWG9wMU9SZzVfblBiUDk2cWtLNnNMX3Nia3YyZlloZi1OakRnUm1MdGtLOWRNTlY3di01VHNEMS1jMEdhYzB4a1JBNmZmZndKY0VFYzhCUVhR0gGaAUFVX3lxTFAwb0NIMVJvcnpYRmxnbTlsRm84MnczRnZrQV9tU1NaLWZYT2VOcW5vOXRrbktCM0xUY090cGRvTkMxSWFsblBVbE9Yb3AxT1JnNV9uUGJQOTZxa0s2c0xfc2JrdjJmWWhmLU5qRGdSbUx0a0s5ZE1OVjd2LTVUc0QxLWMwR2FjMHhrUkE2ZmZmd0pjRUVjOEJRWFE?oc=5"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Executive departure from a tracked company",
-        "Credible background"
-      ],
-      "risks": [
-        "Unknown experience",
-        "Incomplete information"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Sumit Jain",
-      "score": 60,
-      "action": "investigate",
-      "recommended_action": "investigate",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Education Technology",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Sumit Jain's departure from Unacademy, a well-known test-prep platform, suggests a potential move into a new venture. His experience in the education technology sector could be a valuable asset for a new startup, especially if it aligns with current trends in online learning and test preparation.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "executive_departure",
-          "description": "[Google News] India: Sumit Jain steps down as Unacademy test-prep CEO - DealStreetAsia",
-          "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBzMWNubHg1NjhNV241bUpHZ2ZjTjFHa0pqVUZ4MXR4VzdnRnFCR1ZLV0RYTkxiNF9FY3B3VGxsWWNPdks0bWUxb3FkVkVTdzFpWUtGZm5yOGFUYTIyMWFzOVNQSk5YNmVCRkVYNUs0TEdobGpy?oc=5"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Strong operational background",
-        "Executive departure with credible news source"
-      ],
-      "risks": [
-        "Unknown experience years"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Sudipto Sannigrahi",
-      "score": 60,
-      "action": "investigate",
-      "recommended_action": "investigate",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Sudipto Sannigrahi's successful exit from Rentomojo with a substantial return suggests a strong track record in the startup ecosystem. Further investigation is warranted to assess his current venture's potential and alignment with current hot sectors.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "executive_departure",
-          "description": "[Google News] Venture catalysts exits rentomojo with 3 4x return - Indiatimes",
-          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxONC1TR0oxRE42VXFMSnVVM1ZlUm4wb0U4LXl6SGtSeEtKX0Jkd1dzTEFGQXlMQ3MzQUl6WGQ1YkhUdFBfdFBnSjc2cEZjQzB1MmRWUW4wTG93dmhRSXREVTJZTHVCTUl1LTBFeTlpR0h5enkzYUo1OV9aT19nbTRPdjdvd3d0RUk1RGpXdm4xVWZZWVo5dFFnV2NZenFxM3hBNlNoSEgyRzZadmVyeUd3TjkwU2lWNlpFeE80SDVBSTFET0gxQWc?oc=5"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Strong exit from previous venture",
-        "Significant return on investment"
-      ],
-      "risks": [
-        "Unknown experience years",
-        "No current company or sector information"
+        "lack of information on previous exits or second-time founder status"
       ],
       "company_url": ""
     },
     {
       "name": "Ajay Pratap Singh",
       "score": 60,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
+      "action": "investigate",
+      "recommended_action": "investigate",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
       "location": "India",
-      "sector": "Unknown",
+      "sector": "Sports",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Ajay Pratap Singh's departure as CEO of Absolute Sports suggests a potential move into entrepreneurship. With a credible news outlet reporting his plans, there is a signal of intent, though the specific sector and plans are not yet known.",
+      "investment_thesis": "Ajay Pratap Singh's departure as CEO of Absolute Sports and announcement of an entrepreneurial journey suggest a potential new venture, leveraging his domain expertise in the sports sector. His previous experience as a CEO indicates strong operational capabilities. Further investigation is needed to understand his plans and potential for a scalable business.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -228,15 +154,140 @@
       "confidence": "medium",
       "founder_type": "seasoned_operator",
       "key_strengths": [
-        "Executive departure with credible news outlet reporting"
+        "Previous CEO experience",
+        "Domain expertise in sports"
       ],
       "risks": [
-        "Unknown experience level, sector fit, and specific plans"
+        "Unknown experience years",
+        "No clear indication of new venture"
       ],
       "company_url": ""
     },
     {
-      "name": "Delip",
+      "name": "Sudipto Sannigrahi",
+      "score": 60,
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Sudipto Sannigrahi (ex-a notable company, based in India) shows strong early-stage founder signals and fits the fund's pre-seed/seed mandate. Signals include executive departure. Recommend reaching out to understand what they are building.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "executive_departure",
+          "description": "[Google News] EMotorad Hires Ex-CARS24 Exec to Drive Global E-Bike Growth - Whalesbook",
+          "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNbUo1QWJ3VXJUTWU2RzQ1NnFRUDZzcVdrcVh4b1pSWm9Wa2Qza2l6Zmh1V1lVY0FqQkFVal9NVWdzaEtKTzJiYTV6UDhReDRLdlJ1dzdXb1Z4bDdkanpISkg5dXBlcjZLcjZRblEwV3Q3aThfeTV2Vm9GTjZfeGp1VGR4dXRmelZsUXhWdVZ1VTFlYU15TWpHOVU0XzRIdHJ3Z2d4bk1DOFpOelBZQURvSThlZ2pkMS1zME5BWlRsVWQtWjBkcUNOUENhZUpTa00?oc=5"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Previous role unclear"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Bijoya Roy",
+      "score": 56,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Bengaluru",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Bijoya Roy (ex-Bengaluru, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "executive_departure",
+          "description": "[Google News] Techie earning Rs 75 lakhs quits Bengaluru job to build startup: ‘Right now I am kinda broke’ - The Indian Express",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNYkxwdXp0dy1OSDVxdjMzNWxmMHBMaGRVTWs4andpWWNjVWhvYlludEhZSGRadU1lZENYUUlLSGY4WWx5eDZ3MjdXbUF2ME5tdWVXdmdVQjNzV29qLTJubUhUQ1pIc3FSWWhyWGpDdmJtSFFCc3JXMFNTMHhpaGo2eFdaQUlxWENpVl9BRDhzR21meG5rQnlsaGYyNUstaEdtWXA0a3QweUQ3dFJBbHlyVjY4aUxqZ3dRcUEw0gHCAUFVX3lxTE9xQVowb05DdFltRTdZNkVLcGNMV201RTZSaThHbjNNQXZqYWFzVVZwSlFaang4QWwwa1RUb2VzejhEWFJ6NjZTdDk4RnBRVnBrdEVNWlVzUUpoQUFqZWJ1RlhpYmsxR3h2VlFxcU1fLVBuRFp5T0R5VldRU1BMRE9vWW9reVJmZTVqeWVkd2kxOWkzLXB5SnZhRjJPeU9Fc19jaFZyS3BtRWVpTHRmc0pqdk9wS01pY29UZERSbWozLTF3?oc=5"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Previous role unclear"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Paul Soon",
+      "score": 56,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Paul Soon (ex-a notable company, based in India) shows promising signals worth monitoring. Signals include executive departure. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "executive_departure",
+          "description": "[Google News] Google top India counsel quits in latest departure amid regulatory hurdles, sources say - Reuters",
+          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQV3RvejB6T3dPdlVVMFAzeklYOWk5ZUF3aHU2RlUxVG91SFIza2JRLVE5a2RiN2lDQlJJRnphUjlDVU9hdXo1WWw1dUNvTXVMcVJ2YzRoTURFdUYxaXlSY3BtcG5LZzNfSXZjc182TUZIZldyMlQxXzl2Q3FLaWZiOFFnMk9BSGtodjE1eGV0MTJCNDE4LUF1b2ZXLUhrVmpsTEtiYUlKZWhrY2NIN3p2Zm1OSm9MRGduckFBYTNRMFRBekU1TmNIWFJyTjZvS3EtTmhmbg?oc=5"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Signal detected from sourcing pipeline"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Previous role unclear"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Mohit Bedi",
       "score": 51,
       "action": "watchlist",
       "recommended_action": "watchlist",
@@ -244,12 +295,12 @@
       "previous_title": "",
       "current_company": "",
       "location": "",
-      "sector": "",
-      "geography": "",
+      "sector": "unknown",
+      "geography": "Unknown",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Delip (ex-a notable company) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
-      "linkedin_url": "https://www.linkedin.com/in/delip",
+      "investment_thesis": "Mohit Bedi (ex-a notable company) shows promising signals worth monitoring. Signals include stealth founder. Add to watchlist and revisit if additional corroboration emerges.",
+      "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
       "signal_count": 1,
@@ -258,16 +309,103 @@
       ],
       "signals": [
         {
-          "source": "db_cache",
+          "source": "news",
           "type": "stealth_founder",
-          "description": "Historical signal: stealth_founder",
-          "url": ""
+          "description": "[Google News] Kiwi co-founder Mohit Bedi steps down as CBO, moves to advisory role - Entrackr",
+          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNZC1qM3JrNG00MzRYa1l2QmFrbVI2ZjNIUFVxUFhLWFF1OTY4eGJGeFAzVENocFF0Z2RVOUpQWTk1MDNBVnFyeGYwd21JeTI5bHpSek9WNUdScm5wY2VlcmJHdVU2cFNVVEJUSkJ5WXRWYVJ6RVZrYWNwNmRqWHRZS2ZHRy1zN242YmhzcmFtT0EwZVpaUUg3QjF0YjdJVWpQQy1MTW5sd3llQdIBqgFBVV95cUxNZC1qM3JrNG00MzRYa1l2QmFrbVI2ZjNIUFVxUFhLWFF1OTY4eGJGeFAzVENocFF0Z2RVOUpQWTk1MDNBVnFyeGYwd21JeTI5bHpSek9WNUdScm5wY2VlcmJHdVU2cFNVVEJUSkJ5WXRWYVJ6RVZrYWNwNmRqWHRZS2ZHRy1zN242YmhzcmFtT0EwZVpaUUg3QjF0YjdJVWpQQy1MTW5sd3llQQ?oc=5"
         }
       ],
-      "confidence": "",
-      "founder_type": "",
-      "key_strengths": [],
-      "risks": [],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Active departure / stealth signal"
+      ],
+      "risks": [
+        "Single signal — needs corroboration",
+        "Limited experience (<7 yrs)",
+        "Geography unconfirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Abdallah Tawafsheh",
+      "score": 40,
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "AI",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Abdallah Tawafsheh has launched Sulsaly, an AI sales leads platform, on Product Hunt, indicating some entrepreneurial spirit and interest in a hot sector. However, the lack of information on his experience and location raises concerns. Further investigation is needed to determine his potential as a founder.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "product_launch"
+      ],
+      "signals": [
+        {
+          "source": "Product Hunt",
+          "type": "product_launch",
+          "description": "[Product Hunt] Abdallah Tawafsheh launched Sulsaly: #1 Agentic AI sales leads &amp;outreach platform for MENA Region\n           \n           \n             Discussion \n            |\n             Link",
+          "url": "https://www.producthunt.com/products/sulsaly"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Product Hunt launch",
+        "AI sales leads platform"
+      ],
+      "risks": [
+        "Unknown experience",
+        "Unknown location"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Indus Appstore",
+      "score": 40,
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "Fintech",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Akash Dongre, co-founder of PhonePe-owned Indus Appstore, has stepped down, indicating a potential new venture. With experience in the fintech sector, Dongre's next move could be an attractive investment opportunity. Further investigation is needed to determine the specifics of his new endeavor.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "stealth_founder",
+          "description": "[Google News] PhonePe-owned Indus Appstore co-founder Akash Dongre steps down | Startup Story - Startup Story",
+          "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQMG9DSDFSb3J6WEZsZ205bEZvODJ3M0Z2a0FfbVNTWi1mWE9lTnFubzl0a25LQjNMVGNPdHBkb05DMUlhbG5QVWxPWG9wMU9SZzVfblBiUDk2cWtLNnNMX3Nia3YyZlloZi1OakRnUm1MdGtLOWRNTlY3di01VHNEMS1jMEdhYzB4a1JBNmZmZndKY0VFYzhCUVhR0gGaAUFVX3lxTFAwb0NIMVJvcnpYRmxnbTlsRm84MnczRnZrQV9tU1NaLWZYT2VOcW5vOXRrbktCM0xUY090cGRvTkMxSWFsblBVbE9Yb3AxT1JnNV9uUGJQOTZxa0s2c0xfc2JrdjJmWWhmLU5qRGdSbUx0a0s5ZE1OVjd2LTVUc0QxLWMwR2FjMHhrUkE2ZmZmd0pjRUVjOEJRWFE?oc=5"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
+      "key_strengths": [
+        "experience in a prominent fintech company",
+        "co-founder of a notable appstore"
+      ],
+      "risks": [
+        "lack of information on new venture"
+      ],
       "company_url": ""
     },
     {
@@ -279,18 +417,18 @@
       "previous_title": "",
       "current_company": "",
       "location": "India",
-      "sector": "Unknown",
+      "sector": "Energy",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Sanjay Jagannath's departure from Exponent Energy amid restructuring suggests a potential for a new venture. With credible news outlets reporting the departure, there is a signal of a serious move. However, the lack of information on his experience level, the sector he is moving into, and the potential for being a first-time founder introduces uncertainty.",
+      "investment_thesis": "Sanjay Jagannath's departure from Exponent Energy amid restructuring could indicate a new venture, but limited information is available on his next steps. His experience in the energy sector could be valuable, but more research is needed to determine the potential of his new endeavor. Further investigation could uncover a promising opportunity, but caution is warranted due to the lack of concrete data.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
       "signal_count": 2,
       "signal_types": [
-        "stealth_founder",
-        "executive_departure"
+        "executive_departure",
+        "stealth_founder"
       ],
       "signals": [
         {
@@ -306,18 +444,20 @@
           "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQcG95NENYTUhsUkFzUlhmdDhKUFl2UXU1Y09RejdwVVlnXzd5OTFlMXlBakVfRjlvX3c2QkRkTUxzWnVyYmw1TWw1S0FwaHRwTndrQU5QbVc3c0lCcGVoenBoZDczcXVzUDlZUnJUalVMNXBVNTB1WXFESXlWRmtTVzVvVVN6UDVSdk9iNTRTYVEwNkFZQ2M0MGFKbHdMRUJOdDVTVlRUMUJlcFdhRnI0bGlHY1FXdlpTUHhSSFZ30gHEAUFVX3lxTE5oZS1FQnYyTXhmZFRFQm1DbkdtbmZYdUtfMXZPaUxlNFd2cGRQSXA4dTN1MldJallMRmJjdlJKdmhnQXVmMzU5RW5IYlFTSDZ2TjZKYmg3Ty1WZDFIODUtdGkxS1BWOFpBU0VLY1E2eXA2TTA4azJWek84UnQ5MUJCWnlBLS1iSXhDNXFSVEl3dlBMMVZ0U1p4c21NQmxpTkYzV0ZhRGZOTWFCWERwOWtVYzk3eXppZE81RndpblcyOGF4REs?oc=5"
         }
       ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
+      "confidence": "low",
+      "founder_type": "unknown",
       "key_strengths": [
-        "Executive departure with credible news outlet reporting"
+        "experience in energy sector",
+        "co-founder of Exponent Energy"
       ],
       "risks": [
-        "Unknown experience level, sector, and potential for a first-time founder"
+        "lack of information on new venture",
+        "unknown experience level"
       ],
       "company_url": ""
     },
     {
-      "name": "Mehul",
+      "name": "Sunny Nagra",
       "score": 40,
       "action": "watchlist",
       "recommended_action": "watchlist",
@@ -329,7 +469,7 @@
       "geography": "Unknown",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Mehul's launch of AEVS on Product Hunt indicates an interest in AI, but with limited information on his background and experience, further investigation is needed to assess his potential as a founder.",
+      "investment_thesis": "Sunny Nagra has launched a product on Product Hunt, which indicates some level of entrepreneurial drive and technical capability. The product, Synopsule, is focused on AI meeting transcripts, a space that aligns with current hot sectors. However, the lack of information on Sunny's experience and location introduces significant uncertainty.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -341,101 +481,26 @@
         {
           "source": "Product Hunt",
           "type": "product_launch",
-          "description": "[Product Hunt] Mehul launched AEVS: proof-of-execution for AI agents\n           \n           \n             Discussion \n            |\n             Link",
-          "url": "https://www.producthunt.com/products/aevs-by-fetch-ai"
+          "description": "[Product Hunt] Sunny Nagra launched Synopsule: On device private AI meeting transcripts\n           \n           \n             Discussion \n            |\n             Link",
+          "url": "https://www.producthunt.com/products/synopsule"
         }
       ],
       "confidence": "low",
       "founder_type": "first_time_founder",
       "key_strengths": [
-        "Proof-of-execution for AI agents"
+        "Product Hunt launch",
+        "AI-focused product"
       ],
       "risks": [
-        "Unknown experience, no previous exit, and no clear geography"
+        "Unknown experience",
+        "Unknown location"
       ],
-      "company_url": ""
-    },
-    {
-      "name": "Vertex Ventures",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "AI/ML",
-      "geography": "Singapore",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "The involvement of Vertex Ventures suggests a promising startup with potential for growth, but the lack of information on the founder's background and experience requires further investigation.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "funding_news"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "funding_news",
-          "description": "[Google News] Singapore's FORMAS.AI raises $3.98M in pre-seed round led by Vertex Ventures Southeast Asia & India - TNGlobal",
-          "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQdGhXWVkwODM5ODQ3SE1iYkxPcVZXWS00VHJqcTlXS3RnQ3YtVE9CUEx5Rm1MZnpkVkVjeTNNZnU0eTV3MlNfdi16NlZYVGQ5Z1BGSjdqcFFuT1VRN2hzckd6YjNpTERaQThLM21LUEFHeU5WU3RhbmhXQ0tpT1Jhb24zZVRNS19oREdhdE1mNTI1dTQydkhMSlhoZE9zTUhXOXdpT2Vja2tCNWRZM3dsWjB5b2hSM1dFMWhSU1RXMk0yaUQ0QmhlUm9JSQ?oc=5"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "unknown",
-      "key_strengths": [
-        "Vertex Ventures involvement",
-        "pre-seed funding"
-      ],
-      "risks": [
-        "Unknown founder experience",
-        "Potential lack of direct founder involvement"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Meridian Ventures",
-      "score": 40,
-      "action": "pass",
-      "recommended_action": "pass",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "",
-      "geography": "",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Meridian Ventures shows early signals but insufficient data to prioritise at this stage. Signals include funding news.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "funding_news"
-      ],
-      "signals": [
-        {
-          "source": "db_cache",
-          "type": "funding_news",
-          "description": "Historical signal: funding_news",
-          "url": ""
-        }
-      ],
-      "confidence": "",
-      "founder_type": "",
-      "key_strengths": [],
-      "risks": [],
-      "company_url": ""
+      "company_url": "https://www.producthunt.com/posts/synopsule"
     }
   ],
   "source_breakdown": {
-    "news": 12,
-    "db_cache": 2,
-    "Product Hunt": 1
+    "news": 15,
+    "Product Hunt": 2
   },
   "score_threshold": 40,
   "intelligence": {
@@ -461,6 +526,13 @@
           "source": "reddit.com",
           "pub_date": "2026-06-15T04:39:47+00:00",
           "summary": "Hi there! this is my first small rant that turned into a project: every AI tool I use has its own memory. I tell Claude Desktop something, Cursor has no clue. New chat? Back to zero. It drove me nuts — so I built Centralaizer. This is an open source solution, so it's free with MIT license. It's a li"
+        },
+        {
+          "title": "Under-16 social media ban announced by UK government",
+          "url": "https://www.theverge.com/policy/949679/uk-under-16-social-media-ban-announcement",
+          "source": "theverge.com",
+          "pub_date": "2026-06-15T04:19:09-04:00",
+          "summary": "The UK is the latest country to follow Australia in implementing a total social media ban for children under 16, Prime Minister Keir Starmer has announced. The ban, which could take effect from early next year, will be joined by wider measures that will also prevent children from talking to stranger"
         },
         {
           "title": "Orbio raises $21 million to automate hiring and onboarding for frontline workers",
@@ -778,6 +850,13 @@
           "summary": "This is something I keep thinking about as someone who's built AI into a few businesses. The price we pay for AI right now isn't the real cost. Altman said they lose money even on the $200/month plan. I read Anthropic had people on their $200 plan burning $1000+/day of compute until they brought in "
         },
         {
+          "title": "MCP solved tool calling. A2A solved coordination. What solves transport?",
+          "url": "https://venturebeat.com/orchestration/mcp-solved-tool-calling-a2a-solved-coordination-what-solves-transport",
+          "source": "venturebeat.com",
+          "pub_date": "2026-06-14T04:00:00+00:00",
+          "summary": "The history of distributed computing is one of protocol proliferation followed by consolidation. Common Object Request Broker Architecture (CORBA), Distributed Component Object Model (DCOM), Java remote method invocation (RMI), and early simple object access protocol (SOAP) competed for the enterpri"
+        },
+        {
           "title": "As Anthropic suspends access to new models, India debates its AI future",
           "url": "https://techcrunch.com/2026/06/13/as-anthropic-suspends-access-to-new-models-india-debates-its-ai-future/",
           "source": "techcrunch.com",
@@ -841,31 +920,24 @@
           "summary": "A copy of Super Mario Bros., still in the box and sealed with its original sticker, just sold at Heritage Auctions for $3 million. That absolutely crushes the previous record of $2 million, also for a copy of Super Mario Bros., in 2021. That sale also came hot on the heels of a controversial auction"
         },
         {
-          "title": "Microsoft hasn’t ruled out spinning off Xbox",
-          "url": "https://www.theverge.com/games/949584/microsoft-spinning-off-xbox",
-          "source": "theverge.com",
-          "pub_date": "2026-06-13T12:29:47-04:00",
-          "summary": "Microsoft is preparing to lay off a significant chunk of its Xbox division and is reevaluating the plans for its next-generation Project Helix console. It's apparently also considering dramatically restructuring its relationship with Xbox, and hasn't ruled out spinning it off into a separate company"
-        },
-        {
-          "title": "PeopleSoft 0-day affecting hundreds of organizations steals gigabytes of data",
-          "url": "https://arstechnica.com/security/2026/06/peoplesoft-0-day-affecting-hundreds-of-organizations-steals-gigabytes-of-data/",
-          "source": "arstechnica.com",
-          "pub_date": "2026-06-12T19:26:47+00:00",
-          "summary": "Vulnerability in the Oracle-owned PeopleSoft software is about as critical as they come."
-        },
-        {
-          "title": "olmo-eval: An evaluation workbench for the model development loop",
-          "url": "https://huggingface.co/blog/allenai/olmo-eval",
-          "source": "huggingface.co",
-          "pub_date": "2026-06-12T15:56:10+00:00",
-          "summary": ""
+          "title": "Anthropic blocks all public access to Claude Fable 5, Mythos 5 following US government order — what enterprises should do",
+          "url": "https://venturebeat.com/technology/anthropic-blocks-all-public-access-to-claude-fable-5-mythos-5-following-us-government-order-what-enterprises-should-do",
+          "source": "venturebeat.com",
+          "pub_date": "2026-06-13T12:24:00+00:00",
+          "summary": "The US government last night issued an unprecedented export control directive ordering Anthropic to immediately suspend all access to its top-tier Claude Fable 5 and Claude Mythos 5 models for foreign nationals, citing unspecified national security authorities. In response, Anthropic has blocked all"
         }
       ],
-      "cached_at": "2026-06-15T07:30:33.469452"
+      "cached_at": "2026-06-15T08:39:25.273140"
     },
     "india_sea": {
       "articles": [
+        {
+          "title": "Selling Enterprise AI Requires Education Before Contracts, Says kAIgentic’s Ahmed Mazhari",
+          "url": "https://inc42.com/buzz/selling-enterprise-ai-requires-education-before-contracts-says-kaigentic-ahmed-mazhari/",
+          "source": "inc42.com",
+          "pub_date": "2026-06-15T07:30:57+00:00",
+          "summary": "India&#8217;s enterprise AI market is projected to grow from $11 Bn in 2025 to $71 Bn by 2030, fuelled by&#8230;"
+        },
         {
           "title": "How ONDC Plans To Digitise B2B Procurement For Kirana Stores Through DigiDukaan",
           "url": "https://inc42.com/buzz/how-ondc-plans-to-digitise-b2b-procurement-for-kirana-stores-through-digidukaan/",
@@ -888,6 +960,20 @@
           "summary": "At DevSparks 2026 in Bengaluru, NVIDIA's Jigar Halani made the case that every model choice and agent a developer ships has a direct cost implication, and that understanding tokeconomics is now a core developer skill."
         },
         {
+          "title": "48 PE investors, US$3.96B deployed, and not a single IPO exit in five years. Something is broken.",
+          "url": "https://e27.co/48-pe-investors-us3-96b-deployed-and-not-a-single-ipo-exit-in-five-years-something-is-broken-20260615/",
+          "source": "e27.co",
+          "pub_date": "2026-06-15T05:00:31+00:00",
+          "summary": "Vietnam&#8217;s private equity boom is real and impressive. So is the structural bottleneck quietly undermining it. On the surface, Vietnam&#8217;s private equity market had its best year on record in 2025. Dig one layer deeper, and a structural fault line comes into view that should give every inve"
+        },
+        {
+          "title": "Why Bitcoin just surged past US$65,000 while oil crashed 4%",
+          "url": "https://e27.co/why-bitcoin-just-surged-past-us65000-while-oil-crashed-4-20260615/",
+          "source": "e27.co",
+          "pub_date": "2026-06-15T04:14:23+00:00",
+          "summary": "The total cryptocurrency market capitalisation climbed 1.57 per cent to US$2.24 trillion over the past 24 hours. This movement highlights a fundamental reality I observed over my 15 years in the blockchain sector and my time advising governments on digital infrastructure. Digital assets no longer op"
+        },
+        {
           "title": "Razorpay Files Confidential IPO Papers To Raise $600 Mn",
           "url": "https://inc42.com/buzz/razorpay-files-confidential-ipo-papers-to-raise-600-mn/",
           "source": "inc42.com",
@@ -902,6 +988,27 @@
           "summary": "Amazon’s AI Gameplan For Sellers After consumers, Amazon is now moving AI to the seller side. The ecommerce major is&#8230;"
         },
         {
+          "title": "Why investors are auditing your operation architecture, not your org chart",
+          "url": "https://e27.co/why-investors-are-auditing-your-operation-architecture-not-your-org-chart-20260614/",
+          "source": "e27.co",
+          "pub_date": "2026-06-15T02:30:33+00:00",
+          "summary": "The &#8220;Headcount Flex&#8221; is officially dead. Remember when founders used to walk into boardrooms in Singapore or Jakarta and lead with the size of their team? In 2021, that was a sign of prestige. In 2026, it sounds like a bankruptcy warning. Today, the most impressive flex in the ecosystem "
+        },
+        {
+          "title": "Funded: SEA climate tech has US$1.1B and a problem no one wants to name",
+          "url": "https://e27.co/funded-sea-climate-tech-has-us1-1b-and-a-problem-no-one-wants-to-name-20260614/",
+          "source": "e27.co",
+          "pub_date": "2026-06-15T02:00:37+00:00",
+          "summary": "I&#8217;ll be honest about why climate keeps me up at night, not in a professional way, but a personal one. I&#8217;m a dog dad. Rocky and Jasper, both 13, both heart patients, one blind. When people my age talk about 20-year plans, kids, property, legacy, I go quiet. Climate is part of that silence"
+        },
+        {
+          "title": "Voice AI is evolving beyond commands, and APAC businesses should pay attention",
+          "url": "https://e27.co/voice-ai-is-evolving-beyond-commands-and-apac-businesses-should-pay-attention-20260609/",
+          "source": "e27.co",
+          "pub_date": "2026-06-15T02:00:26+00:00",
+          "summary": "Across APAC, voice is quickly becoming a primary interface between people and technology. From customer support and telehealth to connected vehicles and AI agents, more interactions are happening through voice than ever before. But most systems today are still solving only part of the problem. They "
+        },
+        {
           "title": "How BIRAC is shaping India’s biotech startup ecosystem",
           "url": "https://yourstory.com/2026/06/how-birac-is-shaping-indias-biotech-startup-ecosystem",
           "source": "yourstory.com",
@@ -909,18 +1016,25 @@
           "summary": "The multipronged approach of Biotechnology Industry Research Assistance Council (BIRAC) encompassing funding, infrastructure, networks, market reach has led to expansion of biotech startups in India."
         },
         {
-          "title": "BIRAC nurturing the biotech sector; Turning bars into classrooms",
-          "url": "https://yourstory.com/2026/06/birac-nurturing-the-biotech-sector",
-          "source": "yourstory.com",
-          "pub_date": "2026-06-15T02:00:00+00:00",
-          "summary": "Several successful biotech startups trace their roots to BIRAC. Cleantech company GPS Renewables, for example, received funding under BIRAC’s Biotechnology Ignition Grant."
-        },
-        {
           "title": "Pints, professors, and packed houses: How Pint of View is turning bars into classrooms",
           "url": "https://yourstory.com/2026/06/pints-professors-packed-houses-how-pint-view-turning-bars-classrooms",
           "source": "yourstory.com",
           "pub_date": "2026-06-15T01:40:00+00:00",
           "summary": "Bengaluru-based Pint of View hosts sold-out academic lectures in bars across India, proving that curiosity doesn’t end with college — and that people will happily pay to learn with a drink in hand."
+        },
+        {
+          "title": "‘Aunties were invisible. AI helped me change that’: Wenhui Lim on the Auntieverse",
+          "url": "https://e27.co/aunties-were-invisible-ai-helped-me-change-that-wenhui-lim-on-the-antiverse-20260615/",
+          "source": "e27.co",
+          "pub_date": "2026-06-15T01:25:55+00:00",
+          "summary": "Wenhui Lim, aka &#8216;niceaunties&#8217;, is a Singapore-based artist, designer, and public speaker whose practice centres on reimagining the cultural figure of the &#8220;auntie.&#8221; Through speculative storytelling, she places ageing women at the centre of everyday life, exploring themes of fo"
+        },
+        {
+          "title": "Responsible AI is a process, not a checkbox",
+          "url": "https://e27.co/responsible-ai-is-a-process-not-a-checkbox-20260606/",
+          "source": "e27.co",
+          "pub_date": "2026-06-15T01:00:40+00:00",
+          "summary": "One of the fastest ways to weaken an AI programme is to declare it responsible before the organisation has agreed on what that word means in practice. This is a common mistake because responsible AI sounds mature, board-ready, and difficult to argue against. It travels well in policy documents, gove"
         },
         {
           "title": "Can FirstCry Hold Investor Attention In A Quick Commerce World?",
@@ -972,20 +1086,6 @@
           "summary": "This insightful feature from YourStory tests and strengthens your business acumen! Here are 5 questions to kick off this 236th quiz. Ready?"
         },
         {
-          "title": "Gallery Time and Space exhibition showcases creativity of 50 artists",
-          "url": "https://yourstory.com/2026/06/gallery-time-and-space-art-exhibition-creativity-photography",
-          "source": "yourstory.com",
-          "pub_date": "2026-06-14T02:05:00+00:00",
-          "summary": "In this photo essay, we feature highlights from a Gallery Time and Space art exhibition, along with curator insights."
-        },
-        {
-          "title": "Building quantum-resilient communication; Startup ecosystem sees steady rise in VC inflow",
-          "url": "https://yourstory.com/2026/06/building-quantum-resilient-communication",
-          "source": "yourstory.com",
-          "pub_date": "2026-06-14T02:00:00+00:00",
-          "summary": "Pramatra Space has developed an in-house photonics chip that generates encryption keys using the physics of quantum entanglement, with the aim of making enterprises quantum-resilient."
-        },
-        {
           "title": "New-Age Tech Stocks: EaseMyTrip, SEDEMAC Lead Weekly Gains; Yudiz, ideaForge Slip",
           "url": "https://inc42.com/buzz/new-age-tech-stocks-easemytrip-sedemac-lead-weekly-gains-yudiz-ideaforge-slip/",
           "source": "inc42.com",
@@ -1007,11 +1107,18 @@
           "summary": "Biotech startup Zumutor Biologics has raised $7.3 Mn (about ₹70 Cr) in its Series B funding round from existing investors&#8230;"
         },
         {
-          "title": "Anthropic’s Fable 5, Mythos 5 Access Suspension Rekindles Sovereign AI Debate",
-          "url": "https://inc42.com/buzz/anthropics-fable-5-mythos-5-access-suspension-rekindles-sovereign-ai-debate/",
-          "source": "inc42.com",
-          "pub_date": "2026-06-13T10:02:16+00:00",
-          "summary": "Just three days after launching Claude Fable 5, which it described as its most capable AI system yet, Anthropic has&#8230;"
+          "title": "Innovating for India’s Rightful Place in the World",
+          "url": "https://yourstory.com/2026/06/indias-next-innovation-decade-n-chandrasekaran-deep-tech-sovereignty",
+          "source": "yourstory.com",
+          "pub_date": "2026-06-13T07:53:28+00:00",
+          "summary": "This Rigvedic invocation has guided India’s civilisational openness to knowledge. Today, it finds urgent expression in innovation."
+        },
+        {
+          "title": "Beyond AI buzzwords: What employers are really looking for in 2026",
+          "url": "https://yourstory.com/2026/06/beyond-ai-buzzwords-what-employers-are-really-looking-for-in-2026-toast-zoho-corp",
+          "source": "yourstory.com",
+          "pub_date": "2026-06-13T04:30:00+00:00",
+          "summary": "At DevSparks Bengaluru 2026, leaders from Toast and Zoho Corp share why judgment, adaptability, and real-world problem-solving matter more than tool proficiency."
         },
         {
           "title": "How are Indians investing? Angel One CEO on SIPs, ETFs, AI and wealth creation",
@@ -1021,13 +1128,6 @@
           "summary": "In this episode of the Prime Venture Partners Podcast, Amit Somani speaks with Ambarish Kenghe (AK), CEO of Angel One. Having held leadership roles at Myntra, Google Pay, and now Angel One, AK reflects on India's evolving relationship with money and where the biggest opportunities lie in the decade."
         },
         {
-          "title": "Cookies as hero product for dessert: the story of FES Cafe",
-          "url": "https://yourstory.com/2026/06/cookies-dessert-fes-cafe-photography",
-          "source": "yourstory.com",
-          "pub_date": "2026-06-13T02:15:00+00:00",
-          "summary": "Cookies as hero product for dessert: the story of FES Cafe."
-        },
-        {
           "title": "(Weekly funding roundup June 6-12) Steady rise in VC inflow into Indian startups",
           "url": "https://yourstory.com/2026/06/weekly-funding-roundup-june-6-12-steady-rise-in-vc-inflow-into-indian-startups",
           "source": "yourstory.com",
@@ -1035,11 +1135,60 @@
           "summary": "Venture capital funding into Indian startups is showing a steady upward trend but this is unlikely to build into strong momentum given the current market conditions."
         },
         {
+          "title": "From the Ocean to the World: Bharat Innovates India’s Blue Economy Moment",
+          "url": "https://yourstory.com/2026/04/bharat-innovates-2026-iit-madras-india-blue-economy-france",
+          "source": "yourstory.com",
+          "pub_date": "2026-06-12T13:26:42+00:00",
+          "summary": "India will take its top 120 deep-tech ventures to Nice, France, for Bharat Innovates 2026, an initiative of the Ministry of Education of India."
+        },
+        {
+          "title": "Byju Raveendran gets temporary relief after Singapore High Court grants stay",
+          "url": "https://yourstory.com/2026/06/byju-raveendran-temporary-relief-singapore-high-court-grants-stay",
+          "source": "yourstory.com",
+          "pub_date": "2026-06-12T13:11:52+00:00",
+          "summary": "Singapore’s High Court has stayed the committal and surrender provisions of a civil contempt order against Byju Raveendran, pending his appeal against the finding."
+        },
+        {
+          "title": "SpaceX’s US$75B IPO will drain crypto liquidity. Here is what happens next",
+          "url": "https://e27.co/spacexs-us75b-ipo-will-drain-crypto-liquidity-here-is-what-happens-next-20260612/",
+          "source": "e27.co",
+          "pub_date": "2026-06-12T09:36:19+00:00",
+          "summary": "The cryptocurrency market recently climbed 1.85 per cent to reach a total valuation of US$2.17 trillion over a 24-hour period. Observers might mistake this movement for a sudden resurgence of blockchain-native innovation. This rally stems entirely from a broader macroeconomic rebound rather than any"
+        },
+        {
+          "title": "Ecosystem Roundup: Vietnam earned the seat. Now it must hold it",
+          "url": "https://e27.co/vietnam-earned-the-seat-now-it-must-hold-it-20260612/",
+          "source": "e27.co",
+          "pub_date": "2026-06-12T08:48:15+00:00",
+          "summary": "Vietnam&#8217;s FTSE Emerging Market upgrade is not a footnote; it is a structural rupture. For years, the country&#8217;s growth fundamentals told one story while its capital market classification told another. That contradiction is now resolved, and the consequences will be felt well beyond the tr"
+        },
+        {
           "title": "Fewer than 2 in 5 S’pore employers plan to hire in the next 3 months. Here’s who’s still recruiting.",
           "url": "https://vulcanpost.com/911768/singapore-hiring-outlook-five-year-low/",
           "source": "vulcanpost.com",
           "pub_date": "2026-06-12T08:13:32+00:00",
           "summary": "The city-state&#8217;s hiring outlook has fallen to a five-year low Singapore employers are turning more cautious on hiring for the third quarter of 2026. According to ManpowerGroup’s latest Employment Outlook Survey, only 35% of employers in Singapore plan to increase headcount between Jul and Sept"
+        },
+        {
+          "title": "Beyond the hype: How an AI Agent powered real connections at Echelon Singapore 2026",
+          "url": "https://e27.co/beyond-the-hype-how-an-ai-agent-powered-real-connections-at-echelon-singapore-2026-20260612/",
+          "source": "e27.co",
+          "pub_date": "2026-06-12T08:12:25+00:00",
+          "summary": "When the doors opened at the Suntec Singapore CEC on June 3 and 4, the energy was palpable. Echelon Singapore 2026 set an ambitious tone for the region with its central theme: Moving Southeast Asia from AI hype to real-world implementation. Ecosystem Convergence to Build an Intelligent Future. While"
+        },
+        {
+          "title": "Top 4 Best Inventory Management System for SMB in Singapore",
+          "url": "https://e27.co/top-4-best-inventory-management-system-for-smb-in-singapore-20260612/",
+          "source": "e27.co",
+          "pub_date": "2026-06-12T07:43:49+00:00",
+          "summary": "Evolution of the Singapore Small and Medium Business Landscape (2013–2026) The modern digital business environment for small and medium businesses (SMBs) across Singapore has transformed rapidly over the past thirteen years. From 2013 through 2026, the local ecosystem evolved from traditional deskto"
+        },
+        {
+          "title": "From frontier to emerging: How Vietnam’s stock market rewrote the ASEAN playbook in 2025",
+          "url": "https://e27.co/from-frontier-to-emerging-how-vietnams-stock-market-rewrote-the-asean-playbook-in-2025-20260612/",
+          "source": "e27.co",
+          "pub_date": "2026-06-12T04:50:38+00:00",
+          "summary": "The VN-Index did not merely perform well in 2025; it dominated. With a 41 per cent return over the year, Vietnam&#8217;s benchmark stock index outpaced every major market in Southeast Asia, leaving Singapore, Indonesia, Thailand, and the Philippines in the dust. For a country that spent years being "
         },
         {
           "title": "AI is quietly bankrupting your cloud budget. Here’s what savvy businesses are doing instead.",
@@ -1103,93 +1252,9 @@
           "source": "vulcanpost.com",
           "pub_date": "2026-06-03T08:50:38+00:00",
           "summary": "Among those who turned down job offers, nearly a third did so because it didn&#8217;t pay enough If you&#8217;ve just graduated and are stressed about your starting salary, you&#8217;re not alone. According to a CNA report, a Ministry of Manpower (MOM) survey of residents aged 22 to 28 found that gr"
-        },
-        {
-          "title": "Bangalore, Barrels, Red Queen, Renaissance, & Bitcoin",
-          "url": "https://sajithpai.substack.com/p/bangalore-barrels-red-queen-renaissance",
-          "source": "sajithpai.substack.com",
-          "pub_date": "2026-04-19T03:31:09+00:00",
-          "summary": "Sajith Pai's irregular-ish newsletter #42"
-        },
-        {
-          "title": "Blue Oceans, Trader Joe's, Book Editing, and Annual Letters",
-          "url": "https://sajithpai.substack.com/p/blue-oceans-trader-joes-book-editing",
-          "source": "sajithpai.substack.com",
-          "pub_date": "2026-03-08T03:16:39+00:00",
-          "summary": "Sajith Pai's (now very) irregular newsletter #41"
-        },
-        {
-          "title": "Anaconda, Soulcycle, Power Law, and Top Soil",
-          "url": "https://sajithpai.substack.com/p/anaconda-soulcycle-power-law-and",
-          "source": "sajithpai.substack.com",
-          "pub_date": "2025-12-24T06:30:50+00:00",
-          "summary": "Sajith Pai's (was becoming somewhat regular but now again) irregular newsletter #40"
-        },
-        {
-          "title": "Moving parades, declining audacity, venture arrogance, and soda cans",
-          "url": "https://sajithpai.substack.com/p/moving-parades-declining-audacity",
-          "source": "sajithpai.substack.com",
-          "pub_date": "2025-10-19T11:19:49+00:00",
-          "summary": "Sajith Pai's increasingly less irregular newsletter #39"
-        },
-        {
-          "title": "PMF X-Rays, Extramarital Affairs, Sushi, and Kerala",
-          "url": "https://sajithpai.substack.com/p/pmf-x-rays-extramarital-affairs-sushi",
-          "source": "sajithpai.substack.com",
-          "pub_date": "2025-09-12T08:17:54+00:00",
-          "summary": "Sajith Pai's not so irregular newsletter #38"
-        },
-        {
-          "title": "Solo founders, Search funds, good writing as bad triaging, and AGI",
-          "url": "https://sajithpai.substack.com/p/solo-founders-search-funds-writing",
-          "source": "sajithpai.substack.com",
-          "pub_date": "2025-08-22T08:30:53+00:00",
-          "summary": "Sajith Pai's not so irregular yet not fully regular newsletter #37"
-        },
-        {
-          "title": "Chapter 2 of my PMF book! - The Pick",
-          "url": "https://sajithpai.substack.com/p/special-edition-2-chapter-ii-of-my",
-          "source": "sajithpai.substack.com",
-          "pub_date": "2025-08-08T08:31:14+00:00",
-          "summary": "Another special issue of Sajith Pai's somewhat irregular newsletter #36"
-        },
-        {
-          "title": "Special edition: Chapter 1 of my PMF book!",
-          "url": "https://sajithpai.substack.com/p/special-edition-chapter-1-of-my-pmf",
-          "source": "sajithpai.substack.com",
-          "pub_date": "2025-08-01T08:30:15+00:00",
-          "summary": "Sajith Pai's somewhat irregular newsletter #35"
-        },
-        {
-          "title": "Cold emails, Dunbar numbers, and non-alcoholic beer",
-          "url": "https://sajithpai.substack.com/p/cold-emails-dunbar-numbers-and-non",
-          "source": "sajithpai.substack.com",
-          "pub_date": "2025-07-03T04:40:48+00:00",
-          "summary": "Sajith Pai's still irregular newsletter #34"
-        },
-        {
-          "title": "Unicorn Origins, Algorithmic PMF, and Coca-Cola Servings",
-          "url": "https://sajithpai.substack.com/p/unicorn-origins-algorithmic-pmf-and",
-          "source": "sajithpai.substack.com",
-          "pub_date": "2025-05-03T01:37:29+00:00",
-          "summary": "Sajith Pai's somewhat irregular newsletter #33"
-        },
-        {
-          "title": "Context Collapse, Context Capital, and Capital Thoughts",
-          "url": "https://sajithpai.substack.com/p/context-collapse-context-capital",
-          "source": "sajithpai.substack.com",
-          "pub_date": "2025-04-04T07:45:44+00:00",
-          "summary": "Sajith Pai's regularly irregular newsletter #32"
-        },
-        {
-          "title": "My fave books, podcasts, and articles of 2024",
-          "url": "https://sajithpai.substack.com/p/my-fave-books-podcasts-and-articles",
-          "source": "sajithpai.substack.com",
-          "pub_date": "2024-12-27T08:12:15+00:00",
-          "summary": "Sajith Pai's somewhat irregular newsletter #31"
         }
       ],
-      "cached_at": "2026-06-15T07:30:33.469452"
+      "cached_at": "2026-06-15T08:39:25.273140"
     },
     "emerging": {
       "articles": [
@@ -1311,13 +1376,6 @@
           "source": "spectrum.ieee.org",
           "pub_date": "2026-06-12T18:00:01+00:00",
           "summary": "Yen-Ling Kuo always wanted to understand how things worked. When she was growing up in Taiwan, reading the story of Michael Faraday in elementary school piqued her curiosity about the natural world. During that time, she was introduced to Logo, a computer program with a turtle cursor to help childre"
-        },
-        {
-          "title": "Introducing Generalist Intelligence",
-          "url": "https://www.generalist.com/p/introducing-generalist-intelligence",
-          "source": "generalist.com",
-          "pub_date": "2026-06-12T16:14:13+00:00",
-          "summary": "Generalist Intelligence is a weekly intelligence briefing designed for tech&#8217;s most discerning professionals. It will arrive Friday mornings. Our hope is that it opens you up to perspectives you hadn&#8217;t considered and offers a look at fresh pockets of the future you might have missed."
         },
         {
           "title": "It’s hot IPO summer, and the MANGOS are ripe",
@@ -1474,13 +1532,6 @@
           "summary": "Antares Goes Critical, NewLimit, BioWeapon Letter, Helion, Alzheimer's x Mushrooms + Extra Doses"
         },
         {
-          "title": "Saplings: The Childhoods of Exceptional Entrepreneurs",
-          "url": "https://www.generalist.com/p/saplings-intro",
-          "source": "generalist.com",
-          "pub_date": "2026-06-04T15:23:05+00:00",
-          "summary": "A study of 260 founders."
-        },
-        {
           "title": "7 Ways New Engineers Can Flourish in the Age of AI",
           "url": "https://spectrum.ieee.org/7-ways-engineers-flourish-ai",
           "source": "spectrum.ieee.org",
@@ -1493,13 +1544,6 @@
           "source": "notboring.co",
           "pub_date": "2026-06-02T15:34:10+00:00",
           "summary": "Building the Electric Stack by making motors and actuators next to drones and robots"
-        },
-        {
-          "title": "What America Is Missing Between Sanctions and Nuclear War (Bryon Hargis, Co-Founder & CEO of Castelion)",
-          "url": "https://www.generalist.com/p/what-america-is-missing-between-sanctions",
-          "source": "generalist.com",
-          "pub_date": "2026-06-02T12:04:31+00:00",
-          "summary": "Listen now | Bryon Hargis on America&#8217;s eroding deterrence options, what SpaceX taught him about building hard things fast, and Castelion&#8217;s race to make hypersonic missiles affordable, scalable, and manufacturable."
         },
         {
           "title": "Weekly Dose of Optimism #195",
@@ -1542,13 +1586,6 @@
           "source": "strangeloopcanon.com",
           "pub_date": "2026-05-21T18:01:21+00:00",
           "summary": "sapiens"
-        },
-        {
-          "title": "“Our Goal Is to Build an Electrical Engineer.” (Davide Asnaghi, Co-Founder & CEO of Diode)",
-          "url": "https://www.generalist.com/p/our-goal-is-to-build-an-electrical-engineer",
-          "source": "generalist.com",
-          "pub_date": "2026-05-19T12:01:48+00:00",
-          "summary": "Listen now | Davide Asnaghi on why printed circuit board design has barely changed since the 1980s, and Diode's bet that AI can modernise it."
         },
         {
           "title": "Cowboy Space Corporation",
@@ -1612,19 +1649,47 @@
           "source": "climatetechvc.org",
           "pub_date": "2026-05-06T08:35:52+00:00",
           "summary": "Live streaming has become a core feature on betting platforms, allowing users to watch matches and place bets at the\nThe post Live Streaming on Mahadev Book &#8211; Watch While You Bet appeared first on Mahadev Book."
+        },
+        {
+          "title": "Top Sports to Bet on Mahadev Book",
+          "url": "https://climatetechvc.org/top-sports-to-bet-on-mahadev-book/",
+          "source": "climatetechvc.org",
+          "pub_date": "2026-05-06T08:35:39+00:00",
+          "summary": "Sports engagement is no longer limited to watching matches for entertainment. Fans now follow player statistics, team performance, and match\nThe post Top Sports to Bet on Mahadev Book appeared first on Mahadev Book."
+        },
+        {
+          "title": "Mahadev Book IPL Betting Tips 2026 – Match Predictions",
+          "url": "https://climatetechvc.org/ipl-betting-tips/",
+          "source": "climatetechvc.org",
+          "pub_date": "2026-05-02T17:40:21+00:00",
+          "summary": "The demand for reliable IPL insights is growing every season. With the scale of the Indian Premier League expanding and\nThe post Mahadev Book IPL Betting Tips 2026 &#8211; Match Predictions  appeared first on Mahadev Book."
+        },
+        {
+          "title": "Why Coase needs Hayek",
+          "url": "https://www.strangeloopcanon.com/p/why-smart-planners-lose-to-simple",
+          "source": "strangeloopcanon.com",
+          "pub_date": "2026-05-02T12:02:11+00:00",
+          "summary": "sometimes smart planners lose to simple markets"
+        },
+        {
+          "title": "Blackjack Basic Strategy Explained: Minimizing the House Edge",
+          "url": "https://climatetechvc.org/blackjack-basic-strategy/",
+          "source": "climatetechvc.org",
+          "pub_date": "2026-05-01T16:49:46+00:00",
+          "summary": "Blackjack is one of the few casino games where decisions directly affect the outcome. Unlike pure chance games, players can\nThe post Blackjack Basic Strategy Explained: Minimizing the House Edge appeared first on Mahadev Book."
         }
       ],
-      "cached_at": "2026-06-15T07:30:33.469452"
+      "cached_at": "2026-06-15T08:39:25.273140"
     },
     "sector_heatmap": [
       {
         "name": "AI / ML",
-        "signals": 141,
+        "signals": 125,
         "sentiment": "bullish"
       },
       {
         "name": "Climate / Clean",
-        "signals": 73,
+        "signals": 79,
         "sentiment": "bullish"
       },
       {
@@ -1634,11 +1699,6 @@
       },
       {
         "name": "Deep Tech",
-        "signals": 4,
-        "sentiment": "neutral"
-      },
-      {
-        "name": "Healthtech",
         "signals": 3,
         "sentiment": "neutral"
       },
@@ -1648,9 +1708,14 @@
         "sentiment": "neutral"
       },
       {
+        "name": "Healthtech",
+        "signals": 2,
+        "sentiment": "neutral"
+      },
+      {
         "name": "Logistics",
-        "signals": 1,
-        "sentiment": "quiet"
+        "signals": 2,
+        "sentiment": "neutral"
       },
       {
         "name": "SaaS / B2B",
@@ -1730,12 +1795,28 @@
           "company": "Dat Bike"
         },
         {
+          "title": "The Rise of the ‘Two-Hour Getaway’: How Urban India Is Redefining Escape Without Leaving the City - The Times of India",
+          "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxQUDhweHVPYV9fdG0zYXhQOFhsRUFHenpZdU9ObXlaakF0ekRqeEZtX3NkZmJsd2Y5QjFNQWpvMUVUT1JmTTNqUGs4TDNDYnR6X1BtT2pjbzRKa2dsNjI4cjlHazVENDFXQTVXQWVwUWZjTlhMRHVkb0hRTGFvYUQ3WEVMZy0yREVXM2NxM3ZrLUttS09GLURtQmhlVlNzNW5WWFFzMGtLRVJSX0x4TVF6dXdNZU55S1JVR1BQeHppSlZkT2tuNERTMzdVbzZGb2w3NEpVUHlVSDhsZmFQVkFsNmUxdFJGY0VOalE1RHMwaDRnZTdXZ185dVMtYXNhTGhJakJDV0w4YlpwRzNaSG14RUYwWUhyUdIBmwJBVV95cUxQTllyZnp0allwZm9STG1pdGJBZjRxSFppUEZZWmlkWEp5V1R5WlVuZjB5QUktRlJIY284S0FyQ0ZKbDRGSldta0FXVjBHMkY5UWwyZzRLV0xnX2pFWk5YeGxQeVEtNjU2X3JpUXItbjEzYXhVRnRrSGZGMjB3amRaTU1HcEtlMnY0RUdLT0Jpc0t3SDc1c2w1QnlVd3lIUzFCQjBMaG5hQllzSHhrc25mUGJqQ1RJcTYxVkxEUFFfcGI2ZEdfWUJKSVE4UTNhV2FWWERzSEpFRjZGc1M3WllhRHRLUmtnNVNvcnQyclAtMWR1ZDA1NWcyU2g3STdBRUM5d3dEWEVWdGppaWl5Ri1Zdm96b2EwTFlVdGpB?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2026-02-25T08:00:00+00:00",
+          "summary": "The Rise of the ‘Two-Hour Getaway’: How Urban India Is Redefining Escape Without Leaving the City&nbsp;&nbsp;The Times of India",
+          "company": "Escape Plan"
+        },
+        {
           "title": "Travel startup Escape Plan raises $25 million to open 200+ stores across India - CNBC TV18",
           "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPa0pZdjB4OUE1NkhIc2VPa3RTUHpfUEw4VXQxSTlGVDBFcFc1aHJpRzMwT1NWbEcwWW9aUFUxRjJ6UVQxbGNQU2NlbktpM2ZTczE0VXNTVVc5M0I1WFk0bjMtbjA3M2RWS2tWbWdHLXZYR2ltYmdhaFRKNTlvUWNycUVqY1VCT1RnN29wSEtkSldZS2FSUVYwNlZLN3Z0UHlGSVlwTTVvUmk2Y2syNEdOcER5dWwwUEc4LWZVZNIBwgFBVV95cUxNVnNoZm5qSGJUYlJFTk9vWUZYUWo2b0pSZ3NiYm1aenY5bnYyZ2pvbUlJR1QwX0pXQ242TERqQy14V1owMVNEZU42TkFPV05mdTl5S3R3QUxHdjhuRWVSWm44cjdONzBaSENaYmx6LXVIWGhISkFWMC0xWGJNOTc3bm95ZEdIVjhjVWhlOWQ5NFIwTE80bVlGNWhRSHZCVldKRWN4aGJWWGhaeG9EUXhuc3NtdVp3azh6UEdnWkZYZEdydw?oc=5",
           "source": "news.google.com",
           "pub_date": "2026-01-27T08:00:00+00:00",
           "summary": "Travel startup Escape Plan raises $25 million to open 200+ stores across India&nbsp;&nbsp;CNBC TV18",
           "company": "Escape Plan"
+        },
+        {
+          "title": "EnerZolve Raises $5.1 Million To Scale AI Energy Platform - Construction World",
+          "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNU2V5d3dJQTlsTEEyLVY1eVg3Y0N1SnN1d0dFcUFyLVVLOXlxcU9ESV9lWnFvZ2ZjM0VjTnlnS09hNFFJN0lxcmw5cmk0VmVPWU5fam5mUmQtZ21BQlhIMDNmcm9GRXVSZVRIeG5CZndmb2FJZ0x5Y2tkbmxVSXdXazU5ZFhybmozTUJ6MDRxa2pIUkdieDhWUkpxcGFxaFZNdGRGZFBreXBfQVRPbGxzdzlrcVBwWlNnQzZkLXRnN1k2UEdVSU5FWExUNldZNUtUSTZUTjlLY3o0Rzgw?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2026-01-27T08:00:00+00:00",
+          "summary": "EnerZolve Raises $5.1 Million To Scale AI Energy Platform&nbsp;&nbsp;Construction World",
+          "company": "Enerzolve"
         },
         {
           "title": "Escape Plan Raises $25 Mn Series A Led By Jungle Ventures - BW Disrupt",
@@ -1994,14 +2075,6 @@
           "company": "Prosperr"
         },
         {
-          "title": "Escape Plan, ApClub, Magma secure early-stage funding - VCCircle",
-          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNREFZT2JVRndvd2hEbjl0b0dfcnFxT2FrVTQ0ZTNEMkI2Qy1Sbkp3dWZrLTFZZHFfYnVqYVJUNkxyYzFUb1VTcmpQWUVlNzVzcWF0WHk4OFl1NlRJM21aUERtWDdkVmlkLXBiV0lqTFg4YmhQMERjM0JMcE9FZUVVeA?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2025-07-22T07:00:00+00:00",
-          "summary": "Escape Plan, ApClub, Magma secure early-stage funding&nbsp;&nbsp;VCCircle",
-          "company": "Escape Plan"
-        },
-        {
           "title": "Defence electronics startup Sanlayan raises Rs 186 Cr in Series A - Entrackr",
           "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNZzB5Sm4wSWtHTWFyeWgtUHJaWUgzcHBOQWlXVVBCNDc1VGRGQWRPbEFuMFVsRkZJYjlkSWRCQUR3OTNPdkIta1NiMnczNnllMERabGR3VnZrdURvUU1FaUFaNm5fTlFJYkYycUprMG8zcG1sSTF2eU4wT2k2cW5RMy1LeGl0cFRHRnFIZlNwemFIbXJkclhtUy0tWVZpUzk00gGgAUFVX3lxTE1nMHlKbjBJa0dNYXJ5aC1QclpZSDNwcE5BaVdVUEI0NzVUZEZBZE9sQW4wVWxGRkliOWRJZEJBRHc5M092Qi1rU2IydzM2eWUwRFpsZHdWdmt1RG9RTUVpQVo2bl9OUUliRjJxSmswbzNwbWxJMXZ5TjBPaTZxblEzLUt4aXRwVEdGcUhmU3B6YUhtcmRyWG1TLS1ZVmlTOTQ?oc=5",
           "source": "news.google.com",
@@ -2066,14 +2139,6 @@
           "company": "NirogStreet"
         },
         {
-          "title": "Beyond the likes: How's coto building a safe and supportive digital haven for women - Business Today",
-          "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQaHM1MDBNdVQxRWs0ZWtCdV81ek9tWXZxTDUxelhUaGtaYzN4c0UzZERFTHlnUHhmSDVtUXk5Tmo3OW9GMHJmTUJIWlB6YkxSWC1jdUFmVkdydWpoNU9abVM2aG1DWEpVdjRCUG5ZQXJYRi1LQm11MWNiUlJiUFhEbmFOQ21vV0xoN3FCWENCWFVyVWszMy1EekZLUXhuSkxQVUx1MDRrWlFmRGlwR0FBbEI2bk0zRTZ3WV9fSGdMX2VTVmhfSnZ0YllHaF9YTFBBMHFaRnROd0cwcGZ5eEd3TE5hYVDSAeoBQVVfeXFMUHdSMmVKWHRsaFBpZVZQY0NNNkh6ZVFrNmlHY2dXOHpHTFhnVHFad093eC1DaGpDTzA2b2NCaU5hVmpvY3FzUUZZU0FwWWxKTnBIWk5DdXQ2SVVLQW5CT0lMZGJHVEF0dlVRTW1RamM2bXMxdEgwMlJqOUpCOW53R3dQeGU4cDZyb0xGbmVmWE4zZ2xkTWNLZGlCYzJCNjFlTnpZQXEyUUZfNVp6Z3lXbG9VdGpDNHQya1NBX3U0dEtUZFVyekd5eGt6N29NRWNmRUVLTDROSGVQNTRiakd1a3VVMmpHTWwtdlJB?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2024-08-13T07:00:00+00:00",
-          "summary": "Beyond the likes: How's coto building a safe and supportive digital haven for women&nbsp;&nbsp;Business Today",
-          "company": "Coto"
-        },
-        {
           "title": "coto appoints Ankita Gupta, Digitactix CEO, as new Community Advisor - MediaNews4U",
           "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPb2hwSGhsUGxKM1NVVy1vV3ZUX1Z2Z3dVdFNEYlowYmFlTXA3aDlYR21aU1kyS2hEeXF0NlVmbnVjUjVaUEtaZVVzVkFBdVJBbnNKRHQwRXZIRk55MnpCcV9kRW1Jc0pOUjlpalZhY2JIRDlONVlUT1FWcFg0MHpUT1M4dmtFbzZxdGM0Wm10MlNfZ0ctSHo2eFBGZw?oc=5",
           "source": "news.google.com",
@@ -2095,6 +2160,14 @@
           "source": "news.google.com",
           "pub_date": "2023-11-28T08:00:00+00:00",
           "summary": "Coto and Pee Safe partner to empower women in health dialogues&nbsp;&nbsp;Mediabrief.com",
+          "company": "Coto"
+        },
+        {
+          "title": "How a life experience led to a women-only social networking platform - CNBC TV18",
+          "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPTWtBemMySnQzbkhnbFNPNWRBekRuZG8zR2pEcFFxczY4aWRFMi16c2IteU5RRFpOY0JFUjZxUlBYYkdzb3o1Rk5RRWxRVlRkZXZYSVVPLUo5SWVhNnUxOGhVNHcxQW1fckdzQjdNWnZtQ1dZeEdicjlsNm41ZWFjM000c3gxcmJDVjRVSVNqY0dzOW1yVGNuQUx0STJzbnpJYVlLMXM4clFkWVQ4QUtiWWZpR2swZjhE0gG-AUFVX3lxTE15M0xnLUNua1hWMlRnY09Od2RiQkRVZ2liWWMwT25FQ09mcFVKV1hJNXlDRm85WmZDUjJSRGNpWTZpTlhKYXhQcjB1ajcxSi1GcHBiUnEtMXlpQThlN3FPalBZM2hGQ0hRRmdNUTcyTkZTLWhWZ2pLMEdfdmRPQmZGaTUxVUJ5VnVrbjN2OTlEbTVLZWhkekNOMVQ5V3Z1LXdZTmRlT1lISFBJYlN2c2tJWnF3MTEwRGtyY2FSR0E?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2023-10-30T07:00:00+00:00",
+          "summary": "How a life experience led to a women-only social networking platform&nbsp;&nbsp;CNBC TV18",
           "company": "Coto"
         },
         {
@@ -2146,7 +2219,7 @@
           "company": "NirogStreet"
         }
       ],
-      "cached_at": "2026-06-15T07:30:33.469452"
+      "cached_at": "2026-06-15T08:39:25.273140"
     }
   }
 }
