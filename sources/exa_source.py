@@ -52,14 +52,14 @@ EXA_NEURAL_QUERIES: list[dict] = [
                             "vulcanpost.com", "linkedin.com"],
     },
     {
-        "query": "second time founder India seed funding pre-seed 2025",
+        "query": "second time founder India seed funding pre-seed 2026",
         "signal_type": "funding_news",
         "num_results": 12,
         "include_domains": ["yourstory.com", "inc42.com", "entrackr.com", "vccircle.com",
                             "thebridge.in", "traxcn.com"],
     },
     {
-        "query": "Singapore Indonesia founder raises seed funding new startup 2025",
+        "query": "Singapore Indonesia founder raises seed funding new startup 2026",
         "signal_type": "funding_news",
         "num_results": 12,
         "include_domains": ["e27.co", "kr.asia", "techinasia.com", "dealstreetasia.com",
@@ -72,7 +72,7 @@ EXA_NEURAL_QUERIES: list[dict] = [
         "include_domains": ["linkedin.com", "yourstory.com", "inc42.com"],
     },
     {
-        "query": "Southeast Asia startup founder announcement new venture 2025",
+        "query": "Southeast Asia startup founder announcement new venture 2026",
         "signal_type": "stealth_founder",
         "num_results": 12,
         "include_domains": ["e27.co", "kr.asia", "techinasia.com", "linkedin.com"],
@@ -110,39 +110,39 @@ EXA_KEYWORD_QUERIES: list[dict] = [
         "num_results": 10,
     },
     {
-        "query": "site:linkedin.com/in India VP Director stealth building new company 2025",
+        "query": "site:linkedin.com/in India VP Director stealth building new company 2026",
         "signal_type": "stealth_founder",
         "num_results": 10,
     },
     # Twitter/X founder announcements
     {
-        "query": "site:x.com OR site:twitter.com India founder \"building in stealth\" 2025",
+        "query": "site:x.com OR site:twitter.com India founder \"building in stealth\" 2026",
         "signal_type": "stealth_founder",
         "num_results": 10,
     },
     {
-        "query": "site:x.com OR site:twitter.com \"leaving\" \"to build\" India startup founder 2025",
+        "query": "site:x.com OR site:twitter.com \"leaving\" \"to build\" India startup founder 2026",
         "signal_type": "executive_departure",
         "num_results": 10,
     },
     {
-        "query": "site:x.com OR site:twitter.com \"excited to announce\" India \"new startup\" founder 2025",
+        "query": "site:x.com OR site:twitter.com \"excited to announce\" India \"new startup\" founder 2026",
         "signal_type": "stealth_founder",
         "num_results": 10,
     },
     {
-        "query": "site:x.com OR site:twitter.com Singapore Indonesia founder stealth startup 2025",
+        "query": "site:x.com OR site:twitter.com Singapore Indonesia founder stealth startup 2026",
         "signal_type": "stealth_founder",
         "num_results": 8,
     },
     # MCA / company registry
     {
-        "query": "site:zaubacorp.com private limited incorporated 2025 technology AI fintech",
+        "query": "site:zaubacorp.com private limited incorporated 2026 technology AI fintech",
         "signal_type": "company_registration",
         "num_results": 10,
     },
     {
-        "query": "site:tofler.in incorporated 2025 private limited startup India",
+        "query": "site:tofler.in incorporated 2026 private limited startup India",
         "signal_type": "company_registration",
         "num_results": 10,
     },
@@ -282,6 +282,19 @@ def _result_to_person(result, signal_type: str, query: str) -> Optional[Person]:
     return person
 
 
+def _exa_credits_ok(exa) -> bool:
+    """Single cheap preflight call (1 result). Returns False on 402 (no credits)."""
+    try:
+        exa.search("test", num_results=1, type="keyword")
+        return True
+    except Exception as e:
+        if "402" in str(e) or "credits" in str(e).lower():
+            logger.warning("Exa credits exhausted — skipping all Exa queries. "
+                           "Top up at https://dashboard.exa.ai")
+            return False
+        return True  # other errors (network, etc.) — try anyway
+
+
 def search_exa_signals(days_back: int = 30) -> List[Person]:
     """Main entry point — semantic search for India+SEA founder signals via Exa."""
     if not config.EXA_API_KEY:
@@ -295,29 +308,30 @@ def search_exa_signals(days_back: int = 30) -> List[Person]:
         return []
 
     exa = Exa(api_key=config.EXA_API_KEY)
+
+    # Preflight: one cheap call to detect 402 before running 19 queries
+    if not _exa_credits_ok(exa):
+        return []
+
+    from datetime import datetime, timedelta
+    date_filter = {}
+    if days_back <= 90:
+        start = (datetime.utcnow() - timedelta(days=days_back)).strftime("%Y-%m-%dT%H:%M:%SZ")
+        date_filter = {"start_published_date": start}
+
     persons: List[Person] = []
     seen_urls: set = set()
+    credits_gone = False
 
-    # Neural queries
-    for qconf in EXA_NEURAL_QUERIES:
-        query       = config.freshen_years(qconf["query"])
-        signal_type = qconf["signal_type"]
-        num_results = qconf.get("num_results", 10)
-        domains     = qconf.get("include_domains", [])
-
+    def _run_query(query: str, signal_type: str, num_results: int,
+                   search_type: str, domains: list) -> None:
+        nonlocal credits_gone
+        if credits_gone:
+            return
         try:
-            kwargs: dict = {
-                "num_results": num_results,
-                "type": "neural",
-            }
+            kwargs: dict = {"num_results": num_results, "type": search_type, **date_filter}
             if domains:
                 kwargs["include_domains"] = domains
-            # Date filter
-            if days_back <= 90:
-                from datetime import datetime, timedelta
-                start = (datetime.utcnow() - timedelta(days=days_back)).strftime("%Y-%m-%dT%H:%M:%SZ")
-                kwargs["start_published_date"] = start
-
             results = exa.search(query, **kwargs)
             for r in results.results:
                 url = getattr(r, "url", "") or ""
@@ -327,35 +341,34 @@ def search_exa_signals(days_back: int = 30) -> List[Person]:
                 p = _result_to_person(r, signal_type, query)
                 if p:
                     persons.append(p)
-            time.sleep(0.5)
-
+            time.sleep(0.4)
         except Exception as e:
-            logger.warning("Exa neural query error [%s]: %s", query[:60], e)
+            err = str(e)
+            if "402" in err or "credits" in err.lower():
+                logger.warning("Exa credits exhausted mid-run — stopping remaining queries")
+                credits_gone = True
+            else:
+                logger.warning("Exa query error [%s]: %s", query[:60], err)
 
-    # Keyword queries (LinkedIn profile discovery)
+    # Neural queries (high signal: semantic understanding of intent)
+    for qconf in EXA_NEURAL_QUERIES:
+        _run_query(
+            query=config.freshen_years(qconf["query"]),
+            signal_type=qconf["signal_type"],
+            num_results=qconf.get("num_results", 10),
+            search_type="neural",
+            domains=qconf.get("include_domains", []),
+        )
+
+    # Keyword queries — LinkedIn profile discovery + Twitter + MCA registries
     for qconf in EXA_KEYWORD_QUERIES:
-        query       = config.freshen_years(qconf["query"])
-        signal_type = qconf["signal_type"]
-        num_results = qconf.get("num_results", 10)
-
-        try:
-            results = exa.search(
-                query,
-                num_results=num_results,
-                type="keyword",
-            )
-            for r in results.results:
-                url = getattr(r, "url", "") or ""
-                if not url or url in seen_urls:
-                    continue
-                seen_urls.add(url)
-                p = _result_to_person(r, signal_type, query)
-                if p:
-                    persons.append(p)
-            time.sleep(0.5)
-
-        except Exception as e:
-            logger.warning("Exa keyword query error [%s]: %s", query[:60], e)
+        _run_query(
+            query=config.freshen_years(qconf["query"]),
+            signal_type=qconf["signal_type"],
+            num_results=qconf.get("num_results", 10),
+            search_type="keyword",
+            domains=[],
+        )
 
     logger.info("Exa: %d signals collected", len(persons))
     return persons
