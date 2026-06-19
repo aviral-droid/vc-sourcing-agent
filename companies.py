@@ -722,3 +722,44 @@ TRACKED_COMPANIES = [
     {"name": "Bitkub", "sector": "Web3/Crypto", "linkedin_url": "https://www.linkedin.com/company/bitkub-online", "website": "bitkub.com"},
     {"name": "Ascend Money", "sector": "Fintech", "linkedin_url": "https://www.linkedin.com/company/ascend-money", "website": "ascendmoney.io"},
 ]
+
+# ── Geography helpers ──────────────────────────────────────────────────────────
+# SEA company names (lowercased) — used by enricher + linkedin_source for geo detection
+_SEA_COMPANY_NAMES: frozenset = frozenset({
+    # Singapore
+    "grab", "sea group", "sea limited", "shopee", "garena", "nium", "ninja van",
+    "funding societies", "carro", "propertyguru", "carousell",
+    "advance intelligence group", "kredivo", "aspire", "xendit",
+    "stashaway", "endowus", "lazada", "syfe", "validus", "sleek",
+    "igloo", "intellect design arena", "patsnap", "trax retail",
+    # Indonesia
+    "gojek", "goto group", "tokopedia", "traveloka", "ovo", "dana indonesia",
+    "akulaku", "koinworks", "modalku", "amartha", "sayurbox", "kopi kenangan",
+    "waresix", "shipper", "sicepat ekspres", "tiket.com", "bukalapak",
+    "halodoc", "alodokter", "ruangguru",
+    # Vietnam
+    "vnpay", "momo", "vng corporation", "tiki", "kiotviet", "base.vn",
+    "sendo", "vnpt technology", "sky mavis",
+    # Malaysia
+    "airasia digital", "ipay88", "revenue monster", "storehub", "jirnexu",
+    "policystreet", "soft space", "carsome", "iprice group",
+    # Philippines
+    "gcash", "maya philippines", "paymongo", "growsari", "kumu",
+    "advance", "mynt",
+    # Thailand
+    "line man wongnai", "omise", "scb 10x", "true digital group",
+    "rabbit finance", "flash express", "pomelo fashion", "bitkub", "ascend money",
+})
+
+
+def get_india_names() -> frozenset:
+    """All tracked India company names (lowercased), excluding SEA companies."""
+    return frozenset(
+        c["name"].lower() for c in TRACKED_COMPANIES
+        if c["name"].lower() not in _SEA_COMPANY_NAMES
+    )
+
+
+def get_sea_names() -> frozenset:
+    """All tracked Southeast Asia company names (lowercased)."""
+    return _SEA_COMPANY_NAMES

@@ -94,6 +94,41 @@ INDIA_STEALTH_QUERIES = [
     'site:linkedin.com/in India "second-time founder" OR "serial entrepreneur"',
     'site:linkedin.com/in India "left" "to build" OR "to start" 2025 OR 2026',
     'site:linkedin.com/in India "recently left" "building" OR "founder" OR "stealth"',
+    # Fintech expansions
+    'site:linkedin.com/in "ex-BharatPe" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-PolicyBazaar" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-Cashfree" OR "ex-Pine Labs" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-Juspay" OR "ex-M2P Fintech" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-Slice" OR "ex-Jupiter Money" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-KreditBee" OR "ex-MoneyView" "stealth" OR "founder"',
+    # B2B SaaS expansions
+    'site:linkedin.com/in "ex-Zoho" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-Chargebee" OR "ex-Postman" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-Clevertap" OR "ex-MoEngage" "stealth" OR "founder"',
+    # E-commerce & Quick Commerce
+    'site:linkedin.com/in "ex-BigBasket" OR "ex-Blinkit" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-OYO" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-MakeMyTrip" OR "ex-Ixigo" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-Rebel Foods" OR "ex-Swiggy Instamart" "stealth" OR "founder"',
+    # Healthtech & Edtech
+    'site:linkedin.com/in "ex-PharmEasy" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-Practo" OR "ex-Curefit" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-PhysicsWallah" OR "ex-upGrad" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-Scaler" OR "ex-Great Learning" "stealth" OR "founder"',
+    # AI/ML & EV
+    'site:linkedin.com/in "ex-Sarvam AI" OR "ex-Yellow.ai" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-Ola Electric" OR "ex-Ather Energy" "stealth" OR "founder"',
+    # B2B Commerce & Logistics
+    'site:linkedin.com/in "ex-OfBusiness" OR "ex-Moglix" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-Ninjacart" OR "ex-DeHaat" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-Porter" OR "ex-Shiprocket" "stealth" OR "founder"',
+    # Consumer & Creator
+    'site:linkedin.com/in "ex-ShareChat" OR "ex-InMobi" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-Mamaearth" OR "ex-Sugar Cosmetics" "stealth" OR "founder"',
+    # Big Tech India — large alumni pools
+    'site:linkedin.com/in "ex-Infosys" OR "ex-Wipro" India "founder" OR "stealth" OR "new startup"',
+    'site:linkedin.com/in "ex-TCS" OR "ex-HCL Technologies" India "founder" OR "building"',
+    'site:linkedin.com/in "ex-Accenture" India "founder" OR "stealth" OR "new startup"',
 ]
 
 # ── SEA queries ────────────────────────────────────────────────────────────────
@@ -132,6 +167,20 @@ SEA_STEALTH_QUERIES = [
     'site:linkedin.com/in "Southeast Asia" "co-founder" "stealth" 2025 OR 2026',
     'site:linkedin.com/in "Southeast Asia" "second-time founder" OR "serial entrepreneur"',
     'site:linkedin.com/in "Southeast Asia" "left" "to build" 2025 OR 2026',
+    # Indonesia expansions
+    'site:linkedin.com/in "ex-Bukalapak" OR "ex-Halodoc" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-Kopi Kenangan" OR "ex-Ruangguru" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-KoinWorks" OR "ex-Akulaku" "stealth" OR "founder"',
+    'site:linkedin.com/in Indonesia "VP" OR "Director" "left" "building" OR "stealth" 2025 OR 2026',
+    # Vietnam
+    'site:linkedin.com/in "ex-MoMo" OR "ex-VNG Corporation" "stealth" OR "founder"',
+    'site:linkedin.com/in Vietnam "left" "building" OR "founder" OR "stealth" 2025 OR 2026',
+    # Malaysia / Philippines
+    'site:linkedin.com/in "ex-Carsome" OR "ex-AirAsia Digital" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-Maya Philippines" OR "ex-PayMongo" "stealth" OR "founder"',
+    # Singapore fintech alumni
+    'site:linkedin.com/in "ex-StashAway" OR "ex-Endowus" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-PatSnap" OR "ex-Kredivo" "stealth" OR "founder"',
 ]
 
 ALL_QUERIES = [config.freshen_years(q)
@@ -184,20 +233,27 @@ def _slug_to_name(slug: str) -> str:
     return slug.replace("-", " ").title()
 
 
-_INDIA_CO_GEO = {
-    "razorpay", "phonepe", "zepto", "swiggy", "zomato", "cred", "meesho",
-    "ola", "byju", "byjus", "unacademy", "paytm", "freshworks", "browserstack",
-    "darwinbox", "groww", "zerodha", "flipkart", "nykaa", "cars24", "delhivery",
-    "inmobi", "sharechat", "dream11", "juspay", "setu", "lenskart", "oyo",
-    "urban company", "urbancompany", "kreditbee", "slice", "jupiter", "niyo",
-    "google india", "amazon india", "microsoft india", "meta india", "uber india",
-}
-_SEA_CO_GEO = {
-    "grab", "sea group", "sea limited", "shopee", "garena", "gojek", "goto",
-    "tokopedia", "traveloka", "lazada", "nium", "carousell", "propertyguru",
-    "xendit", "kredivo", "aspire", "ovo", "dana", "gcash", "maya", "paymongo",
-    "vnpay", "vng", "momo", "ninja van", "airasia", "funding societies", "carro",
-}
+try:
+    import sys as _sys, os as _os
+    _sys.path.insert(0, _os.path.dirname(_os.path.dirname(__file__)))
+    from companies import get_india_names as _gi, get_sea_names as _gs
+    _INDIA_CO_GEO = _gi()
+    _SEA_CO_GEO = _gs()
+except Exception:
+    _INDIA_CO_GEO = {
+        "razorpay", "phonepe", "zepto", "swiggy", "zomato", "cred", "meesho",
+        "ola", "byju", "byjus", "unacademy", "paytm", "freshworks", "browserstack",
+        "darwinbox", "groww", "zerodha", "flipkart", "nykaa", "cars24", "delhivery",
+        "inmobi", "sharechat", "dream11", "juspay", "setu", "lenskart", "oyo",
+        "urban company", "urbancompany", "kreditbee", "slice", "jupiter", "niyo",
+        "google india", "amazon india", "microsoft india", "meta india", "uber india",
+    }
+    _SEA_CO_GEO = {
+        "grab", "sea group", "sea limited", "shopee", "garena", "gojek", "goto",
+        "tokopedia", "traveloka", "lazada", "nium", "carousell", "propertyguru",
+        "xendit", "kredivo", "aspire", "ovo", "dana", "gcash", "maya", "paymongo",
+        "vnpay", "vng", "momo", "ninja van", "airasia", "funding societies", "carro",
+    }
 
 
 def _infer_location(previous_company: str, query: str) -> str:
@@ -559,18 +615,18 @@ def _search_all_sync(queries: List[str]) -> List[Person]:
 
 
 def search_linkedin_signals(days_back: int = 30) -> List[Person]:
-    """Run all LinkedIn stealth/departure queries with a 150-second budget."""
-    logger.info("LinkedIn source: running %d queries (DuckDuckGo→Bing, 150s budget)...", len(ALL_QUERIES))
+    """Run all LinkedIn stealth/departure queries with a 175-second budget."""
+    logger.info("LinkedIn source: running %d queries (Serper→Brave→CSE→Tavily→DDG, 175s budget)...", len(ALL_QUERIES))
     import concurrent.futures
     persons: List[Person] = []
     try:
         ex = concurrent.futures.ThreadPoolExecutor(max_workers=1)
         future = ex.submit(_search_all_sync, ALL_QUERIES)
         try:
-            persons = future.result(timeout=150)
+            persons = future.result(timeout=175)
             ex.shutdown(wait=False)
         except concurrent.futures.TimeoutError:
-            logger.warning("LinkedIn source: timed out after 150s — returning partial results")
+            logger.warning("LinkedIn source: timed out after 175s — returning partial results")
             future.cancel()
             ex.shutdown(wait=False)
     except Exception as e:

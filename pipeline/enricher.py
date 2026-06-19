@@ -359,26 +359,30 @@ _SECTOR_KEYWORDS = {
 }
 
 
-_INDIA_COMPANIES = {
-    "razorpay", "phonepe", "zepto", "swiggy", "zomato", "cred", "meesho",
-    "ola", "byju", "byjus", "unacademy", "paytm", "freshworks", "browserstack",
-    "darwinbox", "groww", "zerodha", "flipkart", "nykaa", "mamaearth", "cars24",
-    "urban company", "urbancompany", "lenskart", "oyo", "mswipe", "delhivery",
-    "infosys", "wipro", "tcs", "hcl", "google india", "amazon india",
-    "microsoft india", "meta india", "uber india", "ola cabs", "inmobi",
-    "sharechat", "moj", "koo", "dream11", "games24x7", "juspay", "setu",
-    "open financial", "m2p fintech", "the good glamm", "boat lifestyle",
-    "vedantu", "classplus", "kreditbee", "moneyview", "slice", "jupiter",
-    "niyo", "fampay", "smallcase", "fi money", "ep group",
-}
-_SEA_COMPANIES = {
-    "grab", "sea group", "sea limited", "shopee", "garena", "forrest",
-    "gojek", "goto", "tokopedia", "traveloka", "lazada", "nium", "carousell",
-    "propertyguru", "xendit", "kredivo", "aspire", "ovo", "dana",
-    "gcash", "maya", "paymongo", "vnpay", "vng", "momo", "ninja van",
-    "airasia", "ipay88", "funding societies", "carro", "homecredit",
-    "akulaku", "kredivore", "trustana", "anchanto",
-}
+try:
+    import sys as _sys, os as _os
+    _sys.path.insert(0, _os.path.dirname(_os.path.dirname(__file__)))
+    from companies import get_india_names as _gi, get_sea_names as _gs
+    _INDIA_COMPANIES = _gi()
+    _SEA_COMPANIES = _gs()
+except Exception:
+    _INDIA_COMPANIES = {
+        "razorpay", "phonepe", "zepto", "swiggy", "zomato", "cred", "meesho",
+        "ola", "byju", "byjus", "unacademy", "paytm", "freshworks", "browserstack",
+        "darwinbox", "groww", "zerodha", "flipkart", "nykaa", "mamaearth", "cars24",
+        "urban company", "urbancompany", "lenskart", "oyo", "delhivery",
+        "infosys", "wipro", "tcs", "hcl", "google india", "amazon india",
+        "microsoft india", "meta india", "uber india", "inmobi",
+        "sharechat", "dream11", "juspay", "setu", "m2p fintech",
+        "kreditbee", "moneyview", "slice", "jupiter", "niyo", "smallcase",
+    }
+    _SEA_COMPANIES = {
+        "grab", "sea group", "sea limited", "shopee", "garena",
+        "gojek", "goto", "tokopedia", "traveloka", "lazada", "nium", "carousell",
+        "propertyguru", "xendit", "kredivo", "aspire", "ovo", "dana",
+        "gcash", "maya", "paymongo", "vnpay", "vng", "momo", "ninja van",
+        "airasia", "ipay88", "funding societies", "carro", "akulaku",
+    }
 
 
 def _detect_geography(person: Person) -> str:
