@@ -1,249 +1,60 @@
 {
-  "generated_at": "2026-06-24T06:30:45.278692",
+  "generated_at": "2026-06-24T06:50:40.374659",
   "date_label": "2026-06-24",
-  "total_signals": 41,
-  "total_persons": 31,
+  "total_signals": 14,
+  "total_persons": 12,
   "sources_active": [
     "Product Hunt",
     "News (RSS + Google News)",
     "LinkedIn (stealth + departures)"
   ],
-  "executive_summary": "Today's top VC sourcing signals highlight a surge in stealth mode activity among seasoned entrepreneurs in India's fintech sector, with Amit Kumar's departure from BharatPe leading the pack at a score of 75. Notably, Rahul Sharma and Deepak Kumar, both from Zerodha, and Rahul Kumar from Paytm, also exhibit strong signals, with scores of 65, indicating a trend of experienced founders exploring new ventures in the region.",
+  "executive_summary": "Today's top VC sourcing signals highlight a surge in stealth mode registrations by seasoned entrepreneurs in India and Southeast Asia, with notable departures from established companies like Razorpay and Zomato. Amit Kumar from Sarvam AI and Tejas Agrawal from Razorpay lead the pack, showcasing the trend of second-time founders targeting AI/ML and tech sectors, aligning with current hot sectors intelligence.",
   "persons": [
     {
       "name": "Amit Kumar",
-      "score": 75,
+      "score": 65,
       "action": "investigate",
       "recommended_action": "investigate",
-      "previous_company": "BharatPe",
+      "previous_company": "Sarvam AI",
       "previous_title": "CTO",
       "current_company": "",
       "location": "India",
-      "sector": "Unknown",
+      "sector": "AI/ML",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Amit Kumar's experience at high-growth tech companies suggests a potential for building a successful startup. His departure from Sarvam AI and previous roles at GoJek and BharatPe indicate a move towards entrepreneurship. Further investigation is warranted to assess his current venture's sector and potential for growth.",
-      "linkedin_url": "https://www.linkedin.com/in/akumar-exe",
+      "investment_thesis": "Amit Kumar's experience in AI/ML and strategic consulting positions him as a potential leader in the AI sector. His track record at high-profile companies like McKinsey, Gojek, and Sarvam AI suggests a strong understanding of the industry and the ability to execute.",
+      "linkedin_url": "https://www.linkedin.com/in/amitkumariitm",
       "github_url": "",
       "twitter_handle": "",
-      "signal_count": 3,
+      "signal_count": 2,
       "signal_types": [
-        "stealth_founder",
-        "executive_departure"
+        "stealth_founder"
       ],
       "signals": [
         {
           "source": "linkedin",
           "type": "stealth_founder",
-          "description": "Ex-BharatPe exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/akumar-exe"
-        },
-        {
-          "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from Sarvam AI — LinkedIn profile flagged",
+          "description": "Ex-Sarvam AI — headline signals 'founder'",
           "url": "https://www.linkedin.com/in/amitkumariitm"
         },
         {
           "source": "linkedin",
           "type": "stealth_founder",
-          "description": "Ex-Gojek exec going stealth — LinkedIn profile detected via departure query",
+          "description": "Ex-Gojek — headline signals 'founder'",
           "url": "https://www.linkedin.com/in/toamitkumar"
         }
       ],
       "confidence": "medium",
       "founder_type": "seasoned_operator",
       "key_strengths": [
-        "Strong background in tech and fintech",
-        "Experience with high-growth companies like GoJek and BharatPe"
+        "Strong background in AI/ML from Sarvam AI and Gojek",
+        "Experience at McKinsey suggests strategic and analytical skills"
       ],
       "risks": [
-        "Unknown experience years",
-        "Potential lack of sector-specific expertise"
+        "Unknown experience years and current company details"
       ],
-      "company_url": "bharatpe.com"
-    },
-    {
-      "name": "Rahul Sharma",
-      "score": 65,
-      "action": "investigate",
-      "recommended_action": "investigate",
-      "previous_company": "PhonePe",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Rahul Sharma's departure from PhonePe, a prominent fintech company, suggests a potential move into a new venture in the fintech space. His experience and the sector alignment make him a promising candidate for further investigation.",
-      "linkedin_url": "https://www.linkedin.com/in/rahul-sharma-9058a5228",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 2,
-      "signal_types": [
-        "stealth_founder",
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from PhonePe — LinkedIn profile flagged",
-          "url": "https://www.linkedin.com/in/rahul-sharma-9058a5228"
-        },
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Lenskart exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/rahulsharma89"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Senior departure from a well-known fintech company",
-        "Experience in the fintech sector"
-      ],
-      "risks": [
-        "Unknown experience years",
-        "Incomplete information on current company and role"
-      ],
-      "company_url": "phonepe.com"
-    },
-    {
-      "name": "Rahul Kumar",
-      "score": 65,
-      "action": "investigate",
-      "recommended_action": "investigate",
-      "previous_company": "Paytm",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Education Technology (EdTech)",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Rahul Kumar's departure from Paytm and his experience at PhysicsWallah suggest a potential for a strong educational technology venture, especially given his background in the sector. His move to stealth mode indicates a strategic approach to market entry.",
-      "linkedin_url": "https://www.linkedin.com/in/rahul-kumar-iimb",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 2,
-      "signal_types": [
-        "stealth_founder",
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from Paytm — LinkedIn profile flagged",
-          "url": "https://www.linkedin.com/in/rahul-kumar-iimb"
-        },
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-PhysicsWallah exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/rahul-kumar-a844b1255"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Senior departure from Paytm",
-        "Ex-PhysicsWallah exec"
-      ],
-      "risks": [
-        "Unknown experience years"
-      ],
-      "company_url": "paytm.com"
-    },
-    {
-      "name": "Deepak Kumar",
-      "score": 65,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Zerodha",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Deepak Kumar's experience in Fintech and his departure from Juspay and Zerodha suggest a potential for a strong background in the sector. His move to a stealth mode indicates a new venture, which could be worth investigating further.",
-      "linkedin_url": "https://www.linkedin.com/in/deepakaigx",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 2,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Zerodha exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/deepakaigx"
-        },
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Juspay exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/deepak-kumar-7341601aa"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Experienced in Fintech",
-        "Previous experience at notable companies"
-      ],
-      "risks": [
-        "Unknown experience years"
-      ],
-      "company_url": "zerodha.com"
-    },
-    {
-      "name": "Praveen Chavali",
-      "score": 60,
-      "action": "investigate",
-      "recommended_action": "investigate",
-      "previous_company": "Razorpay",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Praveen Chavali's experience at Razorpay and his move to stealth mode suggests a potential for a significant impact in the fintech sector. His background in a well-known company like Razorpay indicates a strong operational track record, which is a positive signal for a potential investment.",
-      "linkedin_url": "https://www.linkedin.com/in/praveench",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Razorpay exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/praveench"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Ex-Razorpay executive",
-        "Stealth mode"
-      ],
-      "risks": [
-        "Unknown experience years"
-      ],
-      "company_url": "razorpay.com"
+      "company_url": "sarvam.ai"
     },
     {
       "name": "Tejas Agrawal",
@@ -258,7 +69,7 @@
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Tejas Agrawal's background as a CTO at Razorpay and his move to stealth mode suggests a potential for a strong technical leadership role in a new venture. His experience and the sector he is moving into are aligned with our current interests, warranting further investigation.",
+      "investment_thesis": "Tejas Agrawal's background as a CTO at Razorpay and his current stealth founder status suggest a strong technical expertise and potential for a successful venture. His experience in the fintech sector, which is currently a hot sector, aligns well with our investment interests.",
       "linkedin_url": "https://www.linkedin.com/in/agrawaltejas01",
       "github_url": "",
       "twitter_handle": "",
@@ -270,7 +81,7 @@
         {
           "source": "linkedin",
           "type": "stealth_founder",
-          "description": "Ex-Razorpay exec going stealth — LinkedIn profile detected via departure query",
+          "description": "Ex-Razorpay — headline signals 'founder'",
           "url": "https://www.linkedin.com/in/agrawaltejas01"
         }
       ],
@@ -286,288 +97,87 @@
       "company_url": "razorpay.com"
     },
     {
-      "name": "Tushar Jain",
+      "name": "Gaurav Dadhich",
       "score": 60,
       "action": "investigate",
       "recommended_action": "investigate",
       "previous_company": "Razorpay",
-      "previous_title": "",
+      "previous_title": "Director",
       "current_company": "",
       "location": "India",
-      "sector": "Fintech",
+      "sector": "AI",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Tushar Jain's background as an executive at Razorpay, a leading fintech company, suggests a strong understanding of the sector. His move to stealth mode indicates a potential new venture in the fintech space, which aligns with our current hot sectors. Further investigation is warranted to assess the opportunity.",
-      "linkedin_url": "https://www.linkedin.com/in/jaintushar16",
+      "investment_thesis": "Gaurav Dadhich's departure from Razorpay as a Director suggests a potential move into AI, a sector aligned with current hot sectors. His experience and the credible background from Razorpay make him a strong candidate for further investigation.",
+      "linkedin_url": "https://www.linkedin.com/in/gauravdadhich",
       "github_url": "",
       "twitter_handle": "",
       "signal_count": 1,
       "signal_types": [
-        "stealth_founder"
+        "exec_departure"
       ],
       "signals": [
         {
           "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Razorpay exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/jaintushar16"
+          "type": "exec_departure",
+          "description": "Senior exec departure from Razorpay — Gaurav Dadhich - Maximem AI | Helping AI builders and dev teams ...",
+          "url": "https://www.linkedin.com/in/gauravdadhich"
         }
       ],
       "confidence": "medium",
       "founder_type": "seasoned_operator",
       "key_strengths": [
-        "Ex-Razorpay executive",
-        "Stealth mode"
+        "Senior exec departure",
+        "Credible previous company (Razorpay)"
       ],
       "risks": [
-        "Unknown experience years"
+        "Unknown experience"
       ],
       "company_url": "razorpay.com"
     },
     {
-      "name": "Chunmun Gupta",
+      "name": "Suravi Shome",
       "score": 60,
       "action": "investigate",
       "recommended_action": "investigate",
-      "previous_company": "Razorpay",
-      "previous_title": "",
+      "previous_company": "Zepto",
+      "previous_title": "Head of",
       "current_company": "",
       "location": "India",
-      "sector": "Fintech",
+      "sector": "Healthtech",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Chunmun Gupta's departure from Razorpay, a leading fintech company, suggests a potential move into a new venture. His experience in enterprise GTM and fintech could be a strong asset for a new startup in the sector.",
-      "linkedin_url": "https://www.linkedin.com/in/guptachunmun",
+      "investment_thesis": "Suravi Shome's departure from Zepto as a Head of Consumer Product suggests a potential move into a new venture in the healthtech sector, which is a current hot sector. His experience in consumer product and senior executive role could be a strong asset for the new venture.",
+      "linkedin_url": "https://www.linkedin.com/in/suravi-shome-844616b",
       "github_url": "",
       "twitter_handle": "",
       "signal_count": 1,
       "signal_types": [
-        "executive_departure"
+        "exec_departure"
       ],
       "signals": [
         {
           "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from Razorpay — LinkedIn profile flagged",
-          "url": "https://www.linkedin.com/in/guptachunmun"
+          "type": "exec_departure",
+          "description": "Senior exec departure from Zepto — Suravi Shome - Head of Consumer Product, Truemeds | Ex- Zepto, Ex",
+          "url": "https://www.linkedin.com/in/suravi-shome-844616b"
         }
       ],
       "confidence": "medium",
       "founder_type": "seasoned_operator",
       "key_strengths": [
-        "Senior departure from a well-known fintech company",
-        "Experience in enterprise GTM"
+        "Senior exec departure",
+        "Previous experience in consumer product"
       ],
       "risks": [
         "Unknown experience years"
       ],
-      "company_url": "razorpay.com"
+      "company_url": "zeptonow.com"
     },
     {
-      "name": "Pingal Kakati",
-      "score": 60,
-      "action": "investigate",
-      "recommended_action": "investigate",
-      "previous_company": "Razorpay",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Pingal Kakati's transition from Razorpay to stealth mode suggests a potential for a new venture with strong operational background. Further investigation is warranted to assess the opportunity and alignment with current hot sectors.",
-      "linkedin_url": "https://www.linkedin.com/in/pingalk",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Razorpay exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/pingalk"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Ex-Razorpay exec",
-        "Stealth mode initiative"
-      ],
-      "risks": [
-        "Unknown experience years",
-        "Incomplete information"
-      ],
-      "company_url": "razorpay.com"
-    },
-    {
-      "name": "Vaibhav Singh",
-      "score": 60,
-      "action": "investigate",
-      "recommended_action": "investigate",
-      "previous_company": "PhonePe",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Vaibhav Singh's departure from PhonePe, a significant player in the Fintech sector, suggests a potential for a new venture with strong domain expertise. His background and education are indicative of a high-caliber founder.",
-      "linkedin_url": "https://www.linkedin.com/in/vaibhav-singh-1409",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from PhonePe — LinkedIn profile flagged",
-          "url": "https://www.linkedin.com/in/vaibhav-singh-1409"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Senior departure from a well-known company",
-        "IIT Hyderabad education"
-      ],
-      "risks": [
-        "Unknown experience years"
-      ],
-      "company_url": "phonepe.com"
-    },
-    {
-      "name": "Romio Ranjan Jena",
-      "score": 60,
-      "action": "investigate",
-      "recommended_action": "investigate",
-      "previous_company": "PhonePe",
-      "previous_title": "CTO",
-      "current_company": "",
-      "location": "India",
-      "sector": "AI/ML",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Romio Ranjan Jena's departure from PhonePe as CTO suggests a potential move into a new venture, leveraging his experience in AI/ML. His background in a leading fintech company could indicate a strong understanding of the sector, making him a potentially valuable addition to a pre-seed or seed investment.",
-      "linkedin_url": "https://www.linkedin.com/in/romio-ranjan-jena",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from PhonePe — LinkedIn profile flagged",
-          "url": "https://www.linkedin.com/in/romio-ranjan-jena"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Senior departure from a well-known company",
-        "CTO experience"
-      ],
-      "risks": [
-        "Unknown experience years"
-      ],
-      "company_url": "phonepe.com"
-    },
-    {
-      "name": "Abhilash Rath",
-      "score": 60,
-      "action": "investigate",
-      "recommended_action": "investigate",
-      "previous_company": "PhonePe",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Abhilash Rath's departure from PhonePe, a prominent fintech company, suggests a potential move into a new venture. His background in software engineering and fintech could be a strong foundation for a new startup in the sector.",
-      "linkedin_url": "https://www.linkedin.com/in/therath",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from PhonePe — LinkedIn profile flagged",
-          "url": "https://www.linkedin.com/in/therath"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Senior departure from a well-known fintech company",
-        "Experience in software engineering"
-      ],
-      "risks": [
-        "Unknown experience years"
-      ],
-      "company_url": "phonepe.com"
-    },
-    {
-      "name": "Shubham Sawant",
-      "score": 60,
-      "action": "investigate",
-      "recommended_action": "investigate",
-      "previous_company": "PhonePe",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Fintech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Shubham Sawant's departure from PhonePe, a prominent Fintech company, suggests a potential move into a new venture. His experience and the Fintech sector's current growth trajectory make him a promising candidate for further investigation.",
-      "linkedin_url": "https://www.linkedin.com/in/shubham-sawant",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from PhonePe — LinkedIn profile flagged",
-          "url": "https://www.linkedin.com/in/shubham-sawant"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Senior departure from a well-known Fintech company",
-        "LinkedIn profile indicates executive level"
-      ],
-      "risks": [
-        "Unknown experience years"
-      ],
-      "company_url": "phonepe.com"
-    },
-    {
-      "name": "Pulkit Singh",
+      "name": "Jatin Monga",
       "score": 60,
       "action": "investigate",
       "recommended_action": "investigate",
@@ -575,80 +185,40 @@
       "previous_title": "",
       "current_company": "",
       "location": "India",
-      "sector": "FoodTech",
+      "sector": "AI/Technology",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Pulkit Singh's experience at Zomato suggests a strong understanding of the foodtech sector, and his move to stealth mode indicates a potential new venture. Further investigation is warranted to assess the opportunity and his role in the new company.",
-      "linkedin_url": "https://www.linkedin.com/in/pulkitbuilds",
+      "investment_thesis": "Jatin Monga's departure from Zomato and his focus on building an AI workforce for the alcohol industry suggests a potential for innovation in a traditional sector. His experience in a well-known tech company could be a strong asset.",
+      "linkedin_url": "https://www.linkedin.com/in/jatin-monga-973b8993",
       "github_url": "",
       "twitter_handle": "",
       "signal_count": 1,
       "signal_types": [
-        "stealth_founder"
+        "exec_departure"
       ],
       "signals": [
         {
           "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Zomato exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/pulkitbuilds"
+          "type": "exec_departure",
+          "description": "Senior exec departure from Zomato — Jatin Monga - Building AI Workforce for the alcohol industry - LinkedIn",
+          "url": "https://www.linkedin.com/in/jatin-monga-973b8993"
         }
       ],
       "confidence": "medium",
       "founder_type": "seasoned_operator",
       "key_strengths": [
-        "Experienced exec from Zomato",
-        "Stealth mode with LinkedIn signal"
+        "Senior exec departure",
+        "Credible previous company (Zomato)"
       ],
       "risks": [
         "Unknown experience years",
-        "No current company or title information"
+        "No current company information"
       ],
       "company_url": "zomato.com"
     },
     {
-      "name": "Abhishek Rao",
-      "score": 60,
-      "action": "investigate",
-      "recommended_action": "investigate",
-      "previous_company": "Zomato",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "FoodTech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Abhishek Rao's departure from Zomato, a well-regarded company in the FoodTech sector, suggests a potential for a new venture with significant industry insights. His experience and network could be valuable assets.",
-      "linkedin_url": "https://www.linkedin.com/in/abhishekrao30",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from Zomato — LinkedIn profile flagged",
-          "url": "https://www.linkedin.com/in/abhishekrao30"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Strong background in a well-known company (Zomato)",
-        "Senior departure signal"
-      ],
-      "risks": [
-        "Unknown experience years"
-      ],
-      "company_url": "zomato.com"
-    },
-    {
-      "name": "Chetan Agarwal",
+      "name": "Mohit Rajani",
       "score": 60,
       "action": "investigate",
       "recommended_action": "investigate",
@@ -660,83 +230,118 @@
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Chetan Agarwal's departure from Meesho, a known e-commerce platform, suggests a potential move into a new venture. His experience in product management and his role at a successful company indicate a strong operational background, making him a promising candidate for further investigation.",
-      "linkedin_url": "https://www.linkedin.com/in/chetan-agarwal",
+      "investment_thesis": "Mohit Rajani's departure from Meesho as a senior executive suggests a potential for a new venture in the e-commerce space, which aligns with current market trends. His experience and track record could be a valuable asset for a new venture.",
+      "linkedin_url": "https://www.linkedin.com/in/mohitrajani",
       "github_url": "",
       "twitter_handle": "",
       "signal_count": 1,
       "signal_types": [
-        "executive_departure"
+        "exec_departure"
       ],
       "signals": [
         {
           "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from Meesho — LinkedIn profile flagged",
-          "url": "https://www.linkedin.com/in/chetan-agarwal"
+          "type": "exec_departure",
+          "description": "Senior exec departure from Meesho — Mohit Rajani - Building the future of commerce (Ex Meesho CPO ...",
+          "url": "https://www.linkedin.com/in/mohitrajani"
         }
       ],
       "confidence": "medium",
       "founder_type": "seasoned_operator",
       "key_strengths": [
-        "Experienced in product management",
-        "Senior departure from a well-known company"
+        "Strong background in e-commerce",
+        "Senior executive departure with clear intent to build a new venture"
       ],
       "risks": [
-        "Unknown experience years"
+        "Unknown experience years",
+        "Lack of information on current company and sector alignment"
       ],
       "company_url": "meesho.com"
     },
     {
-      "name": "Sandeep Kumar",
+      "name": "Saurav Suman Agrawal",
       "score": 60,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "PhonePe",
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "Paytm",
       "previous_title": "CEO",
+      "current_company": "",
+      "location": "India",
+      "sector": "Fintech",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Saurav Suman Agrawal's departure from Paytm as CEO and his LinkedIn headline suggest a strong background in Fintech and AI, which aligns with current hot sectors. His experience and the potential for leveraging his network from Paytm could be significant assets for his new venture.",
+      "linkedin_url": "https://www.linkedin.com/in/srvs",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "exec_departure"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "exec_departure",
+          "description": "Senior exec departure from Paytm — Saurav Suman Agrawal‏ - ‏CEO @ N7 | Driving AI Innovations in Fintech",
+          "url": "https://www.linkedin.com/in/srvs"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
+      "key_strengths": [
+        "Senior exec departure from Paytm",
+        "LinkedIn headline indicates AI and Fintech focus"
+      ],
+      "risks": [
+        "Unknown experience years"
+      ],
+      "company_url": "paytm.com"
+    },
+    {
+      "name": "Prakhar Vyas",
+      "score": 60,
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "Groww",
+      "previous_title": "Head of",
       "current_company": "",
       "location": "India",
       "sector": "Unknown",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Sandeep Kumar's experience as a CEO at PhonePe and his move to stealth mode suggest a potential for a significant venture. His background in sales and growth could indicate a focus on fintech or a related sector, although the current information is limited.",
-      "linkedin_url": "https://www.linkedin.com/in/sandeep-kumar-51034214b",
+      "investment_thesis": "Prakhar Vyas has a strong background as a senior executive in consumer products, indicating potential for a successful entrepreneurial venture. Further investigation is warranted to assess his experience years and sector alignment.",
+      "linkedin_url": "https://www.linkedin.com/in/prakharv149",
       "github_url": "",
       "twitter_handle": "",
-      "signal_count": 2,
+      "signal_count": 1,
       "signal_types": [
-        "stealth_founder"
+        "exec_departure"
       ],
       "signals": [
         {
           "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-PhonePe exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/sandeep-kumar-51034214b"
-        },
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Google exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/sandeep-kumar-5543a911a"
+          "type": "exec_departure",
+          "description": "Senior exec departure from Groww — Prakhar Vyas - Head of Consumer Products at FirstClub. ex-Groww.",
+          "url": "https://www.linkedin.com/in/prakharv149"
         }
       ],
       "confidence": "medium",
       "founder_type": "seasoned_operator",
       "key_strengths": [
-        "Experienced CEO",
-        "Previous exit from PhonePe"
+        "Senior exec departure",
+        "Previous experience in consumer products"
       ],
       "risks": [
         "Unknown experience years",
-        "Incomplete information on current venture"
+        "No sector alignment"
       ],
-      "company_url": "phonepe.com"
+      "company_url": "groww.in"
     },
     {
       "name": "Digvijay Singh",
-      "score": 60,
+      "score": 40,
       "action": "watchlist",
       "recommended_action": "watchlist",
       "previous_company": "Flipkart",
@@ -747,7 +352,7 @@
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Digvijay Singh's experience as a VP at Flipkart and BharatPe suggests a strong operational background. His move to stealth mode indicates a potential new venture, though the sector and experience years are not confirmed.",
+      "investment_thesis": "Digvijay Singh's experience as a VP at Flipkart suggests a strong operational background. His move to a stealth mode venture indicates a potential new venture. Further investigation is needed to understand the sector and the specifics of the new venture.",
       "linkedin_url": "https://www.linkedin.com/in/digvijay-singh-315abb14",
       "github_url": "",
       "twitter_handle": "",
@@ -759,13 +364,13 @@
         {
           "source": "linkedin",
           "type": "stealth_founder",
-          "description": "Ex-Flipkart exec going stealth — LinkedIn profile detected via departure query",
+          "description": "Ex-Flipkart — headline signals 'founder'",
           "url": "https://www.linkedin.com/in/digvijay-singh-315abb14"
         },
         {
           "source": "linkedin",
           "type": "stealth_founder",
-          "description": "Ex-BharatPe exec going stealth — LinkedIn profile detected via departure query",
+          "description": "Ex-BharatPe — headline signals 'building something new'",
           "url": "https://www.linkedin.com/in/digvijay-singh-82218a140"
         }
       ],
@@ -773,109 +378,29 @@
       "founder_type": "seasoned_operator",
       "key_strengths": [
         "Experienced VP from Flipkart",
-        "Experienced VP from BharatPe"
+        "Significant experience in the e-commerce sector"
       ],
       "risks": [
         "Unknown experience years",
-        "No sector alignment"
+        "No clear indication of the new venture's sector"
       ],
       "company_url": "flipkart.com"
     },
     {
-      "name": "Deepak M",
-      "score": 60,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Swiggy",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Deepak M's departure from Swiggy, a well-known company, suggests potential for a new venture. His LinkedIn profile indicates a founder role, but without specific sector or experience details, the investment thesis is currently weak.",
-      "linkedin_url": "https://www.linkedin.com/in/deepakmodak",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from Swiggy — LinkedIn profile flagged",
-          "url": "https://www.linkedin.com/in/deepakmodak"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Senior departure from Swiggy",
-        "LinkedIn profile flagged"
-      ],
-      "risks": [
-        "Unknown experience"
-      ],
-      "company_url": "swiggy.com"
-    },
-    {
-      "name": "Ishan Kansal",
-      "score": 60,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "CRED",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Ishan Kansal's departure from CRED, a well-known company, suggests a potential move into entrepreneurship. However, the lack of information on his experience and the sector he is targeting makes it difficult to assess the potential for a strong fit with current hot sectors.",
-      "linkedin_url": "https://www.linkedin.com/in/ishankansal",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from CRED — LinkedIn profile flagged",
-          "url": "https://www.linkedin.com/in/ishankansal"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Senior departure from CRED",
-        "LinkedIn profile flagged"
-      ],
-      "risks": [
-        "Unknown experience"
-      ],
-      "company_url": "cred.club"
-    },
-    {
-      "name": "Navnit Saurabh",
+      "name": "Tushar Jain",
       "score": 40,
-      "action": "investigate",
-      "recommended_action": "investigate",
-      "previous_company": "PhonePe",
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Razorpay",
       "previous_title": "",
       "current_company": "",
       "location": "India",
-      "sector": "Digital Commerce, Fintech",
+      "sector": "Fintech",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Navnit Saurabh's experience at PhonePe and his move to stealth mode suggests a potential for a strategic pivot into digital commerce or fintech. His sector expertise and the current interest in these areas make him a candidate worth investigating.",
-      "linkedin_url": "https://www.linkedin.com/in/ns-founder",
+      "investment_thesis": "Tushar Jain's experience at Razorpay and the indication of a stealth project suggest potential for a strong fintech venture. Further investigation is warranted to validate the project's viability and market fit.",
+      "linkedin_url": "https://www.linkedin.com/in/jaintushar16",
       "github_url": "",
       "twitter_handle": "",
       "signal_count": 1,
@@ -886,286 +411,21 @@
         {
           "source": "linkedin",
           "type": "stealth_founder",
-          "description": "Ex-PhonePe exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/ns-founder"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Ex-PhonePe exec",
-        "Stealth mode"
-      ],
-      "risks": [
-        "Unknown experience years"
-      ],
-      "company_url": "phonepe.com"
-    },
-    {
-      "name": "Rahul Chatterjee",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Swiggy",
-      "previous_title": "CEO",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Rahul Chatterjee's background as a seasoned operator with experience at TCS Digital and Swiggy suggests a strong potential for leadership in his new venture. Further investigation is warranted to understand the nature of the new venture and its alignment with current hot sectors.",
-      "linkedin_url": "https://www.linkedin.com/in/rahul-chatterjee-08b13425b",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 2,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Swiggy exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/rahul-chatterjee-08b13425b"
-        },
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-TCS exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/rahul-chatterjee-01aa81131"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Experienced executive with significant leadership roles at TCS Digital and Swiggy",
-        "Potential for leveraging industry expertise"
-      ],
-      "risks": [
-        "Limited information on the new venture",
-        "Unknown sector alignment"
-      ],
-      "company_url": "swiggy.com"
-    },
-    {
-      "name": "Saumya Gupta",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Nykaa",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Saumya Gupta's experience at Nykaa and McKinsey suggests a strong operational background, and the move to stealth mode indicates a potential new venture. Further investigation is warranted to assess the specific sector and the viability of the new venture.",
-      "linkedin_url": "https://www.linkedin.com/in/saumya-gupta-59375189",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 2,
-      "signal_types": [
-        "stealth_founder",
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Nykaa exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/saumya-gupta-59375189"
-        },
-        {
-          "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from McKinsey — LinkedIn profile flagged",
-          "url": "https://www.linkedin.com/in/saumyagupta"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Ex-Nykaa exec",
-        "Senior departure from McKinsey"
-      ],
-      "risks": [
-        "Unknown experience years",
-        "No sector alignment"
-      ],
-      "company_url": "nykaa.com"
-    },
-    {
-      "name": "Ashish Verma",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "",
-      "previous_title": "Business Head",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Ashish Verma shows potential as a founder with a background in business leadership, indicated by his previous title. The stealth signal on LinkedIn suggests he may be working on a new venture, but the lack of specific information on his experience, sector, and the new company makes it difficult to assess the investment potential at this stage.",
-      "linkedin_url": "https://www.linkedin.com/in/ashish-verma-039bb814",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 2,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "LinkedIn: Ashish Verma appears to be building a new venture (stealth signal)",
-          "url": "https://www.linkedin.com/in/ashish-verma-039bb814"
-        },
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "LinkedIn: Ashish Verma appears to be building a new venture (stealth signal)",
-          "url": "https://www.linkedin.com/in/ashish-verma296"
+          "description": "Ex-Razorpay — headline signals 'building in'",
+          "url": "https://www.linkedin.com/in/jaintushar16"
         }
       ],
       "confidence": "medium",
       "founder_type": "first_time_founder",
       "key_strengths": [
-        "Stealth signal on LinkedIn",
-        "Previous experience as a Business Head"
+        "Ex-Razorpay experience",
+        "LinkedIn headline suggests stealth mode project"
       ],
       "risks": [
         "Unknown experience years",
-        "No clear sector alignment",
-        "Limited information on new venture"
+        "Limited information on current project"
       ],
-      "company_url": ""
-    },
-    {
-      "name": "Manika Tiwari",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "PhonePe",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Manika Tiwari's departure from PhonePe and her entrepreneurial background suggest potential for a new venture. Further investigation is needed to assess the specific sector and the viability of her new project.",
-      "linkedin_url": "https://www.linkedin.com/in/manika0704",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from PhonePe — LinkedIn profile flagged",
-          "url": "https://www.linkedin.com/in/manika0704"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Senior departure from a well-known company",
-        "LinkedIn profile indicates previous entrepreneurial experience"
-      ],
-      "risks": [
-        "Unknown experience years",
-        "No current company or sector information provided"
-      ],
-      "company_url": "phonepe.com"
-    },
-    {
-      "name": "Nilay Sule",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Swiggy",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "AI",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Nilay Sule's background as an ex-Swiggy exec suggests a strong operational track record, and the move to stealth mode could indicate a focus on AI-driven customer experience and revenue transformation, aligning with current hot sectors. Further investigation is warranted to validate the opportunity.",
-      "linkedin_url": "https://www.linkedin.com/in/nilaysule",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Swiggy exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/nilaysule"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Experienced exec from Swiggy",
-        "Stealth mode indicates potential for innovation"
-      ],
-      "risks": [
-        "Unknown experience years",
-        "Limited information on current company"
-      ],
-      "company_url": "swiggy.com"
-    },
-    {
-      "name": "Radhika Shubhangi",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Zomato",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "FoodTech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Radhika Shubhangi's experience at Zomato and her move to stealth mode suggest a potential for a new venture in the food tech sector. Further investigation is warranted to understand the scope and potential of her new project.",
-      "linkedin_url": "https://www.linkedin.com/in/radhika-shubhangi-06832041",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Zomato exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/radhika-shubhangi-06832041"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Experienced executive from Zomato",
-        "Stealth mode indicates potential new venture"
-      ],
-      "risks": [
-        "Unknown experience years",
-        "Limited information on new venture"
-      ],
-      "company_url": "zomato.com"
+      "company_url": "razorpay.com"
     },
     {
       "name": "Siddharth Sharma",
@@ -1180,7 +440,7 @@
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Siddharth Sharma's experience at CRED and his move to stealth mode in the consumer health sector suggests a potential for a strong market entry. Further investigation is warranted to assess his specific role and the viability of his new venture.",
+      "investment_thesis": "Siddharth Sharma's experience at CRED and current focus on consumer health may indicate a potential for innovation in the health tech space. Further investigation is warranted to assess his expertise and the viability of his new venture.",
       "linkedin_url": "https://www.linkedin.com/in/sid6784",
       "github_url": "",
       "twitter_handle": "",
@@ -1192,146 +452,65 @@
         {
           "source": "linkedin",
           "type": "stealth_founder",
-          "description": "Ex-CRED exec going stealth — LinkedIn profile detected via departure query",
+          "description": "Ex-CRED — headline signals 'building in'",
           "url": "https://www.linkedin.com/in/sid6784"
         }
       ],
       "confidence": "medium",
-      "founder_type": "seasoned_operator",
+      "founder_type": "first_time_founder",
       "key_strengths": [
-        "Ex-CRED exec",
-        "stealth founder"
+        "Ex-CRED experience",
+        "LinkedIn stealth headline"
       ],
       "risks": [
-        "Unknown experience"
+        "Unknown experience years",
+        "No clear indication of second-time founder status"
       ],
       "company_url": "cred.club"
     },
     {
-      "name": "Akash Shaw",
+      "name": "Swathi Reddy",
       "score": 40,
       "action": "watchlist",
       "recommended_action": "watchlist",
-      "previous_company": "CRED",
+      "previous_company": "Darwinbox",
       "previous_title": "",
       "current_company": "",
       "location": "India",
-      "sector": "AI",
+      "sector": "SaaS",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Akash Shaw's transition from CRED to a stealth AI venture suggests a potential for innovation in the AI governance space. His experience and the sector's current interest could make this a promising opportunity worth further investigation.",
-      "linkedin_url": "https://www.linkedin.com/in/shawakash",
+      "investment_thesis": "Swathi Reddy's departure from Darwinbox as a Senior Director suggests a potential move to build a new venture, leveraging her experience in SaaS operations. Her background in a well-known company could indicate a strong operational foundation for her new venture.",
+      "linkedin_url": "https://www.linkedin.com/in/sswathireddy",
       "github_url": "",
       "twitter_handle": "",
       "signal_count": 1,
       "signal_types": [
-        "stealth_founder"
+        "exec_departure"
       ],
       "signals": [
         {
           "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-CRED exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/shawakash"
+          "type": "exec_departure",
+          "description": "Senior exec departure from Darwinbox — Swathi Reddy - Sr. Director - Customer Success, SaaS Operations ...",
+          "url": "https://www.linkedin.com/in/sswathireddy"
         }
       ],
       "confidence": "medium",
       "founder_type": "seasoned_operator",
       "key_strengths": [
-        "Ex-CRED exec",
-        "Stealth mode"
+        "Senior executive departure",
+        "Credible background"
       ],
       "risks": [
         "Unknown experience"
       ],
-      "company_url": "cred.club"
-    },
-    {
-      "name": "Naren Kashyap",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Meesho",
-      "previous_title": "CEO",
-      "current_company": "",
-      "location": "India",
-      "sector": "E-commerce",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Naren Kashyap's experience as a CEO at Meesho and his transition to a stealth mode startup suggest a potential for a strong e-commerce or related venture. His background in a successful company like Meesho indicates a solid understanding of the market and operations.",
-      "linkedin_url": "https://www.linkedin.com/in/naren-kashyap",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Meesho exec going stealth — LinkedIn profile detected via departure query",
-          "url": "https://www.linkedin.com/in/naren-kashyap"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Experienced CEO",
-        "Previous exit from Meesho"
-      ],
-      "risks": [
-        "Unknown experience years",
-        "Incomplete information"
-      ],
-      "company_url": "meesho.com"
-    },
-    {
-      "name": "Ankan Ghosh",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Ola",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Ankan Ghosh's experience at Ola and Google suggests a strong operational background, but without further information on his current venture, it's difficult to assess the potential sector fit or investment opportunity.",
-      "linkedin_url": "https://www.linkedin.com/in/ankan-ghosh-37654a73",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "executive_departure",
-          "description": "Senior departure from Ola — LinkedIn profile flagged",
-          "url": "https://www.linkedin.com/in/ankan-ghosh-37654a73"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Senior departure from a well-known company",
-        "Experience at Google"
-      ],
-      "risks": [
-        "Unknown experience years",
-        "No indication of current company or sector"
-      ],
-      "company_url": "olacabs.com"
+      "company_url": "darwinbox.com"
     }
   ],
   "source_breakdown": {
-    "linkedin": 41
+    "linkedin": 14
   },
   "score_threshold": 40,
   "intelligence": {
@@ -1399,90 +578,6 @@
           "source": "techcrunch.com",
           "pub_date": "2026-06-24T00:30:00+00:00",
           "summary": "Walmart-backed Flipkart has crossed 1,000 micro-fulfillment centers as Amazon accelerates its own quick-commerce push in India."
-        },
-        {
-          "title": "RIFT-Bench: Dynamic Red-teaming For Agentic AI Systems",
-          "url": "https://arxiv.org/abs/2606.23927",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-24T00:00:00-04:00",
-          "summary": "arXiv:2606.23927v1 Announce Type: new \nAbstract: Agentic AI systems powered by large language models (LLMs) are rapidly evolving into autonomous decision-making systems, exposing attack vectors beyond those of traditional LLM vulnerabilities. Existing security evaluations are often tied to specific "
-        },
-        {
-          "title": "Neuro-Symbolic Drive: Rule-Grounded Faithful Reasoning for Driving VLAs",
-          "url": "https://arxiv.org/abs/2606.23938",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-24T00:00:00-04:00",
-          "summary": "arXiv:2606.23938v1 Announce Type: new \nAbstract: Driving VLA models incorporating Chain-of-Thought (CoT) reasoning are attractive because they leverage pretrained VLM representations and expose intermediate decisions in natural language, yet current rationales often lack the step-by-step decision se"
-        },
-        {
-          "title": "Critique of Agent Model",
-          "url": "https://arxiv.org/abs/2606.23991",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-24T00:00:00-04:00",
-          "summary": "arXiv:2606.23991v1 Announce Type: new \nAbstract: What is an agent? What constitutes agency? With the rise of Large Language Model (LLM) systems marketed as ``coding agents'', ``AI co-scientists'', and other ``agentic\" tools that promise to drive up productivity, and at the same time, ``existential\" "
-        },
-        {
-          "title": "Safe and Generalizable Hierarchical Multi-Agent RL via Constraint Manifold Control",
-          "url": "https://arxiv.org/abs/2606.24010",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-24T00:00:00-04:00",
-          "summary": "arXiv:2606.24010v1 Announce Type: new \nAbstract: Multi-agent systems are widely used in safety-critical applications that require coordinated behavior under strict safety constraints. Existing approaches face a fundamental trade-off: learning-based methods achieve strong empirical performance but la"
-        },
-        {
-          "title": "Reinforcement Learning Towards Broadly and Persistently Beneficial Models",
-          "url": "https://arxiv.org/abs/2606.24014",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-24T00:00:00-04:00",
-          "summary": "arXiv:2606.24014v1 Announce Type: new \nAbstract: As AI systems are deployed across increasingly diverse and high-stakes settings, model alignment must generalize beyond the tasks and domains seen during training. This is especially important for reinforcement learning (RL), which can introduce unexp"
-        },
-        {
-          "title": "Can Language Model Agents be Helpful Circuit Explainers in Mechanistic Interpretability?",
-          "url": "https://arxiv.org/abs/2606.24026",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-24T00:00:00-04:00",
-          "summary": "arXiv:2606.24026v1 Announce Type: new \nAbstract: Mechanistic interpretability has made substantial progress in automatically localizing circuits, but explaining what localized components do remains labor-intensive and difficult to standardize. In this work, we study whether language model (LM) agent"
-        },
-        {
-          "title": "Breaking the Filter Bubble: A Semantic Pareto-DQN Framework for Multi-Objective Recommendation",
-          "url": "https://arxiv.org/abs/2606.24042",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-24T00:00:00-04:00",
-          "summary": "arXiv:2606.24042v1 Announce Type: new \nAbstract: Recommender systems often induce filter bubbles and semantic homogenization by monolithically optimizing for immediate user engagement. Standard single-objective models, including traditional Deep Q-Networks, are ill-equipped to navigate the trade-off"
-        },
-        {
-          "title": "Ensemble Feature Selection and Harris Hawks Optimization for Explainable Mental Health Risk Prediction in Female Sex Workers",
-          "url": "https://arxiv.org/abs/2606.24047",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-24T00:00:00-04:00",
-          "summary": "arXiv:2606.24047v1 Announce Type: new \nAbstract: One of the significant mental health issues affecting female sex workers (FSWs) is mental disorders, especially depression. Exposure to violence, stigma, and economic hardship further increases their psychological risk. Current machine learning (ML) m"
-        },
-        {
-          "title": "Beyond Trajectory Imitation: Strategy-Guided Policy Optimization for LLM Reasoning",
-          "url": "https://arxiv.org/abs/2606.24064",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-24T00:00:00-04:00",
-          "summary": "arXiv:2606.24064v1 Announce Type: new \nAbstract: Distilling reasoning capabilities from strong to weak language models typically involves imitating specific solution trajectories, effectively transferring what to answer rather than how to reason. This trajectory-level imitation encourages memorizati"
-        },
-        {
-          "title": "Exploring Academic Influence of Algorithms by Co-occurrence Network Based on Full-text of Academic Papers",
-          "url": "https://arxiv.org/abs/2606.24099",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-24T00:00:00-04:00",
-          "summary": "arXiv:2606.24099v1 Announce Type: new \nAbstract: Algorithms have become central to scientific research in the era of artificial intelligence (AI). Although algorithm mentions in papers are often used to indicate popularity and influence, existing studies usually evaluate individual algorithms in iso"
-        },
-        {
-          "title": "ReMMD: Realistic Multilingual Multi-Image Agentic Verification for Multimodal Misinformation Detection",
-          "url": "https://arxiv.org/abs/2606.24112",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-24T00:00:00-04:00",
-          "summary": "arXiv:2606.24112v1 Announce Type: new \nAbstract: Multimodal misinformation detection is increasingly important because viral posts now combine long multilingual narratives, several images, mixed provenance, and subtle text--image framing errors. Existing benchmarks and methods remain poorly matched "
-        },
-        {
-          "title": "VeryTrace: Verifying Reasoning Traces through Compilable Formalism and Structured Verification",
-          "url": "https://arxiv.org/abs/2606.24124",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-24T00:00:00-04:00",
-          "summary": "arXiv:2606.24124v1 Announce Type: new \nAbstract: Multi-step reasoning with Chain-of-Thought (CoT) prompting remains fragile: logical errors or hallucinations in early steps silently propagate, producing confident but incorrect conclusions. This paper presents VeryTrace, a zero-shot verification-and-"
         },
         {
           "title": "Systematic Exploration of 4-Expert Heterogeneous Mixture-of-Experts via Automated Pipeline Search",
@@ -1567,6 +662,90 @@
           "source": "arxiv.org",
           "pub_date": "2026-06-24T00:00:00-04:00",
           "summary": "arXiv:2606.23856v1 Announce Type: new \nAbstract: Generative molecular models for drug design are a promising direction with much active research. In the next phase of computational drug design, such models will need to understand small molecule structure and protein-ligand interactions, and they wil"
+        },
+        {
+          "title": "RIFT-Bench: Dynamic Red-teaming For Agentic AI Systems",
+          "url": "https://arxiv.org/abs/2606.23927",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-24T00:00:00-04:00",
+          "summary": "arXiv:2606.23927v1 Announce Type: new \nAbstract: Agentic AI systems powered by large language models (LLMs) are rapidly evolving into autonomous decision-making systems, exposing attack vectors beyond those of traditional LLM vulnerabilities. Existing security evaluations are often tied to specific "
+        },
+        {
+          "title": "Neuro-Symbolic Drive: Rule-Grounded Faithful Reasoning for Driving VLAs",
+          "url": "https://arxiv.org/abs/2606.23938",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-24T00:00:00-04:00",
+          "summary": "arXiv:2606.23938v1 Announce Type: new \nAbstract: Driving VLA models incorporating Chain-of-Thought (CoT) reasoning are attractive because they leverage pretrained VLM representations and expose intermediate decisions in natural language, yet current rationales often lack the step-by-step decision se"
+        },
+        {
+          "title": "Critique of Agent Model",
+          "url": "https://arxiv.org/abs/2606.23991",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-24T00:00:00-04:00",
+          "summary": "arXiv:2606.23991v1 Announce Type: new \nAbstract: What is an agent? What constitutes agency? With the rise of Large Language Model (LLM) systems marketed as ``coding agents'', ``AI co-scientists'', and other ``agentic\" tools that promise to drive up productivity, and at the same time, ``existential\" "
+        },
+        {
+          "title": "Safe and Generalizable Hierarchical Multi-Agent RL via Constraint Manifold Control",
+          "url": "https://arxiv.org/abs/2606.24010",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-24T00:00:00-04:00",
+          "summary": "arXiv:2606.24010v1 Announce Type: new \nAbstract: Multi-agent systems are widely used in safety-critical applications that require coordinated behavior under strict safety constraints. Existing approaches face a fundamental trade-off: learning-based methods achieve strong empirical performance but la"
+        },
+        {
+          "title": "Reinforcement Learning Towards Broadly and Persistently Beneficial Models",
+          "url": "https://arxiv.org/abs/2606.24014",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-24T00:00:00-04:00",
+          "summary": "arXiv:2606.24014v1 Announce Type: new \nAbstract: As AI systems are deployed across increasingly diverse and high-stakes settings, model alignment must generalize beyond the tasks and domains seen during training. This is especially important for reinforcement learning (RL), which can introduce unexp"
+        },
+        {
+          "title": "Can Language Model Agents be Helpful Circuit Explainers in Mechanistic Interpretability?",
+          "url": "https://arxiv.org/abs/2606.24026",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-24T00:00:00-04:00",
+          "summary": "arXiv:2606.24026v1 Announce Type: new \nAbstract: Mechanistic interpretability has made substantial progress in automatically localizing circuits, but explaining what localized components do remains labor-intensive and difficult to standardize. In this work, we study whether language model (LM) agent"
+        },
+        {
+          "title": "Breaking the Filter Bubble: A Semantic Pareto-DQN Framework for Multi-Objective Recommendation",
+          "url": "https://arxiv.org/abs/2606.24042",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-24T00:00:00-04:00",
+          "summary": "arXiv:2606.24042v1 Announce Type: new \nAbstract: Recommender systems often induce filter bubbles and semantic homogenization by monolithically optimizing for immediate user engagement. Standard single-objective models, including traditional Deep Q-Networks, are ill-equipped to navigate the trade-off"
+        },
+        {
+          "title": "Ensemble Feature Selection and Harris Hawks Optimization for Explainable Mental Health Risk Prediction in Female Sex Workers",
+          "url": "https://arxiv.org/abs/2606.24047",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-24T00:00:00-04:00",
+          "summary": "arXiv:2606.24047v1 Announce Type: new \nAbstract: One of the significant mental health issues affecting female sex workers (FSWs) is mental disorders, especially depression. Exposure to violence, stigma, and economic hardship further increases their psychological risk. Current machine learning (ML) m"
+        },
+        {
+          "title": "Beyond Trajectory Imitation: Strategy-Guided Policy Optimization for LLM Reasoning",
+          "url": "https://arxiv.org/abs/2606.24064",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-24T00:00:00-04:00",
+          "summary": "arXiv:2606.24064v1 Announce Type: new \nAbstract: Distilling reasoning capabilities from strong to weak language models typically involves imitating specific solution trajectories, effectively transferring what to answer rather than how to reason. This trajectory-level imitation encourages memorizati"
+        },
+        {
+          "title": "Exploring Academic Influence of Algorithms by Co-occurrence Network Based on Full-text of Academic Papers",
+          "url": "https://arxiv.org/abs/2606.24099",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-24T00:00:00-04:00",
+          "summary": "arXiv:2606.24099v1 Announce Type: new \nAbstract: Algorithms have become central to scientific research in the era of artificial intelligence (AI). Although algorithm mentions in papers are often used to indicate popularity and influence, existing studies usually evaluate individual algorithms in iso"
+        },
+        {
+          "title": "ReMMD: Realistic Multilingual Multi-Image Agentic Verification for Multimodal Misinformation Detection",
+          "url": "https://arxiv.org/abs/2606.24112",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-24T00:00:00-04:00",
+          "summary": "arXiv:2606.24112v1 Announce Type: new \nAbstract: Multimodal misinformation detection is increasingly important because viral posts now combine long multilingual narratives, several images, mixed provenance, and subtle text--image framing errors. Existing benchmarks and methods remain poorly matched "
+        },
+        {
+          "title": "VeryTrace: Verifying Reasoning Traces through Compilable Formalism and Structured Verification",
+          "url": "https://arxiv.org/abs/2606.24124",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-24T00:00:00-04:00",
+          "summary": "arXiv:2606.24124v1 Announce Type: new \nAbstract: Multi-step reasoning with Chain-of-Thought (CoT) prompting remains fragile: logical errors or hallucinations in early steps silently propagate, producing confident but incorrect conclusions. This paper presents VeryTrace, a zero-shot verification-and-"
         },
         {
           "title": "India’s MoEngage bets that the future of marketing is millions of AI agents",
@@ -1758,10 +937,17 @@
           "summary": "The smart glasses are available in several countries starting today in a variety of color and lens combinations."
         }
       ],
-      "cached_at": "2026-06-24T06:30:51.135930"
+      "cached_at": "2026-06-24T06:50:47.136565"
     },
     "india_sea": {
       "articles": [
+        {
+          "title": "QOSMIC Bags $3.3 Mn To Build Laser-Based Satellite Communication Systems",
+          "url": "https://inc42.com/buzz/qosmic-bags-3-3-mn-to-build-laser-based-satellite-communication-systems/",
+          "source": "inc42.com",
+          "pub_date": "2026-06-24T06:32:08+00:00",
+          "summary": "Spacetech startup QOSMIC has raised $3.3 Mn (about ₹31 Cr) in its seed funding round led by Accel and Prosus,&#8230;"
+        },
         {
           "title": "Vietnam looks to Israel’s Yozma model for US$100M national venture fund",
           "url": "https://e27.co/vietnam-looks-to-israels-yozma-model-for-us100m-national-venture-fund-20260624/",
@@ -1824,13 +1010,6 @@
           "source": "e27.co",
           "pub_date": "2026-06-24T02:00:19+00:00",
           "summary": "Thailand is both an agricultural country and an industrial manufacturing base that produces a large number of engine components. Nevertheless, workers across many industrial sectors in Thailand are now at risk of being replaced by AI technology and automation, as AI is increasingly being integrated "
-        },
-        {
-          "title": "Square Yards turns unicorn; A father-daughter duo fights period poverty",
-          "url": "https://yourstory.com/2026/06/square-yards-turns-unicorn-funding-pinkishe-period-poverty",
-          "source": "yourstory.com",
-          "pub_date": "2026-06-24T02:00:00+00:00",
-          "summary": "Real estate and mortgage platform Square Yards has raised Rs 900 crore ($95 million approx.) in a mix of debt and equity transactions."
         },
         {
           "title": "How to build a brand fast: US$100,000 in new revenue in 90 days, with zero ad spend",
@@ -1910,13 +1089,6 @@
           "summary": "In what could be perhaps one of the biggest IPOs to hit the Indian equities market, Reliance Industries’ (RIL) telecom&#8230;"
         },
         {
-          "title": "How Smartworks Turned Managed Workspaces Into An Enterprise Play",
-          "url": "https://inc42.com/features/how-smartworks-turned-managed-workspaces-into-an-enterprise-play/",
-          "source": "inc42.com",
-          "pub_date": "2026-06-23T11:30:43+00:00",
-          "summary": "India&#8217;s flex workspace market is witnessing one of its strongest growth phases, with the total market capacity projected to expand&#8230;"
-        },
-        {
           "title": "Startup news and updates: daily roundup (June 23, 2026)",
           "url": "https://yourstory.com/2026/06/startup-news-and-updates-daily-roundup-june-23-2026",
           "source": "yourstory.com",
@@ -1980,11 +1152,11 @@
           "summary": "Between 2015 and 2021, India produced over 100 unicorns. Capital was abundant, and the prevailing logic of growing the user base and worrying about monetisation later reflected a genuine belief that scale would eventually take care of the economics."
         },
         {
-          "title": "Info Edge reveals its AI and deeptech bets, and stays honest about the early scorecard",
-          "url": "https://yourstory.com/2026/06/info-edge-ai-deeptech-startup-investments-1003-crore",
+          "title": "CRED’s Kunal Shah to lead WhatsApp; Making travel gear work better for women",
+          "url": "https://yourstory.com/2026/06/cred-kunal-shah-lead-whatsapp-nori-travel-gear-for-women",
           "source": "yourstory.com",
-          "pub_date": "2026-06-22T15:06:52+00:00",
-          "summary": "Info Edge has, for the first time, put a formal number on its bets in artificial intelligence and deeptech, revealing that it has deployed Rs 1,003 crore"
+          "pub_date": "2026-06-23T02:00:00+00:00",
+          "summary": "CRED, which is set to raise Rs 8,550 crore (approximately $900 million) in a Series H funding round led by Meta, will use the fresh capital to support growth initiatives and strengthen its path toward a public listing."
         },
         {
           "title": "Meta leads Rs 8,550 Cr investment in CRED, Kunal Shah to head WhatsApp",
@@ -1992,6 +1164,13 @@
           "source": "yourstory.com",
           "pub_date": "2026-06-22T14:37:06+00:00",
           "summary": "CRED plans to use the fresh capital to support growth initiatives and strengthen its path toward a public listing."
+        },
+        {
+          "title": "Startup news and updates: daily roundup (June 22, 2026)",
+          "url": "https://yourstory.com/2026/06/startup-news-and-updates-daily-roundup-june-22-2026",
+          "source": "yourstory.com",
+          "pub_date": "2026-06-22T14:01:27+00:00",
+          "summary": "YourStory presents the daily news roundup from the Indian startup ecosystem and beyond. Here's the roundup for Monday, June 22, 2026."
         },
         {
           "title": "Scaling Enterprise IT with Agentic AI - Engineering an Autonomous Service Desk",
@@ -2015,13 +1194,6 @@
           "summary": "The story of how a craft mixer brand closed the final gap between a great product and a great purchase experience."
         },
         {
-          "title": "Rebuilding how brands sell physical spaces; TechSparks 2026 on the New Tech Order",
-          "url": "https://yourstory.com/2026/06/rebuilding-how-brands-sell-physical-spaces-techsparks-2026-the-new-tech-order",
-          "source": "yourstory.com",
-          "pub_date": "2026-06-22T02:00:00+00:00",
-          "summary": "Phygital Studio unites design, hardware, software, and storytelling on its platform, called Beto, helping brands like Adani and Deloitte build immersive spaces to actively drive sales. TechSparks 2026 wil be held in Bengaluru from October 13-15."
-        },
-        {
           "title": "NORI is building luggage around how women actually travel",
           "url": "https://yourstory.com/2026/03/nori-is-building-luggage-around-how-women-actually-travel",
           "source": "yourstory.com",
@@ -2029,11 +1201,18 @@
           "summary": "Bengaluru-based travel gear brand Nori is rethinking suitcases, bags, and organisers based on a simple but overlooked idea: women pack differently for different needs, carry more, and need luggage that’s designed accordingly."
         },
         {
-          "title": "Cameras and storytelling: How this photography community celebrates biodiversity",
-          "url": "https://yourstory.com/2026/06/cameras-storytelling-photography-community-biodiversity-nature",
+          "title": "AI, health, security: test your business creativity with Edition 237 of our weekly quiz!",
+          "url": "https://yourstory.com/2026/06/ai-health-security-entrepreneur-creativity-quiz-education",
           "source": "yourstory.com",
-          "pub_date": "2026-06-21T01:45:00+00:00",
-          "summary": "In this photo essay, we feature some highlights from the wildlife photography exhibition at Karnataka Chitrakala Parishath."
+          "pub_date": "2026-06-21T01:40:00+00:00",
+          "summary": "This insightful feature from YourStory tests and strengthens your business acumen! Here are 5 questions to kick off this 237th quiz. Ready?"
+        },
+        {
+          "title": "Precision and passion: Kalabimb Exhibition showcases outstanding works of 25 artists",
+          "url": "https://yourstory.com/2026/06/kalabimb-art-exhibition-creativity-photography",
+          "source": "yourstory.com",
+          "pub_date": "2026-06-20T02:40:00+00:00",
+          "summary": "In this photo essay, we feature highlights from the Kalabimb 2026 exhibition at India Habitat Centre, New Delhi."
         },
         {
           "title": "This chef left Michelin-starred restaurants to sell mee pok—now he’s opening a S$400K coffeeshop",
@@ -2085,7 +1264,7 @@
           "summary": "The city-state&#8217;s hiring outlook has fallen to a five-year low Singapore employers are turning more cautious on hiring for the third quarter of 2026. According to ManpowerGroup’s latest Employment Outlook Survey, only 35% of employers in Singapore plan to increase headcount between Jul and Sept"
         }
       ],
-      "cached_at": "2026-06-24T06:30:51.135930"
+      "cached_at": "2026-06-24T06:50:47.136565"
     },
     "emerging": {
       "articles": [
@@ -2111,13 +1290,6 @@
           "summary": "Stream your favorite shows for up to $80 off this month, and save on subscription plans with the latest Peacock TV coupons from WIRED."
         },
         {
-          "title": "Hostinger Promo Code: 79% Off for June 2026",
-          "url": "https://www.wired.com/story/hostinger-coupon-code/",
-          "source": "wired.com",
-          "pub_date": "2026-06-24T05:00:00+00:00",
-          "summary": "Discover exclusive Hostinger promo codes, discounts, and deals on web hosting, cloud plans, and domain registration. Save big on your next Hostinger purchase today."
-        },
-        {
           "title": "French Startup Uses Special Polymers to Better Help Nerves Heal",
           "url": "https://www.wired.com/story/startup-using-polymers-and-blue-light-to-help-tissue-heal/",
           "source": "wired.com",
@@ -2125,11 +1297,11 @@
           "summary": "The biodegradable material can help improve healing after surgery—or an avocado-related accident."
         },
         {
-          "title": "47% of Harvard seniors admit to cheating — and the problem existed long before ChatGPT",
-          "url": "https://www.reddit.com/r/technology/comments/1ue121v/47_of_harvard_seniors_admit_to_cheating_and_the/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-24T02:30:38+00:00",
-          "summary": "&#32; submitted by &#32;  /u/Plastic_Ninja_9014   [link] &#32; [comments]"
+          "title": "Hostinger Promo Code: 79% Off for June 2026",
+          "url": "https://www.wired.com/story/hostinger-coupon-code/",
+          "source": "wired.com",
+          "pub_date": "2026-06-24T05:00:00+00:00",
+          "summary": "Discover exclusive Hostinger promo codes, discounts, and deals on web hosting, cloud plans, and domain registration. Save big on your next Hostinger purchase today."
         },
         {
           "title": "Best Dyson Deals for Prime Day: Vacuums, Hair Tools, and More",
@@ -2139,13 +1311,6 @@
           "summary": "It's one of the best times to snag yourself a Dyson device, whether it's a vacuum or a beauty tool."
         },
         {
-          "title": "SpaceX raises $25 billion in debt sale less than two weeks after IPO",
-          "url": "https://www.reddit.com/r/technology/comments/1udyqb6/spacex_raises_25_billion_in_debt_sale_less_than/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-24T00:42:17+00:00",
-          "summary": "&#32; submitted by &#32;  /u/ControlCAD   [link] &#32; [comments]"
-        },
-        {
           "title": "Microsoft Comes Through With the Best Laptop Deal of Prime Day So Far",
           "url": "https://www.wired.com/story/surface-laptop-prime-day-deal/",
           "source": "wired.com",
@@ -2153,25 +1318,11 @@
           "summary": "The Surface Laptop is down to $835 for Prime Day—a killer discount on one of my favorite laptops."
         },
         {
-          "title": "Valve Says The Companies Making RAM Give Them A Price And If They Say No, They ‘Never Talk To Us Again’",
-          "url": "https://www.reddit.com/r/technology/comments/1udxcon/valve_says_the_companies_making_ram_give_them_a/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-23T23:41:14+00:00",
-          "summary": "&#32; submitted by &#32;  /u/Turbostrider27   [link] &#32; [comments]"
-        },
-        {
           "title": "Amazon Prime Day Deal 2026: A Tushy Bidet for Under $100",
           "url": "https://www.wired.com/story/tushy-classic-wave-amazon-prime-day-deal-2026/",
           "source": "wired.com",
           "pub_date": "2026-06-23T23:29:13+00:00",
           "summary": "A lot of American bathrooms don't have outlets near the toilet. Tushy Classic 3.0 and Wave bidets, on sale for Prime Day, solve the problem."
-        },
-        {
-          "title": "Mythos discovers 'Squidbleed,' a memory leak that's gone undetected since Clinton era",
-          "url": "https://www.reddit.com/r/technology/comments/1udwt9a/mythos_discovers_squidbleed_a_memory_leak_thats/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-23T23:17:51+00:00",
-          "summary": "&#32; submitted by &#32;  /u/Logical_Welder3467   [link] &#32; [comments]"
         },
         {
           "title": "117 Prime Day Deals on Gear We’ve Tested and Would Spend Our Own Money On",
@@ -2195,13 +1346,6 @@
           "summary": "Superhuman, which also has an AI detection tool as part of Grammarly, has snapped up GPTZero."
         },
         {
-          "title": "Robots will replace 700K delivery workers, warns head of e-commerce giant",
-          "url": "https://www.reddit.com/r/technology/comments/1udu0rm/robots_will_replace_700k_delivery_workers_warns/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-23T21:24:53+00:00",
-          "summary": "&#32; submitted by &#32;  /u/joe4942   [link] &#32; [comments]"
-        },
-        {
           "title": "The 16 Best Amazon Prime Day Deals Under $30 We've Found",
           "url": "https://www.wired.com/story/best-amazon-prime-day-deals-under-30-june-2026-2/",
           "source": "wired.com",
@@ -2216,53 +1360,11 @@
           "summary": "Between Prime Day deal and the screen-free technology, the Yoto Player is a great gift you can get the kids in your life without any guilt."
         },
         {
-          "title": "Toyota And Nissan Admit Their American-Made Vehicles Aren't Up To Japanese Standards",
-          "url": "https://www.reddit.com/r/technology/comments/1udsd6j/toyota_and_nissan_admit_their_americanmade/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-23T20:21:44+00:00",
-          "summary": "&#32; submitted by &#32;  /u/DonkeyFuel   [link] &#32; [comments]"
-        },
-        {
-          "title": "“Gaming is becoming unaffordable” — Xbox CEO says the industry has an accessibility crisis",
-          "url": "https://www.reddit.com/r/technology/comments/1uds1mi/gaming_is_becoming_unaffordable_xbox_ceo_says_the/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-23T20:09:38+00:00",
-          "summary": "&#32; submitted by &#32;  /u/Quantum-Coconut   [link] &#32; [comments]"
-        },
-        {
-          "title": "AI Companies Are Trying to Seize Control of Elections",
-          "url": "https://www.reddit.com/r/technology/comments/1udqjnw/ai_companies_are_trying_to_seize_control_of/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-23T19:14:14+00:00",
-          "summary": "&#32; submitted by &#32;  /u/Plastic_Ninja_9014   [link] &#32; [comments]"
-        },
-        {
-          "title": "Wikipedia Cofounder Larry Sanger Banned From Site For ‘Canvassaing’ / “All he has done is try to start a right-wing/conservative pressure group within Wikipedia.”",
-          "url": "https://www.reddit.com/r/technology/comments/1udkr0d/wikipedia_cofounder_larry_sanger_banned_from_site/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-23T15:44:27+00:00",
-          "summary": "&#32; submitted by &#32;  /u/MarvelsGrantMan136   [link] &#32; [comments]"
-        },
-        {
           "title": "HaloBraid raises $7M from Seven Seven Six to end the six-hour hair salon appointment",
           "url": "https://techcrunch.com/2026/06/23/halobraid-raises-7m-from-seven-seven-six-to-end-the-six-hour-hair-salon-appointment/",
           "source": "techcrunch.com",
           "pub_date": "2026-06-23T15:09:38+00:00",
           "summary": "HaloBraid aims to help salons speed up braiding with its first device, slated to launch later this year, that acts as a braiding assistant for professional stylists."
-        },
-        {
-          "title": "75% More Pedestrians Have Been Killed Since 2009. Giant Trucks and SUVs Are Why",
-          "url": "https://www.reddit.com/r/technology/comments/1udj7w5/75_more_pedestrians_have_been_killed_since_2009/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-23T14:48:11+00:00",
-          "summary": "&#32; submitted by &#32;  /u/DonkeyFuel   [link] &#32; [comments]"
-        },
-        {
-          "title": "SpaceX Shares Fall Below $150 Debut Price For First Time",
-          "url": "https://www.reddit.com/r/technology/comments/1udi69a/spacex_shares_fall_below_150_debut_price_for/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-23T14:08:21+00:00",
-          "summary": "&#32; submitted by &#32;  /u/MarvelsGrantMan136   [link] &#32; [comments]"
         },
         {
           "title": "4 days left to save up to $190 on TechCrunch Founder Summit 2026",
@@ -2291,13 +1393,6 @@
           "source": "spectrum.ieee.org",
           "pub_date": "2026-06-23T12:00:01+00:00",
           "summary": "Imagine sitting down at your desk and logging in for a performance review, with an AI system analyzing the conversation. You’ve been working long hours, balancing deadlines, and your manager asks how you’re doing. You say you’re fine, and maybe even smile, but there’s a hint of hesitation and your v"
-        },
-        {
-          "title": "Polymarket paid influencers to fake winning bets, built dummy websites to pull it off",
-          "url": "https://www.reddit.com/r/technology/comments/1udc2d0/polymarket_paid_influencers_to_fake_winning_bets/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-23T09:12:28+00:00",
-          "summary": "&#32; submitted by &#32;  /u/ArgentineBeauty   [link] &#32; [comments]"
         },
         {
           "title": "AI chipmaker Groq confirms $650M raise, re-staffs after Nvidia’s $20B not-acqui-hire deal",
@@ -2508,33 +1603,117 @@
           "source": "notboring.co",
           "pub_date": "2026-05-22T12:51:22+00:00",
           "summary": "Reta Phase 3, Colossal Eggs, SpaceX, OpenAI x Erd&#337;s, SendCutSend + Extra Doses"
+        },
+        {
+          "title": "Homo Agenticus",
+          "url": "https://www.strangeloopcanon.com/p/homo-agenticus",
+          "source": "strangeloopcanon.com",
+          "pub_date": "2026-05-21T18:01:21+00:00",
+          "summary": "sapiens"
+        },
+        {
+          "title": "Cowboy Space Corporation",
+          "url": "https://www.notboring.co/p/cowboy-space-corporation",
+          "source": "notboring.co",
+          "pub_date": "2026-05-16T12:52:13+00:00",
+          "summary": "A Great Example of The Great Differentiation"
+        },
+        {
+          "title": "Weekly Dose of Optimism #193",
+          "url": "https://www.notboring.co/p/weekly-dose-of-optimism-193",
+          "source": "notboring.co",
+          "pub_date": "2026-05-15T12:42:13+00:00",
+          "summary": "Isomorphic, Varda, Pancreatic pt 3, Cerebras IPO, Cowboy Space + Extra Doses"
+        },
+        {
+          "title": "Artificial Life, Artificial Intelligence",
+          "url": "https://www.strangeloopcanon.com/p/artificial-life-artificial-intelligence",
+          "source": "strangeloopcanon.com",
+          "pub_date": "2026-05-14T18:36:21+00:00",
+          "summary": "."
+        },
+        {
+          "title": "Riding the Leopard",
+          "url": "https://www.notboring.co/p/riding-the-leopard",
+          "source": "notboring.co",
+          "pub_date": "2026-05-13T12:53:38+00:00",
+          "summary": "You are here to experience, or: why differentiation is a moral obligation."
+        },
+        {
+          "title": "Experiments with Vibe Science",
+          "url": "https://www.strangeloopcanon.com/p/the-spinosaurus-problem-or-exploring",
+          "source": "strangeloopcanon.com",
+          "pub_date": "2026-05-09T12:55:18+00:00",
+          "summary": "wherein I accidentally pursue an amateur paleontology phd"
+        },
+        {
+          "title": "Legal Regulation & Compliance – Is Mahadev Book Safe?",
+          "url": "https://climatetechvc.org/is-mahadev-book-safe/",
+          "source": "climatetechvc.org",
+          "pub_date": "2026-05-06T08:38:05+00:00",
+          "summary": "The question Is Mahadev Book Safe has become one of the most searched queries among cricket followers and online betting\nThe post Legal Regulation &amp; Compliance &#8211; Is Mahadev Book Safe? appeared first on Mahadev Book."
+        },
+        {
+          "title": "Payment Options on Mahadev Book – What Works Best for You",
+          "url": "https://climatetechvc.org/payment-options-on-mahadev-book/",
+          "source": "climatetechvc.org",
+          "pub_date": "2026-05-06T08:36:38+00:00",
+          "summary": "Understanding Payment Options on Mahadev Book is one of the most searched topics among users exploring online cricket engagement platforms.\nThe post Payment Options on Mahadev Book &#8211; What Works Best for You appeared first on Mahadev Book."
+        },
+        {
+          "title": "Live Streaming on Mahadev Book – Watch While You Bet",
+          "url": "https://climatetechvc.org/live-streaming-on-mahadev-book/",
+          "source": "climatetechvc.org",
+          "pub_date": "2026-05-06T08:35:52+00:00",
+          "summary": "Live streaming has become a core feature on betting platforms, allowing users to watch matches and place bets at the\nThe post Live Streaming on Mahadev Book &#8211; Watch While You Bet appeared first on Mahadev Book."
+        },
+        {
+          "title": "Top Sports to Bet on Mahadev Book",
+          "url": "https://climatetechvc.org/top-sports-to-bet-on-mahadev-book/",
+          "source": "climatetechvc.org",
+          "pub_date": "2026-05-06T08:35:39+00:00",
+          "summary": "Sports engagement is no longer limited to watching matches for entertainment. Fans now follow player statistics, team performance, and match\nThe post Top Sports to Bet on Mahadev Book appeared first on Mahadev Book."
+        },
+        {
+          "title": "Mahadev Book IPL Betting Tips 2026 – Match Predictions",
+          "url": "https://climatetechvc.org/ipl-betting-tips/",
+          "source": "climatetechvc.org",
+          "pub_date": "2026-05-02T17:40:21+00:00",
+          "summary": "The demand for reliable IPL insights is growing every season. With the scale of the Indian Premier League expanding and\nThe post Mahadev Book IPL Betting Tips 2026 &#8211; Match Predictions  appeared first on Mahadev Book."
+        },
+        {
+          "title": "Why Coase needs Hayek",
+          "url": "https://www.strangeloopcanon.com/p/why-smart-planners-lose-to-simple",
+          "source": "strangeloopcanon.com",
+          "pub_date": "2026-05-02T12:02:11+00:00",
+          "summary": "sometimes smart planners lose to simple markets"
         }
       ],
-      "cached_at": "2026-06-24T06:30:51.135930"
+      "cached_at": "2026-06-24T06:50:47.136565"
     },
     "sector_heatmap": [
       {
         "name": "AI / ML",
-        "signals": 128,
+        "signals": 124,
         "sentiment": "bullish"
       },
       {
         "name": "Climate / Clean",
-        "signals": 74,
+        "signals": 72,
         "sentiment": "bullish"
       },
       {
         "name": "Consumer / D2C",
-        "signals": 6,
-        "sentiment": "bullish"
-      },
-      {
-        "name": "Deep Tech",
-        "signals": 6,
-        "sentiment": "bullish"
+        "signals": 5,
+        "sentiment": "neutral"
       },
       {
         "name": "Fintech",
+        "signals": 4,
+        "sentiment": "neutral"
+      },
+      {
+        "name": "Deep Tech",
         "signals": 4,
         "sentiment": "neutral"
       },
@@ -2618,6 +1797,14 @@
           "company": "Enerzolve"
         },
         {
+          "title": "Speciality Chemicals - 2026 Market & Investments Trends - Tracxn",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOTmZ5WXJ4Z29MQlBqTUJQSS12MUNuNFlGWTlHUWNpUEgwR29Fc1g3Tk9wMmFZaEc5MDhXUFhGejlmWmhpV3VsaDZXQjFvVVA5V3dVX2poLUxkUExlWXphU0lDVDB3Y0w0QkFuZ2dqVk5TSW44TWhfMWRneS1uNF9oYW4xNEdXV2NDMHoyVEtMaVpab2hGWjZ0MF9WWnNuRkU0MzhTbi1vdE1EVGFUVkNOQnlncS1qRWxGV0t2OHFTTHB3dw?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2026-04-05T07:00:00+00:00",
+          "summary": "Speciality Chemicals - 2026 Market & Investments Trends&nbsp;&nbsp;Tracxn",
+          "company": "Distil"
+        },
+        {
           "title": "OPINION | AI’s New Economics: What India must get right now - Moneycontrol.com",
           "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQQmJ0WmQzQ1JiWHpoM0VKd3hRRGhSUmMyMmpkc3AtQ0hZUnpNYXl0elFkMlJHamZXNlYtWWZQbElUVlA3YXlvWTVidUNRbnItWGhVQmZTS1BOcGtDMGRsSUNCNUhUbGl3UU9WYzJpMkJMYllRZnZPbzc0T3VaMHc5VHF0Z3lORE9SckZIN19SY2NDVFRNS1FMZmZaR3JQaEROMDJfNHhhRdIBrAFBVV95cUxQaTJPVmdKSGJHLXc4dlo3ZGc3MElZY2xlWHIwZEJUdnhJcl8tVFNwT25ZTjZSMVF3X3lnS21ubnQ1Ul9iZ0hxZjVtQWZySGlRUnJ4S0duTlEwdF8yZ18wdXgzV0RscjBuX09helNIeHVoNElsaHhxLTVVM0V0NlRXQ3dIYmVjZklpVTY0WUF1Q3NSSHc2TWhnMFdNVVdyY0RXdTdPdG5oYTVIdmZP?oc=5",
           "source": "news.google.com",
@@ -2658,14 +1845,6 @@
           "company": "Dat Bike"
         },
         {
-          "title": "The Rise of the ‘Two-Hour Getaway’: How Urban India Is Redefining Escape Without Leaving the City - The Times of India",
-          "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxQUDhweHVPYV9fdG0zYXhQOFhsRUFHenpZdU9ObXlaakF0ekRqeEZtX3NkZmJsd2Y5QjFNQWpvMUVUT1JmTTNqUGs4TDNDYnR6X1BtT2pjbzRKa2dsNjI4cjlHazVENDFXQTVXQWVwUWZjTlhMRHVkb0hRTGFvYUQ3WEVMZy0yREVXM2NxM3ZrLUttS09GLURtQmhlVlNzNW5WWFFzMGtLRVJSX0x4TVF6dXdNZU55S1JVR1BQeHppSlZkT2tuNERTMzdVbzZGb2w3NEpVUHlVSDhsZmFQVkFsNmUxdFJGY0VOalE1RHMwaDRnZTdXZ185dVMtYXNhTGhJakJDV0w4YlpwRzNaSG14RUYwWUhyUdIBmwJBVV95cUxQTllyZnp0allwZm9STG1pdGJBZjRxSFppUEZZWmlkWEp5V1R5WlVuZjB5QUktRlJIY284S0FyQ0ZKbDRGSldta0FXVjBHMkY5UWwyZzRLV0xnX2pFWk5YeGxQeVEtNjU2X3JpUXItbjEzYXhVRnRrSGZGMjB3amRaTU1HcEtlMnY0RUdLT0Jpc0t3SDc1c2w1QnlVd3lIUzFCQjBMaG5hQllzSHhrc25mUGJqQ1RJcTYxVkxEUFFfcGI2ZEdfWUJKSVE4UTNhV2FWWERzSEpFRjZGc1M3WllhRHRLUmtnNVNvcnQyclAtMWR1ZDA1NWcyU2g3STdBRUM5d3dEWEVWdGppaWl5Ri1Zdm96b2EwTFlVdGpB?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2026-02-25T08:00:00+00:00",
-          "summary": "The Rise of the ‘Two-Hour Getaway’: How Urban India Is Redefining Escape Without Leaving the City&nbsp;&nbsp;The Times of India",
-          "company": "Escape Plan"
-        },
-        {
           "title": "Travel startup Escape Plan raises $25 million to open 200+ stores across India - CNBC TV18",
           "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPa0pZdjB4OUE1NkhIc2VPa3RTUHpfUEw4VXQxSTlGVDBFcFc1aHJpRzMwT1NWbEcwWW9aUFUxRjJ6UVQxbGNQU2NlbktpM2ZTczE0VXNTVVc5M0I1WFk0bjMtbjA3M2RWS2tWbWdHLXZYR2ltYmdhaFRKNTlvUWNycUVqY1VCT1RnN29wSEtkSldZS2FSUVYwNlZLN3Z0UHlGSVlwTTVvUmk2Y2syNEdOcER5dWwwUEc4LWZVZNIBwgFBVV95cUxNVnNoZm5qSGJUYlJFTk9vWUZYUWo2b0pSZ3NiYm1aenY5bnYyZ2pvbUlJR1QwX0pXQ242TERqQy14V1owMVNEZU42TkFPV05mdTl5S3R3QUxHdjhuRWVSWm44cjdONzBaSENaYmx6LXVIWGhISkFWMC0xWGJNOTc3bm95ZEdIVjhjVWhlOWQ5NFIwTE80bVlGNWhRSHZCVldKRWN4aGJWWGhaeG9EUXhuc3NtdVp3azh6UEdnWkZYZEdydw?oc=5",
           "source": "news.google.com",
@@ -2682,19 +1861,19 @@
           "company": "Escape Plan"
         },
         {
-          "title": "Saga Legal, DSK Legal, NKR Law act on Enerzolve fundraise - Bar and Bench",
-          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQQmhJaXM4elQ1Y25qRk51bnd5RDhlcTFyWmVnVm51VWIzTTVPeWxjWHJsbjNyaHdyeG9WRGVXUjc5cWU5N1BEWnBxOC1wdHJSR0F0YnZET1FqQlRGOTMxdWdQMFhXRTczbDV4SDMycVZnZVlFOFJ3ZmNVZzZ4TnhZSmtmSTZrdTDSAZQBQVVfeXFMTlhNV0hFRFJSSUVoRTg4UUFxOVJiVTRaQzI5VGd1YmpuOHY5aG5ZMVNDajlqNk1PekdPXzQ0d2lxSFBYRzhZQ3R0VE1nZ09ualRKcFZsQTFqaHhLUG1oQzFsdk9lMTNFVVQxZFFSVzBxTXNTU3hHUkJiNjJKTzhiN0RvQ0dRNHRTeGplSVJMSkl1dTdHYQ?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2026-01-23T08:00:00+00:00",
-          "summary": "Saga Legal, DSK Legal, NKR Law act on Enerzolve fundraise&nbsp;&nbsp;Bar and Bench",
-          "company": "Enerzolve"
-        },
-        {
           "title": "Funding Wrap: Juspay, Optimist, Varthana raise fresh capital - The Economic Times B2B",
           "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQcjI1Y3Y4NWJ2Q2lLUk9sRjRoS3VVUG1hS3A0YXA5SF9fdDRuSUJfOU90ZmhZeWhFaEdsbmktTl96Sy1KZU5aXzhaSVVvUzZTN09neEY2ZVFSX1V4SGJjcjlLRFVlamhqMkdzOV9IVkxBUW4yb0xtZk5EaXplOUlPNG1ZbGlLcVdKcXpaNlVZVmpOTDBXUVBJSUxWSm0wbWV3QnBVemJ3UlVRRFJiTTNibEFRTWtRRmhyRnJRX0NoVkJsNHNK0gHKAUFVX3lxTFAzYTR0Q1dlcGl2MExtSWZCNG42a1ZuMTBJM05TaEVQYjhqV3VFY1B1SU1RWmRhLWxkdjJyT1VmemRGcFlNTFdmZVFCV0hXSkZsSWc0a1BEeVhMVlhjT2d2ZW1JeTY2d1BDVmtqVk1PaC1iRTVmRzN3SE5US0hVSnhxUHppQ1RwbUlobkNkU1BGbUVWZzdrUjNlUFhiaTB2aTNveDdIbGtqZWN4cVg2UHlkel9BS0l4S3NnYWYwcU1pZVZHOWpUempRY1E?oc=5",
           "source": "news.google.com",
           "pub_date": "2026-01-23T08:00:00+00:00",
           "summary": "Funding Wrap: Juspay, Optimist, Varthana raise fresh capital&nbsp;&nbsp;The Economic Times B2B",
+          "company": "Escape Plan"
+        },
+        {
+          "title": "Saga Legal, DSK Legal, NKR Law act on Enerzolve fundraise - Bar and Bench",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQQmhJaXM4elQ1Y25qRk51bnd5RDhlcTFyWmVnVm51VWIzTTVPeWxjWHJsbjNyaHdyeG9WRGVXUjc5cWU5N1BEWnBxOC1wdHJSR0F0YnZET1FqQlRGOTMxdWdQMFhXRTczbDV4SDMycVZnZVlFOFJ3ZmNVZzZ4TnhZSmtmSTZrdTDSAZQBQVVfeXFMTlhNV0hFRFJSSUVoRTg4UUFxOVJiVTRaQzI5VGd1YmpuOHY5aG5ZMVNDajlqNk1PekdPXzQ0d2lxSFBYRzhZQ3R0VE1nZ09ualRKcFZsQTFqaHhLUG1oQzFsdk9lMTNFVVQxZFFSVzBxTXNTU3hHUkJiNjJKTzhiN0RvQ0dRNHRTeGplSVJMSkl1dTdHYQ?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2026-01-23T08:00:00+00:00",
+          "summary": "Saga Legal, DSK Legal, NKR Law act on Enerzolve fundraise&nbsp;&nbsp;Bar and Bench",
           "company": "Enerzolve"
         },
         {
@@ -2882,14 +2061,6 @@
           "company": "Distil"
         },
         {
-          "title": "Distil raises $7.7 million in Series A funding led by Jungle Ventures, CE-Ventures - BusinessLine",
-          "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQcnR1d0RlX2lvMFJLQ1F3dDNCckVwWFR5cU94TGlkcE81d1NpQmVvNF9uc183UlN0cS03aXpxN0I4YmZWc0JPNG9pckN2UUVEUGRRUUYyUDZ0OF9md3hIQ3FnaEVrNmEyWHJqMXZhMzZyRkdTSG04SVNIT3JjZWZoX05HdmlmNFlZRk9iYS0yR2F1LVhaOFh1eWFvTXM5aEdUaEd1NUhTVElaNk9MMDB1R0QxSDRNZGNKVGttR1A2cWpvM3k5OFpyQUYxLUpHQ2t6d2pwdDJEVlE1bFJU0gHjAUFVX3lxTE5tellMQWtybVBwM2pMenpFZW5jZWsteE83bXUySXE0eHA1Tk5pOUpnQndiTGVqb2NVaURMa1NGTmd0d2xzRm51ZlE1ak9ZanA1OEptRlp1TFVuOE9RN0YxQ2Q4VkVDSjk5V0k0YzZXZVdWcUY2MURTOUJNd0lJc1VTWlZaRzktdWFMRS1yMDJYT2xPaHoxSkhsYXhCVzFDbG9WUWY3NnZtemRTRXJaamQ1MTI2UUUwcmxWYkc3MWIwRU5aLXh0VmJvZGdxby1PZ3FiSUFaR0pEejNCU0VhSWh0cE9F?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2025-09-23T07:00:00+00:00",
-          "summary": "Distil raises $7.7 million in Series A funding led by Jungle Ventures, CE-Ventures&nbsp;&nbsp;BusinessLine",
-          "company": "Distil"
-        },
-        {
           "title": "Vietnam Startup Seeks Slice of Third-Largest EV Motorbike Market - Bloomberg.com",
           "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxON3dUTDNuQ2ZWTXFmYzg4LVhPS2RiaVc3cWhhUFpqZG01MVRfNmNKcW5lTUN2SHFGdXF6RXFhMVdqRUxINnNiMjJydTdCak5SRXFxQzg3b3pNRTYxQVhkZzZIaWFIMzJBSlZib2J2aENWY1N6YmREOHplUGdLYllPdXlLXzM3aUhPSGItNUg0bXRVSnh6TDNwcWFIT2Z1LTFZRWNuY0tmZWpIUzEyZGIxLVZRWmo2UQ?oc=5",
           "source": "news.google.com",
@@ -3058,7 +2229,7 @@
           "company": "GetRight"
         }
       ],
-      "cached_at": "2026-06-24T06:30:51.135930"
+      "cached_at": "2026-06-24T06:50:47.136565"
     }
   }
 }
