@@ -612,9 +612,9 @@ def _search_for_profiles(query: str) -> List[dict]:
     return []
 
 
-def _search_all_sync(queries: List[str]) -> List[Person]:
-    """Run all queries synchronously with rate limiting."""
-    persons: List[Person] = []
+def _search_all_sync(queries: List[str], out: List[Person]) -> None:
+    """Run all queries synchronously, appending results to shared `out` list.
+    Using a shared list lets the caller read partial results if we time out."""
     seen_urls: set = set()
 
     for i, query in enumerate(queries):
@@ -629,30 +629,29 @@ def _search_all_sync(queries: List[str]) -> List[Person]:
                     r.get("title", ""), r.get("snippet", ""), url, query
                 )
                 if p:
-                    persons.append(p)
-            if i % 5 == 4:
-                logger.debug("LinkedIn: %d profiles found after %d queries", len(persons), i + 1)
+                    out.append(p)
+            if i % 10 == 9:
+                logger.debug("LinkedIn: %d profiles after %d/%d queries", len(out), i + 1, len(queries))
             time.sleep(1.2)  # polite rate limiting
         except Exception as e:
             logger.warning("LinkedIn query error [%s]: %s", query[:50], e)
 
-    return persons
-
 
 def search_linkedin_signals(days_back: int = 30) -> List[Person]:
-    """Run all LinkedIn stealth/departure queries with a 175-second budget."""
+    """Run all LinkedIn stealth/departure queries with a 175-second budget.
+    Partial results are preserved even if the timeout fires mid-run."""
     logger.info("LinkedIn source: running %d queries (Serper→Brave→CSE→Tavily→DDG, 175s budget)...", len(ALL_QUERIES))
     import concurrent.futures
-    persons: List[Person] = []
+    persons: List[Person] = []  # shared — worker appends here, we read it even on timeout
     try:
         ex = concurrent.futures.ThreadPoolExecutor(max_workers=1)
-        future = ex.submit(_search_all_sync, ALL_QUERIES)
+        future = ex.submit(_search_all_sync, ALL_QUERIES, persons)
         try:
-            persons = future.result(timeout=175)
-            ex.shutdown(wait=False)
+            future.result(timeout=175)
         except concurrent.futures.TimeoutError:
-            logger.warning("LinkedIn source: timed out after 175s — returning partial results")
+            logger.warning("LinkedIn source: timed out — %d partial results captured", len(persons))
             future.cancel()
+        finally:
             ex.shutdown(wait=False)
     except Exception as e:
         logger.warning("LinkedIn source failed: %s", e)
