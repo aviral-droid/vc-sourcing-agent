@@ -147,7 +147,7 @@ def main():
     deduped.sort(key=lambda p: (0 if p.name else 1,
                                 0 if (p.linkedin_url or p.twitter_handle or p.github_url) else 1,
                                 -p.signal_count))
-    deduped = deduped[:150]   # cap at 150 before scoring — don't throw away good leads
+    deduped = deduped[:80]    # cap at 80: scoring via LLM ~6s/person × 80 = ~8min, well within 25min CI budget
 
     logger.info("After entity resolution: %d persons", len(deduped))
 
