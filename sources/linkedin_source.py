@@ -315,16 +315,66 @@ def _infer_title(query: str, snippet: str) -> str:
     return ""
 
 
-def _extract_person_from_result(title: str, snippet: str, url: str, query: str) -> Optional[Person]:
-    """Parse a single search result into a Person + Signal."""
-    text = f"{title} {snippet}"
-    score = _score_snippet(text)
-    if score == 0:
-        return None
+_GENUINE_STEALTH_KWS = frozenset({
+    "stealth", "building something new", "something new", "new venture",
+    "new startup", "co-founder", "cofounder", "co founder", "founding",
+    "building in stealth", "left to build", "left to start",
+    "starting up", "day 1", "excited to share", "going stealth",
+    "starting something", "building something", "new company",
+    "founder",          # standalone "Founder" in headline
+    "building in",      # "building in [domain]" — deliberate stealth language
+})
 
+_SENIOR_TITLE_KWS = frozenset({
+    " vp ", " vp,", " vp|", " vp-", "vp ",
+    "vice president", "svp", "evp",
+    "director", "head of", "head,",
+    " ceo", " cto", " coo", " cfo", " cpo", " cmo", " cbo", " cro",
+    "general manager", " gm ", "managing director", " md ",
+    "country head", "business head", "regional head",
+    "partner", "principal",
+    "president",
+})
+
+
+def _has_genuine_signal(title: str, snippet: str) -> tuple[bool, bool]:
+    """Return (has_stealth, has_senior) based on profile text.
+
+    Stealth signal is checked against the TITLE only — the LinkedIn headline
+    is intentional; the snippet body often contains generic 'building/leading'
+    language that creates false positives (e.g. 'building scalable systems').
+    Senior title is checked in title + snippet since headlines sometimes abbreviate.
+    """
+    title_lower  = title.lower()
+    full_lower   = (title + " " + snippet).lower()
+    has_stealth  = any(kw in title_lower for kw in _GENUINE_STEALTH_KWS)
+    # "Building [ProductName] | ex-[Company]" — person building a named startup after leaving
+    if not has_stealth and "building" in title_lower and ("ex-" in title_lower or " ex " in title_lower):
+        has_stealth = True
+    has_senior   = any(kw in full_lower  for kw in _SENIOR_TITLE_KWS)
+    return has_stealth, has_senior
+
+
+def _extract_person_from_result(title: str, snippet: str, url: str, query: str) -> Optional[Person]:
+    """Parse a single search result into a Person + Signal.
+
+    Filters out profiles with no genuine stealth or seniority signal in the
+    actual title/snippet — avoids treating every ex-[Company] employee as a
+    stealth founder regardless of what their profile actually says.
+    """
     # Canonicalise LinkedIn URL — strip Google redirect wrappers
     clean_url = _clean_linkedin_url(url)
     if not clean_url:
+        return None
+
+    # Gate: must have a real stealth/founder OR a senior title in the profile itself
+    has_stealth, has_senior = _has_genuine_signal(title, snippet)
+    if not has_stealth and not has_senior:
+        return None  # just a regular employee who left — not an investable signal
+
+    text = f"{title} {snippet}"
+    score = _score_snippet(text)
+    if score == 0:
         return None
 
     # 1. Try title first — Serper titles contain the full name ("Praveen Chavali - building...")
@@ -336,13 +386,11 @@ def _extract_person_from_result(title: str, snippet: str, url: str, query: str) 
             name = _slug_to_name(m.group(1))
     # name="" is fine — linkedin_url anchors this person through the resolver
 
-    # Detect signal type
-    signal_type = "stealth_founder"
-    text_lower = text.lower()
-    if any(kw in text_lower for kw in ["left", "departed", "ex-", "former", "resigned"]):
-        signal_type = "executive_departure"
-        if any(kw in text_lower for kw in ["stealth", "new venture", "building", "new startup"]):
-            signal_type = "stealth_founder"
+    # Signal type from the profile itself (not just the query)
+    if has_stealth:
+        signal_type = "stealth_founder"
+    else:
+        signal_type = "exec_departure"  # senior title with no explicit stealth yet
 
     # Previous company from query
     previous_company = ""
@@ -354,16 +402,15 @@ def _extract_person_from_result(title: str, snippet: str, url: str, query: str) 
     location = _infer_location(previous_company, query)
     previous_title = _infer_title(query, snippet)
 
-    # Build a clean description
+    # Build an accurate description reflecting what the profile actually shows
     display = name or clean_url.split("/in/")[-1]
-    if previous_company and signal_type == "stealth_founder":
-        description = f"Ex-{previous_company} exec going stealth — LinkedIn profile detected via departure query"
-    elif previous_company and signal_type == "executive_departure":
-        description = f"Senior departure from {previous_company} — LinkedIn profile flagged"
-    elif signal_type == "stealth_founder":
-        description = f"LinkedIn: {display} appears to be building a new venture (stealth signal)"
+    if has_stealth and previous_company:
+        stealth_phrase = next((kw for kw in _GENUINE_STEALTH_KWS if kw in (title + " " + snippet).lower()), "building something new")
+        description = f"Ex-{previous_company} — headline signals '{stealth_phrase}'"
+    elif has_stealth:
+        description = f"LinkedIn profile signals stealth/founder activity: {title[:80]}"
     else:
-        description = f"LinkedIn: Senior exec departure signal for {display}"
+        description = f"Senior exec departure from {previous_company or 'tracked company'} — {title[:80]}"
 
     person = Person(
         name=name,
