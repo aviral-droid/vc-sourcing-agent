@@ -228,9 +228,30 @@ def _clean_linkedin_url(raw: str) -> str:
 
 
 def _slug_to_name(slug: str) -> str:
-    """Convert a LinkedIn slug like 'arjun-mehta-abc123' to 'Arjun Mehta'."""
-    slug = re.sub(r"-?[a-z0-9]{6,}$", "", slug)  # strip trailing hash
-    return slug.replace("-", " ").title()
+    """Convert a LinkedIn slug like 'arjun-mehta-abc123' to 'Arjun Mehta'.
+    Returns '' for single-word slugs — caller should use _name_from_title instead."""
+    if "-" not in slug:
+        return ""  # single-word slugs (e.g. 'venkatesanv') can't be reliably split
+    # Strip trailing hash-like segment only if it contains a digit (real names don't)
+    slug = re.sub(r"-[a-z]*\d[a-z0-9]*$", "", slug)
+    name = slug.replace("-", " ").strip()
+    return name.title() if name else ""
+
+
+def _name_from_title(title: str) -> str:
+    """Extract person name from a Serper/Google result title.
+    LinkedIn titles follow: 'Firstname Lastname - headline | company'
+    """
+    if not title:
+        return ""
+    part = re.split(r"\s+[-|]\s+", title, maxsplit=1)[0].strip()
+    tokens = part.split()
+    # All tokens must start uppercase; at least one must be 4+ chars (real word, not an abbrev)
+    if (2 <= len(tokens) <= 4
+            and all(t[0].isupper() for t in tokens if t)
+            and any(len(t) >= 4 for t in tokens)):
+        return part
+    return ""
 
 
 try:
@@ -306,11 +327,14 @@ def _extract_person_from_result(title: str, snippet: str, url: str, query: str) 
     if not clean_url:
         return None
 
-    # Extract name from URL slug (linkedin.com/in/first-last-abc123)
-    name = "Unknown"
-    m = re.search(r"linkedin\.com/in/([A-Za-z0-9\-_%]+)", clean_url)
-    if m:
-        name = _slug_to_name(m.group(1))
+    # 1. Try title first — Serper titles contain the full name ("Praveen Chavali - building...")
+    name = _name_from_title(title)
+    # 2. Fall back to slug parsing for titled slugs like 'arjun-mehta-abc123'
+    if not name:
+        m = re.search(r"linkedin\.com/in/([A-Za-z0-9\-_%]+)", clean_url)
+        if m:
+            name = _slug_to_name(m.group(1))
+    # name="" is fine — linkedin_url anchors this person through the resolver
 
     # Detect signal type
     signal_type = "stealth_founder"
@@ -331,14 +355,15 @@ def _extract_person_from_result(title: str, snippet: str, url: str, query: str) 
     previous_title = _infer_title(query, snippet)
 
     # Build a clean description
+    display = name or clean_url.split("/in/")[-1]
     if previous_company and signal_type == "stealth_founder":
         description = f"Ex-{previous_company} exec going stealth — LinkedIn profile detected via departure query"
     elif previous_company and signal_type == "executive_departure":
         description = f"Senior departure from {previous_company} — LinkedIn profile flagged"
     elif signal_type == "stealth_founder":
-        description = f"LinkedIn: {name} appears to be building a new venture (stealth signal)"
+        description = f"LinkedIn: {display} appears to be building a new venture (stealth signal)"
     else:
-        description = f"LinkedIn: Senior exec departure signal for {name}"
+        description = f"LinkedIn: Senior exec departure signal for {display}"
 
     person = Person(
         name=name,

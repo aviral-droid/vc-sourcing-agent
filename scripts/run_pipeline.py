@@ -33,6 +33,48 @@ def _run_source(name: str, fn, **kwargs):
         return []
 
 
+def _enrich_linkedin_urls(persons: list, max_lookups: int = 20) -> None:
+    """For scored persons missing linkedin_url, try a targeted Serper query to find their profile.
+    Only runs when SERPER_API_KEY is set. Modifies persons in-place."""
+    import time as _t
+    import config
+    from sources.linkedin_source import _serper_search, _clean_linkedin_url
+
+    if not getattr(config, "SERPER_API_KEY", ""):
+        return
+
+    to_enrich = [
+        p for p in persons
+        if not p.linkedin_url
+        and p.name
+        and p.name.lower() not in ("unknown", "")
+    ][:max_lookups]
+
+    if not to_enrich:
+        return
+
+    logger.info("LinkedIn enrichment: searching for %d persons without linkedin_url", len(to_enrich))
+    found = 0
+    for p in to_enrich:
+        try:
+            if p.previous_company:
+                query = f'site:linkedin.com/in "{p.name}" "{p.previous_company}"'
+            else:
+                query = f'site:linkedin.com/in "{p.name}"'
+            for r in _serper_search(query):
+                clean = _clean_linkedin_url(r.get("url", ""))
+                if clean:
+                    p.linkedin_url = clean
+                    found += 1
+                    logger.debug("Enriched linkedin_url for %s → %s", p.name, clean)
+                    break
+            _t.sleep(0.5)
+        except Exception as e:
+            logger.debug("LinkedIn enrichment error for %s: %s", p.name, e)
+
+    logger.info("LinkedIn enrichment: added URLs for %d/%d persons", found, len(to_enrich))
+
+
 def main():
     all_p = []
     sources_used = []
@@ -113,6 +155,10 @@ def main():
     from pipeline.enricher import score_all, write_executive_summary
     scored = score_all(deduped)
     logger.info("Scored above threshold: %d", len(scored))
+
+    # ── LinkedIn URL enrichment for news-sourced persons ──────────────────────
+    # Persons surfaced from news/RSS often have no linkedin_url; add it via Serper.
+    _enrich_linkedin_urls(scored)
 
     # ── Save to DB ────────────────────────────────────────────────────────────
     import database
