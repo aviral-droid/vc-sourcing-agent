@@ -37,29 +37,29 @@ INVESTMENT MANDATE:
 
 SCORING RUBRIC (0-100):
 80-100: Second-time founder with previous exit OR L1/L2 exit (10+ yrs experience) with strong stealth/registration signal
-60-79:  Senior operator (10+ yrs) going stealth; co-founders or explicit founders from top pedigree companies (Razorpay, PhonePe, Zepto, CRED, Meesho, Grab, Gojek, Sea, etc.) even if first-time; company registrations with credible background
-40-59:  Interesting signals but incomplete info, <10 yrs experience, or weak corroboration; LinkedIn headline shows "building" or "stealth" from mid-tier company
-20-39:  First-time founders with some signal, or indirect signals only, or unknown company background
+60-79:  Senior operator (VP/Director/Head/GM, 10+ yrs) with verified departure to build; company registration with corroborated L1/L2 background; second-time founders without exit
+40-59:  Signals present but seniority unverified; LinkedIn headline claims founder/stealth without corroboration; <10 yrs experience; single-source signals
+20-39:  First-time founders with some signal; indirect signals only; unknown background
 0-19:   Noise, no real founder signal, or geography mismatch
 
-NOTE: When the signal is a LinkedIn headline explicitly stating "Co-founder", "Founder", or "building [startup name]" combined with a top pedigree ex-company, score 60+ even without experience data — the headline IS the evidence.
+CRITICAL: LinkedIn self-reported titles ("CTO at Stealth", "Co-founder at [unknown]") are UNVERIFIED — anyone can claim any title. Do NOT score 60+ based on a LinkedIn claim alone. Require at least ONE corroborating signal: news article about departure, company registration, multiple sources, or explicitly stated 10+ yrs experience. A LinkedIn headline "building something | ex-[Company]" without verified seniority = 40-55 range, NOT 60+.
 
 SIGNALS TO WEIGHT HEAVILY (in order):
 1. Executive departure from tracked company → corroborated by new company registration (MCA/ACRA)
-2. Second-time founder announcement (Twitter/LinkedIn)
-3. L1/L2 title departure (CXO, VP, Director, Head of, GM, Business Head) with 10+ yrs exp
+2. Second-time founder announcement (Twitter/LinkedIn) with traceable prior exit
+3. L1/L2 title departure (CXO, VP, Director, Head of, GM, Business Head) with 10+ yrs verified exp
 4. Company registered in last 6 months + LinkedIn stealth headline
 5. GitHub repo launch with strong traction by senior India/SEA founder
-6. Headcount growth/drop signal at a tracked company (departure wave likely)
+6. Multiple independent sources confirming same person building something new
 7. Funding news (seed/pre-seed round announced)
 
 SCORING INSTRUCTIONS:
-- A single strong signal from a clearly identified L1/L2 exec = 60-75
+- A single LinkedIn stealth claim WITHOUT verified seniority = 40-55
+- A single strong signal from a clearly identified L1/L2 exec WITH evidence = 60-75
 - Multiple corroborating signals = 75-90
 - Unknown name + single weak signal = 20-35
-- Score 0 for: hiring posts, job seekers, companies (not individuals), geographies outside mandate
-- Be generous with score if the person clearly fits the archetype even with incomplete data
-- Give a +5 bonus if the founder's sector aligns with current hot sectors detected by our intelligence feed (e.g. AI Agents, Fintech, EV/Mobility)"""
+- Score 0 for: hiring posts, job seekers, interns/students, companies (not individuals), geographies outside mandate
+- Give a +5 bonus if the founder's sector aligns with current hot sectors (AI Agents, Fintech, EV/Mobility)"""
 
 
 USER_PROMPT_TEMPLATE = """Score this potential founder/executive signal:
@@ -572,9 +572,13 @@ def _rule_based_score(person: Person) -> dict:
         score += 5
 
     # ── Cap and action ─────────────────────────────────────────────────────────
-    # Calibrated against observed score distribution: rule-based scores rarely
-    # exceed ~70, so investigate at 60 / watchlist at 42 keeps the Investigate
-    # bucket populated with genuinely corroborated leads.
+    # LinkedIn-only signals without a verified senior title are capped at 55
+    # (watchlist ceiling). A single LinkedIn self-claim can't push into Investigate —
+    # that bucket requires either corroboration or verified seniority.
+    sources = {s.source for s in person.signals}
+    if sources == {"linkedin"} and not _is_senior_title(person.previous_title or ""):
+        score = min(score, 55)
+
     score = max(0, min(100, score))
 
     if score >= 60:
@@ -716,14 +720,6 @@ def score_person(person: Person) -> None:
     rb_data = _rule_based_score(person)
     if not data:
         data = rb_data
-    else:
-        # Don't let LLM score fall more than 20 points below rule-based for
-        # confirmed LinkedIn profiles — LLM is conservative with sparse data
-        # but rule-based correctly rewards linkedin_url + pedigree + signal type.
-        rb_score = rb_data.get("score", 0)
-        llm_score = data.get("score", 0)
-        if person.linkedin_url and llm_score < rb_score - 20:
-            data["score"] = rb_score - 20  # soft floor: LLM can discount but not tank
 
     person.score = float(data.get("score", 0))
     person.recommended_action = data.get("recommended_action", "pass")
