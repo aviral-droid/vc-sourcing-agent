@@ -402,15 +402,15 @@ def _extract_person_from_result(title: str, snippet: str, url: str, query: str) 
     location = _infer_location(previous_company, query)
     previous_title = _infer_title(query, snippet)
 
-    # Build an accurate description reflecting what the profile actually shows
-    display = name or clean_url.split("/in/")[-1]
+    # Build an accurate description — use the actual profile headline as evidence
+    # so the LLM scorer can evaluate what the person's LinkedIn currently says.
+    headline_evidence = title[:100] if title else snippet[:100]
     if has_stealth and previous_company:
-        stealth_phrase = next((kw for kw in _GENUINE_STEALTH_KWS if kw in (title + " " + snippet).lower()), "building something new")
-        description = f"Ex-{previous_company} — headline signals '{stealth_phrase}'"
+        description = f"Ex-{previous_company}. Current LinkedIn headline: \"{headline_evidence}\""
     elif has_stealth:
-        description = f"LinkedIn profile signals stealth/founder activity: {title[:80]}"
+        description = f"LinkedIn headline: \"{headline_evidence}\""
     else:
-        description = f"Senior exec departure from {previous_company or 'tracked company'} — {title[:80]}"
+        description = f"Senior exec from {previous_company or 'tracked company'}. LinkedIn headline: \"{headline_evidence}\""
 
     person = Person(
         name=name,

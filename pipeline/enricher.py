@@ -37,10 +37,12 @@ INVESTMENT MANDATE:
 
 SCORING RUBRIC (0-100):
 80-100: Second-time founder with previous exit OR L1/L2 exit (10+ yrs experience) with strong stealth/registration signal
-60-79:  Senior operator (10+ yrs) going stealth, company registrations with credible background, headcount-surge departure
-40-59:  Interesting signals but incomplete info, <10 yrs experience, or weak corroboration
-20-39:  First-time founders with some signal, or indirect signals only
+60-79:  Senior operator (10+ yrs) going stealth; co-founders or explicit founders from top pedigree companies (Razorpay, PhonePe, Zepto, CRED, Meesho, Grab, Gojek, Sea, etc.) even if first-time; company registrations with credible background
+40-59:  Interesting signals but incomplete info, <10 yrs experience, or weak corroboration; LinkedIn headline shows "building" or "stealth" from mid-tier company
+20-39:  First-time founders with some signal, or indirect signals only, or unknown company background
 0-19:   Noise, no real founder signal, or geography mismatch
+
+NOTE: When the signal is a LinkedIn headline explicitly stating "Co-founder", "Founder", or "building [startup name]" combined with a top pedigree ex-company, score 60+ even without experience data — the headline IS the evidence.
 
 SIGNALS TO WEIGHT HEAVILY (in order):
 1. Executive departure from tracked company → corroborated by new company registration (MCA/ACRA)
@@ -711,8 +713,17 @@ def score_person(person: Person) -> None:
         raw = _call_llm(prompt)
         data = _parse_score_response(raw) if raw else None
 
+    rb_data = _rule_based_score(person)
     if not data:
-        data = _rule_based_score(person)
+        data = rb_data
+    else:
+        # Don't let LLM score fall more than 20 points below rule-based for
+        # confirmed LinkedIn profiles — LLM is conservative with sparse data
+        # but rule-based correctly rewards linkedin_url + pedigree + signal type.
+        rb_score = rb_data.get("score", 0)
+        llm_score = data.get("score", 0)
+        if person.linkedin_url and llm_score < rb_score - 20:
+            data["score"] = rb_score - 20  # soft floor: LLM can discount but not tank
 
     person.score = float(data.get("score", 0))
     person.recommended_action = data.get("recommended_action", "pass")
