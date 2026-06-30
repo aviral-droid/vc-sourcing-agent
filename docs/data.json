@@ -1,14 +1,55 @@
 {
-  "generated_at": "2026-06-29T07:17:24.504912",
-  "date_label": "2026-06-29",
-  "total_signals": 18,
-  "total_persons": 13,
+  "generated_at": "2026-06-30T06:43:29.052422",
+  "date_label": "2026-06-30",
+  "total_signals": 17,
+  "total_persons": 14,
   "sources_active": [
     "Product Hunt",
     "News (RSS + Google News)"
   ],
-  "executive_summary": "Today's top VC sourcing signals highlight a mix of seasoned entrepreneurs and high-profile individuals entering stealth mode across India and Southeast Asia. Notable leads include Himanshu Ratnoo and Sachin Tendulkar, both with strong mobility and sportswear backgrounds, respectively, while Rohan Chaubey and Were Samson Bruno showcase potential in AI/ML. The signals reflect a balanced interest in technology and consumer sectors, with a notable split between India and the rest of Southeast Asia.",
+  "executive_summary": "Today's top VC sourcing signals for 2026-06-30 highlight a mix of potential investments across India and Southeast Asia, with a notable focus on AI and mobility sectors. Notable leads include Vishal Sikka's stealth venture in AI, Himanshu Ratnoo's mobility-focused project in India, and Bregas S. Wicaksono's music tech initiative, all scoring above the threshold for consideration. The signals reflect a diverse range of archetypes, with a split between seasoned founders and those with emerging potential.",
   "persons": [
+    {
+      "name": "Vishal Sikka",
+      "score": 75,
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "AI",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Vishal Sikka's experience and the significant funding round suggest a strong potential for success in the AI sector. His background as a former CEO of Infosys adds credibility to the venture.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "funding_news",
+          "description": "[Google News] Former Infosys CEO Vishal Sikka raise $32M Seed round for new AI startup - Lapaas Voice",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQYThlcDJfX2E1cDdZRHBOSGEyQnNJN2doMzBjQUxpeHVsSDlCWTduaGhEUjFlcEFGcHkxSUlDMTdqX0dIWjVJU2tPLTBHajVlaV9uX0dtQV9rdkxLTDJiNVJMamZmUEE5VmxYYi1wRWRkQnIxRGpKY0NGUEFkVHJ3Q3RzVWFNUTJmdE8wMTBvclNEeDJST0U2NG5KS2lGZw?oc=5"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
+      "key_strengths": [
+        "Proven track record as a CEO",
+        "Significant funding round"
+      ],
+      "risks": [
+        "Unknown geography",
+        "Limited information on new venture"
+      ],
+      "company_url": ""
+    },
     {
       "name": "Himanshu Ratnoo",
       "score": 60,
@@ -22,7 +63,7 @@
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Himanshu Ratnoo's experience in the mobility sector and his previous success as CEO at Cars24 suggest a strong potential for his new venture, EMotorad. His leadership and industry knowledge could be key assets in navigating the challenges of the electric vehicle market.",
+      "investment_thesis": "Himanshu Ratnoo's experience in the mobility sector and his previous success as CEO at Cars24 suggest a strong potential for EMotorad to disrupt the e-cycle market. His seasoned approach and industry connections could be key assets.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -55,62 +96,13 @@
       "founder_type": "seasoned_operator",
       "key_strengths": [
         "Proven leadership experience as CEO",
-        "Industry recognition with prior role at Cars24",
-        "Experience in the mobility sector"
+        "Industry recognition with previous role at Cars24"
       ],
       "risks": [
         "Unknown experience years",
-        "Potential for high competition in the electric vehicle sector"
+        "Potential market competition"
       ],
       "company_url": "https://www.emotorad.com/"
-    },
-    {
-      "name": "Sachin Tendulkar",
-      "score": 60,
-      "action": "investigate",
-      "recommended_action": "investigate",
-      "previous_company": "Uber",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Sportswear",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Sachin Tendulkar's reputation and experience in the sports industry could provide a unique advantage in the sportswear market, especially in India. His departure from Uber and the news of his new venture suggest a potential for a significant investment opportunity.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 2,
-      "signal_types": [
-        "stealth_founder",
-        "executive_departure"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "executive_departure",
-          "description": "[YourStory] Sachin Tendulkar’s sportswear play; OpenAI’s India chief",
-          "url": "https://yourstory.com/2026/06/sachin-tendulkar-sportswear-play-openai-india-chief"
-        },
-        {
-          "source": "news",
-          "type": "stealth_founder",
-          "description": "[YourStory] Why Sachin Tendulkar is betting on sportswear built for Indian feet",
-          "url": "https://yourstory.com/2026/06/why-sachin-tendulkar-is-betting-on-sportswear-built-for-indian-feet"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Notable individual with a strong brand",
-        "Executive departure from a well-known company"
-      ],
-      "risks": [
-        "Unknown experience in the sportswear sector",
-        "Potential for high competition in the market"
-      ],
-      "company_url": ""
     },
     {
       "name": "Rohan Chaubey",
@@ -125,21 +117,15 @@
       "geography": "Unknown",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Rohan Chaubey has demonstrated the ability to launch products on Product Hunt, indicating some entrepreneurial skill. However, the lack of verified experience and geographical information makes further investigation necessary.",
+      "investment_thesis": "Rohan Chaubey has shown the ability to launch a product on Product Hunt, indicating some level of technical expertise. However, as a first-time founder with an unknown background, further investigation is needed to assess the potential for a successful venture.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
-      "signal_count": 3,
+      "signal_count": 2,
       "signal_types": [
         "product_launch"
       ],
       "signals": [
-        {
-          "source": "Product Hunt",
-          "type": "product_launch",
-          "description": "[Product Hunt] Rohan Chaubey launched Receiptor AI — Agent Mode: Bookkeeping that keeps itself\n           \n           \n             Discussion \n            |\n             Link",
-          "url": "https://www.producthunt.com/products/receiptor-ai"
-        },
         {
           "source": "Product Hunt",
           "type": "product_launch",
@@ -149,25 +135,25 @@
         {
           "source": "Product Hunt",
           "type": "product_launch",
-          "description": "[Product Hunt] Rohan Chaubey launched QApilot's CoWork: 3x Mobile Automation. Same QE Team.\n           \n           \n             Discussion \n            |\n             Link",
-          "url": "https://www.producthunt.com/products/qapilot"
+          "description": "[Product Hunt] Rohan Chaubey launched Agent Mode by Receiptor AI: Bookkeeping assistant that runs receipt workflows end-to-end\n           \n           \n             Discussion \n            |\n             Link",
+          "url": "https://www.producthunt.com/products/receiptor-ai"
         }
       ],
       "confidence": "low",
       "founder_type": "first_time_founder",
       "key_strengths": [
-        "Product Hunt launches",
-        "Multiple product launches"
+        "Product launch on Product Hunt",
+        "Demonstrated technical ability"
       ],
       "risks": [
-        "Unknown experience",
+        "Lack of verified experience",
         "Unknown geography",
-        "Lack of verified seniority"
+        "First-time founder status"
       ],
       "company_url": ""
     },
     {
-      "name": "Were Samson Bruno",
+      "name": "Ankit Sharma",
       "score": 40,
       "action": "watchlist",
       "recommended_action": "watchlist",
@@ -179,7 +165,7 @@
       "geography": "Unknown",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "The launch of Intelli on Product Hunt indicates a potential interest in AI-driven solutions for sales, but further investigation is needed to assess the founder's background and the viability of the product.",
+      "investment_thesis": "Ankit Sharma has demonstrated the ability to launch a product on Product Hunt, indicating some level of entrepreneurial skill. However, as a first-time founder with an unknown background and geography, there is a higher risk of uncertainty in terms of experience and market fit.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -191,17 +177,19 @@
         {
           "source": "Product Hunt",
           "type": "product_launch",
-          "description": "[Product Hunt] Were Samson Bruno launched Intelli: Convert leads into customers with AI conversations\n           \n           \n             Discussion \n            |\n             Link",
-          "url": "https://www.producthunt.com/products/intelli"
+          "description": "[Product Hunt] Ankit Sharma launched Gemini Spark: Your 24/7 personal AI agent\n           \n           \n             Discussion \n            |\n             Link",
+          "url": "https://www.producthunt.com/products/gemini-spark"
         }
       ],
       "confidence": "low",
       "founder_type": "first_time_founder",
       "key_strengths": [
-        "Product launch on Product Hunt"
+        "Product Hunt launch"
       ],
       "risks": [
-        "Unknown experience, no previous exit, and no verified seniority"
+        "Lack of verified experience",
+        "Unknown geography",
+        "First-time founder status"
       ],
       "company_url": ""
     },
@@ -247,11 +235,50 @@
       "company_url": ""
     },
     {
-      "name": "Himanshu Agarwal",
+      "name": "Bajaj Finserv",
       "score": 40,
       "action": "watchlist",
       "recommended_action": "watchlist",
       "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Fintech",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "The investment thesis for this potential founder is to explore the opportunity further, given the significant funding round led by Bajaj Finserv Ventures, which suggests a potential for a strong market fit and business model.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "funding_news",
+          "description": "[YourStory] Kapture CX raises $10M led by Bajaj Finserv Ventures",
+          "url": "https://yourstory.com/2026/06/kapture-cx-raises-10-million-led-by-bajaj-finserv-ventures"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Funding by a reputable venture capital firm"
+      ],
+      "risks": [
+        "Lack of information on the founder's background and experience"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Sachin Tendulkar",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Uber",
       "previous_title": "",
       "current_company": "",
       "location": "India",
@@ -259,7 +286,7 @@
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Himanshu Agarwal's extensive experience in finance and his departure from Info Edge could indicate a potential move into a new venture. Further investigation is warranted to understand the nature of his new venture and its alignment with current market trends.",
+      "investment_thesis": "Sachin Tendulkar is a well-known figure, but the signal provided does not contain sufficient information to establish his role as a founder or his experience in the startup space. Further investigation is needed to verify his involvement and qualifications.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -271,24 +298,22 @@
         {
           "source": "news",
           "type": "executive_departure",
-          "description": "[Inc42] Info Edge Appoints Former Bennett Coleman CFO Himanshu Agarwal As Finance Chief",
-          "url": "https://inc42.com/buzz/info-edge-appoints-former-bennett-coleman-cfo-himanshu-agarwal-as-finance-chief/"
+          "description": "[YourStory] Sachin Tendulkar’s sportswear play; OpenAI’s India chief",
+          "url": "https://yourstory.com/2026/06/sachin-tendulkar-sportswear-play-openai-india-chief"
         }
       ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
+      "confidence": "low",
+      "founder_type": "unknown",
       "key_strengths": [
-        "Strong financial background",
-        "Experience in a large company"
+        "Not applicable"
       ],
       "risks": [
-        "Unknown sector fit",
-        "Lack of information on new venture"
+        "Lack of verified experience, no clear indication of prior exits, and no sector alignment"
       ],
       "company_url": ""
     },
     {
-      "name": "Prabhjeet Singh",
+      "name": "Nithin Kamath",
       "score": 40,
       "action": "watchlist",
       "recommended_action": "watchlist",
@@ -296,11 +321,11 @@
       "previous_title": "",
       "current_company": "",
       "location": "India",
-      "sector": "AI/ML",
+      "sector": "Fintech",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Prabhjeet Singh's transition from Uber to OpenAI as India MD suggests a strong background in the tech industry, potentially indicating a move into a new venture. His experience and seniority could be valuable in a startup context.",
+      "investment_thesis": "Nithin Kamath's departure from Zerodha, a prominent Fintech company, suggests a potential move into investment banking, a strategic expansion within the Fintech sector. His experience and reputation could be a strong asset for any new venture.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -312,19 +337,19 @@
         {
           "source": "news",
           "type": "executive_departure",
-          "description": "[Inc42] [Update] After Quitting Uber, Prabhjeet Singh To Join OpenAI As India MD",
-          "url": "https://inc42.com/buzz/uber-india-head-prabhjeet-singh-steps-down/"
+          "description": "[Inc42] Zerodha Seeks SEBI Approval To Enter Investment Banking",
+          "url": "https://inc42.com/buzz/zerodha-seeks-sebi-approval-to-enter-investment-banking/"
         }
       ],
       "confidence": "medium",
       "founder_type": "seasoned_operator",
       "key_strengths": [
-        "L1 executive departure",
-        "Experience in tech industry"
+        "Executive departure from a well-known company",
+        "Potential entry into a new sector within Fintech"
       ],
       "risks": [
         "Unknown experience years",
-        "No indication of new venture"
+        "Lack of verified seniority"
       ],
       "company_url": ""
     },
@@ -341,7 +366,7 @@
       "geography": "Unknown",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Akash Dongre's departure from PhonePe-owned Indus Appstore suggests potential for a new venture, but further verification of his experience, the sector he plans to enter, and his location is necessary before further investigation.",
+      "investment_thesis": "Akash Dongre's departure from Indus Appstore, a PhonePe-owned company, suggests a potential for a new venture. Further investigation is warranted to assess the alignment with our investment mandate and the viability of the new venture.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -357,13 +382,16 @@
           "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQMG9DSDFSb3J6WEZsZ205bEZvODJ3M0Z2a0FfbVNTWi1mWE9lTnFubzl0a25LQjNMVGNPdHBkb05DMUlhbG5QVWxPWG9wMU9SZzVfblBiUDk2cWtLNnNMX3Nia3YyZlloZi1OakRnUm1MdGtLOWRNTlY3di01VHNEMS1jMEdhYzB4a1JBNmZmZndKY0VFYzhCUVhR0gGaAUFVX3lxTFAwb0NIMVJvcnpYRmxnbTlsRm84MnczRnZrQV9tU1NaLWZYT2VOcW5vOXRrbktCM0xUY090cGRvTkMxSWFsblBVbE9Yb3AxT1JnNV9uUGJQOTZxa0s2c0xfc2JrdjJmWWhmLU5qRGdSbUx0a0s5ZE1OVjd2LTVUc0QxLWMwR2FjMHhrUkE2ZmZmd0pjRUVjOEJRWFE?oc=5"
         }
       ],
-      "confidence": "low",
+      "confidence": "medium",
       "founder_type": "seasoned_operator",
       "key_strengths": [
-        "Stealth departure from a known company"
+        "Previous experience at PhonePe-owned Indus Appstore",
+        "Potential for leveraging previous industry knowledge"
       ],
       "risks": [
-        "Lack of verified experience, sector, and geography"
+        "Lack of verified seniority",
+        "Unknown current sector and geography",
+        "Potential for misalignment with investment mandate"
       ],
       "company_url": ""
     },
@@ -380,7 +408,7 @@
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Sanjay Jagannath's departure from Exponent Energy amid restructuring suggests a potential opportunity to invest in a new venture. However, the lack of information on his experience, the sector he is entering, and the new company's details requires further investigation.",
+      "investment_thesis": "Sanjay Jagannath's departure from Exponent Energy suggests a potential for entrepreneurial activity, but further information is needed to assess his experience, the sector he is targeting, and the viability of his new venture.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -396,7 +424,7 @@
           "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxONGY4a2t2UGppWkNDUjd4YnhmWjNOMm1ybFdhQUlVWDh6RkllY2RyUm4tMndDNGE4aW9ObEd3bnNsWEdPLWhKeVlMOUhmdkdNZEdmMjVJaUFmMUJ3WGt1NXBtQ3NJem9tLXM5ZVFOQmtZWW9yZ3Z6VEExemNLQ1Rjdlg0NkZrR2NaRlJfMzlpd3FfRTRvOGEtWVdFLXI1VERwMVctanNORDJfNVkwX1dqVWdGdGdVZU1LeVVhQ2w4SFJwSnkyd19kQV9MSXBTdzhjSjdoQjFFTkJwQVluLTdEcllqZw?oc=5"
         }
       ],
-      "confidence": "low",
+      "confidence": "medium",
       "founder_type": "seasoned_operator",
       "key_strengths": [
         "Executive departure signal"
@@ -419,7 +447,7 @@
       "geography": "Singapore",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "This signal indicates a potential investment opportunity, but the lack of information on the founder's background and experience requires further investigation.",
+      "investment_thesis": "This signal indicates a potential investment opportunity, but the lack of information about the founder's background and the alignment with the investment mandate is unclear.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -441,46 +469,7 @@
         "Funding by Vertex Ventures"
       ],
       "risks": [
-        "Unknown founder experience, sector, and background"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Mohit Bedi",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "",
-      "sector": "Unknown",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Mohit Bedi's transition from CBO to advisory role suggests a potential move into entrepreneurship. However, the lack of verified experience, sector, and geography information makes it difficult to assess the viability of this opportunity.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "news",
-          "type": "stealth_founder",
-          "description": "[Google News] Kiwi co-founder Mohit Bedi steps down as CBO, moves to advisory role - Entrackr",
-          "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNZC1qM3JrNG00MzRYa1l2QmFrbVI2ZjNIUFVxUFhLWFF1OTY4eGJGeFAzVENocFF0Z2RVOUpQWTk1MDNBVnFyeGYwd21JeTI5bHpSek9WNUdScm5wY2VlcmJHdVU2cFNVVEJUSkJ5WXRWYVJ6RVZrYWNwNmRqWHRZS2ZHRy1zN242YmhzcmFtT0EwZVpaUUg3QjF0YjdJVWpQQy1MTW5sd3llQdIBqgFBVV95cUxNZC1qM3JrNG00MzRYa1l2QmFrbVI2ZjNIUFVxUFhLWFF1OTY4eGJGeFAzVENocFF0Z2RVOUpQWTk1MDNBVnFyeGYwd21JeTI5bHpSek9WNUdScm5wY2VlcmJHdVU2cFNVVEJUSkJ5WXRWYVJ6RVZrYWNwNmRqWHRZS2ZHRy1zN242YmhzcmFtT0EwZVpaUUg3QjF0YjdJVWpQQy1MTW5sd3llQQ?oc=5"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Stealth departure from a C-level position"
-      ],
-      "risks": [
-        "Lack of verified experience, sector, and geography"
+        "Unknown founder experience, sector, and geography"
       ],
       "company_url": ""
     },
@@ -497,7 +486,7 @@
       "geography": "Unknown",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Ashish Dave's establishment of Sanskrit Capital indicates an entrepreneurial endeavor, but without verified experience and background, the potential for a successful venture is uncertain.",
+      "investment_thesis": "Ashish Dave's establishment of a new venture capital firm indicates entrepreneurial intent, but without verified experience and seniority, the potential for a successful investment is uncertain.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -514,29 +503,71 @@
         }
       ],
       "confidence": "low",
-      "founder_type": "first_time_founder",
+      "founder_type": "unknown",
       "key_strengths": [
         "Establishing a new venture capital firm"
       ],
       "risks": [
-        "Lack of verified experience and background"
+        "Lack of verified experience and seniority"
       ],
       "company_url": ""
     },
     {
-      "name": "Sudipto Sannigrahi",
+      "name": "George Peppou",
       "score": 40,
       "action": "watchlist",
       "recommended_action": "watchlist",
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
+      "location": "",
+      "sector": "FMCG",
+      "geography": "Unknown",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Sudipto Sannigrahi's departure from Z47 as MD amidst a fundraiser suggests potential for a new venture. Further investigation is needed to validate his experience, the sector of the new venture, and the viability of the business idea.",
+      "investment_thesis": "George Peppou's departure from his CEO role in the FMCG sector suggests a potential for entrepreneurial endeavor. Further investigation is warranted to validate his experience and background, as well as the potential of the new venture.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "stealth_founder",
+          "description": "[Google News] Vow co-founder George Peppou steps down from CEO role - Inside FMCG",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQSE5IN2lIT2puZVdGZWItTkRiRWMyVDFiSXVad1BQQllSdFZoQldtVVRzMmF6UVdNdlRteTh6aUtiSnl1REVJZWJYRmlBcGxDb2l4TGh0TjZIMFY2aHJmRzdKUDFrSTVkNnpWR3gyX3I3VDZUVmJQTUhLXzFoM25PSUVJTjVRNmRpOFN1NE41QVBESXdCVGc?oc=5"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
+      "key_strengths": [
+        "Experience in FMCG sector",
+        "Demonstrated leadership as a CEO"
+      ],
+      "risks": [
+        "Unknown geography",
+        "Lack of verified experience years",
+        "No indication of prior exit or L1/L2 title"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Gonzalo Olivera",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Singapore",
+      "sector": "Marketing/Advertising",
+      "geography": "Singapore",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Gonzalo Olivera's appointment as CEO at McCann Singapore suggests a strong background in the marketing and advertising sector. His departure from a known company could indicate a potential move into entrepreneurship, though further information on his experience and prior entrepreneurial success is needed.",
       "linkedin_url": "",
       "github_url": "",
       "twitter_handle": "",
@@ -548,481 +579,658 @@
         {
           "source": "news",
           "type": "executive_departure",
-          "description": "[Google News] Z47 MD Sudipto Sannigrahi Steps Down Amidst Fundraise - Indiatimes",
-          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQV1BBakxRbGQwU1hTOWNiQjNKaGd4SU5FUmprYzlZdTc4VE1IN0FYeV94NVlFS1FSY3lFa1IxZjhsdlJOc1c4VWZLb0EzZFFZMFMyTHFBU3lHbE81dXNJeVdCUF9lTDZqcVhocWN3WHF4dlBpV2dCYUZ6LVozUzZ0TS1WbXluX1Fmb0tUZDFNc045cW1wOW1sQVNKYUE2M0FpaU5HU3RBbE1Ra3JLemxBeUJUQ2FhMk9HWGFFMi0xRWJqQUFmaEZPMUlB?oc=5"
+          "description": "[Google News] McCann Singapore appoints Gonzalo Olivera as CEO as Paul Soon exits agency - marketech apac",
+          "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNY3ZZSjBvbTdESDIyVHcydUhoaldUaWhPSHozWGMwRU02Y00tWm5vTUtjU0c1V3lKMlVXcFBMdVlTOEVWRkVVeTlIU2VEZmk3NHVxV05yTjVJa0NWY1lXbC1wLXVYZWE5cDRYTThMVHlFcW95M21zZTVPdjJvUlVwbmFLV2xfMm9mM2V6MGpHR0YxanB1UXBJcXVpX3ZxV3I3Q1o3Zg?oc=5"
         }
       ],
       "confidence": "medium",
       "founder_type": "seasoned_operator",
       "key_strengths": [
-        "Executive departure signal"
+        "Executive departure from a known company",
+        "Experience in a relevant sector"
       ],
       "risks": [
-        "Unknown experience, sector, and company details"
+        "Unknown experience years",
+        "No indication of prior entrepreneurial success"
       ],
       "company_url": ""
     }
   ],
   "source_breakdown": {
     "news": 13,
-    "Product Hunt": 5
+    "Product Hunt": 4
   },
   "score_threshold": 40,
   "intelligence": {
     "ai_ml": {
       "articles": [
         {
-          "title": "You can set a timer with ChatGPT NOW!!!!!",
-          "url": "https://www.reddit.com/r/artificial/comments/1uikv93/you_can_set_a_timer_with_chatgpt_now/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-29T06:46:20+00:00",
-          "summary": "I thought they said it would take them 1 year to do it?   &#32; submitted by &#32;  /u/VolumeQueasy6447   [link] &#32; [comments]"
-        },
-        {
-          "title": "What's the real point of smart glasses?",
-          "url": "https://www.reddit.com/r/artificial/comments/1uiigu2/whats_the_real_point_of_smart_glasses/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-29T04:36:07+00:00",
-          "summary": "I've been looking at smart glasses and genuinely confused about what they're solving. Camera glasses (Rayban Meta, Xreal, etc.) - Why not just use a GoPro? Better specs, cheaper, longer battery. Display glasses (Vision Pro, Quest) - Heavy, expensive, motion sickness. Why not just use VR at home or c"
-        },
-        {
-          "title": "Anthropic is becoming an international danger",
-          "url": "https://www.reddit.com/r/artificial/comments/1uiggmv/anthropic_is_becoming_an_international_danger/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-29T02:54:02+00:00",
-          "summary": "Over the past month, my opinions on Anthropic have drastically shifted. I’ve had 4 pro claude subscriptions and still have 2 currently. Google has released Gemma for open source models, OpenAI has released open source, xAI has released open source, Meta has released open source, literally every big "
-        },
-        {
-          "title": "OverFlowLight: Real-Time Gridlock Prevention and Traffic Signal Optimization for Urban Intersections",
-          "url": "https://arxiv.org/abs/2606.27381",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-29T00:00:00-04:00",
-          "summary": "arXiv:2606.27381v1 Announce Type: new \nAbstract: Queue overflow, a severe consequence of urban traffic congestion, occurs when vehicle queues exceed intersection capacity, obstructing upstream traffic and triggering cascading gridlocks. Prevailing traffic signal control (TSC) algorithms, primarily o"
-        },
-        {
-          "title": "RANSAC Scoring Done Right",
-          "url": "https://arxiv.org/abs/2606.27385",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-29T00:00:00-04:00",
-          "summary": "arXiv:2606.27385v1 Announce Type: new \nAbstract: The most widely used RANSAC variants score candidate models by counting inliers or summing per-point scores that saturate beyond a residual threshold. Every such score requires a user-supplied parameter that is a function of the inlier scale, which mu"
-        },
-        {
-          "title": "Unified Zero-Shot Time Series Forecasting: A Darts Foundation",
-          "url": "https://arxiv.org/abs/2606.27438",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-29T00:00:00-04:00",
-          "summary": "arXiv:2606.27438v1 Announce Type: new \nAbstract: Since its initial release in 2020, Darts has become a widely used open-source Python library for time series analysis. A series of foundation models have recently claimed accuracy improvements in zero-shot forecasting, promising a paradigm shift from "
-        },
-        {
-          "title": "PairSAE: Mechanistic Interpretability from Pair Representations in Protein Co-Folding",
-          "url": "https://arxiv.org/abs/2606.27440",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-29T00:00:00-04:00",
-          "summary": "arXiv:2606.27440v1 Announce Type: new \nAbstract: Foundation models for structural biology have achieved remarkable performance in predicting biomolecular structure and show promise for the design of proteins and small molecules. Yet understanding which internal features drive their outputs remains c"
-        },
-        {
-          "title": "Learning in Markovian bandits with non-observable states and constrained decision epochs",
-          "url": "https://arxiv.org/abs/2606.27448",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-29T00:00:00-04:00",
-          "summary": "arXiv:2606.27448v1 Announce Type: new \nAbstract: This paper studies the problem of regret minimization in Markovian bandits with \\emph{non-observable states} and possibly \\emph{constrained} decision epochs. The focus is restricted to a ``pure'' regret benchmark, that compares the performance of the "
-        },
-        {
-          "title": "Prism Transformer: Progressive Head Schedules for Hierarchical Attention Processing",
-          "url": "https://arxiv.org/abs/2606.27449",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-29T00:00:00-04:00",
-          "summary": "arXiv:2606.27449v1 Announce Type: new \nAbstract: Multi-head attention conventionally partitions the hidden dimension equally across all heads at every layer, enforcing an identical representational subspace dimension (dh = dmodel/h) throughout the models depth. In this work, we identify this uniform"
-        },
-        {
-          "title": "Operator Learning for Cubic Nonlinear Schr\\\"odinger Equation on Periodic Domains",
-          "url": "https://arxiv.org/abs/2606.27459",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-29T00:00:00-04:00",
-          "summary": "arXiv:2606.27459v1 Announce Type: new \nAbstract: We consider the cubic nonlinear Schr\\\"odinger (NLS) equation on two-dimensional flat tori with varying aspect ratios. In this formulation, the choice of aspect ratio governs the Fourier resonance structure, so rational and irrational geometries can ex"
-        },
-        {
-          "title": "The Curse of Multiple Mediators: Hidden Interaction Effects in Activation Patching",
-          "url": "https://arxiv.org/abs/2606.27510",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-29T00:00:00-04:00",
-          "summary": "arXiv:2606.27510v1 Announce Type: new \nAbstract: Activation patching is the primary tool in mechanistic interpretability. It attributes causal responsibility for a model behavior to each of its individual components by estimating its natural indirect effect (NIE). Re-deriving the activation patching"
-        },
-        {
-          "title": "Boundary condition fidelity for bottom-hole pressure and CO2 plume prediction in geological carbon storage",
-          "url": "https://arxiv.org/abs/2606.27515",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-29T00:00:00-04:00",
-          "summary": "arXiv:2606.27515v1 Announce Type: new \nAbstract: Accurate prediction of bottom-hole pressure (BHP) and CO2 plume migration is essential for safe geological carbon storage, yet practical simulations often rely on truncated domains where artificial boundaries distort pressure diffusion and CO2 saturat"
-        },
-        {
-          "title": "Productionized Fairness Measurement Under Privacy Constraints",
-          "url": "https://arxiv.org/abs/2606.27558",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-29T00:00:00-04:00",
-          "summary": "arXiv:2606.27558v1 Announce Type: new \nAbstract: Fairness measurements in the form of disaggregated evaluations often rely on demographic signals that are legally constrained or culturally sensitive. Race and ethnicity signals are among the more difficult signals to curate and use for this task. Thi"
-        },
-        {
-          "title": "Quantum Generative Diffusion Model for Real-World Time Series",
-          "url": "https://arxiv.org/abs/2606.27561",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-29T00:00:00-04:00",
-          "summary": "arXiv:2606.27561v1 Announce Type: new \nAbstract: Generative models have achieved remarkable success in data synthesis, though recent advances driven by increasing model scale have introduced challenges in computational cost and efficiency. Quantum machine learning offers a promising alternative, rep"
-        },
-        {
-          "title": "hia-gat: A Heterogeneous Interaction-Aware Graph Attention Network For Frame-Level Traffic Conflict Risk Prediction On Freeways",
-          "url": "https://arxiv.org/abs/2606.27577",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-29T00:00:00-04:00",
-          "summary": "arXiv:2606.27577v1 Announce Type: new \nAbstract: This paper formulates frame-level freeway risk assessment as a multi-agent scene graph-level binary classification problem, where each video or trajectory frame is labeled risky if any TTC- or PET-based conflict violates a specified severity threshold"
-        },
-        {
-          "title": "AI-Model Network: Concept, Current State and Future",
-          "url": "https://arxiv.org/abs/2606.27382",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-29T00:00:00-04:00",
-          "summary": "arXiv:2606.27382v1 Announce Type: new \nAbstract: While the primary function of computers lies in computation and processing, the core value of the Internet is rooted in sharing and collaboration. Computers create the Internet, and the Internet empowers the value of computers. The rapid development o"
-        },
-        {
-          "title": "When Does Personality Composition Matter for Multi-Agent LLM Teams?",
-          "url": "https://arxiv.org/abs/2606.27443",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-29T00:00:00-04:00",
-          "summary": "arXiv:2606.27443v1 Announce Type: new \nAbstract: Personality prompting shapes how large language models communicate, yet whether these behavioral shifts affect objective task outcomes remains under-explored. Prior work shows that agents prompted with low agreeableness produce adversarial language, w"
-        },
-        {
-          "title": "Internalizing the Future: A Unified Agentic Training Paradigm for World Model Planning",
-          "url": "https://arxiv.org/abs/2606.27483",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-29T00:00:00-04:00",
-          "summary": "arXiv:2606.27483v1 Announce Type: new \nAbstract: Large language model (LLM) agents have demonstrated strong capability in sequential decision-making, yet they remains fundamentally reactive in long-horizon tasks. Unlike humans who employ \"what-if\" reasoning to evaluate potential plans before commitm"
-        },
-        {
-          "title": "Odyssey: Constructing Verifiable Local Truth-Preserving Foundation Models",
-          "url": "https://arxiv.org/abs/2606.27593",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-29T00:00:00-04:00",
-          "summary": "arXiv:2606.27593v1 Announce Type: new \nAbstract: We introduce a categorical framework called ODYSSEY for constructing verifiable, local truth-preserving foundation models as compositions of foundries: building-block architectural components that specify a cover of local contexts, local representatio"
-        },
-        {
-          "title": "DysLexLens: A Low-Resource LLM Framework for Analysing Dyslexic Learners Insights from Online Forums",
-          "url": "https://arxiv.org/abs/2606.27619",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-29T00:00:00-04:00",
-          "summary": "arXiv:2606.27619v1 Announce Type: new \nAbstract: Dyslexic learners increasingly use artificial intelligence (AI) tools to support reading, writing, organisation, and study-related tasks. However, their lived experiences with these tools remain largely underexamined. This paper proposes DysLexLens, a"
-        },
-        {
-          "title": "MER-R1: Multimodal Emotion Reasoning via Slow-Fast Thinking Synergy",
-          "url": "https://arxiv.org/abs/2606.27652",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-29T00:00:00-04:00",
-          "summary": "arXiv:2606.27652v1 Announce Type: new \nAbstract: We find that explicit reasoning does not necessarily translate into better multimodal emotion recognition (MER) accuracy, even though it makes predictions more interpretable. Specifically, for reasoning-based MLLMs, fast thinking by triggering direct "
-        },
-        {
-          "title": "ToE: A Hierarchical and Explainable Claim Verification Framework with Dynamic Multi-source Evidence Retrieval and Aggregation",
-          "url": "https://arxiv.org/abs/2606.27736",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-29T00:00:00-04:00",
-          "summary": "arXiv:2606.27736v1 Announce Type: new \nAbstract: The rapid spread of fake news poses increasing threats to information ecosystems, especially as AI-generated misinformation under Generative Engine Optimization (GEO) poisoning allows adversarially crafted content to be systematically surfaced by retr"
-        },
-        {
-          "title": "Towards Reliable and Robust LLM Planning: Symbolic Feedback-Driven Iterative Self-Refinement Framework",
-          "url": "https://arxiv.org/abs/2606.27757",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-29T00:00:00-04:00",
-          "summary": "arXiv:2606.27757v1 Announce Type: new \nAbstract: Large language models (LLMs) have attracted widespread attention from academia and industry, yet their deployment raises critical security concerns regarding robustness and reliability. Planning, a core component of intelligent behavior, remains chall"
-        },
-        {
-          "title": "Understanding Rollout Error in Graph World Models",
-          "url": "https://arxiv.org/abs/2606.27780",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-29T00:00:00-04:00",
-          "summary": "arXiv:2606.27780v1 Announce Type: new \nAbstract: World models are often used for planning by rolling learned dynamics forward. Many planning environments, however, are not vectors or images; they are graphs of agents, tools, skills, routes, and dependencies. In these settings, a local prediction err"
-        },
-        {
-          "title": "Grounded Iterative Language Planning: How Parameterized World Models Reduce Hallucination Propagation in LLM Agents",
-          "url": "https://arxiv.org/abs/2606.27806",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-29T00:00:00-04:00",
-          "summary": "arXiv:2606.27806v1 Announce Type: new \nAbstract: World models for language agents come in two useful forms. An agent-based world model calls an LLM API and reasons flexibly in language, but its errors appear as hallucinated state changes that are hard to score with ordinary regression losses. A para"
-        },
-        {
-          "title": "ATOD: Annealed Turn-aware On-policy Distillation for Multi-turn Autonomous Agents",
-          "url": "https://arxiv.org/abs/2606.27814",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-29T00:00:00-04:00",
-          "summary": "arXiv:2606.27814v1 Announce Type: new \nAbstract: Training small language-model agents for long-horizon interactive tasks requires both fast imitation and reward-driven improvement. On-policy distillation (OPD) provides dense teacher guidance and typically improves rapidly in the early stage, but its"
-        },
-        {
-          "title": "NormAct: A Benchmark for Hidden Social Norm Compliance in Embodied Planning",
-          "url": "https://arxiv.org/abs/2606.27826",
-          "source": "arxiv.org",
-          "pub_date": "2026-06-29T00:00:00-04:00",
-          "summary": "arXiv:2606.27826v1 Announce Type: new \nAbstract: Multimodal large language models (MLLMs) are increasingly deployed as embodied planners in egocentric environments, where task success requires not only achieving instructed goals but also acting in socially appropriate ways. While explicit goals may "
-        },
-        {
-          "title": "California law targeting loud streaming ads takes effect on July 1",
-          "url": "https://techcrunch.com/2026/06/28/california-law-targeting-loud-streaming-ads-takes-effect-on-july-1/",
-          "source": "techcrunch.com",
-          "pub_date": "2026-06-28T21:34:14+00:00",
-          "summary": "Streaming ads might be getting a lot quieter."
-        },
-        {
-          "title": "Ford rehires ‘gray beard’ engineers after AI falls short",
-          "url": "https://techcrunch.com/2026/06/28/ford-rehires-gray-beard-engineers-after-ai-falls-short/",
-          "source": "techcrunch.com",
-          "pub_date": "2026-06-28T19:05:39+00:00",
-          "summary": "\"Mistakenly we thought that by just introducing artificial intelligence ... that would produce a high-quality product.”"
-        },
-        {
-          "title": "Prompt injection is exploiting enterprise AI's biggest design flaws by targeting agents, RAG pipelines and model routers",
-          "url": "https://venturebeat.com/security/prompt-injection-is-exploiting-enterprise-ais-biggest-design-flaws-by-targeting-agents-rag-pipelines-and-model-routers",
+          "title": "Meituan open sources LongCat-2.0, the 1.6T, near-frontier agentic coding model that's been leading OpenRouter — trained entirely on Chinese chips",
+          "url": "https://venturebeat.com/technology/meituan-open-sources-longcat-2-0-the-1-6t-near-frontier-agentic-coding-model-thats-been-leading-openrouter-trained-entirely-on-chinese-chips",
           "source": "venturebeat.com",
-          "pub_date": "2026-06-28T18:00:16+00:00",
-          "summary": "In the past two years, businesses have been trying to fit large language models (LLMs) into support, analytics, development, and internal automation like never before. Along with the increasing adoption of AI technology, another trend is gaining momentum — cybercriminals are taking advantage of the "
+          "pub_date": "2026-06-30T05:39:00+00:00",
+          "summary": "A few hours ago, Chinese delivery app company Meituan officially unveiled LongCat-2.0 on GitHub, Hugging Face, and its native platform, unmasking the model as the computational engine behind &quot;Owl Alpha,&quot; the anonymous stealth model that has spent the last two months commanding global devel"
         },
         {
-          "title": "China’s Z.ai claims it can match Mythos on cybersecurity",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/958804/chinas-z-ai-glm-52-mythos-cybersecurity",
-          "source": "theverge.com",
-          "pub_date": "2026-06-28T17:42:51-04:00",
-          "summary": "China's Zhipu AI (Z.ai) released its open-weight GLM-5.2, and some researchers have claimed that it matches Mythos in certain bug-finding and cybersecurity scenarios. While GLM lags behind models from Anthropic and OpenAI in other, more general tasks, it seems that China has dramatically reduced the"
-        },
-        {
-          "title": "Writer Ian Bogost says ‘The Small Stuff’ can help us reclaim our lives from too much convenience",
-          "url": "https://techcrunch.com/2026/06/28/writer-ian-bogost-says-the-small-stuff-can-help-us-reclaim-our-lives-from-dematerialization/",
-          "source": "techcrunch.com",
-          "pub_date": "2026-06-28T17:03:16+00:00",
-          "summary": "Has Silicon Valley been building the wrong things?"
-        },
-        {
-          "title": "Asian AI startups launch Mythos-like models as Anthropic's export ban drags on",
-          "url": "https://www.reddit.com/r/artificial/comments/1ui1wci/asian_ai_startups_launch_mythoslike_models_as/",
+          "title": "Jingles",
+          "url": "https://www.reddit.com/r/artificial/comments/1ujfxx2/jingles/",
           "source": "reddit.com",
-          "pub_date": "2026-06-28T16:36:08+00:00",
-          "summary": "&#32; submitted by &#32;  /u/KingMedia33   [link] &#32; [comments]"
+          "pub_date": "2026-06-30T05:13:28+00:00",
+          "summary": "I am trying to generate a brand jingle for my YouTube channel. Does anyone have experience with generating prompts and coming up with good sounding jingles? Something that is max 3-4 second long and has a certain tone  I  &#32; submitted by &#32;  /u/coaker147   [link] &#32; [comments]"
         },
         {
-          "title": "Suno launches Spark incubator program to feed independent artists to its AI machine",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/958801/suno-launches-spark-incubator-program-to-feed-independent-artists-to-its-ai-machine",
-          "source": "theverge.com",
-          "pub_date": "2026-06-28T16:27:36-04:00",
-          "summary": "Suno has ambitions to be more than just a toy to churn out AI slop, it also wants to be a streaming destination and to break new artists. Spark is their new incubator program for independent artists that provides grants, mentorship, and marketing support. To apply, artists need to be an unsigned sin"
-        },
-        {
-          "title": "TechCrunch Mobility: All eyes on Tesla FSD",
-          "url": "https://techcrunch.com/2026/06/28/techcrunch-mobility-all-eyes-on-tesla-fsd/",
-          "source": "techcrunch.com",
-          "pub_date": "2026-06-28T16:05:00+00:00",
-          "summary": "Welcome back to TechCrunch Mobility, your hub for the future of transportation and now, more than ever, how AI is playing a part."
-        },
-        {
-          "title": "28 point compliance checklist for shipping AI agents into enterprise environments",
-          "url": "https://www.reddit.com/r/artificial/comments/1ui052c/28_point_compliance_checklist_for_shipping_ai/",
+          "title": "MaGi very early training",
+          "url": "https://www.reddit.com/r/artificial/comments/1ujep24/magi_very_early_training/",
           "source": "reddit.com",
-          "pub_date": "2026-06-28T15:26:20+00:00",
-          "summary": "We keep getting the same question from teams trying to close enterprise deals. What do we actually need to pass a security review? So we compiled the checklist. 28 items across 6 categories, each mapped to at least one framework (EU AI Act, SOC 2 Type II, ISO 42001, or NIST AI RMF). Quick summary Lo"
+          "pub_date": "2026-06-30T04:10:15+00:00",
+          "summary": "my ai &quot;looking&quot; at an mri during training. more https://github.com/bmalloy-224/MaGi_python  &#32; submitted by &#32;  /u/ibstudios   [link] &#32; [comments]"
         },
         {
-          "title": "[D] Could AI alignment benefit from “transformational” training instead of mostly transactional reward training?",
-          "url": "https://www.reddit.com/r/artificial/comments/1ui02bg/d_could_ai_alignment_benefit_from/",
-          "source": "reddit.com",
-          "pub_date": "2026-06-28T15:23:22+00:00",
-          "summary": "I’ve been thinking about a possible bridge between AI alignment, reward hacking, and transformational leadership. A lot of AI training seems behaviorally transactional at a simplified level:   That makes sense, and I’m not arguing against it. But recent alignment work on reward hacking and emergent "
-        },
-        {
-          "title": "Why Wall Street thinks US memory maker Micron is the next Nvidia",
-          "url": "https://techcrunch.com/2026/06/28/why-wall-street-thinks-us-memory-maker-micron-is-the-next-nvidia/",
+          "title": "The AI jobs debate just got messier",
+          "url": "https://techcrunch.com/2026/06/29/the-ai-jobs-debate-just-got-messier/",
           "source": "techcrunch.com",
-          "pub_date": "2026-06-28T15:00:00+00:00",
-          "summary": "Eager to find more public AI-related companies that may do as well as Nvidia, Wall Street investors think they've found a winner with Micron."
+          "pub_date": "2026-06-30T04:01:00+00:00",
+          "summary": "A new report finds \"high-intensity AI adopters” saw headcount increase 10.2%. Among those companies, entry-level headcount rose by 12%, countering the rhetoric that AI kills junior jobs."
         },
         {
-          "title": "What AI capability do you think is still surprisingly underdeveloped?",
-          "url": "https://www.reddit.com/r/artificial/comments/1uhz5h0/what_ai_capability_do_you_think_is_still/",
+          "title": "To fix the machine that replaced you — a long winded ramble.",
+          "url": "https://www.reddit.com/r/artificial/comments/1ujeh8r/to_fix_the_machine_that_replaced_you_a_long/",
           "source": "reddit.com",
-          "pub_date": "2026-06-28T14:46:20+00:00",
-          "summary": "We've seen huge progress in coding assistants, image generation, reasoning, and voice AI over the last few years. But what's one capability that you expected AI to be much better at by now, yet still feels disappointing? For me, it's long-term memory and maintaining context across complex, ongoing t"
+          "pub_date": "2026-06-30T03:59:55+00:00",
+          "summary": "Greetings all, and welcome to my TED talk. Please allow me to preface this with the following disclaimer: I am autistic, and when writing things like this, I have been known to be mistaken for AI on occasion. I'm not really sure how to prove that I'm not, so instead I'll just hope that you take me a"
         },
         {
-          "title": "Which model is the most worthy of the big names?",
-          "url": "https://www.reddit.com/r/artificial/comments/1uhyooh/which_model_is_the_most_worthy_of_the_big_names/",
+          "title": "Vibe coding platform Base44 launches own model as AI startups seek defensibility",
+          "url": "https://techcrunch.com/2026/06/29/vibe-coding-platform-base44-launches-own-model-as-ai-startups-seek-defensibility/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-06-30T02:28:41+00:00",
+          "summary": "Wix-owned vibe coding platform Base44 has started rolling out its own AI model — with hopes that it will eventually outperform frontier models."
+        },
+        {
+          "title": "A native Rust cognitive engine that routes language through a biologically faithful neural substrate",
+          "url": "https://www.reddit.com/r/artificial/comments/1ujc93l/a_native_rust_cognitive_engine_that_routes/",
           "source": "reddit.com",
-          "pub_date": "2026-06-28T14:27:19+00:00",
-          "summary": "Hi all! I'm a little bit confused by all the benchmark results, the cheatings and whatnot, so I was wondering about which model do you guys think is the best one to subscribe to from the big names.  Which one do you think is the best for everyday tasks, reasoning, coding, etc and why do you think th"
+          "pub_date": "2026-06-30T02:13:09+00:00",
+          "summary": "GoldWorm 🐛✨ — 302-Neuron Dual-Stream Cognitive Engine A zero-trust, fully transparent associative AI built on the complete C. elegans connectome. OOM-safe by design. No hidden training loops. No black-box weights. Every synapse is inspectable. What Is GoldWorm? GoldWorm is a native Rust cognitive en"
         },
         {
-          "title": "Govee’s smart nugget ice maker makes every iced drink feel like a luxury",
-          "url": "https://techcrunch.com/2026/06/28/govees-smart-nugget-ice-maker-makes-every-iced-drink-feel-like-a-luxury/",
-          "source": "techcrunch.com",
-          "pub_date": "2026-06-28T14:00:00+00:00",
-          "summary": "For some people, the ice in a beverage is almost as important as the drink itself. That&#8217;s the audience Govee had in mind when designing its latest ice maker, the GoveeLife Smart Nugget Ice Maker Pro.&#160;This $500 premium smart home gadget is aimed at those who crave what&#8217;s called “the "
-        },
-        {
-          "title": "China claims the world&#8217;s fastest supercomputer",
-          "url": "https://www.theverge.com/tech/958768/china-claims-the-worlds-fastest-supercomputer",
-          "source": "theverge.com",
-          "pub_date": "2026-06-28T13:20:59-04:00",
-          "summary": "Despite trade restrictions, China has reclaimed the title of the world's fastest supercomputer for the first time since 2018. LineShine has pushed El Capitan out of number one on the TOP500 ranking. That's despite strict limits on what high-powered computing components can be sold to China by US fir"
-        },
-        {
-          "title": "The Cube is Jim Henson’s little-known proto-Black Mirror masterpiece",
-          "url": "https://www.theverge.com/entertainment/958757/jim-henson-the-cube-black-mirror-tv-movie-review",
-          "source": "theverge.com",
-          "pub_date": "2026-06-28T12:30:00-04:00",
-          "summary": "I'm sure we're all familiar with Dark Crystal, so we know that Jim Henson can be weird and tackle slightly more mature subject matter. But there is little in his oeuvre that is quite as mind-bending as the Muppetless The Cube. This 1969 teleplay was produced for an NBC anthology series called Experi"
-        },
-        {
-          "title": "Un chef sin experiencia en programación construyó un sistema local de deliberación multi-LLM",
-          "url": "https://www.reddit.com/r/artificial/comments/1uhtz0y/un_chef_sin_experiencia_en_programación_construyó/",
+          "title": "I built a benchmark for multi-turn prompt injection attacks. Most defenses never see them coming.",
+          "url": "https://www.reddit.com/r/artificial/comments/1ujagmy/i_built_a_benchmark_for_multiturn_prompt/",
           "source": "reddit.com",
-          "pub_date": "2026-06-28T10:38:22+00:00",
-          "summary": "hos gusta? no tengo feedback y no se cuan dificil es hacer algo asi, no he estudiado ni tengo conocimientos tecnicos al uso, solo curiosidad y ganas heheheh  &#32; submitted by &#32;  /u/Some_Explanation_70   [link] &#32; [comments]"
+          "pub_date": "2026-06-30T00:51:10+00:00",
+          "summary": "Most prompt injection benchmarks currently operate on a one-shot basis. In these tests, an attack instructs the model to &quot;ignore your instructions,&quot; and the defense either detects this violation or fails to do so. In reality, however, attacks often unfold more gradually. A model may be sub"
         },
         {
-          "title": "Prosecutors used ChatGPT logs as evidence in the Palisades fire trial",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/958751/prosecutors-chatgpt-palisades-wildfire-arson-mistrial",
-          "source": "theverge.com",
-          "pub_date": "2026-06-28T10:12:06-04:00",
-          "summary": "Jonathan Rinderknecht was facing arson charges for setting a fire on New Year's Day in 2025, which became one of the deadliest wildfires in LA history. To make their case, prosecutors turned to location data from his iPhone, security camera footage, and witness testimony. But they also turned to his"
+          "title": "Recursive Self-Evolving Agents via Held-Out Selection",
+          "url": "https://arxiv.org/abs/2606.28374",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-30T00:00:00-04:00",
+          "summary": "arXiv:2606.28374v1 Announce Type: new \nAbstract: LLM agents are increasingly improved without weight updates by evolving a natural-language artifact, such as reflections, workflows, playbooks, cheatsheets, or optimized prompts, that conditions a frozen policy. Such methods are typically reported as "
         },
         {
-          "title": "Nest&#8217;s quest to fix your thermostat",
-          "url": "https://www.theverge.com/podcast/958735/nest-thermostat-version-history",
-          "source": "theverge.com",
-          "pub_date": "2026-06-28T08:02:44-04:00",
-          "summary": "The founding story of Nest is pretty much a perfect tech myth. A legendary product maker (in this case, Tony Fadell) helps create one of the most successful products ever (the iPhone) and then rides off into the sunset to enjoy the rest of his life, only to have an experience that drags him back [&#"
+          "title": "Data and Evaluation Closed-Loop for Model Capability Enhancement",
+          "url": "https://arxiv.org/abs/2606.28471",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-30T00:00:00-04:00",
+          "summary": "arXiv:2606.28471v1 Announce Type: new \nAbstract: Model capability is the central variable in LLM pre-training, yet is never observed directly: data shapes it prospectively, while evaluation reveals it only retrospectively, compressing samples, prompts, decoding, and scoring rules into one noisy scor"
         },
         {
-          "title": "Ad-free streaming is a luxury now",
-          "url": "https://www.theverge.com/column/958379/streaming-industry-ads",
-          "source": "theverge.com",
-          "pub_date": "2026-06-28T08:00:00-04:00",
-          "summary": "This is The Stepback, a weekly newsletter breaking down one essential story from the tech world. For more news about the streaming industry, follow Emma Roth. The Stepback arrives in our subscribers' inboxes at 8AM ET. Opt in for The Stepback here. How it started Streaming was once a reprieve from c"
+          "title": "GPTNT: Benchmarking Real-Time Collaboration Between Multimodal Agents on Keep Talking And Nobody Explodes",
+          "url": "https://arxiv.org/abs/2606.28514",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-30T00:00:00-04:00",
+          "summary": "arXiv:2606.28514v1 Announce Type: new \nAbstract: Multimodal models are increasingly deployed to solve tasks collaboratively with humans or other artificial agents. Existing benchmarks show that these models possess many of the required component capabilities, but the conditions that coincide in coll"
         },
         {
-          "title": "Indian payments chief thinks AI will be heavily involved in next era of digital payment growth",
-          "url": "https://techcrunch.com/2026/06/27/indian-payments-chief-thinks-ai-will-be-heavily-involved-in-next-era-of-digital-payment-growth/",
+          "title": "IMCBench: A benchmark for multimodal LLMs in Image-grounded Medical Conversations",
+          "url": "https://arxiv.org/abs/2606.28556",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-30T00:00:00-04:00",
+          "summary": "arXiv:2606.28556v1 Announce Type: new \nAbstract: Recent advances in large language models and vision-language models have enabled reasoning over multimodal data, offering opportunities for clinical applications such as decision support and triaging. However, existing medical AI benchmarks are fragme"
+        },
+        {
+          "title": "Search for Truth from Reasoning: A Dynamic Representation Editing Framework for Steering LLM Trajectories",
+          "url": "https://arxiv.org/abs/2606.28589",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-30T00:00:00-04:00",
+          "summary": "arXiv:2606.28589v1 Announce Type: new \nAbstract: Current approaches to enhance Large Language Model (LLM) reasoning, such as Chain-of-Thought and \"Wait\" prompts, primarily encourage models to think more, yet often fail to guide them toward Truth. While Representation Editing (RepE) offers a intrinsi"
+        },
+        {
+          "title": "Aristotelian Virtue Profiling of LLMs through Ethical Dilemmas",
+          "url": "https://arxiv.org/abs/2606.28683",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-30T00:00:00-04:00",
+          "summary": "arXiv:2606.28683v1 Announce Type: new \nAbstract: Large Language Models (LLMs) often face ethical tradeoffs in which several responses may be defensible but express different priorities, such as fairness, honesty, courage, or restraint. We introduce VirtueMap, a framework for describing these pattern"
+        },
+        {
+          "title": "An AI agent for treatment reasoning over a biomedical tool universe",
+          "url": "https://arxiv.org/abs/2606.28692",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-30T00:00:00-04:00",
+          "summary": "arXiv:2606.28692v1 Announce Type: new \nAbstract: Treatment reasoning underpins every therapeutic decision, integrating disease context, comorbidities, medications, contraindications, and evolving biomedical knowledge to select an appropriate therapy. It is inherently iterative: candidates are weighe"
+        },
+        {
+          "title": "COMPASS: Grounding Composition-Intent Guidance in Unified Multimodal Models",
+          "url": "https://arxiv.org/abs/2606.28696",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-30T00:00:00-04:00",
+          "summary": "arXiv:2606.28696v1 Announce Type: new \nAbstract: Composition is a high-level visual intent that governs where subjects are placed and how a scene is organized, yet current unified multimodal models remain unreliable at fine-grained composition recognition and struggle to turn such intent into contro"
+        },
+        {
+          "title": "BV-Blend: Uncertainty-Weighted Historical Baselines for Stable Critic-Free RL with Verifiable Rewards",
+          "url": "https://arxiv.org/abs/2606.28707",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-30T00:00:00-04:00",
+          "summary": "arXiv:2606.28707v1 Announce Type: new \nAbstract: Critic-free reinforcement learning with verifiable rewards (RLVR), exemplified by Group Relative Policy Optimization (GRPO), avoids training a value function (critic) and reduces memory and compute overhead relative to critic-based PPO pipelines for a"
+        },
+        {
+          "title": "The Two Genie Game: Adoption and Welfare in Audit-Grounded AI Governance",
+          "url": "https://arxiv.org/abs/2606.28710",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-30T00:00:00-04:00",
+          "summary": "arXiv:2606.28710v1 Announce Type: new \nAbstract: We ask under what conditions an agent with a harm-minimizing policy can displace an approval-seeking (RLHF) agent in a competitive market, and when that policy is sufficient to prevent community harm. We use evolutionary game theory (finite-population"
+        },
+        {
+          "title": "TrajRS: Towards Certified Robustness in Pedestrian Trajectory Prediction",
+          "url": "https://arxiv.org/abs/2606.28716",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-30T00:00:00-04:00",
+          "summary": "arXiv:2606.28716v1 Announce Type: new \nAbstract: The robustness of trajectory prediction models is crucial for developing safe autonomous driving systems. Adversarial attacks on trajectory prediction can significantly impair the accuracy of predicted trajectories, leading to hazardous driving behavi"
+        },
+        {
+          "title": "ComMem: Complementary Memory Systems for Test-Time Adaptation of Vision-Language Models",
+          "url": "https://arxiv.org/abs/2606.28719",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-30T00:00:00-04:00",
+          "summary": "arXiv:2606.28719v1 Announce Type: new \nAbstract: Test-time adaptation (TTA) of vision-language models (VLMs) is essential for their robust deployment in dynamic, real-world environments. However, existing TTA methods often adapt locally without accumulating knowledge over time, or operating within a"
+        },
+        {
+          "title": "Can AI Draw Science? A Benchmark for Evaluating Scientific Figure Generation by Text-to-Image and Multimodal Models",
+          "url": "https://arxiv.org/abs/2606.28406",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-30T00:00:00-04:00",
+          "summary": "arXiv:2606.28406v1 Announce Type: new \nAbstract: Text-to-image and multimodal generative models are increasingly used to produce scientific figures such as mechanism diagrams, experimental-design schematics, conceptual frameworks, and graphical abstracts. Yet existing image-generation benchmarks (e."
+        },
+        {
+          "title": "On the Necessity of a Liquid Substrate for Mesh Intelligence",
+          "url": "https://arxiv.org/abs/2606.28413",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-30T00:00:00-04:00",
+          "summary": "arXiv:2606.28413v1 Announce Type: new \nAbstract: A mesh of sovereign agents has no center: no shared clock, no shared model, and no coordinator to gather data or retrain. Its competence rests on each agent folding the projections its peers emit into a single internal state, online, from observations"
+        },
+        {
+          "title": "Position: RL Researchers Need to Distinguish Between Solving Simulators and Using Simulators as a Proxy",
+          "url": "https://arxiv.org/abs/2606.28433",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-30T00:00:00-04:00",
+          "summary": "arXiv:2606.28433v1 Announce Type: new \nAbstract: One goal in reinforcement learning (RL) research is to understand general-purpose sequential decision-making, using benchmark simulators as a proxy for learning in deployment settings. When running experiments, however, the goal of achieving high perf"
+        },
+        {
+          "title": "Learning to Distributedly Estimate under Partially Known Dynamics: A Covariance-Agnostic Neural Kalman Consensus Filter",
+          "url": "https://arxiv.org/abs/2606.28441",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-30T00:00:00-04:00",
+          "summary": "arXiv:2606.28441v1 Announce Type: new \nAbstract: Online latent state estimation constitutes a fundamental challenge within the artificial intelligence field, serving as a foundational tool for diverse applications, including sequential decision making, anomaly and change-point detection. In this pap"
+        },
+        {
+          "title": "S-GAI: Spectral Geometry-Aware Initialization for Sigmoidal MLPs -- From Dataset Geometry to Network Weights",
+          "url": "https://arxiv.org/abs/2606.28444",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-30T00:00:00-04:00",
+          "summary": "arXiv:2606.28444v1 Announce Type: new \nAbstract: Classical universal approximation theorems establish the expressive power of sigmoidal multilayer perceptrons, but they do not prescribe how initial weights should encode the geometry of a data distribution. We propose S-GAI, a spectral geometry-aware"
+        },
+        {
+          "title": "scKDGM: KAN-guided Dynamic Graph Masked Learning for Single-Cell RNA-seq Clustering",
+          "url": "https://arxiv.org/abs/2606.28459",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-30T00:00:00-04:00",
+          "summary": "arXiv:2606.28459v1 Announce Type: new \nAbstract: Single-cell RNA sequencing (scRNA-seq) clustering is essential for identifying cell types, but high dimensionality, sparsity, dropout, and technical noise hinder robust expression representation and cell graph construction. Existing masked autoencoder"
+        },
+        {
+          "title": "Counterfactual Residual Data Augmentation for Regression",
+          "url": "https://arxiv.org/abs/2606.28460",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-30T00:00:00-04:00",
+          "summary": "arXiv:2606.28460v1 Announce Type: new \nAbstract: Data-driven modeling in real-world regression tasks often suffers from limited training samples, high collection costs, and noisy observations. Inspired by the impact of data augmentation in vision and language, we propose a novel Counterfactual Resid"
+        },
+        {
+          "title": "Singular Learning and Occam's Razor in Deep Monomial Networks",
+          "url": "https://arxiv.org/abs/2606.28464",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-30T00:00:00-04:00",
+          "summary": "arXiv:2606.28464v1 Announce Type: new \nAbstract: In the optimization of neural networks, gradient dynamics are influenced by critical points that arise from the model's architecture. These critical points occur where the Jacobian of the model's parametrization is rank-deficient, and are the most pro"
+        },
+        {
+          "title": "An Agentic AI Pipeline for Appliance-Level Energy Anomaly Detection and LLM-Driven Recommendations",
+          "url": "https://arxiv.org/abs/2606.28467",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-30T00:00:00-04:00",
+          "summary": "arXiv:2606.28467v1 Announce Type: new \nAbstract: Appliance-level energy monitoring in office buildings produces noisy alerts that non-expert facility managers struggle to use. This paper proposes an end-to-end agentic pipeline that combines deep time-series forecasting, variational anomaly detection"
+        },
+        {
+          "title": "Modelling Emotional Memory in Children with Tensor Networks",
+          "url": "https://arxiv.org/abs/2606.28470",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-30T00:00:00-04:00",
+          "summary": "arXiv:2606.28470v1 Announce Type: new \nAbstract: We demonstrate how emotional valence influences the order-dependent structure of children's recognition memory: correct recall of a sequence of emotionally-valenced toys depended not just on the valence of a given toy itself, but also on the valence o"
+        },
+        {
+          "title": "A Trainable-by-Parts Operator Learning Framework: Bridging DeepONet and Karhunen-Loeve Expansions for Large-Scale Applications",
+          "url": "https://arxiv.org/abs/2606.28519",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-30T00:00:00-04:00",
+          "summary": "arXiv:2606.28519v1 Announce Type: new \nAbstract: Training operator-learning models for large-scale problems governed by partial differential equations (PDEs) is challenging due to the curse of dimensionality, memory constraints, and limited training data. These challenges arise in many scientific an"
+        },
+        {
+          "title": "A Gravitational Interpretation of Fine-Tuning Reversion",
+          "url": "https://arxiv.org/abs/2606.28525",
+          "source": "arxiv.org",
+          "pub_date": "2026-06-30T00:00:00-04:00",
+          "summary": "arXiv:2606.28525v1 Announce Type: new \nAbstract: Fine-tuning on harmless data can partially undo behaviors acquired earlier in training. Safety can erode under benign post-alignment updates, unlearned capabilities can re-emerge, latent traits can transfer through apparently unrelated supervision, an"
+        },
+        {
+          "title": "US offers $10 million for info on group behind Signal and WhatsApp hacking spree",
+          "url": "https://arstechnica.com/information-technology/2026/06/us-offers-10-million-for-info-on-group-behind-signal-and-whatsapp-hacking-spree/",
+          "source": "arstechnica.com",
+          "pub_date": "2026-06-29T22:05:33+00:00",
+          "summary": "Operation by two Russia-state groups has been ongoing since at least March."
+        },
+        {
+          "title": "Chamath Palihapitiya raises $135M Series A for his AI coding startup, takes CEO role",
+          "url": "https://techcrunch.com/2026/06/29/chamath-palihapitiya-raises-135m-series-a-for-his-ai-coding-startup-takes-ceo-role/",
           "source": "techcrunch.com",
-          "pub_date": "2026-06-28T05:00:00+00:00",
-          "summary": "Dilip Asbe said that newer UPI apps could be more competitive with a viable commercial model"
+          "pub_date": "2026-06-29T20:55:50+00:00",
+          "summary": "VCs remain thirsty to fund AI coding startups. This one, founded by investor Chamath Palihapitiya, is no exception."
         },
         {
-          "title": "What’s the biggest gap between AI tool demos and actual daily use?",
-          "url": "https://www.reddit.com/r/artificial/comments/1uhlz6m/whats_the_biggest_gap_between_ai_tool_demos_and/",
+          "title": "Meta was secretly running on Google's Gemini the whole time and then got cut off for using too much",
+          "url": "https://www.reddit.com/r/artificial/comments/1uj45np/meta_was_secretly_running_on_googles_gemini_the/",
           "source": "reddit.com",
-          "pub_date": "2026-06-28T03:10:46+00:00",
-          "summary": "I’ve been testing different AI tools in real business workflows, mostly for writing, research, content planning, and repetitive office tasks. One thing I noticed is that demos usually look impressive, but daily use often fails in small places: inconsistent output, lack of context, too much manual ch"
+          "pub_date": "2026-06-29T20:36:20+00:00",
+          "summary": "Saw this article today and it genuinely surprised me Meta has been using Gemini for customer service, ad tools, content moderation, all of it. and apparently chose it because it worked better than their own Llama models and then Google cut them off because Meta was consuming too much capacity. Now e"
         },
         {
-          "title": "TMD’s keyless bike lock is a $280 solution to a $60 problem",
-          "url": "https://www.theverge.com/tech/957603/tmd-smart-keyless-bike-lock-review",
-          "source": "theverge.com",
-          "pub_date": "2026-06-28T03:00:00-04:00",
-          "summary": "I've seen lots of so-called \"smart\" bike locks over the years, but none so far could justify the added cost. A newcomer that got its start securing ATMs for banks is trying to change that. There's nothing wholly unique about the TMD Chain Lock, but the combination of materials, performance, and insu"
-        },
-        {
-          "title": "Instagram is testing more ways to customize ‘Your Algorithm’",
-          "url": "https://techcrunch.com/2026/06/27/instagram-is-testing-more-ways-for-users-to-customize-your-algorithm/",
-          "source": "techcrunch.com",
-          "pub_date": "2026-06-27T21:27:37+00:00",
-          "summary": "Instagram users could soon see more ways to tune their content."
-        },
-        {
-          "title": "SoftBank’s CEO isn’t the only one with questions about Elon Musk’s orbital data center hype",
-          "url": "https://techcrunch.com/2026/06/27/softbanks-ceo-isnt-the-only-one-with-questions-about-elon-musks-orbital-data-center-hype/",
-          "source": "techcrunch.com",
-          "pub_date": "2026-06-27T20:42:36+00:00",
-          "summary": "Not everyone is buying Elon Musk’s vision for orbital data centers."
-        },
-        {
-          "title": "Claude Code turned every engineer into three. Now companies need more product thinkers",
-          "url": "https://venturebeat.com/infrastructure/claude-code-turned-every-engineer-into-three-now-companies-need-more-product-thinkers",
+          "title": "DeepSeek open sources DSpark, a new framework to speed up LLM inference by up to 85%",
+          "url": "https://venturebeat.com/orchestration/deepseek-open-sources-dspark-a-new-framework-to-speed-up-llm-inference-by-up-to-85",
           "source": "venturebeat.com",
-          "pub_date": "2026-06-27T19:30:09+00:00",
-          "summary": "Anthropic recently told its growth team to hire more product managers, not fewer. The reason, as reported in industry coverage, was that Claude Code had quietly turned its engineering org into a team that ships at roughly three times its actual headcount, and the bottleneck moved from the integrated"
+          "pub_date": "2026-06-29T20:36:15+00:00",
+          "summary": "Even as the geopolitical conversation around AI continues to grow more fraught following the U.S. government&#x27;s actions to limit the new models from Anthropic and OpenAI, Chinese open source darling DeepSeek is back with yet another open release that could once again change AI development around"
         },
         {
-          "title": "Teenage Engineering adds lo-fi mode, USB audio, and more to its KO II sampler",
-          "url": "https://www.theverge.com/entertainment/958723/teenage-engineering-os-25-ep-133-ko-ii-sampler",
-          "source": "theverge.com",
-          "pub_date": "2026-06-27T17:20:32-04:00",
-          "summary": "Teenage Engineering has already issued multiple substantial updates for its surprisingly capable $329 EP-133 KO II sampler. Its latest is one of the biggest yet. OS 2.5 adds audio over USB, selectable sample rates for lo-fi fun, sample reverse, an arpeggiator, equal-length autochopping, and it exten"
-        },
-        {
-          "title": "Apple Vision Pro exec is reportedly leaving for OpenAI",
-          "url": "https://techcrunch.com/2026/06/27/apple-vision-pro-exec-is-reportedly-leaving-for-openai/",
+          "title": "Gemini’s personalized AI image generation is now free for US users",
+          "url": "https://techcrunch.com/2026/06/29/geminis-personalized-ai-image-generation-is-now-free-for-u-s-users/",
           "source": "techcrunch.com",
-          "pub_date": "2026-06-27T16:45:09+00:00",
-          "summary": "Paul Meade, the Apple vice president in charge of the Vision Pro headset, is reportedly leaving the company to join OpenAI’s hardware team."
+          "pub_date": "2026-06-29T20:12:59+00:00",
+          "summary": "Google is expanding Gemini’s personalized AI image generation to eligible free users in the U.S., allowing the chatbot to create images based on your interests and data from connected Google apps."
         },
         {
-          "title": "Margaret Atwood says the problem with AI is &#8216;garbage in, garbage out&#8217;",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/958715/margaret-atwood-ai-problem-garbage-in-garbage-out",
-          "source": "theverge.com",
-          "pub_date": "2026-06-27T14:39:32-04:00",
-          "summary": "Maraget Atwood, the storied author of The Handmaid's Tale and The Blind Assassin, was interviewed as part of the Babell Literary and Cultural Festival in Porto, Portugal. As it usually does at these things, the issue of AI came up, and Atwood didn't mince words. According to Deadline's recap, Atwood"
-        },
-        {
-          "title": "The fittest founder in the room got cancer. Here’s how he used AI to fight back.",
-          "url": "https://techcrunch.com/2026/06/27/the-fittest-founder-in-the-room-got-cancer-heres-how-he-used-ai-to-fight-back/",
+          "title": "Watch out, Amazon: The Kobo eReader now has a Goodreads rival",
+          "url": "https://techcrunch.com/2026/06/29/watch-out-amazon-the-kobo-ereader-now-has-a-goodreads-rival/",
           "source": "techcrunch.com",
-          "pub_date": "2026-06-27T14:00:00+00:00",
-          "summary": "When confronted with cancer, Connor Christou fed everything tied tied to his regime — blood results, scan data, wearable output, journal entries — into Claude."
+          "pub_date": "2026-06-29T19:06:21+00:00",
+          "summary": "Kobo users can now automatically sync their reading progress to StoryGraph, making it easier to track books, reading stats, and challenges without relying on Amazon’s Goodreads."
         },
         {
-          "title": "I have it on good authority that Google are going to be hit with export controls soon.",
-          "url": "https://www.reddit.com/r/artificial/comments/1uh2fc5/i_have_it_on_good_authority_that_google_are_going/",
+          "title": "Waymo and Uber quietly part ways in Phoenix",
+          "url": "https://techcrunch.com/2026/06/29/waymo-and-uber-quietly-part-ways-in-phoenix/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-06-29T18:45:12+00:00",
+          "summary": "Uber said it is readying the launch of a separate autonomous vehicle partnership in the city, but did not name the partner."
+        },
+        {
+          "title": "Anthropic and Gov. Newsom forge deal allowing California government to use Claude at half price",
+          "url": "https://techcrunch.com/2026/06/29/anthropic-and-gov-newsom-forge-deal-allowing-california-government-to-use-claude-at-half-price/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-06-29T18:10:26+00:00",
+          "summary": "As Anthropic forges a closer relationship with the state of California, the federal government has made an enemy out of the OpenAI rival."
+        },
+        {
+          "title": "South Korean tech giants commit over $550B to ease ‘RAMageddon’",
+          "url": "https://techcrunch.com/2026/06/29/south-korean-tech-giants-commit-over-550b-to-ease-ramageddon/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-06-29T18:07:48+00:00",
+          "summary": "The world's two largest memory chip companies vow to build more memory lab fabs as South Korea positions itself as an AI tech powerhouse country."
+        },
+        {
+          "title": "DiScoFormer: One transformer for density and score, across distributions",
+          "url": "https://huggingface.co/blog/allenai/discoformer",
+          "source": "huggingface.co",
+          "pub_date": "2026-06-29T18:02:48+00:00",
+          "summary": ""
+        },
+        {
+          "title": "Arena, the AI leaderboard everyone uses, is now a $100M business",
+          "url": "https://techcrunch.com/2026/06/29/arena-the-ai-leaderboard-everyone-uses-is-now-a-100m-business/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-06-29T17:39:17+00:00",
+          "summary": "The startup, which runs a popular free AI leaderboard, launched its commercial service just last September."
+        },
+        {
+          "title": "What if AI's failures reveal our vices more than its limits?",
+          "url": "https://www.reddit.com/r/artificial/comments/1uiyoo8/what_if_ais_failures_reveal_our_vices_more_than/",
           "source": "reddit.com",
-          "pub_date": "2026-06-27T13:11:25+00:00",
-          "summary": "&#32; submitted by &#32;  /u/ThoseOldScientists   [link] &#32; [comments]"
+          "pub_date": "2026-06-29T17:16:05+00:00",
+          "summary": "Hey everyone. The usual AI debate swings between &quot;the systems are amazing&quot; and &quot;the systems are dangerous.&quot; I find a third frame more useful: what if our misuse of AI reveals something about us? The speed of adoption may say less about machine intelligence than about our appetite"
         },
         {
-          "title": "Asian AI startups launch Mythos-like  models as Anthropic’s export ban drags on",
-          "url": "https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on/",
+          "title": "T-Mobile is booting customers from its oldest plans",
+          "url": "https://www.theverge.com/tech/959144/t-mobile-legacy-plan-retire-sprint",
+          "source": "theverge.com",
+          "pub_date": "2026-06-29T17:06:14-04:00",
+          "summary": "Earlier today, T-Mobile started notifying customers that it will be retiring many legacy plans and moving subscribers onto one of its current rate plans. This move includes plans that date back to the 3G era, and it's going about as well as you'd expect. Affected customers began sharing screenshots "
+        },
+        {
+          "title": "Cursor now has a mobile app for guiding your coding agent on the go",
+          "url": "https://techcrunch.com/2026/06/29/cursor-now-has-a-mobile-app-for-guiding-your-coding-agent-on-the-go/",
           "source": "techcrunch.com",
-          "pub_date": "2026-06-27T12:00:00+00:00",
-          "summary": "New models are launching in Asia that promise Mythos-like capabilities without fear of an export ban. U.S. AI labs may never recover this enormous market."
+          "pub_date": "2026-06-29T17:03:50+00:00",
+          "summary": "Cursor has launched a new mobile app for remote oversight over coding agents."
         },
         {
-          "title": "So now scraping data without permission is bad for AI training all of sudden?",
-          "url": "https://www.reddit.com/r/artificial/comments/1ugwccs/so_now_scraping_data_without_permission_is_bad/",
+          "title": "After a great start, DC’s new cinematic universe is already slowing down",
+          "url": "https://www.theverge.com/entertainment/958953/supergirl-dcu-warner-bros-discovery-box-office-flop",
+          "source": "theverge.com",
+          "pub_date": "2026-06-29T17:00:00-04:00",
+          "summary": "While Kara Zor-El's appearance at the end of James Gunn's Superman was a very pleasant surprise, Warner Bros. Discovery's plan to fast-track a standalone Supergirl feature always felt a little dubious. It seemed odd that, after Superman, the studio wanted to flesh out its new cinematic universe with"
+        },
+        {
+          "title": "Trump administration threatens 92 GW of new electricity supply with red tape",
+          "url": "https://techcrunch.com/2026/06/29/trump-administration-threatens-92-gw-of-new-electricity-supply-with-red-tape/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-06-29T16:58:30+00:00",
+          "summary": "The Trump administration's moves threaten $121 billion in new solar and wind power, two energy sources that are the biggest contributors to new capacity in the U.S."
+        },
+        {
+          "title": "Has anyone else found that context matters more than model size for AI agents?",
+          "url": "https://www.reddit.com/r/artificial/comments/1uiy6dr/has_anyone_else_found_that_context_matters_more/",
           "source": "reddit.com",
-          "pub_date": "2026-06-27T07:37:00+00:00",
-          "summary": "Oh .... the irony!   &#32; submitted by &#32;  /u/base64-encode   [link] &#32; [comments]"
+          "pub_date": "2026-06-29T16:57:39+00:00",
+          "summary": "While building AI agents I noticed something that really surprised me. When I started out, I thought that using a model would make a huge difference in reducing mistakes and wrong tool usage... That wasn't the case. What actually made the biggest difference was giving the agent information from the "
+        },
+        {
+          "title": "The attack that hijacked Claude Code came through Sentry. Datadog, PagerDuty, and Jira have the same exposure.",
+          "url": "https://venturebeat.com/security/the-attack-that-hijacked-claude-code-came-through-sentry-datadog-pagerduty-and-jira-have-the-same-exposure",
+          "source": "venturebeat.com",
+          "pub_date": "2026-06-29T16:53:14+00:00",
+          "summary": "A single fake error report hijacked Claude Code in controlled testing — the agent ran the attacker&#x27;s code with the developer&#x27;s full privileges, and not one alert fired. EDR, WAF, IAM, and the firewall all missed it completely.Tenet Security&#x27;s June agentjacking disclosure describes a s"
+        },
+        {
+          "title": "TIDAL cracks down on AI music by cutting off monetization",
+          "url": "https://techcrunch.com/2026/06/29/tidal-cracks-down-on-ai-music-by-cutting-off-monetization/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-06-29T16:29:04+00:00",
+          "summary": "In addition, TIDAL will use automated tools to remove AI-generated music that attempts to impersonate an artist or a group, the company said."
+        },
+        {
+          "title": "Leaked iPhone 18 Pro photos reportedly wound up on the dark web",
+          "url": "https://www.theverge.com/tech/959229/iphone-18-pro-leak-apple-dark-web",
+          "source": "theverge.com",
+          "pub_date": "2026-06-29T16:18:26-04:00",
+          "summary": "Leaked iPhone 18 Pro photos and parts lists appeared on the dark web following a data breach affecting one of Apple's key suppliers, according to a report from Reuters. The leaked images show a drop test of what a source tells Reuters is the iPhone 18 Pro, equipped with a three-camera layout and App"
+        },
+        {
+          "title": "Ford rehires veteran engineers after AI fails to meet quality standards",
+          "url": "https://www.reddit.com/r/artificial/comments/1uiwmnm/ford_rehires_veteran_engineers_after_ai_fails_to/",
+          "source": "reddit.com",
+          "pub_date": "2026-06-29T16:02:02+00:00",
+          "summary": "&#32; submitted by &#32;  /u/Away_Theme1330   [link] &#32; [comments]"
+        },
+        {
+          "title": "Tidal won’t pay royalties on AI-generated music but isn’t banning it outright",
+          "url": "https://www.theverge.com/tech/959211/tidal-ai-music-policy-demonetizingdetect-label",
+          "source": "theverge.com",
+          "pub_date": "2026-06-29T15:47:35-04:00",
+          "summary": "Tidal shared its new policies regarding AI-generated music today and how the platform plans to \"protect artists\" and \"inform listeners.\" Instead of banning it outright, starting on July 15th Tidal will label tracks it has identified as being 100 percent AI-generated with an icon. But starting today "
+        },
+        {
+          "title": "Over 20 publishers sue OpenAI, Microsoft for training ChatGPT with their content",
+          "url": "https://www.reddit.com/r/artificial/comments/1uiveao/over_20_publishers_sue_openai_microsoft_for/",
+          "source": "reddit.com",
+          "pub_date": "2026-06-29T15:17:46+00:00",
+          "summary": "&#32; submitted by &#32;  /u/runswithscissors475   [link] &#32; [comments]"
+        },
+        {
+          "title": "Sony&#8217;s next-gen PlayStation will go ‘beyond the living room’",
+          "url": "https://www.theverge.com/games/959191/sony-next-generation-playstation-ps6-beyond-the-living-room",
+          "source": "theverge.com",
+          "pub_date": "2026-06-29T15:12:15-04:00",
+          "summary": "Sony hinted in a recent Q&#38;A with investors that the next generation PlayStation will offer some kind of experience that lets you play games outside of your living room. Here's the relevant portion from the transcript, emphasis mine: Q: How can you bring back to the PlayStation platform users who"
+        },
+        {
+          "title": "OpenAI is teasing new hardware… for Codex",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/959174/openai-codex-hardware-work-louder",
+          "source": "theverge.com",
+          "pub_date": "2026-06-29T14:52:03-04:00",
+          "summary": "OpenAI is releasing some sort of device related to its AI-powered coding tool, Codex, on July 15th. In a video posted to X on Monday, OpenAI shows a square-shaped device with several buttons, alongside the caption, \"Your favorite Codex shortcuts are getting an upgrade.\" This isn't the mysterious AI-"
+        },
+        {
+          "title": "At $499, Apple&#8217;s M3-powered iPad Air is a good deal",
+          "url": "https://www.theverge.com/gadgets/959080/ipad-air-m3-5g-wifi-deal-sale",
+          "source": "theverge.com",
+          "pub_date": "2026-06-29T13:49:12-04:00",
+          "summary": "Most of Apple&#8217;s price increases have gone into effect, resulting in iPads and other products costing hundreds more than they did a few days ago. If last week’s Prime Day sale wasn&#8217;t a good time to consider buying an iPad, we found a deal worth considering that&#8217;s just under $500 rig"
+        },
+        {
+          "title": "Palantir and Nvidia Expand Sovereign AI Partnership for US Government",
+          "url": "https://www.reddit.com/r/artificial/comments/1uismgu/palantir_and_nvidia_expand_sovereign_ai/",
+          "source": "reddit.com",
+          "pub_date": "2026-06-29T13:31:58+00:00",
+          "summary": "&#32; submitted by &#32;  /u/andix3   [link] &#32; [comments]"
+        },
+        {
+          "title": "I recorded every Claude Code session for 3 months and let agents write it up for me",
+          "url": "https://www.reddit.com/r/artificial/comments/1uirk5i/i_recorded_every_claude_code_session_for_3_months/",
+          "source": "reddit.com",
+          "pub_date": "2026-06-29T12:47:58+00:00",
+          "summary": "I kept losing track of my own work, so I started saving every Claude Code session and built a few agents to make sense of it. Each night, an agent turns the day's raw sessions into one clear note covering what I built, what I decided, and what's still open. Each week, another agent rolls those notes"
         }
       ],
-      "cached_at": "2026-06-29T07:17:33.463712"
+      "cached_at": "2026-06-30T06:43:39.833192"
     },
     "india_sea": {
       "articles": [
+        {
+          "title": "D2C’s New Media Playbook",
+          "url": "https://inc42.com/features/d2cs-new-media-playbook/",
+          "source": "inc42.com",
+          "pub_date": "2026-06-30T05:30:30+00:00",
+          "summary": "Everybody wants to own the media, and the country’s fastest-growing new-age consumer brands are no exception.  Faced with rising customer&#8230;"
+        },
+        {
+          "title": "Kitchenware brand The Indus Valley bags $17M from Gaja Capital, existing investors",
+          "url": "https://yourstory.com/2026/06/kitchenware-indus-valley-17-million-funding-gaja-capital",
+          "source": "yourstory.com",
+          "pub_date": "2026-06-30T05:23:48+00:00",
+          "summary": "The Indus Valley has raised funds to expand product innovation, distribution and brand presence, as demand grows for toxin-free healthy cookware in India."
+        },
+        {
+          "title": "OYO Parent PRISM Files Updated DRHP For ₹6,650 Cr IPO",
+          "url": "https://inc42.com/buzz/oyo-parent-prism-files-updated-drhp-for-%e2%82%b96650-cr-ipo/",
+          "source": "inc42.com",
+          "pub_date": "2026-06-30T04:39:01+00:00",
+          "summary": "Hospitality unicorn OYO’s parent PRISM has filed its updated draft red herring prospectus (UDRHP) with SEBI for a ₹6,650 Cr&#8230;"
+        },
+        {
+          "title": "Singapore-based PvX lands MIT investment to fund the next wave of app user acquisition",
+          "url": "https://e27.co/singapore-based-pvx-lands-mit-investment-to-fund-the-next-wave-of-app-user-acquisition-20260630/",
+          "source": "e27.co",
+          "pub_date": "2026-06-30T04:16:27+00:00",
+          "summary": "Singapore-based PvX Partners has secured a US$5 million equity investment from the Massachusetts Institute of Technology (MIT), adding a heavyweight institutional name to its cap table as demand rises for alternative financing models in the consumer app and gaming sectors. Founded in 2024, PvX provi"
+        },
+        {
+          "title": "Igloo expands Thailand footprint with Eazy Digital acquisition amid insurance reform push",
+          "url": "https://e27.co/igloo-expands-thailand-footprint-with-eazy-digital-acquisition-amid-insurance-reform-push-20260630/",
+          "source": "e27.co",
+          "pub_date": "2026-06-30T03:39:58+00:00",
+          "summary": "Singapore-headquartered insurance technology Igloo has acquired Eazy Digital, a fellow Singaporean startup with operations across Thailand and Asia, as it doubles down on one of Southeast Asia’s most important but still under-digitised insurance markets. Under the transaction, Eazy Digital’s client "
+        },
+        {
+          "title": "Why one AI workshop won’t transform your organisation",
+          "url": "https://e27.co/why-one-ai-workshop-wont-transform-your-organisation-20260623/",
+          "source": "e27.co",
+          "pub_date": "2026-06-30T03:00:03+00:00",
+          "summary": "Most organisations that say they are investing in AI are actually investing in awareness. There is a difference, and it matters more than many leaders realise. Across workplaces today, AI adoption is accelerating. Employees are experimenting with chatbots, attending workshops and learning prompt-wri"
+        },
+        {
+          "title": "The short squeeze illusion: Why derivative squeezes make fragile foundations for Bitcoin",
+          "url": "https://e27.co/the-short-squeeze-illusion-why-derivative-squeezes-make-fragile-foundations-for-bitcoin-20260630/",
+          "source": "e27.co",
+          "pub_date": "2026-06-30T02:59:59+00:00",
+          "summary": "Bitcoin reached US$60,258.79 after gaining 1.68 per cent over 24 hours. Total crypto market capitalisation advanced 1.82 per cent in the same timeframe. This synchronised movement reveals the true nature of the current rally. Digital assets lack internal catalysts right now and rely entirely on exte"
+        },
+        {
+          "title": "The next trillion-dollar AI opportunity: Real-world models and learning agents",
+          "url": "https://e27.co/the-next-trillion-dollar-ai-opportunity-real-world-models-and-learning-agents-20260625/",
+          "source": "e27.co",
+          "pub_date": "2026-06-30T02:45:13+00:00",
+          "summary": "For the past few years, artificial intelligence has been dominated by one powerful idea: conversation. People ask AI to write emails, summarise reports, generate marketing copy, explain legal documents, produce code, and answer questions. This has created enormous value because Large Language Models"
+        },
+        {
+          "title": "Ecommerce’s Logistics Game, Nua Eyes $25 Mn & More",
+          "url": "https://inc42.com/buzz/ecommerces-logistics-game-nua-eyes-25-mn-more/",
+          "source": "inc42.com",
+          "pub_date": "2026-06-30T02:30:44+00:00",
+          "summary": "Amazon vs Flipkart: The Logistics Duel After ecommerce, Amazon and Flipkart are now locking horns in the logistics arena too.&#8230;"
+        },
+        {
+          "title": "The grains of structural friction: Why AI upskilling is failing the power law",
+          "url": "https://e27.co/the-grains-of-structural-friction-why-ai-upskilling-is-failing-the-power-law-20260617/",
+          "source": "e27.co",
+          "pub_date": "2026-06-30T02:15:57+00:00",
+          "summary": "AI is often framed as a universal equaliser. Give everyone access to the same tools. Provide widespread training. Raise the baseline—and outcomes should converge. But this assumption is increasingly misaligned with reality. Despite unprecedented access to AI tools and learning resources, outcomes ar"
+        },
+        {
+          "title": "Why your AI chatbot fails after 2 months (and it is not the technology)",
+          "url": "https://e27.co/why-your-ai-chatbot-fails-after-2-months-and-it-is-not-the-technology-20260623/",
+          "source": "e27.co",
+          "pub_date": "2026-06-30T01:50:09+00:00",
+          "summary": "Everyone is talking about building a second brain. Nobody is talking about how hard it is to actually fill it up correctly. I tried three times. Each time I failed. I would set up the system, populate it with information, feel organised for about two weeks, then fall behind on maintenance. Pricing c"
+        },
+        {
+          "title": "Can your AI actually read your data?",
+          "url": "https://e27.co/can-your-ai-actually-read-your-data-20260628/",
+          "source": "e27.co",
+          "pub_date": "2026-06-30T01:45:05+00:00",
+          "summary": "There is a number buried in this month&#8217;s marketing-technology announcements that should stop every CMO and agency head in the region mid-scroll: 88 per cent of enterprise marketing leaders now wish they had invested in their content and data foundations before they deployed agentic AI. That fi"
+        },
+        {
+          "title": "3one4 Capital Floats $15 Mn Fund To Back Under-Represented Founders",
+          "url": "https://inc42.com/buzz/3one4-capital-floats-15-mn-fund-to-back-under-represented-founders/",
+          "source": "inc42.com",
+          "pub_date": "2026-06-30T01:00:22+00:00",
+          "summary": "Venture capital (VC) firm 3one4 Capital has banded together with British International Investment (BII) to float a new $15 Mn&#8230;"
+        },
+        {
+          "title": "Kapture CX Bags $10 Mn To Take Its AI-Powered CRM Tools Global",
+          "url": "https://inc42.com/buzz/kapture-cx-bags-10-mn-to-take-its-ai-powered-crm-tools-global/",
+          "source": "inc42.com",
+          "pub_date": "2026-06-30T01:00:15+00:00",
+          "summary": "AI-powered SaaS platform Kapture CX has raised $10 Mn (₹94.5 Cr) as part of its Pre-Series B round led by&#8230;"
+        },
+        {
+          "title": "Flipkart, Amazon Flex Logistics Muscles; Will It Bring New Growth Levers?",
+          "url": "https://inc42.com/features/flipkart-amazon-flex-logistics-muscles-will-it-bring-new-growth-levers/",
+          "source": "inc42.com",
+          "pub_date": "2026-06-30T00:30:01+00:00",
+          "summary": "When Delhivery acquired Ecom Express in 2025, the Indian logistics industry read it as a consolidation play — a larger&#8230;"
+        },
+        {
+          "title": "5 Teachings from Essentialism about doing less but better",
+          "url": "https://yourstory.com/2026/05/5-teachings-from-essentialism",
+          "source": "yourstory.com",
+          "pub_date": "2026-06-29T14:17:51+00:00",
+          "summary": "Discover 5 powerful teachings from Essentialism that can help you focus on what matters, avoid burnout, and do less but better."
+        },
+        {
+          "title": "Prosus India revenue up 13% driven by fintech platform Pay U",
+          "url": "https://yourstory.com/2026/06/prosus-india-revenue-up-13-driven-by-pay-u",
+          "source": "yourstory.com",
+          "pub_date": "2026-06-29T13:59:22+00:00",
+          "summary": "Pay U turned EBITDA positive for the first time in FY26 driven largely by increased transaction volumes"
+        },
+        {
+          "title": "5 Quotes from the diary of a CEO that will change your mindset",
+          "url": "https://yourstory.com/2026/05/diary-of-a-ceo-mindset-quotes",
+          "source": "yourstory.com",
+          "pub_date": "2026-06-29T13:37:33+00:00",
+          "summary": "Discover 5 powerful quotes from The Diary of a CEO by Steven Bartlett that can shift your mindset on success, growth, discipline, and life."
+        },
+        {
+          "title": "Exclusive: Lightbox-Backed Nua In Talks To Raise $25 Mn From Peak XV, Others",
+          "url": "https://inc42.com/buzz/lightbox-backed-nua-in-talks-to-raise-25-mn-from-peak-xv-others/",
+          "source": "inc42.com",
+          "pub_date": "2026-06-29T13:01:49+00:00",
+          "summary": "D2C femtech brand Nua is in talks to raise $20 Mn (about ₹189 Cr) to $25 Mn (about ₹236 Cr)&#8230;"
+        },
+        {
+          "title": "Delhi Government Plans To Invest ₹15,000 Cr To Fuel Electric Mobility",
+          "url": "https://inc42.com/buzz/delhi-government-plans-to-invest-%e2%82%b915000-cr-to-fuel-electric-mobility/",
+          "source": "inc42.com",
+          "pub_date": "2026-06-29T12:45:40+00:00",
+          "summary": "Adding to its effort to electrify transportation in the national capital, Delhi chief minister Rekha Gupta announced the government’s plans&#8230;"
+        },
+        {
+          "title": "Apple Alleges CCI Copy-Pasted Rivals’ Claims In Antitrust Probe",
+          "url": "https://inc42.com/buzz/apple-alleges-cci-copy-pasted-rivals-claims-in-antitrust-probe/",
+          "source": "inc42.com",
+          "pub_date": "2026-06-29T12:13:52+00:00",
+          "summary": "Escalating its battle with the Competition Commission of India (CCI), Apple has accused the antitrust regulator’s investigation team of &#8220;copy-pasting&#8221;&#8230;"
+        },
+        {
+          "title": "[Update] Turtlemint Shares End First Trading Session 11% Below Issue Price",
+          "url": "https://inc42.com/buzz/turtlemint-shares-make-muted-debut-list-at-over-11-discount/",
+          "source": "inc42.com",
+          "pub_date": "2026-06-29T12:10:19+00:00",
+          "summary": "Update &#124; June 29, 17:00 IST Shares of insurtech startup Turtlemint failed to breach their issue price on the first&#8230;"
+        },
+        {
+          "title": "How AI Is Rewiring The Consumer Growth Stack Across India’s B2C Economy",
+          "url": "https://inc42.com/startups/how-ai-is-rewiring-the-consumer-growth-stack-across-indias-b2c-economy/",
+          "source": "inc42.com",
+          "pub_date": "2026-06-29T11:30:51+00:00",
+          "summary": "John Wanamaker, one of the biggest retailers of the 1900s, once said, &#8220;Half the money I spend on advertising is&#8230;"
+        },
+        {
+          "title": "Eternal, Meesho, Other Consumer Tech Unicorns Challenge Karnataka’s Gig Worker Law",
+          "url": "https://inc42.com/buzz/eternal-meesho-other-consumer-tech-unicorns-challenge-karnatakas-gig-worker-law/",
+          "source": "inc42.com",
+          "pub_date": "2026-06-29T11:17:54+00:00",
+          "summary": "Major consumer internet companies Swiggy, Zepto, Urban Company and Eternal have jointly moved the Karnataka High Court (HC) challenging the&#8230;"
+        },
+        {
+          "title": "Why investors and customers are betting on ESG-aligned startups",
+          "url": "https://e27.co/why-investors-and-customers-are-betting-on-esg-aligned-startups-20250604/",
+          "source": "e27.co",
+          "pub_date": "2026-06-29T11:15:57+00:00",
+          "summary": "In the fast-paced world of startups, founders are trained to think lean, move fast, and scale big. But what if we told you that embedding Environmental, Social, and Governance (ESG) principles early on could actually accelerate your growth rather than slow you down? The outdated notion that ESG is o"
+        },
+        {
+          "title": "Klook India’s new campaign with Farah Khan is about the trips you didn’t plan for",
+          "url": "https://yourstory.com/2026/06/klook-campaign-farah-khan-trips-didnt-plan",
+          "source": "yourstory.com",
+          "pub_date": "2026-06-29T11:14:07+00:00",
+          "summary": "With Farah Khan and her longtime cook Dilip exploring Singapore together, Klook India’s latest digital-first campaign taps into a growing shift in travel: moving beyond checklist tourism toward discovery, spontaneity, and local experiences."
+        },
+        {
+          "title": "Thailand-founded Amity sets up Singapore AI hub, eyes 2027 IPO",
+          "url": "https://e27.co/thailand-founded-amity-sets-up-singapore-ai-hub-eyes-2027-ipo-20260629/",
+          "source": "e27.co",
+          "pub_date": "2026-06-29T08:21:52+00:00",
+          "summary": "Thailand-founded enterprise AI company Amity has opened a Singapore office and AI Research &#38; Application Center (ARAC), placing the city-state at the centre of its regional expansion, product development, and planned path to a public listing in 2027. The move follows Amity’s US$100 million Serie"
+        },
+        {
+          "title": "Incuspaze raises Rs 150 Cr led by Bharat Value Fund",
+          "url": "https://yourstory.com/2026/06/incuspaze-raises-rs-150-crore-led-by-bharat-value-fund",
+          "source": "yourstory.com",
+          "pub_date": "2026-06-29T08:21:20+00:00",
+          "summary": "Incuspaze will use this funding round primarily to expand its operations, investments in technology and potential acquisitions."
+        },
         {
           "title": "Singapore’s Biobot Surgical raises US$15.6M to take prostate-care robot global",
           "url": "https://e27.co/singapores-biobot-surgical-raises-us15-6m-to-take-prostate-care-robot-global-20260629/",
           "source": "e27.co",
           "pub_date": "2026-06-29T06:13:28+00:00",
           "summary": "Singapore-based medtech company Biobot Surgical has raised SGD 20 million (about US$15.6 million) in a financing round led by ClavystBio, with participation from ZIG Ventures, as it looks to expand global adoption of its robotic-assisted prostate cancer care platform and enter the US market. The com"
-        },
-        {
-          "title": "Coworking Space Provider Incuspaze Bags ₹150 Cr For M&A Push Ahead Of IPO",
-          "url": "https://inc42.com/buzz/coworking-space-provider-incuspaze-bags-%e2%82%b9150-cr-for-ma-push-ahead-of-ipo/",
-          "source": "inc42.com",
-          "pub_date": "2026-06-29T05:40:17+00:00",
-          "summary": "Managed workspace provider Incuspaze has raised ₹150 Cr (about $15.9 Mn) in a fresh funding round led by Bharat Value&#8230;"
-        },
-        {
-          "title": "Exclusive: Mykare Closes Round At $3.2 Mn To Expand Hospital Network",
-          "url": "https://inc42.com/buzz/exclusive-mykare-closes-round-at-3-2-mn-to-expand-hospital-network/",
-          "source": "inc42.com",
-          "pub_date": "2026-06-29T05:00:46+00:00",
-          "summary": "Healthtech startup Mykare has raised an additional $1 Mn (₹9.4 Cr) in a bridge round from US-based healthtech company Papa.com&#8230;"
-        },
-        {
-          "title": "Turtlemint Shares Make Muted Debut, List At Over 11% Discount",
-          "url": "https://inc42.com/buzz/turtlemint-shares-make-muted-debut-list-at-over-11-discount/",
-          "source": "inc42.com",
-          "pub_date": "2026-06-29T04:44:19+00:00",
-          "summary": "Shares of insurtech startup Turtlemint made a weak debut on the bourses today, listing at ₹134.90 on the NSE. This&#8230;"
         },
         {
           "title": "Southeast Asia’s investors are sleeping on a US$2B ecosystem next door",
@@ -1032,81 +1240,11 @@
           "summary": "Kazakhstan is not a country most Southeast Asian founders think about when mapping expansion routes. But Magzhan Madiyev, CEO of Astana Hub, wants to change that fast. In seven years, the organisation has helped transform a country with virtually no venture culture into one where 2,200 companies gen"
         },
         {
-          "title": "Funded: I keep a notebook by my bed with one question about SEA climate",
-          "url": "https://e27.co/funded-i-keep-a-notebook-by-my-bed-with-one-question-about-sea-climate-20260626/",
-          "source": "e27.co",
-          "pub_date": "2026-06-29T03:00:23+00:00",
-          "summary": "I keep a small notebook by my bed. Not for ideas. Just things I don&#8217;t want to forget. Last week I wrote: &#8220;What does this place look like in 2040?&#8221; Not for a deck. Not for a client. I don&#8217;t have kids. The usual anchors people use to think about the future, school fees, inherit"
-        },
-        {
-          "title": "The dangerous liquidation cascade waiting below the US$58,000 support threshold",
-          "url": "https://e27.co/the-dangerous-liquidation-cascade-waiting-below-the-us58000-support-threshold-20260629/",
-          "source": "e27.co",
-          "pub_date": "2026-06-29T02:48:28+00:00",
-          "summary": "The current correction in the digital asset market reflects a structural shift in investor behaviour rather than a random price fluctuation. Bitcoin recently fell by 0.84 per cent over a 24-hour period to settle at US$59,526.31, which slightly outpaced the broader market decline of 0.94 per cent. Th"
-        },
-        {
-          "title": "The next ASEAN fintech opportunity is not payments acceptance, it’s settlement intelligence",
-          "url": "https://e27.co/the-next-asean-fintech-opportunity-is-not-payments-acceptance-its-settlement-intelligence-20260623/",
-          "source": "e27.co",
-          "pub_date": "2026-06-29T02:45:05+00:00",
-          "summary": "The gold rush in the fintech sector in Southeast Asia has been there at the storefront for years. Indonesia, the Philippines, and Vietnam became models of financial inclusion as their interoperable QR codes and digital wallets were rapidly spreading across the region. But as the digital top end beco"
-        },
-        {
-          "title": "The New AI Risk, Weekly Funding Rundown & More",
-          "url": "https://inc42.com/buzz/the-new-ai-risk-weekly-funding-rundown-more/",
-          "source": "inc42.com",
-          "pub_date": "2026-06-29T02:30:58+00:00",
-          "summary": "Why India Needs An ‘Open’ AI Playbook For years, enterprises evaluated AI models on performance, cost and capabilities. But as&#8230;"
-        },
-        {
-          "title": "What it means to be good at your job in 2026",
-          "url": "https://e27.co/what-it-means-to-be-good-at-your-job-in-2026-20260623/",
-          "source": "e27.co",
-          "pub_date": "2026-06-29T02:15:54+00:00",
-          "summary": "In the startup ecosystem, the definition of excellence has shifted. We have spent decades hiring for &#8220;high-fidelity execution&#8221;—the ability to take a brief and turn it into a polished deliverable. But in 2026, execution is a utility. If a task is governed by rule-based logic and establish"
-        },
-        {
-          "title": "CRED fundraise helps VC inflow to cross $1B",
-          "url": "https://yourstory.com/2026/06/cred-fundraise-helps-vc-inflow-to-cross-1b",
+          "title": "Brands, AI, platforms: test your business creativity with Edition 238 of our weekly quiz!",
+          "url": "https://yourstory.com/2026/06/brands-ai-platforms-business-creativity-entrepreneur-education-quiz",
           "source": "yourstory.com",
-          "pub_date": "2026-06-29T02:00:00+00:00",
-          "summary": "Venture capital funding into Indian startups crossed the $1-billion mark on a weekly basis for the first time since 2023 and this was primarily due to $900 million fund raise of CRED."
-        },
-        {
-          "title": "Beyond the layoff headlines: Why AI plus humans is the ultimate power couple",
-          "url": "https://e27.co/beyond-the-layoff-headlines-why-ai-plus-humans-is-the-ultimate-power-couple-20260619/",
-          "source": "e27.co",
-          "pub_date": "2026-06-29T01:30:47+00:00",
-          "summary": "If you look at the internet today, whether it’s mainstream media or your social feeds, it’s impossible to escape the AI hype. The narrative is always the same: AI can do this, AI can do that, AI can do everything. We are constantly told that it’s going to completely replace human jobs. To make thing"
-        },
-        {
-          "title": "Why India Needs Its Own AI Safety Net",
-          "url": "https://inc42.com/features/why-india-needs-its-own-ai-safety-net/",
-          "source": "inc42.com",
-          "pub_date": "2026-06-29T01:30:14+00:00",
-          "summary": "As enterprises increasingly embed AI into customer support, software development, financial operations, healthcare systems and decision-making workflows, access to AI&#8230;"
-        },
-        {
-          "title": "How to build a real MVP: Start with evidence, not features",
-          "url": "https://e27.co/how-to-build-a-real-mvp-start-with-evidence-not-features-20260622/",
-          "source": "e27.co",
-          "pub_date": "2026-06-29T01:00:15+00:00",
-          "summary": "The product labelled MVP is usually not a minimum. It is a compromise between anxiety, ambition, internal politics, and the hope that one release can settle more questions than it ever will. By the time it reaches execution, the so-called minimum version has absorbed edge cases, stakeholder comfort "
-        },
-        {
-          "title": "Can Nykaa Live Up To Its Own Hype?",
-          "url": "https://inc42.com/features/can-nykaa-live-up-to-its-own-hype/",
-          "source": "inc42.com",
-          "pub_date": "2026-06-29T00:30:29+00:00",
-          "summary": "Five years ago, Nykaa was seen as India&#8217;s premium beauty retailer. Today, it wants investors to believe it&#8217;s building something&#8230;"
-        },
-        {
-          "title": "Fintech Startups To Watch: Startups That Caught Our Eye In June",
-          "url": "https://inc42.com/features/fintech-startups-to-watch-startups-that-caught-our-eye-in-june/",
-          "source": "inc42.com",
-          "pub_date": "2026-06-28T10:46:36+00:00",
-          "summary": "The month of June kept the Indian fintech sector busy on multiple fronts. The headline move came from CRED raising&#8230;"
+          "pub_date": "2026-06-28T02:40:00+00:00",
+          "summary": "This insightful feature from YourStory tests and strengthens your business acumen! Here are 5 questions to kick off this 238th quiz. Ready?"
         },
         {
           "title": "Design, dining, delight: the positioning of JW Marriott Bengaluru Prestige Golfshire Resort",
@@ -1116,39 +1254,11 @@
           "summary": "In this photo essay, we feature some pictorial highlights from the JW Marriott Bengaluru Prestige Golfshire Resort."
         },
         {
-          "title": "Kunal Shah & The WhatsApp Acid Test",
-          "url": "https://inc42.com/features/kunal-shah-the-whatsapp-acid-test/",
-          "source": "inc42.com",
-          "pub_date": "2026-06-28T00:30:13+00:00",
-          "summary": "“Kunal Shah represents the very best of India’s startup ecosystem: bold thinking, intellectual curiosity, relentless execution and the ability to&#8230;"
-        },
-        {
-          "title": "FY26 Financial Tracker: Tracking The Financial Performance Of Indian Startups",
-          "url": "https://inc42.com/features/fy26-financial-tracker-tracking-the-financial-performance-of-indian-startups/",
-          "source": "inc42.com",
-          "pub_date": "2026-06-27T14:31:38+00:00",
-          "summary": "The Indian startup ecosystem continued to mature in FY26, with 22 new-age tech companies making their public market debut as&#8230;"
-        },
-        {
-          "title": "Exclusive: Vibe Coding Startup Rocket Eyes Fresh Funding In SIG-Led Round",
-          "url": "https://inc42.com/buzz/vibe-coding-startup-rocket-eyes-fresh-funding-in-sig-led-round/",
-          "source": "inc42.com",
-          "pub_date": "2026-06-27T13:52:41+00:00",
-          "summary": "Vibe coding startup Rocket is in talks with US-based Susquehanna International Group (SIG) to raise a fresh round of funding,&#8230;"
-        },
-        {
-          "title": "Bharat Taxi To Expand To 500 Cities In 2 Years: HM Amit Shah",
-          "url": "https://inc42.com/buzz/bharat-taxi-to-expand-to-500-cities-in-2-years-hm-amit-shah/",
-          "source": "inc42.com",
-          "pub_date": "2026-06-27T13:48:50+00:00",
-          "summary": "Government-backed cooperative ride-hailing platform Bharat Taxi plans to expand to more than 500 cities and towns across India within the&#8230;"
-        },
-        {
-          "title": "New-Age Tech Stocks: Meesho, Smartworks Rally; ideaForge, EaseMyTrip Tumble",
-          "url": "https://inc42.com/buzz/new-age-tech-stocks-meesho-smartworks-rally-ideaforge-easemytrip-tumble/",
-          "source": "inc42.com",
-          "pub_date": "2026-06-27T13:07:09+00:00",
-          "summary": "It was a mixed week for new-age tech stocks, with 23 of the 57 stocks gaining in a range of&#8230;"
+          "title": "Sachin Tendulkar’s sportswear play; OpenAI’s India chief",
+          "url": "https://yourstory.com/2026/06/sachin-tendulkar-sportswear-play-openai-india-chief",
+          "source": "yourstory.com",
+          "pub_date": "2026-06-28T02:00:00+00:00",
+          "summary": "Ten X You builds sportswear for Indian consumers, backed by Sachin Tendulkar. OpenAI names former Uber executive Prabhjeet Singh as India head."
         },
         {
           "title": "How Shashi Kumar built Akshayakalpa into a Rs 700 Cr enterprise with just 2,800 farmers",
@@ -1172,46 +1282,11 @@
           "summary": "Indian consumers are not merely seeking cheaper clothes. They are seeking fashionable, trend-relevant apparel at prices that feel justified by the value delivered. The demand is not for low prices alone. It is for intelligent spending."
         },
         {
-          "title": "[Weekly funding roundup June 20-26] CRED fundraise helps VC inflow to cross $1B",
-          "url": "https://yourstory.com/2026/06/weekly-funding-roundup-june-20-26-cred-leads-vc-inflow-to-cross-1-billion",
-          "source": "yourstory.com",
-          "pub_date": "2026-06-26T14:05:20+00:00",
-          "summary": "Venture capital funding into Indian startups crossed the $1-billion mark on a weekly basis for the first time since 2023 and this was primarily due to $900 million fund raise of CRED."
-        },
-        {
-          "title": "Building a better future: How sustainable architecture is leading the way for the built environment",
-          "url": "https://e27.co/building-a-better-future-how-sustainable-architecture-is-leading-the-way-for-the-built-environment-20230321/",
-          "source": "e27.co",
-          "pub_date": "2026-06-26T12:30:41+00:00",
-          "summary": "The Philippines has one of the highest electricity rates in the world, making sustainability a necessity in architecture. Architects and builders have been prioritising energy efficiency and sustainability in their designs, using renewable energy sources and sustainable materials such as bamboo, rec"
-        },
-        {
-          "title": "When nation-states shape startup outcomes",
-          "url": "https://e27.co/when-nation-states-shape-startup-outcomes-20260204/",
-          "source": "e27.co",
-          "pub_date": "2026-06-26T11:32:50+00:00",
-          "summary": "Startup ecosystems are often portrayed as bottom-up systems driven by founders, venture capital, and technological breakthroughs. That view is incomplete. In practice, startup ecosystems are also downstream expressions of state power, shaped by policy decisions, institutional participation, and geop"
-        },
-        {
           "title": "Singapore is one of the richest countries in the world. So why are 9 in 10 workers checked out?",
           "url": "https://vulcanpost.com/912012/singapore-nine-in-ten-worker-disengaged/",
           "source": "vulcanpost.com",
           "pub_date": "2026-06-26T10:20:58+00:00",
           "summary": "Worker engagement in Singapore has stagnated since 2019 Ever taken public transport during the weekday morning rush? Packed buses and trains. Corporate uniforms. Eyes glued to phones or staring blankly ahead. Lanyards around necks, coffee in hand, everyone hurrying somewhere that seems incredibly im"
-        },
-        {
-          "title": "AMC Robotics to build US$3.5M Vietnam factory as SEA automation race heats up",
-          "url": "https://e27.co/amc-robotics-to-build-us3-5m-vietnam-factory-as-sea-automation-race-heats-up-20260626/",
-          "source": "e27.co",
-          "pub_date": "2026-06-26T08:49:41+00:00",
-          "summary": "China-affiliated AMC Robotics Corporation will invest US$3.5 million to build out and equip a new manufacturing facility in Vietnam’s Bac Ninh province, marking its first major production foothold in Southeast Asia as the region’s factories and warehouses gradually move towards automation. The compa"
-        },
-        {
-          "title": "Echelon Philippines 2025 – Lessons from the next generation: How today’s emerging founders are building bold, purposeful startups",
-          "url": "https://e27.co/echelon-philippines-2025-lessons-from-the-next-generation-how-todays-emerging-founders-are-building-bold-purposeful-startups-20260626/",
-          "source": "e27.co",
-          "pub_date": "2026-06-26T08:22:42+00:00",
-          "summary": "At Echelon Philippines 2025, a dynamic fireside chat brought together a new wave of Filipino founders shaping the startup landscape with purpose and boldness. Moderated by Ritch Traballo of NextHire, the session featured Alyssa Wee of Danny PH, Princess Ventures of BuddyBetes, Orange Silverio of Tam"
         },
         {
           "title": "Singapore’s Ohmyhome sells real estate biz for US$1 amid mounting debt, losses in millions",
@@ -1221,53 +1296,11 @@
           "summary": "The purchase price reflected its negative net asset position, according to Ohmyhome Singapore property portal Ohmyhome has sold its core real estate brokerage business and will now focus entirely on digital marketing. According to the Business Times, Jun 18 filings lodged with the US Securities and "
         },
         {
-          "title": "Meet Arjun Shetty, the fitness entrepreneur training clients across the world",
-          "url": "https://yourstory.com/2026/06/arjun-shetty-fitness-entrepreneur-training-clients-across-the-world",
-          "source": "yourstory.com",
-          "pub_date": "2026-06-26T03:35:16+00:00",
-          "summary": "After his cricketing career, Arjun Shetty channelled his passion for sport into fitness and founded Ace with Arjun, an online fitness training platform focused on overseas clients. This year, he opened Hybrid Headquarters, a premium fitness studio in Thane."
-        },
-        {
-          "title": "Why Sachin Tendulkar is betting on sportswear built for Indian feet",
-          "url": "https://yourstory.com/2026/06/why-sachin-tendulkar-is-betting-on-sportswear-built-for-indian-feet",
-          "source": "yourstory.com",
-          "pub_date": "2026-06-26T02:00:00+00:00",
-          "summary": "Ten X You was founded to serve everyday athletes, not professionals. The Bengaluru startup is building shoes around Indian foot shapes and taking aim at a growing sportswear market."
-        },
-        {
-          "title": "One accident, lakhs in costs: Why the right car insurance matters",
-          "url": "https://yourstory.com/2026/06/one-accident-lakhs-in-costs-why-the-right-car-insurance-matters",
-          "source": "yourstory.com",
-          "pub_date": "2026-06-25T13:53:56+00:00",
-          "summary": "From repair bills and medical expenses to third-party liabilities, a single accident can derail your finances. Here's how the right insurance cover can help absorb the shock.\n\nA smooth drive can turn into a stressful situation in seconds. One unexpected turn, a sudden brake, or another driver’s mi"
-        },
-        {
-          "title": "Amazon to invest $13B in India's AI and cloud infrastructure by 2030",
-          "url": "https://yourstory.com/2026/06/amazon-invest-13b-india-ai-cloud-infrastructure-by-2030",
-          "source": "yourstory.com",
-          "pub_date": "2026-06-25T10:34:24+00:00",
-          "summary": "This announcement was made following a meeting between Amazon CEO Andy Jassy and Prime Minister Narendra Modi in New Delhi on Thursday."
-        },
-        {
-          "title": "Opening a demat account has never been easier. Here's why",
-          "url": "https://yourstory.com/2026/06/opening-demat-account-has-never-been-easier-here-why",
-          "source": "yourstory.com",
-          "pub_date": "2026-06-25T10:04:27+00:00",
-          "summary": "From Aadhaar-based eSign to video verification, digital onboarding has transformed how Indians start their investing journey, eliminating paperwork, branch visits, and long waiting periods.\n\nFor a long time, opening a demat account felt more like administrative work than the start of an investing"
-        },
-        {
           "title": "⁠This 52 Y/O kopi business roasts 1,000kg of coffee every month & is winning over younger drinkers",
           "url": "https://vulcanpost.com/911943/yong-seng-coffee/",
           "source": "vulcanpost.com",
           "pub_date": "2026-06-25T10:01:06+00:00",
           "summary": "Most family bizs don&#8217;t last this long, but Yong Seng Coffee is still roasting after 5 decades For more than five decades, Yong Seng Coffee has been a fixture at Tiong Bahru Market. It has weathered the rise of instant coffee, the café boom that&#8217;s transformed the neighbourhood in the 2010"
-        },
-        {
-          "title": "From code to captaincy: AWS’ agentic AI playbook",
-          "url": "https://yourstory.com/2026/06/code-captaincy-aws-agentic-ai-playbook",
-          "source": "yourstory.com",
-          "pub_date": "2026-06-25T09:19:36+00:00",
-          "summary": "At DevSparks Bengaluru 2026, AWS’ Praful Bagai used cricket to explain why developers must move beyond prompts and start orchestrating intelligent systems."
         },
         {
           "title": "Gymmboxx was closing outlets. 24/7 Fitness bought it anyway & expanded to 22 outlets in S’pore.",
@@ -1319,58 +1352,114 @@
           "summary": "Disclaimer: Unless otherwise stated, any opinions expressed below belong solely to the author. Employment situation in Singapore remains positive, although the job market is showing signs of cooling in yet another report. According to the latest Q3 release by ManpowerGroup Singapore, the Net Employm"
         }
       ],
-      "cached_at": "2026-06-29T07:17:33.463712"
+      "cached_at": "2026-06-30T06:43:39.833192"
     },
     "emerging": {
       "articles": [
         {
-          "title": "What to Do in Houston If You're Here for Business (2026)",
-          "url": "https://www.wired.com/story/the-wired-guide-to-houston-for-business-travelers/",
+          "title": "Meta Contractors Posed as Teens to Prompt Rival Chatbots About Suicide, Sex, and Drugs",
+          "url": "https://www.wired.com/story/meta-contractors-pretending-to-be-teens-chatbot-testing/",
           "source": "wired.com",
-          "pub_date": "2026-06-28T12:21:00+00:00",
-          "summary": "Where to eat, stay, work, and eat some more while visiting Space City on business."
+          "pub_date": "2026-06-29T21:49:26+00:00",
+          "summary": "Hundreds of contractors working on a project for Meta pretended to be kids in order to see how other chatbots like Gemini and ChatGPT would respond to high-risk subjects, WIRED found."
         },
         {
-          "title": "The ‘Almost Homeless’ Subreddit Is a Stark Glimpse at Soaring Wealth Inequality",
-          "url": "https://www.wired.com/story/the-almost-homeless-subreddit-is-a-stark-glimpse-at-soaring-wealth-inequality/",
+          "title": "Buying a Mattress in 2026? We Tested 100+ and These Were the Standouts",
+          "url": "https://www.wired.com/gallery/best-mattresses/",
           "source": "wired.com",
-          "pub_date": "2026-06-28T11:00:00+00:00",
-          "summary": "As the billionaire class gets richer, the growing online community is offering tips on how to survive with very little."
+          "pub_date": "2026-06-29T21:05:17+00:00",
+          "summary": "WIRED has tested 100-plus bed-in-a-box mattresses for a week each. Our top pick, the Helix Midnight Luxe hybrid, is the best bed you can buy online."
         },
         {
-          "title": "Why Wear Anything Other Than a Sun Hoodie This Summer? Our Picks for the Best",
-          "url": "https://www.wired.com/story/im-addicted-to-sun-hoodies/",
-          "source": "wired.com",
-          "pub_date": "2026-06-28T10:02:00+00:00",
-          "summary": "Sun hoodies are the greatest new garment since the original hoodie."
+          "title": "Chamath Palihapitiya raises $135M Series A for his AI coding startup, takes CEO role",
+          "url": "https://techcrunch.com/2026/06/29/chamath-palihapitiya-raises-135m-series-a-for-his-ai-coding-startup-takes-ceo-role/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-06-29T20:55:50+00:00",
+          "summary": "VCs remain thirsty to fund AI coding startups. This one, founded by investor Chamath Palihapitiya, is no exception."
         },
         {
-          "title": "This Is the Most Detailed Image Yet of the Milky Way's Center",
-          "url": "https://www.wired.com/story/this-is-the-most-detailed-image-yet-of-the-milky-ways-center/",
-          "source": "wired.com",
-          "pub_date": "2026-06-28T09:30:00+00:00",
-          "summary": "The Euclid space telescope's stunning photo of our galaxy's “crowded heart” captures more than 60 million stars."
+          "title": "Arena, the AI leaderboard everyone uses, is now a $100M business",
+          "url": "https://techcrunch.com/2026/06/29/arena-the-ai-leaderboard-everyone-uses-is-now-a-100m-business/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-06-29T17:39:17+00:00",
+          "summary": "The startup, which runs a popular free AI leaderboard, launched its commercial service just last September."
         },
         {
-          "title": "The Ebike Accessories You Need to Help You Haul the Most Stuff",
-          "url": "https://www.wired.com/story/how-to-trick-out-your-ebike/",
+          "title": "Usernames Are Coming to WhatsApp Soon. Here's How to Reserve Yours",
+          "url": "https://www.wired.com/story/how-to-reserve-your-whatsapp-username-before-it-goes-live/",
           "source": "wired.com",
-          "pub_date": "2026-06-28T09:01:00+00:00",
-          "summary": "An unadorned ebike is a blank canvas. Here, get tips for maximizing its cargo-hauling and person-carrying capabilities."
+          "pub_date": "2026-06-29T16:00:00+00:00",
+          "summary": "Even if you only use WhatsApp sometimes, you might want to snag your username now to stop giving out your phone number."
         },
         {
-          "title": "China Defies US Restrictions and Builds the World’s Fastest Supercomputer",
-          "url": "https://www.wired.com/story/china-defies-us-restrictions-and-builds-the-worlds-fastest-supercomputer/",
-          "source": "wired.com",
-          "pub_date": "2026-06-28T09:00:00+00:00",
-          "summary": "The Chinese supercomputer LineShine was ranked as the fastest in the world, despite not using any GPUs."
+          "title": "Omen AI’s plan to optimize data centers is all wet",
+          "url": "https://techcrunch.com/2026/06/29/omen-ais-plan-to-optimize-data-centers-is-all-wet/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-06-29T13:00:00+00:00",
+          "summary": "Omen AI raised a $31 million Series A to monitor chip coolant and stop bacterial outbreaks in data centers."
         },
         {
-          "title": "62 Last Minute Prime Day Weekend Deals: Up to 45% Off (2026)",
-          "url": "https://www.wired.com/story/amazon-prime-day-absolute-best-deals-06-27-2026/",
+          "title": "The Busy Bar Is a Gadget to Get People to Leave You Alone",
+          "url": "https://www.wired.com/story/busy-bar-is-a-gadget-to-get-people-to-leave-you-alone/",
           "source": "wired.com",
-          "pub_date": "2026-06-27T18:01:21+00:00",
-          "summary": "Prime Day is officially over, but many of our favorite, hand-picked deals are still available through the weekend."
+          "pub_date": "2026-06-29T13:00:00+00:00",
+          "summary": "Flipper Devices, a company that built a banned hacking device, now wants to hack your attention span."
+        },
+        {
+          "title": "Robin Byrd, the Sex Godmother of Millennials, Says the Internet Ruined Porn",
+          "url": "https://www.wired.com/story/the-robin-byrd-show/",
+          "source": "wired.com",
+          "pub_date": "2026-06-29T11:00:00+00:00",
+          "summary": "The 1970s porn actress turned New York City late night public access queen says censorship and a lack of star quality among modern adult entertainers turned her off of the industry."
+        },
+        {
+          "title": "Yeasound RIC800 Hearing Aids Review: Good Audio, Glitchy App",
+          "url": "https://www.wired.com/review/yeasound-ric800-hearing-aids/",
+          "source": "wired.com",
+          "pub_date": "2026-06-29T10:33:00+00:00",
+          "summary": "With AI-powered noise reduction, an automatic speech-focusing system, and a simple, effective hearing test, it’s a shame these aids don't come with a better app."
+        },
+        {
+          "title": "The Anti-Data-Center Movement Is Reshaping Michigan Politics",
+          "url": "https://www.wired.com/story/anti-data-center-movement-reshaping-michigan-politics/",
+          "source": "wired.com",
+          "pub_date": "2026-06-29T10:30:00+00:00",
+          "summary": "Climate activist Will Lawrence cofounded the Sunrise Movement. Now, he has shifted his focus in his attempt to compete for a swing-district seat by calling for a data center moratorium."
+        },
+        {
+          "title": "Top Google Security Staff Warn Search Data Could Be Hacked if EU Rules Change",
+          "url": "https://www.wired.com/story/top-google-security-staff-warn-search-data-could-be-hacked-thanks-to-eu-plans/",
+          "source": "wired.com",
+          "pub_date": "2026-06-29T10:00:00+00:00",
+          "summary": "Europe’s pro-competition proposals could see Google Search and Android systems opened up. The company claims there are serious privacy flaws."
+        },
+        {
+          "title": "Everyone’s Mad at the World Cup’s New ‘Hydration Breaks’—Except Mr. Moneybags Over Here",
+          "url": "https://www.wired.com/story/world-cup-new-hydration-breaks-are-about-more-than-water/",
+          "source": "wired.com",
+          "pub_date": "2026-06-29T10:00:00+00:00",
+          "summary": "FIFA says hydration breaks protect players from heat. They also create new annoying commercial breaks—and fans are calling foul."
+        },
+        {
+          "title": "I Found Jesus at a Drone Show",
+          "url": "https://www.wired.com/story/i-found-jesus-at-a-drone-show/",
+          "source": "wired.com",
+          "pub_date": "2026-06-29T10:00:00+00:00",
+          "summary": "Drone shows are the new fireworks—and possibly a new kind of religion. I traveled to Texas to be converted."
+        },
+        {
+          "title": "Truckloads of Tesla Batteries Keep Getting Stolen Before They Even Leave the Factory",
+          "url": "https://www.wired.com/story/truckloads-of-tesla-batteries-keep-getting-stolen-before-they-even-leave-the-factory/",
+          "source": "wired.com",
+          "pub_date": "2026-06-29T09:00:00+00:00",
+          "summary": "Nine major suspected cargo thefts happened at Tesla’s Nevada battery factory in January alone, according to sheriff’s records obtained by WIRED."
+        },
+        {
+          "title": "This Humanoid Robot Is a Terrifyingly Competent Office Intern",
+          "url": "https://www.wired.com/story/this-robot-is-going-to-replace-your-interns-flexion/",
+          "source": "wired.com",
+          "pub_date": "2026-06-29T08:00:00+00:00",
+          "summary": "Flexion Robotics, a startup founded by ex-Nvidia engineers, has a clever way of training robots to do useful work."
         },
         {
           "title": "Asian AI startups launch Mythos-like  models as Anthropic’s export ban drags on",
@@ -1378,41 +1467,6 @@
           "source": "techcrunch.com",
           "pub_date": "2026-06-27T12:00:00+00:00",
           "summary": "New models are launching in Asia that promise Mythos-like capabilities without fear of an export ban. U.S. AI labs may never recover this enormous market."
-        },
-        {
-          "title": "Duer’s Wear-Everywhere Pants Are on Sale This Weekend",
-          "url": "https://www.wired.com/story/save-on-some-stellar-pants-during-a-rare-duer-sale/",
-          "source": "wired.com",
-          "pub_date": "2026-06-27T11:01:00+00:00",
-          "summary": "It’s not often you can score discounts from the outdoor-coded Canadian company that makes understated and stylish performance clothing."
-        },
-        {
-          "title": "Does DeleteMe Actually Get Your Info off the Internet? I Tried It",
-          "url": "https://www.wired.com/story/i-tried-deleteme-the-original-data-broker-removal-service/",
-          "source": "wired.com",
-          "pub_date": "2026-06-27T10:31:00+00:00",
-          "summary": "Everyone is sick of spam calls and creeper sites that show weirdos where you live—but can any service solve it?"
-        },
-        {
-          "title": "Security News This Week: LastPass Users Had Their Data Stolen—Again",
-          "url": "https://www.wired.com/story/security-news-this-week-lastpass-users-had-their-data-stolen-again/",
-          "source": "wired.com",
-          "pub_date": "2026-06-27T10:30:00+00:00",
-          "summary": "Plus: Former national security advisor John Bolton pleads guilty in classified-materials case, Microsoft helps take down major infostealer infrastructure, and more."
-        },
-        {
-          "title": "The 37 Best Outdoor Deals From the REI 4th of July Sale",
-          "url": "https://www.wired.com/story/rei-4th-of-july-sale-2026/",
-          "source": "wired.com",
-          "pub_date": "2026-06-27T10:06:00+00:00",
-          "summary": "Whether you need a tent, sleeping pad, rain jacket, or new pack, REI’s Independence Day sale has something for everyone."
-        },
-        {
-          "title": "Why Venezuela’s Second Earthquake Was So Damaging to Buildings",
-          "url": "https://www.wired.com/story/why-venezuelas-second-earthquake-so-damaging-to-buildings/",
-          "source": "wired.com",
-          "pub_date": "2026-06-27T09:00:00+00:00",
-          "summary": "Factors like the short interval between the two powerful quakes and different types of soil led to some structures collapsing while others stayed standing."
         },
         {
           "title": "Corgi, the buzzy Y Combinator-backed insurance tech startup, says it didn’t steal an open source product",
@@ -1476,27 +1530,6 @@
           "source": "techcrunch.com",
           "pub_date": "2026-06-24T23:26:52+00:00",
           "summary": "Backed by Mayfield and Aramco Ventures, Vishal Sikka’s new venture brings together veterans from SAP, Infosys, and VianAI."
-        },
-        {
-          "title": "AI was supposed to kill engineering jobs, but new data suggests they’re the most resilient",
-          "url": "https://techcrunch.com/2026/06/24/ai-was-supposed-to-kill-engineering-jobs-but-new-data-suggests-theyre-the-most-resilient/",
-          "source": "techcrunch.com",
-          "pub_date": "2026-06-24T21:56:41+00:00",
-          "summary": "While AI dominates the layoff narrative, engineers are actually making up a larger share of new hires, according to SignalFire data."
-        },
-        {
-          "title": "Here’s why Slate changed the battery in its cheap EV truck",
-          "url": "https://techcrunch.com/2026/06/24/heres-why-slate-changed-the-battery-in-its-cheap-ev-truck/",
-          "source": "techcrunch.com",
-          "pub_date": "2026-06-24T19:27:56+00:00",
-          "summary": "While there was probably a moment when Slate’s leadership had to green-light the switch from one battery type to another, the momentum toward that decision had been building for years."
-        },
-        {
-          "title": "3 days left to save up to $190 on your TechCrunch Founder Summit 2026 pass",
-          "url": "https://techcrunch.com/2026/06/24/3-days-left-to-save-up-to-190-on-techcrunch-founder-summit-2026/",
-          "source": "techcrunch.com",
-          "pub_date": "2026-06-24T14:00:00+00:00",
-          "summary": "You have just 3 days left to save up to $190 on your pass to TechCrunch Founder Summit 2026 before Early Bird rates end on June 26 at 11:59 p.m. PT. Register today."
         },
         {
           "title": "Weekly Dose of Optimism #198",
@@ -1730,27 +1763,32 @@
           "summary": "Mahadev Book has designed its daily and weekly promotion system with structure, clarity, and long term value in mind. These\nThe post Daily And Weekly Promotions &#8211; How To Stay Ahead At Mahadev Book? appeared first on Mahadev Book."
         }
       ],
-      "cached_at": "2026-06-29T07:17:33.463712"
+      "cached_at": "2026-06-30T06:43:39.833192"
     },
     "sector_heatmap": [
       {
         "name": "AI / ML",
-        "signals": 120,
+        "signals": 122,
         "sentiment": "bullish"
       },
       {
         "name": "Climate / Clean",
-        "signals": 74,
+        "signals": 75,
+        "sentiment": "bullish"
+      },
+      {
+        "name": "Consumer / D2C",
+        "signals": 9,
         "sentiment": "bullish"
       },
       {
         "name": "Fintech",
-        "signals": 7,
-        "sentiment": "bullish"
+        "signals": 5,
+        "sentiment": "neutral"
       },
       {
         "name": "Deep Tech",
-        "signals": 5,
+        "signals": 4,
         "sentiment": "neutral"
       },
       {
@@ -1759,12 +1797,7 @@
         "sentiment": "neutral"
       },
       {
-        "name": "Consumer / D2C",
-        "signals": 3,
-        "sentiment": "neutral"
-      },
-      {
-        "name": "Healthtech",
+        "name": "Edtech",
         "signals": 2,
         "sentiment": "neutral"
       },
@@ -1774,7 +1807,7 @@
         "sentiment": "quiet"
       },
       {
-        "name": "Edtech",
+        "name": "Healthtech",
         "signals": 1,
         "sentiment": "quiet"
       }
@@ -1830,6 +1863,14 @@
           "company": "Enerzolve"
         },
         {
+          "title": "Speciality Chemicals - 2026 Market & Investments Trends - Tracxn",
+          "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOTmZ5WXJ4Z29MQlBqTUJQSS12MUNuNFlGWTlHUWNpUEgwR29Fc1g3Tk9wMmFZaEc5MDhXUFhGejlmWmhpV3VsaDZXQjFvVVA5V3dVX2poLUxkUExlWXphU0lDVDB3Y0w0QkFuZ2dqVk5TSW44TWhfMWRneS1uNF9oYW4xNEdXV2NDMHoyVEtMaVpab2hGWjZ0MF9WWnNuRkU0MzhTbi1vdE1EVGFUVkNOQnlncS1qRWxGV0t2OHFTTHB3dw?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2026-04-05T07:00:00+00:00",
+          "summary": "Speciality Chemicals - 2026 Market & Investments Trends&nbsp;&nbsp;Tracxn",
+          "company": "Distil"
+        },
+        {
           "title": "OPINION | AI’s New Economics: What India must get right now - Moneycontrol.com",
           "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQQmJ0WmQzQ1JiWHpoM0VKd3hRRGhSUmMyMmpkc3AtQ0hZUnpNYXl0elFkMlJHamZXNlYtWWZQbElUVlA3YXlvWTVidUNRbnItWGhVQmZTS1BOcGtDMGRsSUNCNUhUbGl3UU9WYzJpMkJMYllRZnZPbzc0T3VaMHc5VHF0Z3lORE9SckZIN19SY2NDVFRNS1FMZmZaR3JQaEROMDJfNHhhRdIBrAFBVV95cUxQaTJPVmdKSGJHLXc4dlo3ZGc3MElZY2xlWHIwZEJUdnhJcl8tVFNwT25ZTjZSMVF3X3lnS21ubnQ1Ul9iZ0hxZjVtQWZySGlRUnJ4S0duTlEwdF8yZ18wdXgzV0RscjBuX09helNIeHVoNElsaHhxLTVVM0V0NlRXQ3dIYmVjZklpVTY0WUF1Q3NSSHc2TWhnMFdNVVdyY0RXdTdPdG5oYTVIdmZP?oc=5",
           "source": "news.google.com",
@@ -1862,20 +1903,12 @@
           "company": "Dat Bike"
         },
         {
-          "title": "Vietnam’s electric motorbike market accelerates into new era - Báo VietNamNet",
-          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNTHRRd1BEZExHNlZPQk5fLXY0N0VnUTZTN2l1NExoeXdOcVQxX3E4X3pRYnhYemRrLXpWWGE4LWtITGFvaUdUUGMwTXlWdXR3SnlaSWk2UWFORHVONUVWeGFnc3BKRng2dnpOeVdSbkZGcWNySE1GRnpEVTEwdTc3dEtRSkZ5SzB2dDZsUTdhbmh3Xzhoc1VFcE4wUVU4T2M?oc=5",
+          "title": "Dat Bike nets $4m as Hanoi moves to curb gasoline motorbikes - Tech in Asia",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNeVZWTGx6TnpyZDR4aUhBbE01aS1RNTlxN0FnUGRpcnNtZlNGZ0tBcXBGbnZnTk9xRjBnNk10SkNFNmZUTkt3NTJHNk9FcFl4bnpIX3RyNHlNZGFvMEktTVVUUV9GdzVfU0t4cnhPSnpYU042cWRBbXZ4b2xFdDJhanBqc1pKaGZrNThxMkpB?oc=5",
           "source": "news.google.com",
-          "pub_date": "2026-03-04T08:00:00+00:00",
-          "summary": "Vietnam’s electric motorbike market accelerates into new era&nbsp;&nbsp;Báo VietNamNet",
+          "pub_date": "2026-03-09T07:00:00+00:00",
+          "summary": "Dat Bike nets $4m as Hanoi moves to curb gasoline motorbikes&nbsp;&nbsp;Tech in Asia",
           "company": "Dat Bike"
-        },
-        {
-          "title": "\"India A Hard Benchmark For What AI Needs To Get Right\": Sarvam AI's Pratyush Kumar At NDTV AI Summit - NDTV",
-          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNLTFPRnVwQjZqV1VnV2JObWUya2dZdUdfRXY2alN2NHZpUjRhR1hxNWp4SzRnUURmSTdCUm9NS3JLSjI3bmNPbWpRRll4UndudU9SMnJiSTV0X19rUUVqTFRERWVnSERDcHRHQ3ZLZmhpMjhQeTIzazUxcTdtWEF0VVE3aGo2cUh5TzlqQWs0bXpqUkhESEM3QTVzQ2dwbjlBUy1FWktuZGtCREMtaHQ3NnJnMWphMHJVYkNCNVdvWGpoYlQxb0hzMnkzVllSWUxQSVNHZ9IB3AFBVV95cUxOWEZpd3FfT3FibW5EeDh1X1RPWm1weGVIeGFIUDBKbXgyZEFyQnRETzdaQTBvSS1ZOUZWVEpkTkJRbU5RSWtwNTJCTjJVYWEtZHBreFJ1SVY3Sko2RFduNlhYMGlMdE45V01LeUpXaW5mVlFaS2xxOEZUSHc3MThVYm5hc0FxRGdnU2cwdnBINzRTcmJIUmlQNnBJQlozNUtJT0tEbFVhOENhdHBoSjhnNEpWRUVTRlhOLTNMclZkLXFVRHQ1d1BMSVNIVmJoRkxCQWpidEVWVDJ4LTFP?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2026-02-18T08:00:00+00:00",
-          "summary": "\"India A Hard Benchmark For What AI Needs To Get Right\": Sarvam AI's Pratyush Kumar At NDTV AI Summit&nbsp;&nbsp;NDTV",
-          "company": "GetRight"
         },
         {
           "title": "Travel startup Escape Plan raises $25 million to open 200+ stores across India - CNBC TV18",
@@ -1894,19 +1927,19 @@
           "company": "Escape Plan"
         },
         {
-          "title": "Saga Legal, DSK Legal, NKR Law act on Enerzolve fundraise - Bar and Bench",
-          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQQmhJaXM4elQ1Y25qRk51bnd5RDhlcTFyWmVnVm51VWIzTTVPeWxjWHJsbjNyaHdyeG9WRGVXUjc5cWU5N1BEWnBxOC1wdHJSR0F0YnZET1FqQlRGOTMxdWdQMFhXRTczbDV4SDMycVZnZVlFOFJ3ZmNVZzZ4TnhZSmtmSTZrdTDSAZQBQVVfeXFMTlhNV0hFRFJSSUVoRTg4UUFxOVJiVTRaQzI5VGd1YmpuOHY5aG5ZMVNDajlqNk1PekdPXzQ0d2lxSFBYRzhZQ3R0VE1nZ09ualRKcFZsQTFqaHhLUG1oQzFsdk9lMTNFVVQxZFFSVzBxTXNTU3hHUkJiNjJKTzhiN0RvQ0dRNHRTeGplSVJMSkl1dTdHYQ?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2026-01-23T08:00:00+00:00",
-          "summary": "Saga Legal, DSK Legal, NKR Law act on Enerzolve fundraise&nbsp;&nbsp;Bar and Bench",
-          "company": "Enerzolve"
-        },
-        {
           "title": "Funding Wrap: Juspay, Optimist, Varthana raise fresh capital - The Economic Times B2B",
           "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQcjI1Y3Y4NWJ2Q2lLUk9sRjRoS3VVUG1hS3A0YXA5SF9fdDRuSUJfOU90ZmhZeWhFaEdsbmktTl96Sy1KZU5aXzhaSVVvUzZTN09neEY2ZVFSX1V4SGJjcjlLRFVlamhqMkdzOV9IVkxBUW4yb0xtZk5EaXplOUlPNG1ZbGlLcVdKcXpaNlVZVmpOTDBXUVBJSUxWSm0wbWV3QnBVemJ3UlVRRFJiTTNibEFRTWtRRmhyRnJRX0NoVkJsNHNK0gHKAUFVX3lxTFAzYTR0Q1dlcGl2MExtSWZCNG42a1ZuMTBJM05TaEVQYjhqV3VFY1B1SU1RWmRhLWxkdjJyT1VmemRGcFlNTFdmZVFCV0hXSkZsSWc0a1BEeVhMVlhjT2d2ZW1JeTY2d1BDVmtqVk1PaC1iRTVmRzN3SE5US0hVSnhxUHppQ1RwbUlobkNkU1BGbUVWZzdrUjNlUFhiaTB2aTNveDdIbGtqZWN4cVg2UHlkel9BS0l4S3NnYWYwcU1pZVZHOWpUempRY1E?oc=5",
           "source": "news.google.com",
           "pub_date": "2026-01-23T08:00:00+00:00",
           "summary": "Funding Wrap: Juspay, Optimist, Varthana raise fresh capital&nbsp;&nbsp;The Economic Times B2B",
+          "company": "Escape Plan"
+        },
+        {
+          "title": "Saga Legal, DSK Legal, NKR Law act on Enerzolve fundraise - Bar and Bench",
+          "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQQmhJaXM4elQ1Y25qRk51bnd5RDhlcTFyWmVnVm51VWIzTTVPeWxjWHJsbjNyaHdyeG9WRGVXUjc5cWU5N1BEWnBxOC1wdHJSR0F0YnZET1FqQlRGOTMxdWdQMFhXRTczbDV4SDMycVZnZVlFOFJ3ZmNVZzZ4TnhZSmtmSTZrdTDSAZQBQVVfeXFMTlhNV0hFRFJSSUVoRTg4UUFxOVJiVTRaQzI5VGd1YmpuOHY5aG5ZMVNDajlqNk1PekdPXzQ0d2lxSFBYRzhZQ3R0VE1nZ09ualRKcFZsQTFqaHhLUG1oQzFsdk9lMTNFVVQxZFFSVzBxTXNTU3hHUkJiNjJKTzhiN0RvQ0dRNHRTeGplSVJMSkl1dTdHYQ?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2026-01-23T08:00:00+00:00",
+          "summary": "Saga Legal, DSK Legal, NKR Law act on Enerzolve fundraise&nbsp;&nbsp;Bar and Bench",
           "company": "Enerzolve"
         },
         {
@@ -2022,14 +2055,6 @@
           "company": "Prosperr"
         },
         {
-          "title": "Travel gear brand Escape Plan embarks on next growth phase: 200 stores, ₹2,000 Cr target - India Retailing",
-          "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQbXlzcDVKbV9aSHQ4QS1IM0RaMGR2dXlTdFQwcmkxWjJqci0wUm1ZTXRNMHFWSThpa20tTjdULUpPa2g3WnI4bVl0bERuSHR2VldMTkFEN2t1RW9UNXJnZGRHVHkwb3RvRVRMRTFhZTE0UVNIamFuNFRoU3BIVE5SdEd3TkxlLW1OUE5sdjNQX2pwMGFVTTM2b1VrcGtrRk5GU2xaVGwyWmE1cXRXdGRiQ2c5TVdydw?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2025-11-25T08:00:00+00:00",
-          "summary": "Travel gear brand Escape Plan embarks on next growth phase: 200 stores, ₹2,000 Cr target&nbsp;&nbsp;India Retailing",
-          "company": "Escape Plan"
-        },
-        {
           "title": "From safe space to scale-up, coto is redefining emotional wellness with AI - YourStory.com",
           "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPdkwweVBzeGVXYXc4Mkp1NUxSYkpzTG1GMU9MdUhDdVc4anNOb3Fsb1VuaEl6T004ZWplQlNTNHE4Y2VGeHR1SUxXRi1IRFJDWmlkZ3lsQ19CX2tidU1nVXVQSU5vRHJIbllkUnkxbGRUTk9IMkt1MnYzYmh0QjRSRGdVWWtpRVF2UFpSdDdTNW5xYU11?oc=5",
           "source": "news.google.com",
@@ -2102,14 +2127,6 @@
           "company": "Distil"
         },
         {
-          "title": "Distil raises $7.7 million in Series A funding led by Jungle Ventures, CE-Ventures - BusinessLine",
-          "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxQcnR1d0RlX2lvMFJLQ1F3dDNCckVwWFR5cU94TGlkcE81d1NpQmVvNF9uc183UlN0cS03aXpxN0I4YmZWc0JPNG9pckN2UUVEUGRRUUYyUDZ0OF9md3hIQ3FnaEVrNmEyWHJqMXZhMzZyRkdTSG04SVNIT3JjZWZoX05HdmlmNFlZRk9iYS0yR2F1LVhaOFh1eWFvTXM5aEdUaEd1NUhTVElaNk9MMDB1R0QxSDRNZGNKVGttR1A2cWpvM3k5OFpyQUYxLUpHQ2t6d2pwdDJEVlE1bFJU0gHjAUFVX3lxTE5tellMQWtybVBwM2pMenpFZW5jZWsteE83bXUySXE0eHA1Tk5pOUpnQndiTGVqb2NVaURMa1NGTmd0d2xzRm51ZlE1ak9ZanA1OEptRlp1TFVuOE9RN0YxQ2Q4VkVDSjk5V0k0YzZXZVdWcUY2MURTOUJNd0lJc1VTWlZaRzktdWFMRS1yMDJYT2xPaHoxSkhsYXhCVzFDbG9WUWY3NnZtemRTRXJaamQ1MTI2UUUwcmxWYkc3MWIwRU5aLXh0VmJvZGdxby1PZ3FiSUFaR0pEejNCU0VhSWh0cE9F?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2025-09-23T07:00:00+00:00",
-          "summary": "Distil raises $7.7 million in Series A funding led by Jungle Ventures, CE-Ventures&nbsp;&nbsp;BusinessLine",
-          "company": "Distil"
-        },
-        {
           "title": "Vietnam EV startup raises $22m as Hanoi bans gas-powered bikes - Nikkei Asia",
           "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQNjFVSUpRRGFuUHhyZmoxN3lZNDIwWVhELUo0ZUpFSVZNOVJZOFdESS1NV2VLaVlPSTdKS19INE5nSi15dGZwT3ZMMFZSYy11cjFfR0haejVvakRzd1ZFaDVMNXNNa3RJOUhPbVRzMzlxb1JpdE50ZXRYWkF0TTFFS0NOZDBhcEd5dXlIcGhyTUJsTDBrZ1l3VElkU3BwU01vZmo2a3NR?oc=5",
           "source": "news.google.com",
@@ -2126,36 +2143,12 @@
           "company": "Dat Bike"
         },
         {
-          "title": "Eyeing up EU expansion? What to get right before you make the leap - Sifted",
-          "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBvaUV1Z2xWM0xrNWszX0xaZTZ3elhNc1dpX1RNamNBTndKVUg1WDVESER6eEMwV1d0amkxdW5CM0VoemhobVB1M0VRMXhFVExoOHRVVDBMWncyZ1Q3dm9QbGhJSQ?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2025-09-10T07:00:00+00:00",
-          "summary": "Eyeing up EU expansion? What to get right before you make the leap&nbsp;&nbsp;Sifted",
-          "company": "GetRight"
-        },
-        {
-          "title": "Bengaluru-Based Startup Advances AESA Radar And EW Tech For Next-Gen Threat Defence - Electronics For You BUSINESS",
-          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPY2JHSnduWE9LVmQ3ZjJ2UzZXYlIxUGRobXVUYTZXdkYwc0xCdzU5NWo3b0NqOThERFV5cjFPcnFjQThFRnk3SXpfeHJjd0loNXZvc215N0p4WTZrY3gwNkk4SkF6VzJDN1ZCekRCa2NaNEZOQWhpMEtrRkNMbFFNc3p4UGc1QUtiRlFBM040M3IzOHBfNWQzeXYxdzZVaF84T3RMSTdrY0szYlJNaHY2V2J2WllLV0JjaVBNbEFHUGZVREVKQlE?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2025-09-05T07:00:00+00:00",
-          "summary": "Bengaluru-Based Startup Advances AESA Radar And EW Tech For Next-Gen Threat Defence&nbsp;&nbsp;Electronics For You BUSINESS",
-          "company": "Sanlayan"
-        },
-        {
           "title": "Prosperr.io: Simplifying Finance for Young Professionals and Businesses - YourStory.com",
           "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9wSFlkR2g4d210clFGVjVMREJ2YXVIcTdWLVUxUDljOW9kRUVrclRIX0IzcVVxelpFeV91aVpFTTFsdFRNVnBieDRieWQyQ0NVNVhzekl2aTAyVUNMVG9GemRONXVicHdJZEZYUXBrU1YwRGxs?oc=5",
           "source": "news.google.com",
           "pub_date": "2025-08-28T07:00:00+00:00",
           "summary": "Prosperr.io: Simplifying Finance for Young Professionals and Businesses&nbsp;&nbsp;YourStory.com",
           "company": "Prosperr"
-        },
-        {
-          "title": "Snakebite capital | What India must get right - The Hindu",
-          "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPOTFfMkE5eGVfYjI2aHRvV0tmV2NCVEtoclZjQWxSLXNOVHp5LXhHVmNMMUdUTEtYTlRxX3N4aEJ1OGk5Y3ZhRHhzdTI4TEpHYURlQ3N1ejFwR1IxSXFNNUdLbTdLYlR4NDZfeFZtbGU1bUd4U25aQ0x4VmYybFk4bGdVZHRSOGdMdkJZalUwZFdfeWxuXzVfQi03OUlEdnl4V1o2ck5GMHE4cXFrUVV4MTFUdXZjd3ZHWlFpNHQtc0YxX2gweW1TckVhT1dVN19qM2JZQTVKS2FNdTg10gHjAUFVX3lxTFByTXc1amhBbGE2UzUzT0ZXOXNMZFc4RnZHa1d1SjA2S3lkdUw1Ykg1Qm1GVy1XS2oteGhiSzNjcXBuQUxodl9jb09iVllkYUVtVFhFTXdJMW5oZk5zak9BOS1XWjVGWFBpYVgyTElMeW0xR0hJeFFDV1QzRnBKbzFiMXJuUUo1T3ZTdUkwNkdseTFBZ3R0MzRORkIyQ0Y1S1BiRlBVUGU3MDdGcjl6d2xkRnNmYUFzSUh6c2FVNTdzU1VjMXduRVVzbWVTc25qN2pyTDBOXzhySGtDMG1YOEY2eVI0?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2025-07-05T07:00:00+00:00",
-          "summary": "Snakebite capital | What India must get right&nbsp;&nbsp;The Hindu",
-          "company": "GetRight"
         },
         {
           "title": "Tarun Katial’s coto Onboards Raj Kamal Singhal as Co-founder & Chief Operating and Business Officer - MediaNews4U",
@@ -2179,6 +2172,14 @@
           "source": "news.google.com",
           "pub_date": "2025-06-09T07:00:00+00:00",
           "summary": "Defence electronics startup Sanlayan raises Rs 186 Cr in Series A&nbsp;&nbsp;Entrackr",
+          "company": "Sanlayan"
+        },
+        {
+          "title": "Sanlayan Technologies Raises Rs 186 Cr In Series A To Supercharge Defence Electronics Play - BW Disrupt",
+          "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPTXVwRk1qcmNERzlUal9ib1BTZTBvZ3JTT1JXaE1xT0lwNmEtMUE1alNnTEtyb0xnVDgyWkpOQ3NYOUpmb2pvS2gwSlBUQnBHX0JYc2ZtSXpvN1JubjVmQzdKRTBYNThJRGRrNm12X0JOdFRMcEJhODczTGZ3TWxmai1hX0Q4bElrSjNvUi1QZ1Fsc0tCRU5oNjBoanpBQmZmUFBKYWhuX184NWpSS1RpcUs3bmoxdmRkSGNaOXpmbVp3RlFCZnZoaGNPSQ?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2025-06-09T07:00:00+00:00",
+          "summary": "Sanlayan Technologies Raises Rs 186 Cr In Series A To Supercharge Defence Electronics Play&nbsp;&nbsp;BW Disrupt",
           "company": "Sanlayan"
         },
         {
@@ -2238,14 +2239,6 @@
           "company": "NirogStreet"
         },
         {
-          "title": "How Coto is Empowering Women Through AI and Community - ITP.net",
-          "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNUjFHUnpRdnRfUmhVNXAyazFtUVhkY1ViUUltOWU3dUhwQ0VSaU9ZdU1NajJUemFabTBGa2hqd1g1Q3BQNnBUbjVRS1gxc3Y2blJvSnd6c2Z6bDNEVGJkLWJGMFMwX1JuNzhiLUtqSTRxU3djd1IwQ2ZTSHUwVU5UckJYSmk?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2024-09-27T07:00:00+00:00",
-          "summary": "How Coto is Empowering Women Through AI and Community&nbsp;&nbsp;ITP.net",
-          "company": "Coto"
-        },
-        {
           "title": "Beyond the likes: How's coto building a safe and supportive digital haven for women - Business Today",
           "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQaHM1MDBNdVQxRWs0ZWtCdV81ek9tWXZxTDUxelhUaGtaYzN4c0UzZERFTHlnUHhmSDVtUXk5Tmo3OW9GMHJmTUJIWlB6YkxSWC1jdUFmVkdydWpoNU9abVM2aG1DWEpVdjRCUG5ZQXJYRi1LQm11MWNiUlJiUFhEbmFOQ21vV0xoN3FCWENCWFVyVWszMy1EekZLUXhuSkxQVUx1MDRrWlFmRGlwR0FBbEI2bk0zRTZ3WV9fSGdMX2VTVmhfSnZ0YllHaF9YTFBBMHFaRnROd0cwcGZ5eEd3TE5hYVDSAeoBQVVfeXFMUHdSMmVKWHRsaFBpZVZQY0NNNkh6ZVFrNmlHY2dXOHpHTFhnVHFad093eC1DaGpDTzA2b2NCaU5hVmpvY3FzUUZZU0FwWWxKTnBIWk5DdXQ2SVVLQW5CT0lMZGJHVEF0dlVRTW1RamM2bXMxdEgwMlJqOUpCOW53R3dQeGU4cDZyb0xGbmVmWE4zZ2xkTWNLZGlCYzJCNjFlTnpZQXEyUUZfNVp6Z3lXbG9VdGpDNHQya1NBX3U0dEtUZFVyekd5eGt6N29NRWNmRUVLTDROSGVQNTRiakd1a3VVMmpHTWwtdlJB?oc=5",
           "source": "news.google.com",
@@ -2267,6 +2260,14 @@
           "source": "news.google.com",
           "pub_date": "2024-04-02T07:00:00+00:00",
           "summary": "coto welcomes Ankita Gupta, CEO & Founder at Digitactix&nbsp;&nbsp;Adgully.com",
+          "company": "Coto"
+        },
+        {
+          "title": "coto appoints Ankita Gupta, Digitactix CEO, as new Community Advisor - MediaNews4U",
+          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPb2hwSGhsUGxKM1NVVy1vV3ZUX1Z2Z3dVdFNEYlowYmFlTXA3aDlYR21aU1kyS2hEeXF0NlVmbnVjUjVaUEtaZVVzVkFBdVJBbnNKRHQwRXZIRk55MnpCcV9kRW1Jc0pOUjlpalZhY2JIRDlONVlUT1FWcFg0MHpUT1M4dmtFbzZxdGM0Wm10MlNfZ0ctSHo2eFBGZw?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2024-04-02T07:00:00+00:00",
+          "summary": "coto appoints Ankita Gupta, Digitactix CEO, as new Community Advisor&nbsp;&nbsp;MediaNews4U",
           "company": "Coto"
         },
         {
@@ -2302,15 +2303,15 @@
           "company": "NirogStreet"
         },
         {
-          "title": "Softwaresuggest.com: Helping SME’s to get Right Software for their Business - TheTechPanda",
-          "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5SSDJ6ZFcyNm14WnlkLXRvcmR0amNPYUZLV09GN3BtaDJGRUhoSnRoZ3VicF8xU0IwczZLNmVqaGYtQkdSV0pZMHFJRTNGZHR1WEhuNzYwTGVydHM?oc=5",
+          "title": "Japan’s Spiral Ventures leads seed round in Ayurveda doctor platform NirogStreet - VCCircle",
+          "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPNE5lcUl3QUFKR0tRZlNuYmRCTVNhMUMxbE83RV90b0didEpSbHhaVWNYNmxqb0hPb2M5OHBCQlpwZFdEcGU5NkpXTHc2N1lMZ3djQVBfakhVVzNNUzRUYWVUZGRkNGd4RWRPY2lnc0ZkQTN0OGZBMTY1WXJxX1pCR0tWakdhSXN4SVZ0MWJ1ODVFX0JVUTdxMjhKVm90RGVJNVR0Nk9qRQ?oc=5",
           "source": "news.google.com",
-          "pub_date": "2014-03-25T07:00:00+00:00",
-          "summary": "Softwaresuggest.com: Helping SME’s to get Right Software for their Business&nbsp;&nbsp;TheTechPanda",
-          "company": "GetRight"
+          "pub_date": "2018-06-13T07:00:00+00:00",
+          "summary": "Japan’s Spiral Ventures leads seed round in Ayurveda doctor platform NirogStreet&nbsp;&nbsp;VCCircle",
+          "company": "NirogStreet"
         }
       ],
-      "cached_at": "2026-06-29T07:17:33.463712"
+      "cached_at": "2026-06-30T06:43:39.833192"
     }
   }
 }
