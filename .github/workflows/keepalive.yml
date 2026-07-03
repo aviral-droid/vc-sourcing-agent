@@ -1,0 +1,16 @@
+name: Keep Render warm
+
+on:
+  schedule:
+    - cron: '*/12 2-16 * * *'   # every 12 min during IST work hours (7:30am–9:30pm IST)
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Ping health endpoint
+        run: |
+          curl -s --max-time 90 -o /dev/null -w "health: %{http_code} in %{time_total}s\n" \
+            https://vc-sourcing-agent.onrender.com/api/health || true

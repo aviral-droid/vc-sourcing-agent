@@ -294,8 +294,12 @@ def _name_from_title(title: str) -> str:
     if not title:
         return ""
     part = re.split(r"\s+[-|]\s+", title, maxsplit=1)[0].strip()
-    if part.lower() in _NOT_A_NAME:
-        return ""  # anonymized/company-named profiles are not people
+    pl = part.lower()
+    # Anonymized profiles: LinkedIn renders hidden names as "Stealth Founder",
+    # "Stealth Mode Start Up", etc. Any candidate containing stealth/startup
+    # vocabulary is a label, not a human name.
+    if pl in _NOT_A_NAME or any(w in pl for w in ("stealth", "startup", "start up", "start-up")):
+        return ""
     tokens = part.split()
     # All tokens must start uppercase; at least one must be 4+ chars (real word, not an abbrev)
     if (2 <= len(tokens) <= 4
