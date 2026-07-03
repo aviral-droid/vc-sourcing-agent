@@ -240,7 +240,7 @@ def main():
     SOURCE_TIMEOUTS = {
         "GDELT (global news events)": 120,    # 12 queries × (5s sleep + 1s) = safe at 120s
         "News (RSS + Google News)":   90,
-        "LinkedIn (stealth + departures)": 150,
+        "LinkedIn (stealth + departures)": 320,  # ~85 queries/day rotation over all tracked companies
     }
 
     # Run in parallel threads (each source is I/O-bound)
@@ -253,7 +253,7 @@ def main():
     deadline = {fut: SOURCE_TIMEOUTS.get(name) for fut, name in futures.items()}
 
     try:
-        for fut in _cf.as_completed(futures, timeout=200):
+        for fut in _cf.as_completed(futures, timeout=340):
             name = futures[fut]
             try:
                 persons = fut.result()
@@ -263,7 +263,7 @@ def main():
             except Exception as e:
                 logger.error("✗ %s error: %s", name, e)
     except _cf.TimeoutError:
-        logger.warning("Global 200s timeout — some sources still running; proceeding with partial results")
+        logger.warning("Global 340s timeout — some sources still running; proceeding with partial results")
     finally:
         pool.shutdown(wait=False)   # let straggler threads die in background
 
@@ -277,6 +277,22 @@ def main():
     from pipeline.state_store import get_store
     store = get_store()
     deduped = resolve(all_p)
+
+    # ── Hard geography gate: India + SEA ONLY ──────────────────────────────────
+    # The fund is a pre-seed/seed India+SEA investor. A founder we cannot place
+    # inside the mandate (no location evidence, no tracked-company connection)
+    # is noise regardless of signal quality — drop, don't score.
+    from pipeline.enricher import _detect_geography
+    in_mandate = []
+    dropped_geo = 0
+    for p in deduped:
+        if _detect_geography(p) == "Unknown":
+            dropped_geo += 1
+            continue
+        in_mandate.append(p)
+    if dropped_geo:
+        logger.info("Geography gate: dropped %d persons with no India/SEA evidence", dropped_geo)
+    deduped = in_mandate
 
     # ── Fresh vs already-surfaced split (event-cursor semantics) ──────────────
     # A person whose EVERY piece of signal evidence was already surfaced in a
@@ -365,6 +381,8 @@ def main():
                                     signal_type=sd.get("type", "news_mention"),
                                     description=sd.get("description", ""),
                                     url=sd.get("url", "")))
+            if _detect_geography(p) == "Unknown":
+                continue  # mandate gate applies to archived records too
             p._archive_key = key   # remember origin so URL backfill can sync back
             all_for_report.append(p)
             added += 1

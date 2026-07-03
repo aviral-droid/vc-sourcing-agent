@@ -198,8 +198,36 @@ SEA_STEALTH_QUERIES = [
     'site:linkedin.com/in "ex-OpenAI" OR "ex-Anthropic" Singapore "founder" OR "stealth" OR "building"',
 ]
 
+def _company_queries() -> List[str]:
+    """Generate ex-[Company] stealth queries for EVERY tracked company.
+
+    The fund monitors talent departures across the full tracked-company list
+    (~670 companies in companies.py) — not just the few dozen hardcoded above.
+    Batching 3 companies per query keeps the query count manageable; the
+    3-day rotation in _todays_queries() cycles complete coverage."""
+    try:
+        from companies import TRACKED_COMPANIES
+        names = [c["name"] for c in TRACKED_COMPANIES if c.get("name")]
+    except Exception:
+        return []
+    queries = []
+    for i in range(0, len(names), 3):
+        ors = " OR ".join(f'"ex-{n}"' for n in names[i:i + 3])
+        queries.append(f'site:linkedin.com/in {ors} "stealth" OR "founder" OR "building"')
+    return queries
+
+
+# Curated non-company queries (city-level, broad stealth, cohort archetypes).
+# Company-specific curated queries are superseded by _company_queries(), which
+# covers every tracked company instead of a hand-picked subset. Frontier-AI-lab
+# alumni queries are kept — those labs aren't in the tracked-company list.
+_AI_LAB_KWS = ("ex-OpenAI", "ex-Anthropic", "ex-DeepMind", "ex-Google DeepMind",
+               "ex-Microsoft Research")
+_CURATED_QUERIES = [q for q in INDIA_STEALTH_QUERIES + SEA_STEALTH_QUERIES
+                    if '"ex-' not in q or any(k in q for k in _AI_LAB_KWS)]
+
 ALL_QUERIES = [config.freshen_years(q)
-               for q in INDIA_STEALTH_QUERIES + SEA_STEALTH_QUERIES]
+               for q in _company_queries() + _CURATED_QUERIES]
 
 
 def _score_snippet(snippet: str) -> int:
@@ -431,8 +459,11 @@ def _extract_person_from_result(title: str, snippet: str, url: str, query: str) 
         if candidate.lower() in f"{title} {snippet}".lower():
             previous_company = candidate
 
-    # Infer location from company/query context
-    location = _infer_location(previous_company, query)
+    # Infer location from PROFILE evidence only (title/snippet + confirmed
+    # ex-company). Never from the query: free engines return global results
+    # regardless of "India"/"Singapore" terms in the query, so query-derived
+    # location mislabels off-target profiles as in-mandate.
+    location = _infer_location(previous_company, f"{title} {snippet}")
     # Do NOT infer previous_title from query/snippet — we can't distinguish the person's
     # old role at their previous company from their current self-proclaimed headline title.
     # Leaving it empty makes the LLM appropriately uncertain about seniority.
@@ -766,7 +797,7 @@ def _search_all_sync(queries: List[str], out: List[Person]) -> None:
                 out.append(p)
             if i % 10 == 9:
                 logger.debug("LinkedIn: %d profiles after %d/%d queries", len(out), i + 1, len(queries))
-            time.sleep(1.2)  # polite rate limiting
+            time.sleep(0.9)  # polite rate limiting (~87 queries/day fits the 300s budget)
         except Exception as e:
             logger.warning("LinkedIn query error [%s]: %s", query[:50], e)
 
@@ -786,10 +817,10 @@ def _todays_queries() -> List[str]:
 
 
 def search_linkedin_signals(days_back: int = 30) -> List[Person]:
-    """Run today's rotation of LinkedIn stealth/departure queries (175s budget).
+    """Run today's rotation of LinkedIn stealth/departure queries (300s budget).
     Partial results are preserved even if the timeout fires mid-run."""
     queries = _todays_queries()
-    logger.info("LinkedIn source: running %d/%d queries (3-day rotation, Serper→Brave→CSE→Tavily→DDG, 175s budget)...",
+    logger.info("LinkedIn source: running %d/%d queries (3-day full-coverage rotation over all tracked companies, 300s budget)...",
                 len(queries), len(ALL_QUERIES))
     import concurrent.futures
     persons: List[Person] = []  # shared — worker appends here, we read it even on timeout
@@ -797,7 +828,7 @@ def search_linkedin_signals(days_back: int = 30) -> List[Person]:
         ex = concurrent.futures.ThreadPoolExecutor(max_workers=1)
         future = ex.submit(_search_all_sync, queries, persons)
         try:
-            future.result(timeout=175)
+            future.result(timeout=300)
         except concurrent.futures.TimeoutError:
             logger.warning("LinkedIn source: timed out — %d partial results captured", len(persons))
             future.cancel()
