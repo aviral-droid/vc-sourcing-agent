@@ -334,6 +334,7 @@ _SENIOR_TITLE_KEYWORDS = {
 _SIGNAL_SCORES = {
     "stealth_headline_change": 24,  # profile headline CHANGED to stealth between runs — gold
     "seniority_corroborated":  12,  # independent web source confirms senior title
+    "accelerator_batch":       16,  # accepted into YC/top accelerator — vetted pre-seed
     "exec_departure":         18,
     "executive_departure":    18,  # alias used by news_source
     "company_registration":   15,
@@ -694,6 +695,52 @@ def _rule_based_score(person: Person) -> dict:
     }
 
 
+# ── Derived badges (Harmonic-style "Highlights", materialized at ingest) ──────
+# Harmonic precomputes person-level badges (Seasoned Founder, Prior Exit, Major
+# Tech Experience...) so sourcing filters are instant lookups. Same idea here:
+# cheap deterministic flags computed once, stored in the archive, shown as tags.
+
+_BADGE_PEDIGREE = {
+    "razorpay", "phonepe", "zepto", "swiggy", "zomato", "cred", "meesho",
+    "grab", "gojek", "sea group", "shopee", "tokopedia", "stripe", "google",
+    "amazon", "meta", "microsoft", "paytm", "freshworks", "groww", "zerodha",
+    "ola", "flipkart", "nykaa", "urban company", "delhivery", "dream11",
+    "byju", "oyo", "lenskart", "udaan", "traveloka", "lazada", "goto",
+}
+
+
+def compute_badges(person: Person) -> list:
+    """Deterministic investor-relevant badges from the person's evidence."""
+    badges = []
+    sig_types = {s.signal_type for s in person.signals}
+    sources = {s.source for s in person.signals}
+
+    if "stealth_headline_change" in sig_types:
+        badges.append("Just went stealth")
+    if "accelerator_batch" in sig_types:
+        badges.append("YC batch")
+    if person.is_second_time_founder:
+        badges.append("2x founder")
+    co_text = " ".join([(person.previous_company or "").lower(),
+                        (person.headline or "").lower()])
+    if any(c in co_text for c in _BADGE_PEDIGREE):
+        badges.append("Ex-unicorn/top co")
+    exp = 0
+    try:
+        exp = int(person.experience_years or 0)
+    except (TypeError, ValueError):
+        pass
+    if exp >= 10:
+        badges.append(f"{exp}y operator")
+    if "seniority_corroborated" in sig_types:
+        badges.append("Verified")
+    if len(sources - {"verification"}) >= 2:
+        badges.append("Multi-source")
+    if person.previous_title and _is_senior_title(person.previous_title):
+        badges.append(f"Ex-{person.previous_title}")
+    return badges[:5]
+
+
 # ── Core scoring ───────────────────────────────────────────────────────────────
 
 def score_person(person: Person) -> None:
@@ -731,6 +778,7 @@ def score_person(person: Person) -> None:
     person.score = float(data.get("score", 0))
     person.recommended_action = data.get("recommended_action", "pass")
     person.investment_thesis = data.get("investment_thesis", "")
+    person.badges = compute_badges(person)
     person.score_rationale = json.dumps({
         "founder_type": data.get("founder_type"),
         "sector": data.get("sector"),

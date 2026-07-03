@@ -202,6 +202,8 @@ class StateStore:
             "linkedin_url": person.linkedin_url or "",
             "github_url": person.github_url or "",
             "twitter_handle": person.twitter_handle or "",
+            "company_url": getattr(person, "company_url", "") or "",
+            "headline": (person.headline or "")[:150],
             "previous_company": person.previous_company or "",
             "previous_title": person.previous_title or "",
             "current_company": person.current_company or "",
@@ -212,6 +214,7 @@ class StateStore:
             "recommended_action": person.recommended_action or "pass",
             "investment_thesis": person.investment_thesis or "",
             "score_rationale": getattr(person, "score_rationale", "") or "",
+            "badges": list(getattr(person, "badges", []) or []),
             "signal_types": sorted({s.signal_type for s in person.signals}),
             "signal_descriptions": [
                 {"source": s.source, "type": s.signal_type,

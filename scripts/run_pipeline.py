@@ -84,6 +84,19 @@ def _serper_web_search(query: str, num: int = 8) -> list:
         except Exception as e:
             logger.debug("Tavily web search error: %s", e)
 
+    # Keyless fallback — ddgs rotates free search backends
+    try:
+        try:
+            from ddgs import DDGS
+        except ImportError:
+            from duckduckgo_search import DDGS
+        return [{"link": r.get("href") or r.get("link", ""),
+                 "title": r.get("title", ""),
+                 "snippet": r.get("body", "") or r.get("snippet", "")}
+                for r in DDGS().text(query, max_results=num)]
+    except Exception as e:
+        logger.debug("ddgs web search error: %s", e)
+
     return []
 
 
@@ -152,11 +165,7 @@ def _enrich_linkedin_urls(persons: list, max_lookups: int = 20) -> None:
     """For scored persons missing linkedin_url, try a targeted Serper query to find their profile.
     Only runs when SERPER_API_KEY is set. Modifies persons in-place."""
     import time as _t
-    import config
-    from sources.linkedin_source import _serper_search, _clean_linkedin_url
-
-    if not getattr(config, "SERPER_API_KEY", ""):
-        return
+    from sources.linkedin_source import _search_for_profiles, _clean_linkedin_url
 
     to_enrich = [
         p for p in persons
@@ -176,13 +185,20 @@ def _enrich_linkedin_urls(persons: list, max_lookups: int = 20) -> None:
                 query = f'site:linkedin.com/in "{p.name}" "{p.previous_company}"'
             else:
                 query = f'site:linkedin.com/in "{p.name}"'
-            for r in _serper_search(query):
+            name_tokens = [t.lower() for t in p.name.split() if len(t) >= 3]
+            for r in _search_for_profiles(query):
                 clean = _clean_linkedin_url(r.get("url", ""))
-                if clean:
-                    p.linkedin_url = clean
-                    found += 1
-                    logger.debug("Enriched linkedin_url for %s → %s", p.name, clean)
-                    break
+                if not clean:
+                    continue
+                # Guard against attaching the wrong person: the result's title or
+                # URL slug must contain the person's name (free engines are loose).
+                haystack = (r.get("title", "") + " " + clean).lower()
+                if name_tokens and not all(t in haystack for t in name_tokens):
+                    continue
+                p.linkedin_url = clean
+                found += 1
+                logger.debug("Enriched linkedin_url for %s → %s", p.name, clean)
+                break
             _t.sleep(0.5)
         except Exception as e:
             logger.debug("LinkedIn enrichment error for %s: %s", p.name, e)
@@ -208,10 +224,12 @@ def main():
     from sources.github_source import search_github_signals
     from sources.linkedin_source import search_linkedin_signals
     from sources.gdelt_source import search_gdelt_signals
+    from sources.yc_source import search_yc_signals
 
     source_fns = [
         ("News (RSS + Google News)", search_news_signals, {"days_back": DAYS_BACK}),
         ("LinkedIn (stealth + departures)", search_linkedin_signals, {"days_back": DAYS_BACK}),
+        ("YC batches (India/SEA)", search_yc_signals, {"days_back": DAYS_BACK}),
         ("Exa (LinkedIn + Web Search)", search_exa_signals, {"days_back": DAYS_BACK}),
         ("GDELT (global news events)", search_gdelt_signals, {"days_back": DAYS_BACK}),
         ("Product Hunt", search_producthunt_signals, {"days_back": DAYS_BACK}),
@@ -337,12 +355,17 @@ def main():
             )
             p.recommended_action = rec.get("recommended_action", "pass")
             p.score_rationale = rec.get("score_rationale", "")
+            p.company_url = rec.get("company_url", "")
+            p.headline = rec.get("headline", "")
+            p.badges = rec.get("badges", [])
+            p.first_surfaced = rec.get("first_surfaced", "")
             p.new_today = False
             for sd in rec.get("signal_descriptions", []):
                 p.signals.append(_S(source=sd.get("source", "archive"),
                                     signal_type=sd.get("type", "news_mention"),
                                     description=sd.get("description", ""),
                                     url=sd.get("url", "")))
+            p._archive_key = key   # remember origin so URL backfill can sync back
             all_for_report.append(p)
             added += 1
         if added:
@@ -351,6 +374,20 @@ def main():
     except Exception as e:
         logger.warning("Could not merge archive: %s", e)
         all_for_report = scored
+
+    # ── Backfill LinkedIn URLs for archived persons that still lack one ───────
+    # (older archive entries predate chain-based enrichment). Sync results back
+    # into the persistent archive so the lookup never repeats.
+    try:
+        archived_missing = [p for p in all_for_report
+                            if not p.linkedin_url and getattr(p, "_archive_key", None)]
+        if archived_missing:
+            _enrich_linkedin_urls(archived_missing, max_lookups=10)
+            for p in archived_missing:
+                if p.linkedin_url:
+                    store.surfaced[p._archive_key]["linkedin_url"] = p.linkedin_url
+    except Exception as e:
+        logger.debug("Archive URL backfill error: %s", e)
 
     # ── Persist state for the next run (committed back to repo by CI) ─────────
     store.save()

@@ -135,6 +135,12 @@ INDIA_STEALTH_QUERIES = [
     'site:linkedin.com/in "ex-Infosys" OR "ex-Wipro" India "founder" OR "stealth" OR "new startup"',
     'site:linkedin.com/in "ex-TCS" OR "ex-HCL Technologies" India "founder" OR "building"',
     'site:linkedin.com/in "ex-Accenture" India "founder" OR "stealth" OR "new startup"',
+    # Cohort expansion (Specter tracks these archetypes explicitly):
+    # founding/early employees at breakouts, and frontier-AI-lab alumni
+    'site:linkedin.com/in "founding engineer" India "stealth" OR "building something" OR "founder"',
+    'site:linkedin.com/in "early employee" OR "first employee" India "founder" OR "stealth"',
+    'site:linkedin.com/in "ex-OpenAI" OR "ex-Anthropic" OR "ex-DeepMind" India "founder" OR "stealth" OR "building"',
+    'site:linkedin.com/in "ex-Google DeepMind" OR "ex-Microsoft Research" India "founder" OR "stealth"',
 ]
 
 # ── SEA queries ────────────────────────────────────────────────────────────────
@@ -187,6 +193,9 @@ SEA_STEALTH_QUERIES = [
     # Singapore fintech alumni
     'site:linkedin.com/in "ex-StashAway" OR "ex-Endowus" "stealth" OR "founder"',
     'site:linkedin.com/in "ex-PatSnap" OR "ex-Kredivo" "stealth" OR "founder"',
+    # Cohort expansion — founding engineers + AI-lab alumni in SEA
+    'site:linkedin.com/in "founding engineer" Singapore OR Indonesia "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-OpenAI" OR "ex-Anthropic" Singapore "founder" OR "stealth" OR "building"',
 ]
 
 ALL_QUERIES = [config.freshen_years(q)
@@ -662,10 +671,34 @@ def _tavily_search(query: str) -> List[dict]:
         return []
 
 
+def _ddgs_search(query: str) -> List[dict]:
+    """Keyless search via the ddgs package (rotates DuckDuckGo/other backends).
+    Free and unlimited-ish — the primary fallback when paid APIs are out of credits."""
+    try:
+        try:
+            from ddgs import DDGS
+        except ImportError:
+            from duckduckgo_search import DDGS
+        results = []
+        for r in DDGS().text(query, max_results=10):
+            url = r.get("href") or r.get("link") or ""
+            if "linkedin.com/in/" not in url:
+                continue  # ddgs doesn't strictly honor site: — filter here
+            results.append({
+                "url": url,
+                "title": r.get("title", ""),
+                "snippet": r.get("body", "") or r.get("snippet", ""),
+            })
+        return results
+    except Exception as e:
+        logger.debug("ddgs search error [%s]: %s", query[:40], e)
+        return []
+
+
 def _search_for_profiles(query: str) -> List[dict]:
-    """Try Serper → Brave → Google CSE → Tavily → SearXNG → DuckDuckGo → Bing."""
+    """Try Serper → Brave → Google CSE → Tavily → ddgs → SearXNG → DDG-html → Bing."""
     for fn in (_serper_search, _brave_search, _google_cse_search, _tavily_search,
-               _searxng_search, _duckduckgo_search, _bing_search):
+               _ddgs_search, _searxng_search, _duckduckgo_search, _bing_search):
         results = fn(query)
         if results:
             return results

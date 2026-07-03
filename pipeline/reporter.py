@@ -611,6 +611,8 @@ def _generate_data_json(report: DailyReport) -> None:
         persons_data.append({
             "name": p.name,
             "new_today": bool(getattr(p, "new_today", False)),
+            "badges": list(getattr(p, "badges", []) or []),
+            "first_surfaced": getattr(p, "first_surfaced", "") or "",
             "score": round(p.score),
             "action": p.recommended_action,
             "recommended_action": p.recommended_action,
