@@ -1899,7 +1899,12 @@ function filterByBadge(b){
 
 function applyFilters(){
   const presetPred = activePreset ? (ALERT_PRESETS.find(a=>a.id===activePreset)||{}).pred : null;
+  const crmDb = crmLoad();
   let f = allPersons.filter(p=>{
+    // Founders you passed on live ONLY in the CRM's Passed lane — they are
+    // permanently removed from every signal view (cards, feed, table).
+    const crmEntry = crmDb[personKey(p)];
+    if(crmEntry && crmEntry.status==='passed') return false;
     if(presetPred && !presetPred(p)) return false;
     if(window._badgeFilter && !(p.badges||[]).includes(window._badgeFilter)) return false;
     if(filters.action!=='all' && p.action!==filters.action) return false;
