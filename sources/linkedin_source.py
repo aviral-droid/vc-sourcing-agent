@@ -415,6 +415,14 @@ def _has_genuine_signal(title: str, snippet: str) -> tuple[bool, bool]:
     return has_stealth, has_senior
 
 
+try:
+    from companies import TRACKED_COMPANIES as _TC
+    _ALL_TRACKED_LOWER = frozenset(
+        c["name"].lower() for c in _TC if c.get("name") and len(c["name"]) >= 3)
+except Exception:
+    _ALL_TRACKED_LOWER = frozenset(_INDIA_CO_GEO | _SEA_CO_GEO)
+
+
 def _clean_serp_title(title: str) -> str:
     """Free search engines (ddgs) concatenate several results into one title
     string ("Name A - ... | LinkedInName B - ..."). Keep only the first
@@ -442,6 +450,20 @@ def _extract_person_from_result(title: str, snippet: str, url: str, query: str) 
     has_stealth, has_senior = _has_genuine_signal(title, snippet)
     if not has_stealth:
         return None  # just a departure or senior bio — needs explicit founder language
+
+    # Reject anyone CURRENTLY at a tracked company, regardless of which query
+    # found them. "Co-Founder and CEO at Shadowfax" or "Building Rapido" are
+    # sitting founders/employees of established companies — not new founders.
+    # (The per-query ex- check below only covers the query's own company;
+    # broad city/cohort queries need this full-list scan.)
+    title_l = re.sub(r"[@]", " ", title.lower())
+    title_l = re.sub(r"\bex\s*-\s*", "ex-", title_l)
+    for co in _ALL_TRACKED_LOWER:
+        # word-boundary match to avoid "ola" inside "Olark" etc.
+        if not re.search(r"\b" + re.escape(co) + r"\b", title_l):
+            continue
+        if not any(p + co in title_l for p in ("ex-", "ex ", "former ", "formerly ", "previously ")):
+            return None  # currently employed at a tracked company
 
     text = f"{title} {snippet}"
     score = _score_snippet(text)
