@@ -769,6 +769,48 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
 .crm-status-chip.passed{color:var(--red);background:var(--red-dim)}
 /* Badge tags on sourcing cards */
 .tag-badge{background:var(--accent-dim);color:var(--accent);font-weight:600}
+
+/* ── Alerts + saved searches (sidebar) ──────────────────────────────── */
+.alert-row{display:flex;align-items:center;justify-content:space-between;gap:8px;
+  padding:6px 9px;border-radius:7px;cursor:pointer;font-size:12px;color:var(--text2);
+  border:1px solid transparent;transition:background .12s}
+.alert-row:hover{background:var(--surface2)}
+.alert-row.active{background:var(--accent-dim);border-color:var(--accent);color:var(--accent)}
+.alert-new{font-size:9px;font-weight:800;background:var(--red);color:#fff;border-radius:8px;padding:1px 6px}
+.alert-total{font-size:10px;color:var(--muted);background:var(--surface3);border-radius:8px;padding:1px 6px}
+.save-search-btn{width:100%;font-size:11px;font-weight:600;font-family:var(--font);color:var(--accent);
+  background:var(--accent-dim);border:1px dashed var(--accent);border-radius:7px;padding:6px;cursor:pointer;margin-top:4px}
+.saved-del{font-size:10px;color:var(--muted);cursor:pointer;padding:0 3px}
+.saved-del:hover{color:var(--red)}
+
+/* ── Founder profile drawer ─────────────────────────────────────────── */
+.drawer-overlay{position:fixed;inset:0;background:rgba(15,18,35,.35);z-index:9000;display:none}
+.drawer-overlay.open{display:block}
+.drawer{position:fixed;top:0;right:-480px;width:460px;max-width:94vw;height:100vh;z-index:9001;
+  background:var(--surface);border-left:1px solid var(--border);box-shadow:-8px 0 40px rgba(20,25,60,.15);
+  transition:right .22s ease;display:flex;flex-direction:column}
+.drawer.open{right:0}
+.drawer-head{display:flex;align-items:center;gap:12px;padding:18px;border-bottom:1px solid var(--border)}
+.drawer-close{margin-left:auto;font-size:16px;color:var(--muted);background:none;border:none;cursor:pointer}
+.drawer-close:hover{color:var(--red)}
+.drawer-body{flex:1;overflow-y:auto;padding:16px 18px;display:flex;flex-direction:column;gap:16px}
+.drawer-section-title{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.drawer-transition{display:flex;align-items:center;gap:10px;padding:12px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;font-size:12px}
+.drawer-transition .from,.drawer-transition .to{flex:1}
+.drawer-transition .role{font-weight:700;font-size:12.5px}
+.drawer-transition .co{color:var(--muted2);font-size:11px}
+.drawer-transition .arr{color:var(--accent);font-size:16px;font-weight:800}
+.drawer-list{display:flex;flex-direction:column;gap:5px;font-size:12px}
+.drawer-list li{margin-left:16px}
+.drawer-sig{display:flex;gap:8px;padding:8px 10px;background:var(--surface2);border:1px solid var(--border);border-radius:8px;font-size:11.5px;margin-bottom:6px}
+.feed-day{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:16px 0 8px}
+.feed-row{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--surface);
+  border:1px solid var(--border);border-radius:10px;margin-bottom:6px;font-size:12px;cursor:pointer}
+.feed-row:hover{border-color:var(--accent)}
+.feed-emoji{font-size:15px;flex-shrink:0}
+.feed-main{flex:1;min-width:0}
+.feed-trans{color:var(--muted2);font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.feed-score{font-weight:800;color:var(--accent);font-size:12px}
 </style>
 </head>
 <body>
@@ -822,6 +864,15 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
   <!-- ── Sidebar ─────────────────────────────────────────────────────── -->
   <aside class="sidebar">
 
+    <div class="sidebar-label">Alerts</div>
+    <div id="alerts-list"></div>
+
+    <div class="sidebar-divider"></div>
+    <div class="sidebar-label">Saved searches</div>
+    <div id="saved-searches-list"></div>
+    <button class="save-search-btn" onclick="saveCurrentSearch()">★ Save current search</button>
+
+    <div class="sidebar-divider"></div>
     <div class="sidebar-label">Action</div>
     <div class="filter-row active" data-filter="action" data-val="all" onclick="setFilter('action','all',this)">
       <div class="filter-row-label"><span class="filter-icon">⚡</span>All founders</div>
@@ -941,6 +992,7 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
         <button class="view-btn active" id="view-list" onclick="setView('list')" title="Detailed view">≡</button>
         <button class="view-btn" id="view-compact" onclick="setView('compact')" title="Compact view">⊟</button>
         <button class="view-btn" id="view-table" onclick="setView('table')" title="Table view">☰</button>
+        <button class="view-btn" id="view-feed" onclick="setView('feed')" title="Signal feed (chronological)">◷</button>
       </div>
     </div>
 
@@ -984,6 +1036,13 @@ input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;height:4p
   <div class="crm-lanes" id="crm-lanes">
     <!-- lanes rendered by JS -->
   </div>
+</div>
+
+<!-- ── Founder profile drawer ─────────────────────────────────── -->
+<div class="drawer-overlay" id="drawer-overlay" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-head" id="drawer-head"></div>
+  <div class="drawer-body" id="drawer-body"></div>
 </div>
 
 <!-- ══════════════════════════════════════════════════════════ -->
@@ -1322,6 +1381,8 @@ function renderCard(p){
 
   const starBadge = p.is_second_time_founder?`<span class="badge badge-star">2x</span>`:'';
   const newBadge  = isNew?`<span class="badge badge-new">NEW</span>`:'';
+  const _sk = personKey(p);
+  const starBtn = `<span onclick="event.stopPropagation();toggleStar('${esc(_sk)}')" title="Star for triage" style="cursor:pointer;font-size:13px;opacity:${isStarred(_sk)?1:.35}">${isStarred(_sk)?'⭐':'☆'}</span>`;
   const hotBadge  = hot?'<span style="font-size:12px" title="Hot sector">🔥</span>':'';
 
   const prev = [p.previous_title, p.previous_company].filter(Boolean).join(' @ ');
@@ -1329,7 +1390,7 @@ function renderCard(p){
 
   // Tags
   const geoFlag = GEO_FLAG[p.geography]||'';
-  const badgeTags = (p.badges||[]).map(b=>`<span class="tag tag-badge">★ ${esc(b)}</span>`).join('');
+  const badgeTags = (p.badges||[]).map(b=>`<span class="tag tag-badge" style="cursor:pointer" title="Filter by this highlight" onclick="event.stopPropagation();filterByBadge('${esc(b)}')">★ ${esc(b)}</span>`).join('');
   const tagParts = [
     p.geography ? `<span class="tag tag-geo">${geoFlag} ${esc(p.geography)}</span>` : '',
     p.sector    ? `<span class="tag tag-sector">${hotBadge} ${esc(p.sector)}</span>` : '',
@@ -1394,13 +1455,13 @@ function renderCard(p){
   const hotClass = hot ? ' hot-sector' : '';
 
   if(viewMode==='compact'){
-    return `<div class="card compact ${esc(action)}${hotClass}">
+    return `<div class="card compact ${esc(action)}${hotClass}" style="cursor:pointer" onclick="if(event.target.closest('a,button'))return;openDrawer('${esc(pkey)}')">
       <div class="card-header">
         <div class="avatar ${action}" style="${isUnknown?'opacity:.5':''}">${initials(p.name)}</div>
         <div class="card-meta" style="flex:1">
           <div class="card-name-row">
             <span class="card-name" style="${isUnknown?'color:var(--muted2);font-style:italic':''}">${esc(name)}</span>
-            ${newBadge}${badge}${starBadge}${socialBadge}
+            ${starBtn}${newBadge}${badge}${starBadge}${socialBadge}
           </div>
           <div class="card-sub">
             ${prev?`<strong>${esc(prev)}</strong><span class="arrow-sep">&rarr;</span>`:''}
@@ -1413,13 +1474,13 @@ function renderCard(p){
     </div>`;
   }
 
-  return `<div class="card ${esc(action)}${hotClass}">
+  return `<div class="card ${esc(action)}${hotClass}" style="cursor:pointer" onclick="if(event.target.closest('a,button,textarea'))return;openDrawer('${esc(pkey)}')">
     <div class="card-header">
       <div class="avatar ${action}" style="${isUnknown?'opacity:.5':''}">${initials(p.name)}</div>
       <div class="card-meta">
         <div class="card-name-row">
           <span class="card-name" style="${isUnknown?'color:var(--muted2);font-style:italic':''}">${esc(name)}</span>
-          ${newBadge}${badge}${starBadge}${socialBadge}
+          ${starBtn}${newBadge}${badge}${starBadge}${socialBadge}
         </div>
         <div class="card-sub">
           ${prev?`<strong>${esc(prev)}</strong><span class="arrow-sep">&rarr;</span>`:''}
@@ -1584,6 +1645,213 @@ function crmImport(input){
   }catch(e){}
 })();
 
+// ── Alerts (Specter-style notification presets) ──────────────────────
+// Preset predicates encode THIS fund's logic (India/SEA pre-seed signal
+// classes), with per-preset "new since last viewed" counts like Specter's
+// notifications panel and Harmonic's new-match saved searches.
+const ALERT_PRESETS = [
+  {id:'just_stealth', label:'⚡ Just went stealth', pred:p=>(p.signal_types||[]).includes('stealth_headline_change')},
+  {id:'stealth',      label:'🥷 Stealth founders',  pred:p=>(p.signal_types||[]).includes('stealth_founder')},
+  {id:'verified',     label:'✅ Verified seniors',  pred:p=>(p.badges||[]).includes('Verified')},
+  {id:'exunicorn',    label:'🦄 Ex-unicorn/top co', pred:p=>(p.badges||[]).includes('Ex-unicorn/top co')},
+  {id:'yc',           label:'🚀 Accelerator batch', pred:p=>(p.signal_types||[]).includes('accelerator_batch')},
+  {id:'funding',      label:'💰 Fresh funding',     pred:p=>(p.signal_types||[]).includes('funding_news')},
+  {id:'starred',      label:'⭐ Starred',           pred:p=>isStarred(personKey(p))},
+];
+let activePreset = null;
+
+function firstSeenOf(p){
+  return p.first_surfaced || (p.new_today ? (data.date_label||'') : '');
+}
+function alertSeenMap(){ try{ return JSON.parse(localStorage.getItem('vc_alert_seen')||'{}'); }catch(e){ return {}; } }
+function renderAlerts(){
+  const wrap = document.getElementById('alerts-list');
+  if(!wrap || typeof allPersons==='undefined') return;
+  const seen = alertSeenMap();
+  wrap.innerHTML = ALERT_PRESETS.map(a=>{
+    const matches = allPersons.filter(a.pred);
+    const lastSeen = seen[a.id]||'';
+    const fresh = matches.filter(p=>{const d=firstSeenOf(p); return d && d>lastSeen;}).length;
+    return `<div class="alert-row ${activePreset===a.id?'active':''}" onclick="toggleAlert('${a.id}')">
+      <span>${a.label}</span>
+      <span style="display:flex;gap:4px">${fresh?`<span class="alert-new">${fresh} new</span>`:''}<span class="alert-total">${matches.length}</span></span>
+    </div>`;
+  }).join('');
+}
+function toggleAlert(id){
+  activePreset = (activePreset===id) ? null : id;
+  if(activePreset){
+    const seen = alertSeenMap();
+    seen[id] = (data.date_label||new Date().toISOString().slice(0,10));
+    localStorage.setItem('vc_alert_seen', JSON.stringify(seen));
+  }
+  applyFilters();
+}
+
+// ── Saved searches (Harmonic-style, with new-match counts) ───────────
+function savedSearches(){ try{ return JSON.parse(localStorage.getItem('vc_saved_searches')||'[]'); }catch(e){ return []; } }
+function saveCurrentSearch(){
+  const name = prompt('Name this search:', searchQuery || `${filters.action!=='all'?filters.action+' ':''}${filters.geo!=='all'?filters.geo+' ':''}score ${filters.score}+`.trim());
+  if(!name) return;
+  const list = savedSearches();
+  list.push({name, filters:{...filters}, query:searchQuery, preset:activePreset,
+             saved:new Date().toISOString().slice(0,10), lastSeen:new Date().toISOString().slice(0,10)});
+  localStorage.setItem('vc_saved_searches', JSON.stringify(list));
+  renderSavedSearches();
+  toast(`★ Saved "${name}"`);
+}
+function matchesSaved(s, p){
+  if(s.filters.action!=='all' && p.action!==s.filters.action) return false;
+  if(s.filters.geo!=='all' && p.geography!==s.filters.geo) return false;
+  if(s.filters.signal!=='all' && !(p.signal_types||[]).includes(s.filters.signal)) return false;
+  if(p.score < (s.filters.score||0)) return false;
+  if(s.preset){ const a=ALERT_PRESETS.find(x=>x.id===s.preset); if(a && !a.pred(p)) return false; }
+  if(s.query){
+    const hay = `${p.name} ${p.previous_company} ${p.current_company} ${p.sector} ${p.geography}`.toLowerCase();
+    if(!hay.includes(s.query.toLowerCase())) return false;
+  }
+  return true;
+}
+function renderSavedSearches(){
+  const wrap = document.getElementById('saved-searches-list');
+  if(!wrap) return;
+  const list = savedSearches();
+  wrap.innerHTML = list.length===0
+    ? `<div style="font-size:11px;color:var(--muted);padding:4px 9px">No saved searches yet</div>`
+    : list.map((s,i)=>{
+        const matches = (typeof allPersons!=='undefined') ? allPersons.filter(p=>matchesSaved(s,p)) : [];
+        const fresh = matches.filter(p=>{const d=firstSeenOf(p); return d && d>(s.lastSeen||'');}).length;
+        return `<div class="alert-row" onclick="applySavedSearch(${i})">
+          <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">★ ${esc(s.name)}</span>
+          <span style="display:flex;gap:4px;align-items:center">
+            ${fresh?`<span class="alert-new">${fresh} new</span>`:''}
+            <span class="alert-total">${matches.length}</span>
+            <span class="saved-del" onclick="event.stopPropagation();deleteSavedSearch(${i})">✕</span>
+          </span>
+        </div>`;
+      }).join('');
+}
+function applySavedSearch(i){
+  const list = savedSearches();
+  const s = list[i];
+  if(!s) return;
+  filters = {...s.filters};
+  searchQuery = s.query||'';
+  activePreset = s.preset||null;
+  const inp = document.getElementById('search-input'); if(inp) inp.value = searchQuery;
+  s.lastSeen = new Date().toISOString().slice(0,10);
+  localStorage.setItem('vc_saved_searches', JSON.stringify(list));
+  applyFilters();
+  toast(`Applied "${s.name}"`);
+}
+function deleteSavedSearch(i){
+  const list = savedSearches();
+  list.splice(i,1);
+  localStorage.setItem('vc_saved_searches', JSON.stringify(list));
+  renderSavedSearches();
+}
+
+// ── Founder profile drawer (Specter-style profile page) ──────────────
+function openDrawer(key){
+  const p = window._personIndex[key] || (typeof allPersons!=='undefined' ? allPersons.find(x=>personKey(x)===key) : null);
+  if(!p) return;
+  const head = document.getElementById('drawer-head');
+  const body = document.getElementById('drawer-body');
+  head.innerHTML = `
+    <div class="avatar ${p.action||'pass'}">${initials(p.name)}</div>
+    <div>
+      <div style="font-weight:800;font-size:15px">${esc(displayName(p))}</div>
+      <div style="font-size:11px;color:var(--muted2)">${esc(p.sector||'')}${p.geography?' · '+esc(p.geography):''}${firstSeenOf(p)?' · first seen '+esc(firstSeenOf(p)):''}</div>
+    </div>
+    ${scoreRingSVG(p.score)}
+    <button class="drawer-close" onclick="closeDrawer()">✕</button>`;
+
+  const rationale = _parseRationaleJS(p);
+  const badges = (p.badges||[]).map(b=>`<span class="tag tag-badge">★ ${esc(b)}</span>`).join('');
+  const evidence = (p.signals||[]).map(s=>{
+    const meta = SIG[s.type]||{emoji:'•',label:s.type};
+    const lnk = s.url?` <a href="${esc(s.url)}" target="_blank" rel="noopener" style="color:var(--blue)">↗</a>`:'';
+    return `<div class="drawer-sig"><span>${meta.emoji}</span><span>${esc(cleanDesc(s.description))}${lnk}</span></div>`;
+  }).join('');
+  const links = [
+    p.linkedin_url?`<a class="link-btn" href="${esc(p.linkedin_url)}" target="_blank" rel="noopener">in LinkedIn</a>`:'',
+    p.company_url?`<a class="link-btn" href="${esc(p.company_url)}" target="_blank" rel="noopener">Website</a>`:'',
+    p.github_url?`<a class="link-btn" href="${esc(p.github_url)}" target="_blank" rel="noopener">GitHub</a>`:'',
+  ].filter(Boolean).join('');
+  const key2 = personKey(p);
+  const st = crmStatus(p);
+
+  body.innerHTML = `
+    ${badges?`<div><div class="tags">${badges}</div></div>`:''}
+    <div>
+      <div class="drawer-section-title">Career transition</div>
+      <div class="drawer-transition">
+        <div class="from"><div class="role">${esc(p.previous_title||'—')}</div><div class="co">${esc(p.previous_company||'previous')}</div></div>
+        <div class="arr">→</div>
+        <div class="to"><div class="role">${esc(p.current_company||'Stealth / building')}</div><div class="co">current</div></div>
+      </div>
+    </div>
+    ${p.investment_thesis?`<div><div class="drawer-section-title">Investment thesis</div><div style="font-size:12px;line-height:1.6">${esc(p.investment_thesis)}</div></div>`:''}
+    ${rationale.key_strengths&&rationale.key_strengths.length?`<div><div class="drawer-section-title">Strengths</div><ul class="drawer-list">${rationale.key_strengths.map(s=>`<li>${esc(s)}</li>`).join('')}</ul></div>`:''}
+    ${rationale.risks&&rationale.risks.length?`<div><div class="drawer-section-title">Risks</div><ul class="drawer-list">${rationale.risks.map(s=>`<li>${esc(s)}</li>`).join('')}</ul></div>`:''}
+    <div><div class="drawer-section-title">Evidence (${(p.signals||[]).length})</div>${evidence||'<div style="font-size:11px;color:var(--muted)">No evidence attached</div>'}</div>
+    ${links?`<div><div class="drawer-section-title">Links</div><div class="links-row">${links}</div></div>`:''}
+    <div>
+      <div class="drawer-section-title">Pipeline</div>
+      ${st?`<span class="crm-status-chip ${st}">In CRM: ${st}</span>`:`
+      <div class="card-crm-row" style="margin-top:0">
+        <button class="crm-add-btn inv" onclick="crmAdd('${esc(key2)}','investigating');closeDrawer()">🔍 Investigate</button>
+        <button class="crm-add-btn watch" onclick="crmAdd('${esc(key2)}','watchlist');closeDrawer()">👁 Watchlist</button>
+        <button class="crm-add-btn pass" onclick="crmAdd('${esc(key2)}','passed');closeDrawer()">✕ Pass</button>
+      </div>`}
+    </div>`;
+  document.getElementById('drawer-overlay').classList.add('open');
+  document.getElementById('drawer').classList.add('open');
+}
+function closeDrawer(){
+  document.getElementById('drawer-overlay').classList.remove('open');
+  document.getElementById('drawer').classList.remove('open');
+}
+function _parseRationaleJS(p){
+  if(p.key_strengths || p.risks) return {key_strengths:p.key_strengths||[], risks:p.risks||[]};
+  try{ return JSON.parse(p.score_rationale||'{}'); }catch(e){ return {}; }
+}
+
+// ── Signal feed view (Specter-style dated transitions) ───────────────
+function renderFeed(persons){
+  const byDay = {};
+  persons.forEach(p=>{
+    const d = firstSeenOf(p) || 'earlier';
+    (byDay[d] = byDay[d]||[]).push(p);
+  });
+  const days = Object.keys(byDay).sort().reverse();
+  return days.map(d=>{
+    const rows = byDay[d].sort((a,b)=>b.score-a.score).map(p=>{
+      const topSig = (p.signal_types||[])[0]||'news_mention';
+      const meta = SIG[topSig]||{emoji:'•',label:topSig};
+      const from = [p.previous_title, p.previous_company].filter(Boolean).join(' @ ') || 'previous role';
+      const to = p.current_company || 'Stealth / building';
+      const fk = personKey(p);
+      // Specter pattern: inline "why this signal triggered" one-liner per row
+      const why = (p.investment_thesis||'').slice(0,140);
+      return `<div class="feed-row" onclick="openDrawer('${esc(fk)}')">
+        <span class="feed-emoji">${meta.emoji}</span>
+        <div class="feed-main">
+          <div style="font-weight:700">${esc(displayName(p))}
+            <span style="font-weight:400;color:var(--muted);font-size:10px">${meta.label}${p.sector?' · '+esc(p.sector):''}${p.geography?' · '+esc(p.geography):''}</span>
+            ${p.new_today?' <span class="badge badge-new">NEW</span>':''}</div>
+          <div class="feed-trans">${esc(from)} → ${esc(to)}</div>
+          ${why?`<div style="font-size:10.5px;color:var(--muted2);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(why)}</div>`:''}
+        </div>
+        <span onclick="event.stopPropagation();toggleStar('${esc(fk)}')" style="cursor:pointer;font-size:13px;opacity:${isStarred(fk)?1:.35}">${isStarred(fk)?'⭐':'☆'}</span>
+        <span class="feed-score">${Math.round(p.score)}</span>
+      </div>`;
+    }).join('');
+    const label = d==='earlier' ? 'Earlier' : d;
+    return `<div class="feed-day">${esc(label)} · ${byDay[d].length} signals</div>${rows}`;
+  }).join('') || `<div class="empty-state"><div>No signals match this filter</div></div>`;
+}
+
 // ── Search ────────────────────────────────────────────────────────────
 function onSearch(val){
   searchQuery = val.trim().toLowerCase();
@@ -1613,8 +1881,27 @@ function matchesSearch(p){
 }
 
 // ── Filters ───────────────────────────────────────────────────────────
+// ── Star / favourite (Specter-style quick triage) ────────────────────
+function starSet(){ try{ return new Set(JSON.parse(localStorage.getItem('vc_starred')||'[]')); }catch(e){ return new Set(); } }
+function isStarred(key){ return starSet().has(key); }
+function toggleStar(key){
+  const s = starSet();
+  s.has(key) ? s.delete(key) : s.add(key);
+  localStorage.setItem('vc_starred', JSON.stringify([...s]));
+  applyFilters();
+}
+
+function filterByBadge(b){
+  window._badgeFilter = (window._badgeFilter===b) ? null : b;
+  toast(window._badgeFilter ? `Filtering by ★ ${b} (click any ★ ${b} again to clear)` : 'Badge filter cleared');
+  applyFilters();
+}
+
 function applyFilters(){
+  const presetPred = activePreset ? (ALERT_PRESETS.find(a=>a.id===activePreset)||{}).pred : null;
   let f = allPersons.filter(p=>{
+    if(presetPred && !presetPred(p)) return false;
+    if(window._badgeFilter && !(p.badges||[]).includes(window._badgeFilter)) return false;
     if(filters.action!=='all' && p.action!==filters.action) return false;
     if(filters.geo!=='all' && p.geography!==filters.geo) return false;
     if(filters.signal!=='all' && !(p.signal_types||[]).includes(filters.signal)) return false;
@@ -1622,6 +1909,8 @@ function applyFilters(){
     if(!matchesSearch(p)) return false;
     return true;
   });
+  renderAlerts();
+  renderSavedSearches();
 
   document.getElementById('result-count').innerHTML =
     `Showing <strong>${f.length}</strong> of <strong>${allPersons.length}</strong> founders`;
@@ -1671,6 +1960,11 @@ function applyFilters(){
           </td>
         </tr>`;
       }).join('');
+  } else if(viewMode==='feed'){
+    table.style.display='none';
+    list.style.display='';
+    f.forEach(p=>{ window._personIndex[personKey(p)] = p; });
+    list.innerHTML = renderFeed(f);
   } else {
     table.style.display='none';
     list.style.display='';
@@ -1705,6 +1999,7 @@ function setView(mode){
   document.getElementById('view-list').classList.toggle('active',mode==='list');
   document.getElementById('view-compact').classList.toggle('active',mode==='compact');
   document.getElementById('view-table').classList.toggle('active',mode==='table');
+  document.getElementById('view-feed').classList.toggle('active',mode==='feed');
   applyFilters();
 }
 
