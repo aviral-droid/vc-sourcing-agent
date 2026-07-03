@@ -415,6 +415,14 @@ def _has_genuine_signal(title: str, snippet: str) -> tuple[bool, bool]:
     return has_stealth, has_senior
 
 
+def _clean_serp_title(title: str) -> str:
+    """Free search engines (ddgs) concatenate several results into one title
+    string ("Name A - ... | LinkedInName B - ..."). Keep only the first
+    profile's text — everything after the first 'LinkedIn' marker belongs to
+    a DIFFERENT person and contaminates name/keyword extraction."""
+    return re.split(r"\|?\s*LinkedIn", title, maxsplit=1)[0].strip(" -|")
+
+
 def _extract_person_from_result(title: str, snippet: str, url: str, query: str) -> Optional[Person]:
     """Parse a single search result into a Person + Signal.
 
@@ -422,6 +430,7 @@ def _extract_person_from_result(title: str, snippet: str, url: str, query: str) 
     actual title/snippet — avoids treating every ex-[Company] employee as a
     stealth founder regardless of what their profile actually says.
     """
+    title = _clean_serp_title(title)
     # Canonicalise LinkedIn URL — strip Google redirect wrappers
     clean_url = _clean_linkedin_url(url)
     if not clean_url:
@@ -460,7 +469,19 @@ def _extract_person_from_result(title: str, snippet: str, url: str, query: str) 
     m2 = re.search(r'"ex-([^"]+)"', query)
     if m2:
         candidate = m2.group(1).strip()
-        if candidate.lower() in f"{title} {snippet}".lower():
+        co_l = candidate.lower()
+        # Normalise for matching: "ex-@Scaler", "Ex- Scaler", "ex Scaler" all count
+        text_l = re.sub(r"[@]", " ", f"{title} {snippet}".lower())
+        text_l = re.sub(r"\bex\s*-\s*", "ex-", text_l)
+        text_l = re.sub(r"\s+", " ", text_l)
+        if co_l in text_l:
+            is_ex = any(pat + co_l in text_l for pat in
+                        ("ex-", "ex ", "former ", "formerly ", "previously ", "previously at "))
+            if not is_ex:
+                # The company appears with NO ex-/former prefix — this person
+                # currently works there (often the company's own founder/CEO,
+                # e.g. "Cofounder & CEO of Urban Company"). Not a departure.
+                return None
             previous_company = candidate
 
     # Infer location from PROFILE evidence only (title/snippet + confirmed
