@@ -16,6 +16,7 @@ from __future__ import annotations
 import logging
 import re
 import time
+from datetime import datetime
 from typing import List, Optional
 from urllib.parse import quote_plus
 
@@ -26,7 +27,7 @@ logger = logging.getLogger(__name__)
 
 # ── Stealth / departure signal keywords ───────────────────────────────────────
 STEALTH_KEYWORDS = [
-    "stealth", "building something new", "new venture", "co-founder",
+    "stealth", "building something new", "new venture", "founder",
     "founder", "exploring new", "excited to share", "day 1",
     "left to build", "left to start", "starting up",
 ]
@@ -42,45 +43,45 @@ EXCLUDE_KEYWORDS = [
 ]
 
 # ── India queries ──────────────────────────────────────────────────────────────
-# Note: "building" is intentionally replaced with "building something" (too generic alone),
-# and "founder" with "co-founder" (bare "founder" can be an old role listed in experience).
-# This reduces noise from engineers claiming "building [product]" in capability descriptions.
+# Queries are deliberately HIGH-RECALL (bare "founder"/"building" terms): precision
+# comes downstream from the headline gate, profile delta detection (state store),
+# and the seniority verification stage — not from narrowing discovery.
 INDIA_STEALTH_QUERIES = [
-    # High-signal: unicorn alumni + explicit stealth/co-founder keyword
-    'site:linkedin.com/in "ex-Razorpay" "stealth" OR "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-PhonePe" "stealth" OR "new venture" OR "co-founder"',
-    'site:linkedin.com/in "ex-Zepto" "stealth" OR "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-Swiggy" "stealth" OR "co-founder" OR "new company"',
-    'site:linkedin.com/in "ex-Zomato" "stealth" OR "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-CRED" "stealth" OR "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-Meesho" "stealth" OR "new venture" OR "co-founder"',
-    'site:linkedin.com/in "ex-Ola" "stealth" OR "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-Paytm" "stealth" OR "co-founder" OR "new venture"',
-    'site:linkedin.com/in "ex-Freshworks" "stealth" OR "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-Darwinbox" "stealth" OR "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-Groww" "stealth" OR "co-founder" OR "new venture"',
-    'site:linkedin.com/in "ex-Zerodha" "stealth" OR "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-Flipkart" "stealth" OR "co-founder" OR "new startup"',
-    'site:linkedin.com/in "ex-Nykaa" "stealth" OR "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-Cars24" "stealth" OR "co-founder" OR "new venture"',
-    'site:linkedin.com/in "ex-Delhivery" "stealth" OR "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-Lenskart" "stealth" OR "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-Urban Company" "stealth" OR "co-founder" OR "new startup"',
-    'site:linkedin.com/in "ex-Dream11" "stealth" OR "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-Khatabook" "stealth" OR "co-founder" OR "new venture"',
-    'site:linkedin.com/in "ex-Zetwerk" "stealth" OR "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-Udaan" "stealth" OR "co-founder" OR "new startup"',
-    'site:linkedin.com/in "ex-Rapido" "stealth" OR "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-Pristyn Care" "stealth" OR "co-founder" OR "new venture"',
-    'site:linkedin.com/in "ex-Dunzo" "stealth" OR "co-founder" OR "building something"',
+    # High-signal: unicorn alumni + explicit stealth/founder keyword
+    'site:linkedin.com/in "ex-Razorpay" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-PhonePe" "stealth" OR "new venture" OR "founder"',
+    'site:linkedin.com/in "ex-Zepto" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-Swiggy" "stealth" OR "founder" OR "new company"',
+    'site:linkedin.com/in "ex-Zomato" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-CRED" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-Meesho" "stealth" OR "new venture" OR "founder"',
+    'site:linkedin.com/in "ex-Ola" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-Paytm" "stealth" OR "founder" OR "new venture"',
+    'site:linkedin.com/in "ex-Freshworks" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-Darwinbox" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-Groww" "stealth" OR "founder" OR "new venture"',
+    'site:linkedin.com/in "ex-Zerodha" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-Flipkart" "stealth" OR "founder" OR "new startup"',
+    'site:linkedin.com/in "ex-Nykaa" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-Cars24" "stealth" OR "founder" OR "new venture"',
+    'site:linkedin.com/in "ex-Delhivery" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-Lenskart" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-Urban Company" "stealth" OR "founder" OR "new startup"',
+    'site:linkedin.com/in "ex-Dream11" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-Khatabook" "stealth" OR "founder" OR "new venture"',
+    'site:linkedin.com/in "ex-Zetwerk" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-Udaan" "stealth" OR "founder" OR "new startup"',
+    'site:linkedin.com/in "ex-Rapido" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-Pristyn Care" "stealth" OR "founder" OR "new venture"',
+    'site:linkedin.com/in "ex-Dunzo" "stealth" OR "founder" OR "building"',
     # Big Tech India departures
-    'site:linkedin.com/in "ex-Google" India "stealth" OR "co-founder" OR "new startup"',
-    'site:linkedin.com/in "ex-Amazon" India "stealth" OR "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-Microsoft" India "stealth" OR "co-founder" OR "new venture"',
-    'site:linkedin.com/in "ex-Meta" India "stealth" OR "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-Uber" India "stealth" OR "co-founder" OR "new startup"',
-    'site:linkedin.com/in "ex-Goldman Sachs" India "co-founder" OR "building something" OR "stealth"',
-    'site:linkedin.com/in "ex-McKinsey" India "co-founder" OR "building something" OR "stealth"',
+    'site:linkedin.com/in "ex-Google" India "stealth" OR "founder" OR "new startup"',
+    'site:linkedin.com/in "ex-Amazon" India "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-Microsoft" India "stealth" OR "founder" OR "new venture"',
+    'site:linkedin.com/in "ex-Meta" India "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-Uber" India "stealth" OR "founder" OR "new startup"',
+    'site:linkedin.com/in "ex-Goldman Sachs" India "founder" OR "building" OR "stealth"',
+    'site:linkedin.com/in "ex-McKinsey" India "founder" OR "building" OR "stealth"',
     # City + stealth (kept specific: "stealth startup" + year)
     'site:linkedin.com/in location:bangalore "stealth startup" founder 2024 OR 2025',
     'site:linkedin.com/in location:mumbai "stealth startup" founder 2024 OR 2025',
@@ -89,103 +90,103 @@ INDIA_STEALTH_QUERIES = [
     # L1/L2 title departures (kept: VP/director context makes "building" more specific)
     'site:linkedin.com/in India "VP" "left" "building" 2025 OR 2026',
     'site:linkedin.com/in India "head of" "stealth" OR "new startup"',
-    'site:linkedin.com/in India "director" "left" "co-founder" 2025 OR 2026',
-    'site:linkedin.com/in India "general manager" "left" "building something" 2025',
+    'site:linkedin.com/in India "director" "left" "founder" 2025 OR 2026',
+    'site:linkedin.com/in India "general manager" "left" "building" 2025',
     'site:linkedin.com/in India "business head" "new venture" OR "stealth"',
     # Broad India stealth (very specific phrases — kept as-is)
     'site:linkedin.com/in India "building in stealth" 2025 OR 2026',
     'site:linkedin.com/in India "excited to share" "new startup" 2025 OR 2026',
-    'site:linkedin.com/in India "co-founder" "stealth" 2025 OR 2026',
+    'site:linkedin.com/in India "founder" "stealth" 2025 OR 2026',
     'site:linkedin.com/in India "second-time founder" OR "serial entrepreneur"',
     'site:linkedin.com/in India "left" "to build" OR "to start" 2025 OR 2026',
-    'site:linkedin.com/in India "recently left" "building something" OR "co-founder" OR "stealth"',
+    'site:linkedin.com/in India "recently left" "building" OR "founder" OR "stealth"',
     # Fintech expansions
-    'site:linkedin.com/in "ex-BharatPe" "stealth" OR "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-PolicyBazaar" "stealth" OR "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-Cashfree" OR "ex-Pine Labs" "stealth" OR "co-founder"',
-    'site:linkedin.com/in "ex-Juspay" OR "ex-M2P Fintech" "stealth" OR "co-founder"',
-    'site:linkedin.com/in "ex-Slice" OR "ex-Jupiter Money" "stealth" OR "co-founder"',
-    'site:linkedin.com/in "ex-KreditBee" OR "ex-MoneyView" "stealth" OR "co-founder"',
+    'site:linkedin.com/in "ex-BharatPe" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-PolicyBazaar" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-Cashfree" OR "ex-Pine Labs" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-Juspay" OR "ex-M2P Fintech" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-Slice" OR "ex-Jupiter Money" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-KreditBee" OR "ex-MoneyView" "stealth" OR "founder"',
     # B2B SaaS expansions
-    'site:linkedin.com/in "ex-Zoho" "stealth" OR "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-Chargebee" OR "ex-Postman" "stealth" OR "co-founder"',
-    'site:linkedin.com/in "ex-Clevertap" OR "ex-MoEngage" "stealth" OR "co-founder"',
+    'site:linkedin.com/in "ex-Zoho" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-Chargebee" OR "ex-Postman" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-Clevertap" OR "ex-MoEngage" "stealth" OR "founder"',
     # E-commerce & Quick Commerce
-    'site:linkedin.com/in "ex-BigBasket" OR "ex-Blinkit" "stealth" OR "co-founder"',
-    'site:linkedin.com/in "ex-OYO" "stealth" OR "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-MakeMyTrip" OR "ex-Ixigo" "stealth" OR "co-founder"',
-    'site:linkedin.com/in "ex-Rebel Foods" OR "ex-Swiggy Instamart" "stealth" OR "co-founder"',
+    'site:linkedin.com/in "ex-BigBasket" OR "ex-Blinkit" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-OYO" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-MakeMyTrip" OR "ex-Ixigo" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-Rebel Foods" OR "ex-Swiggy Instamart" "stealth" OR "founder"',
     # Healthtech & Edtech
-    'site:linkedin.com/in "ex-PharmEasy" "stealth" OR "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-Practo" OR "ex-Curefit" "stealth" OR "co-founder"',
-    'site:linkedin.com/in "ex-PhysicsWallah" OR "ex-upGrad" "stealth" OR "co-founder"',
-    'site:linkedin.com/in "ex-Scaler" OR "ex-Great Learning" "stealth" OR "co-founder"',
+    'site:linkedin.com/in "ex-PharmEasy" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-Practo" OR "ex-Curefit" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-PhysicsWallah" OR "ex-upGrad" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-Scaler" OR "ex-Great Learning" "stealth" OR "founder"',
     # AI/ML & EV
-    'site:linkedin.com/in "ex-Sarvam AI" OR "ex-Yellow.ai" "stealth" OR "co-founder"',
-    'site:linkedin.com/in "ex-Ola Electric" OR "ex-Ather Energy" "stealth" OR "co-founder"',
+    'site:linkedin.com/in "ex-Sarvam AI" OR "ex-Yellow.ai" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-Ola Electric" OR "ex-Ather Energy" "stealth" OR "founder"',
     # B2B Commerce & Logistics
-    'site:linkedin.com/in "ex-OfBusiness" OR "ex-Moglix" "stealth" OR "co-founder"',
-    'site:linkedin.com/in "ex-Ninjacart" OR "ex-DeHaat" "stealth" OR "co-founder"',
-    'site:linkedin.com/in "ex-Porter" OR "ex-Shiprocket" "stealth" OR "co-founder"',
+    'site:linkedin.com/in "ex-OfBusiness" OR "ex-Moglix" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-Ninjacart" OR "ex-DeHaat" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-Porter" OR "ex-Shiprocket" "stealth" OR "founder"',
     # Consumer & Creator
-    'site:linkedin.com/in "ex-ShareChat" OR "ex-InMobi" "stealth" OR "co-founder"',
-    'site:linkedin.com/in "ex-Mamaearth" OR "ex-Sugar Cosmetics" "stealth" OR "co-founder"',
+    'site:linkedin.com/in "ex-ShareChat" OR "ex-InMobi" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-Mamaearth" OR "ex-Sugar Cosmetics" "stealth" OR "founder"',
     # Big Tech India — large alumni pools
-    'site:linkedin.com/in "ex-Infosys" OR "ex-Wipro" India "co-founder" OR "stealth" OR "new startup"',
-    'site:linkedin.com/in "ex-TCS" OR "ex-HCL Technologies" India "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-Accenture" India "co-founder" OR "stealth" OR "new startup"',
+    'site:linkedin.com/in "ex-Infosys" OR "ex-Wipro" India "founder" OR "stealth" OR "new startup"',
+    'site:linkedin.com/in "ex-TCS" OR "ex-HCL Technologies" India "founder" OR "building"',
+    'site:linkedin.com/in "ex-Accenture" India "founder" OR "stealth" OR "new startup"',
 ]
 
 # ── SEA queries ────────────────────────────────────────────────────────────────
 SEA_STEALTH_QUERIES = [
     # Singapore unicorn alumni
-    'site:linkedin.com/in "ex-Grab" "stealth" OR "co-founder" OR "building something"',
+    'site:linkedin.com/in "ex-Grab" "stealth" OR "founder" OR "building"',
     'site:linkedin.com/in "ex-Sea Group" OR "ex-Shopee" "stealth" OR "new venture"',
-    'site:linkedin.com/in "ex-Gojek" "stealth" OR "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-Nium" "stealth" OR "co-founder" OR "new startup"',
-    'site:linkedin.com/in "ex-Carousell" "stealth" OR "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-PropertyGuru" "stealth" OR "new venture" OR "co-founder"',
-    'site:linkedin.com/in "ex-Xendit" "stealth" OR "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-Lazada" "stealth" OR "new venture" OR "co-founder"',
-    'site:linkedin.com/in "ex-Aspire" "stealth" OR "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-Funding Societies" "stealth" OR "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-Carro" "stealth" OR "co-founder" OR "new startup"',
+    'site:linkedin.com/in "ex-Gojek" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-Nium" "stealth" OR "founder" OR "new startup"',
+    'site:linkedin.com/in "ex-Carousell" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-PropertyGuru" "stealth" OR "new venture" OR "founder"',
+    'site:linkedin.com/in "ex-Xendit" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-Lazada" "stealth" OR "new venture" OR "founder"',
+    'site:linkedin.com/in "ex-Aspire" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-Funding Societies" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-Carro" "stealth" OR "founder" OR "new startup"',
     # Singapore city stealth
     'site:linkedin.com/in Singapore "stealth startup" founder 2025 OR 2026',
     'site:linkedin.com/in Singapore "VP" "left" "building" 2025 OR 2026',
     'site:linkedin.com/in Singapore "building in stealth" 2025 OR 2026',
-    'site:linkedin.com/in Singapore "co-founder" "stealth" 2025 OR 2026',
-    'site:linkedin.com/in Singapore "recently left" "building something" OR "co-founder"',
+    'site:linkedin.com/in Singapore "founder" "stealth" 2025 OR 2026',
+    'site:linkedin.com/in Singapore "recently left" "building" OR "founder"',
     # Indonesia
-    'site:linkedin.com/in "ex-Tokopedia" OR "ex-GoTo" "stealth" OR "co-founder"',
-    'site:linkedin.com/in "ex-Traveloka" "stealth" OR "co-founder" OR "building something"',
-    'site:linkedin.com/in "ex-OVO" "stealth" OR "co-founder" OR "building something"',
+    'site:linkedin.com/in "ex-Tokopedia" OR "ex-GoTo" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-Traveloka" "stealth" OR "founder" OR "building"',
+    'site:linkedin.com/in "ex-OVO" "stealth" OR "founder" OR "building"',
     'site:linkedin.com/in Indonesia "stealth startup" founder 2025 OR 2026',
-    'site:linkedin.com/in "ex-Gojek" Indonesia "new venture" OR "building something"',
+    'site:linkedin.com/in "ex-Gojek" Indonesia "new venture" OR "building"',
     # Vietnam / Malaysia / Philippines / Thailand
     'site:linkedin.com/in Vietnam "stealth" founder "new startup" 2025 OR 2026',
     'site:linkedin.com/in Malaysia "stealth startup" founder 2025 OR 2026',
-    'site:linkedin.com/in "ex-GCash" OR "ex-Maya" "stealth" OR "co-founder"',
+    'site:linkedin.com/in "ex-GCash" OR "ex-Maya" "stealth" OR "founder"',
     'site:linkedin.com/in Thailand "stealth startup" founder 2025 OR 2026',
     # SEA broad
     'site:linkedin.com/in "Southeast Asia" "building in stealth" 2025 OR 2026',
-    'site:linkedin.com/in "Southeast Asia" "co-founder" "stealth" 2025 OR 2026',
+    'site:linkedin.com/in "Southeast Asia" "founder" "stealth" 2025 OR 2026',
     'site:linkedin.com/in "Southeast Asia" "second-time founder" OR "serial entrepreneur"',
     'site:linkedin.com/in "Southeast Asia" "left" "to build" 2025 OR 2026',
     # Indonesia expansions
-    'site:linkedin.com/in "ex-Bukalapak" OR "ex-Halodoc" "stealth" OR "co-founder"',
-    'site:linkedin.com/in "ex-Kopi Kenangan" OR "ex-Ruangguru" "stealth" OR "co-founder"',
-    'site:linkedin.com/in "ex-KoinWorks" OR "ex-Akulaku" "stealth" OR "co-founder"',
+    'site:linkedin.com/in "ex-Bukalapak" OR "ex-Halodoc" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-Kopi Kenangan" OR "ex-Ruangguru" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-KoinWorks" OR "ex-Akulaku" "stealth" OR "founder"',
     'site:linkedin.com/in Indonesia "VP" OR "Director" "left" "building" OR "stealth" 2025 OR 2026',
     # Vietnam
-    'site:linkedin.com/in "ex-MoMo" OR "ex-VNG Corporation" "stealth" OR "co-founder"',
-    'site:linkedin.com/in Vietnam "left" "building something" OR "co-founder" OR "stealth" 2025 OR 2026',
+    'site:linkedin.com/in "ex-MoMo" OR "ex-VNG Corporation" "stealth" OR "founder"',
+    'site:linkedin.com/in Vietnam "left" "building" OR "founder" OR "stealth" 2025 OR 2026',
     # Malaysia / Philippines
-    'site:linkedin.com/in "ex-Carsome" OR "ex-AirAsia Digital" "stealth" OR "co-founder"',
-    'site:linkedin.com/in "ex-Maya Philippines" OR "ex-PayMongo" "stealth" OR "co-founder"',
+    'site:linkedin.com/in "ex-Carsome" OR "ex-AirAsia Digital" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-Maya Philippines" OR "ex-PayMongo" "stealth" OR "founder"',
     # Singapore fintech alumni
-    'site:linkedin.com/in "ex-StashAway" OR "ex-Endowus" "stealth" OR "co-founder"',
-    'site:linkedin.com/in "ex-PatSnap" OR "ex-Kredivo" "stealth" OR "co-founder"',
+    'site:linkedin.com/in "ex-StashAway" OR "ex-Endowus" "stealth" OR "founder"',
+    'site:linkedin.com/in "ex-PatSnap" OR "ex-Kredivo" "stealth" OR "founder"',
 ]
 
 ALL_QUERIES = [config.freshen_years(q)
@@ -322,10 +323,10 @@ def _infer_title(query: str, snippet: str) -> str:
 
 _GENUINE_STEALTH_KWS = frozenset({
     "stealth", "building something new", "something new", "new venture",
-    "new startup", "co-founder", "cofounder", "co founder", "founding",
+    "new startup", "founder", "cofounder", "co founder", "founding",
     "building in stealth", "left to build", "left to start",
     "starting up", "day 1", "excited to share", "going stealth",
-    "starting something", "building something", "new company",
+    "starting something", "building", "new company",
     "founder",          # standalone "Founder" in headline
     "building in",      # "building in [domain]" — deliberate stealth language
 })
@@ -673,8 +674,20 @@ def _search_for_profiles(query: str) -> List[dict]:
 
 def _search_all_sync(queries: List[str], out: List[Person]) -> None:
     """Run all queries synchronously, appending results to shared `out` list.
-    Using a shared list lets the caller read partial results if we time out."""
+    Using a shared list lets the caller read partial results if we time out.
+
+    Delta detection (the Harmonic/Specter model): every observed profile is
+    recorded in the persistent state store. A signal is emitted only when the
+    profile is NEW to us, or its headline CHANGED since a previous run —
+    a headline that flips to stealth language is the single highest-value
+    signal in the system ("stealth_headline_change"). Profiles we have already
+    seen with an unchanged headline are skipped: re-announcing the same static
+    profile every day is noise, not signal.
+    """
+    from pipeline.state_store import get_store
+    store = get_store()
     seen_urls: set = set()
+    skipped_unchanged = 0
 
     for i, query in enumerate(queries):
         try:
@@ -684,27 +697,58 @@ def _search_all_sync(queries: List[str], out: List[Person]) -> None:
                 if not url or url in seen_urls:
                     continue
                 seen_urls.add(url)
-                p = _extract_person_from_result(
-                    r.get("title", ""), r.get("snippet", ""), url, query
-                )
-                if p:
-                    out.append(p)
+                title = r.get("title", "")
+                clean = _clean_linkedin_url(url)
+                # Observe EVERY profile (even gated-out ones) so a future
+                # headline change on a currently-boring profile is detectable.
+                delta = store.observe_profile(clean or url, _name_from_title(title), title)
+
+                p = _extract_person_from_result(title, r.get("snippet", ""), url, query)
+                if not p:
+                    continue
+                if delta == "seen":
+                    skipped_unchanged += 1
+                    continue  # known profile, unchanged headline — nothing new happened
+                sig = p.signals[0]
+                sig.raw_data["delta"] = delta
+                if delta == "changed":
+                    # Profile headline changed since a previous run AND now passes
+                    # the stealth gate → the person just went stealth. Gold signal.
+                    sig.signal_type = "stealth_headline_change"
+                    sig.description = "Headline CHANGED to stealth since last run. " + sig.description
+                out.append(p)
             if i % 10 == 9:
                 logger.debug("LinkedIn: %d profiles after %d/%d queries", len(out), i + 1, len(queries))
             time.sleep(1.2)  # polite rate limiting
         except Exception as e:
             logger.warning("LinkedIn query error [%s]: %s", query[:50], e)
 
+    if skipped_unchanged:
+        logger.info("LinkedIn: skipped %d already-known unchanged profiles", skipped_unchanged)
+
+
+def _todays_queries() -> List[str]:
+    """Rotate query buckets across a 3-day window (~38/day instead of 114/day).
+
+    Search API credits are the scarcest resource in this pipeline (Serper free
+    tier = 2,500 one-time; Brave = 2,000/month). Stealth transitions unfold over
+    weeks, so re-running every bucket daily buys nothing — the delta detector
+    ignores unchanged profiles anyway. Each bucket still runs every 3 days."""
+    day = datetime.utcnow().timetuple().tm_yday
+    return [q for i, q in enumerate(ALL_QUERIES) if i % 3 == day % 3]
+
 
 def search_linkedin_signals(days_back: int = 30) -> List[Person]:
-    """Run all LinkedIn stealth/departure queries with a 175-second budget.
+    """Run today's rotation of LinkedIn stealth/departure queries (175s budget).
     Partial results are preserved even if the timeout fires mid-run."""
-    logger.info("LinkedIn source: running %d queries (Serper→Brave→CSE→Tavily→DDG, 175s budget)...", len(ALL_QUERIES))
+    queries = _todays_queries()
+    logger.info("LinkedIn source: running %d/%d queries (3-day rotation, Serper→Brave→CSE→Tavily→DDG, 175s budget)...",
+                len(queries), len(ALL_QUERIES))
     import concurrent.futures
     persons: List[Person] = []  # shared — worker appends here, we read it even on timeout
     try:
         ex = concurrent.futures.ThreadPoolExecutor(max_workers=1)
-        future = ex.submit(_search_all_sync, ALL_QUERIES, persons)
+        future = ex.submit(_search_all_sync, queries, persons)
         try:
             future.result(timeout=175)
         except concurrent.futures.TimeoutError:

@@ -42,7 +42,9 @@ SCORING RUBRIC (0-100):
 20-39:  First-time founders with some signal; indirect signals only; unknown background
 0-19:   Noise, no real founder signal, or geography mismatch
 
-CRITICAL: LinkedIn self-reported titles ("CTO at Stealth", "Co-founder at [unknown]") are UNVERIFIED — anyone can claim any title. Do NOT score 60+ based on a LinkedIn claim alone. Require at least ONE corroborating signal: news article about departure, company registration, multiple sources, or explicitly stated 10+ yrs experience. A LinkedIn headline "building something | ex-[Company]" without verified seniority = 40-55 range, NOT 60+.
+CRITICAL: LinkedIn self-reported titles ("CTO at Stealth", "Co-founder at [unknown]") are UNVERIFIED — anyone can claim any title. Do NOT score 60+ based on a LinkedIn claim alone. Require at least ONE corroborating signal: news article about departure, company registration, a "seniority_corroborated" signal (our verification stage confirmed the title from an independent web source), or multiple sources. A LinkedIn headline "building something | ex-[Company]" without verified seniority = 40-55 range, NOT 60+.
+
+HIGH-VALUE SIGNAL: "stealth_headline_change" means our system observed this person's LinkedIn headline CHANGE to stealth/founder language between pipeline runs — the transition just happened. This is far stronger evidence than a static stealth headline and should push the score up meaningfully (it is the equivalent of catching a departure in real time).
 
 SIGNALS TO WEIGHT HEAVILY (in order):
 1. Executive departure from tracked company → corroborated by new company registration (MCA/ACRA)
@@ -330,6 +332,8 @@ _SENIOR_TITLE_KEYWORDS = {
 }
 
 _SIGNAL_SCORES = {
+    "stealth_headline_change": 24,  # profile headline CHANGED to stealth between runs — gold
+    "seniority_corroborated":  12,  # independent web source confirms senior title
     "exec_departure":         18,
     "executive_departure":    18,  # alias used by news_source
     "company_registration":   15,
@@ -574,10 +578,13 @@ def _rule_based_score(person: Person) -> dict:
     # ── Cap and action ─────────────────────────────────────────────────────────
     # LinkedIn-only signals without a verified senior title are capped at 55
     # (watchlist ceiling). A single LinkedIn self-claim can't push into Investigate —
-    # that bucket requires either corroboration or verified seniority.
+    # that bucket requires corroboration, verified seniority, or an observed
+    # headline CHANGE (the transition itself is evidence, not just the claim).
     sources = {s.source for s in person.signals}
     if sources == {"linkedin"} and not _is_senior_title(person.previous_title or ""):
-        score = min(score, 55)
+        has_delta = any(s.signal_type == "stealth_headline_change" for s in person.signals)
+        if not has_delta:
+            score = min(score, 55)
 
     score = max(0, min(100, score))
 

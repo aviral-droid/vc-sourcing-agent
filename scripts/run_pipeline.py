@@ -33,6 +33,121 @@ def _run_source(name: str, fn, **kwargs):
         return []
 
 
+def _serper_web_search(query: str, num: int = 8) -> list:
+    """General web search returning organic results (not domain-filtered).
+    Provider chain: Serper → Brave → Tavily — uses whichever has credits.
+    Each result is normalized to {"link", "title", "snippet"}."""
+    import requests
+    import config
+
+    key = getattr(config, "SERPER_API_KEY", "")
+    if key:
+        try:
+            resp = requests.post(
+                "https://google.serper.dev/search",
+                json={"q": query, "num": num, "gl": "us", "hl": "en"},
+                headers={"X-API-KEY": key, "Content-Type": "application/json"},
+                timeout=10,
+            )
+            organic = resp.json().get("organic", [])
+            if organic:
+                return organic
+        except Exception as e:
+            logger.debug("Serper web search error: %s", e)
+
+    key = getattr(config, "BRAVE_API_KEY", "")
+    if key:
+        try:
+            resp = requests.get(
+                "https://api.search.brave.com/res/v1/web/search",
+                params={"q": query, "count": num},
+                headers={"Accept": "application/json", "X-Subscription-Token": key},
+                timeout=10,
+            )
+            return [{"link": r.get("url", ""), "title": r.get("title", ""),
+                     "snippet": r.get("description", "")}
+                    for r in resp.json().get("web", {}).get("results", [])]
+        except Exception as e:
+            logger.debug("Brave web search error: %s", e)
+
+    key = getattr(config, "TAVILY_API_KEY", "")
+    if key:
+        try:
+            resp = requests.post(
+                "https://api.tavily.com/search",
+                json={"api_key": key, "query": query, "max_results": num},
+                timeout=10,
+            )
+            return [{"link": r.get("url", ""), "title": r.get("title", ""),
+                     "snippet": r.get("content", "")}
+                    for r in resp.json().get("results", [])]
+        except Exception as e:
+            logger.debug("Tavily web search error: %s", e)
+
+    return []
+
+
+_SENIOR_EVIDENCE_KWS = (
+    "founder", "co-founder", "ceo", "cto", "coo", "cfo", "cpo",
+    "vice president", " vp ", "vp,", "svp", "evp", "director", "head of",
+    "general manager", "managing director", "business head", "country head",
+)
+
+
+def _verify_seniority(persons: list, max_checks: int = 15) -> None:
+    """Specter-style cross-verification: a single-source LinkedIn claim must be
+    confirmed by an INDEPENDENT web source (news article, conference bio,
+    company page — anything not linkedin.com) before it can carry weight.
+
+    For each candidate we search '"Name" "PrevCompany"' and look for a
+    non-LinkedIn result that mentions the person alongside a senior title.
+    Confirmed candidates get a 'seniority_corroborated' signal with the
+    evidence URL — this breaks the linkedin-only score cap and adds the
+    multi-source bonus in scoring. Unconfirmed candidates stay watchlist-capped.
+    Runs BEFORE scoring so the scorer sees the full evidence set."""
+    import time as _t
+    from models import Signal
+
+    candidates = [
+        p for p in persons
+        if p.name and p.name.lower() not in ("", "unknown")
+        and p.previous_company
+        and {s.source for s in p.signals} == {"linkedin"}
+    ]
+    # Verify the highest-potential claims first: observed headline changes, then rest
+    candidates.sort(key=lambda p: 0 if any(
+        s.signal_type == "stealth_headline_change" for s in p.signals) else 1)
+    candidates = candidates[:max_checks]
+    if not candidates:
+        return
+
+    logger.info("Verification stage: cross-checking %d LinkedIn-only candidates", len(candidates))
+    confirmed = 0
+    for p in candidates:
+        try:
+            results = _serper_web_search(f'"{p.name}" "{p.previous_company}"')
+            last_name = p.name.split()[-1].lower()
+            for r in results:
+                link = (r.get("link") or "").lower()
+                if "linkedin.com" in link:
+                    continue  # must be an independent source
+                text = ((r.get("title") or "") + " " + (r.get("snippet") or "")).lower()
+                if last_name in text and any(kw in text for kw in _SENIOR_EVIDENCE_KWS):
+                    p.signals.append(Signal(
+                        source="verification",
+                        signal_type="seniority_corroborated",
+                        description=f"Independent source confirms profile: {(r.get('title') or '')[:140]}",
+                        url=r.get("link", ""),
+                    ))
+                    confirmed += 1
+                    break
+            _t.sleep(0.4)
+        except Exception as e:
+            logger.debug("Verification error for %s: %s", p.name, e)
+    logger.info("Verification stage: %d/%d candidates corroborated by independent sources",
+                confirmed, len(candidates))
+
+
 def _enrich_linkedin_urls(persons: list, max_lookups: int = 20) -> None:
     """For scored persons missing linkedin_url, try a targeted Serper query to find their profile.
     Only runs when SERPER_API_KEY is set. Modifies persons in-place."""
@@ -141,89 +256,109 @@ def main():
     #    Merging signals across sources is what triggers the multi-source
     #    corroboration bonus in scoring — don't skip it.
     from pipeline.resolver import resolve
+    from pipeline.state_store import get_store
+    store = get_store()
     deduped = resolve(all_p)
 
-    # Named + anchored persons first, then cap before scoring
-    deduped.sort(key=lambda p: (0 if p.name else 1,
-                                0 if (p.linkedin_url or p.twitter_handle or p.github_url) else 1,
-                                -p.signal_count))
-    deduped = deduped[:80]    # cap at 80: scoring via LLM ~6s/person × 80 = ~8min, well within 25min CI budget
+    # ── Fresh vs already-surfaced split (event-cursor semantics) ──────────────
+    # A person whose EVERY piece of signal evidence was already surfaced in a
+    # previous run is not news — they live in the archive (below) and are not
+    # re-scored. Only fresh evidence costs LLM budget. This is how Harmonic's
+    # "new results" endpoints and Specter's dated signal events behave.
+    fresh: list = []
+    skipped_seen = 0
+    for p in deduped:
+        keys = [store.signal_key(s.url, p.name) for s in p.signals]
+        keys = [k for k in keys if k]
+        if keys and all(store.is_signal_seen(k) for k in keys):
+            skipped_seen += 1
+            continue
+        fresh.append(p)
+    if skipped_seen:
+        logger.info("Skipped %d persons whose evidence was already surfaced (archive)", skipped_seen)
 
-    logger.info("After entity resolution: %d persons", len(deduped))
+    # Named + anchored persons first, then cap before scoring
+    fresh.sort(key=lambda p: (0 if p.name else 1,
+                              0 if (p.linkedin_url or p.twitter_handle or p.github_url) else 1,
+                              -p.signal_count))
+    fresh = fresh[:80]    # cap at 80: scoring via LLM ~6s/person × 80 = ~8min, within 25min CI budget
+
+    logger.info("After entity resolution: %d fresh persons to score", len(fresh))
+
+    # ── Verification stage (before scoring) ───────────────────────────────────
+    # Cross-check single-source LinkedIn claims against independent web sources.
+    # Corroborated candidates gain a 'seniority_corroborated' signal, which lifts
+    # the linkedin-only score cap and earns the multi-source bonus.
+    _verify_seniority(fresh)
 
     # ── Score ─────────────────────────────────────────────────────────────────
     from pipeline.enricher import score_all, write_executive_summary
-    scored = score_all(deduped)
+    scored = score_all(fresh)
     logger.info("Scored above threshold: %d", len(scored))
 
     # ── LinkedIn URL enrichment for news-sourced persons ──────────────────────
     # Persons surfaced from news/RSS often have no linkedin_url; add it via Serper.
     _enrich_linkedin_urls(scored)
 
-    # ── Save to DB ────────────────────────────────────────────────────────────
+    # ── Record surfaced persons + mark their evidence seen ────────────────────
+    for p in scored:
+        p.new_today = True
+        for s in p.signals:
+            store.mark_signal_seen(store.signal_key(s.url, p.name))
+        store.record_surfaced(p)
+
+    # ── Save to DB (local runs; DB is ephemeral in CI) ─────────────────────────
     import database
     database.init_db()
     database.cache_persons(scored, days_back=DAYS_BACK)
 
-    # ── Merge with historical DB persons so the dashboard always has volume ───
-    # Load all previously cached persons (up to 90 days) and add them as
-    # background context if they're not already in the current scored set.
+    # ── Merge archive of previously surfaced persons (from persistent state) ──
     all_for_report = list(scored)
     try:
-        existing_urls  = {p.linkedin_url for p in scored if p.linkedin_url}
-        existing_names = {(p.name or "").strip().lower() for p in scored if p.name and p.name != "Unknown"}
-        hist_rows = database.get_cached_persons(days_back=90, min_score=40)
+        from models import Person as _P, Signal as _S
+        current_keys = {store.person_key(p) for p in scored}
         added = 0
-        for row in hist_rows:
-            li = row["linkedin_url"] or ""
-            nm = (row["name"] or "").strip().lower()
-            if li and li in existing_urls:
+        for key, rec in store.surfaced.items():
+            if key in current_keys or float(rec.get("score", 0)) < 40:
                 continue
-            if nm and nm != "unknown" and nm in existing_names:
-                continue
-            # Skip anonymous records — no name AND no profile URL = unactionable noise
-            # (these exist in DB from pre-resolver runs where name extraction failed)
-            if not li and (not nm or nm == "unknown"):
-                continue
-            # Reconstruct a minimal Person from the DB row
-            from models import Person as _P, Signal as _S
-            import json as _json
             p = _P(
-                name=row["name"] or "Unknown",
-                linkedin_url=row["linkedin_url"] or "",
-                github_url=row["github_url"] or "",
-                twitter_handle=row["twitter_handle"] or "",
-                previous_company=row["previous_company"] or "",
-                previous_title=row["previous_title"] or "",
-                location=row["location"] or "",
-                experience_years=row["experience_years"] or 0,
-                is_second_time_founder=bool(row["is_second_time_founder"]),
-                score=float(row["score"] or 0),
-                investment_thesis=row["investment_thesis"] or "",
+                name=rec.get("name") or "Unknown",
+                linkedin_url=rec.get("linkedin_url", ""),
+                github_url=rec.get("github_url", ""),
+                twitter_handle=rec.get("twitter_handle", ""),
+                previous_company=rec.get("previous_company", ""),
+                previous_title=rec.get("previous_title", ""),
+                current_company=rec.get("current_company", ""),
+                location=rec.get("location", ""),
+                experience_years=rec.get("experience_years", 0),
+                is_second_time_founder=bool(rec.get("is_second_time_founder")),
+                score=float(rec.get("score", 0)),
+                investment_thesis=rec.get("investment_thesis", ""),
             )
-            # These fields are set post-scoring, not in __init__
-            p.recommended_action = row["recommended_action"] or "pass"
-            sig_types = _json.loads(row["signal_types"] or "[]")
-            for st in sig_types:
-                p.signals.append(_S(source="db_cache", signal_type=st,
-                                    description=f"Historical signal: {st}"))
-            if p.score >= 40:
-                all_for_report.append(p)
-                if li:
-                    existing_urls.add(li)
-                if nm and nm != "unknown":
-                    existing_names.add(nm)
-                added += 1
+            p.recommended_action = rec.get("recommended_action", "pass")
+            p.score_rationale = rec.get("score_rationale", "")
+            p.new_today = False
+            for sd in rec.get("signal_descriptions", []):
+                p.signals.append(_S(source=sd.get("source", "archive"),
+                                    signal_type=sd.get("type", "news_mention"),
+                                    description=sd.get("description", ""),
+                                    url=sd.get("url", "")))
+            all_for_report.append(p)
+            added += 1
         if added:
-            logger.info("Merged %d historical persons from DB (total for report: %d)",
+            logger.info("Merged %d archived persons from state store (total for report: %d)",
                         added, len(all_for_report))
     except Exception as e:
-        logger.warning("Could not load historical persons from DB: %s", e)
+        logger.warning("Could not merge archive: %s", e)
         all_for_report = scored
 
-    # Sort merged set: investigate first, then watchlist, then by score
+    # ── Persist state for the next run (committed back to repo by CI) ─────────
+    store.save()
+
+    # Sort merged set: today's new signals first, then investigate/watchlist, then score
     _action_rank = {"investigate": 0, "watchlist": 1, "pass": 2}
     all_for_report.sort(key=lambda p: (
+        0 if getattr(p, "new_today", False) else 1,
         _action_rank.get(p.recommended_action, 2),
         -(p.score or 0),
     ))

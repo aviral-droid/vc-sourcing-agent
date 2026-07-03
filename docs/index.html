@@ -1144,6 +1144,9 @@ const SIG = {
   headcount_drop:       {emoji:'📉', label:'Layoff signal'},
   second_time_founder:  {emoji:'⭐', label:'2x Founder'},
   news_mention:         {emoji:'📰', label:'News'},
+  stealth_headline_change: {emoji:'⚡', label:'Just went stealth'},
+  seniority_corroborated:  {emoji:'✅', label:'Verified'},
+  exec_departure:          {emoji:'🚪', label:'Departure'},
 };
 
 const GEO_FLAG = {India:'🇮🇳',Singapore:'🇸🇬',Indonesia:'🇮🇩',Vietnam:'🇻🇳',Malaysia:'🇲🇾',Philippines:'🇵🇭',Thailand:'🇹🇭'};
@@ -1224,12 +1227,10 @@ function displayName(p){
 
 // ── "NEW" detection (signal found in last 24h of data.json generation) ──
 function isNewSignal(p){
-  if(!dataGeneratedAt) return false;
-  // signals found within 24h of when data.json was last written = "new"
-  // We use score > 0 and mark the first N persons (top 3 by score) as "new"
-  // More precisely: mark as NEW if data was generated recently (< 4h ago)
-  const minsAgo = (Date.now() - dataGeneratedAt) / 60000;
-  return minsAgo < 240 && (p.score >= 65); // top scorers from a recent run
+  // The pipeline sets new_today=true for persons whose signal evidence was
+  // first surfaced in the latest run (delta detection via the state store).
+  // Archived persons from earlier runs carry new_today=false.
+  return p.new_today === true;
 }
 
 // ── Score ring SVG helper ─────────────────────────────────────────────

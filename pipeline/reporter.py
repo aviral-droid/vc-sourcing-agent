@@ -610,6 +610,7 @@ def _generate_data_json(report: DailyReport) -> None:
         rationale = _parse_rationale(p)
         persons_data.append({
             "name": p.name,
+            "new_today": bool(getattr(p, "new_today", False)),
             "score": round(p.score),
             "action": p.recommended_action,
             "recommended_action": p.recommended_action,

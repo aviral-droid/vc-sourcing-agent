@@ -317,8 +317,9 @@ def _extract_person_from_snippet(
 
 
 def _collect_rss(days_back: int) -> List[Person]:
-    persons: List[Person] = []
-    pending_unknown: List[dict] = []
+    """Collect keyword-relevant RSS entries, then batch LLM structured extraction."""
+    raw_entries: List[dict] = []
+    seen_urls: set = set()
     cutoff = datetime.utcnow() - timedelta(days=days_back)
 
     for source_name, feed_url in RSS_FEEDS.items():
@@ -331,26 +332,16 @@ def _collect_rss(days_back: int) -> List[Person]:
                 title = getattr(entry, "title", "")
                 summary = getattr(entry, "summary", "")
                 link = getattr(entry, "link", "")
-                p = _extract_person_from_snippet(title, summary, link, source_name)
-                if p:
-                    if p.name == "Unknown":
-                        pending_unknown.append({"title": title, "url": link, "person": p})
-                    else:
-                        persons.append(p)
+                if link in seen_urls or not _is_relevant(f"{title} {summary}"):
+                    continue
+                seen_urls.add(link)
+                raw_entries.append({"title": title, "summary": summary,
+                                    "url": link, "source": source_name})
         except Exception as e:
             logger.warning("RSS feed error [%s]: %s", source_name, e)
 
-    # Batch Groq extraction for unknown RSS entries
-    if pending_unknown:
-        groq_names = _groq_extract_names_batch(pending_unknown[:50])
-        for item in pending_unknown:
-            p = item["person"]
-            n = groq_names.get(item["url"], "Unknown")
-            if n and n != "Unknown" and not _is_org_name(n):
-                p.name = n
-            persons.append(p)  # include all RSS signals, even unnamed
-
-    logger.info("RSS feeds: %d relevant signals", len(persons))
+    persons = _extract_batch(raw_entries)
+    logger.info("RSS feeds: %d relevant signals from %d entries", len(persons), len(raw_entries))
     return persons
 
 
@@ -406,24 +397,75 @@ def _fetch_article_text(url: str, timeout: int = 7) -> str:
         return ""
 
 
-def _extract_names_via_llm(entries: List[dict]) -> dict:
+# ── Structured LLM extraction (v2) ─────────────────────────────────────────────
+#
+# The old flow ran 8 regex patterns first and only sent regex-failures to an LLM
+# that returned a bare array of names matched BY POSITION — one skipped entry
+# shifted every later name onto the wrong story (how "Nadiem Makarim" ended up
+# attached to a Groww headline). Regexes also extracted org names as people
+# ("Indus Appstore steps down…") and keyword rules classified "joins as CBO"
+# as a founder signal.
+#
+# v2: the LLM is the PRIMARY extractor and returns one JSON OBJECT PER ITEM,
+# keyed by the item's index — misalignment is impossible. It extracts all
+# fields at once (person, company, title, event type, geography), so event
+# classification and geo filtering are done by a model that reads the headline,
+# not by keyword lists. Regex remains only as a fallback when every LLM
+# provider is down.
+
+# Event taxonomy — which news events are actually founder signals for a
+# pre-seed/seed fund. Everything else is dropped at extraction time.
+_EVENT_TO_SIGNAL = {
+    "departure_to_build": "stealth_founder",     # exec leaves to start something
+    "new_company":        "stealth_founder",     # person founded/launched a startup
+    "funding":            "funding_news",        # startup raised (early-stage)
+    # dropped: "appointment" (exec joins/promoted at existing company — market
+    # intel, not a founder), "irrelevant" (politics, opinion, big-co news)
+}
+
+_MANDATE_GEOS = {"india", "singapore", "indonesia", "vietnam", "malaysia",
+                 "philippines", "thailand", "southeast asia", "unknown", ""}
+
+
+def _llm_extract_structured(entries: List[dict]) -> dict:
+    """Batch-extract structured facts from news items via the free-LLM pool.
+
+    entries: list of {"title": str, "summary": str, "url": str}
+    Returns {list_index: {person, prev_company, prev_title, event, geo, new_company}}
+    Empty dict if all providers fail (caller falls back to regex).
     """
-    Extract founder/exec names from headlines using the best available free LLM.
-    Tries the same provider pool as the enricher (Cerebras → DeepSeek → GLM → etc.)
-    Falls back gracefully to regex extraction on any failure.
-    entries: list of {"title": str, "url": str}
-    Returns: {url: name_or_unknown}
-    """
-    headlines = "\n".join(f"{i+1}. {e['title'][:120]}" for i, e in enumerate(entries))
+    lines = []
+    for i, e in enumerate(entries):
+        text = e["title"][:150]
+        summ = (e.get("summary") or "")[:100]
+        if summ:
+            text += f" — {summ}"
+        lines.append(f"{i}: {text}")
+    items_block = "\n".join(lines)
+
     prompt = (
-        "You are analyzing Indian/Southeast Asian tech startup news headlines.\n"
-        "For each numbered headline below, identify the FULL NAME of the individual "
-        "founder/executive being discussed (the person who left, founded something, or raised money).\n"
-        "If the headline does not mention or imply a specific named person, return 'Unknown'.\n"
-        "Use your knowledge of Indian and SEA tech ecosystem executives.\n\n"
-        f"Headlines:\n{headlines}\n\n"
-        "Return ONLY a JSON array of strings, one name per headline, in the same order. "
-        'Example: ["Ankit Agarwal", "Unknown", "Dale Vaz"]'
+        "You are a data-extraction engine for a VC fund sourcing founders in India and "
+        "Southeast Asia. For EACH numbered news item below, extract:\n"
+        '- "person": full name of the individual founder/executive the story is about, or "" if none\n'
+        '- "prev_company": the company they left or were previously at, or ""\n'
+        '- "prev_title": their role at that previous company if stated (e.g. "CEO", "VP Engineering"), or ""\n'
+        '- "new_company": the new company they founded/joined if named, or ""\n'
+        '- "event": exactly one of:\n'
+        '    "departure_to_build"  - person left a company to start/build something new\n'
+        '    "new_company"         - person founded or launched a startup\n'
+        '    "funding"             - a startup raised pre-seed/seed/early funding\n'
+        '    "appointment"         - person JOINED or was appointed/promoted at an EXISTING company (not founding)\n'
+        '    "irrelevant"          - politics, sports, opinion pieces, big-company corporate news, layoffs, anything else\n'
+        '- "geo": one of India, Singapore, Indonesia, Vietnam, Malaysia, Philippines, Thailand, '
+        'Southeast Asia, Other, Unknown\n\n'
+        "Rules: 'person' must be a HUMAN name, never a company or fund name. "
+        "A person stepping down WITHOUT starting something = appointment, not departure_to_build. "
+        "An executive joining another company as CXO = appointment.\n\n"
+        f"Items:\n{items_block}\n\n"
+        "Return ONLY a JSON array of objects, one per item, each including the item's "
+        '"idx" number echoed back. Example:\n'
+        '[{"idx": 0, "person": "Dale Vaz", "prev_company": "Swiggy", "prev_title": "CTO", '
+        '"new_company": "", "event": "departure_to_build", "geo": "India"}]'
     )
 
     # ── Provider rotation (same pool as enricher, cheapest/fastest first) ──────
@@ -448,22 +490,22 @@ def _extract_names_via_llm(entries: List[dict]) -> dict:
             if needs_rate_limit:
                 from sources.groq_limiter import groq_wait
                 groq_wait()
-            client = OpenAI(base_url=base_url, api_key=api_key, timeout=15)
+            client = OpenAI(base_url=base_url, api_key=api_key, timeout=25)
             resp = client.chat.completions.create(
                 model=model,
                 messages=[{"role": "user", "content": prompt}],
-                max_tokens=300,
-                temperature=0.1,
+                max_tokens=2400,
+                temperature=0.0,
             )
             raw_text = resp.choices[0].message.content.strip()
-            logger.debug("Name extraction via %s", name)
+            logger.info("News structured extraction via %s (%d items)", name, len(entries))
             break
         except Exception as ex:
             err = str(ex)
             if "429" in err or "rate_limit" in err.lower() or "quota" in err.lower():
-                logger.info("%s 429/quota on name extraction — trying next provider", name)
+                logger.info("%s 429/quota on extraction — trying next provider", name)
             else:
-                logger.debug("%s name extraction error: %s", name, err[:80])
+                logger.debug("%s extraction error: %s", name, err[:80])
 
     if not raw_text:
         return {}
@@ -472,33 +514,118 @@ def _extract_names_via_llm(entries: List[dict]) -> dict:
         m = re.search(r"\[.*\]", raw_text, re.DOTALL)
         if not m:
             return {}
-        names = json.loads(m.group(0))
-        result = {}
-        for i, e in enumerate(entries):
-            if i < len(names):
-                n = str(names[i]).strip()
-                result[e["url"]] = n if n and n.lower() != "unknown" else "Unknown"
+        objs = json.loads(m.group(0))
+        result: dict = {}
+        for o in objs:
+            if not isinstance(o, dict):
+                continue
+            try:
+                idx = int(o.get("idx", -1))
+            except (TypeError, ValueError):
+                continue
+            if 0 <= idx < len(entries):
+                result[idx] = {
+                    "person":       str(o.get("person") or "").strip(),
+                    "prev_company": str(o.get("prev_company") or "").strip(),
+                    "prev_title":   str(o.get("prev_title") or "").strip(),
+                    "new_company":  str(o.get("new_company") or "").strip(),
+                    "event":        str(o.get("event") or "irrelevant").strip().lower(),
+                    "geo":          str(o.get("geo") or "Unknown").strip(),
+                }
         return result
     except Exception as ex:
-        logger.debug("Name extraction JSON parse error: %s", ex)
+        logger.debug("Extraction JSON parse error: %s", ex)
         return {}
 
 
-# Backward-compat alias used elsewhere in this file
-def _groq_extract_names_batch(entries: List[dict]) -> dict:
-    return _extract_names_via_llm(entries)
+def _extract_batch(entries: List[dict], source_default_geo: dict = None) -> List[Person]:
+    """Turn raw news entries into Person records via LLM structured extraction.
+
+    Drops: appointments, irrelevant items, out-of-mandate geographies, and items
+    where the LLM found no human. Falls back to the regex path per-item only when
+    the LLM batch failed entirely.
+    """
+    persons: List[Person] = []
+    if not entries:
+        return persons
+
+    extracted: dict = {}
+    # LLM providers cap output tokens; 25 items per call keeps responses parseable
+    for start in range(0, len(entries), 25):
+        chunk = entries[start:start + 25]
+        got = _llm_extract_structured(chunk)
+        for local_idx, fields in got.items():
+            extracted[start + local_idx] = fields
+
+    llm_worked = bool(extracted)
+
+    for i, e in enumerate(entries):
+        title, summary, url, src = e["title"], e.get("summary", ""), e["url"], e.get("source", "")
+        fx = extracted.get(i)
+
+        if fx is None and llm_worked:
+            # LLM saw this batch but returned nothing for this item — treat as irrelevant
+            continue
+
+        if fx is None:
+            # Full LLM outage — regex fallback (legacy path, lower quality)
+            p = _extract_person_from_snippet(title, summary, url, src)
+            if p:
+                persons.append(p)
+            continue
+
+        event = fx["event"]
+        signal_type = _EVENT_TO_SIGNAL.get(event)
+        if not signal_type:
+            continue  # appointment / irrelevant — not a founder signal
+
+        geo = fx["geo"]
+        if geo.lower() not in _MANDATE_GEOS and geo != "Other":
+            geo = "Unknown"
+        if geo == "Other":
+            continue  # confirmed outside India/SEA mandate
+
+        name = fx["person"]
+        if _is_org_name(name):
+            name = ""
+        if not name and event != "funding":
+            # A departure/founding story with no identifiable human is unactionable
+            continue
+
+        location = geo if geo not in ("Unknown", "") else (
+            _extract_location(title, summary) or OUTLET_GEO.get(src, ""))
+
+        person = Person(
+            name=name or "Unknown",
+            headline=title[:120],
+            previous_company=fx["prev_company"],
+            previous_title=fx["prev_title"],
+            current_company=fx["new_company"],
+            location=location,
+        )
+        person.signals.append(Signal(
+            source="news",
+            signal_type=signal_type,
+            description=f"[{src}] {title[:200]}",
+            url=url,
+            raw_data={"title": title, "summary": summary[:400], "source": src,
+                      "event": event, "extraction": "llm"},
+        ))
+        persons.append(person)
+
+    return persons
 
 
 def _collect_google_news(days_back: int) -> List[Person]:
-    persons: List[Person] = []
-    # Collect all relevant entries first, then do batch name extraction
-    pending_unknown: List[dict] = []  # entries where name == "Unknown"
+    """Collect keyword-relevant Google News entries, then batch LLM extraction."""
+    raw_entries: List[dict] = []
+    seen_urls: set = set()
+    cutoff = datetime.utcnow() - timedelta(days=days_back)
 
     for query in GOOGLE_NEWS_QUERIES:
         url = f"https://news.google.com/rss/search?q={quote_plus(query)}&hl=en-IN&gl=IN&ceid=IN:en"
         try:
             feed = feedparser.parse(url)
-            cutoff = datetime.utcnow() - timedelta(days=days_back)
             for entry in feed.entries[:15]:
                 pub_date = _parse_date(entry)
                 if pub_date < cutoff:
@@ -506,53 +633,17 @@ def _collect_google_news(days_back: int) -> List[Person]:
                 title = getattr(entry, "title", "")
                 summary = getattr(entry, "summary", "")
                 link = getattr(entry, "link", "")
-                p = _extract_person_from_snippet(title, summary, link, "Google News")
-                if p:
-                    if p.name == "Unknown":
-                        pending_unknown.append({"title": title, "url": link, "person": p})
-                    else:
-                        persons.append(p)
+                if link in seen_urls or not _is_relevant(f"{title} {summary}"):
+                    continue
+                seen_urls.add(link)
+                raw_entries.append({"title": title, "summary": summary,
+                                    "url": link, "source": "Google News"})
             time.sleep(0.3)
         except Exception as e:
             logger.warning("Google News error [%s]: %s", query[:40], e)
 
-    # ── Batch Groq name extraction for unknown persons ─────────────────────────
-    if pending_unknown:
-        logger.info("Groq name extraction: %d unknown Google News entries…", len(pending_unknown))
-        # Batch Groq call for first 30 entries
-        batch = pending_unknown[:50]
-        groq_names = _groq_extract_names_batch(batch)
-
-        # Apply Groq names and add ALL pending entries to persons list
-        still_need_article = []
-        for item in pending_unknown:
-            p = item["person"]
-            url = item["url"]
-            groq_name = groq_names.get(url, "Unknown")
-            if groq_name and groq_name != "Unknown" and not _is_org_name(groq_name):
-                p.name = groq_name
-                persons.append(p)
-            else:
-                still_need_article.append(item)
-
-        # For top 8 still-unknown entries, try fetching article content
-        for item in still_need_article[:8]:
-            try:
-                article_text = _fetch_article_text(item["url"])
-                if article_text:
-                    name = _extract_name(item["title"] + " " + article_text, article_text)
-                    if name and name != "Unknown":
-                        item["person"].name = name
-            except Exception:
-                pass
-            # Add regardless — even unnamed signals are useful for scoring
-            persons.append(item["person"])
-
-        # Add remaining entries that we didn't try article fetching for
-        for item in still_need_article[8:]:
-            persons.append(item["person"])
-
-    logger.info("Google News: %d relevant signals", len(persons))
+    persons = _extract_batch(raw_entries)
+    logger.info("Google News: %d relevant signals from %d entries", len(persons), len(raw_entries))
     return persons
 
 
