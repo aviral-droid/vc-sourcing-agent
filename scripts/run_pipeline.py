@@ -161,6 +161,72 @@ def _verify_seniority(persons: list, max_checks: int = 15) -> None:
                 confirmed, len(candidates))
 
 
+def _registry_corroborate(persons: list, max_checks: int = 10) -> None:
+    """Harmonic's highest-conviction chain: talent signal → corporate FILING
+    confirms a real entity exists. Free path to registry data:
+
+      India     — Zaubacorp / Tofler / TheCompanyCheck mirror MCA filings and
+                  are web-indexed, including DIRECTOR pages by person name.
+      Singapore — sgpbusiness.com mirrors ACRA records (UEN, incorporation
+                  date) and is web-indexed by company name.
+
+    A stealth candidate who appears as a company director, or whose new
+    company shows a fresh incorporation record, gains an mca_registration /
+    company_registration signal (+15 in scoring, plus the multi-source bonus).
+    """
+    import time as _t
+    from models import Signal
+
+    candidates = [
+        p for p in persons
+        if p.name and p.name.lower() not in ("", "unknown")
+        and any(s.signal_type in ("stealth_founder", "stealth_headline_change")
+                for s in p.signals)
+    ][:max_checks]
+    if not candidates:
+        return
+
+    logger.info("Registry stage: checking %d stealth candidates against MCA/ACRA mirrors",
+                len(candidates))
+    hits = 0
+    for p in candidates:
+        try:
+            name_tokens = [t.lower() for t in p.name.split() if len(t) >= 3]
+            # 1. Director-by-name lookup (MCA mirrors index director pages)
+            q = f'"{p.name}" director site:zaubacorp.com OR site:tofler.in OR site:thecompanycheck.com'
+            for r in _serper_web_search(q, num=5):
+                title = (r.get("title") or "").lower()
+                if name_tokens and all(t in title for t in name_tokens):
+                    p.signals.append(Signal(
+                        source="registry",
+                        signal_type="mca_registration",
+                        description=f"Registry: listed as company director — {(r.get('title') or '')[:130]}",
+                        url=r.get("link", ""),
+                    ))
+                    hits += 1
+                    break
+            # 2. New-company incorporation lookup (needs a named company)
+            co = (p.current_company or "").strip()
+            if len(co) > 3:
+                q2 = (f'"{co}" incorporated site:zaubacorp.com OR site:sgpbusiness.com '
+                      f'OR site:thecompanycheck.com')
+                for r in _serper_web_search(q2, num=5):
+                    text = ((r.get("title") or "") + " " + (r.get("snippet") or "")).lower()
+                    if co.lower() in text and any(y in text for y in ("2025", "2026")):
+                        p.signals.append(Signal(
+                            source="registry",
+                            signal_type="company_registration",
+                            description=f"Fresh incorporation record for {co} — {(r.get('title') or '')[:120]}",
+                            url=r.get("link", ""),
+                        ))
+                        hits += 1
+                        break
+            _t.sleep(0.5)
+        except Exception as e:
+            logger.debug("Registry check error for %s: %s", p.name, e)
+    logger.info("Registry stage: %d filing corroborations found", hits)
+
+
 def _enrich_linkedin_urls(persons: list, max_lookups: int = 20) -> None:
     """For scored persons missing linkedin_url, try a targeted Serper query to find their profile.
     Only runs when SERPER_API_KEY is set. Modifies persons in-place."""
@@ -225,11 +291,13 @@ def main():
     from sources.linkedin_source import search_linkedin_signals
     from sources.gdelt_source import search_gdelt_signals
     from sources.yc_source import search_yc_signals
+    from sources.twitter_source import search_twitter_signals
 
     source_fns = [
         ("News (RSS + Google News)", search_news_signals, {"days_back": DAYS_BACK}),
         ("LinkedIn (stealth + departures)", search_linkedin_signals, {"days_back": DAYS_BACK}),
         ("YC batches (India/SEA)", search_yc_signals, {"days_back": DAYS_BACK}),
+        ("Twitter/X (indexed posts)", search_twitter_signals, {"days_back": DAYS_BACK}),
         ("Exa (LinkedIn + Web Search)", search_exa_signals, {"days_back": DAYS_BACK}),
         ("GDELT (global news events)", search_gdelt_signals, {"days_back": DAYS_BACK}),
         ("Product Hunt", search_producthunt_signals, {"days_back": DAYS_BACK}),
@@ -241,6 +309,7 @@ def main():
         "GDELT (global news events)": 120,    # 12 queries × (5s sleep + 1s) = safe at 120s
         "News (RSS + Google News)":   90,
         "LinkedIn (stealth + departures)": 320,  # ~85 queries/day rotation over all tracked companies
+        "Twitter/X (indexed posts)":  90,     # 10 ddgs queries + one LLM extraction call
     }
 
     # Run in parallel threads (each source is I/O-bound)
@@ -324,6 +393,9 @@ def main():
     # Corroborated candidates gain a 'seniority_corroborated' signal, which lifts
     # the linkedin-only score cap and earns the multi-source bonus.
     _verify_seniority(fresh)
+
+    # Registry corroboration: MCA/ACRA filing evidence for stealth candidates.
+    _registry_corroborate(fresh)
 
     # ── Score ─────────────────────────────────────────────────────────────────
     from pipeline.enricher import score_all, write_executive_summary

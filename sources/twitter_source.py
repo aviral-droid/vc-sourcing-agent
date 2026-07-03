@@ -243,13 +243,77 @@ async def _async_collect_twitter(queries: List[str]) -> List[Person]:
     return persons
 
 
-def search_twitter_signals(days_back: int = 30) -> List[Person]:
-    """Main entry point — crawl Twitter/X for founder announcement signals."""
-    logger.info("Twitter source: running %d queries...", len(TWITTER_QUERIES_GOOGLE))
+def _ddgs_web(query: str, num: int = 8) -> List[dict]:
+    """Keyless web search via ddgs, filtered to X/Twitter URLs."""
     try:
-        persons = asyncio.run(_async_collect_twitter(TWITTER_QUERIES_GOOGLE))
-    except RuntimeError:
-        loop = asyncio.get_event_loop()
-        persons = loop.run_until_complete(_async_collect_twitter(TWITTER_QUERIES_GOOGLE))
-    logger.info("Twitter source: %d signals found", len(persons))
+        try:
+            from ddgs import DDGS
+        except ImportError:
+            from duckduckgo_search import DDGS
+        out = []
+        for r in DDGS().text(query, max_results=num):
+            url = r.get("href") or r.get("link") or ""
+            if "twitter.com" not in url and "x.com" not in url:
+                continue
+            out.append({"title": r.get("title", ""), "summary": r.get("body", ""),
+                        "url": url, "source": "Twitter/X"})
+        return out
+    except Exception as e:
+        logger.debug("ddgs twitter search error: %s", e)
+        return []
+
+
+def search_twitter_signals(days_back: int = 30) -> List[Person]:
+    """Founder announcements on X, discovered via free web search of indexed
+    posts/profiles, extracted with the same structured-LLM pass as news.
+
+    The old Nitter mirrors are dead and the X API free tier is unusable —
+    search-engine-indexed posts are the only free path. Yield is modest but
+    the signals (public 'leaving to build' announcements) are high-intent."""
+    entries: List[dict] = []
+    seen: set = set()
+    for q in TWITTER_QUERIES_GOOGLE[:10]:   # keep the run cheap
+        for e in _ddgs_web(config.freshen_years(q)):
+            if e["url"] in seen:
+                continue
+            seen.add(e["url"])
+            entries.append(e)
+        time.sleep(0.8)
+
+    if not entries:
+        logger.info("Twitter source: 0 indexed posts found")
+        return []
+
+    # Reuse the news source's structured extraction (person/company/event/geo,
+    # index-keyed) — a tweet snippet is the same shape as a headline.
+    from sources.news_source import _llm_extract_structured, _EVENT_TO_SIGNAL, _MANDATE_GEOS
+    extracted = _llm_extract_structured(entries[:25])
+    persons: List[Person] = []
+    for i, e in enumerate(entries[:25]):
+        fx = extracted.get(i)
+        if not fx:
+            continue
+        signal_type = _EVENT_TO_SIGNAL.get(fx["event"])
+        geo = fx["geo"]
+        if not signal_type or not fx["person"] or geo == "Other":
+            continue
+        if geo.lower() not in _MANDATE_GEOS:
+            geo = "Unknown"
+        p = Person(
+            name=fx["person"],
+            previous_company=fx["prev_company"],
+            previous_title=fx["prev_title"],
+            current_company=fx["new_company"],
+            location="" if geo in ("Unknown", "") else geo,
+        )
+        p.signals.append(Signal(
+            source="twitter",
+            signal_type=signal_type,
+            description=f"[X] {e['title'][:180]}",
+            url=e["url"],
+            raw_data={"snippet": e["summary"][:300], "event": fx["event"]},
+        ))
+        persons.append(p)
+
+    logger.info("Twitter source: %d signals from %d indexed posts", len(persons), len(entries))
     return persons
