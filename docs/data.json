@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-07-03T11:42:46.496778",
+  "generated_at": "2026-07-03T12:39:54.192809",
   "date_label": "2026-07-03",
-  "total_signals": 45,
-  "total_persons": 42,
+  "total_signals": 88,
+  "total_persons": 81,
   "sources_active": [
     "Product Hunt",
     "YC batches (India/SEA)",
     "News (RSS + Google News)",
     "LinkedIn (stealth + departures)"
   ],
-  "executive_summary": "Today's top VC sourcing signals highlight three promising leads, with Ashish Agrawal transitioning from Peak XV to stealth mode in India, scoring 60, and Pritam Roy and Barath Thangaraj both entering stealth with unverified backgrounds, each scoring 40. The signals are split evenly between India and Southeast Asia, showcasing a mix of second-time founders and emerging operators.",
+  "executive_summary": "Today's top VC sourcing signals highlight a surge in stealth mode activity in India, with notable figures like Abhiraj Singh Bhal from Urban Company and Ankit Sharma from Lendingkart leading the pack. The signals are split between India and Southeast Asia, with a focus on AI/ML and Fintech sectors, showcasing a trend towards experienced founders transitioning into new ventures. Among the named leads, Bhal and Sharma stand out with strong signals, indicating a promising pipeline for the upcoming quarter.",
   "persons": [
     {
       "name": "Bhavin Turakhia",
@@ -100,50 +100,57 @@
       "company_url": "https://www.oxmiqlabs.com/"
     },
     {
-      "name": "Ashish Agrawal",
+      "name": "Abhiraj Singh Bhal",
       "new_today": true,
       "badges": [
-        "Ex-unicorn/top co"
+        "Ex-unicorn/top co",
+        "Verified"
       ],
       "first_surfaced": "",
       "score": 60,
-      "action": "investigate",
-      "recommended_action": "investigate",
-      "previous_company": "Peak XV",
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Urban Company",
       "previous_title": "",
       "current_company": "",
       "location": "India",
-      "sector": "Venture Capital",
+      "sector": "Unknown",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Ashish Agrawal's exit from Groww and his intention to launch a VC firm suggest a strategic move into a new venture. His experience from Peak XV and the recognition of his departure in Business Today indicate a potential for a successful new venture in the venture capital sector.",
-      "linkedin_url": "",
+      "investment_thesis": "Abhiraj Singh Bhal has demonstrated seniority with an independent source confirming his profile, suggesting a potential for a successful entrepreneurial venture. However, the lack of information on his experience years and the sector he is entering could pose risks.",
+      "linkedin_url": "https://www.linkedin.com/in/abhirajbhal",
       "github_url": "",
       "twitter_handle": "",
-      "signal_count": 1,
+      "signal_count": 2,
       "signal_types": [
-        "stealth_founder"
+        "stealth_founder",
+        "seniority_corroborated"
       ],
       "signals": [
         {
-          "source": "news",
+          "source": "linkedin",
           "type": "stealth_founder",
-          "description": "[Google News] Former Peak XV’s Ashish Agrawal exits Groww board, to launch VC firm - Business Today",
-          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNTVBWRzFHWFg3Mm51eW41MzQ0ZzlEMWdqWTJyck5DdUZPUHBoYUVsZWp6N0xraHExQlFYbS16dklEMkJvUDE0UGpibERObFhfXzJBTmJ5SER5dlRHLWFSX3FCWl92TURqQnVmbnUtUWRaMG1RTjFHLWxwUU51OTRQUFdwYkNXMUluT2NQdERudlg2YzRfejNwYnpyb0d4ME9uZm81MEp5bkM2V0M1VGhvX1JiS3o1cy14YUNyVEhfUDE2MHp2RTBPVE930gHPAUFVX3lxTE5fMC1INXNRTEdoeUZ1VTNtRjhjdzA1c3lnU0F6UVBsZk5zd2ZYYTI1bHFNeVBrY2llM0tmU3N0MS1LYklzVW9xNDBOMjNuTFVmY3hkakZmNkFxQ3JvRTh5d0pYaVpCd3BzYW5IWUcyUEhEU0FWQ2NJbE5HR291b2xMbTNibGlZVUpGWFhibTAwa3BrdlZpMVN5X3Y2NEhQcl85WGZFYjU0cXBod3dQbDBfTGNKanpqbHNrMnFnc1lpSV9zWEVpOGZ2WDRwZExKSQ?oc=5"
+          "description": "Ex-Urban Company. Current LinkedIn headline: \"Abhiraj Singh Bhal - Cofounder & CEO of Urban Company | LinkedInManish Kumar Sharma - Business Head-\"",
+          "url": "https://www.linkedin.com/in/abhirajbhal"
+        },
+        {
+          "source": "verification",
+          "type": "seniority_corroborated",
+          "description": "Independent source confirms profile: Abhiraj Singh Bhal",
+          "url": "https://investorrelations.urbancompany.com/board-members/abhiraj-singh-bhal-chairman-managing-director-ceo"
         }
       ],
       "confidence": "medium",
       "founder_type": "seasoned_operator",
       "key_strengths": [
-        "Proven track record in the industry",
-        "Experience from a well-known company"
+        "seniority_corroborated"
       ],
       "risks": [
-        "Unknown experience years",
-        "Potential for high competition in the VC space"
+        "unknown_sector",
+        "unknown_experience_years"
       ],
-      "company_url": ""
+      "company_url": "urbancompany.com"
     },
     {
       "name": "Ashish Dave",
@@ -336,6 +343,52 @@
       "company_url": "https://www.bolna.ai/"
     },
     {
+      "name": "Ashish Agrawal",
+      "new_today": false,
+      "badges": [
+        "Ex-unicorn/top co"
+      ],
+      "first_surfaced": "2026-07-03",
+      "score": 60,
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "Peak XV",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Venture Capital",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Ashish Agrawal's exit from Groww and his intention to launch a VC firm suggest a strategic move into a new venture. His experience from Peak XV and the recognition of his departure in Business Today indicate a potential for a successful new venture in the venture capital sector.",
+      "linkedin_url": "https://www.linkedin.com/in/ashish-agrawal-ba3a706",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "stealth_founder",
+          "description": "[Google News] Former Peak XV’s Ashish Agrawal exits Groww board, to launch VC firm - Business Today",
+          "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNTVBWRzFHWFg3Mm51eW41MzQ0ZzlEMWdqWTJyck5DdUZPUHBoYUVsZWp6N0xraHExQlFYbS16dklEMkJvUDE0UGpibERObFhfXzJBTmJ5SER5dlRHLWFSX3FCWl92TURqQnVmbnUtUWRaMG1RTjFHLWxwUU51OTRQUFdwYkNXMUluT2NQdERudlg2YzRfejNwYnpyb0d4ME9uZm81MEp5bkM2V0M1VGhvX1JiS3o1cy14YUNyVEhfUDE2MHp2RTBPVE930gHPAUFVX3lxTE5fMC1INXNRTEdoeUZ1VTNtRjhjdzA1c3lnU0F6UVBsZk5zd2ZYYTI1bHFNeVBrY2llM0tmU3N0MS1LYklzVW9xNDBOMjNuTFVmY3hkakZmNkFxQ3JvRTh5d0pYaVpCd3BzYW5IWUcyUEhEU0FWQ2NJbE5HR291b2xMbTNibGlZVUpGWFhibTAwa3BrdlZpMVN5X3Y2NEhQcl85WGZFYjU0cXBod3dQbDBfTGNKanpqbHNrMnFnc1lpSV9zWEVpOGZ2WDRwZExKSQ?oc=5"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
+      "key_strengths": [
+        "Proven track record in the industry",
+        "Experience from a well-known company"
+      ],
+      "risks": [
+        "Unknown experience years",
+        "Potential for high competition in the VC space"
+      ],
+      "company_url": ""
+    },
+    {
       "name": "Raghav Anand",
       "new_today": false,
       "badges": [
@@ -361,9 +414,9 @@
       "twitter_handle": "",
       "signal_count": 3,
       "signal_types": [
+        "stealth_headline_change",
         "stealth_founder",
-        "seniority_corroborated",
-        "stealth_headline_change"
+        "seniority_corroborated"
       ],
       "signals": [
         {
@@ -397,25 +450,76 @@
       "company_url": "phonepe.com"
     },
     {
-      "name": "Pritam Roy",
+      "name": "Ankit Sharma",
       "new_today": true,
       "badges": [
-        "Ex-unicorn/top co"
+        "Multi-source"
       ],
+      "first_surfaced": "",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Lendingkart",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "AI/ML",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Ankit Sharma shows potential as a founder with a product launch on Product Hunt and experience at Lendingkart, indicating a possible interest in AI/ML. Further investigation is warranted to assess his capabilities and the viability of his new venture.",
+      "linkedin_url": "https://www.linkedin.com/in/ankit-251999",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 2,
+      "signal_types": [
+        "stealth_founder",
+        "product_launch"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Lendingkart. Current LinkedIn headline: \"Ankit Sharma - Senior Software Engineer @ Myntra | Ex ...Harshvardhan Lunia - Founder at Lendingkart\"",
+          "url": "https://www.linkedin.com/in/ankit-251999"
+        },
+        {
+          "source": "Product Hunt",
+          "type": "product_launch",
+          "description": "[Product Hunt] Ankit Sharma launched Claude Sonnet 5: AI that plans, acts, and gets work done\n           \n           \n             Discussion \n            |\n             Link",
+          "url": "https://www.producthunt.com/products/claude"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Product launch on Product Hunt",
+        "Experience at Lendingkart"
+      ],
+      "risks": [
+        "Unknown experience years",
+        "First-time founder"
+      ],
+      "company_url": "lendingkart.com"
+    },
+    {
+      "name": "Tushar Yadav",
+      "new_today": true,
+      "badges": [],
       "first_surfaced": "",
       "score": 40,
       "action": "watchlist",
       "recommended_action": "watchlist",
-      "previous_company": "",
+      "previous_company": "Lendingkart",
       "previous_title": "",
       "current_company": "",
       "location": "India",
       "sector": "Unknown",
       "geography": "India",
       "experience_years": 0,
-      "is_second_time_founder": true,
-      "investment_thesis": "Pritam Roy's background at CRED, Rippling, and Vymo suggests a strong operational track record, and his transition to a founder role could indicate a new venture aligned with his expertise. Further investigation is warranted to validate his experience, sector focus, and the potential of the new venture.",
-      "linkedin_url": "https://www.linkedin.com/in/pritamroy1",
+      "is_second_time_founder": false,
+      "investment_thesis": "Tushar Yadav has operations management experience, which could be valuable in a new venture. However, the lack of verified seniority and sector alignment raises questions about his potential as a founder.",
+      "linkedin_url": "https://www.linkedin.com/in/tushar-yadav-848369a9",
       "github_url": "",
       "twitter_handle": "",
       "signal_count": 1,
@@ -426,25 +530,154 @@
         {
           "source": "linkedin",
           "type": "stealth_founder",
-          "description": "LinkedIn headline: \"Pritam Roy - Co-Founder @ Fibr | ex-CRED, Rippling, Vymo\"",
-          "url": "https://www.linkedin.com/in/pritamroy1"
+          "description": "Ex-Lendingkart. Current LinkedIn headline: \"Tushar Yadav - Operations Manager | Transforming Digital ...Ankit Sharma - Senior Software Engineer \"",
+          "url": "https://www.linkedin.com/in/tushar-yadav-848369a9"
         }
       ],
-      "confidence": "medium",
-      "founder_type": "second_time_founder",
+      "confidence": "low",
+      "founder_type": "first_time_founder",
       "key_strengths": [
-        "Experience at multiple notable companies",
-        "Potential for leveraging past network"
+        "Operations management experience"
       ],
       "risks": [
-        "Lack of verified experience years",
-        "Unknown sector fit",
-        "Potential for high competition in the market"
+        "Lack of verified seniority",
+        "Unknown sector",
+        "Potential lack of prior exit or L1/L2 experience"
+      ],
+      "company_url": "lendingkart.com"
+    },
+    {
+      "name": "Harshvardhan Lunia",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Lendingkart",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Harshvardhan Lunia's previous experience at Lendingkart suggests potential domain knowledge in fintech, but further verification of his seniority and experience years is needed. His current LinkedIn headline indicates a founder role, but without confirmation of his seniority and sector alignment, the investment thesis is weak.",
+      "linkedin_url": "https://www.linkedin.com/in/harshvardhan-lunia-1189887",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Lendingkart. Current LinkedIn headline: \"Harshvardhan Lunia - Founder at Lendingkart | LinkedInAjaykumar Munni - CFO | IIM-A | Ex-Lendingkart\"",
+          "url": "https://www.linkedin.com/in/harshvardhan-lunia-1189887"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Previous experience at Lendingkart"
+      ],
+      "risks": [
+        "Lack of verified seniority, unknown experience years, and no sector alignment"
+      ],
+      "company_url": "lendingkart.com"
+    },
+    {
+      "name": "Anvit Tyagi",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Fintech",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Anvit Tyagi's experience in Fintech at Khatabook suggests potential for a strong understanding of the sector. His current stealth founder status indicates a desire to innovate, but the lack of verified seniority and experience years raise questions about his readiness for a second-time founder role.",
+      "linkedin_url": "https://www.linkedin.com/in/anvittyagi",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Anvit Tyagi - Co-Founder at Stealth Startup | Ex- Khatabook ...Shikha Pathak - Fintech | Risk & Pric\"",
+          "url": "https://www.linkedin.com/in/anvittyagi"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth founder claim",
+        "Experience at Khatabook"
+      ],
+      "risks": [
+        "Lack of verified seniority",
+        "Unknown experience years"
       ],
       "company_url": ""
     },
     {
-      "name": "Barath Thangaraj",
+      "name": "Shikha Pathak",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Fintech",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Shikha Pathak has a LinkedIn headline indicating a move into Fintech, which aligns with a current hot sector. However, her experience years and seniority are unknown, and there is no verifiable evidence of her previous work or seniority.",
+      "linkedin_url": "https://www.linkedin.com/in/shikhapathak602",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Shikha Pathak - Fintech | Risk & Pricing Strategy @AtoB | Ex ...Smart BuildingKarttikeya Kumar Singh\"",
+          "url": "https://www.linkedin.com/in/shikhapathak602"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Fintech experience",
+        "LinkedIn stealth headline"
+      ],
+      "risks": [
+        "Unknown experience years",
+        "No verified seniority"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Karttikeya Kumar Singh",
       "new_today": true,
       "badges": [],
       "first_surfaced": "",
@@ -459,8 +692,8 @@
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Barath Thangaraj has indicated a move to a stealth startup, but without verified experience or sector details, the investment thesis is unclear at this stage.",
-      "linkedin_url": "https://www.linkedin.com/in/baraththangaraj",
+      "investment_thesis": "Karttikeya Kumar Singh's LinkedIn indicates a transition from a project management role to a founder, suggesting a potential move into entrepreneurship. Further investigation is needed to validate his experience and the viability of his new venture.",
+      "linkedin_url": "https://www.linkedin.com/in/karttikeya-kumar-singh-b27b10128",
       "github_url": "",
       "twitter_handle": "",
       "signal_count": 1,
@@ -471,14 +704,592 @@
         {
           "source": "linkedin",
           "type": "stealth_founder",
-          "description": "LinkedIn headline: \"Barath Thangaraj - Stealth Startup | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/baraththangaraj"
+          "description": "LinkedIn headline: \"Karttikeya Kumar Singh - PM at Propelld | Ex-Founder | Ex ...Rajeev Sharma - Head of Engineering at \"",
+          "url": "https://www.linkedin.com/in/karttikeya-kumar-singh-b27b10128"
         }
       ],
       "confidence": "low",
       "founder_type": "first_time_founder",
       "key_strengths": [
-        "LinkedIn stealth headline"
+        "LinkedIn indicates experience in project management and engineering"
+      ],
+      "risks": [
+        "Lack of verified experience and seniority; no clear indication of prior exits or significant industry impact"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Rajeev Sharma",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Fintech",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Rajeev Sharma's background in Fintech and his role as Head of Engineering suggest potential for a strong technical foundation. As a first-time founder, there is a risk of inexperience, but the sector fit and his operational background could be valuable.",
+      "linkedin_url": "https://www.linkedin.com/in/rajeev1982",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Rajeev Sharma - Head of Engineering at Zet | Ex-Khatabook ...Anckit Singh - Fintech Operations || Tr\"",
+          "url": "https://www.linkedin.com/in/rajeev1982"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Head of Engineering experience",
+        "Fintech operations background"
+      ],
+      "risks": [
+        "Unknown experience years",
+        "First-time founder status"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Ravish Naresh",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Ravish Naresh's LinkedIn indicates a founder status, but without verified experience or sector alignment, further investigation is needed to assess his potential.",
+      "linkedin_url": "https://www.linkedin.com/in/ravish-naresh-72543359",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Ravish Naresh - Founder Khatabook.com | Housing.com | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/ravish-naresh-72543359"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn indicates founder status"
+      ],
+      "risks": [
+        "Lack of verified experience and sector alignment"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Sakshi Deora",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Refrens",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "SaaS",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Sakshi Deora shows potential interest in SaaS product development, with a notable past connection to a successful founder. Further investigation is warranted to assess her capabilities and the viability of her new venture.",
+      "linkedin_url": "https://www.linkedin.com/in/sakshi-deora30",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Refrens. Current LinkedIn headline: \"Sakshi Deora - Plotting story arcs for SaaS products | Ex ...Neha Narkhede - Co-founder & CEO, Oscil\"",
+          "url": "https://www.linkedin.com/in/sakshi-deora30"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Experience with SaaS products",
+        "Potential for leveraging past connections"
+      ],
+      "risks": [
+        "Lack of prior entrepreneurial experience",
+        "Unknown track record as a founder"
+      ],
+      "company_url": "refrens.com"
+    },
+    {
+      "name": "Glenn Sanford",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "CarTrade",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Glenn Sanford's LinkedIn stealth headline hints at a potential new venture, but further investigation is needed to verify his experience, seniority, and the nature of the business he is building.",
+      "linkedin_url": "https://www.linkedin.com/in/glenndsanford",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-CarTrade. Current LinkedIn headline: \"Glenn Sanford - SUCCESS Magazine | LinkedInPrabhatranjan Rai - Sheerdrive | Ex-Cars24 | Ex-Mahindra \"",
+          "url": "https://www.linkedin.com/in/glenndsanford"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline suggests potential new venture"
+      ],
+      "risks": [
+        "Lack of verified experience and seniority; no clear sector indication; no funding news or GitHub traction"
+      ],
+      "company_url": "cartrade.com"
+    },
+    {
+      "name": "Prabhatranjan Rai",
+      "new_today": true,
+      "badges": [
+        "Verified"
+      ],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "CarTrade",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Prabhatranjan Rai has a verified seniority signal from an independent source, suggesting a strong operational background. However, the lack of information on his experience years, sector focus, and second-time founder status makes it challenging to assess his potential for a successful venture.",
+      "linkedin_url": "https://www.linkedin.com/in/prabhatranjan-rai-347475a",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 2,
+      "signal_types": [
+        "stealth_founder",
+        "seniority_corroborated"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-CarTrade. Current LinkedIn headline: \"Prabhatranjan Rai - Sheerdrive | Ex-Cars24 | Ex-Mahindra ...Shraddha K. - Ex Cartrade Tech Limited B\"",
+          "url": "https://www.linkedin.com/in/prabhatranjan-rai-347475a"
+        },
+        {
+          "source": "verification",
+          "type": "seniority_corroborated",
+          "description": "Independent source confirms profile: Prabhatranjan Rai - Happenstance",
+          "url": "https://happenstance.ai/u/e0da757e-8a71-4eec-8352-b3ff006aa2da"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
+      "key_strengths": [
+        "seniority_corroborated"
+      ],
+      "risks": [
+        "unknown_experience_years",
+        "unknown_sector",
+        "no_second_time_founder_signal"
+      ],
+      "company_url": "cartrade.com"
+    },
+    {
+      "name": "Abhinav Rai",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "CarTrade",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Abhinav Rai has recently changed his LinkedIn headline to indicate he is building something, suggesting a potential entrepreneurial move. However, without verified experience, a prior exit, or alignment with a hot sector, the investment thesis is weak and requires further investigation.",
+      "linkedin_url": "https://www.linkedin.com/in/abhinav-rai-77173642",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-CarTrade. Current LinkedIn headline: \"Abhinav Rai - Sales & Business Development || Building ...\"",
+          "url": "https://www.linkedin.com/in/abhinav-rai-77173642"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline change"
+      ],
+      "risks": [
+        "Unknown experience, no prior exit, and no sector alignment"
+      ],
+      "company_url": "cartrade.com"
+    },
+    {
+      "name": "Ananth Balasubramanian",
+      "new_today": true,
+      "badges": [
+        "Ex-unicorn/top co",
+        "Verified"
+      ],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Urban Company",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Ananth Balasubramanian shows potential as a founder with a confirmed senior role at Urban Company, but lacks experience and sector alignment. Further investigation is needed to assess his sector expertise and the viability of his new venture.",
+      "linkedin_url": "https://www.linkedin.com/in/ananth95",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 2,
+      "signal_types": [
+        "stealth_founder",
+        "seniority_corroborated"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Urban Company. Current LinkedIn headline: \"Ananth Balasubramanian - Founder | Building a multi ...Anirudh Bagla - MBA@HBS | Ex- Urban Company, \"",
+          "url": "https://www.linkedin.com/in/ananth95"
+        },
+        {
+          "source": "verification",
+          "type": "seniority_corroborated",
+          "description": "Independent source confirms profile: Ananth Balasubramanian Bio – Urban Company Homes",
+          "url": "https://www.theofficialboard.com/biography/ananth-balasubramanian-g2352"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline",
+        "Seniority confirmed by independent source"
+      ],
+      "risks": [
+        "Unknown experience",
+        "No sector alignment"
+      ],
+      "company_url": "urbancompany.com"
+    },
+    {
+      "name": "Tushar Chaudhary",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Limeroad",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Tushar Chaudhary has recently changed his LinkedIn headline to indicate he is building a new venture, suggesting a potential new entrepreneurial endeavor. However, without verified experience, sector details, and company registration, the investment thesis is speculative at this stage.",
+      "linkedin_url": "https://www.linkedin.com/in/tushar05",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Limeroad. Current LinkedIn headline: \"Tushar Chaudhary - Building FraX | ex Airtel | ex Limeroad ...Tapesh Srivastava - Senior Manager (Ji\"",
+          "url": "https://www.linkedin.com/in/tushar05"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline change to indicate new venture"
+      ],
+      "risks": [
+        "Lack of verified experience and seniority",
+        "Unknown sector and company details"
+      ],
+      "company_url": "limeroad.com"
+    },
+    {
+      "name": "Vetrivel Chellamuthu",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "BlackBuck",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Vetrivel Chellamuthu has a background in sales and partnership from BlackBuck, which could be valuable in a new venture. However, the lack of verified seniority and experience years, as well as the absence of a traceable prior exit, raises concerns about his ability to lead a startup.",
+      "linkedin_url": "https://www.linkedin.com/in/vetrivel-chellamuthu",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-BlackBuck. Current LinkedIn headline: \"Vetrivel Chellamuthu - Partnership, Sales & GTM | Ex ...AsadAli Syed - Team lead at Alldigi | Ex Bla\"",
+          "url": "https://www.linkedin.com/in/vetrivel-chellamuthu"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Experienced in partnership, sales, and GTM from BlackBuck"
+      ],
+      "risks": [
+        "Lack of verified seniority, unknown experience years, and no traceable prior exit"
+      ],
+      "company_url": "blackbuck.com"
+    },
+    {
+      "name": "Tapesh Srivastava",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Limeroad",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Tapesh Srivastava has a LinkedIn profile suggesting a transition from Limeroad to potentially building a new venture, but without verified seniority or experience years, and no clear indication of a new company, further investigation is needed to assess the viability of this opportunity.",
+      "linkedin_url": "https://www.linkedin.com/in/tapesh-srivastava-801195aa",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Limeroad. Current LinkedIn headline: \"Tapesh Srivastava - Senior Manager (Jiomart.com) | Seller ...buildingGeocortex Viewer for HTML5Faceb\"",
+          "url": "https://www.linkedin.com/in/tapesh-srivastava-801195aa"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn indicates previous experience at Limeroad"
+      ],
+      "risks": [
+        "Lack of verified seniority, unknown experience years, and no clear indication of a new venture"
+      ],
+      "company_url": "limeroad.com"
+    },
+    {
+      "name": "Vivekanand Matta",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "BlackBuck",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Healthtech",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Vivekanand Matta's background in technology leadership and experience at established companies suggests potential for a strong operational foundation. Further investigation is warranted to validate his current role and the viability of his new venture.",
+      "linkedin_url": "https://www.linkedin.com/in/vivekmatta",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-BlackBuck. Current LinkedIn headline: \"Vivekanand Matta - Technology leader at Pharmeasy | Ex ...Sonu Kumar - Ex-Blackbuck, Ex-Foodpanda | \"",
+          "url": "https://www.linkedin.com/in/vivekmatta"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
+      "key_strengths": [
+        "Experience in technology leadership",
+        "Previous experience at notable companies like BlackBuck and Foodpanda"
+      ],
+      "risks": [
+        "Unknown experience years",
+        "Lack of verified seniority"
+      ],
+      "company_url": "blackbuck.com"
+    },
+    {
+      "name": "Ankit Singh Naruka",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "BlackBuck",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "LogisticTech",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Ankit Singh Naruka's background in LogisticTech at BlackBuck suggests a potential for building a company in the sector. Further investigation is needed to validate his experience level and the viability of his new venture.",
+      "linkedin_url": "https://www.linkedin.com/in/ankitsinghnaruka",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-BlackBuck. Current LinkedIn headline: \"Ankit Singh Naruka - IOT | GPS | LogisticTech | Building ...\"",
+          "url": "https://www.linkedin.com/in/ankitsinghnaruka"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Experience in LogisticTech from BlackBuck",
+        "Potential for leveraging previous industry knowledge"
+      ],
+      "risks": [
+        "Lack of verified experience level",
+        "No clear indication of prior exits or seniority"
+      ],
+      "company_url": "blackbuck.com"
+    },
+    {
+      "name": "Abhishek Bansal",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Abhishek Bansal's LinkedIn claim as a co-founder and CEO suggests an entrepreneurial intent, but without verified experience and sector alignment, further investigation is needed to assess the viability of his venture.",
+      "linkedin_url": "https://www.linkedin.com/in/abhishek-bansal-69b08624",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Abhishek Bansal - Co-Founder and CEO at Shadowfax| World ...\"",
+          "url": "https://www.linkedin.com/in/abhishek-bansal-69b08624"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth founder claim"
       ],
       "risks": [
         "Lack of verified experience",
@@ -486,6 +1297,922 @@
         "Potential for misrepresentation"
       ],
       "company_url": ""
+    },
+    {
+      "name": "Abhi Dasgupta",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Moglix",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Abhi Dasgupta has a background in customer success and has previously worked at Moglix, suggesting potential domain expertise. However, the lack of verified seniority and traceable prior exit raises concerns about his experience level and entrepreneurial track record.",
+      "linkedin_url": "https://www.linkedin.com/in/abhidsgpt",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Moglix. Current LinkedIn headline: \"Abhi Dasgupta - Head - Customer Success at TranZact (ex ...Rijit Bose - Deputy General Manager - Adi\"",
+          "url": "https://www.linkedin.com/in/abhidsgpt"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Experience in customer success",
+        "Previous experience at Moglix"
+      ],
+      "risks": [
+        "Lack of verified seniority",
+        "Unknown experience years",
+        "No traceable prior exit"
+      ],
+      "company_url": "moglix.com"
+    },
+    {
+      "name": "Rijit Bose",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Moglix",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Rijit Bose has a strong background in senior management, having worked at Moglix and currently at Aditya Birla Fashion. His LinkedIn indicates a potential shift towards entrepreneurship, but without verified experience years or a clear indication of a new venture, further investigation is needed to assess the viability of his next move.",
+      "linkedin_url": "https://www.linkedin.com/in/rijit-bose-82533ab8",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Moglix. Current LinkedIn headline: \"Rijit Bose - Deputy General Manager - Aditya Birla Fashion ...Abhishek Singh - VP - Strategy, Planni\"",
+          "url": "https://www.linkedin.com/in/rijit-bose-82533ab8"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
+      "key_strengths": [
+        "Experience in senior management",
+        "Previous experience at Moglix"
+      ],
+      "risks": [
+        "Unknown experience years",
+        "No clear indication of a new venture"
+      ],
+      "company_url": "moglix.com"
+    },
+    {
+      "name": "Rahul Garg",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Moglix",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Rahul Garg's LinkedIn headline indicates a potential founder role, but further verification of his experience and the existence of a new venture is needed.",
+      "linkedin_url": "https://www.linkedin.com/in/rahulgarg",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Moglix. Current LinkedIn headline: \"Rahul Garg - Moglix | LinkedInMeet Rahul Garg, founder of Moglix; Know about his journey ...Ashit Sw\"",
+          "url": "https://www.linkedin.com/in/rahulgarg"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn headline suggests foundership"
+      ],
+      "risks": [
+        "Lack of verified experience and seniority",
+        "No clear indication of a new venture"
+      ],
+      "company_url": "moglix.com"
+    },
+    {
+      "name": "Abhishek Singh",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Moglix",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Abhishek Singh has a background in strategy and operations with experience at Moglix, suggesting potential for a strong operational role. However, without clear evidence of a new venture and verified experience years, further investigation is needed to assess his potential as a founder.",
+      "linkedin_url": "https://www.linkedin.com/in/abhishek-singh-0416b57a",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Moglix. Current LinkedIn headline: \"Abhishek Singh - VP - Strategy, Planning and Ops | Ex-Moglix ...Rahul Garg - Moglix | LinkedInMeet R\"",
+          "url": "https://www.linkedin.com/in/abhishek-singh-0416b57a"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
+      "key_strengths": [
+        "Experience in strategy, planning, and operations",
+        "Previous experience at Moglix"
+      ],
+      "risks": [
+        "Unknown experience years",
+        "No clear indication of a new venture"
+      ],
+      "company_url": "moglix.com"
+    },
+    {
+      "name": "Ashit Swain",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Moglix",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Ashit Swain's LinkedIn indicates a founder role, but without verified experience and sector alignment, further investigation is needed to assess potential.",
+      "linkedin_url": "https://www.linkedin.com/in/ak-swain",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Moglix. Current LinkedIn headline: \"Ashit Swain - Co-Founder & CEO @ Symplichain | Transforming ...\"",
+          "url": "https://www.linkedin.com/in/ak-swain"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn indicates a founder role"
+      ],
+      "risks": [
+        "Lack of verified experience and sector alignment"
+      ],
+      "company_url": "moglix.com"
+    },
+    {
+      "name": "Subham Sukla",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Subham Sukla's LinkedIn headline suggests a potential new venture, but further investigation is needed to verify his seniority, experience, and the viability of the new business idea.",
+      "linkedin_url": "https://www.linkedin.com/in/subham-sukla-a2b295b8",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Subham Sukla - Building B2B Business at Duroflex | Ex-Wakefit ...\"",
+          "url": "https://www.linkedin.com/in/subham-sukla-a2b295b8"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline indicates potential new venture"
+      ],
+      "risks": [
+        "Lack of verified seniority and experience, no traceable prior exit, and no additional corroborating signals"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Prayas Ray",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Boult Audio",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Marketing",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Prayas Ray has demonstrated brand marketing experience, which could be valuable in a new venture. However, as a first-time founder with unverified seniority and experience level, there are significant risks to consider before further investigation.",
+      "linkedin_url": "https://www.linkedin.com/in/prayas-ray-215a72153",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Boult Audio. Current LinkedIn headline: \"Prayas Ray - Brand Marketing | Driving Pebble's Growth at ...Susobhan Ganguly - Business Lead >Helpi\"",
+          "url": "https://www.linkedin.com/in/prayas-ray-215a72153"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Brand Marketing Experience"
+      ],
+      "risks": [
+        "Lack of verified seniority",
+        "Unknown experience level",
+        "First-time founder status"
+      ],
+      "company_url": "boultaudio.com"
+    },
+    {
+      "name": "Susobhan Ganguly",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Boult Audio",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Susobhan Ganguly has a background in business leadership, which could be valuable for a startup. However, the lack of verified experience, prior exit, and sector fit are significant risks.",
+      "linkedin_url": "https://www.linkedin.com/in/susobhanganguly",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Boult Audio. Current LinkedIn headline: \"Susobhan Ganguly - Business Lead >Helping Corporates propel...buildingRudraksh Sharma - Design Assis\"",
+          "url": "https://www.linkedin.com/in/susobhanganguly"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Business Lead experience"
+      ],
+      "risks": [
+        "Unknown experience, no prior exit, and no sector fit"
+      ],
+      "company_url": "boultaudio.com"
+    },
+    {
+      "name": "Sheik Dadapeer",
+      "new_today": true,
+      "badges": [
+        "Ex-unicorn/top co"
+      ],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Ola",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "The signal of a LinkedIn headline change to indicate a new venture is a high-value signal, but without verified seniority and a traceable prior exit, the investment thesis is weak. Further investigation is needed to validate the founder's background and the potential of the new venture.",
+      "linkedin_url": "https://www.linkedin.com/in/sheik-dadapeer-8b83b2144",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Ola. Current LinkedIn headline: \"Sheik Dadapeer - Building Rapido | Ex - OLA | Senior ...Nitesh Kumar - Operations manager @Hakki Fle\"",
+          "url": "https://www.linkedin.com/in/sheik-dadapeer-8b83b2144"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline change to indicate a new venture"
+      ],
+      "risks": [
+        "Unknown experience level",
+        "No verified seniority",
+        "No traceable prior exit"
+      ],
+      "company_url": "olacabs.com"
+    },
+    {
+      "name": "Nitesh Kumar",
+      "new_today": true,
+      "badges": [
+        "Ex-unicorn/top co"
+      ],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Ola",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Nitesh Kumar has operations management experience from Ola and is currently associated with Hakki Fleet, suggesting a potential transition into entrepreneurship. Further investigation is needed to validate his experience, sector focus, and the viability of his new venture.",
+      "linkedin_url": "https://www.linkedin.com/in/nitesh-kumar-8248269b",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Ola. Current LinkedIn headline: \"Nitesh Kumar - Operations manager @Hakki Fleet || Ex-OLA ...Mira Murati - WikipediaAlan Thomas - Bui\"",
+          "url": "https://www.linkedin.com/in/nitesh-kumar-8248269b"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
+      "key_strengths": [
+        "Operations management experience",
+        "Experienced in the transportation sector"
+      ],
+      "risks": [
+        "Lack of verified experience years",
+        "No clear indication of sector focus",
+        "No evidence of prior exits or significant seniority"
+      ],
+      "company_url": "olacabs.com"
+    },
+    {
+      "name": "Alan Thomas",
+      "new_today": true,
+      "badges": [
+        "Ex-unicorn/top co"
+      ],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Ola",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "EV/Mobility",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Alan Thomas, with his background at Ola, shows potential interest in the EV/Mobility sector, which aligns with current hot sectors. Further investigation is warranted to validate his experience and potential for success.",
+      "linkedin_url": "https://www.linkedin.com/in/alanthomas89",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Ola. Current LinkedIn headline: \"Alan Thomas - Building Pronto | Ex-Ola (Electric & Mobility ...\"",
+          "url": "https://www.linkedin.com/in/alanthomas89"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Experience at Ola in Electric & Mobility",
+        "Potential for leveraging Ola's network and expertise"
+      ],
+      "risks": [
+        "Lack of verified experience years",
+        "No evidence of prior exits or significant seniority"
+      ],
+      "company_url": "olacabs.com"
+    },
+    {
+      "name": "Harshit Singh",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "EazyDiner",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Harshit Singh has experience at EazyDiner and an IIT(BHU) education, which could be valuable in a new venture. However, the lack of verified experience years and clear indication of a new venture makes further investigation necessary.",
+      "linkedin_url": "https://www.linkedin.com/in/harshit08",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-EazyDiner. Current LinkedIn headline: \"Harshit Singh - Product || Ex-EazyDiner || IIT(BHU) | LinkedInIndra J Rai - MBA’24 || Sales & Market\"",
+          "url": "https://www.linkedin.com/in/harshit08"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Ex-EazyDiner experience",
+        "IIT(BHU) education"
+      ],
+      "risks": [
+        "Unknown experience years",
+        "No clear indication of a new venture"
+      ],
+      "company_url": "eazydiner.com"
+    },
+    {
+      "name": "Indra J Rai",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "EazyDiner",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "FoodTech",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Indra J Rai has experience in the foodtech industry, particularly from his tenure at EazyDiner, and is currently pursuing an MBA, which suggests a potential interest in entrepreneurship. However, without verified experience levels or evidence of prior exits, the investment thesis is based on a single LinkedIn signal and requires further validation.",
+      "linkedin_url": "https://www.linkedin.com/in/indrajyotirai",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-EazyDiner. Current LinkedIn headline: \"Indra J Rai - MBA’24 || Sales & Marketing/HR || Ex-EazyDiner ...Sachin Pabreja - Co-founder & CEO at\"",
+          "url": "https://www.linkedin.com/in/indrajyotirai"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Sales & Marketing/HR experience",
+        "Experienced in the foodtech industry"
+      ],
+      "risks": [
+        "Lack of verified experience level",
+        "No evidence of prior exits or significant seniority"
+      ],
+      "company_url": "eazydiner.com"
+    },
+    {
+      "name": "Sachin Pabreja",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "EazyDiner",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Sachin Pabreja has a LinkedIn profile indicating past experience as a co-founder and CEO, but without further verification of his experience or a new venture, it is unclear if he is a second-time founder or if this is his first entrepreneurial attempt.",
+      "linkedin_url": "https://www.linkedin.com/in/sachinpabreja",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-EazyDiner. Current LinkedIn headline: \"Sachin Pabreja - Co-founder & CEO at EazyDiner | TEDx ...Smart BuildingPaulomi Das - Summers at Clov\"",
+          "url": "https://www.linkedin.com/in/sachinpabreja"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn indicates co-founder and CEO experience"
+      ],
+      "risks": [
+        "Lack of verified experience, no clear sector indication, and no evidence of a new venture"
+      ],
+      "company_url": "eazydiner.com"
+    },
+    {
+      "name": "Kirti Kabra",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "StayVista",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Kirti Kabra has experience in creative brand strategy and category expansion, which could be valuable in a new venture. However, the lack of verified experience, no indication of a new venture, and no clear sector alignment suggest further investigation is needed to assess potential.",
+      "linkedin_url": "https://www.linkedin.com/in/kirti-kabra-58b55955",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-StayVista. Current LinkedIn headline: \"Kirti Kabra - Creative Brand Strategy & Category Expansion ...Vaibhav Modi - Building Peppy Stays | \"",
+          "url": "https://www.linkedin.com/in/kirti-kabra-58b55955"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Creative brand strategy and category expansion experience"
+      ],
+      "risks": [
+        "Lack of verified experience, no clear indication of a new venture, and no sector alignment"
+      ],
+      "company_url": "stayvista.com"
+    },
+    {
+      "name": "Vaibhav Modi",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "StayVista",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Vaibhav Modi's LinkedIn headline indicates a potential entrepreneurial venture, but further investigation is needed to verify his experience, prior exits, and the specific sector he is targeting.",
+      "linkedin_url": "https://www.linkedin.com/in/vaibhav-modi-88984577",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-StayVista. Current LinkedIn headline: \"Vaibhav Modi - Building Peppy Stays | Blending AI with ...Smart BuildingVijay M - Business Developme\"",
+          "url": "https://www.linkedin.com/in/vaibhav-modi-88984577"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline suggests founder activity"
+      ],
+      "risks": [
+        "Lack of verified experience and seniority",
+        "No traceable prior exit",
+        "Unknown sector focus"
+      ],
+      "company_url": "stayvista.com"
+    },
+    {
+      "name": "Satish Kannan",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "MediBuddy",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Healthtech",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Satish Kannan's background in healthtech and his role as a co-founder and CEO at MediBuddy suggests a potential for innovation in the sector. As a first-time founder, there is a risk of execution challenges, but his experience and the current trend in healthtech could make this a promising opportunity.",
+      "linkedin_url": "https://www.linkedin.com/in/satishkannan16",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-MediBuddy. Current LinkedIn headline: \"Satish Kannan - Co-founder and CEO - MediBuddy | Forbes ...Sivareena S.L. - CEO@ Apollo Preventive H\"",
+          "url": "https://www.linkedin.com/in/satishkannan16"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Entrepreneurial spirit",
+        "Experience in healthtech"
+      ],
+      "risks": [
+        "Lack of verified experience",
+        "First-time founder status"
+      ],
+      "company_url": "medibuddy.in"
+    },
+    {
+      "name": "Muhammad Naushad",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Travel & Hospitality",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Muhammad Naushad's LinkedIn claim as a founder suggests potential entrepreneurial intent, but further investigation is needed to validate his experience and prior exits.",
+      "linkedin_url": "https://www.linkedin.com/in/muhammad-naushad-a4296483",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Muhammad Naushad - Founder & CEO at Footprint Holidayz | Ex ...\"",
+          "url": "https://www.linkedin.com/in/muhammad-naushad-a4296483"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth founder claim"
+      ],
+      "risks": [
+        "Unknown experience, no verified seniority, no prior exit"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Mrudul Raj",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "TimesPro",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Mrudul Raj has recently changed his LinkedIn headline to suggest he is building a new venture, indicating a potential entrepreneurial move. However, without verified experience, sector details, and company information, the investment thesis is currently speculative.",
+      "linkedin_url": "https://www.linkedin.com/in/mrudul-raj-75a02175",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-TimesPro. Current LinkedIn headline: \"Mrudul Raj - Building Physicswallah | Ex- Jaro | LinkedInDebrup Das - Building Careers @ Timespro ||\"",
+          "url": "https://www.linkedin.com/in/mrudul-raj-75a02175"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline change to indicate new venture"
+      ],
+      "risks": [
+        "Lack of verified experience and seniority",
+        "Unknown sector and company details"
+      ],
+      "company_url": "timespro.com"
+    },
+    {
+      "name": "Varun Gupta",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Hero Vired",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Varun Gupta's LinkedIn headline suggests he is a founder, but without verified experience or sector alignment, further investigation is needed to assess his potential.",
+      "linkedin_url": "https://www.linkedin.com/in/varun-gupta-2639221a",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Hero Vired. Current LinkedIn headline: \"Varun Gupta - Founder | Building a Global Atelier of ...Kunal Gautam - B2B Business Development Prof\"",
+          "url": "https://www.linkedin.com/in/varun-gupta-2639221a"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline indicates founder activity"
+      ],
+      "risks": [
+        "Lack of verified experience and sector alignment"
+      ],
+      "company_url": "herovired.com"
+    },
+    {
+      "name": "Debrup Das",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "TimesPro",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Education",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Debrup Das has a background in the education sector, which could be a strong foundation for a new venture. However, the lack of verified seniority and experience years, as well as the absence of a prior exit or L1/L2 title departure, are notable risks that need to be further investigated.",
+      "linkedin_url": "https://www.linkedin.com/in/debrup-das-ba011468",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-TimesPro. Current LinkedIn headline: \"Debrup Das - Building Careers @ Timespro || Ex - Associate ...\"",
+          "url": "https://www.linkedin.com/in/debrup-das-ba011468"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Experience in education sector"
+      ],
+      "risks": [
+        "Lack of verified seniority",
+        "Unknown experience years",
+        "No prior exit or L1/L2 title departure"
+      ],
+      "company_url": "timespro.com"
     },
     {
       "name": "Stealth Founder",
@@ -1780,93 +3507,6 @@
       "company_url": "scaler.com"
     },
     {
-      "name": "Pablo V",
-      "new_today": false,
-      "badges": [],
-      "first_surfaced": "2026-07-03",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "OVO",
-      "previous_title": "",
-      "current_company": "",
-      "location": "Southeast Asia",
-      "sector": "Technology",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Pablo V's LinkedIn indicates a potential founder role, but further investigation is needed to verify his experience, seniority, and the nature of the company he is building.",
-      "linkedin_url": "https://www.linkedin.com/in/pablo-v-578b131bb",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-OVO. Current LinkedIn headline: \"Pablo V. - Founder & CEO at OBE Group | Technology ... - LinkedIn\"",
-          "url": "https://www.linkedin.com/in/pablo-v-578b131bb"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "LinkedIn indicates a founder role"
-      ],
-      "risks": [
-        "Lack of verified experience and seniority",
-        "No previous exit or L1/L2 title departure",
-        "Unknown geography"
-      ],
-      "company_url": "ovo.id"
-    },
-    {
-      "name": "Ishita Shah",
-      "new_today": false,
-      "badges": [],
-      "first_surfaced": "2026-07-03",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "OVO",
-      "previous_title": "",
-      "current_company": "",
-      "location": "Southeast Asia",
-      "sector": "AI",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Ishita Shah's LinkedIn indicates a transition to a founder role with a focus on AI product leadership, suggesting potential interest in AI-driven products. However, the lack of verified experience and background information requires further investigation.",
-      "linkedin_url": "https://www.linkedin.com/in/ishitaa-shah",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-OVO. Current LinkedIn headline: \"Ishita Shah - AI Product Leader | Building Reliable, Safety ...\"",
-          "url": "https://www.linkedin.com/in/ishitaa-shah"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "AI Product Leadership"
-      ],
-      "risks": [
-        "Lack of verified experience",
-        "Unknown background"
-      ],
-      "company_url": "ovo.id"
-    },
-    {
       "name": "Sadiq Ali Momin",
       "new_today": false,
       "badges": [
@@ -1911,18 +3551,138 @@
         "No evidence of prior exits or significant seniority"
       ],
       "company_url": "zomato.com"
+    },
+    {
+      "name": "Pritam Roy",
+      "new_today": false,
+      "badges": [
+        "Ex-unicorn/top co"
+      ],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": true,
+      "investment_thesis": "Pritam Roy's background at CRED, Rippling, and Vymo suggests a strong operational track record, and his transition to a founder role could indicate a new venture aligned with his expertise. Further investigation is warranted to validate his experience, sector focus, and the potential of the new venture.",
+      "linkedin_url": "https://www.linkedin.com/in/pritamroy1",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Pritam Roy - Co-Founder @ Fibr | ex-CRED, Rippling, Vymo\"",
+          "url": "https://www.linkedin.com/in/pritamroy1"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "second_time_founder",
+      "key_strengths": [
+        "Experience at multiple notable companies",
+        "Potential for leveraging past network"
+      ],
+      "risks": [
+        "Lack of verified experience years",
+        "Unknown sector fit",
+        "Potential for high competition in the market"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Barath Thangaraj",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Barath Thangaraj has indicated a move to a stealth startup, but without verified experience or sector details, the investment thesis is unclear at this stage.",
+      "linkedin_url": "https://www.linkedin.com/in/baraththangaraj",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Barath Thangaraj - Stealth Startup | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/baraththangaraj"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline"
+      ],
+      "risks": [
+        "Lack of verified experience",
+        "Unknown sector",
+        "Potential for misrepresentation"
+      ],
+      "company_url": ""
     }
   ],
   "source_breakdown": {
+    "linkedin": 76,
+    "verification": 5,
+    "Product Hunt": 1,
     "news": 4,
-    "linkedin": 37,
-    "yc": 2,
-    "verification": 2
+    "yc": 2
   },
   "score_threshold": 40,
   "intelligence": {
     "ai_ml": {
       "articles": [
+        {
+          "title": "Voice agents, demystified: STT+TTS and 4 demo agents you can talk to in the browser + build yours with RAG and Tools",
+          "url": "https://www.reddit.com/r/artificial/comments/1umd2rs/voice_agents_demystified_stttts_and_4_demo_agents/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-03T12:25:18+00:00",
+          "summary": "I added voice to AgentSwarms! You can create voice agents using a few clicks and talk to it in the browser — and you can try 4 demo voice agents right now, no setup, just tap the mic. Here's how it works and why it turned out to be less &quot;new&quot; than I expected. The surprise building this: a "
+        },
+        {
+          "title": "I created the world's first AI human and open sourced it",
+          "url": "https://www.reddit.com/r/artificial/comments/1umcws4/i_created_the_worlds_first_ai_human_and_open/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-03T12:17:33+00:00",
+          "summary": "What is Emota? Emota is, in short, an AI bot that is indistinguishable from a human in normal and nuanced conversation. It uses discord as its means to communicate. You can talk to it on the discord.  Can I host it on my own system? Yes. Emota is open source with a non commercial license.  Is it act"
+        },
+        {
+          "title": "Andrew Ng: \"In 3-6 months, everyone will be using self-improving loops. No more prompting”",
+          "url": "https://www.reddit.com/r/artificial/comments/1umcprg/andrew_ng_in_36_months_everyone_will_be_using/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-03T12:08:15+00:00",
+          "summary": "Andrew Ng recently said: &quot;100% of my tasks are now done by AI agents. Hype has exceeded my expectations. Loops is next step. In 3-6 months, everyone will be using self-improving loops. No more prompting.&quot; I think he's not too far off, you can already see the shift happening, people are mov"
+        },
+        {
+          "title": "Will persistent memory become a standard feature in consumer AI over the next few years?",
+          "url": "https://www.reddit.com/r/artificial/comments/1umc6ty/will_persistent_memory_become_a_standard_feature/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-03T11:43:09+00:00",
+          "summary": "Many current AI systems are becoming better at maintaining context within a conversation, but long-term memory is still handled very differently across platforms. Some people want AI to remember preferences and past interactions to create a more personalized experience, while others prefer every con"
+        },
         {
           "title": "Tested 4 brand new frontier models (2 Chinese, 1 diffusion, 1 agent-focused) with a riddle that has no logical shortcut. One of them fabricated sources four times in a row.",
           "url": "https://www.reddit.com/r/artificial/comments/1umc2gt/tested_4_brand_new_frontier_models_2_chinese_1/",
@@ -1943,6 +3703,20 @@
           "source": "reddit.com",
           "pub_date": "2026-07-03T11:17:35+00:00",
           "summary": "This new paper develops an information-processing theory of consciousness and uses it to identify how consciousness can be instantiated in AI, paving the way for genuine AGI and beyond (the paper demonstrates that conscious functioning is the missing ingredient that enables a toddler to navigate an "
+        },
+        {
+          "title": "Apple TV is hitting its stride",
+          "url": "https://www.theverge.com/entertainment/960985/apple-tv-hits-2026",
+          "source": "theverge.com",
+          "pub_date": "2026-07-03T08:00:00-04:00",
+          "summary": "Since its inception, Apple TV, n&#233;e Apple TV Plus, has built a reputation on quality over quantity. It has far fewer shows and movies than the likes of Netflix or Disney Plus, but generally speaking, the projects it does put out are quite good. It's a strategy that has brought comparisons to the"
+        },
+        {
+          "title": "A behind-the-scenes look at Midjourney’s medical scanner leaves many questions unanswered",
+          "url": "https://www.theverge.com/ai-artificial-intelligence/961265/midjourney-medical-ultrasound-scanner-behind-the-scenes-video",
+          "source": "theverge.com",
+          "pub_date": "2026-07-03T07:49:10-04:00",
+          "summary": "Midjourney has shown more of its futuristic medical scanner. It still hasn't shown much proof it works. The AI startup, best known for generating images, released a behind-the-scenes video of its dunk-tank ultrasound scanner, which it plans to deploy in spas and hopes will transform medicine with ch"
         },
         {
           "title": "Team-lead told me to Ai-ify the contract review process and i discovered this when i got in there",
@@ -1966,32 +3740,11 @@
           "summary": "A government customer of NSO Group used the company's Pegasus spyware to hack into the phone of a European politician, who at the time was serving on an EU committee tasked with investigating the spyware industry."
         },
         {
-          "title": "If you had an unlimited amount of tokens and limitless context, what would you build?",
-          "url": "https://www.reddit.com/r/artificial/comments/1um2l8t/if_you_had_an_unlimited_amount_of_tokens_and/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-03T03:01:21+00:00",
-          "summary": "Today tokens amount and the context size are two of the most limiting things for AI (while the capabilities are slowly growing). And these limitations influence the whole technological progress. But if you had unlimited amount of tokens and would be able to run a model with as large context as you w"
-        },
-        {
           "title": "Why does AI love the em dash (—)??",
           "url": "https://www.reddit.com/r/artificial/comments/1um1gd5/why_does_ai_love_the_em_dash/",
           "source": "reddit.com",
           "pub_date": "2026-07-03T02:06:22+00:00",
           "summary": "Never getting over the fact that AI has claimed the em-dash. My favorite punctuation to use, and now all of the sudden it’s a dead giveaway of AI use. Now I find myself changing it to a hyphen or en-dash (even though it makes less grammatical sense to do so) to avoid the AI accusations. Does anyone "
-        },
-        {
-          "title": "Cheap and privacy-friendly AI for API usage?",
-          "url": "https://www.reddit.com/r/artificial/comments/1um0wr8/cheap_and_privacyfriendly_ai_for_api_usage/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-03T01:40:55+00:00",
-          "summary": "Hi, I am doing a project and I want an AI to be used via API which is privacy-friendly. Although I like Deepseek, it seems they use the prompts for learning etc, so it would be a big no for my project as it handles user info.  &#32; submitted by &#32;  /u/Designer_Holiday3284   [link] &#32; [comment"
-        },
-        {
-          "title": "Best AI for learning bedroom music production?",
-          "url": "https://www.reddit.com/r/artificial/comments/1um04fw/best_ai_for_learning_bedroom_music_production/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-03T01:03:21+00:00",
-          "summary": "Hope this is the right place to ask. I basically want to learn the Reaper DAW and the fundamentals of putting together a bass music track. I'm learning from absolute scratch, and I've been wondering about having AI as a mentor. I've got free accounts on Claude and Chatgpt. Would either of these serv"
         },
         {
           "title": "Enterprises lost Claude Fable 5 for a few weeks. New data shows two-thirds had already built their hedge",
@@ -2190,13 +3943,6 @@
           "summary": "True Anomaly and Rocket Lab are performing Top Gun-style satellite fly-bys for the U.S. military."
         },
         {
-          "title": "I used I-JEPA to generate SVG's and here is my code!",
-          "url": "https://www.reddit.com/r/artificial/comments/1ulw51g/i_used_ijepa_to_generate_svgs_and_here_is_my_code/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-02T22:06:56+00:00",
-          "summary": "You may be familiar with Yann LeCunn's idea of JEPA and how it may be the real future of the artificial intelligence.  I was reading the articles and watching his work on the topic and I was like it is one thing I could always use in my project of &quot;SVG generation&quot;. Well, before that I used"
-        },
-        {
           "title": "Thiel Capital’s Jack Selby nabs stakes in hot startups like Etched through Arizona connections",
           "url": "https://techcrunch.com/2026/07/02/thiel-capitals-jack-selby-nabs-stakes-in-hot-startups-like-etched-through-arizona-connections/",
           "source": "techcrunch.com",
@@ -2328,23 +4074,9 @@
           "source": "theverge.com",
           "pub_date": "2026-07-02T11:50:26-04:00",
           "summary": "For a few days, it seemed like Universal decided that there would be no advanced screenings of Christopher Nolan's The Odyssey for influencers. But on Monday, influencers sat alongside traditional critics and journalists at special showings of The Odyssey specifically for the associated press junket"
-        },
-        {
-          "title": "Godox’s feature-packed key light is down to its best price yet",
-          "url": "https://www.theverge.com/gadgets/960664/godox-key-light-elgato-insta360-deal-sale",
-          "source": "theverge.com",
-          "pub_date": "2026-07-02T11:00:00-04:00",
-          "summary": "If you don’t want to spend $180 on the Elgato Key Light, the Godox ES45 Desktop LED Key Light is a more affordable option that offers nearly as much brightness and plenty of features, including adjustable brightness and color temperature. Right now, it’s cheaper than usual for the first time this ye"
-        },
-        {
-          "title": "Tesla&#8217;s Q2 sales jump 25 percent",
-          "url": "https://www.theverge.com/transportation/957685/tesla-q2-2026-sales-production-delivery-report",
-          "source": "theverge.com",
-          "pub_date": "2026-07-02T10:14:48-04:00",
-          "summary": "Tesla just released its second-quarter delivery and production report, showing that the automaker is starting to recover after a particularly brutal sales year in 2025. The company said that it produced a total of 451,758 vehicles between April and June of this year, including 442,936 Model 3 and Mo"
         }
       ],
-      "cached_at": "2026-07-03T11:42:51.982975"
+      "cached_at": "2026-07-03T12:39:57.813564"
     },
     "india_sea": {
       "articles": [
@@ -2377,6 +4109,34 @@
           "summary": "Fintech unicorn Moneyview has received SEBI’s approval to proceed with its proposed IPO. The regulator issued a final observation letter&#8230;"
         },
         {
+          "title": "‘Give him any award, and he’ll come running’: Narendra Modi racks up honours on overseas trips",
+          "url": "https://www.reddit.com/r/india/comments/1um9njk/give_him_any_award_and_hell_come_running_narendra/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-03T09:26:51+00:00",
+          "summary": "&#32; submitted by &#32;  /u/No-Strawberry7   [link] &#32; [comments]"
+        },
+        {
+          "title": "Garuda Aerospace, Micron Instruments join forces to expand indigenous defence drone capabilities",
+          "url": "https://yourstory.com/2026/07/garuda-aerospace-micron-instruments-indigenous-defence-drone-capabilities",
+          "source": "yourstory.com",
+          "pub_date": "2026-07-03T08:06:48+00:00",
+          "summary": "Under the agreement, the two companies will collaborate on product distribution, joint technology development and defence-focused projects. Their combined expertise is expected to support the development of loitering munitions, and payload-enabled unmanned aerial vehicles."
+        },
+        {
+          "title": "Petrol, diesel prices to fall only after cheaper crude oil reaches Indian refiners: Hardeep Puri",
+          "url": "https://www.reddit.com/r/india/comments/1um85i7/petrol_diesel_prices_to_fall_only_after_cheaper/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-03T07:57:51+00:00",
+          "summary": "&#32; submitted by &#32;  /u/Iron_Spine_phoenix   [link] &#32; [comments]"
+        },
+        {
+          "title": "Yati Narsinghanand’s aide Anil Yadav calls for ‘annihilation’ of Muslims at Mahapanchayat",
+          "url": "https://www.reddit.com/r/india/comments/1um80k8/yati_narsinghanands_aide_anil_yadav_calls_for/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-03T07:49:43+00:00",
+          "summary": "&#32; submitted by &#32;  /u/Aggressive-Gene-9663   [link] &#32; [comments]"
+        },
+        {
           "title": "Sprout Solutions’ State of HR Summit 2026 focused on people-first AI transformation",
           "url": "https://e27.co/sprout-solutions-state-of-hr-summit-2026-focused-on-people-first-ai-transformation-20260703/",
           "source": "e27.co",
@@ -2398,6 +4158,20 @@
           "summary": "Eight months in, they&#8217;re looking to set up a physical stall to meet growing demand When brothers Gary Wong, 32, and James Wong, 31, were growing up, food was always part of their lives. They were born into a family of cooks who ran dim sum and zi char stalls, though those ventures never quite "
         },
         {
+          "title": "\"A ₹650-Crore Scam Has Come to Light in the Delhi Govt's Health Department\": Sanjay Singh | CM Rekha",
+          "url": "https://www.reddit.com/r/india/comments/1um7dtz/a_650crore_scam_has_come_to_light_in_the_delhi/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-03T07:11:42+00:00",
+          "summary": "&#32; submitted by &#32;  /u/Embarrassed_Look9200   [link] &#32; [comments]"
+        },
+        {
+          "title": "Kerala Man Suffers Heart Attack In Traffic. 2 Nurses Jump Off Bus, Save Him",
+          "url": "https://www.reddit.com/r/india/comments/1um7clx/kerala_man_suffers_heart_attack_in_traffic_2/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-03T07:09:47+00:00",
+          "summary": "&#32; submitted by &#32;  /u/AstronautEcstatic177   [link] &#32; [comments]"
+        },
+        {
           "title": "RBI Calls Cryptocurrency A Threat To Economy, Opposes Its Legalisation",
           "url": "https://inc42.com/buzz/rbi-calls-cryptocurrency-a-threat-to-economy-opposes-its-legalisation/",
           "source": "inc42.com",
@@ -2405,11 +4179,25 @@
           "summary": "Reiterating its long-standing opposition to virtual digital assets (VDAs), the RBI told a parliamentary panel that cryptocurrencies pose a threat&#8230;"
         },
         {
+          "title": "FSSAI crackdown on energy drink brands; issues notices to Red Bull, Pepsico, others",
+          "url": "https://www.reddit.com/r/india/comments/1um6dao/fssai_crackdown_on_energy_drink_brands_issues/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-03T06:14:44+00:00",
+          "summary": "&#32; submitted by &#32;  /u/NoPermission6093   [link] &#32; [comments]"
+        },
+        {
           "title": "How Nudge Is Reinventing Ecommerce For The Agentic AI Era",
           "url": "https://inc42.com/startups/how-nudge-is-reinventing-ecommerce-for-the-agentic-ai-era/",
           "source": "inc42.com",
           "pub_date": "2026-07-03T05:58:53+00:00",
           "summary": "The way people discover products online is changing fast, and ecommerce brands are struggling to keep up. Instead of scrolling&#8230;"
+        },
+        {
+          "title": "Bengaluru daycare horror: Whistleblower who exposed abuse was sacked after reporting incident",
+          "url": "https://www.reddit.com/r/india/comments/1um62gv/bengaluru_daycare_horror_whistleblower_who/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-03T05:58:22+00:00",
+          "summary": "&#32; submitted by &#32;  /u/Accomplished-Ad539   [link] &#32; [comments]"
         },
         {
           "title": "PB Fintech Slumps Over 8% After ₹1,741 Cr Block Deal",
@@ -2433,6 +4221,13 @@
           "summary": "When you look at the digital asset market, it has climbed 2.47 per cent to reach a total capitalisation of US$2.13 trillion in 24 hours. You might mistake this sudden upward movement for a fundamental shift in blockchain utility. I want to say this again: this is a classic macroeconomic relief rally"
         },
         {
+          "title": "Mumbai-Ahmedabad Highway News: Over 15 Vehicles Crash Within Minutes Due To Massive Potholes",
+          "url": "https://www.reddit.com/r/india/comments/1um52t4/mumbaiahmedabad_highway_news_over_15_vehicles/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-03T05:06:21+00:00",
+          "summary": "&#32; submitted by &#32;  /u/Leather-Tradition482   [link] &#32; [comments]"
+        },
+        {
           "title": "TikTok confirms layoffs in Singapore amid global restructuring",
           "url": "https://vulcanpost.com/912106/tiktok-singapore-layoffs-2026/",
           "source": "vulcanpost.com",
@@ -2454,11 +4249,32 @@
           "summary": "Udaan’s Insolvency Crisis Udaan has run into a fresh crisis. Overseas creditors have initiated insolvency proceedings against the B2B ecommerce&#8230;"
         },
         {
+          "title": "They Are Using Ethanol In Racing Cars: Oil Minister Hardeep Puri",
+          "url": "https://www.reddit.com/r/india/comments/1um1far/they_are_using_ethanol_in_racing_cars_oil/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-03T02:04:58+00:00",
+          "summary": "&#32; submitted by &#32;  /u/halwaandflowers   [link] &#32; [comments]"
+        },
+        {
+          "title": "Rebound in venture capital inflow; How Addverb built an intralogistics biz",
+          "url": "https://yourstory.com/2026/07/rebound-in-venture-capital-inflow-how-addverb-built-an-intralogistics-biz",
+          "source": "yourstory.com",
+          "pub_date": "2026-07-03T02:00:00+00:00",
+          "summary": "VC funding into Indian startups for the first six months of the year touched $6.9 billion, raising hopes that capital inflow will surpass 2025 levels by the end of the year. Meanwhile, Noida-based Addverb has grown alongside India's warehouse automation industry."
+        },
+        {
           "title": "Singapore, AI, and the rise of emotional outsourcing",
           "url": "https://e27.co/singapore-ai-and-the-rise-of-emotional-outsourcing-20260701/",
           "source": "e27.co",
           "pub_date": "2026-07-03T02:00:00+00:00",
           "summary": "People used to ask AI for help with parts of modern life, like making an email sound less annoyed or explaining a spreadsheet formula without forcing anyone to revisit their relationship with mathematics. Lately, the exchange has become more intimate. The same tools built to summarise, draft and opt"
+        },
+        {
+          "title": "Sri Ganganagar rape case: Rajasthan girl, 13, sold to hotel owner, raped by 30 men over 5 days",
+          "url": "https://www.reddit.com/r/india/comments/1um173d/sri_ganganagar_rape_case_rajasthan_girl_13_sold/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-03T01:54:39+00:00",
+          "summary": "&#32; submitted by &#32;  /u/AssMilker9000   [link] &#32; [comments]"
         },
         {
           "title": "Why Compute Futures make sense even in a deflationary market",
@@ -2545,11 +4361,11 @@
           "summary": "Eternal&#8217;s quick commerce arm Blinkit&#8217;s expansion into Meghalaya has hit a road block.  As per a report by PTI, Meghalaya&#8217;s&#8230;"
         },
         {
-          "title": "Startup news and updates: daily roundup (July 2, 2026)",
-          "url": "https://yourstory.com/2026/07/startup-news-and-updates-daily-roundup-july-2-2026",
+          "title": "India's EV transition to build sustainable industrial ecosystem: Minister",
+          "url": "https://yourstory.com/2026/07/india-ev-transition-build-sustainable-industrial-ecosystem-minister",
           "source": "yourstory.com",
-          "pub_date": "2026-07-02T11:39:52+00:00",
-          "summary": "YourStory presents the daily news roundup from the Indian startup ecosystem and beyond. Here's the roundup for Thursday, July 2, 2026."
+          "pub_date": "2026-07-02T11:32:16+00:00",
+          "summary": "Environment Minister Bhupender Yadav said India's shift to electric mobility is about building a sustainable industrial ecosystem that boosts manufacturing, creates green jobs and supports the vision of Viksit Bharat by 2047."
         },
         {
           "title": "WhatsApp says claims of people reserving popular, well-known usernames false",
@@ -2566,18 +4382,18 @@
           "summary": "Healthcare is a long game For most Singaporeans, Raffles Medical is a familiar name. The healthcare group has built a reputation as one of Singapore&#8217;s most established private medical providers. But behind the scenes, the company has spent the last decade chasing a much bigger ambition. Rather"
         },
         {
+          "title": "Bhavin Turakhia launches AI-native work platform Neo with $30M investment",
+          "url": "https://yourstory.com/2026/07/bhavin-turakhia-ai-native-work-platform-neo-30m-investment",
+          "source": "yourstory.com",
+          "pub_date": "2026-07-02T08:40:15+00:00",
+          "summary": "Neo aims to bring work, knowledge, and execution into a single AI-native platform as enterprises look to move beyond fragmented AI tools and improve productivity."
+        },
+        {
           "title": "SEA is growing up fast, but enterprise fitness tech still has homework to do",
           "url": "https://e27.co/sea-is-growing-up-fast-but-enterprise-fitness-tech-still-has-homework-to-do-20260702/",
           "source": "e27.co",
           "pub_date": "2026-07-02T08:02:37+00:00",
           "summary": "As FitnessForce folds into US-based Daxko, the more interesting story is not the deal itself but what happens after it. Can a company built around the messy realities of India and the Gulf keep its product edge inside a larger US software group? In this edited Q&#38;A with e27, Hadi Curtay, former C"
-        },
-        {
-          "title": "He bought a ₹3.5 lakh bank server. Now he makes ₹27 lakh a month with AI",
-          "url": "https://yourstory.com/2026/07/bangalore-coder-cheap-server-ai-income",
-          "source": "yourstory.com",
-          "pub_date": "2026-07-02T06:48:13+00:00",
-          "summary": "Raj is 27, writes code in a one bedroom flat in Bangalore, and a few months ago he did something almost nobody thinks to do."
         },
         {
           "title": "Future-ready teaching: How AI is transforming education in India",
@@ -2594,11 +4410,11 @@
           "summary": "At Atlassian Unleash, leaders examined how organisations must rebuild workflows, accountability and engineering foundations as software creation accelerates from open agentic infrastructure to context-aware enterprise AI."
         },
         {
-          "title": "Govt asks WhatsApp to halt username rollout, issues notice to Meta",
-          "url": "https://yourstory.com/2026/07/govt-whatsapp-halt-username-rollout-issues-notice-meta",
+          "title": "Michael Cronin wants Couchbase APAC to win the AI data race",
+          "url": "https://yourstory.com/2026/07/michael-cronin-couchbase-apac-ai-data-growth",
           "source": "yourstory.com",
-          "pub_date": "2026-07-02T05:00:18+00:00",
-          "summary": "The Centre has asked Meta to pause WhatsApp's username rollout in India over concerns it could enable impersonation, phishing and fraud, and has sought a detailed explanation within three days."
+          "pub_date": "2026-07-02T05:41:34+00:00",
+          "summary": "Michael Cronin, Managing Director for Asia Pacific at Couchbase, is driving regional growth by building high-performing teams and expanding the company's presence."
         },
         {
           "title": "Indian startups raise $6.9B in H1 2026 as VC funding rebounds",
@@ -2608,25 +4424,25 @@
           "summary": "Venture capital funding into Indian startups for the first six months of the year touched $6.9 billion, raising hopes that capital inflow will surpass 2025 levels by the end of the year."
         },
         {
-          "title": "Turning parents into co-therapists; Atomgrid’s big bet on speciality chemicals",
-          "url": "https://yourstory.com/2026/07/turning-parents-into-co-therapists",
-          "source": "yourstory.com",
-          "pub_date": "2026-07-02T02:00:00+00:00",
-          "summary": "Mom’s Belief is a for-profit social enterprise focused on children with neurodevelopmental disorders. Its parent-as-co-therapist model trains parents to actively support their child’s development."
-        },
-        {
-          "title": "Ananta Capital acquires majority stake in hygiene brand Phitku",
-          "url": "https://yourstory.com/2026/07/ananta-capital-acquires-majority-stake-in-hygiene-brand-phitku",
-          "source": "yourstory.com",
-          "pub_date": "2026-07-01T15:41:00+00:00",
-          "summary": "Phitku’s founders, Sumit Marda, Neha Marda and Rahul Dokania, will continue to lead the company and retain a significant shareholding."
-        },
-        {
           "title": "Who knew S’pore makes Greek yoghurt? This biz produces 4,000kg/mth & supplies luxury hotels",
           "url": "https://vulcanpost.com/912039/annies-all-natural-yoghurt-singapore/",
           "source": "vulcanpost.com",
           "pub_date": "2026-07-01T08:38:35+00:00",
           "summary": "⁠⁠This couple couldn&#8217;t find good Greek yoghurt in S’pore, so they built a factory from scratch Most yoghurt consumed in Singapore has travelled thousands of kilometres before it reaches the fridge. It typically starts at a dairy farm in Europe, Australia, or the United States, before being pro"
+        },
+        {
+          "title": "Ask India Thread",
+          "url": "https://www.reddit.com/r/india/comments/1ukeupo/ask_india_thread/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-01T07:30:09+00:00",
+          "summary": "Welcome to r/India's Ask India Thread.  If you have any queries about life in India (or life as Indians), this is the thread for you.  Please keep in mind the following rules:  Top level comments are reserved for queries. No political posts. Relationship queries belong in /r/RelationshipIndia. Pleas"
+        },
+        {
+          "title": "Mental & Emotional Health Support Thread",
+          "url": "https://www.reddit.com/r/india/comments/1ukeupe/mental_emotional_health_support_thread/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-01T07:30:08+00:00",
+          "summary": "Welcome to /r/India's mental and emotional health support thread.  If you are struggling and are looking for support, please use this thread to discuss your issues with other members of /r/India.  Please keep in point the following rules:  Be kind. Harsh language and rudeness will not be tolerated i"
         },
         {
           "title": "WhyQ spent a decade pivoting. It might have finally found the model that works.",
@@ -2671,7 +4487,7 @@
           "summary": "Disclaimer: Unless otherwise stated, any opinions expressed below belong solely to the author. For the past few years, my commentary on regional ecommerce has revolved around the competition between Shopee and Lazada. The ambitious upstart from Singapore ended up pushing out the former market leader"
         }
       ],
-      "cached_at": "2026-07-03T11:42:51.982975"
+      "cached_at": "2026-07-03T12:39:57.813564"
     },
     "emerging": {
       "articles": [
@@ -2688,27 +4504,6 @@
           "source": "wired.com",
           "pub_date": "2026-07-03T11:00:00+00:00",
           "summary": "Thanks to the AI-driven chip shortage, prices for phones, computers, and consoles are sky-high—and still climbing."
-        },
-        {
-          "title": "Can an open-source to be a startup, or it's volunteering? - i will not promote",
-          "url": "https://www.reddit.com/r/startups/comments/1umb1gr/can_an_opensource_to_be_a_startup_or_its/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-03T10:44:06+00:00",
-          "summary": "I'm building open-source tools for developers AI friendly like API, Database clients and I'm interesting to know does it means I build a startup or is something else? And if it's not startup should I build it like what? I mean what the strategy should I choose? I do not have revenue at at least for "
-        },
-        {
-          "title": "Is VC just a rich people's game with better branding? I Will Not Promote",
-          "url": "https://www.reddit.com/r/startups/comments/1umb0w3/is_vc_just_a_rich_peoples_game_with_better/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-03T10:43:16+00:00",
-          "summary": "The more news I read online about famous startups getting funded by famous companies, the more I'm struck by a chicken-or-egg question: when a famous VC backs a company, and it takes off, was it really a good deal, so the VC funded it and helped it get to the next level? Or is it because of the top-"
-        },
-        {
-          "title": "\"i will not promote\" Solo founders: what's the thing you do manually that you hate but haven't fixed yet?",
-          "url": "https://www.reddit.com/r/startups/comments/1umatdg/i_will_not_promote_solo_founders_whats_the_thing/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-03T10:32:00+00:00",
-          "summary": "Building something for pre-launch founders and trying to find the pain that's real enough to actually solve. I've heard: manually updating a runway spreadsheet every week, copy-pasting customer notes into a half-dead CRM, writing OKRs in Q1 and never looking at them again. What's yours?  &#32; submi"
         },
         {
           "title": "7 Best Phones You Can’t Buy in the US (2026)",
@@ -2753,25 +4548,11 @@
           "summary": "In September, some PlayStation customers will no longer be able to access some purchased movies and shows. It underscores the fact that digital purchases are really more like long-term rentals."
         },
         {
-          "title": "Feedback Friday",
-          "url": "https://www.reddit.com/r/startups/comments/1um4yk7/feedback_friday/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-03T05:00:25+00:00",
-          "summary": "Welcome to this week’s Feedback Thread! Please use this thread appropriately to gather feedback:  Feel free to request general feedback or specific feedback in a certain area like user experience, usability, design, landing page(s), or code review You may share surveys You may make an additional req"
-        },
-        {
           "title": "EU Politicians Investigated Pegasus Spyware. Then It Ended Up on One of Their Phones",
           "url": "https://www.wired.com/story/eu-politicians-investigated-pegasus-spyware-then-it-ended-up-on-one-of-their-phones/",
           "source": "wired.com",
           "pub_date": "2026-07-03T05:00:00+00:00",
           "summary": "“It is a direct attack on the rule of law,” says one European Parliament member of the new findings from Citizen Lab."
-        },
-        {
-          "title": "When does a founder want to add employee #2? I will not promote",
-          "url": "https://www.reddit.com/r/startups/comments/1um17mf/when_does_a_founder_want_to_add_employee_2_i_will/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-03T01:55:20+00:00",
-          "summary": "I discovered a former colleague (we did not work together on a project) that is technical and building a really cool product. I would love to support and be part of this person's/company's growth journey early on (I think it's a brilliant idea). What is the best way to approach this person and ask i"
         },
         {
           "title": "Last chance to apply — Startup Battlefield Australia applications close July 6",
@@ -2788,20 +4569,6 @@
           "summary": "The satirical site is fighting to officially take over Infowars. In the meantime, CEO Ben Collins says the new show will mock “how fucking stupid” conspiratorial brain rot has become."
         },
         {
-          "title": "Startups that accept unpaid interns?( I will not promote)",
-          "url": "https://www.reddit.com/r/startups/comments/1ulyee0/startups_that_accept_unpaid_interns_i_will_not/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-02T23:43:19+00:00",
-          "summary": "&#x200b; I am a second year computer engineering student not northern america based I am looking for a remote internship to gain experience and skill not looking to get paid . I have a couple of backend projects in springboot and python I just want to learn and get used to the work environment. I ca"
-        },
-        {
-          "title": "Looking for experience [I will not promote]",
-          "url": "https://www.reddit.com/r/startups/comments/1ulwdvh/looking_for_experience_i_will_not_promote/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-02T22:16:48+00:00",
-          "summary": "I'm an incoming senior in college studying computer science and informatics looking to gain experience in product management, or in similar roles such as user research. I'm comfortable working with ambiguous problems and turning research into actionable product decisions. I've worked on projects int"
-        },
-        {
           "title": "How Big Is ‘Love Island USA’? More Than 10 Million People Are Already on Its App",
           "url": "https://www.wired.com/story/love-island-usa-app/",
           "source": "wired.com",
@@ -2816,39 +4583,11 @@
           "summary": "IQM, a full-stack quantum company out of Finland, went public on the Nasdaq today at a valuation of about $1.9 billion."
         },
         {
-          "title": "Why not found a hard-tech startup? (i will not promote)",
-          "url": "https://www.reddit.com/r/startups/comments/1ulr5d5/why_not_found_a_hardtech_startup_i_will_not/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-02T18:56:18+00:00",
-          "summary": "Didn’t find much discussion of this online, so was hoping to start some here. For people who have founded hard-tech startups in particular: what were the worst experiences you faced? What parts of the hard-tech startup reality would make you tell someone to get as far away as possible?  &#32; submit"
-        },
-        {
-          "title": "I will not promote. I know people want my product but not if my customers want to buy. How to navigate?",
-          "url": "https://www.reddit.com/r/startups/comments/1ulqq9k/i_will_not_promote_i_know_people_want_my_product/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-02T18:41:10+00:00",
-          "summary": "Context: I am building a sizing tool for in store retail fashion to get you correct size in 30 seconds or less. I have had people try it out and love it but I am not sure if retail owners are willing to pay for this solution since it's not vital in any way. Has anyone been in a similar b2b situation"
-        },
-        {
           "title": "Spotify Confirms Streaming Fraud After Kalshi Trader Cries Foul",
           "url": "https://www.wired.com/story/spotify-streaming-manipulation-prediction-markets-polymarket-kalshi/",
           "source": "wired.com",
           "pub_date": "2026-07-02T18:30:59+00:00",
           "summary": "One of Kalshi’s most prominent traders tells WIRED he’s swearing off Spotify-related markets until the issue is resolved."
-        },
-        {
-          "title": "building was the easy part, distribution is giving me hell. \"i will not promote\"",
-          "url": "https://www.reddit.com/r/startups/comments/1ulogfn/building_was_the_easy_part_distribution_is_giving/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-02T17:19:06+00:00",
-          "summary": "i have been trying, i am posting , i am commenting, nothing. Nothing at all. i hear people talking about their first their first 100 users, i am out here struggling to even get my first user. Is there some kinda script manual um not getting? Coz when i make a post i genuinely get a maximum of 3 upvo"
-        },
-        {
-          "title": "idea validation confusion - i will not promote",
-          "url": "https://www.reddit.com/r/startups/comments/1ulk60l/idea_validation_confusion_i_will_not_promote/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-02T14:41:12+00:00",
-          "summary": "TL,DR: lengthy since first time startup. idea seems good on paper but i dont think we ve done thorough idea validation. cofounder thinks the idea is good and that im overthinking. Hi all, a bit of background: my friend and I recently created this startup (our first ever) with the vision of building "
         },
         {
           "title": "America's Next 250",
@@ -3094,24 +4833,87 @@
           "source": "climatetechvc.org",
           "pub_date": "2026-05-01T16:49:46+00:00",
           "summary": "Blackjack is one of the few casino games where decisions directly affect the outcome. Unlike pure chance games, players can\nThe post Blackjack Basic Strategy Explained: Minimizing the House Edge appeared first on Mahadev Book."
+        },
+        {
+          "title": "How To Withdraw Money From Mahadev Book In 5 Minutes?",
+          "url": "https://climatetechvc.org/how-to-withdraw-money-from-mahadev-book-in-5-minutes/",
+          "source": "climatetechvc.org",
+          "pub_date": "2026-05-01T16:49:39+00:00",
+          "summary": "Online betting platforms like Mahadev Book have made deposits simple, but withdrawals still require clarity and correct execution. Many users\nThe post How To Withdraw Money From Mahadev Book In 5 Minutes? appeared first on Mahadev Book."
+        },
+        {
+          "title": "Agent, Know Thyself! (and bid accordingly)",
+          "url": "https://www.strangeloopcanon.com/p/agent-know-thyself-and-bid-accordingly",
+          "source": "strangeloopcanon.com",
+          "pub_date": "2026-04-27T15:03:23+00:00",
+          "summary": "why we need to train models to learn their own capabilities, and how this will help them bid for work!"
+        },
+        {
+          "title": "Aligned Agents Still Build Misaligned Organisations",
+          "url": "https://www.strangeloopcanon.com/p/when-aligned-agents-build-misaligned",
+          "source": "strangeloopcanon.com",
+          "pub_date": "2026-04-24T17:01:41+00:00",
+          "summary": "agent handoffs launder uncertainty into official truth"
+        },
+        {
+          "title": "Deciphering Papyri",
+          "url": "https://www.strangeloopcanon.com/p/deciphering-papyri",
+          "source": "strangeloopcanon.com",
+          "pub_date": "2026-04-24T06:14:05+00:00",
+          "summary": "analysing bureaucracy in roman egypt"
+        },
+        {
+          "title": "LLM Enron: experiments on structure vs scale",
+          "url": "https://www.strangeloopcanon.com/p/llm-enron-experiments-on-structure",
+          "source": "strangeloopcanon.com",
+          "pub_date": "2026-04-24T06:09:47+00:00",
+          "summary": "can AI agents work inside a real organisation?"
+        },
+        {
+          "title": "Can we build a management flight simulator?",
+          "url": "https://www.strangeloopcanon.com/p/can-we-build-a-management-flight",
+          "source": "strangeloopcanon.com",
+          "pub_date": "2026-04-20T12:02:56+00:00",
+          "summary": "turns out, yes"
+        },
+        {
+          "title": "Is The Mahadev Book Popular in India? Why It Is Dominating in 2026",
+          "url": "https://climatetechvc.org/is-mahadev-book-popular-in-india/",
+          "source": "climatetechvc.org",
+          "pub_date": "2026-02-23T18:21:58+00:00",
+          "summary": "Online betting in India has grown at a rapid pace. Cricket remains the biggest driver of this growth. During major\nThe post Is The Mahadev Book Popular in India? Why It Is Dominating in 2026 appeared first on Mahadev Book."
+        },
+        {
+          "title": "How To Get Zero Fee Withdrawal Offer on Mahadev Book?",
+          "url": "https://climatetechvc.org/zero-fee-withdrawal/",
+          "source": "climatetechvc.org",
+          "pub_date": "2026-02-19T17:59:16+00:00",
+          "summary": "In today’s online betting world, withdrawal fees are a common issue for many bettors. While these fees may seem small\nThe post How To Get Zero Fee Withdrawal Offer on Mahadev Book? appeared first on Mahadev Book."
+        },
+        {
+          "title": "Daily And Weekly Promotions – How To Stay Ahead At Mahadev Book?",
+          "url": "https://climatetechvc.org/daily-and-weekly-promotions/",
+          "source": "climatetechvc.org",
+          "pub_date": "2026-02-16T18:21:55+00:00",
+          "summary": "Mahadev Book has designed its daily and weekly promotion system with structure, clarity, and long term value in mind. These\nThe post Daily And Weekly Promotions &#8211; How To Stay Ahead At Mahadev Book? appeared first on Mahadev Book."
         }
       ],
-      "cached_at": "2026-07-03T11:42:51.982975"
+      "cached_at": "2026-07-03T12:39:57.813564"
     },
     "sector_heatmap": [
       {
         "name": "AI / ML",
-        "signals": 126,
+        "signals": 120,
         "sentiment": "bullish"
       },
       {
         "name": "Climate / Clean",
-        "signals": 64,
+        "signals": 63,
         "sentiment": "bullish"
       },
       {
         "name": "Deep Tech",
-        "signals": 7,
+        "signals": 8,
         "sentiment": "bullish"
       },
       {
@@ -3126,12 +4928,12 @@
       },
       {
         "name": "Logistics",
-        "signals": 2,
+        "signals": 3,
         "sentiment": "neutral"
       },
       {
         "name": "Consumer / D2C",
-        "signals": 2,
+        "signals": 3,
         "sentiment": "neutral"
       },
       {
@@ -3340,14 +5142,6 @@
           "company": "Enerzolve"
         },
         {
-          "title": "Prosperr.io secures $4m seed round to expand AI tax solutions - FinTech Global",
-          "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOUEtvUFJpaXJXbW5JN1E0YWp0U0pwalhLdTVidFpCSDlhSkJ4RnhVeDRNRWI5Vjd2YmY1MUl3Z2Y0SThPVzAyRjZQSlpTanFUanFJYlV5WmlGTVBYMEI5RlV1Uk92Z0wxd29UM1BvYTY3T2VLWmVhLVhsMWZmT3hLZUpoUjhfYUtSMDhDMktjS01qOWdWb0ZBSU9VRQ?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2026-01-02T08:00:00+00:00",
-          "summary": "Prosperr.io secures $4m seed round to expand AI tax solutions&nbsp;&nbsp;FinTech Global",
-          "company": "Prosperr"
-        },
-        {
           "title": "Prosperr.io Raises $4 Million Seed Round - The SaaS News",
           "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE95em95VHp6Nzh1OUZkcTBrckNYUGZPMGtRSjljdU9MWGFlcUNUMmZtTzlfMS1iYk9aRlFQanRzZXBpVkZsS1VRM2VKbHhPeE9hSFVPblFkWUxzdGYzbk1mczhOeGRyRWdvZjUwZjFRbFk4SS1oUlBmbUlWd3Bjdw?oc=5",
           "source": "news.google.com",
@@ -3385,6 +5179,14 @@
           "source": "news.google.com",
           "pub_date": "2025-12-23T08:00:00+00:00",
           "summary": "How is Prosperr.io Transforming Tax Management with AI?&nbsp;&nbsp;Analytics India Magazine",
+          "company": "Prosperr"
+        },
+        {
+          "title": "True Credits Secures USD 75 Mn from Community Investment Management to Expand Lending Operations - Entrepreneur India",
+          "url": "https://news.google.com/rss/articles/CBMipwNBVV95cUxQbmFJQzhuVW1zclNJV2g4WWpocjlKS3NUUUxRS3pRWFB2blN5WWpKV3NXUVQ1d1FaQjZsT1dDbmxNSmlCRER3akRiUlR0RDAxV3Q1SGVCUHE5M0Q2QTRFR1N5N2pzTXpVcEdQaVBCNEVTdGZMQ3hFa2xUUXNwMXFYYzc3d3ZUOFk3U01GbzEzd2lqa3VXVU1ZTkMtclhYeGFEX1M2MmNaV2p3aE1OOVN5VlZGUGRSLVpuLUp0QmFReU0zS0JzMWEteU0yS05zN2ltY2tNUUZlVjBEM2NKcUREZWg3RlJnUWRNOE51Tk1weWJQVk1vWmdiVnhkTDhBS3dPdS1BeW5zNHh3aVRfdjV1dFBQQ2tyTWhjMExBZUhhLTl0a0pVQmpWZEIxSllwa3EyQU42cWhXdlQ2TGVjdlBoSC1LS3UyQk91a0dCQzVyNlhIT0QxR2FYUzZuaGZJT2FUY1JZM0pTZHFSNFJvNGFEMjh4azZuVFQzdXR3MHNsWnJ1ak1qSHhQRF9YdHJrUTlITmg2V3U1YUlzanc5Q2FZNmJJLWJoVlE?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2025-12-23T08:00:00+00:00",
+          "summary": "True Credits Secures USD 75 Mn from Community Investment Management to Expand Lending Operations&nbsp;&nbsp;Entrepreneur India",
           "company": "Prosperr"
         },
         {
@@ -3660,7 +5462,7 @@
           "company": "NirogStreet"
         }
       ],
-      "cached_at": "2026-07-03T11:42:51.982975"
+      "cached_at": "2026-07-03T12:39:57.813564"
     }
   }
 }
