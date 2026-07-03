@@ -1,330 +1,103 @@
 {
-  "generated_at": "2026-07-03T05:40:40.973642",
+  "generated_at": "2026-07-03T06:12:55.584415",
   "date_label": "2026-07-03",
-  "total_signals": 62,
-  "total_persons": 55,
+  "total_signals": 72,
+  "total_persons": 65,
   "sources_active": [
     "Product Hunt",
     "YC batches (India/SEA)",
-    "News (RSS + Google News)",
-    "LinkedIn (stealth + departures)"
+    "LinkedIn (stealth + departures)",
+    "News (RSS + Google News)"
   ],
-  "executive_summary": "Today's top VC sourcing signals highlight a surge in activity with 51 individuals exceeding the threshold, predominantly from India. Key figures include Raghav Anand and Steve Messinger, both with strong signals from their previous executive roles, and Greg Brockman and Ayyappan R, who have transitioned to stealth mode from notable companies like PhonePe and Flipkart, respectively. The sector focus is skewed towards AI/ML and travel/tech, reflecting the current market trends in India and Southeast Asia.",
+  "executive_summary": "Today's top VC sourcing signals highlight a mix of potential investments with Bhavin Turakhia and Raja Koduri leading the pack at 75, both transitioning to new ventures in India with AI/ML focus. Ashish Gupta and Sadiq Ali Momin, previously associated with Zomato, are also in the mix with scores of 40, while Aditya Subramanian remains a mystery with a 40 score. The signals are evenly split between India and Southeast Asia, showcasing a diverse range of archetypes from serial entrepreneurs to stealth founders.",
   "persons": [
     {
-      "name": "Steve Messinger",
+      "name": "Bhavin Turakhia",
       "new_today": true,
-      "badges": [
-        "YC batch"
-      ],
+      "badges": [],
       "first_surfaced": "",
-      "score": 60,
+      "score": 75,
       "action": "investigate",
       "recommended_action": "investigate",
       "previous_company": "",
       "previous_title": "",
-      "current_company": "Perseus",
+      "current_company": "Neo",
       "location": "India",
       "sector": "AI/ML",
       "geography": "India",
       "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Steve Messinger's acceptance into YC for a project focused on AI/ML, particularly in search in latent spaces, indicates potential for innovation in a high-growth sector. As a first-time founder, there is a risk of execution challenges, but the YC validation suggests a promising opportunity.",
-      "linkedin_url": "https://www.linkedin.com/in/steve-messinger-a32680155/",
+      "is_second_time_founder": true,
+      "investment_thesis": "Bhavin Turakhia's previous success and the significant investment in Neo suggest a promising AI-native work platform. His experience and the current sector trend make this a high-potential investment opportunity.",
+      "linkedin_url": "https://www.linkedin.com/in/bhavin79",
       "github_url": "",
       "twitter_handle": "",
       "signal_count": 1,
       "signal_types": [
-        "accelerator_batch"
-      ],
-      "signals": [
-        {
-          "source": "yc",
-          "type": "accelerator_batch",
-          "description": "Perseus accepted into YC Fall 2025 — Applied Lab focused on Search in Latent Spaces.",
-          "url": "https://www.ycombinator.com/companies/perseus"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Accepted into YC",
-        "Focus on AI/ML"
-      ],
-      "risks": [
-        "Unknown experience",
-        "First-time founder"
-      ],
-      "company_url": "https://www.linkedin.com/in/steve-messinger-a32680155/"
-    },
-    {
-      "name": "Stealth Startup",
-      "new_today": true,
-      "badges": [
-        "Ex-unicorn/top co",
-        "Verified"
-      ],
-      "first_surfaced": "",
-      "score": 60,
-      "action": "investigate",
-      "recommended_action": "investigate",
-      "previous_company": "PhonePe",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Deepak Sahni, with his experience at PhonePe, has the potential to bring valuable insights and operational expertise to his new venture. Further investigation is warranted to understand the nature of the new venture and its alignment with current market trends.",
-      "linkedin_url": "https://www.linkedin.com/in/stealth-startup-500881352",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 2,
-      "signal_types": [
-        "seniority_corroborated",
         "stealth_founder"
       ],
       "signals": [
         {
-          "source": "linkedin",
+          "source": "news",
           "type": "stealth_founder",
-          "description": "Ex-PhonePe. Current LinkedIn headline: \"Stealth Startup - Stealth | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/stealth-startup-500881352"
-        },
-        {
-          "source": "verification",
-          "type": "seniority_corroborated",
-          "description": "Independent source confirms profile: Deepak Sahni Reveals Un:Bloc — The Stealth Venture... - startupfeed.in",
-          "url": "https://startupfeed.in/deepak-sahni-reveals-unbloc-the-stealth-venture-after-a-rs-3000-cr-exit/"
+          "description": "[YourStory] Bhavin Turakhia launches AI-native work platform Neo with $30M investment",
+          "url": "https://yourstory.com/2026/07/bhavin-turakhia-ai-native-work-platform-neo-30m-investment"
         }
       ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
+      "confidence": "high",
+      "founder_type": "second_time_founder",
       "key_strengths": [
-        "Experienced executive from PhonePe",
-        "Corroborated seniority"
-      ],
-      "risks": [
-        "Limited information on the new venture",
-        "Unknown sector alignment"
-      ],
-      "company_url": "phonepe.com"
-    },
-    {
-      "name": "Greg Brockman",
-      "new_today": true,
-      "badges": [
-        "Ex-unicorn/top co",
-        "Verified"
-      ],
-      "first_surfaced": "",
-      "score": 60,
-      "action": "investigate",
-      "recommended_action": "investigate",
-      "previous_company": "Ola",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Greg Brockman's experience and confirmed seniority at Ola suggest potential for a successful entrepreneurial venture. Further investigation is warranted to understand the new venture's sector and strategic fit.",
-      "linkedin_url": "https://www.linkedin.com/in/thegdb",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 2,
-      "signal_types": [
-        "seniority_corroborated",
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Ola. Current LinkedIn headline: \"Greg Brockman - President, Chairman, & Co-Founder | LinkedInOla Assem - Owner, Pyramids | LinkedInBh\"",
-          "url": "https://www.linkedin.com/in/thegdb"
-        },
-        {
-          "source": "verification",
-          "type": "seniority_corroborated",
-          "description": "Independent source confirms profile: Greg Brockman Returns To OpenAI After Brief... - BW Businessworld",
-          "url": "https://www.businessworld.in/article/greg-brockman-returns-to-openai-after-brief-hiatus-takes-on-new-technical-role-539085"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Seniority confirmed by independent source",
-        "Previous experience at Ola"
-      ],
-      "risks": [
-        "Unknown sector and experience years",
-        "No current company or project information"
-      ],
-      "company_url": "olacabs.com"
-    },
-    {
-      "name": "Ayyappan R",
-      "new_today": true,
-      "badges": [
-        "Ex-unicorn/top co",
-        "Verified"
-      ],
-      "first_surfaced": "",
-      "score": 60,
-      "action": "investigate",
-      "recommended_action": "investigate",
-      "previous_company": "Flipkart",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Travel/Tech",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Ayyappan R's extensive experience in the tech and travel sectors, coupled with his seniority and leadership roles at Flipkart and Cleartrip, suggests a high potential for success in his new venture, FirstClub. His ability to navigate complex business environments and lead teams could be a significant asset.",
-      "linkedin_url": "https://www.linkedin.com/in/ayyappan-r",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 2,
-      "signal_types": [
-        "seniority_corroborated",
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Flipkart. Current LinkedIn headline: \"Ayyappan R - Building FirstClub; Ex (CEO, Cleartrip; SVP ...Former Flipkart Exec, Anil Goteti's Star\"",
-          "url": "https://www.linkedin.com/in/ayyappan-r"
-        },
-        {
-          "source": "verification",
-          "type": "seniority_corroborated",
-          "description": "Independent source confirms profile: ayyappan r: Latest News & Videos, Photos about ayyappan r ...",
-          "url": "https://economictimes.indiatimes.com/topic/ayyappan-r"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "seasoned_operator",
-      "key_strengths": [
-        "Strong background in tech and travel sectors",
-        "Experience as a CEO and SVP"
+        "Proven track record with a successful exit",
+        "Significant investment in a new venture",
+        "Focus on AI-native technology"
       ],
       "risks": [
         "Unknown experience years",
-        "Potential for high competition in the travel tech space"
+        "Potential for high competition in AI sector"
       ],
-      "company_url": "flipkart.com"
+      "company_url": "https://www.neo.ai/"
     },
     {
-      "name": "Founder, Bolna AI",
+      "name": "Raja Koduri",
       "new_today": true,
-      "badges": [
-        "YC batch"
-      ],
+      "badges": [],
       "first_surfaced": "",
-      "score": 60,
+      "score": 75,
       "action": "investigate",
       "recommended_action": "investigate",
       "previous_company": "",
       "previous_title": "",
-      "current_company": "Bolna AI",
-      "location": "India",
-      "sector": "AI/ML",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "The acceptance into YC indicates potential for high growth and validation of the business idea. The focus on voice AI for the Indian market is timely and has significant potential, especially if the team can effectively address the language and accessibility challenges.",
-      "linkedin_url": "",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "accelerator_batch"
-      ],
-      "signals": [
-        {
-          "source": "yc",
-          "type": "accelerator_batch",
-          "description": "Bolna AI accepted into YC Fall 2025 — Voice AI to enable India's next billion",
-          "url": "https://www.ycombinator.com/companies/bolna-ai"
-        }
-      ],
-      "confidence": "medium",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Accepted into YC",
-        "Focus on voice AI for India's next billion"
-      ],
-      "risks": [
-        "Unknown experience",
-        "First-time founder"
-      ],
-      "company_url": "https://www.bolna.ai/"
-    },
-    {
-      "name": "Raghav Anand",
-      "new_today": true,
-      "badges": [
-        "Just went stealth",
-        "Ex-unicorn/top co",
-        "Verified"
-      ],
-      "first_surfaced": "",
-      "score": 60,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "PhonePe",
-      "previous_title": "",
-      "current_company": "",
+      "current_company": "Oxmiq Labs",
       "location": "India",
       "sector": "Unknown",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Raghav Anand's transition from PhonePe to a stealth startup suggests a potential for a new venture. His confirmed seniority and experience at a notable company are strong indicators of his capabilities, though the lack of information on the new sector and his experience years introduces uncertainty.",
-      "linkedin_url": "https://www.linkedin.com/in/raghav-anand-466a5b167",
+      "investment_thesis": "Raja Koduri's successful Series A funding suggests potential for a strong team and product, warranting further investigation into his experience and the specific sector of Oxmiq Labs.",
+      "linkedin_url": "https://www.linkedin.com/in/raja-koduri-3a51611",
       "github_url": "",
       "twitter_handle": "",
-      "signal_count": 3,
+      "signal_count": 1,
       "signal_types": [
-        "seniority_corroborated",
-        "stealth_headline_change",
-        "stealth_founder"
+        "funding_news"
       ],
       "signals": [
         {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-PhonePe. Current LinkedIn headline: \"Raghav Anand - Founder at stealth startup.\"",
-          "url": "https://www.linkedin.com/in/raghav-anand-466a5b167"
-        },
-        {
-          "source": "linkedin",
-          "type": "stealth_headline_change",
-          "description": "Headline CHANGED to stealth since last run. LinkedIn headline: \"Raghav Anand - Stealth Startup | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/raghav-anand-466a5b167"
-        },
-        {
-          "source": "verification",
-          "type": "seniority_corroborated",
-          "description": "Independent source confirms profile: Home | iMedia Online Retail Summit India 2025",
-          "url": "https://www.imediasummits.com/online-retail-summit-india-2025"
+          "source": "news",
+          "type": "funding_news",
+          "description": "[YourStory] Raja Koduri's Oxmiq Labs bags $35M in Series A funding",
+          "url": "https://yourstory.com/2026/07/funding-raja-koduri-oxmiq-labs-35-million-series-a"
         }
       ],
       "confidence": "medium",
       "founder_type": "seasoned_operator",
       "key_strengths": [
-        "Previous experience at PhonePe",
-        "Seniority confirmed by independent source"
+        "Significant funding round",
+        "Experience in tech"
       ],
       "risks": [
-        "Unknown sector and experience years"
+        "Lack of information on experience and sector fit"
       ],
-      "company_url": "phonepe.com"
+      "company_url": "https://www.oxmiqlabs.com/"
     },
     {
       "name": "Ashish Dave",
@@ -371,1475 +144,63 @@
       "company_url": ""
     },
     {
-      "name": "Stealth Founder",
-      "new_today": true,
+      "name": "Steve Messinger",
+      "new_today": false,
       "badges": [
-        "Ex-unicorn/top co"
-      ],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "PhonePe",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "AI",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "The individual has a background in the tech industry and shows interest in the AI sector, which is a current hot area. However, the lack of verified experience and seniority, as well as the absence of a clear exit history, raises concerns about the potential for a successful venture.",
-      "linkedin_url": "https://www.linkedin.com/in/stealth-founder-a43494341",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-PhonePe. Current LinkedIn headline: \"Stealth Founder - Stealth AI Startup | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/stealth-founder-a43494341"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Experienced in the tech industry",
-        "Potential interest in AI sector"
-      ],
-      "risks": [
-        "Lack of verified experience",
-        "No evidence of prior exits or significant seniority"
-      ],
-      "company_url": "phonepe.com"
-    },
-    {
-      "name": "Milan Singh",
-      "new_today": true,
-      "badges": [
-        "Ex-unicorn/top co"
-      ],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "PhonePe",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Milan Singh, with experience from PhonePe, has indicated a move to a stealth startup, suggesting potential interest in fintech or a related sector. Further investigation is warranted to validate his seniority and the viability of his new venture.",
-      "linkedin_url": "https://www.linkedin.com/in/milansync",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-PhonePe. Current LinkedIn headline: \"Milan Singh - Stealth startup | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/milansync"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Experienced in fintech from PhonePe"
-      ],
-      "risks": [
-        "Lack of verified seniority and experience years"
-      ],
-      "company_url": "phonepe.com"
-    },
-    {
-      "name": "Stealth Mode Start Up",
-      "new_today": true,
-      "badges": [
-        "Ex-unicorn/top co"
-      ],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "PhonePe",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "The individual has experience at PhonePe, which could be a strength, but the lack of verified seniority and sector alignment makes further investigation necessary.",
-      "linkedin_url": "https://www.linkedin.com/in/stealth-mode-start-up-b938741a8",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-PhonePe. Current LinkedIn headline: \"Stealth Mode Start Up - Co-Founder - Stealth Startup | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/stealth-mode-start-up-b938741a8"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Ex-PhonePe experience"
-      ],
-      "risks": [
-        "Lack of verified seniority",
-        "Unknown experience years",
-        "No sector alignment"
-      ],
-      "company_url": "phonepe.com"
-    },
-    {
-      "name": "Rahul Singh",
-      "new_today": true,
-      "badges": [
-        "Ex-unicorn/top co"
-      ],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "PhonePe",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Rahul Singh, with his experience at PhonePe, may have the potential to bring valuable insights to a new venture. However, the lack of verified experience years, prior exit, and confirmed departure from his previous company are significant red flags that require further investigation.",
-      "linkedin_url": "https://www.linkedin.com/in/rahul-singh-0aa093267",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-PhonePe. Current LinkedIn headline: \"Rahul Singh - Stealth Startup | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/rahul-singh-0aa093267"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Experienced in fintech (PhonePe)"
-      ],
-      "risks": [
-        "Lack of verified experience years",
-        "No traceable prior exit",
-        "No confirmed departure from previous company"
-      ],
-      "company_url": "phonepe.com"
-    },
-    {
-      "name": "Goutam Naik",
-      "new_today": true,
-      "badges": [
-        "Ex-unicorn/top co"
-      ],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "PhonePe",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Goutam Naik's experience at PhonePe suggests potential in fintech, but the lack of verified experience years and seniority, as well as the absence of a traceable prior exit, makes further investigation necessary.",
-      "linkedin_url": "https://www.linkedin.com/in/naikgoutam",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-PhonePe. Current LinkedIn headline: \"Goutam Naik - Stealth Startup | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/naikgoutam"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Experienced in fintech (PhonePe)"
-      ],
-      "risks": [
-        "Lack of verified experience years",
-        "No traceable prior exit",
-        "No confirmed seniority"
-      ],
-      "company_url": "phonepe.com"
-    },
-    {
-      "name": "Bharath Thakur",
-      "new_today": true,
-      "badges": [
-        "Ex-unicorn/top co"
-      ],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "PhonePe",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Bharath Thakur's experience at PhonePe suggests potential in fintech, but further verification of his experience and sector alignment is needed before considering an investment.",
-      "linkedin_url": "https://www.linkedin.com/in/bharath-thakur-5115458b",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-PhonePe. Current LinkedIn headline: \"Bharath Thakur - Stealth Startup | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/bharath-thakur-5115458b"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Experienced in fintech from PhonePe"
-      ],
-      "risks": [
-        "Lack of verified experience years",
-        "No traceable prior exit",
-        "No confirmed sector alignment"
-      ],
-      "company_url": "phonepe.com"
-    },
-    {
-      "name": "Aditya Navada",
-      "new_today": true,
-      "badges": [
-        "Ex-unicorn/top co"
-      ],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "PhonePe",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Aditya Navada has a background in fintech from PhonePe, which could be a strong asset for a new venture. However, the lack of verified seniority and experience years, as well as the absence of a clear sector or company registration, makes further investigation necessary.",
-      "linkedin_url": "https://www.linkedin.com/in/aditya-navada-83124121",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-PhonePe. Current LinkedIn headline: \"Aditya Navada - COO and Co-Founder - Stealth | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/aditya-navada-83124121"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Experienced in fintech from PhonePe"
-      ],
-      "risks": [
-        "Lack of verified seniority and experience years"
-      ],
-      "company_url": "phonepe.com"
-    },
-    {
-      "name": "Bhaskar Halder",
-      "new_today": true,
-      "badges": [
-        "Ex-unicorn/top co"
-      ],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Zomato",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Bhaskar Halder's experience at Zomato suggests potential for a strong understanding of the food tech industry, but further investigation is needed to validate his experience level, sector alignment, and the viability of his new venture.",
-      "linkedin_url": "https://www.linkedin.com/in/bhaskar-halder-iim",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Zomato. Current LinkedIn headline: \"Bhaskar Halder - Co-founder | Pyvot | Ex-Zomato City Head... | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/bhaskar-halder-iim"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Experience at Zomato",
-        "LinkedIn indicates co-founder role"
-      ],
-      "risks": [
-        "Lack of verified experience level",
-        "No evidence of prior exits or L1/L2 titles",
-        "Unknown sector alignment"
-      ],
-      "company_url": "zomato.com"
-    },
-    {
-      "name": "Shubham Misra",
-      "new_today": true,
-      "badges": [
-        "Ex-unicorn/top co"
-      ],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Zomato",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Shubham Misra has a background at Amazon and Zomato, suggesting potential domain expertise in tech and food services. His current LinkedIn headline indicates he is building something, but without further verification, it's unclear if this is a significant opportunity.",
-      "linkedin_url": "https://www.linkedin.com/in/shubham-misra",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Zomato. Current LinkedIn headline: \"Shubham Misra - Building Pincode | Ex-Amazon | Ex-Zomato | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/shubham-misra"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Experience at Amazon and Zomato"
-      ],
-      "risks": [
-        "Lack of verified experience years",
-        "No evidence of prior exits",
-        "No company registration or funding news"
-      ],
-      "company_url": "zomato.com"
-    },
-    {
-      "name": "Afif Izzatullah",
-      "new_today": true,
-      "badges": [
-        "Ex-unicorn/top co"
-      ],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Zomato",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "AI",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Afif Izzatullah's LinkedIn stealth headline suggests a potential AI startup, and his experience at Zomato may indicate domain knowledge. Further investigation is warranted to validate his seniority and prior exits.",
-      "linkedin_url": "https://www.linkedin.com/in/afifizzatullah",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Zomato. Current LinkedIn headline: \"Afif Izzatullah - Stealth AI Startup | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/afifizzatullah"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "LinkedIn stealth headline indicates potential AI startup",
-        "Experience at Zomato may indicate domain knowledge"
-      ],
-      "risks": [
-        "Unknown experience years",
-        "No verified seniority",
-        "No traceable prior exit"
-      ],
-      "company_url": "zomato.com"
-    },
-    {
-      "name": "Dhananjay Arya",
-      "new_today": true,
-      "badges": [],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Darwinbox",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Dhananjay Arya has indicated a move to stealth mode following his tenure at Darwinbox, suggesting potential entrepreneurial activity. However, the lack of verified experience, sector alignment, and additional corroborating signals makes further investigation necessary.",
-      "linkedin_url": "https://www.linkedin.com/in/hidhananjayhere",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Darwinbox. Current LinkedIn headline: \"Dhananjay Arya - Stealth | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/hidhananjayhere"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "LinkedIn stealth headline"
-      ],
-      "risks": [
-        "Unknown experience, no verified seniority, no sector alignment"
-      ],
-      "company_url": "darwinbox.com"
-    },
-    {
-      "name": "Rahul Joshi",
-      "new_today": true,
-      "badges": [
-        "Ex-unicorn/top co"
-      ],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Delhivery",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Rahul Joshi's experience at Delhivery suggests potential for a logistics or e-commerce background, but further verification of his seniority and experience years is needed to assess his fit for investment.",
-      "linkedin_url": "https://www.linkedin.com/in/rahul-joshi-356a9821b",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Delhivery. Current LinkedIn headline: \"Rahul Joshi - Co-Founder - Stealth Startup | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/rahul-joshi-356a9821b"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Ex-Delhivery experience"
-      ],
-      "risks": [
-        "Lack of verified seniority",
-        "Unknown experience years",
-        "No sector alignment"
-      ],
-      "company_url": "delhivery.com"
-    },
-    {
-      "name": "Rohit Yadav",
-      "new_today": true,
-      "badges": [
-        "Ex-unicorn/top co"
-      ],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Delhivery",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Rohit Yadav's LinkedIn headline suggests a potential new venture, but without verified experience and sector details, the investment thesis is unclear. Further investigation is needed to validate his background and the potential of the new venture.",
-      "linkedin_url": "https://www.linkedin.com/in/rohit-yadav-92b855168",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Delhivery. Current LinkedIn headline: \"Rohit Yadav - “Building tomorrow’s workforce, today.” | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/rohit-yadav-92b855168"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "LinkedIn stealth headline indicating potential new venture"
-      ],
-      "risks": [
-        "Lack of verified experience and seniority",
-        "Unknown sector focus",
-        "Potential for founder to be overestimating their capabilities"
-      ],
-      "company_url": "delhivery.com"
-    },
-    {
-      "name": "Harsh Jain",
-      "new_today": true,
-      "badges": [
-        "Ex-unicorn/top co"
-      ],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Dream11",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Harsh Jain's experience at Dream11 suggests a potential for a tech venture, but the lack of verified experience years and clear indication of a new venture makes further investigation necessary.",
-      "linkedin_url": "https://www.linkedin.com/in/harshj22",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Dream11. Current LinkedIn headline: \"Harsh Jain - Tech Entrepreneurs Association of Mumbai (TEAM ...Lucy Guo - WikipediaForbes 2026 Billi\"",
-          "url": "https://www.linkedin.com/in/harshj22"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Ex-Dream11 experience"
-      ],
-      "risks": [
-        "Unknown experience years",
-        "No clear indication of new venture"
-      ],
-      "company_url": "dream11.com"
-    },
-    {
-      "name": "Julie Bornstein",
-      "new_today": true,
-      "badges": [
-        "Ex-unicorn/top co"
-      ],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Dream11",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Julie Bornstein's LinkedIn headline indicates a potential new venture, but without verified experience and sector alignment, further investigation is needed to assess her capabilities and the viability of her new project.",
-      "linkedin_url": "https://www.linkedin.com/in/juliebornstein",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Dream11. Current LinkedIn headline: \"Julie Bornstein - Founder/CEO of Daydream | LinkedInSteven Bartlett (businessman) - WikipediaHow A.I\"",
-          "url": "https://www.linkedin.com/in/juliebornstein"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "LinkedIn stealth headline suggests foundership"
-      ],
-      "risks": [
-        "Lack of verified experience and sector alignment"
-      ],
-      "company_url": "dream11.com"
-    },
-    {
-      "name": "Uday Reddy",
-      "new_today": true,
-      "badges": [
-        "Ex-unicorn/top co"
-      ],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Udaan",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Uday Reddy's LinkedIn headline indicates a potential entrepreneurial move following his tenure at Udaan, warranting further investigation to validate his experience and the nature of his new venture.",
-      "linkedin_url": "https://www.linkedin.com/in/uday-reddy-478ba34",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Udaan. Current LinkedIn headline: \"Uday Reddy - Turito Inc. | LinkedInSebastian Thrun - WikipediaAhana Gautam - Founder & CEO at Open S\"",
-          "url": "https://www.linkedin.com/in/uday-reddy-478ba34"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "LinkedIn stealth headline suggests founder activity"
-      ],
-      "risks": [
-        "Lack of verified experience and seniority",
-        "Unknown sector and company details"
-      ],
-      "company_url": "udaan.com"
-    },
-    {
-      "name": "Ahana Gautam",
-      "new_today": true,
-      "badges": [
-        "Ex-unicorn/top co"
-      ],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Udaan",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Ahana Gautam's LinkedIn indicates a potential transition to entrepreneurship, with a previous role at Udaan. However, the lack of verified experience and sector details necessitate further investigation to assess the viability of the new venture.",
-      "linkedin_url": "https://www.linkedin.com/in/ahanagautam",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Udaan. Current LinkedIn headline: \"Ahana Gautam - Founder & CEO at Open Secret | Harvard ...Gautam Adani - WikipediaForbes 2026 Billion\"",
-          "url": "https://www.linkedin.com/in/ahanagautam"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Strong LinkedIn presence",
-        "Previous experience at Udaan"
-      ],
-      "risks": [
-        "Lack of verified experience",
-        "Unknown sector",
-        "Potential for founder mythos"
-      ],
-      "company_url": "udaan.com"
-    },
-    {
-      "name": "Abraham Gummadi",
-      "new_today": true,
-      "badges": [],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Dunzo",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Abraham Gummadi has indicated a move to stealth mode following his tenure at Dunzo, suggesting a potential new venture. However, the lack of verified experience, prior exit, and sector alignment makes further investigation necessary to assess the viability of this opportunity.",
-      "linkedin_url": "https://www.linkedin.com/in/abraham-gummadi",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Dunzo. Current LinkedIn headline: \"Abraham Gummadi - Stealth | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/abraham-gummadi"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "LinkedIn stealth headline"
-      ],
-      "risks": [
-        "Unknown experience, no prior exit, and no sector alignment"
-      ],
-      "company_url": "dunzo.com"
-    },
-    {
-      "name": "Ravi Hegde",
-      "new_today": true,
-      "badges": [],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Dunzo",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Ravi Hegde's LinkedIn stealth headline suggests a potential new venture, but further investigation is needed to verify his experience, sector alignment, and the viability of the new project.",
-      "linkedin_url": "https://www.linkedin.com/in/ravi-hegde",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Dunzo. Current LinkedIn headline: \"Ravi Hegde - Stealth Startup | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/ravi-hegde"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "LinkedIn stealth headline indicates potential new venture"
-      ],
-      "risks": [
-        "Lack of verified experience and sector alignment"
-      ],
-      "company_url": "dunzo.com"
-    },
-    {
-      "name": "Annie Huang",
-      "new_today": true,
-      "badges": [],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Dunzo",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Annie Huang's transition to a stealth mode with a previous company association suggests potential entrepreneurial intent, but further information is needed to assess her experience, sector fit, and the viability of her new venture.",
-      "linkedin_url": "https://www.linkedin.com/in/annie-huang-1a35b94b",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Dunzo. Current LinkedIn headline: \"Annie Huang - Stealth | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/annie-huang-1a35b94b"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "LinkedIn stealth headline"
-      ],
-      "risks": [
-        "Unknown experience, no prior exit, and no sector alignment"
-      ],
-      "company_url": "dunzo.com"
-    },
-    {
-      "name": "Sharyansh Jain",
-      "new_today": true,
-      "badges": [],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Dunzo",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Sharyansh Jain's transition to a stealth startup from his previous role at Dunzo suggests potential entrepreneurial intent. However, the lack of verified experience, prior exits, and sector alignment makes further investigation necessary to assess the viability of his new venture.",
-      "linkedin_url": "https://www.linkedin.com/in/sharyanshjain",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Dunzo. Current LinkedIn headline: \"Sharyansh Jain - Stealth Startup | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/sharyanshjain"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "LinkedIn stealth headline"
-      ],
-      "risks": [
-        "Unknown experience, no prior exit, and no sector alignment"
-      ],
-      "company_url": "dunzo.com"
-    },
-    {
-      "name": "Arvind Jain",
-      "new_today": true,
-      "badges": [
-        "Ex-unicorn/top co"
-      ],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Microsoft",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Arvind Jain's LinkedIn stealth headline hints at a potential new venture, but without verified experience, sector alignment, or prior entrepreneurial success, further investigation is needed to assess his potential as a founder.",
-      "linkedin_url": "https://www.linkedin.com/in/jain-arvind",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Microsoft. Current LinkedIn headline: \"Arvind Jain - Glean | LinkedInNandan Nilekani - WikipediaSabeer Bhatia - WikipediaManish Gupta - Tec\"",
-          "url": "https://www.linkedin.com/in/jain-arvind"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "LinkedIn stealth headline suggests potential new venture"
-      ],
-      "risks": [
-        "Lack of verified experience and seniority; no clear sector indication; no prior exit or L1/L2 title departure"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Manish Gupta",
-      "new_today": true,
-      "badges": [
-        "Ex-unicorn/top co"
-      ],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Microsoft",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Tech Sales, AI Business, Cybersecurity",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Manish Gupta's LinkedIn indicates a transition into entrepreneurship with a focus on tech sales and AI, potentially leveraging his experience at Microsoft. Further investigation is warranted to validate his seniority and potential for success in his new venture.",
-      "linkedin_url": "https://www.linkedin.com/in/gkmanish",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Microsoft. Current LinkedIn headline: \"Manish Gupta - Tech Sales Director - AI Business, Cyber ...Infosys – Founders of the Company | Manag\"",
-          "url": "https://www.linkedin.com/in/gkmanish"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Experience in tech sales and AI business",
-        "Previous experience at Microsoft"
-      ],
-      "risks": [
-        "Lack of verified seniority",
-        "Unknown experience years",
-        "No evidence of prior exits or L1/L2 roles"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Aaron Alex",
-      "new_today": true,
-      "badges": [],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Goldman Sachs",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Aaron Alex's LinkedIn headline suggests a potential new venture, but further investigation is needed to verify his experience, sector alignment, and the viability of adooh.in.",
-      "linkedin_url": "https://www.linkedin.com/in/aarondalex",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Goldman Sachs. Current LinkedIn headline: \"Aaron Alex - adooh.in | Founder | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/aarondalex"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "LinkedIn stealth headline indicates potential new venture"
-      ],
-      "risks": [
-        "Lack of verified experience and sector alignment"
-      ],
-      "company_url": "https://www.linkedin.com/in/aarondalex"
-    },
-    {
-      "name": "Neilek Dhawan",
-      "new_today": true,
-      "badges": [],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
+        "YC batch"
+      ],
+      "first_surfaced": "2026-07-03",
+      "score": 60,
+      "action": "investigate",
+      "recommended_action": "investigate",
       "previous_company": "",
       "previous_title": "",
-      "current_company": "",
+      "current_company": "Perseus",
       "location": "India",
-      "sector": "Unknown",
+      "sector": "AI/ML",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Neilek Dhawan's LinkedIn stealth headline suggests an interest in a new venture, but further investigation is needed to verify experience, seniority, and the potential of the new venture.",
-      "linkedin_url": "https://www.linkedin.com/in/neilek-dhawan-1214a1227",
+      "investment_thesis": "Steve Messinger's acceptance into YC for a project focused on AI/ML, particularly in search in latent spaces, indicates potential for innovation in a high-growth sector. As a first-time founder, there is a risk of execution challenges, but the YC validation suggests a promising opportunity.",
+      "linkedin_url": "https://www.linkedin.com/in/steve-messinger-a32680155/",
       "github_url": "",
       "twitter_handle": "",
       "signal_count": 1,
       "signal_types": [
-        "stealth_founder"
+        "accelerator_batch"
       ],
       "signals": [
         {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "LinkedIn headline: \"Neilek Dhawan - Stealth Startup | LinkedInAthiradi (2026 film) - WikipediaEconomy | The 2026 AI Inde\"",
-          "url": "https://www.linkedin.com/in/neilek-dhawan-1214a1227"
+          "source": "yc",
+          "type": "accelerator_batch",
+          "description": "Perseus accepted into YC Fall 2025 — Applied Lab focused on Search in Latent Spaces.",
+          "url": "https://www.ycombinator.com/companies/perseus"
         }
       ],
-      "confidence": "low",
+      "confidence": "medium",
       "founder_type": "first_time_founder",
       "key_strengths": [
-        "LinkedIn stealth headline indicates potential new venture"
+        "Accepted into YC",
+        "Focus on AI/ML"
       ],
       "risks": [
-        "Lack of verified experience and seniority; no prior exit or L1/L2 title departure confirmed"
+        "Unknown experience",
+        "First-time founder"
       ],
-      "company_url": ""
+      "company_url": "https://www.linkedin.com/in/steve-messinger-a32680155/"
     },
     {
-      "name": "Amey B",
-      "new_today": true,
-      "badges": [],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Amey B has indicated a move to a stealth startup, but lacks verifiable experience or a prior exit, which makes it difficult to assess the potential for a successful venture.",
-      "linkedin_url": "https://www.linkedin.com/in/amey-b-a32908271",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "LinkedIn headline: \"Amey B - Stealth Startup | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/amey-b-a32908271"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "LinkedIn stealth headline"
-      ],
-      "risks": [
-        "Unknown experience, no previous exit, and no verified seniority"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Monish Shah",
-      "new_today": true,
-      "badges": [],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Monish Shah has indicated a move into stealth mode with a new startup, but lacks verified experience and sector alignment, making it difficult to assess potential for success.",
-      "linkedin_url": "https://www.linkedin.com/in/monish-shah-2338256",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "LinkedIn headline: \"Monish Shah - Founder - Stealth Startup | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/monish-shah-2338256"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "LinkedIn stealth founder claim"
-      ],
-      "risks": [
-        "Lack of verified experience and sector alignment"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Nitin Singh",
-      "new_today": true,
-      "badges": [],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Nitin Singh's transition to a stealth startup suggests a potential for innovation, but the lack of verified experience and background information requires further investigation.",
-      "linkedin_url": "https://www.linkedin.com/in/nitinsingh89",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "LinkedIn headline: \"Nitin Singh - Stealth Startup | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/nitinsingh89"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Potential for innovation in stealth mode"
-      ],
-      "risks": [
-        "Lack of verified experience and background"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Rahul Dhumale",
-      "new_today": true,
-      "badges": [],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Rahul Dhumale's LinkedIn stealth headline suggests an interest in starting a new venture, but without verified experience or sector details, the investment thesis is unclear at this stage.",
-      "linkedin_url": "https://www.linkedin.com/in/rahul-dhumale",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "LinkedIn headline: \"Rahul Dhumale - Stealth Startup | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/rahul-dhumale"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "LinkedIn stealth headline"
-      ],
-      "risks": [
-        "Lack of verified experience",
-        "Unknown sector",
-        "Potential for misrepresentation"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Yashish Dahiya",
-      "new_today": true,
-      "badges": [],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "PolicyBazaar",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Yashish Dahiya has a background in the insurance sector, which could be a potential asset for a new venture. However, the lack of verified seniority and experience years, as well as the absence of a clear indication of a new venture, makes further investigation necessary.",
-      "linkedin_url": "https://www.linkedin.com/in/yashish-dahiya-145495261",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-PolicyBazaar. Current LinkedIn headline: \"Yashish Dahiya - Co-Founder, Chairman and Group CEO, PB ...Shayne Coplan - ForbesNeha Narkhede - Co-\"",
-          "url": "https://www.linkedin.com/in/yashish-dahiya-145495261"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Experience in the insurance sector from PolicyBazaar"
-      ],
-      "risks": [
-        "Lack of verified seniority and experience years",
-        "No clear indication of a new venture"
-      ],
-      "company_url": "policybazaar.com"
-    },
-    {
-      "name": "Neha Narkhede",
-      "new_today": true,
-      "badges": [],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "PolicyBazaar",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Neha Narkhede's LinkedIn indicates a potential transition to entrepreneurship, but without verified experience and sector alignment, further investigation is needed to assess her potential.",
-      "linkedin_url": "https://www.linkedin.com/in/nehanarkhede",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-PolicyBazaar. Current LinkedIn headline: \"Neha Narkhede - Co-founder & CEO, Oscilar. Co-founder ...\"",
-          "url": "https://www.linkedin.com/in/nehanarkhede"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Strong background in the tech industry"
-      ],
-      "risks": [
-        "Lack of verified experience and sector alignment"
-      ],
-      "company_url": "policybazaar.com"
-    },
-    {
-      "name": "Rajan Bajaj",
-      "new_today": true,
-      "badges": [],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Slice",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Rajan Bajaj's LinkedIn headline indicates a potential shift to foundership, but without verified experience, prior exit, or sector alignment, further investigation is needed to assess his potential.",
-      "linkedin_url": "https://www.linkedin.com/in/rajanbajaj",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Slice. Current LinkedIn headline: \"Rajan Bajaj - Founder & CEO, slice | LinkedInJames H Lee - Chairman, Founder & CEO at TXSE Group | T\"",
-          "url": "https://www.linkedin.com/in/rajanbajaj"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "LinkedIn stealth headline suggests foundership"
-      ],
-      "risks": [
-        "Lack of verified experience and seniority",
-        "No traceable prior exit",
-        "Unknown sector alignment"
-      ],
-      "company_url": "sliceit.com"
-    },
-    {
-      "name": "James H Lee",
-      "new_today": true,
-      "badges": [],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Slice",
-      "previous_title": "",
-      "current_company": "",
-      "location": "India",
-      "sector": "Unknown",
-      "geography": "India",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "James H Lee's transition from Slice to TXSE Group suggests an entrepreneurial spirit, but the lack of verified experience and sector information makes further investigation necessary.",
-      "linkedin_url": "https://www.linkedin.com/in/jameshleetx",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-Slice. Current LinkedIn headline: \"James H Lee - Chairman, Founder & CEO at TXSE Group | Texas ...\"",
-          "url": "https://www.linkedin.com/in/jameshleetx"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "LinkedIn stealth founder claim"
-      ],
-      "risks": [
-        "Lack of verified experience",
-        "Unknown sector",
-        "Potential for founder misrepresentation"
-      ],
-      "company_url": "sliceit.com"
-    },
-    {
-      "name": "Ritesh Aggarwal",
-      "new_today": true,
+      "name": "Stealth Startup",
+      "new_today": false,
       "badges": [
-        "Ex-unicorn/top co"
+        "Ex-unicorn/top co",
+        "Verified"
       ],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "OYO",
+      "first_surfaced": "2026-07-03",
+      "score": 60,
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "PhonePe",
       "previous_title": "",
       "current_company": "",
       "location": "India",
@@ -1847,41 +208,53 @@
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Ritesh Aggarwal's past experience at OYO suggests potential for leadership and business acumen, warranting further investigation into his new venture.",
-      "linkedin_url": "https://www.linkedin.com/in/ritesh-aggarwal-585b97356",
+      "investment_thesis": "Deepak Sahni, with his experience at PhonePe, has the potential to bring valuable insights and operational expertise to his new venture. Further investigation is warranted to understand the nature of the new venture and its alignment with current market trends.",
+      "linkedin_url": "https://www.linkedin.com/in/stealth-startup-500881352",
       "github_url": "",
       "twitter_handle": "",
-      "signal_count": 1,
+      "signal_count": 2,
       "signal_types": [
-        "stealth_founder"
+        "stealth_founder",
+        "seniority_corroborated"
       ],
       "signals": [
         {
           "source": "linkedin",
           "type": "stealth_founder",
-          "description": "Ex-OYO. Current LinkedIn headline: \"Ritesh Aggarwal - OYO founder and group CEO at OYO | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/ritesh-aggarwal-585b97356"
+          "description": "Ex-PhonePe. Current LinkedIn headline: \"Stealth Startup - Stealth | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/stealth-startup-500881352"
+        },
+        {
+          "source": "verification",
+          "type": "seniority_corroborated",
+          "description": "Independent source confirms profile: Deepak Sahni Reveals Un:Bloc — The Stealth Venture... - startupfeed.in",
+          "url": "https://startupfeed.in/deepak-sahni-reveals-unbloc-the-stealth-venture-after-a-rs-3000-cr-exit/"
         }
       ],
       "confidence": "medium",
       "founder_type": "seasoned_operator",
       "key_strengths": [
-        "Strong leadership experience at a notable company"
+        "Experienced executive from PhonePe",
+        "Corroborated seniority"
       ],
       "risks": [
-        "Lack of verified seniority and current company information"
+        "Limited information on the new venture",
+        "Unknown sector alignment"
       ],
-      "company_url": "oyorooms.com"
+      "company_url": "phonepe.com"
     },
     {
-      "name": "Aditya Padhi",
-      "new_today": true,
-      "badges": [],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "PharmEasy",
+      "name": "Greg Brockman",
+      "new_today": false,
+      "badges": [
+        "Ex-unicorn/top co",
+        "Verified"
+      ],
+      "first_surfaced": "2026-07-03",
+      "score": 60,
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "Ola",
       "previous_title": "",
       "current_company": "",
       "location": "India",
@@ -1889,79 +262,204 @@
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Aditya Padhi's transition to a stealth founder status suggests an intention to start a new venture, but without verified experience and company details, the investment thesis is speculative.",
-      "linkedin_url": "https://www.linkedin.com/in/aditya-padhi-05016810a",
+      "investment_thesis": "Greg Brockman's experience and confirmed seniority at Ola suggest potential for a successful entrepreneurial venture. Further investigation is warranted to understand the new venture's sector and strategic fit.",
+      "linkedin_url": "https://www.linkedin.com/in/thegdb",
       "github_url": "",
       "twitter_handle": "",
-      "signal_count": 1,
+      "signal_count": 2,
       "signal_types": [
-        "stealth_founder"
+        "stealth_founder",
+        "seniority_corroborated"
       ],
       "signals": [
         {
           "source": "linkedin",
           "type": "stealth_founder",
-          "description": "Ex-PharmEasy. Current LinkedIn headline: \"Aditya Padhi - Building Lumov || XIMB | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/aditya-padhi-05016810a"
+          "description": "Ex-Ola. Current LinkedIn headline: \"Greg Brockman - President, Chairman, & Co-Founder | LinkedInOla Assem - Owner, Pyramids | LinkedInBh\"",
+          "url": "https://www.linkedin.com/in/thegdb"
+        },
+        {
+          "source": "verification",
+          "type": "seniority_corroborated",
+          "description": "Independent source confirms profile: Greg Brockman Returns To OpenAI After Brief... - BW Businessworld",
+          "url": "https://www.businessworld.in/article/greg-brockman-returns-to-openai-after-brief-hiatus-takes-on-new-technical-role-539085"
         }
       ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
       "key_strengths": [
-        "LinkedIn stealth headline change to indicate a new venture"
+        "Seniority confirmed by independent source",
+        "Previous experience at Ola"
       ],
       "risks": [
-        "Lack of verified experience and seniority",
-        "Unknown sector and company details"
+        "Unknown sector and experience years",
+        "No current company or project information"
       ],
-      "company_url": "pharmeasy.in"
+      "company_url": "olacabs.com"
     },
     {
-      "name": "Tilakraj Singh",
-      "new_today": true,
-      "badges": [],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "Scaler",
+      "name": "Ayyappan R",
+      "new_today": false,
+      "badges": [
+        "Ex-unicorn/top co",
+        "Verified"
+      ],
+      "first_surfaced": "2026-07-03",
+      "score": 60,
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "Flipkart",
       "previous_title": "",
       "current_company": "",
       "location": "India",
-      "sector": "Edtech",
+      "sector": "Travel/Tech",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Tilakraj Singh's background in Edtech and his association with a successful exit could indicate potential for a promising venture. Further investigation is needed to validate his experience and the viability of his new project.",
-      "linkedin_url": "https://www.linkedin.com/in/tilakraj-singh-",
+      "investment_thesis": "Ayyappan R's extensive experience in the tech and travel sectors, coupled with his seniority and leadership roles at Flipkart and Cleartrip, suggests a high potential for success in his new venture, FirstClub. His ability to navigate complex business environments and lead teams could be a significant asset.",
+      "linkedin_url": "https://www.linkedin.com/in/ayyappan-r",
       "github_url": "",
       "twitter_handle": "",
-      "signal_count": 1,
+      "signal_count": 2,
       "signal_types": [
-        "stealth_founder"
+        "stealth_founder",
+        "seniority_corroborated"
       ],
       "signals": [
         {
           "source": "linkedin",
           "type": "stealth_founder",
-          "description": "Ex-Scaler. Current LinkedIn headline: \"Tilakraj Singh - Cofounder @Orbi | ex-@Scaler ($700mn Edtech ...\"",
-          "url": "https://www.linkedin.com/in/tilakraj-singh-"
+          "description": "Ex-Flipkart. Current LinkedIn headline: \"Ayyappan R - Building FirstClub; Ex (CEO, Cleartrip; SVP ...Former Flipkart Exec, Anil Goteti's Star\"",
+          "url": "https://www.linkedin.com/in/ayyappan-r"
+        },
+        {
+          "source": "verification",
+          "type": "seniority_corroborated",
+          "description": "Independent source confirms profile: ayyappan r: Latest News & Videos, Photos about ayyappan r ...",
+          "url": "https://economictimes.indiatimes.com/topic/ayyappan-r"
         }
       ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
       "key_strengths": [
-        "Experience in Edtech",
-        "Potential for leveraging previous success"
+        "Strong background in tech and travel sectors",
+        "Experience as a CEO and SVP"
       ],
       "risks": [
-        "Lack of verified experience level",
-        "First-time founder risk"
+        "Unknown experience years",
+        "Potential for high competition in the travel tech space"
       ],
-      "company_url": "scaler.com"
+      "company_url": "flipkart.com"
     },
     {
-      "name": "Jotham Lim",
+      "name": "Founder, Bolna AI",
+      "new_today": false,
+      "badges": [
+        "YC batch"
+      ],
+      "first_surfaced": "2026-07-03",
+      "score": 60,
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "Bolna AI",
+      "location": "India",
+      "sector": "AI/ML",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "The acceptance into YC indicates potential for high growth and validation of the business idea. The focus on voice AI for the Indian market is timely and has significant potential, especially if the team can effectively address the language and accessibility challenges.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "accelerator_batch"
+      ],
+      "signals": [
+        {
+          "source": "yc",
+          "type": "accelerator_batch",
+          "description": "Bolna AI accepted into YC Fall 2025 — Voice AI to enable India's next billion",
+          "url": "https://www.ycombinator.com/companies/bolna-ai"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Accepted into YC",
+        "Focus on voice AI for India's next billion"
+      ],
+      "risks": [
+        "Unknown experience",
+        "First-time founder"
+      ],
+      "company_url": "https://www.bolna.ai/"
+    },
+    {
+      "name": "Raghav Anand",
+      "new_today": false,
+      "badges": [
+        "Just went stealth",
+        "Ex-unicorn/top co",
+        "Verified"
+      ],
+      "first_surfaced": "2026-07-03",
+      "score": 60,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "PhonePe",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Raghav Anand's transition from PhonePe to a stealth startup suggests a potential for a new venture. His confirmed seniority and experience at a notable company are strong indicators of his capabilities, though the lack of information on the new sector and his experience years introduces uncertainty.",
+      "linkedin_url": "https://www.linkedin.com/in/raghav-anand-466a5b167",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 3,
+      "signal_types": [
+        "stealth_founder",
+        "seniority_corroborated",
+        "stealth_headline_change"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-PhonePe. Current LinkedIn headline: \"Raghav Anand - Founder at stealth startup.\"",
+          "url": "https://www.linkedin.com/in/raghav-anand-466a5b167"
+        },
+        {
+          "source": "linkedin",
+          "type": "stealth_headline_change",
+          "description": "Headline CHANGED to stealth since last run. LinkedIn headline: \"Raghav Anand - Stealth Startup | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/raghav-anand-466a5b167"
+        },
+        {
+          "source": "verification",
+          "type": "seniority_corroborated",
+          "description": "Independent source confirms profile: Home | iMedia Online Retail Summit India 2025",
+          "url": "https://www.imediasummits.com/online-retail-summit-india-2025"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
+      "key_strengths": [
+        "Previous experience at PhonePe",
+        "Seniority confirmed by independent source"
+      ],
+      "risks": [
+        "Unknown sector and experience years"
+      ],
+      "company_url": "phonepe.com"
+    },
+    {
+      "name": "Ashish Gupta",
       "new_today": true,
       "badges": [],
       "first_surfaced": "",
@@ -1971,13 +469,13 @@
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
-      "location": "Southeast Asia",
+      "location": "India",
       "sector": "Unknown",
-      "geography": "Unknown",
+      "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Jotham Lim has recently changed his LinkedIn headline to indicate he is a founder and CEO of BuilderLab, suggesting a potential new venture. However, without verified experience, a clear sector, or prior exits, the investment thesis is speculative and requires further validation.",
-      "linkedin_url": "https://www.linkedin.com/in/jothamlim",
+      "investment_thesis": "Ashish Gupta has indicated a move to a stealth startup, but lacks verifiable experience or a prior exit, which makes it difficult to assess his potential for success. Further investigation is needed to validate his background and the viability of his new venture.",
+      "linkedin_url": "https://www.linkedin.com/in/ashishmdh",
       "github_url": "",
       "twitter_handle": "",
       "signal_count": 1,
@@ -1988,139 +486,8 @@
         {
           "source": "linkedin",
           "type": "stealth_founder",
-          "description": "LinkedIn headline: \"Jotham Lim - Founder & CEO, BuilderLab | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/jothamlim"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "LinkedIn stealth founder claim"
-      ],
-      "risks": [
-        "Lack of verified experience",
-        "Unknown sector",
-        "Potential lack of prior exits"
-      ],
-      "company_url": ""
-    },
-    {
-      "name": "Pablo V",
-      "new_today": true,
-      "badges": [],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "OVO",
-      "previous_title": "",
-      "current_company": "",
-      "location": "Southeast Asia",
-      "sector": "Technology",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Pablo V's LinkedIn indicates a potential founder role, but further investigation is needed to verify his experience, seniority, and the nature of the company he is building.",
-      "linkedin_url": "https://www.linkedin.com/in/pablo-v-578b131bb",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-OVO. Current LinkedIn headline: \"Pablo V. - Founder & CEO at OBE Group | Technology ... - LinkedIn\"",
-          "url": "https://www.linkedin.com/in/pablo-v-578b131bb"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "LinkedIn indicates a founder role"
-      ],
-      "risks": [
-        "Lack of verified experience and seniority",
-        "No previous exit or L1/L2 title departure",
-        "Unknown geography"
-      ],
-      "company_url": "ovo.id"
-    },
-    {
-      "name": "Ishita Shah",
-      "new_today": true,
-      "badges": [],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "OVO",
-      "previous_title": "",
-      "current_company": "",
-      "location": "Southeast Asia",
-      "sector": "AI",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Ishita Shah's LinkedIn indicates a transition to a founder role with a focus on AI product leadership, suggesting potential interest in AI-driven products. However, the lack of verified experience and background information requires further investigation.",
-      "linkedin_url": "https://www.linkedin.com/in/ishitaa-shah",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "Ex-OVO. Current LinkedIn headline: \"Ishita Shah - AI Product Leader | Building Reliable, Safety ...\"",
-          "url": "https://www.linkedin.com/in/ishitaa-shah"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "AI Product Leadership"
-      ],
-      "risks": [
-        "Lack of verified experience",
-        "Unknown background"
-      ],
-      "company_url": "ovo.id"
-    },
-    {
-      "name": "Murtaza Ali",
-      "new_today": true,
-      "badges": [],
-      "first_surfaced": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "",
-      "location": "Southeast Asia",
-      "sector": "Unknown",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Murtaza Ali has indicated a move to a stealth startup, but lacks verifiable experience or a prior exit, which makes it difficult to assess the potential for a successful venture.",
-      "linkedin_url": "https://www.linkedin.com/in/murtaza-ali-751b1b304",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "linkedin",
-          "type": "stealth_founder",
-          "description": "LinkedIn headline: \"Murtaza Ali - Founder @Stealth Startup - Connecting... | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/murtaza-ali-751b1b304"
+          "description": "LinkedIn headline: \"Ashish Gupta - Stealth Startup | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/ashishmdh"
         }
       ],
       "confidence": "low",
@@ -2134,23 +501,25 @@
       "company_url": ""
     },
     {
-      "name": "Stephen Dong",
+      "name": "Sadiq Ali Momin",
       "new_today": true,
-      "badges": [],
+      "badges": [
+        "Ex-unicorn/top co"
+      ],
       "first_surfaced": "",
       "score": 40,
       "action": "watchlist",
       "recommended_action": "watchlist",
-      "previous_company": "",
+      "previous_company": "Zomato",
       "previous_title": "",
       "current_company": "",
-      "location": "Southeast Asia",
-      "sector": "Unknown",
-      "geography": "Unknown",
+      "location": "India",
+      "sector": "AI",
+      "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Stephen Dong's LinkedIn headline suggests an entrepreneurial intent, but without verified experience, sector alignment, or corroborating signals, further investigation is needed to assess his potential.",
-      "linkedin_url": "https://www.linkedin.com/in/stephen-dong-23a28129a",
+      "investment_thesis": "Sadiq Ali Momin's background in AI and experience at Zomato, Agoda, and Cisco suggests a potential for a strong AI-focused venture. However, the lack of verified experience level and prior exits makes the investment thesis speculative at this stage.",
+      "linkedin_url": "https://www.linkedin.com/in/sadiq-ali-momin-145123396",
       "github_url": "",
       "twitter_handle": "",
       "signal_count": 1,
@@ -2161,24 +530,24 @@
         {
           "source": "linkedin",
           "type": "stealth_founder",
-          "description": "LinkedIn headline: \"Stephen Dong - Founder and CEO | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/stephen-dong-23a28129a"
+          "description": "Ex-Zomato. Current LinkedIn headline: \"Sadiq Ali Momin - Founder @ Stealth AI | Ex-Zomato, Agoda, Cisco | AI ...\"",
+          "url": "https://www.linkedin.com/in/sadiq-ali-momin-145123396"
         }
       ],
       "confidence": "low",
       "founder_type": "first_time_founder",
       "key_strengths": [
-        "LinkedIn headline indicates founder status"
+        "Experience in AI from previous roles",
+        "Potential for leveraging past industry connections"
       ],
       "risks": [
-        "Lack of verified experience and sector alignment",
-        "No previous exit or L1/L2 title departure",
-        "No corroborating signals"
+        "Lack of verified experience level",
+        "No evidence of prior exits or significant seniority"
       ],
-      "company_url": ""
+      "company_url": "zomato.com"
     },
     {
-      "name": "Zarif Aziz",
+      "name": "Aditya Subramanian",
       "new_today": true,
       "badges": [],
       "first_surfaced": "",
@@ -2188,13 +557,13 @@
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
-      "location": "Southeast Asia",
+      "location": "India",
       "sector": "Unknown",
-      "geography": "Unknown",
+      "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Zarif Aziz has indicated a move to a stealth startup, but without verified experience or a clear sector, the investment thesis is weak. Further investigation is needed to validate his background and potential.",
-      "linkedin_url": "https://www.linkedin.com/in/zarifaziz",
+      "investment_thesis": "Aditya Subramanian has indicated a move to a stealth startup, but lacks verifiable experience or prior exit history. Further investigation is needed to assess his potential and the viability of the project.",
+      "linkedin_url": "https://www.linkedin.com/in/avinier",
       "github_url": "",
       "twitter_handle": "",
       "signal_count": 1,
@@ -2205,8 +574,8 @@
         {
           "source": "linkedin",
           "type": "stealth_founder",
-          "description": "LinkedIn headline: \"Zarif Aziz - Stealth Startup | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/zarifaziz"
+          "description": "LinkedIn headline: \"Aditya Subramanian - Stealth Startup | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/avinier"
         }
       ],
       "confidence": "low",
@@ -2215,14 +584,12 @@
         "LinkedIn stealth headline"
       ],
       "risks": [
-        "Lack of verified experience",
-        "Unknown sector",
-        "Potential lack of prior exits"
+        "Unknown experience, no prior exit, and no verified seniority"
       ],
       "company_url": ""
     },
     {
-      "name": "Nour Lababidi",
+      "name": "Alankar Saxena",
       "new_today": true,
       "badges": [],
       "first_surfaced": "",
@@ -2232,13 +599,13 @@
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
-      "location": "Southeast Asia",
+      "location": "India",
       "sector": "Unknown",
-      "geography": "Unknown",
+      "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Nour Lababidi has indicated a move to a stealth startup, but with no verified experience or sector, the investment thesis is unclear at this stage.",
-      "linkedin_url": "https://www.linkedin.com/in/nour-lababidi",
+      "investment_thesis": "Alankar Saxena has indicated a move to a stealth startup, but lacks verifiable experience or prior exit history. Further investigation is needed to assess the validity of his background and the potential of the venture.",
+      "linkedin_url": "https://www.linkedin.com/in/alankar423",
       "github_url": "",
       "twitter_handle": "",
       "signal_count": 1,
@@ -2249,8 +616,8 @@
         {
           "source": "linkedin",
           "type": "stealth_founder",
-          "description": "LinkedIn headline: \"Nour Lababidi - Stealth Startup | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/nour-lababidi"
+          "description": "LinkedIn headline: \"Alankar Saxena - Stealth Startup | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/alankar423"
         }
       ],
       "confidence": "low",
@@ -2259,14 +626,12 @@
         "LinkedIn stealth headline"
       ],
       "risks": [
-        "Lack of verified experience",
-        "Unknown sector",
-        "Potential for misrepresentation"
+        "Unknown experience, no prior exit, no verified seniority"
       ],
       "company_url": ""
     },
     {
-      "name": "Zichen Chen",
+      "name": "Nilesh Majumdar",
       "new_today": true,
       "badges": [],
       "first_surfaced": "",
@@ -2276,13 +641,13 @@
       "previous_company": "",
       "previous_title": "",
       "current_company": "",
-      "location": "Southeast Asia",
+      "location": "India",
       "sector": "Unknown",
-      "geography": "Unknown",
+      "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Zichen Chen has indicated a move to a stealth startup, but with no verified experience or sector, the investment thesis is unclear at this stage.",
-      "linkedin_url": "https://www.linkedin.com/in/chenzichen",
+      "investment_thesis": "Nilesh Majumdar has indicated a move to a stealth startup, but lacks verifiable experience or prior exit history. Further investigation is needed to assess his potential and the viability of the project.",
+      "linkedin_url": "https://www.linkedin.com/in/nilesh-majumdar",
       "github_url": "",
       "twitter_handle": "",
       "signal_count": 1,
@@ -2293,8 +658,8 @@
         {
           "source": "linkedin",
           "type": "stealth_founder",
-          "description": "LinkedIn headline: \"Zichen Chen - Stealth Startup | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/chenzichen"
+          "description": "LinkedIn headline: \"Nilesh Majumdar - Stealth Startup | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/nilesh-majumdar"
         }
       ],
       "confidence": "low",
@@ -2303,14 +668,12 @@
         "LinkedIn stealth headline"
       ],
       "risks": [
-        "Lack of verified experience",
-        "Unknown sector",
-        "Potential lack of prior exit"
+        "Unknown experience, no prior exit, and no verified seniority"
       ],
       "company_url": ""
     },
     {
-      "name": "Devin Weider",
+      "name": "Ba Bao Nhi Rosa Nguyen",
       "new_today": true,
       "badges": [],
       "first_surfaced": "",
@@ -2325,8 +688,8 @@
       "geography": "Unknown",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Devin Weider has claimed to be a founder of a stealth startup on LinkedIn, but without verified experience or sector information, the investment thesis is unclear at this stage.",
-      "linkedin_url": "https://www.linkedin.com/in/devin-weider",
+      "investment_thesis": "The signal indicates a potential founder in stealth mode, but with no verifiable experience or sector alignment, further investigation is needed to assess the viability of the venture.",
+      "linkedin_url": "https://www.linkedin.com/in/ba-bao-nhi-rosa-nguyen-4819611b8",
       "github_url": "",
       "twitter_handle": "",
       "signal_count": 1,
@@ -2337,19 +700,104 @@
         {
           "source": "linkedin",
           "type": "stealth_founder",
-          "description": "LinkedIn headline: \"Devin Weider - Founder - Stealth Startup | LinkedIn\"",
-          "url": "https://www.linkedin.com/in/devin-weider"
+          "description": "LinkedIn headline: \"Ba Bao Nhi (Rosa) Nguyen - Stealth Startup | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/ba-bao-nhi-rosa-nguyen-4819611b8"
         }
       ],
       "confidence": "low",
       "founder_type": "first_time_founder",
       "key_strengths": [
-        "LinkedIn stealth founder claim"
+        "LinkedIn stealth headline"
+      ],
+      "risks": [
+        "Unknown experience, no verified seniority, no previous exit, no sector alignment"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Ulk Gerguri",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Southeast Asia",
+      "sector": "Unknown",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "The signal of a stealth startup founder on LinkedIn is a basic indicator of potential activity, but without further verification of Ulk Gerguri's experience, previous exits, or sector expertise, the investment thesis remains speculative.",
+      "linkedin_url": "https://www.linkedin.com/in/ulkgerguri",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Ulk Gerguri - Stealth Startup | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/ulkgerguri"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline"
+      ],
+      "risks": [
+        "Unknown experience, no previous exit, and no verified seniority"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Ankit Sharma",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "AI/ML",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Ankit Sharma has demonstrated the ability to launch a product on Product Hunt, indicating some level of entrepreneurial skill. However, as a first-time founder with an unknown background, further investigation is needed to assess the potential for a successful venture.",
+      "linkedin_url": "https://www.linkedin.com/in/startupsharma",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "product_launch"
+      ],
+      "signals": [
+        {
+          "source": "Product Hunt",
+          "type": "product_launch",
+          "description": "[Product Hunt] Ankit Sharma launched Claude Sonnet 5: AI that plans, acts, and gets work done\n           \n           \n             Discussion \n            |\n             Link",
+          "url": "https://www.producthunt.com/products/claude"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Product launch on Product Hunt",
+        "AI product development"
       ],
       "risks": [
         "Lack of verified experience",
-        "Unknown sector",
-        "Potential for founder mythos"
+        "Unknown geography",
+        "First-time founder status"
       ],
       "company_url": ""
     },
@@ -2497,14 +945,1997 @@
         "First-time founder status"
       ],
       "company_url": ""
+    },
+    {
+      "name": "Stealth Founder",
+      "new_today": false,
+      "badges": [
+        "Ex-unicorn/top co"
+      ],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "PhonePe",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "AI",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "The individual has a background in the tech industry and shows interest in the AI sector, which is a current hot area. However, the lack of verified experience and seniority, as well as the absence of a clear exit history, raises concerns about the potential for a successful venture.",
+      "linkedin_url": "https://www.linkedin.com/in/stealth-founder-a43494341",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-PhonePe. Current LinkedIn headline: \"Stealth Founder - Stealth AI Startup | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/stealth-founder-a43494341"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Experienced in the tech industry",
+        "Potential interest in AI sector"
+      ],
+      "risks": [
+        "Lack of verified experience",
+        "No evidence of prior exits or significant seniority"
+      ],
+      "company_url": "phonepe.com"
+    },
+    {
+      "name": "Milan Singh",
+      "new_today": false,
+      "badges": [
+        "Ex-unicorn/top co"
+      ],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "PhonePe",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Milan Singh, with experience from PhonePe, has indicated a move to a stealth startup, suggesting potential interest in fintech or a related sector. Further investigation is warranted to validate his seniority and the viability of his new venture.",
+      "linkedin_url": "https://www.linkedin.com/in/milansync",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-PhonePe. Current LinkedIn headline: \"Milan Singh - Stealth startup | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/milansync"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Experienced in fintech from PhonePe"
+      ],
+      "risks": [
+        "Lack of verified seniority and experience years"
+      ],
+      "company_url": "phonepe.com"
+    },
+    {
+      "name": "Stealth Mode Start Up",
+      "new_today": false,
+      "badges": [
+        "Ex-unicorn/top co"
+      ],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "PhonePe",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "The individual has experience at PhonePe, which could be a strength, but the lack of verified seniority and sector alignment makes further investigation necessary.",
+      "linkedin_url": "https://www.linkedin.com/in/stealth-mode-start-up-b938741a8",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-PhonePe. Current LinkedIn headline: \"Stealth Mode Start Up - Co-Founder - Stealth Startup | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/stealth-mode-start-up-b938741a8"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Ex-PhonePe experience"
+      ],
+      "risks": [
+        "Lack of verified seniority",
+        "Unknown experience years",
+        "No sector alignment"
+      ],
+      "company_url": "phonepe.com"
+    },
+    {
+      "name": "Rahul Singh",
+      "new_today": false,
+      "badges": [
+        "Ex-unicorn/top co"
+      ],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "PhonePe",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Rahul Singh, with his experience at PhonePe, may have the potential to bring valuable insights to a new venture. However, the lack of verified experience years, prior exit, and confirmed departure from his previous company are significant red flags that require further investigation.",
+      "linkedin_url": "https://www.linkedin.com/in/rahul-singh-0aa093267",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-PhonePe. Current LinkedIn headline: \"Rahul Singh - Stealth Startup | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/rahul-singh-0aa093267"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Experienced in fintech (PhonePe)"
+      ],
+      "risks": [
+        "Lack of verified experience years",
+        "No traceable prior exit",
+        "No confirmed departure from previous company"
+      ],
+      "company_url": "phonepe.com"
+    },
+    {
+      "name": "Goutam Naik",
+      "new_today": false,
+      "badges": [
+        "Ex-unicorn/top co"
+      ],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "PhonePe",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Goutam Naik's experience at PhonePe suggests potential in fintech, but the lack of verified experience years and seniority, as well as the absence of a traceable prior exit, makes further investigation necessary.",
+      "linkedin_url": "https://www.linkedin.com/in/naikgoutam",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-PhonePe. Current LinkedIn headline: \"Goutam Naik - Stealth Startup | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/naikgoutam"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Experienced in fintech (PhonePe)"
+      ],
+      "risks": [
+        "Lack of verified experience years",
+        "No traceable prior exit",
+        "No confirmed seniority"
+      ],
+      "company_url": "phonepe.com"
+    },
+    {
+      "name": "Bharath Thakur",
+      "new_today": false,
+      "badges": [
+        "Ex-unicorn/top co"
+      ],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "PhonePe",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Bharath Thakur's experience at PhonePe suggests potential in fintech, but further verification of his experience and sector alignment is needed before considering an investment.",
+      "linkedin_url": "https://www.linkedin.com/in/bharath-thakur-5115458b",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-PhonePe. Current LinkedIn headline: \"Bharath Thakur - Stealth Startup | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/bharath-thakur-5115458b"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Experienced in fintech from PhonePe"
+      ],
+      "risks": [
+        "Lack of verified experience years",
+        "No traceable prior exit",
+        "No confirmed sector alignment"
+      ],
+      "company_url": "phonepe.com"
+    },
+    {
+      "name": "Aditya Navada",
+      "new_today": false,
+      "badges": [
+        "Ex-unicorn/top co"
+      ],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "PhonePe",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Aditya Navada has a background in fintech from PhonePe, which could be a strong asset for a new venture. However, the lack of verified seniority and experience years, as well as the absence of a clear sector or company registration, makes further investigation necessary.",
+      "linkedin_url": "https://www.linkedin.com/in/aditya-navada-83124121",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-PhonePe. Current LinkedIn headline: \"Aditya Navada - COO and Co-Founder - Stealth | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/aditya-navada-83124121"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Experienced in fintech from PhonePe"
+      ],
+      "risks": [
+        "Lack of verified seniority and experience years"
+      ],
+      "company_url": "phonepe.com"
+    },
+    {
+      "name": "Bhaskar Halder",
+      "new_today": false,
+      "badges": [
+        "Ex-unicorn/top co"
+      ],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Zomato",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Bhaskar Halder's experience at Zomato suggests potential for a strong understanding of the food tech industry, but further investigation is needed to validate his experience level, sector alignment, and the viability of his new venture.",
+      "linkedin_url": "https://www.linkedin.com/in/bhaskar-halder-iim",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Zomato. Current LinkedIn headline: \"Bhaskar Halder - Co-founder | Pyvot | Ex-Zomato City Head... | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/bhaskar-halder-iim"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Experience at Zomato",
+        "LinkedIn indicates co-founder role"
+      ],
+      "risks": [
+        "Lack of verified experience level",
+        "No evidence of prior exits or L1/L2 titles",
+        "Unknown sector alignment"
+      ],
+      "company_url": "zomato.com"
+    },
+    {
+      "name": "Shubham Misra",
+      "new_today": false,
+      "badges": [
+        "Ex-unicorn/top co"
+      ],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Zomato",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Shubham Misra has a background at Amazon and Zomato, suggesting potential domain expertise in tech and food services. His current LinkedIn headline indicates he is building something, but without further verification, it's unclear if this is a significant opportunity.",
+      "linkedin_url": "https://www.linkedin.com/in/shubham-misra",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Zomato. Current LinkedIn headline: \"Shubham Misra - Building Pincode | Ex-Amazon | Ex-Zomato | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/shubham-misra"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Experience at Amazon and Zomato"
+      ],
+      "risks": [
+        "Lack of verified experience years",
+        "No evidence of prior exits",
+        "No company registration or funding news"
+      ],
+      "company_url": "zomato.com"
+    },
+    {
+      "name": "Afif Izzatullah",
+      "new_today": false,
+      "badges": [
+        "Ex-unicorn/top co"
+      ],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Zomato",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "AI",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Afif Izzatullah's LinkedIn stealth headline suggests a potential AI startup, and his experience at Zomato may indicate domain knowledge. Further investigation is warranted to validate his seniority and prior exits.",
+      "linkedin_url": "https://www.linkedin.com/in/afifizzatullah",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Zomato. Current LinkedIn headline: \"Afif Izzatullah - Stealth AI Startup | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/afifizzatullah"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline indicates potential AI startup",
+        "Experience at Zomato may indicate domain knowledge"
+      ],
+      "risks": [
+        "Unknown experience years",
+        "No verified seniority",
+        "No traceable prior exit"
+      ],
+      "company_url": "zomato.com"
+    },
+    {
+      "name": "Dhananjay Arya",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Darwinbox",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Dhananjay Arya has indicated a move to stealth mode following his tenure at Darwinbox, suggesting potential entrepreneurial activity. However, the lack of verified experience, sector alignment, and additional corroborating signals makes further investigation necessary.",
+      "linkedin_url": "https://www.linkedin.com/in/hidhananjayhere",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Darwinbox. Current LinkedIn headline: \"Dhananjay Arya - Stealth | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/hidhananjayhere"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline"
+      ],
+      "risks": [
+        "Unknown experience, no verified seniority, no sector alignment"
+      ],
+      "company_url": "darwinbox.com"
+    },
+    {
+      "name": "Rahul Joshi",
+      "new_today": false,
+      "badges": [
+        "Ex-unicorn/top co"
+      ],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Delhivery",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Rahul Joshi's experience at Delhivery suggests potential for a logistics or e-commerce background, but further verification of his seniority and experience years is needed to assess his fit for investment.",
+      "linkedin_url": "https://www.linkedin.com/in/rahul-joshi-356a9821b",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Delhivery. Current LinkedIn headline: \"Rahul Joshi - Co-Founder - Stealth Startup | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/rahul-joshi-356a9821b"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Ex-Delhivery experience"
+      ],
+      "risks": [
+        "Lack of verified seniority",
+        "Unknown experience years",
+        "No sector alignment"
+      ],
+      "company_url": "delhivery.com"
+    },
+    {
+      "name": "Rohit Yadav",
+      "new_today": false,
+      "badges": [
+        "Ex-unicorn/top co"
+      ],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Delhivery",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Rohit Yadav's LinkedIn headline suggests a potential new venture, but without verified experience and sector details, the investment thesis is unclear. Further investigation is needed to validate his background and the potential of the new venture.",
+      "linkedin_url": "https://www.linkedin.com/in/rohit-yadav-92b855168",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Delhivery. Current LinkedIn headline: \"Rohit Yadav - “Building tomorrow’s workforce, today.” | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/rohit-yadav-92b855168"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline indicating potential new venture"
+      ],
+      "risks": [
+        "Lack of verified experience and seniority",
+        "Unknown sector focus",
+        "Potential for founder to be overestimating their capabilities"
+      ],
+      "company_url": "delhivery.com"
+    },
+    {
+      "name": "Harsh Jain",
+      "new_today": false,
+      "badges": [
+        "Ex-unicorn/top co"
+      ],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Dream11",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Harsh Jain's experience at Dream11 suggests a potential for a tech venture, but the lack of verified experience years and clear indication of a new venture makes further investigation necessary.",
+      "linkedin_url": "https://www.linkedin.com/in/harshj22",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Dream11. Current LinkedIn headline: \"Harsh Jain - Tech Entrepreneurs Association of Mumbai (TEAM ...Lucy Guo - WikipediaForbes 2026 Billi\"",
+          "url": "https://www.linkedin.com/in/harshj22"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Ex-Dream11 experience"
+      ],
+      "risks": [
+        "Unknown experience years",
+        "No clear indication of new venture"
+      ],
+      "company_url": "dream11.com"
+    },
+    {
+      "name": "Julie Bornstein",
+      "new_today": false,
+      "badges": [
+        "Ex-unicorn/top co"
+      ],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Dream11",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Julie Bornstein's LinkedIn headline indicates a potential new venture, but without verified experience and sector alignment, further investigation is needed to assess her capabilities and the viability of her new project.",
+      "linkedin_url": "https://www.linkedin.com/in/juliebornstein",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Dream11. Current LinkedIn headline: \"Julie Bornstein - Founder/CEO of Daydream | LinkedInSteven Bartlett (businessman) - WikipediaHow A.I\"",
+          "url": "https://www.linkedin.com/in/juliebornstein"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline suggests foundership"
+      ],
+      "risks": [
+        "Lack of verified experience and sector alignment"
+      ],
+      "company_url": "dream11.com"
+    },
+    {
+      "name": "Uday Reddy",
+      "new_today": false,
+      "badges": [
+        "Ex-unicorn/top co"
+      ],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Udaan",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Uday Reddy's LinkedIn headline indicates a potential entrepreneurial move following his tenure at Udaan, warranting further investigation to validate his experience and the nature of his new venture.",
+      "linkedin_url": "https://www.linkedin.com/in/uday-reddy-478ba34",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Udaan. Current LinkedIn headline: \"Uday Reddy - Turito Inc. | LinkedInSebastian Thrun - WikipediaAhana Gautam - Founder & CEO at Open S\"",
+          "url": "https://www.linkedin.com/in/uday-reddy-478ba34"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline suggests founder activity"
+      ],
+      "risks": [
+        "Lack of verified experience and seniority",
+        "Unknown sector and company details"
+      ],
+      "company_url": "udaan.com"
+    },
+    {
+      "name": "Ahana Gautam",
+      "new_today": false,
+      "badges": [
+        "Ex-unicorn/top co"
+      ],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Udaan",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Ahana Gautam's LinkedIn indicates a potential transition to entrepreneurship, with a previous role at Udaan. However, the lack of verified experience and sector details necessitate further investigation to assess the viability of the new venture.",
+      "linkedin_url": "https://www.linkedin.com/in/ahanagautam",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Udaan. Current LinkedIn headline: \"Ahana Gautam - Founder & CEO at Open Secret | Harvard ...Gautam Adani - WikipediaForbes 2026 Billion\"",
+          "url": "https://www.linkedin.com/in/ahanagautam"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Strong LinkedIn presence",
+        "Previous experience at Udaan"
+      ],
+      "risks": [
+        "Lack of verified experience",
+        "Unknown sector",
+        "Potential for founder mythos"
+      ],
+      "company_url": "udaan.com"
+    },
+    {
+      "name": "Abraham Gummadi",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Dunzo",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Abraham Gummadi has indicated a move to stealth mode following his tenure at Dunzo, suggesting a potential new venture. However, the lack of verified experience, prior exit, and sector alignment makes further investigation necessary to assess the viability of this opportunity.",
+      "linkedin_url": "https://www.linkedin.com/in/abraham-gummadi",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Dunzo. Current LinkedIn headline: \"Abraham Gummadi - Stealth | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/abraham-gummadi"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline"
+      ],
+      "risks": [
+        "Unknown experience, no prior exit, and no sector alignment"
+      ],
+      "company_url": "dunzo.com"
+    },
+    {
+      "name": "Ravi Hegde",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Dunzo",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Ravi Hegde's LinkedIn stealth headline suggests a potential new venture, but further investigation is needed to verify his experience, sector alignment, and the viability of the new project.",
+      "linkedin_url": "https://www.linkedin.com/in/ravi-hegde",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Dunzo. Current LinkedIn headline: \"Ravi Hegde - Stealth Startup | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/ravi-hegde"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline indicates potential new venture"
+      ],
+      "risks": [
+        "Lack of verified experience and sector alignment"
+      ],
+      "company_url": "dunzo.com"
+    },
+    {
+      "name": "Annie Huang",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Dunzo",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Annie Huang's transition to a stealth mode with a previous company association suggests potential entrepreneurial intent, but further information is needed to assess her experience, sector fit, and the viability of her new venture.",
+      "linkedin_url": "https://www.linkedin.com/in/annie-huang-1a35b94b",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Dunzo. Current LinkedIn headline: \"Annie Huang - Stealth | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/annie-huang-1a35b94b"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline"
+      ],
+      "risks": [
+        "Unknown experience, no prior exit, and no sector alignment"
+      ],
+      "company_url": "dunzo.com"
+    },
+    {
+      "name": "Sharyansh Jain",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Dunzo",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Sharyansh Jain's transition to a stealth startup from his previous role at Dunzo suggests potential entrepreneurial intent. However, the lack of verified experience, prior exits, and sector alignment makes further investigation necessary to assess the viability of his new venture.",
+      "linkedin_url": "https://www.linkedin.com/in/sharyanshjain",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Dunzo. Current LinkedIn headline: \"Sharyansh Jain - Stealth Startup | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/sharyanshjain"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline"
+      ],
+      "risks": [
+        "Unknown experience, no prior exit, and no sector alignment"
+      ],
+      "company_url": "dunzo.com"
+    },
+    {
+      "name": "Arvind Jain",
+      "new_today": false,
+      "badges": [
+        "Ex-unicorn/top co"
+      ],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Microsoft",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Arvind Jain's LinkedIn stealth headline hints at a potential new venture, but without verified experience, sector alignment, or prior entrepreneurial success, further investigation is needed to assess his potential as a founder.",
+      "linkedin_url": "https://www.linkedin.com/in/jain-arvind",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Microsoft. Current LinkedIn headline: \"Arvind Jain - Glean | LinkedInNandan Nilekani - WikipediaSabeer Bhatia - WikipediaManish Gupta - Tec\"",
+          "url": "https://www.linkedin.com/in/jain-arvind"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline suggests potential new venture"
+      ],
+      "risks": [
+        "Lack of verified experience and seniority; no clear sector indication; no prior exit or L1/L2 title departure"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Manish Gupta",
+      "new_today": false,
+      "badges": [
+        "Ex-unicorn/top co"
+      ],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Microsoft",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Tech Sales, AI Business, Cybersecurity",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Manish Gupta's LinkedIn indicates a transition into entrepreneurship with a focus on tech sales and AI, potentially leveraging his experience at Microsoft. Further investigation is warranted to validate his seniority and potential for success in his new venture.",
+      "linkedin_url": "https://www.linkedin.com/in/gkmanish",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Microsoft. Current LinkedIn headline: \"Manish Gupta - Tech Sales Director - AI Business, Cyber ...Infosys – Founders of the Company | Manag\"",
+          "url": "https://www.linkedin.com/in/gkmanish"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Experience in tech sales and AI business",
+        "Previous experience at Microsoft"
+      ],
+      "risks": [
+        "Lack of verified seniority",
+        "Unknown experience years",
+        "No evidence of prior exits or L1/L2 roles"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Aaron Alex",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Goldman Sachs",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Aaron Alex's LinkedIn headline suggests a potential new venture, but further investigation is needed to verify his experience, sector alignment, and the viability of adooh.in.",
+      "linkedin_url": "https://www.linkedin.com/in/aarondalex",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Goldman Sachs. Current LinkedIn headline: \"Aaron Alex - adooh.in | Founder | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/aarondalex"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline indicates potential new venture"
+      ],
+      "risks": [
+        "Lack of verified experience and sector alignment"
+      ],
+      "company_url": "https://www.linkedin.com/in/aarondalex"
+    },
+    {
+      "name": "Neilek Dhawan",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Neilek Dhawan's LinkedIn stealth headline suggests an interest in a new venture, but further investigation is needed to verify experience, seniority, and the potential of the new venture.",
+      "linkedin_url": "https://www.linkedin.com/in/neilek-dhawan-1214a1227",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Neilek Dhawan - Stealth Startup | LinkedInAthiradi (2026 film) - WikipediaEconomy | The 2026 AI Inde\"",
+          "url": "https://www.linkedin.com/in/neilek-dhawan-1214a1227"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline indicates potential new venture"
+      ],
+      "risks": [
+        "Lack of verified experience and seniority; no prior exit or L1/L2 title departure confirmed"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Amey B",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Amey B has indicated a move to a stealth startup, but lacks verifiable experience or a prior exit, which makes it difficult to assess the potential for a successful venture.",
+      "linkedin_url": "https://www.linkedin.com/in/amey-b-a32908271",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Amey B - Stealth Startup | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/amey-b-a32908271"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline"
+      ],
+      "risks": [
+        "Unknown experience, no previous exit, and no verified seniority"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Monish Shah",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Monish Shah has indicated a move into stealth mode with a new startup, but lacks verified experience and sector alignment, making it difficult to assess potential for success.",
+      "linkedin_url": "https://www.linkedin.com/in/monish-shah-2338256",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Monish Shah - Founder - Stealth Startup | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/monish-shah-2338256"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth founder claim"
+      ],
+      "risks": [
+        "Lack of verified experience and sector alignment"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Nitin Singh",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Nitin Singh's transition to a stealth startup suggests a potential for innovation, but the lack of verified experience and background information requires further investigation.",
+      "linkedin_url": "https://www.linkedin.com/in/nitinsingh89",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Nitin Singh - Stealth Startup | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/nitinsingh89"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Potential for innovation in stealth mode"
+      ],
+      "risks": [
+        "Lack of verified experience and background"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Rahul Dhumale",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Rahul Dhumale's LinkedIn stealth headline suggests an interest in starting a new venture, but without verified experience or sector details, the investment thesis is unclear at this stage.",
+      "linkedin_url": "https://www.linkedin.com/in/rahul-dhumale",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Rahul Dhumale - Stealth Startup | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/rahul-dhumale"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline"
+      ],
+      "risks": [
+        "Lack of verified experience",
+        "Unknown sector",
+        "Potential for misrepresentation"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Yashish Dahiya",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "PolicyBazaar",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Yashish Dahiya has a background in the insurance sector, which could be a potential asset for a new venture. However, the lack of verified seniority and experience years, as well as the absence of a clear indication of a new venture, makes further investigation necessary.",
+      "linkedin_url": "https://www.linkedin.com/in/yashish-dahiya-145495261",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-PolicyBazaar. Current LinkedIn headline: \"Yashish Dahiya - Co-Founder, Chairman and Group CEO, PB ...Shayne Coplan - ForbesNeha Narkhede - Co-\"",
+          "url": "https://www.linkedin.com/in/yashish-dahiya-145495261"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Experience in the insurance sector from PolicyBazaar"
+      ],
+      "risks": [
+        "Lack of verified seniority and experience years",
+        "No clear indication of a new venture"
+      ],
+      "company_url": "policybazaar.com"
+    },
+    {
+      "name": "Neha Narkhede",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "PolicyBazaar",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Neha Narkhede's LinkedIn indicates a potential transition to entrepreneurship, but without verified experience and sector alignment, further investigation is needed to assess her potential.",
+      "linkedin_url": "https://www.linkedin.com/in/nehanarkhede",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-PolicyBazaar. Current LinkedIn headline: \"Neha Narkhede - Co-founder & CEO, Oscilar. Co-founder ...\"",
+          "url": "https://www.linkedin.com/in/nehanarkhede"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Strong background in the tech industry"
+      ],
+      "risks": [
+        "Lack of verified experience and sector alignment"
+      ],
+      "company_url": "policybazaar.com"
+    },
+    {
+      "name": "Rajan Bajaj",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Slice",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Rajan Bajaj's LinkedIn headline indicates a potential shift to foundership, but without verified experience, prior exit, or sector alignment, further investigation is needed to assess his potential.",
+      "linkedin_url": "https://www.linkedin.com/in/rajanbajaj",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Slice. Current LinkedIn headline: \"Rajan Bajaj - Founder & CEO, slice | LinkedInJames H Lee - Chairman, Founder & CEO at TXSE Group | T\"",
+          "url": "https://www.linkedin.com/in/rajanbajaj"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline suggests foundership"
+      ],
+      "risks": [
+        "Lack of verified experience and seniority",
+        "No traceable prior exit",
+        "Unknown sector alignment"
+      ],
+      "company_url": "sliceit.com"
+    },
+    {
+      "name": "James H Lee",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Slice",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "James H Lee's transition from Slice to TXSE Group suggests an entrepreneurial spirit, but the lack of verified experience and sector information makes further investigation necessary.",
+      "linkedin_url": "https://www.linkedin.com/in/jameshleetx",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Slice. Current LinkedIn headline: \"James H Lee - Chairman, Founder & CEO at TXSE Group | Texas ...\"",
+          "url": "https://www.linkedin.com/in/jameshleetx"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth founder claim"
+      ],
+      "risks": [
+        "Lack of verified experience",
+        "Unknown sector",
+        "Potential for founder misrepresentation"
+      ],
+      "company_url": "sliceit.com"
+    },
+    {
+      "name": "Ritesh Aggarwal",
+      "new_today": false,
+      "badges": [
+        "Ex-unicorn/top co"
+      ],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "OYO",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Ritesh Aggarwal's past experience at OYO suggests potential for leadership and business acumen, warranting further investigation into his new venture.",
+      "linkedin_url": "https://www.linkedin.com/in/ritesh-aggarwal-585b97356",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-OYO. Current LinkedIn headline: \"Ritesh Aggarwal - OYO founder and group CEO at OYO | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/ritesh-aggarwal-585b97356"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
+      "key_strengths": [
+        "Strong leadership experience at a notable company"
+      ],
+      "risks": [
+        "Lack of verified seniority and current company information"
+      ],
+      "company_url": "oyorooms.com"
+    },
+    {
+      "name": "Aditya Padhi",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "PharmEasy",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Aditya Padhi's transition to a stealth founder status suggests an intention to start a new venture, but without verified experience and company details, the investment thesis is speculative.",
+      "linkedin_url": "https://www.linkedin.com/in/aditya-padhi-05016810a",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-PharmEasy. Current LinkedIn headline: \"Aditya Padhi - Building Lumov || XIMB | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/aditya-padhi-05016810a"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline change to indicate a new venture"
+      ],
+      "risks": [
+        "Lack of verified experience and seniority",
+        "Unknown sector and company details"
+      ],
+      "company_url": "pharmeasy.in"
+    },
+    {
+      "name": "Tilakraj Singh",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Scaler",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Edtech",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Tilakraj Singh's background in Edtech and his association with a successful exit could indicate potential for a promising venture. Further investigation is needed to validate his experience and the viability of his new project.",
+      "linkedin_url": "https://www.linkedin.com/in/tilakraj-singh-",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Scaler. Current LinkedIn headline: \"Tilakraj Singh - Cofounder @Orbi | ex-@Scaler ($700mn Edtech ...\"",
+          "url": "https://www.linkedin.com/in/tilakraj-singh-"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Experience in Edtech",
+        "Potential for leveraging previous success"
+      ],
+      "risks": [
+        "Lack of verified experience level",
+        "First-time founder risk"
+      ],
+      "company_url": "scaler.com"
+    },
+    {
+      "name": "Jotham Lim",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Southeast Asia",
+      "sector": "Unknown",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Jotham Lim has recently changed his LinkedIn headline to indicate he is a founder and CEO of BuilderLab, suggesting a potential new venture. However, without verified experience, a clear sector, or prior exits, the investment thesis is speculative and requires further validation.",
+      "linkedin_url": "https://www.linkedin.com/in/jothamlim",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Jotham Lim - Founder & CEO, BuilderLab | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/jothamlim"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth founder claim"
+      ],
+      "risks": [
+        "Lack of verified experience",
+        "Unknown sector",
+        "Potential lack of prior exits"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Pablo V",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "OVO",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Southeast Asia",
+      "sector": "Technology",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Pablo V's LinkedIn indicates a potential founder role, but further investigation is needed to verify his experience, seniority, and the nature of the company he is building.",
+      "linkedin_url": "https://www.linkedin.com/in/pablo-v-578b131bb",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-OVO. Current LinkedIn headline: \"Pablo V. - Founder & CEO at OBE Group | Technology ... - LinkedIn\"",
+          "url": "https://www.linkedin.com/in/pablo-v-578b131bb"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn indicates a founder role"
+      ],
+      "risks": [
+        "Lack of verified experience and seniority",
+        "No previous exit or L1/L2 title departure",
+        "Unknown geography"
+      ],
+      "company_url": "ovo.id"
+    },
+    {
+      "name": "Ishita Shah",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "OVO",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Southeast Asia",
+      "sector": "AI",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Ishita Shah's LinkedIn indicates a transition to a founder role with a focus on AI product leadership, suggesting potential interest in AI-driven products. However, the lack of verified experience and background information requires further investigation.",
+      "linkedin_url": "https://www.linkedin.com/in/ishitaa-shah",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-OVO. Current LinkedIn headline: \"Ishita Shah - AI Product Leader | Building Reliable, Safety ...\"",
+          "url": "https://www.linkedin.com/in/ishitaa-shah"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "AI Product Leadership"
+      ],
+      "risks": [
+        "Lack of verified experience",
+        "Unknown background"
+      ],
+      "company_url": "ovo.id"
+    },
+    {
+      "name": "Murtaza Ali",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Southeast Asia",
+      "sector": "Unknown",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Murtaza Ali has indicated a move to a stealth startup, but lacks verifiable experience or a prior exit, which makes it difficult to assess the potential for a successful venture.",
+      "linkedin_url": "https://www.linkedin.com/in/murtaza-ali-751b1b304",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Murtaza Ali - Founder @Stealth Startup - Connecting... | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/murtaza-ali-751b1b304"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline"
+      ],
+      "risks": [
+        "Unknown experience, no previous exit, and no verified seniority"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Stephen Dong",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Southeast Asia",
+      "sector": "Unknown",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Stephen Dong's LinkedIn headline suggests an entrepreneurial intent, but without verified experience, sector alignment, or corroborating signals, further investigation is needed to assess his potential.",
+      "linkedin_url": "https://www.linkedin.com/in/stephen-dong-23a28129a",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Stephen Dong - Founder and CEO | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/stephen-dong-23a28129a"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn headline indicates founder status"
+      ],
+      "risks": [
+        "Lack of verified experience and sector alignment",
+        "No previous exit or L1/L2 title departure",
+        "No corroborating signals"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Zarif Aziz",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Southeast Asia",
+      "sector": "Unknown",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Zarif Aziz has indicated a move to a stealth startup, but without verified experience or a clear sector, the investment thesis is weak. Further investigation is needed to validate his background and potential.",
+      "linkedin_url": "https://www.linkedin.com/in/zarifaziz",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Zarif Aziz - Stealth Startup | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/zarifaziz"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline"
+      ],
+      "risks": [
+        "Lack of verified experience",
+        "Unknown sector",
+        "Potential lack of prior exits"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Nour Lababidi",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Southeast Asia",
+      "sector": "Unknown",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Nour Lababidi has indicated a move to a stealth startup, but with no verified experience or sector, the investment thesis is unclear at this stage.",
+      "linkedin_url": "https://www.linkedin.com/in/nour-lababidi",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Nour Lababidi - Stealth Startup | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/nour-lababidi"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline"
+      ],
+      "risks": [
+        "Lack of verified experience",
+        "Unknown sector",
+        "Potential for misrepresentation"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Zichen Chen",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Southeast Asia",
+      "sector": "Unknown",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Zichen Chen has indicated a move to a stealth startup, but with no verified experience or sector, the investment thesis is unclear at this stage.",
+      "linkedin_url": "https://www.linkedin.com/in/chenzichen",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Zichen Chen - Stealth Startup | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/chenzichen"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline"
+      ],
+      "risks": [
+        "Lack of verified experience",
+        "Unknown sector",
+        "Potential lack of prior exit"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Devin Weider",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-03",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Southeast Asia",
+      "sector": "Unknown",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Devin Weider has claimed to be a founder of a stealth startup on LinkedIn, but without verified experience or sector information, the investment thesis is unclear at this stage.",
+      "linkedin_url": "https://www.linkedin.com/in/devin-weider",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Devin Weider - Founder - Stealth Startup | LinkedIn\"",
+          "url": "https://www.linkedin.com/in/devin-weider"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth founder claim"
+      ],
+      "risks": [
+        "Lack of verified experience",
+        "Unknown sector",
+        "Potential for founder mythos"
+      ],
+      "company_url": ""
     }
   ],
   "source_breakdown": {
+    "news": 3,
+    "linkedin": 57,
+    "Product Hunt": 6,
     "yc": 2,
-    "linkedin": 50,
-    "verification": 4,
-    "news": 1,
-    "Product Hunt": 5
+    "verification": 4
   },
   "score_threshold": 40,
   "intelligence": {
@@ -2826,6 +3257,13 @@
           "summary": "AI has made it a lot harder for tech companies like Amazon and Google to deliver on their net-zero pledges."
         },
         {
+          "title": "I need just 5 more participants pls help (anonymous)",
+          "url": "https://www.reddit.com/r/artificial/comments/1ulqu5a/i_need_just_5_more_participants_pls_help_anonymous/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-02T18:44:59+00:00",
+          "summary": "Hi everyone, My name is Raheed Basahel (she/her) and I am currently conducting a postgraduate research study at King’s College London exploring how mood and relationship style may relate to interactions with artificial intelligence (AI), such as chatbots and conversational AI tools. The study has re"
+        },
+        {
           "title": "Meta quietly launches vibe-coded gaming app Pocket",
           "url": "https://techcrunch.com/2026/07/02/meta-quietly-launches-vibe-coded-gaming-app-pocket/",
           "source": "techcrunch.com",
@@ -2852,13 +3290,6 @@
           "source": "techcrunch.com",
           "pub_date": "2026-07-02T18:31:09+00:00",
           "summary": "The news comes about a week after OpenAI announced its own custom AI chip in a partnership with Broadcom."
-        },
-        {
-          "title": "ORBIS - Daily Briefing",
-          "url": "https://www.reddit.com/r/artificial/comments/1ulq5bc/orbis_daily_briefing/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-02T18:20:00+00:00",
-          "summary": "&#32; submitted by &#32;  /u/CarterBirchll   [link] &#32; [comments]"
         },
         {
           "title": "Tesla driver faces manslaughter charges over Texas crash that killed a woman inside her home",
@@ -2924,17 +3355,24 @@
           "summary": "Tesla just released its second-quarter delivery and production report, showing that the automaker is starting to recover after a particularly brutal sales year in 2025. The company said that it produced a total of 451,758 vehicles between April and June of this year, including 442,936 Model 3 and Mo"
         },
         {
-          "title": "AI won’t save advertising, says Digitas’ Amy Lanzi",
-          "url": "https://www.theverge.com/podcast/959792/digitas-ceo-amy-lanzi-cannes-ad-industry-marketing-ai-creators",
-          "source": "theverge.com",
-          "pub_date": "2026-07-02T10:00:00-04:00",
-          "summary": "We’ve got a special Decoder today — I had the chance to talk with Amy Lanzi, the CEO of Digitas North America, in front of a live audience at the Uber Villa at the Cannes Lions advertising festival in the South of France. I know, it’s a hard gig, but I do it for you. [&#8230;]"
+          "title": "Z.ai launches ZCode to challenge Cursor, Claude Code and GitHub Copilot in AI coding",
+          "url": "https://venturebeat.com/technology/z-ai-launches-zcode-to-challenge-cursor-claude-code-and-github-copilot-in-ai-coding",
+          "source": "venturebeat.com",
+          "pub_date": "2026-07-02T10:00:00+00:00",
+          "summary": "Z.ai, the Beijing-based artificial intelligence lab formerly known as Zhipu AI, on Wednesday officially launched ZCode, a free desktop application it describes as an &quot;Agentic Development Environment&quot; purpose-built for its flagship GLM-5.2 large language model. The move marks the company&#x"
         }
       ],
-      "cached_at": "2026-07-03T05:40:47.934850"
+      "cached_at": "2026-07-03T06:13:01.659812"
     },
     "india_sea": {
       "articles": [
+        {
+          "title": "PB Fintech Slumps Over 8% After ₹1,741 Cr Block Deal",
+          "url": "https://inc42.com/buzz/pb-fintech-slumps-over-8-after-%e2%82%b91741-cr-block-deal/",
+          "source": "inc42.com",
+          "pub_date": "2026-07-03T05:35:50+00:00",
+          "summary": "Shares of PB Fintech, the parent company of Policybazaar, plunged over 8% in early trade after a block deal worth&#8230;"
+        },
         {
           "title": "The problem with ‘PM as CEO of the Product’:  A myth that hurts more than helps",
           "url": "https://e27.co/the-problem-with-pm-as-ceo-of-the-product-a-myth-that-hurts-more-than-helps-20260703/",
@@ -3090,13 +3528,6 @@
           "summary": "Environment Minister Bhupender Yadav said India's shift to electric mobility is about building a sustainable industrial ecosystem that boosts manufacturing, creates green jobs and supports the vision of Viksit Bharat by 2047."
         },
         {
-          "title": "WhatsApp says claims of people reserving popular, well-known usernames false",
-          "url": "https://yourstory.com/2026/07/whatsapp-people-reserving-popular-well-known-usernames-false",
-          "source": "yourstory.com",
-          "pub_date": "2026-07-02T11:14:32+00:00",
-          "summary": "WhatsApp has defended its upcoming username feature, saying only legitimate owners can claim well-known public figure names and rejecting reports of popular usernames being reserved by others, even as the rollout faces regulatory scrutiny."
-        },
-        {
           "title": "What’s Behind H1 2026’s Mega Deal Slump?",
           "url": "https://inc42.com/buzz/whats-behind-h1-2026s-mega-deal-slump/",
           "source": "inc42.com",
@@ -3125,11 +3556,11 @@
           "summary": "Healthcare is a long game For most Singaporeans, Raffles Medical is a familiar name. The healthcare group has built a reputation as one of Singapore&#8217;s most established private medical providers. But behind the scenes, the company has spent the last decade chasing a much bigger ambition. Rather"
         },
         {
-          "title": "Udaan’s Creditors Initiate Bankruptcy Proceedings Against Its Parent In Singapore",
-          "url": "https://inc42.com/buzz/udaans-creditors-initiate-bankruptcy-proceedings-against-its-parent-in-singapore/",
-          "source": "inc42.com",
-          "pub_date": "2026-07-02T08:26:51+00:00",
-          "summary": "IPO-bound B2B ecommerce unicorn Udaan’s global creditors have initiated insolvency proceedings against it over default on bonds. A report by&#8230;"
+          "title": "Bhavin Turakhia launches AI-native work platform Neo with $30M investment",
+          "url": "https://yourstory.com/2026/07/bhavin-turakhia-ai-native-work-platform-neo-30m-investment",
+          "source": "yourstory.com",
+          "pub_date": "2026-07-02T08:40:15+00:00",
+          "summary": "Neo aims to bring work, knowledge, and execution into a single AI-native platform as enterprises look to move beyond fragmented AI tools and improve productivity."
         },
         {
           "title": "Age Care Labs raises Rs 85 Cr to expand elder care platform",
@@ -3181,6 +3612,13 @@
           "summary": "LinqAlpha, a New York-headquartered AI startup building intelligence tools for institutional investors, has raised US$22 million in a Series A round backed by a group of global and Asian investors. The round was anchored by AVP, Atinum Investment, and GFT Ventures. It also drew participation from fi"
         },
         {
+          "title": "Govt asks WhatsApp to halt username rollout, issues notice to Meta",
+          "url": "https://yourstory.com/2026/07/govt-whatsapp-halt-username-rollout-issues-notice-meta",
+          "source": "yourstory.com",
+          "pub_date": "2026-07-02T05:00:18+00:00",
+          "summary": "The Centre has asked Meta to pause WhatsApp's username rollout in India over concerns it could enable impersonation, phishing and fraud, and has sought a detailed explanation within three days."
+        },
+        {
           "title": "Indian startups raise $6.9B in H1 2026 as VC funding rebounds",
           "url": "https://yourstory.com/2026/07/indian-startups-raise-69b-in-h1-2026-as-vc-funding-rebounds",
           "source": "yourstory.com",
@@ -3188,18 +3626,11 @@
           "summary": "Venture capital funding into Indian startups for the first six months of the year touched $6.9 billion, raising hopes that capital inflow will surpass 2025 levels by the end of the year."
         },
         {
-          "title": "Raja Koduri's Oxmiq Labs bags $35M in Series A funding",
-          "url": "https://yourstory.com/2026/07/funding-raja-koduri-oxmiq-labs-35-million-series-a",
+          "title": "More than 50% of funding raised by U30 startups goes to product, expansion: Hurun report",
+          "url": "https://yourstory.com/2026/07/under-30-entrepreneurs-channel-most-funding-product-expansion-hurun-report",
           "source": "yourstory.com",
-          "pub_date": "2026-07-01T15:34:12+00:00",
-          "summary": "Oxmiq Labs will use this funding to scale OxCore, Oxmiq Labs' licensable GPU architecture platform that enables semiconductor companies and AI system builders to develop custom AI silicon without undertaking a full chip design programme."
-        },
-        {
-          "title": "Government reviews WhatsApp username feature over fraud concerns",
-          "url": "https://yourstory.com/2026/07/government-whatsapps-username-feature-concerns-fraud-impersonation",
-          "source": "yourstory.com",
-          "pub_date": "2026-07-01T11:34:00+00:00",
-          "summary": "The government is reviewing WhatsApp's upcoming username feature over concerns it could enable impersonation and fraud. The scrutiny comes as the Meta-owned platform prepares to roll out the feature later this year, allowing users to connect without sharing phone numbers."
+          "pub_date": "2026-07-01T13:29:05+00:00",
+          "summary": "The findings indicate that young founders are increasingly prioritising long-term product creation and market expansion over discretionary spending, even as they continue to attract significant investor interest."
         },
         {
           "title": "Who knew S’pore makes Greek yoghurt? This biz produces 4,000kg/mth & supplies luxury hotels",
@@ -3258,7 +3689,7 @@
           "summary": "The cuts are reportedly not part of any AI initiatives Lazada said today (Jun 23) that it has laid off about 5% of its workforce across Southeast Asia. The move was made after reviewing certain roles in its regional markets, according to a report from the Business Times. The e-commerce firm did not "
         }
       ],
-      "cached_at": "2026-07-03T05:40:47.934850"
+      "cached_at": "2026-07-03T06:13:01.659812"
     },
     "emerging": {
       "articles": [
@@ -3669,7 +4100,7 @@
           "summary": "Mahadev Book has designed its daily and weekly promotion system with structure, clarity, and long term value in mind. These\nThe post Daily And Weekly Promotions &#8211; How To Stay Ahead At Mahadev Book? appeared first on Mahadev Book."
         }
       ],
-      "cached_at": "2026-07-03T05:40:47.934850"
+      "cached_at": "2026-07-03T06:13:01.659812"
     },
     "sector_heatmap": [
       {
@@ -3679,17 +4110,17 @@
       },
       {
         "name": "Climate / Clean",
-        "signals": 61,
+        "signals": 60,
         "sentiment": "bullish"
       },
       {
         "name": "Deep Tech",
-        "signals": 8,
+        "signals": 7,
         "sentiment": "bullish"
       },
       {
         "name": "Fintech",
-        "signals": 3,
+        "signals": 4,
         "sentiment": "neutral"
       },
       {
@@ -4049,11 +4480,11 @@
           "company": "Dat Bike"
         },
         {
-          "title": "Vietnam Startup Seeks Slice of Third-Largest EV Motorbike Market - Bloomberg.com",
+          "title": "Vietnam Startup Seeks Slice of Third-Largest EV Motorbike Market - Bloomberg",
           "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxON3dUTDNuQ2ZWTXFmYzg4LVhPS2RiaVc3cWhhUFpqZG01MVRfNmNKcW5lTUN2SHFGdXF6RXFhMVdqRUxINnNiMjJydTdCak5SRXFxQzg3b3pNRTYxQVhkZzZIaWFIMzJBSlZib2J2aENWY1N6YmREOHplUGdLYllPdXlLXzM3aUhPSGItNUg0bXRVSnh6TDNwcWFIT2Z1LTFZRWNuY0tmZWpIUzEyZGIxLVZRWmo2UQ?oc=5",
           "source": "news.google.com",
           "pub_date": "2025-09-17T07:00:00+00:00",
-          "summary": "Vietnam Startup Seeks Slice of Third-Largest EV Motorbike Market&nbsp;&nbsp;Bloomberg.com",
+          "summary": "Vietnam Startup Seeks Slice of Third-Largest EV Motorbike Market&nbsp;&nbsp;Bloomberg",
           "company": "Dat Bike"
         },
         {
@@ -4113,14 +4544,6 @@
           "company": "Sanlayan"
         },
         {
-          "title": "Sanlayan Secures ₹186 Cr in Series A to Accelerate Defence Electronics Push - CXO Digitalpulse",
-          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPUFVoRERlSjU0cjJwOXV3cDcwYTQ4RzBiMG5ac2JFem9yRkV3YUNrSDRjbWZPQjExRmdEYzlLYTVhWlM3Yk9BWmtWcjVRVHZZZW43amM3dVljd05PV1FIeFotLUpsTzZ5aERNbHpnSUdSRWdGbEhVa0JaVUJ4MHpIZkhhV0xyV1NDMDZ2Z29WbHBPQTZCd0NOcVRwVk11Yk9MWWlTWXRibUtfaWdMQVVxOTRyYVlEbVk?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2025-06-09T07:00:00+00:00",
-          "summary": "Sanlayan Secures ₹186 Cr in Series A to Accelerate Defence Electronics Push&nbsp;&nbsp;CXO Digitalpulse",
-          "company": "Sanlayan"
-        },
-        {
           "title": "Ashish Kacholia and Jungle Ventures Lead Roomstory's Pre-Seed Funding - VCCircle",
           "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQemlYNlRzaFdKYlJPNnFZLTNsRmFjOTdZRDBTMmRQMEpyV2xtUHVhRVFZWVp1XzFuSFBIanBnWHdNWGFxZm9GNW5VRDZPQ1ppdDFqU3ZYeFI1T3A1aEhjUFFhU0I2ZE5XdXI3dG5iQ1BVenVnTkxCOEEwbWsxMWtvSG4tdXVkQnNyYkxYX2ZmVDI4aUY5am83cURDVy02SS1pWk1acWtKbHlaWUM4ZllNUA?oc=5",
           "source": "news.google.com",
@@ -4134,6 +4557,14 @@
           "source": "news.google.com",
           "pub_date": "2025-06-09T07:00:00+00:00",
           "summary": "Sanlayan raises ₹186 crore in Series A funding round&nbsp;&nbsp;MarcaMoney",
+          "company": "Sanlayan"
+        },
+        {
+          "title": "Sanlayan Secures ₹186 Cr in Series A to Accelerate Defence Electronics Push - CXO Digitalpulse",
+          "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPUFVoRERlSjU0cjJwOXV3cDcwYTQ4RzBiMG5ac2JFem9yRkV3YUNrSDRjbWZPQjExRmdEYzlLYTVhWlM3Yk9BWmtWcjVRVHZZZW43amM3dVljd05PV1FIeFotLUpsTzZ5aERNbHpnSUdSRWdGbEhVa0JaVUJ4MHpIZkhhV0xyV1NDMDZ2Z29WbHBPQTZCd0NOcVRwVk11Yk9MWWlTWXRibUtfaWdMQVVxOTRyYVlEbVk?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2025-06-09T07:00:00+00:00",
+          "summary": "Sanlayan Secures ₹186 Cr in Series A to Accelerate Defence Electronics Push&nbsp;&nbsp;CXO Digitalpulse",
           "company": "Sanlayan"
         },
         {
@@ -4225,7 +4656,7 @@
           "company": "NirogStreet"
         }
       ],
-      "cached_at": "2026-07-03T05:40:47.934850"
+      "cached_at": "2026-07-03T06:13:01.659812"
     }
   }
 }
