@@ -253,6 +253,12 @@ def _slug_to_name(slug: str) -> str:
     return name.title() if name else ""
 
 
+_NOT_A_NAME = frozenset({
+    "stealth startup", "stealth mode", "stealth", "confidential", "new venture",
+    "stealth company", "linkedin member", "linkedin user", "private profile",
+})
+
+
 def _name_from_title(title: str) -> str:
     """Extract person name from a Serper/Google result title.
     LinkedIn titles follow: 'Firstname Lastname - headline | company'
@@ -260,6 +266,8 @@ def _name_from_title(title: str) -> str:
     if not title:
         return ""
     part = re.split(r"\s+[-|]\s+", title, maxsplit=1)[0].strip()
+    if part.lower() in _NOT_A_NAME:
+        return ""  # anonymized/company-named profiles are not people
     tokens = part.split()
     # All tokens must start uppercase; at least one must be 4+ chars (real word, not an abbrev)
     if (2 <= len(tokens) <= 4
@@ -411,11 +419,17 @@ def _extract_person_from_result(title: str, snippet: str, url: str, query: str) 
     # Signal type: always stealth_founder — we require has_stealth above
     signal_type = "stealth_founder"
 
-    # Previous company from query
+    # Previous company: the query targets ex-[Company] alumni, but a search
+    # engine can return any profile — only attribute the company if the
+    # PROFILE TEXT itself mentions it. Otherwise a famous ex-Google engineer
+    # ranked for an "ex-Ola" query would be labeled ex-Ola (and collect the
+    # pedigree bonus) with zero evidence.
     previous_company = ""
     m2 = re.search(r'"ex-([^"]+)"', query)
     if m2:
-        previous_company = m2.group(1).strip()
+        candidate = m2.group(1).strip()
+        if candidate.lower() in f"{title} {snippet}".lower():
+            previous_company = candidate
 
     # Infer location from company/query context
     location = _infer_location(previous_company, query)
