@@ -277,6 +277,18 @@ def search_twitter_signals(days_back: int = 30) -> List[Person]:
             if e["url"] in seen:
                 continue
             seen.add(e["url"])
+            text = (e["title"] + " " + e["summary"]).lower()
+            # ONLY first-person announcements count. Scraper bots
+            # (@StealthCoSpy etc.) auto-tweet "X is now building in Stealth
+            # Mode!" for ANY LinkedIn headline change — including software
+            # managers at Intuit and US-based directors. Second-hand bot
+            # posts have no quality bar and no verifiable subject.
+            if re.search(r"is now building in stealth|spy on x|tracker|/stealthcospy", text):
+                continue
+            if not re.search(r"\bi['’]?m\b|\bi am\b|\bwe['’]?re\b|\bwe are\b|\bmy (new|own)\b|"
+                             r"\bexcited to (announce|share)\b|\bthrilled to\b|\bleaving .{0,30} to (build|start)\b",
+                             text):
+                continue
             entries.append(e)
         time.sleep(0.8)
 

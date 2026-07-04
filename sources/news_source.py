@@ -462,7 +462,9 @@ def _llm_extract_structured(entries: List[dict]) -> dict:
         "A person stepping down WITHOUT starting something = appointment, not departure_to_build. "
         "An executive joining another company as CXO = appointment. "
         "A person launching or joining a VC FUND, investment firm, family office, or "
-        "angel syndicate = irrelevant (we are a fund; we invest in STARTUPS, not other funds).\n\n"
+        "angel syndicate = irrelevant (we are a fund; we invest in STARTUPS, not other funds). "
+        "NEVER infer 'geo' from a person's name or ethnicity — only from explicit evidence "
+        "(stated location, city, or a company known to operate there). No evidence = Unknown.\n\n"
         f"Items:\n{items_block}\n\n"
         "Return ONLY a JSON array of objects, one per item, each including the item's "
         '"idx" number echoed back. Example:\n'

@@ -363,6 +363,30 @@ def main():
         logger.info("Geography gate: dropped %d persons with no India/SEA evidence", dropped_geo)
     deduped = in_mandate
 
+    # ── Founder-plausibility gate (all sources) ────────────────────────────────
+    # Regardless of which source surfaced them, a person must carry actual
+    # founder-intent evidence: founder/building/stealth/venture language in
+    # their evidence text, or a structurally founder-shaped signal type
+    # (accelerator batch, funding, registry filing, headline change).
+    import re as _re
+    _FOUNDER_EVIDENCE = _re.compile(
+        r"co-?found|\bfounder\b|founding|\bbuilding\b|stealth|new venture|"
+        r"new startup|launch|started|starting up|incorporat|raised|day 1", _re.I)
+    _FOUNDER_SIGNAL_TYPES = {"accelerator_batch", "funding_news", "stealth_headline_change",
+                             "company_registration", "mca_registration", "acra_registration",
+                             "second_time_founder"}
+    plausible, dropped_np = [], 0
+    for p in deduped:
+        sig_types = {s.signal_type for s in p.signals}
+        evidence = " ".join([(p.headline or "")] + [s.description or "" for s in p.signals])
+        if sig_types & _FOUNDER_SIGNAL_TYPES or _FOUNDER_EVIDENCE.search(evidence):
+            plausible.append(p)
+        else:
+            dropped_np += 1
+    if dropped_np:
+        logger.info("Founder-plausibility gate: dropped %d persons with no founder evidence", dropped_np)
+    deduped = plausible
+
     # ── Fresh vs already-surfaced split (event-cursor semantics) ──────────────
     # A person whose EVERY piece of signal evidence was already surfaced in a
     # previous run is not news — they live in the archive (below) and are not
