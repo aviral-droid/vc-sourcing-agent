@@ -334,6 +334,7 @@ _SENIOR_TITLE_KEYWORDS = {
 _SIGNAL_SCORES = {
     "stealth_headline_change": 24,  # profile headline CHANGED to stealth between runs — gold
     "seniority_corroborated":  12,  # independent web source confirms senior title
+    "profile_verified":        14,  # full dated work history verified via LinkedIn data API
     "accelerator_batch":       16,  # accepted into YC/top accelerator — vetted pre-seed
     "exec_departure":         18,
     "executive_departure":    18,  # alias used by news_source
@@ -732,7 +733,7 @@ def compute_badges(person: Person) -> list:
         pass
     if exp >= 10:
         badges.append(f"{exp}y operator")
-    if "seniority_corroborated" in sig_types:
+    if "seniority_corroborated" in sig_types or "profile_verified" in sig_types:
         badges.append("Verified")
     if len(sources - {"verification"}) >= 2:
         badges.append("Multi-source")

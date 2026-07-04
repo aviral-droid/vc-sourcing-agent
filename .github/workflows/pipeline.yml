@@ -45,6 +45,9 @@ jobs:
           GOOGLE_CSE_API_KEY: ${{ secrets.GOOGLE_CSE_API_KEY }}
           GOOGLE_CSE_CX: ${{ secrets.GOOGLE_CSE_CX }}
           TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
+          ENRICHLAYER_API_KEY: ${{ secrets.ENRICHLAYER_API_KEY }}
+          SCRAPIN_API_KEY: ${{ secrets.SCRAPIN_API_KEY }}
+          RAPIDAPI_KEY: ${{ secrets.RAPIDAPI_KEY }}
           MIN_SCORE_THRESHOLD: "40"   # raised from 30: rule-based floor is ~30, which let noise through
         run: python scripts/run_pipeline.py
 
@@ -69,3 +72,13 @@ jobs:
             GIT_EDITOR=true git rebase --continue
           fi
           git push
+
+      - name: Sync investigate founders to Streak (optional)
+        env:
+          STREAK_API_KEY: ${{ secrets.STREAK_API_KEY }}
+        run: |
+          if [ -n "$STREAK_API_KEY" ]; then
+            python scripts/crm_sync.py || echo "Streak sync failed (non-fatal)"
+          else
+            echo "STREAK_API_KEY not set — skipping Streak sync"
+          fi

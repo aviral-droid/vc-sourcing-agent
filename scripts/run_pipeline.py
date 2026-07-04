@@ -440,6 +440,16 @@ def main():
     except Exception as e:
         logger.warning("Deep enrichment failed: %s", e)
 
+    # ── LinkedIn API full-profile verification (optional, key-gated) ──────────
+    # When ENRICHLAYER_API_KEY / SCRAPIN_API_KEY / RAPIDAPI_KEY is configured,
+    # top candidates get REAL dated work history: verified titles, computed
+    # experience years, confirmed stealth status. No-op without a key.
+    try:
+        from pipeline.linkedin_api import verify_top_candidates
+        verify_top_candidates(scored)
+    except Exception as e:
+        logger.warning("LinkedIn API verification failed: %s", e)
+
     # ── Record surfaced persons + mark their evidence seen ────────────────────
     for p in scored:
         for s in p.signals:
