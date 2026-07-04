@@ -439,6 +439,13 @@ def _extract_person_from_result(title: str, snippet: str, url: str, query: str) 
     stealth founder regardless of what their profile actually says.
     """
     title = _clean_serp_title(title)
+    # Country-flag emoji outside the mandate = profile self-identifies as
+    # non-India/SEA (e.g. "Name 🇮🇱 - Stealth Startup"). Regional-indicator
+    # pairs spell ISO country codes; allow only India + SEA flags.
+    _flags = re.findall(r"[\U0001F1E6-\U0001F1FF]{2}", title)
+    _ALLOWED_FLAGS = {"🇮🇳", "🇸🇬", "🇮🇩", "🇻🇳", "🇲🇾", "🇵🇭", "🇹🇭"}
+    if any(f not in _ALLOWED_FLAGS for f in _flags):
+        return None
     # Canonicalise LinkedIn URL — strip Google redirect wrappers
     clean_url = _clean_linkedin_url(url)
     if not clean_url:
