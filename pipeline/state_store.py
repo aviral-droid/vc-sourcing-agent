@@ -215,6 +215,10 @@ class StateStore:
             "investment_thesis": person.investment_thesis or "",
             "score_rationale": getattr(person, "score_rationale", "") or "",
             "badges": list(getattr(person, "badges", []) or []),
+            "company_description": getattr(person, "company_description", "") or "",
+            "funding_status": getattr(person, "funding_status", "") or "",
+            "funding_evidence": getattr(person, "funding_evidence", "") or "",
+            "education": getattr(person, "education", "") or "",
             "signal_types": sorted({s.signal_type for s in person.signals}),
             "signal_descriptions": [
                 {"source": s.source, "type": s.signal_type,

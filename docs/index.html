@@ -1791,6 +1791,9 @@ function openDrawer(key){
         <div class="to"><div class="role">${esc(p.current_company||'Stealth / building')}</div><div class="co">current</div></div>
       </div>
     </div>
+    ${p.company_description?`<div><div class="drawer-section-title">What they're building</div><div style="font-size:12px;line-height:1.6">${esc(p.company_description)}</div></div>`:''}
+    ${p.funding_status?`<div style="padding:8px 12px;border-radius:8px;font-size:11.5px;font-weight:600;${p.funding_status.includes('beyond')?'background:var(--red-dim);color:var(--red)':'background:var(--green-dim);color:var(--green)'}">💰 ${esc(p.funding_status)}${p.funding_evidence?` <a href="${esc(p.funding_evidence)}" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">source ↗</a>`:''}</div>`:''}
+    ${p.education?`<div><div class="drawer-section-title">Education</div><div style="font-size:12px">🎓 ${esc(p.education)}</div></div>`:''}
     ${p.investment_thesis?`<div><div class="drawer-section-title">Investment thesis</div><div style="font-size:12px;line-height:1.6">${esc(p.investment_thesis)}</div></div>`:''}
     ${rationale.key_strengths&&rationale.key_strengths.length?`<div><div class="drawer-section-title">Strengths</div><ul class="drawer-list">${rationale.key_strengths.map(s=>`<li>${esc(s)}</li>`).join('')}</ul></div>`:''}
     ${rationale.risks&&rationale.risks.length?`<div><div class="drawer-section-title">Risks</div><ul class="drawer-list">${rationale.risks.map(s=>`<li>${esc(s)}</li>`).join('')}</ul></div>`:''}

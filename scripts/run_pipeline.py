@@ -406,9 +406,18 @@ def main():
     # Persons surfaced from news/RSS often have no linkedin_url; add it via Serper.
     _enrich_linkedin_urls(scored)
 
-    # ── Record surfaced persons + mark their evidence seen ────────────────────
+    # ── Deep enrichment: company site/description, funding-stage gate, ────────
+    #    education pedigree, X handle — top fresh founders only.
     for p in scored:
         p.new_today = True
+    try:
+        from pipeline.enrich_plus import deep_enrich
+        deep_enrich(scored)
+    except Exception as e:
+        logger.warning("Deep enrichment failed: %s", e)
+
+    # ── Record surfaced persons + mark their evidence seen ────────────────────
+    for p in scored:
         for s in p.signals:
             store.mark_signal_seen(store.signal_key(s.url, p.name))
         store.record_surfaced(p)
@@ -446,6 +455,10 @@ def main():
             p.company_url = rec.get("company_url", "")
             p.headline = rec.get("headline", "")
             p.badges = rec.get("badges", [])
+            p.company_description = rec.get("company_description", "")
+            p.funding_status = rec.get("funding_status", "")
+            p.funding_evidence = rec.get("funding_evidence", "")
+            p.education = rec.get("education", "")
             p.first_surfaced = rec.get("first_surfaced", "")
             p.new_today = False
             for sd in rec.get("signal_descriptions", []):
