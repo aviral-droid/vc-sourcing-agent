@@ -5,6 +5,12 @@ on:
     - cron: '30 2 * * *'   # 2:30 AM UTC = 8 AM IST daily
   workflow_dispatch:         # manual trigger from GitHub UI
 
+# Never let two pipeline runs overlap — they both commit data.json/state and
+# would race each other into rebase conflicts. Queue instead of cancel.
+concurrency:
+  group: vc-pipeline
+  cancel-in-progress: false
+
 jobs:
   run-pipeline:
     runs-on: ubuntu-latest
@@ -47,4 +53,19 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git config user.name "github-actions[bot]"
           git add docs/data.json state/
-          git diff --staged --quiet && echo "No changes" || (git commit -m "chore: pipeline run $(date -u +%Y-%m-%dT%H:%M:%SZ) [skip ci]" && git pull --rebase origin main && git push)
+          if git diff --staged --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "chore: pipeline run $(date -u +%Y-%m-%dT%H:%M:%SZ) [skip ci]"
+          # If main moved during the run (a manual push landed mid-run), the
+          # generated JSON files can't auto-merge. Resolve by preferring this
+          # run's freshly generated output ('theirs' during rebase = our
+          # commit being replayed) — the next run regenerates from the merged
+          # code anyway, so this is always eventually consistent.
+          if ! git pull --rebase origin main; then
+            git checkout --theirs docs/data.json state/ || true
+            git add docs/data.json state/
+            GIT_EDITOR=true git rebase --continue
+          fi
+          git push
