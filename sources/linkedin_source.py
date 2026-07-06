@@ -135,6 +135,14 @@ INDIA_STEALTH_QUERIES = [
     'site:linkedin.com/in "ex-Infosys" OR "ex-Wipro" India "founder" OR "stealth" OR "new startup"',
     'site:linkedin.com/in "ex-TCS" OR "ex-HCL Technologies" India "founder" OR "building"',
     'site:linkedin.com/in "ex-Accenture" India "founder" OR "stealth" OR "new startup"',
+    # Second-time founders — the fund's #1 archetype. Repeat founding is
+    # written many ways; cover the vocabulary, not just one phrase.
+    'site:linkedin.com/in India "2x founder" OR "3x founder" "building" OR "stealth" OR "new"',
+    'site:linkedin.com/in India "previously founded" OR "previously co-founded" "building" OR "stealth"',
+    'site:linkedin.com/in India "acquired by" "founder" "building" OR "stealth" OR "new venture"',
+    'site:linkedin.com/in India "exited" "founder" "building" OR "starting" OR "stealth"',
+    'site:linkedin.com/in India "sold my startup" OR "sold my company" OR "post-exit" "building" OR "new"',
+    'site:linkedin.com/in India "repeat founder" OR "again building" OR "back to building"',
     # Cohort expansion (Specter tracks these archetypes explicitly):
     # founding/early employees at breakouts, and frontier-AI-lab alumni
     'site:linkedin.com/in "founding engineer" India "stealth" OR "building something" OR "founder"',
@@ -196,6 +204,11 @@ SEA_STEALTH_QUERIES = [
     # Cohort expansion — founding engineers + AI-lab alumni in SEA
     'site:linkedin.com/in "founding engineer" Singapore OR Indonesia "stealth" OR "founder"',
     'site:linkedin.com/in "ex-OpenAI" OR "ex-Anthropic" Singapore "founder" OR "stealth" OR "building"',
+    # Second-time founders — SEA
+    'site:linkedin.com/in Singapore OR Indonesia "2x founder" OR "repeat founder" "building" OR "stealth"',
+    'site:linkedin.com/in Singapore "previously founded" OR "acquired by" "founder" "building" OR "new"',
+    'site:linkedin.com/in Vietnam OR Malaysia OR Philippines "2x founder" OR "previously founded" "building"',
+    'site:linkedin.com/in Singapore OR Indonesia "exited" OR "sold my startup" "founder" "building" OR "new"',
 ]
 
 def _company_queries() -> List[str]:
@@ -378,6 +391,10 @@ _GENUINE_STEALTH_KWS = frozenset({
     "starting something", "building", "new company",
     "founder",          # standalone "Founder" in headline
     "building in",      # "building in [domain]" — deliberate stealth language
+    # Second-time founder vocabulary — passes the gate even without "founder"
+    "serial entrepreneur", "2x founder", "3x founder", "repeat founder",
+    "second-time", "previously founded", "previously co-founded",
+    "sold my startup", "sold my company", "post-exit", "back to building",
 })
 
 _SENIOR_TITLE_KWS = frozenset({

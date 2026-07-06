@@ -96,6 +96,13 @@ GOOGLE_NEWS_QUERIES = [
     '"former" "VP" OR "director" India startup launch 2025 OR 2026',
     '"second-time founder" India 2025 OR 2026',
     '"serial entrepreneur" India "new company" 2025 OR 2026',
+    # Second-time founders — every phrasing of "founded before, starting again"
+    'India "repeat founder" OR "2x founder" launches OR raises 2025 OR 2026',
+    'India founder "sold his startup" OR "sold her startup" "new venture" OR "new startup" 2025 OR 2026',
+    'India "after exit" OR "post-exit" founder "new startup" 2025 OR 2026',
+    'India founder "second startup" OR "second venture" launches 2025 OR 2026',
+    'Singapore OR Indonesia "serial entrepreneur" OR "repeat founder" launches OR raises 2025 OR 2026',
+    'Southeast Asia founder "sold" startup "new venture" 2025 OR 2026',
     '"left" "to build" OR "to start" India startup 2025 OR 2026',
     '"resigned" "to start" OR "to found" India tech 2025 OR 2026',
     '"building in stealth" India 2025 OR 2026',

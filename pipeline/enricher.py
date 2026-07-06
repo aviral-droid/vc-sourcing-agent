@@ -696,6 +696,34 @@ def _rule_based_score(person: Person) -> dict:
     }
 
 
+# ── Second-time founder detection (deterministic, evidence-based) ─────────────
+# The fund's #1 archetype: anyone who founded before — big exit, small exit,
+# or no exit — now starting again. LLM classification misses many phrasings;
+# this regex pass over the person's own evidence text catches them reliably
+# and feeds both the rule-based +20 and the LLM prompt (which then sees
+# is_second_time_founder=True as a fact, not a guess).
+_SECOND_TIME_RE = re.compile(
+    r"\b[23]x\s*founder|second[- ]time founder|serial (?:entrepreneur|founder)|"
+    r"repeat founder|previously (?:founded|co[- ]?founded)|"
+    r"sold (?:my|his|her) (?:startup|company)|"
+    r"(?:my|his|her) (?:last|first|previous) (?:startup|company|venture)|"
+    r"founder of .{2,40}\((?:acquired|acq\.|exited)|"
+    r"post[- ]exit|after (?:his|her|the) exit|exited founder", re.I)
+
+
+def detect_second_time(person: Person) -> bool:
+    """Set is_second_time_founder from the person's own evidence text."""
+    if person.is_second_time_founder:
+        return True
+    text = " ".join([person.headline or ""] +
+                    [(s.description or "") + " " + str(s.raw_data.get("snippet", ""))
+                     for s in person.signals])
+    if _SECOND_TIME_RE.search(text):
+        person.is_second_time_founder = True
+        return True
+    return False
+
+
 # ── Derived badges (Harmonic-style "Highlights", materialized at ingest) ──────
 # Harmonic precomputes person-level badges (Seasoned Founder, Prior Exit, Major
 # Tech Experience...) so sourcing filters are instant lookups. Same idea here:

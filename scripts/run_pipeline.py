@@ -404,8 +404,16 @@ def main():
     if skipped_seen:
         logger.info("Skipped %d persons whose evidence was already surfaced (archive)", skipped_seen)
 
-    # Named + anchored persons first, then cap before scoring
-    fresh.sort(key=lambda p: (0 if p.name else 1,
+    # Detect second-time founders BEFORE the scoring cap — the fund's #1
+    # archetype must never be squeezed out by volume.
+    from pipeline.enricher import detect_second_time
+    n_2x = sum(1 for p in fresh if detect_second_time(p))
+    if n_2x:
+        logger.info("Second-time founder detection: %d flagged", n_2x)
+
+    # 2x founders first, then named + anchored persons, then cap before scoring
+    fresh.sort(key=lambda p: (0 if p.is_second_time_founder else 1,
+                              0 if p.name else 1,
                               0 if (p.linkedin_url or p.twitter_handle or p.github_url) else 1,
                               -p.signal_count))
     fresh = fresh[:80]    # cap at 80: scoring via LLM ~6s/person × 80 = ~8min, within 25min CI budget
