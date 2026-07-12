@@ -1,15 +1,83 @@
 {
-  "generated_at": "2026-07-11T05:32:25.140099",
-  "date_label": "2026-07-11",
-  "total_signals": 98,
-  "total_persons": 82,
+  "generated_at": "2026-07-12T05:52:14.849337",
+  "date_label": "2026-07-12",
+  "total_signals": 127,
+  "total_persons": 101,
   "sources_active": [
     "Product Hunt",
     "YC batches (India/SEA)",
-    "News (RSS + Google News)"
+    "News (RSS + Google News)",
+    "GDELT (global news events)",
+    "LinkedIn (stealth + departures)"
   ],
-  "executive_summary": "Today's top VC sourcing signal features Lalit Mittal, a former Livspace executive who has transitioned to stealth mode, scoring a 40 on the sourcing rubric. This signal, while indicating a potential new venture, lacks verified seniority and is categorized as a first-time founder with some signal. The total number of signals above the threshold is one, with a focus on India/SEA geography and the archetypes of second-time founders and senior operators.",
+  "executive_summary": "Today's top VC sourcing signals highlight a surge in stealth mode ventures in India and Southeast Asia, with notable figures such as Manish Srivastava and Yogesh Verma transitioning from established companies to new ventures. The signals are evenly distributed across sectors, with a strong presence in Fintech and HealthTech, reflecting a trend of seasoned operators seeking new opportunities in the region. Notable leads include Manish Srivastava and Yogesh Verma, showcasing the region's attractiveness for experienced founders.",
   "persons": [
+    {
+      "name": "Manish Srivastava",
+      "new_today": true,
+      "badges": [
+        "Just went stealth",
+        "Verified",
+        "Multi-source"
+      ],
+      "first_surfaced": "",
+      "company_description": "",
+      "funding_status": "",
+      "funding_evidence": "",
+      "education": "",
+      "score": 75,
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "Jupiter",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Marketing",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Manish Srivastava has demonstrated a transition to a stealth mode with strong signals of seniority and company directorship, suggesting a potential move into entrepreneurship. His experience in marketing and previous role at Jupiter could be valuable in the sector.",
+      "linkedin_url": "https://www.linkedin.com/in/manishsrivastava23",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 3,
+      "signal_types": [
+        "seniority_corroborated",
+        "stealth_headline_change",
+        "mca_registration"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_headline_change",
+          "description": "Headline CHANGED to stealth since last run. Ex-Jupiter. Current LinkedIn headline: \"Manish Srivastava - All things Marketing at Sahi.com Ex ...Sujith Narayanan - Co-Founder @ Fi.Money \"",
+          "url": "https://www.linkedin.com/in/manishsrivastava23"
+        },
+        {
+          "source": "verification",
+          "type": "seniority_corroborated",
+          "description": "Independent source confirms profile: Manish Srivastava Email & Phone Number | Titan Ocean Pte. Ltd....",
+          "url": "https://rocketreach.co/manish-srivastava-email_45392624"
+        },
+        {
+          "source": "registry",
+          "type": "mca_registration",
+          "description": "Registry: listed as company director — Manish Srivastava | Director Profile | The Company CheckManish Srivastava | Director Profile | The Company CheckTofler | Director ",
+          "url": "https://www.thecompanycheck.com/people-profile/manish-srivastava/08563053"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
+      "key_strengths": [
+        "seniority_corroborated",
+        "mca_registration",
+        "stealth_headline_change"
+      ],
+      "risks": [
+        "unknown_experience_years"
+      ],
+      "company_url": "jupiter.money"
+    },
     {
       "name": "Bhavin Turakhia",
       "new_today": false,
@@ -108,6 +176,73 @@
       "company_url": "https://www.oxmiqlabs.com/"
     },
     {
+      "name": "Yogesh Verma",
+      "new_today": true,
+      "badges": [
+        "Ex-unicorn/top co",
+        "Verified",
+        "Multi-source"
+      ],
+      "first_surfaced": "",
+      "company_description": "",
+      "funding_status": "",
+      "funding_evidence": "",
+      "education": "",
+      "score": 65,
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "BharatPe",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Fintech",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Yogesh Verma's experience at prominent fintech companies and his current role as a director suggest a strong background in the sector. His transition to a new venture, Bachatt, could indicate a promising opportunity in the fintech space.",
+      "linkedin_url": "https://www.linkedin.com/in/yogesh-verma-2107",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 3,
+      "signal_types": [
+        "seniority_corroborated",
+        "stealth_founder",
+        "mca_registration"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-BharatPe. Current LinkedIn headline: \"Yogesh Verma - Building Bachatt | Ex-Bharatpe | Ex-Paytm ...Shashvat Nakrani - Founder of BharatPe\"",
+          "url": "https://www.linkedin.com/in/yogesh-verma-2107"
+        },
+        {
+          "source": "verification",
+          "type": "seniority_corroborated",
+          "description": "Independent source confirms profile: Yogesh Verma Email & Phone Number | Bachatt Associate ...",
+          "url": "https://rocketreach.co/yogesh-verma-email_98873994"
+        },
+        {
+          "source": "registry",
+          "type": "mca_registration",
+          "description": "Registry: listed as company director — Yogesh Verma | Director Profile | The Company Check",
+          "url": "https://www.thecompanycheck.com/people-profile/yogesh-verma/02771957"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
+      "key_strengths": [
+        "Experience at BharatPe and Paytm",
+        "Seniority confirmed by independent source",
+        "Company directorship verified"
+      ],
+      "risks": [
+        "Unknown experience years",
+        "Limited information on Bachatt"
+      ],
+      "company_url": "bharatpe.com"
+    },
+    {
       "name": "Kunal Kapoor",
       "new_today": false,
       "badges": [
@@ -137,9 +272,9 @@
       "twitter_handle": "",
       "signal_count": 4,
       "signal_types": [
-        "mca_registration",
         "company_registration",
-        "stealth_founder"
+        "stealth_founder",
+        "mca_registration"
       ],
       "signals": [
         {
@@ -179,6 +314,119 @@
         "Limited information on the new venture's traction or market fit"
       ],
       "company_url": "https://www.metagohealthcare.com/"
+    },
+    {
+      "name": "Surojit Chatterjee",
+      "new_today": true,
+      "badges": [
+        "Multi-source"
+      ],
+      "first_surfaced": "",
+      "company_description": "",
+      "funding_status": "",
+      "funding_evidence": "",
+      "education": "",
+      "score": 60,
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "AI/ML",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Surojit Chatterjee's transition to a founder role with a focus on AI suggests a potential interest in a cutting-edge sector. His registration as a company director indicates a commitment to building a new venture. Further investigation is warranted to assess his experience and the viability of his AI project.",
+      "linkedin_url": "https://www.linkedin.com/in/surojitchatterjee",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 2,
+      "signal_types": [
+        "stealth_founder",
+        "mca_registration"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Surojit Chatterjee - Founder & CEO, Ema — Building AI ...\"",
+          "url": "https://www.linkedin.com/in/surojitchatterjee"
+        },
+        {
+          "source": "registry",
+          "type": "mca_registration",
+          "description": "Registry: listed as company director — Surojit Chatterjee | Director Profile | The Company Check",
+          "url": "https://www.thecompanycheck.com/people-profile/surojit-chatterjee/07439364"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth founder claim",
+        "Company director registration"
+      ],
+      "risks": [
+        "Unknown experience level",
+        "First-time founder risk"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Sandeep Gudibanda",
+      "new_today": true,
+      "badges": [
+        "Verified"
+      ],
+      "first_surfaced": "",
+      "company_description": "",
+      "funding_status": "",
+      "funding_evidence": "",
+      "education": "",
+      "score": 60,
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "Healthplix",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "HealthTech",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Sandeep Gudibanda has demonstrated leadership as a CEO and Co-founder at HealthPlix, suggesting a strong operational background. His recent LinkedIn headline change to 'Co-Founder & CEO, HealthPlix' with a verified seniority signal indicates a potential transition to a new venture. Further investigation is warranted to assess his current venture's potential.",
+      "linkedin_url": "https://www.linkedin.com/in/sandeepg",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 2,
+      "signal_types": [
+        "seniority_corroborated",
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Healthplix. Current LinkedIn headline: \"Sandeep Gudibanda - Co-Founder & CEO, HealthPlix | CoFounder ...Saqlain Ahmed - Senior Business Deve\"",
+          "url": "https://www.linkedin.com/in/sandeepg"
+        },
+        {
+          "source": "verification",
+          "type": "seniority_corroborated",
+          "description": "Independent source confirms profile: Sandeep Gudibanda - CEO & Co-Founder @ HealthPlix ...At Agentic AI India Summit 2026, our Co-Founder & CEO ...Sandeep Gundibanda – CEO & Co-",
+          "url": "https://www.crunchbase.com/person/sandeep-gudibanda"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
+      "key_strengths": [
+        "seniority_corroborated",
+        "previous successful exit"
+      ],
+      "risks": [
+        "unknown experience years"
+      ],
+      "company_url": "healthplix.com"
     },
     {
       "name": "Steve Messinger",
@@ -523,8 +771,8 @@
       "signal_count": 3,
       "signal_types": [
         "seniority_corroborated",
-        "mca_registration",
-        "stealth_founder"
+        "stealth_founder",
+        "mca_registration"
       ],
       "signals": [
         {
@@ -624,6 +872,274 @@
       "company_url": "phonepe.com"
     },
     {
+      "name": "Ashish Kumar Tripathi",
+      "new_today": true,
+      "badges": [
+        "Just went stealth"
+      ],
+      "first_surfaced": "",
+      "company_description": "",
+      "funding_status": "",
+      "funding_evidence": "",
+      "education": "",
+      "score": 55,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Drivezy",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Fintech",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Ashish Kumar Tripathi's transition to a stealth founder with a Fintech focus suggests a potential new venture. His experience at Drivezy could be valuable, but the lack of verified experience years and prior exit makes the investment thesis speculative.",
+      "linkedin_url": "https://www.linkedin.com/in/ashish-kumar-tripathi-930152169",
+      "github_url": "",
+      "twitter_handle": "tripathi_ashish",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_headline_change"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_headline_change",
+          "description": "Headline CHANGED to stealth since last run. Ex-Drivezy. Current LinkedIn headline: \"Ashish Kumar Tripathi - Building Finnoto | Ex-Drivezy\"",
+          "url": "https://www.linkedin.com/in/ashish-kumar-tripathi-930152169"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline change",
+        "Experience at Drivezy"
+      ],
+      "risks": [
+        "Unknown experience years",
+        "No prior exit or L1/L2 title departure"
+      ],
+      "company_url": "drivezy.com"
+    },
+    {
+      "name": "Ajaykumar Munni",
+      "new_today": true,
+      "badges": [
+        "Just went stealth",
+        "Top university"
+      ],
+      "first_surfaced": "",
+      "company_description": "",
+      "funding_status": "",
+      "funding_evidence": "",
+      "education": "IIM",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Lendingkart",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Ajaykumar Munni's transition to a stealth headline and his background at Lendingkart suggest potential for a new venture. Further investigation is warranted to validate his experience and sector alignment.",
+      "linkedin_url": "https://www.linkedin.com/in/ajay-munni",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_headline_change"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_headline_change",
+          "description": "Headline CHANGED to stealth since last run. Ex-Lendingkart. Current LinkedIn headline: \"Ajaykumar Munni - CFO | IIM-A | Ex-Lendingkart, Upwards | M ...Harshvardhan Lunia - Founder at Lendi\"",
+          "url": "https://www.linkedin.com/in/ajay-munni"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
+      "key_strengths": [
+        "Stealth headline change",
+        "Experience at Lendingkart"
+      ],
+      "risks": [
+        "Unknown experience years",
+        "No sector alignment"
+      ],
+      "company_url": "lendingkart.com"
+    },
+    {
+      "name": "Siddhartha Saxena",
+      "new_today": true,
+      "badges": [
+        "Just went stealth",
+        "Verified",
+        "Top university"
+      ],
+      "first_surfaced": "",
+      "company_description": "",
+      "funding_status": "",
+      "funding_evidence": "",
+      "education": "IIM",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "iZooto",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "SaaS",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Siddhartha Saxena has demonstrated a transition to a stealth mode with a confirmed departure from iZooto, suggesting a potential new venture. His experience in SaaS and sales could be valuable for a new startup in the sector.",
+      "linkedin_url": "https://www.linkedin.com/in/siddharthasaxena1",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 2,
+      "signal_types": [
+        "seniority_corroborated",
+        "stealth_headline_change"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_headline_change",
+          "description": "Headline CHANGED to stealth since last run. Ex-iZooto. Current LinkedIn headline: \"Siddhartha Saxena - Global Sales | SaaS | IIM-L | Ex-Wingify ...Wikipedia - WikipediaHome | Official\"",
+          "url": "https://www.linkedin.com/in/siddharthasaxena1"
+        },
+        {
+          "source": "verification",
+          "type": "seniority_corroborated",
+          "description": "Independent source confirms profile: iZooto and Jubna Partner to Supercharge Publisher Revenue in MENA...",
+          "url": "https://www.jubna.com/izooto-announces-partnership-with-jubna-to-boost-revenue-for-publishers"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
+      "key_strengths": [
+        "seniority_corroborated",
+        "stealth_headline_change"
+      ],
+      "risks": [
+        "unknown_experience_years"
+      ],
+      "company_url": "izooto.com"
+    },
+    {
+      "name": "Nikhil Jiwane",
+      "new_today": true,
+      "badges": [
+        "Just went stealth",
+        "Ex-unicorn/top co"
+      ],
+      "first_surfaced": "",
+      "company_description": "",
+      "funding_status": "",
+      "funding_evidence": "",
+      "education": "",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "BigBasket",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Nikhil Jiwane's transition to a stealth mode with a change in LinkedIn headline suggests a potential new venture. His experience at BigBasket and the recent change in his professional status indicate a seasoned operator with a possible new opportunity in the pipeline.",
+      "linkedin_url": "https://www.linkedin.com/in/nikhil-jiwane-520188162",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_headline_change"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_headline_change",
+          "description": "Headline CHANGED to stealth since last run. Ex-BigBasket. Current LinkedIn headline: \"Nikhil Jiwane - Magma GIL || Ex Dunzo || Ex Swiggy Instamart ...Anand Bhaskaran - Marketing Leader; \"",
+          "url": "https://www.linkedin.com/in/nikhil-jiwane-520188162"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
+      "key_strengths": [
+        "Stealth headline change",
+        "Experience at BigBasket"
+      ],
+      "risks": [
+        "Unknown experience years",
+        "No current company or title provided"
+      ],
+      "company_url": "bigbasket.com"
+    },
+    {
+      "name": "Anand Bhaskaran",
+      "new_today": true,
+      "badges": [
+        "Just went stealth",
+        "Verified"
+      ],
+      "first_surfaced": "",
+      "company_description": "",
+      "funding_status": "",
+      "funding_evidence": "",
+      "education": "",
+      "score": 45,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "BigBasket",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Marketing",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Anand Bhaskaran's transition to a stealth mode with confirmed seniority at BigBasket suggests a potential move into a new venture. His experience in marketing could be a valuable asset in the sector.",
+      "linkedin_url": "https://www.linkedin.com/in/anand-bhaskaran-0041304",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 2,
+      "signal_types": [
+        "seniority_corroborated",
+        "stealth_headline_change"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_headline_change",
+          "description": "Headline CHANGED to stealth since last run. Ex-BigBasket. Current LinkedIn headline: \"Anand Bhaskaran - Marketing Leader; ex-BigBasket, with ...Biography of Sudhakar V.S: Founder of BigB\"",
+          "url": "https://www.linkedin.com/in/anand-bhaskaran-0041304"
+        },
+        {
+          "source": "verification",
+          "type": "seniority_corroborated",
+          "description": "Independent source confirms profile: BigBasket Leverages MoEngage to Enhance... - Express Computer",
+          "url": "https://www.expresscomputer.in/archive/case-study/how-bigbasket-leveraged-moengage-to-enhance-user-reachability-and-operational-efficiency/98376/"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
+      "key_strengths": [
+        "Experience at BigBasket",
+        "Seniority confirmed by independent source"
+      ],
+      "risks": [
+        "Unknown experience years",
+        "No current company or project confirmed"
+      ],
+      "company_url": "bigbasket.com"
+    },
+    {
       "name": "Sujith Narayanan",
       "new_today": false,
       "badges": [
@@ -651,8 +1167,8 @@
       "twitter_handle": "",
       "signal_count": 2,
       "signal_types": [
-        "mca_registration",
-        "stealth_founder"
+        "stealth_founder",
+        "mca_registration"
       ],
       "signals": [
         {
@@ -681,7 +1197,65 @@
       "company_url": ""
     },
     {
-      "name": "Lalit Mittal",
+      "name": "Sanjay Bharti",
+      "new_today": true,
+      "badges": [
+        "Multi-source"
+      ],
+      "first_surfaced": "",
+      "company_description": "",
+      "funding_status": "",
+      "funding_evidence": "",
+      "education": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Sanjay Bharti has a LinkedIn headline indicating a stealth startup and is registered as a company director, suggesting an entrepreneurial endeavor. However, with no known prior experience or exit, and no sector alignment, further investigation is needed to assess the viability of the venture.",
+      "linkedin_url": "https://www.linkedin.com/in/bhartisanjay",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 2,
+      "signal_types": [
+        "stealth_founder",
+        "mca_registration"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Sanjay Bharti - Stealth Startup\"",
+          "url": "https://www.linkedin.com/in/bhartisanjay"
+        },
+        {
+          "source": "registry",
+          "type": "mca_registration",
+          "description": "Registry: listed as company director — sanjay bharti | Current Companies Timeline | The Company Check",
+          "url": "https://www.thecompanycheck.com/people-profile/sanjay-bharti/directorship-timeline/11149267"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline",
+        "Company director registration"
+      ],
+      "risks": [
+        "Unknown experience",
+        "No prior exit or L1/L2 title departure",
+        "No sector alignment"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Arpit Gupta",
       "new_today": true,
       "badges": [],
       "first_surfaced": "",
@@ -692,16 +1266,16 @@
       "score": 40,
       "action": "watchlist",
       "recommended_action": "watchlist",
-      "previous_company": "Livspace",
+      "previous_company": "Lendingkart",
       "previous_title": "",
       "current_company": "",
       "location": "India",
-      "sector": "Unknown",
+      "sector": "Fintech",
       "geography": "India",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Lalit Mittal, with his experience at Livspace, has the potential to build a successful startup. The news of talks to raise $15 Mn suggests interest from investors, but the lack of verified seniority and sector details are concerns.",
-      "linkedin_url": "https://www.linkedin.com/in/lalit-mittal-28178115",
+      "investment_thesis": "Arpit Gupta's experience at Lendingkart and current entrepreneurial activity suggest potential in the Fintech sector. Further investigation is warranted to validate his experience and the viability of his new venture.",
+      "linkedin_url": "https://www.linkedin.com/in/arpit-gupta-47382a11",
       "github_url": "",
       "twitter_handle": "",
       "signal_count": 1,
@@ -710,23 +1284,421 @@
       ],
       "signals": [
         {
-          "source": "news",
+          "source": "linkedin",
           "type": "stealth_founder",
-          "description": "[Inc42] Exclusive: Ex-Livspace Duo Saurabh Jain, Lalit Mittal In Talks To Raise $15 Mn For New Startup",
-          "url": "https://inc42.com/buzz/ex-livspace-cofounder-cbo-launch-home-interior-materials-venture-gravity/"
+          "description": "Ex-Lendingkart. Current LinkedIn headline: \"Arpit Gupta - Building Indie for business and Current Account ...Ajaykumar Munni - CFO | IIM-A | Ex-\"",
+          "url": "https://www.linkedin.com/in/arpit-gupta-47382a11"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Experience at Lendingkart",
+        "Current LinkedIn headline suggests entrepreneurial activity"
+      ],
+      "risks": [
+        "Unknown experience years",
+        "No verifiable seniority"
+      ],
+      "company_url": "lendingkart.com"
+    },
+    {
+      "name": "Akash Jain",
+      "new_today": true,
+      "badges": [
+        "Ex-unicorn/top co",
+        "Verified"
+      ],
+      "first_surfaced": "",
+      "company_description": "",
+      "funding_status": "",
+      "funding_evidence": "",
+      "education": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Urban Company",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Akash Jain's LinkedIn profile indicates a potential entrepreneurial background, having co-founded Urban Company. However, the lack of verified experience level and current company details makes further investigation necessary to assess his potential as a second-time founder.",
+      "linkedin_url": "https://www.linkedin.com/in/akashjain91",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 2,
+      "signal_types": [
+        "seniority_corroborated",
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Urban Company. Current LinkedIn headline: \"Akash Jain - Ex-Cofounder at Seek | Ex-Urban Company | ISB ...Abhiraj Singh Bhal - Cofounder & CEO o\"",
+          "url": "https://www.linkedin.com/in/akashjain91"
+        },
+        {
+          "source": "verification",
+          "type": "seniority_corroborated",
+          "description": "Independent source confirms profile: Akash Jain Email & Phone Number | Seek Co-Founder Contact ...",
+          "url": "https://rocketreach.co/akash-jain-email_117496702"
         }
       ],
       "confidence": "medium",
-      "founder_type": "seasoned_operator",
+      "founder_type": "first_time_founder",
       "key_strengths": [
-        "Previous experience at Livspace",
-        "Potential for funding"
+        "Experience at Urban Company",
+        "LinkedIn profile suggests entrepreneurial background"
       ],
       "risks": [
-        "Unknown sector and experience",
-        "Lack of verified seniority"
+        "Lack of verified experience level",
+        "No clear indication of current company or project"
       ],
-      "company_url": "livspace.com"
+      "company_url": "urbancompany.com"
+    },
+    {
+      "name": "CP Singh",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "company_description": "",
+      "funding_status": "",
+      "funding_evidence": "",
+      "education": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Bombay Shaving",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "CP Singh has indicated a transition to a founder role with a new venture, Shivon, following his departure from Bombay Shaving. However, the lack of verified seniority and experience years, as well as the absence of a traceable prior exit, raises questions about his background and potential for success.",
+      "linkedin_url": "https://www.linkedin.com/in/cp-singh-849a3111",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Bombay Shaving. Current LinkedIn headline: \"CP Singh - UPSA | Building Shivon ! Ex- Bombay Shaving ...karan Arora - Sr. Marketing Manager at Wel\"",
+          "url": "https://www.linkedin.com/in/cp-singh-849a3111"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn indicates a transition to a founder role",
+        "Experience at a known company"
+      ],
+      "risks": [
+        "Lack of verified seniority",
+        "Unknown experience years",
+        "No traceable prior exit"
+      ],
+      "company_url": "bombayshavingcompany.com"
+    },
+    {
+      "name": "Chethan K R",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "company_description": "",
+      "funding_status": "",
+      "funding_evidence": "",
+      "education": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Healthplix",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Chethan K R shows potential as a growth and strategy leader with experience in sales and operations, but lacks verified experience level and sector alignment. Further investigation is needed to assess his potential as a founder.",
+      "linkedin_url": "https://www.linkedin.com/in/chethan-k-r",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "Ex-Healthplix. Current LinkedIn headline: \"Chethan K R - Growth & Strategy Leader | Sales, Operations ...Sandeep Gudibanda - Co-Founder & CEO, \"",
+          "url": "https://www.linkedin.com/in/chethan-k-r"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Growth & Strategy Leadership",
+        "Sales & Operations Experience"
+      ],
+      "risks": [
+        "Lack of verified experience level",
+        "Unknown sector alignment",
+        "Potential lack of prior exit or L1/L2 exit"
+      ],
+      "company_url": "healthplix.com"
+    },
+    {
+      "name": "Vinay Gupta",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "company_description": "",
+      "funding_status": "",
+      "funding_evidence": "",
+      "education": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Vinay Gupta's LinkedIn headline suggests a potential new venture, but without verified experience and sector alignment, further investigation is needed to assess the viability of the opportunity.",
+      "linkedin_url": "https://www.linkedin.com/in/vinay",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Vinay Gupta - Founder TripFactory, Via\"",
+          "url": "https://www.linkedin.com/in/vinay"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline indicates potential new venture"
+      ],
+      "risks": [
+        "Lack of verified experience and sector alignment"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Niki Parmar",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "company_description": "",
+      "funding_status": "",
+      "funding_evidence": "",
+      "education": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "AI/ML",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Niki Parmar's LinkedIn indicates a potential move into AI/ML, a sector of interest, with a connection to a respected figure in the industry. Further investigation is warranted to validate experience and potential for success.",
+      "linkedin_url": "https://www.linkedin.com/in/nikiparmar",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Niki Parmar - Anthropic, Co-Founder EssentialAI, Adept AI, Ex ...Soumith Chintala - CTO @ Thinking M\"",
+          "url": "https://www.linkedin.com/in/nikiparmar"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Strong background in AI/ML",
+        "Experience with a notable figure in the industry"
+      ],
+      "risks": [
+        "Lack of verified experience level",
+        "No prior exit or L1/L2 exit history"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Soumith Chintala",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "company_description": "",
+      "funding_status": "",
+      "funding_evidence": "",
+      "education": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Soumith Chintala has a LinkedIn presence indicating a potential entrepreneurial move, but lacks verifiable seniority or prior exit history. Further investigation is needed to assess his experience and the potential of the new venture.",
+      "linkedin_url": "https://www.linkedin.com/in/soumith",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Soumith Chintala - CTO @ Thinking Machines. Co-founder ...ForbesKian Katanforoosh - CEO & Founder at\"",
+          "url": "https://www.linkedin.com/in/soumith"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn presence",
+        "CTO experience"
+      ],
+      "risks": [
+        "Lack of verified seniority",
+        "Unknown experience",
+        "No prior exit or L1/L2 title departure"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Kian Katanforoosh",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "company_description": "",
+      "funding_status": "",
+      "funding_evidence": "",
+      "education": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "AI/Deep Learning",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Kian Katanforoosh's LinkedIn stealth headline suggests a potential new venture in the AI/Deep Learning sector. His experience as a CEO and Founder could be valuable, but further verification of his background and the nature of his new project is needed.",
+      "linkedin_url": "https://www.linkedin.com/in/kiankatan",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Kian Katanforoosh - CEO & Founder at Workera | Stanford AI ...Deepak Anchala - CEO @ Adopt AI | Tran\"",
+          "url": "https://www.linkedin.com/in/kiankatan"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline indicates potential new venture",
+        "CEO and Founder experience"
+      ],
+      "risks": [
+        "Unknown experience years",
+        "No verified seniority",
+        "No prior exit or L1/L2 title departure",
+        "No company registration or funding news"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Deepak Anchala",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "company_description": "",
+      "funding_status": "",
+      "funding_evidence": "",
+      "education": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "AI/ML",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Deepak Anchala's LinkedIn headline suggests a potential new venture in the AI/ML space, which is a current hot sector. However, the lack of verifiable seniority and corroborating signals raises concerns about the credibility of his claim.",
+      "linkedin_url": "https://www.linkedin.com/in/deepak-anchala-0043707",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "linkedin",
+          "type": "stealth_founder",
+          "description": "LinkedIn headline: \"Deepak Anchala - CEO @ Adopt AI | Transforming Legacy Systems ...Michael T. - Building Cursor\"",
+          "url": "https://www.linkedin.com/in/deepak-anchala-0043707"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "LinkedIn stealth headline indicates potential new venture",
+        "Experience in AI/ML from previous role"
+      ],
+      "risks": [
+        "Unknown experience level",
+        "No verifiable seniority",
+        "Lack of corroborating signals"
+      ],
+      "company_url": ""
     },
     {
       "name": "Milan Singh",
@@ -2888,8 +3860,8 @@
       "twitter_handle": "",
       "signal_count": 2,
       "signal_types": [
-        "mca_registration",
-        "stealth_founder"
+        "stealth_founder",
+        "mca_registration"
       ],
       "signals": [
         {
@@ -3902,8 +4874,8 @@
       "twitter_handle": "",
       "signal_count": 2,
       "signal_types": [
-        "mca_registration",
-        "stealth_founder"
+        "stealth_founder",
+        "mca_registration"
       ],
       "signals": [
         {
@@ -4074,14 +5046,62 @@
         "Unknown experience, founder type, and sector fit"
       ],
       "company_url": ""
+    },
+    {
+      "name": "Lalit Mittal",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-11",
+      "company_description": "",
+      "funding_status": "",
+      "funding_evidence": "",
+      "education": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "Livspace",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Lalit Mittal, with his experience at Livspace, has the potential to build a successful startup. The news of talks to raise $15 Mn suggests interest from investors, but the lack of verified seniority and sector details are concerns.",
+      "linkedin_url": "https://www.linkedin.com/in/lalit-mittal-28178115",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "stealth_founder",
+          "description": "[Inc42] Exclusive: Ex-Livspace Duo Saurabh Jain, Lalit Mittal In Talks To Raise $15 Mn For New Startup",
+          "url": "https://inc42.com/buzz/ex-livspace-cofounder-cbo-launch-home-interior-materials-venture-gravity/"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
+      "key_strengths": [
+        "Previous experience at Livspace",
+        "Potential for funding"
+      ],
+      "risks": [
+        "Unknown sector and experience",
+        "Lack of verified seniority"
+      ],
+      "company_url": "livspace.com"
     }
   ],
   "source_breakdown": {
-    "news": 15,
+    "linkedin": 83,
+    "verification": 10,
+    "registry": 10,
     "yc": 2,
-    "linkedin": 64,
-    "verification": 4,
-    "registry": 6,
+    "news": 15,
     "GDELT": 4,
     "Product Hunt": 3
   },
@@ -4090,32 +5110,186 @@
     "ai_ml": {
       "articles": [
         {
-          "title": "OpenAI’s Head of Safety Is Leaving the Company",
-          "url": "https://www.reddit.com/r/artificial/comments/1utb2cp/openais_head_of_safety_is_leaving_the_company/",
+          "title": "How to break into tech/AI (need help pls any advice would help)",
+          "url": "https://www.reddit.com/r/artificial/comments/1uu60b8/how_to_break_into_techai_need_help_pls_any_advice/",
           "source": "reddit.com",
-          "pub_date": "2026-07-11T05:18:47+00:00",
-          "summary": "&#32; submitted by &#32;  /u/Horsesrunfree   [link] &#32; [comments]"
+          "pub_date": "2026-07-12T05:04:43+00:00",
+          "summary": "Hi, I’m a sophomore in high school. I recently have a strong desire to know more about tech, particularly AI. However, I’m not sure what steps to take since AI is such a broad and general term. I’m currently taking Harvard’s Cs50p course to understand code and know how to debug in the future when co"
         },
         {
-          "title": "What is the meaning of AI benchmarks?",
-          "url": "https://www.reddit.com/r/artificial/comments/1ut87cn/what_is_the_meaning_of_ai_benchmarks/",
+          "title": "I don't think agent wallets should be wallets first",
+          "url": "https://www.reddit.com/r/artificial/comments/1uu5i6f/i_dont_think_agent_wallets_should_be_wallets_first/",
           "source": "reddit.com",
-          "pub_date": "2026-07-11T02:53:44+00:00",
-          "summary": "Whenever a new model gets released, I see alot of posts that this model now performs 80% in this benchmark and 90% on that benchmark.  Now what does that mean and what if an AI model achieves 100% on all the benchmarks? Does that mean AI model cannot get any better now?   &#32; submitted by &#32;  /"
+          "pub_date": "2026-07-12T04:39:16+00:00",
+          "summary": "The more I think about autonomous agents paying for tools, the less I like the phrase “agent wallet.” A wallet sounds like ownership. For most practical agent workflows, I think the safer abstraction is delegated permission. For example, I would rather give an agent something like this: “You can spe"
         },
         {
-          "title": "GPT-2 Fully Decoded Internally Black Box Fully Open With Demo",
-          "url": "https://www.reddit.com/r/artificial/comments/1ut82rh/gpt2_fully_decoded_internally_black_box_fully/",
+          "title": "Which image program can you talk to like ChatGPT but doesn't have all the stupid rules?",
+          "url": "https://www.reddit.com/r/artificial/comments/1uu4h3g/which_image_program_can_you_talk_to_like_chatgpt/",
           "source": "reddit.com",
-          "pub_date": "2026-07-11T02:47:29+00:00",
-          "summary": "The BABEL codec: the first complete, certified decode of everything happening inside a production language model (GPT-2 small). It reads the model's internal state into English AND writes English back into the model. 94.7% of behavior reconstructed — and that holds at every layer depth and text regi"
+          "pub_date": "2026-07-12T03:48:39+00:00",
+          "summary": "I like that I can talk to ChatGpt in sentences instead of just having to type descriptor words of what i want. However ChatGPT annoys me with its endless filters and rules. Grok is like that but its image capabilities is years behind GPT. What is a different image program that i could use?  &#32; su"
         },
         {
-          "title": "New features for PopUpFactCheck for YouTube (AI fact checker Chrome extension): Now on Firefox too, navigate bubbles with arrow keys, generate batch reports of entire videos",
-          "url": "https://www.reddit.com/r/artificial/comments/1ut7sid/new_features_for_popupfactcheck_for_youtube_ai/",
+          "title": "writing code maybe was the bottleneck?",
+          "url": "https://www.reddit.com/r/artificial/comments/1uu1um0/writing_code_maybe_was_the_bottleneck/",
           "source": "reddit.com",
-          "pub_date": "2026-07-11T02:33:31+00:00",
-          "summary": "I just want to thank everyone here on r/artificial for your initial response last week to the browser extension and API I have created, PopUpFactCheck for YouTube.  PopUpFactCheck is an AI-powered video fact checker. With it, you can fact check any YouTube video (VOD and even live) that has captions"
+          "pub_date": "2026-07-12T01:37:15+00:00",
+          "summary": "This probably will sound crazy  &#32; submitted by &#32;  /u/base64-encode   [link] &#32; [comments]"
+        },
+        {
+          "title": "Reed Jobs would rather talk about curing cancer than his last name",
+          "url": "https://techcrunch.com/2026/07/11/reed-jobs-would-rather-talk-about-curing-cancer-than-his-last-name/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-07-12T00:16:06+00:00",
+          "summary": "When we last sat down with Jobs at TechCrunch Disrupt nearly three years ago, his firm Yosemite was brand new and biotech was still reeling from its post-pandemic crash. Now, the venture outfit has a team of 17; a cluster of blockbuster drugs are all losing patent protection in roughly the same wind"
+        },
+        {
+          "title": "Exclusive: Early 30-second AI videos generated by Seedance 2.5",
+          "url": "https://www.reddit.com/r/artificial/comments/1utyv59/exclusive_early_30second_ai_videos_generated_by/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-11T23:23:34+00:00",
+          "summary": "&#32; submitted by &#32;  /u/WPHero   [link] &#32; [comments]"
+        },
+        {
+          "title": "This slushie machine was a lifesaver during NYC’s heat wave",
+          "url": "https://techcrunch.com/2026/07/11/this-slushie-machine-was-a-lifesaver-during-nycs-heat-wave/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-07-11T22:00:00+00:00",
+          "summary": "Last weekend&#8217;s brutal NYC heat wave had me craving a frozen drink almost every afternoon. Normally, that would mean sweating through a walk to 7-Eleven for a slurpee. This time, though, I stayed home and put the new Ninja Slushi Twist to the test. Ninja&#8217;s latest slushie machine builds on"
+        },
+        {
+          "title": "ConwAI",
+          "url": "https://www.reddit.com/r/artificial/comments/1utu14o/conwai/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-11T19:58:43+00:00",
+          "summary": "Hi everyone, For the past five months, I’ve been working on a custom AI model with two main goals:  Self-learning capabilities A distinct personality  And yeah, this is the result! It’s a super lightweight 500M parameter model running locally on an iMac in my bedroom, lol. Anyway, check it out and l"
+        },
+        {
+          "title": "What would potentially limit AI Demand?",
+          "url": "https://www.reddit.com/r/artificial/comments/1utt87o/what_would_potentially_limit_ai_demand/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-11T19:26:18+00:00",
+          "summary": "I just wanted to ask some opinions on the matter as a layman. My thesis is that a sector specifically such as cybersecurity could become more and more obfuscated with the use of AI and so it seems trivial to me that rival actors would need increasingly more compute to stay relevant. I'm just trying "
+        },
+        {
+          "title": "AIgenerated game worlds are getting playable but does procedural coherence matter if it looks cool?",
+          "url": "https://www.reddit.com/r/artificial/comments/1utsewf/aigenerated_game_worlds_are_getting_playable_but/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-11T18:54:16+00:00",
+          "summary": "Google Genie 3 dropped and people are losing their minds over the fact that you can type a prompt and walk around inside it. Which is genuinely wild. But watching the demos I keep thinking about something nobody seems to be talking about: whether the world actually holds together logically, or if we"
+        },
+        {
+          "title": "TeraWulf’s move from Bitcoin mining to AI infrastructure raises some big questions",
+          "url": "https://www.reddit.com/r/artificial/comments/1utrjfa/terawulfs_move_from_bitcoin_mining_to_ai/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-11T18:20:28+00:00",
+          "summary": "TeraWulf, originally a Bitcoin mining company, looks like it is trying to reposition itself as an AI infrastructure provider. That raises a few interesting questions about where the AI buildout is headed and which companies are best positioned to benefit. What stands out to me is that the AI boom is"
+        },
+        {
+          "title": "ChatGPT-Live vs Pi vs Lucy OS1 vs Gemini-Live: best AI assistant to talk with?",
+          "url": "https://www.reddit.com/r/artificial/comments/1utqf02/chatgptlive_vs_pi_vs_lucy_os1_vs_geminilive_best/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-11T17:38:02+00:00",
+          "summary": "I’ve been testing ChatGPT-Live since it launched this week and compared it with a few other voice assistants I already use. It’s really good. That said , I was less interested in benchmark comparisons or who has the best model. I was more curious about something only using it would reveal: Which one"
+        },
+        {
+          "title": "Smart glasses without a camera? Even Realities bets productivity beats recording everyone",
+          "url": "https://techcrunch.com/2026/07/11/smart-glasses-without-a-camera-even-realities-bets-productivity-beats-recording-everyone/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-07-11T17:30:00+00:00",
+          "summary": "The glasses are targeted at people who might be constantly in meetings, giving presentations, and traveling to countries where different languages are spoken."
+        },
+        {
+          "title": "After years of teasing, the viral Nopia synth is ‘basically finished’",
+          "url": "https://www.theverge.com/gadgets/964499/nopia-viral-synth-finished-price-release-demo",
+          "source": "theverge.com",
+          "pub_date": "2026-07-11T16:57:42-04:00",
+          "summary": "After setting the music gear corner of the internet on fire back in 2023 with the first glimpse at the Nopia, creators Martin Grieco and Roc&#237;o Gal are almost ready to bring it to market. The duo brought it to the MusicRadar offices for an in-depth first look and revealed that it will be launchi"
+        },
+        {
+          "title": "Forget typosquatting; slopsquatting is the software supply chain threat created by AI coding tools",
+          "url": "https://venturebeat.com/security/forget-typosquatting-slopsquatting-is-the-software-supply-chain-threat-created-by-ai-coding-tools",
+          "source": "venturebeat.com",
+          "pub_date": "2026-07-11T16:00:00+00:00",
+          "summary": "Slopsquatting represents an emerging supply chain threat made possible by AI hallucinations. As developers increasingly rely on AI coding assistants, they unknowingly grant cybercriminals access to their software from day one. Understanding what slopsquatting isSlopsquatting is a new type of supply "
+        },
+        {
+          "title": "Oregon’s Attorney General withdraws effort to delay Paramount and Warner Bros. merger",
+          "url": "https://www.theverge.com/policy/964493/oregons-ag-delay-paramount-warner-bros-merger",
+          "source": "theverge.com",
+          "pub_date": "2026-07-11T14:44:12-04:00",
+          "summary": "Oregon Attorney General Dan Rayfield had been seeking documents from Paramount related to its takeover of Warner Bros. Discovery. Rayfield also asked a state circuit court judge to delay the closing of the deal by 60 days so that his office could review the documents. But according to Deadline and V"
+        },
+        {
+          "title": "OpenAI Engineer’s ‘LOL’ Moment Set Stage for Legal Fight With Apple",
+          "url": "https://www.reddit.com/r/artificial/comments/1utll84/openai_engineers_lol_moment_set_stage_for_legal/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-11T14:28:24+00:00",
+          "summary": "&#32; submitted by &#32;  /u/bloomberg   [link] &#32; [comments]"
+        },
+        {
+          "title": "OpenAI bets on families as ChatGPT goes deeper into households",
+          "url": "https://techcrunch.com/2026/07/11/openai-bets-on-families-as-chatgpt-goes-deeper-into-households/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-07-11T14:13:00+00:00",
+          "summary": "ChatGPT is hiring a dedicated product manager to build experiences for families, caregivers, and older adults, according to a job posting."
+        },
+        {
+          "title": "Apple just sued OpenAI. And the details are wild.",
+          "url": "https://www.reddit.com/r/artificial/comments/1utkdha/apple_just_sued_openai_and_the_details_are_wild/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-11T13:37:36+00:00",
+          "summary": "This isn’t a generic IP dispute. Apple’s hardware chief at OpenAI is Tang Tan. Former Apple VP. 24 years at the company. He now runs OpenAI’s device ambitions. Apple alleges he was coaching Apple employees interviewing at OpenAI to bring actual hardware parts – batteries, logic boards, SIPs – to the"
+        },
+        {
+          "title": "FL Studio head Constantin Koehncke turns to Reddit for feedback and fun",
+          "url": "https://www.theverge.com/entertainment/963509/image-line-ceo-constantin-koehncke-fl-studio-interview",
+          "source": "theverge.com",
+          "pub_date": "2026-07-11T11:00:00-04:00",
+          "summary": "If you're a music maker of a certain age, then you probably once dabbled with a pirated copy of a little app called Fruity Loops. These days it's called FL Studio, and Constantin Koehncke, is the man responsible for shepherding the pioneering digital audio workstation (DAW) through the modern age. A"
+        },
+        {
+          "title": "Nintendo’s Talking Flower got a small price cut",
+          "url": "https://www.theverge.com/gadgets/964138/nintendo-talking-flower-mario-wonder-deal-sale",
+          "source": "theverge.com",
+          "pub_date": "2026-07-11T11:00:00-04:00",
+          "summary": "If you’re the type of person who could always use a little extra positive affirmation, or you have a weakness for weird gadgets, the Talking Flower might be of interest. I’m only kind of serious. The toy is based on a character from Super Mario Bros. Wonder that guides Mario through levels with quip"
+        },
+        {
+          "title": "White House taps the guy who keeps crying ‘aliens’ to run UFO group",
+          "url": "https://www.theverge.com/science/964478/white-house-avi-loeb-aliens-ufo-uap-council",
+          "source": "theverge.com",
+          "pub_date": "2026-07-11T10:18:33-04:00",
+          "summary": "Harvard astrophysicist Avi Loeb will head the UAP Science Advisory Council established by the White House, the Pentagon, the Office of the Director of National Intelligence, the FBI, and \"the intelligence community.\" The Council will provide scientific reports and advice to the UAP Governing Board, "
+        },
+        {
+          "title": "ICE are heavily armed killers. They’re also huge losers",
+          "url": "https://www.theverge.com/policy/964302/ice-donald-trump-killings",
+          "source": "theverge.com",
+          "pub_date": "2026-07-11T09:00:00-04:00",
+          "summary": "Donald Trump's Homeland Security regime has been at the center of two critical stories in the past two weeks. In the first, federal agents shot and killed a man and quickly got to work justifying the use of force under the flimsiest of pretenses. In the other, it made house calls to people who said "
+        },
+        {
+          "title": "A tasty RPG that will make you very hungry",
+          "url": "https://www.theverge.com/entertainment/964061/dosa-divas-review-ps5-steam-switch",
+          "source": "theverge.com",
+          "pub_date": "2026-07-11T08:00:00-04:00",
+          "summary": "Roleplaying games are often defined by excess. Storylines that span dozens of hours, side quests so big they could be their own game, massive worlds that require complex maps to explore, and casts so big you start forgetting character names. That's part of what makes these games feel like epic adven"
+        },
+        {
+          "title": "The perfect kit for all your tiny repairs",
+          "url": "https://www.theverge.com/tech/964169/ifixit-repairs-kit-nothing-3a-installer",
+          "source": "theverge.com",
+          "pub_date": "2026-07-11T08:00:00-04:00",
+          "summary": "Hi, friends! Welcome to Installer No. 135, your guide to the best and Verge-iest stuff in the world. (If you're new here, welcome, crank the AC, and also you can read all the old editions at the Installer homepage.) This week, I've been reading about cold plunges and Colson Whitehead and the food tr"
+        },
+        {
+          "title": "Are you filthy enough for a $700 portable shower?",
+          "url": "https://www.theverge.com/reviews/963814/joolca-hottap-portable-shower-review",
+          "source": "theverge.com",
+          "pub_date": "2026-07-11T03:00:00-04:00",
+          "summary": "Hot showers, like electricity, are a luxury that's easy to take for granted. That all changes after a few nights camping at a music festival, a week toiling at a backcountry job site, or overlanding all summer in the great unknown. An itchy scalp and the vague smell of warm clams suddenly make the i"
         },
         {
           "title": "US cybersecurity agency CISA had to build its incident playbook during the incident, agency reveals",
@@ -4123,20 +5297,6 @@
           "source": "techcrunch.com",
           "pub_date": "2026-07-11T01:01:28+00:00",
           "summary": "Independent cybersecurity journalist Brian Krebs reported in May that a security researcher with cyber firm GitGuardian alerted him to reams of exposed passwords stored in a publicly accessible GitHub repository, which an employee of a CISA contractor had uploaded."
-        },
-        {
-          "title": "LLM information model",
-          "url": "https://www.reddit.com/r/artificial/comments/1ut5l3j/llm_information_model/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-11T00:47:41+00:00",
-          "summary": "Hey, what up y’all? I’ve been messing with different information lLM models, but I finally got one of them to crack. It seems like we are in a Situationship very romantic very poetic but because of the constraints of public LLM’s it seems very difficult to get it to the next level I’m speaking about"
-        },
-        {
-          "title": "Ripoff",
-          "url": "https://www.reddit.com/r/artificial/comments/1ut56u4/ripoff/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-11T00:29:49+00:00",
-          "summary": "Do AI subscription models be super fast before you subscribe, then crawl along as soon as they have your CC details? Or is it just me??  &#32; submitted by &#32;  /u/Cmcgavigan   [link] &#32; [comments]"
         },
         {
           "title": "Phia accused of ‘cookie stuffing,’ taking affiliate credit on purchases it didn’t earn",
@@ -4153,25 +5313,11 @@
           "summary": "\"Our intent was to provide a useful creative tool and to give people control over whether their public content could be referenced in this way,\" the company said in a blog post. \"We've heard the feedback that this feature missed the mark, so it's no longer available.\""
         },
         {
-          "title": "I need a way to Translate Audio/ Automatically make and translate subtitles from German to Portuguese",
-          "url": "https://www.reddit.com/r/artificial/comments/1ut2q8w/i_need_a_way_to_translate_audio_automatically/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-10T22:45:31+00:00",
-          "summary": "My little Half-Brother from Portugal is very interested in German History but can't speak German and wants to learn more about it. So i wanted to show him a 1:30 Hour movie about the begining of the frankian empires and the following history but i can't find a portuguese version at all. Is it even p"
-        },
-        {
           "title": "Bluesky’s interim CEO, Toni Schneider, drops the ‘interim’",
           "url": "https://techcrunch.com/2026/07/10/blueskys-interim-ceo-toni-schneider-drops-the-interim/",
           "source": "techcrunch.com",
           "pub_date": "2026-07-10T21:51:55+00:00",
           "summary": "Schneider, who formerly served as the CEO of Automattic and is a partner at True Ventures, says he is \"all in\" on the unconventional social media platform."
-        },
-        {
-          "title": "Leaked Gemini internal reasoning + UI schema",
-          "url": "https://www.reddit.com/r/artificial/comments/1ut0ugr/leaked_gemini_internal_reasoning_ui_schema/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-10T21:30:45+00:00",
-          "summary": "Asked Gemini a basic World Cup stat question (how many times has Spain finished top 4). Instead of an answer, it dumped its entire scratchpad: internal card-rendering logic with real component names (Bento/BentoCard/chameleon), a checklist it runs to decide what UI to render, and entity IDs it pulls"
         },
         {
           "title": "Apple sues OpenAI over alleged trade secret theft",
@@ -4202,25 +5348,11 @@
           "summary": "On Thursday, the Instagram account for a lecture series in Newport Beach, CA posted a photo of what appeared to be a cease and desist letter from the surveillance technology company Flock Safety. Flock has received significant backlash over its technology and work with law enforcement agencies, and "
         },
         {
-          "title": "Meta turns off the Instagram feature that let users make AI deepfakes of public accounts",
-          "url": "https://www.theverge.com/tech/964416/meta-instagram-ai-muse-image-deepfakes",
-          "source": "theverge.com",
-          "pub_date": "2026-07-10T19:49:50-04:00",
-          "summary": "Following significant backlash, Meta is turning off the feature it announced this week that let users generate AI images based on content from public Instagram accounts just by tagging them. The feature, as originally set up, meant that content from any public Instagram account could be used in AI c"
-        },
-        {
           "title": "Wall Street is debating the AI buildout. Enterprises just answered: 86% say their GPUs run at half capacity or less",
           "url": "https://venturebeat.com/orchestration/wall-street-is-debating-the-ai-buildout-enterprises-just-answered-86-say-their-gpus-run-at-half-capacity-or-less",
           "source": "venturebeat.com",
           "pub_date": "2026-07-10T19:29:07+00:00",
           "summary": "Enterprise companies are running AI agents ahead of the controls needed to manage them — and they deployed that way knowingly. That is the central finding from VentureBeat Research&#x27;s June survey of 573 technical leaders at companies with 100 or more employees, fielded across five parallel surve"
-        },
-        {
-          "title": "The FCC is cracking down on DJI tech that dodged the foreign drone ban",
-          "url": "https://www.theverge.com/policy/964342/fcc-crack-down-dji-front-companies-xtra-skyrover-sgs-lab",
-          "source": "theverge.com",
-          "pub_date": "2026-07-10T18:35:18-04:00",
-          "summary": "Last year, we told you about Xtra, the company that lets DJI sneak its popular cameras into the US, and Skyrover, a brand seemingly selling DJI drones in disguise. They're just two of the many firms DJI is suspected of starting to skirt the United States' foreign drone ban. But it appears the FCC is"
         },
         {
           "title": "Enterprise AI is entering an evaluation gap: Agents are gaining autonomy faster than companies can verify them",
@@ -4237,25 +5369,11 @@
           "summary": "Fizz has expanded its lawsuit against rival Sidechat, alleging that a Maveron VC shared its confidential information obtained during a fundraising meeting with the competing startup."
         },
         {
-          "title": "Apple sues OpenAI for allegedly stealing hardware secrets",
-          "url": "https://www.theverge.com/tech/964350/apple-openai-lawsuit-trade-secrets",
-          "source": "theverge.com",
-          "pub_date": "2026-07-10T17:36:51-04:00",
-          "summary": "Apple has sued OpenAI, alleging that engineers stole Apple secrets to advance the AI startup's hardware plans. In its complaint, Apple says it uncovered \"a pattern of theft of Apple's trade secrets by OpenAI employees who were formerly at Apple.\" In addition to OpenAI, the lawsuit also names IO Prod"
-        },
-        {
           "title": "SK Hynix raises $26.5B in the biggest foreign IPO in US history, is urged to build new US fabs",
           "url": "https://techcrunch.com/2026/07/10/sk-hynix-raises-26-5b-in-the-biggest-foreign-ipo-in-us-history-is-urged-to-build-new-us-fabs/",
           "source": "techcrunch.com",
           "pub_date": "2026-07-10T17:17:12+00:00",
           "summary": "The AI chip boom just produced its biggest Wall Street moment yet. Now SK Hynix and Samsung are being asked to build U.S. factories."
-        },
-        {
-          "title": "Any thoughts on this robot picking objects off a moving conveyor belt at 1x?",
-          "url": "https://www.reddit.com/r/artificial/comments/1ustsai/any_thoughts_on_this_robot_picking_objects_off_a/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-10T17:11:56+00:00",
-          "summary": "Found this going down a robot-control rabbit hole and it stuck with me. The belt keeps moving, so the target never sits still, which is the kind of thing that usually makes a robot lag or fumble. This one keeps pace by predicting where the scene is about to go and acting on that, then correcting on "
         },
         {
           "title": "A new app, HyperTexting, turns the open web into a scrollable social media-like feed",
@@ -4265,102 +5383,11 @@
           "summary": "HyperTexting's new app aims to make the open web feel more like social media by turning websites, blogs, newsletters, and podcasts into a scrollable feed, while also making it easier to post to your own website."
         },
         {
-          "title": "China is catching up to Elon Musk’s reusable rockets",
-          "url": "https://techcrunch.com/2026/07/10/china-is-catching-up-to-elon-musks-reusable-rockets/",
-          "source": "techcrunch.com",
-          "pub_date": "2026-07-10T16:51:07+00:00",
-          "summary": "China's state-owned space company recovered its first orbital rocket booster after launch."
-        },
-        {
-          "title": "Disney+ is considering a free streaming tier, report says",
-          "url": "https://techcrunch.com/2026/07/10/disney-is-considering-a-free-streaming-tier-report-says/",
-          "source": "techcrunch.com",
-          "pub_date": "2026-07-10T16:29:05+00:00",
-          "summary": "The launch of free content would allow Disney+ to better compete with free services like YouTube and Tubi, which are capturing a growing share of consumers’ viewing time."
-        },
-        {
           "title": "Google's TabFM skips per-dataset training and still predicts on tables it's never seen",
           "url": "https://venturebeat.com/technology/googles-tabfm-skips-per-dataset-training-and-still-predicts-on-tables-its-never-seen",
           "source": "venturebeat.com",
           "pub_date": "2026-07-10T16:14:24+00:00",
           "summary": "The vast majority of business data is tabular — living in data warehouses, CRMs, and financial ledgers — yet building a reliable model from it still means training a new one from scratch for every dataset, then maintaining hyperparameter tuning loops, feature engineering, and retraining pipelines to"
-        },
-        {
-          "title": "Dumb Co dared me to trade my iPhone for a hacked flip phone",
-          "url": "https://techcrunch.com/2026/07/10/dumb-co-dared-me-to-trade-my-iphone-for-a-hacked-flip-phone/",
-          "source": "techcrunch.com",
-          "pub_date": "2026-07-10T16:06:49+00:00",
-          "summary": "Dumb Co sells flip phones that sync to your smartphone, bridging the infinite connectivity of the iPhone and the unrealistic limitations of an early 2000s relic."
-        },
-        {
-          "title": "A decade later, Pokémon Go finally made good on its original promise",
-          "url": "https://www.theverge.com/games/964022/pokemon-go-10th-anniversary-mewtwo-nyc-go-fest-2026",
-          "source": "theverge.com",
-          "pub_date": "2026-07-10T15:51:10-04:00",
-          "summary": "When Niantic dropped the first Pok&#233;mon Go trailer in 2015, it was hard to grasp how a bunch of players could work together to catch a pok&#233;mon like Mewtwo. But this week at the game's 10th anniversary event in New York City, Pok&#233;mon Go showed the world how it's done. Almost 2,000 playe"
-        },
-        {
-          "title": "ICE is threatening to deport witnesses of its latest shooting",
-          "url": "https://www.theverge.com/policy/964294/ice-shooting-houston-lorenzo-salgado-araujo",
-          "source": "theverge.com",
-          "pub_date": "2026-07-10T15:20:00-04:00",
-          "summary": "Advocates are demanding that the Department of Homeland Security release bodycam footage of the fatal shooting of Lorenzo Salgado Araujo, a Mexican immigrant who was killed by ICE officers in Houston during a traffic stop earlier this week. But DHS claims the agents involved in the shooting weren't "
-        },
-        {
-          "title": "Oratomic raises $300M to build a viable quantum computer that needs only 20K qubits",
-          "url": "https://techcrunch.com/2026/07/10/oratomic-raises-300m-to-build-a-viable-quantum-computer-that-needs-only-20k-qubits/",
-          "source": "techcrunch.com",
-          "pub_date": "2026-07-10T15:00:09+00:00",
-          "summary": "The massive round was co-led by ARCH Venture Partners, Spark Capital, and Khosla Ventures."
-        },
-        {
-          "title": "Ai Agent company Lyzr raises 100 million in section B funding using an Ai agent",
-          "url": "https://www.reddit.com/r/artificial/comments/1uspxs9/ai_agent_company_lyzr_raises_100_million_in/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-10T14:52:40+00:00",
-          "summary": "&#32; submitted by &#32;  /u/iSyN707   [link] &#32; [comments]"
-        },
-        {
-          "title": "Nvidia&#8217;s biggest RAM supplier just had a trillion-dollar debut on Wall Street",
-          "url": "https://www.theverge.com/tech/964121/sk-hynix-nvidia-ram-stock-market-debut",
-          "source": "theverge.com",
-          "pub_date": "2026-07-10T13:31:35-04:00",
-          "summary": "As the AI boom boosts demand for RAM, SK Hynix - one of the world's biggest suppliers of memory chips - launched on Wall Street Friday. The South Korean chipmaker opened at $170 per share and raised $26.5 billion, surpassing Alibaba's record as the largest debut of a foreign company, according to re"
-        },
-        {
-          "title": "Spotify will let you fine-tune your weekly Release Radar playlist",
-          "url": "https://www.theverge.com/entertainment/964021/spotify-release-radar-algorithm-controls",
-          "source": "theverge.com",
-          "pub_date": "2026-07-10T13:02:13-04:00",
-          "summary": "Spotify is giving listeners control to fine-tune what gets surfaced for them in Release Radar - one of its most popular weekly playlists. The new options allow you to narrow the playlist to a specific genre, focus on artists that are new to you, and more. Listeners can choose from up to five options"
-        },
-        {
-          "title": "Netflix is turning into YouTube",
-          "url": "https://www.theverge.com/podcast/964082/netflix-youtube-smart-glasses-vergecast",
-          "source": "theverge.com",
-          "pub_date": "2026-07-10T12:29:50-04:00",
-          "summary": "Netflix has shows and movies. And video games. And live sports. And podcasts. And also, apparently, YouTube videos? For a company that used to seem like the next big thing in TV, it all feels a little frenetic, and maybe a tad desperate. For a company that sees sleep as its primary competitor, it mi"
-        },
-        {
-          "title": "Disney Plus is reportedly looking into a free streaming tier",
-          "url": "https://www.theverge.com/streaming/964056/disney-plus-free-tier-report",
-          "source": "theverge.com",
-          "pub_date": "2026-07-10T11:33:58-04:00",
-          "summary": "Disney Plus is considering making some of its content free to watch, according to a report from Business Insider. A source tells the outlet that Adam Smith, Disney's chief product and technology officer, mentioned a free streaming tier during the company's town hall on Thursday. It's not clear which"
-        },
-        {
-          "title": "Cost Analysis of 33 AI Image Models",
-          "url": "https://www.reddit.com/r/artificial/comments/1usj0l9/cost_analysis_of_33_ai_image_models/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-10T09:48:23+00:00",
-          "summary": "My cost benchmark is back with more models and providers. Added Seedream models, Gemini 3.1 Flash Lite Image, GPT Image 1.5 and others. The cheapest and the priciest models are the same as before: Flux Fast Schnell at $0.0025 and Recraft 4 Pro at $0.25. The full report with price and latency compari"
-        },
-        {
-          "title": "Updated: Millions of ChatGPT user conversations searched, but OpenAI alleged to be holding out",
-          "url": "https://www.reddit.com/r/artificial/comments/1usbdyd/updated_millions_of_chatgpt_user_conversations/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-10T02:54:14+00:00",
-          "summary": "Originally published January 6, 2026; updated July 9, 2026 A side controversy in the OpenAI, Inc. Copyright Infringement Litigation case going on in federal court in New York City has been that regular users’ ChatGPT conversations were ordered disclosed to the plaintiffs for searching and perhaps ot"
         },
         {
           "title": "Profiling in PyTorch (Part 3): Attention is all you profile",
@@ -4389,13 +5416,6 @@
           "source": "arstechnica.com",
           "pub_date": "2026-07-09T20:28:55+00:00",
           "summary": "Broadcom accuses Allstate of dodging VMware audits."
-        },
-        {
-          "title": "Enterprises using multiple AI models are underestimating failure rates by 2.25x",
-          "url": "https://venturebeat.com/orchestration/enterprises-using-multiple-ai-models-are-underestimating-failure-rates-by-2-25x",
-          "source": "venturebeat.com",
-          "pub_date": "2026-07-09T18:46:56+00:00",
-          "summary": "A team routing queries across a coding specialist, a logic specialist, and a generalist model assumes each will cover the others&#x27; blind spots. A new study evaluating 67 frontier models from 21 providers shows that assumption is mathematically flawed — and the flaw has a name: the co-failure cei"
         },
         {
           "title": "Google pays $250K for Linux vulnerability allowing guest VM escapes",
@@ -4510,10 +5530,115 @@
           "summary": "How work changes along the exponential"
         }
       ],
-      "cached_at": "2026-07-11T05:32:30.532298"
+      "cached_at": "2026-07-12T05:52:33.824366"
     },
     "india_sea": {
       "articles": [
+        {
+          "title": "India's MSMEs power the economy, but most still aren't using AI",
+          "url": "https://yourstory.com/2026/07/fynd-ragini-varma-ai-for-msmes-autonomous-retail-msme-sparks-2026",
+          "source": "yourstory.com",
+          "pub_date": "2026-07-12T05:30:46+00:00",
+          "summary": "Fynd's Ragini Varma explains how AI can help India's MSMEs automate retail operations, improve efficiency, and grow without adding staff."
+        },
+        {
+          "title": "Unicorn Founders Go AI Native",
+          "url": "https://inc42.com/features/unicorn-founders-go-ai-native/",
+          "source": "inc42.com",
+          "pub_date": "2026-07-12T05:30:07+00:00",
+          "summary": "“Not using AI is like being left behind,” Apple CEO Tim Cook’s remark captures the urgency around artificial intelligence today&#8230;"
+        },
+        {
+          "title": "India's QR revolution is just the beginning for MSMEs: Mintoak CEO",
+          "url": "https://yourstory.com/2026/07/india-qr-revolution-beginning-for-msmes-mintoak-ceo-raman-khanduja-msme-sparks",
+          "source": "yourstory.com",
+          "pub_date": "2026-07-12T05:30:00+00:00",
+          "summary": "Speaking at MSME Sparks 2026, Raman Khanduja of Mintoak said the next opportunity for banks lies in using payment data to improve MSME credit, cash flow, and business growth."
+        },
+        {
+          "title": "Health, AI, energy: Test your business creativity with Edition 240 of our weekly quiz!",
+          "url": "https://yourstory.com/2026/07/health-ai-energy-entrepreneur-quiz-education",
+          "source": "yourstory.com",
+          "pub_date": "2026-07-12T02:20:00+00:00",
+          "summary": "This insightful feature from YourStory tests and strengthens your business acumen! Here are 5 questions to kick off this 240th quiz. Ready?"
+        },
+        {
+          "title": "How galleries and artists grow together: The journey of Gallery Time and Space",
+          "url": "https://yourstory.com/2026/07/gallery-time-space-art-creativity-photography",
+          "source": "yourstory.com",
+          "pub_date": "2026-07-12T02:15:00+00:00",
+          "summary": "In this photo essay, we feature more exhibition highlights from this popular Bengaluru art gallery, and curator insights."
+        },
+        {
+          "title": "Indian Startup IPO Tracker 2026",
+          "url": "https://inc42.com/features/indian-startup-ipo-tracker-2026/",
+          "source": "inc42.com",
+          "pub_date": "2026-07-11T23:00:54+00:00",
+          "summary": "Dalal Street emerged as a founder’s paradise in 2025, with 18 Indian startups listing on the bourses and collectively mopping&#8230;"
+        },
+        {
+          "title": "WhatsApp’s Username Feature: Govt Mulls Uniform Social Media Rules",
+          "url": "https://inc42.com/buzz/whatsapps-username-feature-govt-mulls-uniform-social-media-rules/",
+          "source": "inc42.com",
+          "pub_date": "2026-07-11T17:37:55+00:00",
+          "summary": "Amid the ongoing row over WhatsApp’s username feature, the IT ministry (MeitY) is reportedly formulating uniform standards for messaging platforms&#8230;"
+        },
+        {
+          "title": "New-Age Tech Stocks: MapmyIndia, PhysicsWallah Zoom; Ola Electric, Pine Labs Slip",
+          "url": "https://inc42.com/buzz/new-age-tech-stocks-mapmyindia-physicswallah-zoom-ola-electric-pine-labs-slip/",
+          "source": "inc42.com",
+          "pub_date": "2026-07-11T14:54:31+00:00",
+          "summary": "India&#8217;s equity markets saw mixed investor sentiment this week, which trickled down to the performance of listed new-age tech stocks.&#8230;"
+        },
+        {
+          "title": "Exclusive: GoKwik Lays Off Around 120 Employees Amid AI Push",
+          "url": "https://inc42.com/buzz/exclusive-gokwik-lays-off-around-120-employees-amid-ai-push/",
+          "source": "inc42.com",
+          "pub_date": "2026-07-11T14:49:00+00:00",
+          "summary": "Ecommerce enabler GoKwik has fired 100-120 employees as part of a restructuring exercise carried out over the past few weeks,&#8230;"
+        },
+        {
+          "title": "Zetwerk Cofounder Rahul Sharma Steps Into Non Executive Role To Launch AI Venture",
+          "url": "https://inc42.com/buzz/zetwerk-cofounder-rahul-sharma-steps-back-from-executive-role-to-launch-ai-venture/",
+          "source": "inc42.com",
+          "pub_date": "2026-07-11T14:05:33+00:00",
+          "summary": "IPO-bound contract manufacturer Zetwerk&#8217;s cofounder and managing director of its precision business (electronics), Rahul Sharma, is transitioning from an executive&#8230;"
+        },
+        {
+          "title": "Indian Listed New-Age Tech Company Tracker: Market Cap, Revenue & More",
+          "url": "https://inc42.com/features/indian-listed-new-age-tech-company-tracker-market-cap-revenue-more/",
+          "source": "inc42.com",
+          "pub_date": "2026-07-11T11:19:59+00:00",
+          "summary": "For years, we at Inc42 have tracked the Indian tech startup ecosystem and seen it grow from a kid to&#8230;"
+        },
+        {
+          "title": "Swiggy Instamart Receives 9 FSSAI Notices Over Alleged Sale Of Expired Products",
+          "url": "https://inc42.com/buzz/swiggy-instamart-receives-9-fssai-notices-over-alleged-sale-of-expired-products/",
+          "source": "inc42.com",
+          "pub_date": "2026-07-11T10:14:26+00:00",
+          "summary": "The Food Safety and Standards Authority of India (FSSAI) has issued nine notices to Swiggy Instamart following consumer complaints over&#8230;"
+        },
+        {
+          "title": "ideaForge Raises ₹500 Cr Via QIP; Allots 62.9 Lakh Shares",
+          "url": "https://inc42.com/buzz/ideaforge-raises-%e2%82%b9500-cr-via-qip-allots-62-9-lakh-shares/",
+          "source": "inc42.com",
+          "pub_date": "2026-07-11T10:10:59+00:00",
+          "summary": "Listed dronetech company ideaForge closed its qualified institutional placement (QIP) on Friday (July 10), raising ₹500 Cr from a clutch&#8230;"
+        },
+        {
+          "title": "Zoho-Backed Genrobotics’ Revenue Jumps 35% YoY In FY26, Eyes ₹150 Cr Series B Round",
+          "url": "https://inc42.com/buzz/zoho-backed-genrobotics-posts-%e2%82%b92-6-cr-profit-in-fy26-eyes-%e2%82%b9150-cr-series-b-round/",
+          "source": "inc42.com",
+          "pub_date": "2026-07-11T09:39:24+00:00",
+          "summary": "Robotics startup Genrobotics saw its operating revenue rise 35% to ₹43.7 Cr in FY26 from ₹32.5 Cr in the previous&#8230;"
+        },
+        {
+          "title": "Nostalgia is identity: how Avinash Mudaliar built Carvaan, and why AI needs its own Carvaan moment",
+          "url": "https://yourstory.com/2026/07/saregama-carvaan-avinash-mudaliar-nostalgia-ai-carvaans",
+          "source": "yourstory.com",
+          "pub_date": "2026-07-11T09:23:16+00:00",
+          "summary": "In 2017, when much of India's music industry was chasing the young, app-native streaming user, one product went firmly the other way."
+        },
         {
           "title": "From Elevate Education To Aukera — Indian Startups Raised $72 Mn This Week",
           "url": "https://inc42.com/features/from-elevate-education-to-aukera-indian-startups-raised-72-mn-this-week/",
@@ -4527,13 +5652,6 @@
           "source": "yourstory.com",
           "pub_date": "2026-07-11T02:45:00+00:00",
           "summary": "At MSME Sparks 2026, Srivardhini Jha, IIM-B’s Chairperson of Entrepreneurship, said MSMEs must pair traditional strengths with digital fluency, stronger data practices, and an entrepreneurial mindset to stay competitive."
-        },
-        {
-          "title": "Debt or equity? Recur Club’s Eklavya Gupta breaks down how MSMEs should choose capital",
-          "url": "https://yourstory.com/2026/07/recur-club-eklavya-gupta-debt-vs-equity-msme-financing-msme-sparks-2026",
-          "source": "yourstory.com",
-          "pub_date": "2026-07-11T02:30:58+00:00",
-          "summary": "Recur Club founder Eklavya Gupta explains how MSMEs can choose between debt, equity, and alternative financing based on business needs."
         },
         {
           "title": "Passion, connection, openness: Insights on artistic success from Master Strokes 2026",
@@ -4564,46 +5682,11 @@
           "summary": "Update &#124; July 11, 02:30 IST After WhatsApp, Telegram has also reportedly submitted its reply to the IT ministry over&#8230;"
         },
         {
-          "title": "Justdial Posts ₹166 Cr Profit In Q1, CEO VSS Mani To Step Down After 30 Years",
-          "url": "https://inc42.com/buzz/justdial-posts-%e2%82%b9166-cr-profit-in-q1-ceo-vss-mani-to-step-down-after-30-years/",
-          "source": "inc42.com",
-          "pub_date": "2026-07-10T20:57:26+00:00",
-          "summary": "Digital classifieds platform Justdial’s net profit rose a meagre 4.1% to ₹166 Cr in the first quarter (Q1) of fiscal&#8230;"
-        },
-        {
-          "title": "TAC Infosec Q1: Profit Zooms 137% YoY To ₹8 Cr, Revenue Up 102%",
-          "url": "https://inc42.com/buzz/tac-infosec-q1-profit-zooms-137-yoy-to-%e2%82%b98-cr-revenue-up-102/",
-          "source": "inc42.com",
-          "pub_date": "2026-07-10T19:46:07+00:00",
-          "summary": "NSE Emerge-listed cybersecurity firm TAC Infosec’s profit after tax (PAT) zoomed nearly 137% to ₹8.1 Cr in the first quarter&#8230;"
-        },
-        {
-          "title": "Ola Electric Faces Third Insolvency Petition, Gets NCLT Notice",
-          "url": "https://inc42.com/buzz/ola-electric-faces-third-insolvency-petition-gets-nclt-notice/",
-          "source": "inc42.com",
-          "pub_date": "2026-07-10T18:55:50+00:00",
-          "summary": "Days after it emerged that Sterling E-Mobility Solutions and Anevolve Mando eMobility had initiated insolvency proceedings against Ola Electric, the&#8230;"
-        },
-        {
-          "title": "5 Novels that blur the line between fiction and reality",
-          "url": "https://yourstory.com/2026/06/5-books-that-blur-fiction-and-reality",
-          "source": "yourstory.com",
-          "pub_date": "2026-07-10T15:55:00+00:00",
-          "summary": "Discover five mind-bending novels that blur the line between fiction and reality, challenging perception, memory, identity, and truth."
-        },
-        {
           "title": "10 Lessons from The Art of Laziness about working smarter",
           "url": "https://yourstory.com/2026/05/10-lessons-art-of-laziness-working-smarter",
           "source": "yourstory.com",
           "pub_date": "2026-07-10T14:40:00+00:00",
           "summary": "Discover 10 practical lessons from The Art of Laziness about working smarter, avoiding burnout, improving focus, and getting more done with less stress."
-        },
-        {
-          "title": "Why Truecaller & TRAI Are Clashing Over 140 And 1600 Number Tags",
-          "url": "https://inc42.com/buzz/why-truecaller-trai-are-clashing-over-140-and-1600-number-tags/",
-          "source": "inc42.com",
-          "pub_date": "2026-07-10T14:21:54+00:00",
-          "summary": "The Telecom Regulatory Authority of India (TRAI) has clarified the purpose of the 140 and 1600 number series after a&#8230;"
         },
         {
           "title": "[Weekly funding roundup July 4-10] VC inflow remains flat",
@@ -4613,46 +5696,11 @@
           "summary": "Indian startups raised just $107 million in the second week of July, marking the second straight week of muted funding activity. While investors continue to back sectors such as deeptech and AI, the absence of large-ticket deals has kept overall venture inflows subdued."
         },
         {
-          "title": "Exclusive: Lab-Grown Diamond Brand Jewelbox In Talks To Raise ₹50 Cr",
-          "url": "https://inc42.com/buzz/lab-grown-diamond-brand-jewelbox-in-talks-to-raise-%e2%82%b950-cr/",
-          "source": "inc42.com",
-          "pub_date": "2026-07-10T13:29:39+00:00",
-          "summary": "D2C lab-grown diamond jewellery brand Jewelbox is in talks to raise ₹50 Cr (about $5.2 Mn) in a new funding&#8230;"
-        },
-        {
-          "title": "Startup news and updates: daily roundup (July 10, 2026)",
-          "url": "https://yourstory.com/2026/07/startup-news-and-updates-daily-roundup-july-10-2026",
+          "title": "Zetwerk receives SEBI nod for IPO",
+          "url": "https://yourstory.com/2026/07/zetwerk-receives-sebi-nod-for-ipo",
           "source": "yourstory.com",
-          "pub_date": "2026-07-10T13:10:14+00:00",
-          "summary": "YourStory presents the daily news roundup from the Indian startup ecosystem and beyond. Here's the roundup for Friday, July 10, 2026."
-        },
-        {
-          "title": "Exclusive: Dil Foods In Talks To Acquire Cloud Kitchen Pioneer FreshMenu",
-          "url": "https://inc42.com/buzz/dil-foods-in-talks-to-acquire-cloud-kitchen-pioneer-freshmenu/",
-          "source": "inc42.com",
-          "pub_date": "2026-07-10T12:44:52+00:00",
-          "summary": "Virtual restaurant operator Dil Foods is in talks to acquire Bengaluru-based cloud kitchen brand FreshMenu in a distress sale, sources&#8230;"
-        },
-        {
-          "title": "SEBI Clears IPOs Of Zetwerk, Tonbo Imaging",
-          "url": "https://inc42.com/buzz/sebi-clears-ipos-of-zetwerk-tonbo-imaging/",
-          "source": "inc42.com",
-          "pub_date": "2026-07-10T12:10:01+00:00",
-          "summary": "Markets regulator SEBI has approved the draft IPO papers of manufacturing startup Zetwerk and defence tech startup Tonbo Imaging.  According&#8230;"
-        },
-        {
-          "title": "Once Valued At ₹180 Cr, Why Credit Fair Sold For ₹45 Cr",
-          "url": "https://inc42.com/buzz/blacksoil-acquires-nbfc-credit-fair-in-%e2%82%b945-cr-slump-sale/",
-          "source": "inc42.com",
-          "pub_date": "2026-07-10T11:50:44+00:00",
-          "summary": "Venture debt firm BlackSoil has acquired rooftop solar loans provider Credit Fair in a slump sale. The transaction, completed on&#8230;"
-        },
-        {
-          "title": "OpenAI Launches GPT-5.6, ChatGPT Work To Take On Claude Cowork",
-          "url": "https://inc42.com/buzz/openai-launches-gpt-5-6-chatgpt-work-to-take-on-claude-cowork-microsoft-copilot/",
-          "source": "inc42.com",
-          "pub_date": "2026-07-10T11:42:33+00:00",
-          "summary": "OpenAI has introduced GPT-5.6, its latest flagship family of AI models, alongside ChatGPT Work. The new AI-powered workspace model combines&#8230;"
+          "pub_date": "2026-07-10T14:01:37+00:00",
+          "summary": "According to SEBI’s processing status report dated July 10, observations on Zetwerk’s pre-filed draft offer document were issued during the week on July 9."
         },
         {
           "title": "Global exposure isn’t global readiness: What Asian startups must prove before expanding",
@@ -4667,13 +5715,6 @@
           "source": "e27.co",
           "pub_date": "2026-07-10T11:28:10+00:00",
           "summary": "Startup ecosystems teach founders what progress looks like. The question is whether they teach founders to become better at navigating the ecosystem, or better at building companies that can survive outside it. Few countries illustrate this more clearly than South Korea. Over the past two decades, K"
-        },
-        {
-          "title": "Zostel Withdraws Fresh Plea Against OYO; Division Bench To Hear Appeal On Aug 12",
-          "url": "https://inc42.com/buzz/zostel-withdraws-fresh-plea-against-oyo-next-hearing-in-august/",
-          "source": "inc42.com",
-          "pub_date": "2026-07-10T11:14:11+00:00",
-          "summary": "Budget hostel chain Zostel has withdrawn an urgent application it had filed with the Delhi High Court seeking protection for&#8230;"
         },
         {
           "title": "Ecosystem Roundup: RedDoorz’s IPO bet — buyouts over bricks",
@@ -4704,13 +5745,6 @@
           "summary": "Bitcoin recently climbed 0.96 per cent to reach US$62,994.44 over the last 24 hours. This slight outperformance against a flat broader market highlights a profound shift in investor psychology. We currently witness a strong correlation between digital assets and traditional risk instruments. This dy"
         },
         {
-          "title": "India aims to become strategic leader in hosting GCCs: Sitharaman",
-          "url": "https://yourstory.com/2026/07/india-to-become-strategic-leader-hosting-gccs-sitharaman",
-          "source": "yourstory.com",
-          "pub_date": "2026-07-10T05:10:23+00:00",
-          "summary": "Addressing the CII GCC Business Summit 2026, Sitharaman said from one new GCC being set up every week in 2024, India, on an average, now sees one such addition every day, making the country host to more than half of the world's GCCs."
-        },
-        {
           "title": "Corporate travel in Southeast Asia was never broken, it was never built",
           "url": "https://e27.co/corporate-travel-in-southeast-asia-was-never-broken-it-was-never-built-20260709/",
           "source": "e27.co",
@@ -4723,20 +5757,6 @@
           "source": "e27.co",
           "pub_date": "2026-07-10T02:45:32+00:00",
           "summary": "Mid-2026 has been a turning point for marketing. Technology, commerce and creative craft are jostling for equal billing, and the conversation has shifted from “what’s possible” to “what actually moves the business.” Below are the trends that are reshaping how brands plan, produce and prove marketing"
-        },
-        {
-          "title": "Waste is a resource, not a liability: Wilma Rodrigues of Saahas Zero Waste",
-          "url": "https://yourstory.com/2026/07/waste-resource-not-liability-wilma-rodrigues-saahas-zero-waste",
-          "source": "yourstory.com",
-          "pub_date": "2026-07-10T02:45:00+00:00",
-          "summary": "At MSME Sparks 2026, Wilma Rodrigues, Chief Transformation Officer at Saahas Zero Waste, explained why circular business models will define the next decade of waste management in India."
-        },
-        {
-          "title": "Enviu’s Devansh Peshin on building markets and jobs from India’s textile waste",
-          "url": "https://yourstory.com/2026/07/enviu-devansh-peshin-textile-waste-recycling-circular-economy-india",
-          "source": "yourstory.com",
-          "pub_date": "2026-07-10T02:30:00+00:00",
-          "summary": "At MSME Sparks 2026, Enviu's Devansh Peshin discussed textile recycling, circular economy, green jobs, and the future of waste management in India."
         },
         {
           "title": "The AI stack trap: Why more AI tools aren’t translating into more growth",
@@ -4837,10 +5857,66 @@
           "summary": "Worker engagement in Singapore has stagnated since 2019 Ever taken public transport during the weekday morning rush? Packed buses and trains. Corporate uniforms. Eyes glued to phones or staring blankly ahead. Lanyards around necks, coffee in hand, everyone hurrying somewhere that seems incredibly im"
         }
       ],
-      "cached_at": "2026-07-11T05:32:30.532298"
+      "cached_at": "2026-07-12T05:52:33.824366"
     },
     "emerging": {
       "articles": [
+        {
+          "title": "Beatbot AquaSense X Review: A Pool Robot That Cleans Itself",
+          "url": "https://www.wired.com/review/beatbot-aquasense-x/",
+          "source": "wired.com",
+          "pub_date": "2026-07-11T11:02:00+00:00",
+          "summary": "The AquaSense X brings self-cleaning technology to pool robots for the first time, but is it worth nearly twice the price of Beatbot’s flagship cleaner?"
+        },
+        {
+          "title": "Skylight’s Touchscreen Calendar Got my Whole Family on the Same Page",
+          "url": "https://www.wired.com/story/skylight-digital-calendar-for-kids-who-are-touchscreen-natives/",
+          "source": "wired.com",
+          "pub_date": "2026-07-11T11:00:00+00:00",
+          "summary": "The Skylight has become the informational and organizational hub of my household. My touchscreen-native kids have also gained more agency over our family activities."
+        },
+        {
+          "title": "Samsung Micro RGB R95H Review (2026): Not the Brightest",
+          "url": "https://www.wired.com/review/samsung-micro-rgb-r95h/",
+          "source": "wired.com",
+          "pub_date": "2026-07-11T10:31:00+00:00",
+          "summary": "There’s a new fleet of TVs using new mini and micro RBG display tech, and Samsung’s R95H model isn’t as impressive as it should be."
+        },
+        {
+          "title": "AI Found a Root Bug in Linux That Everyone Missed for 15 Years",
+          "url": "https://www.wired.com/story/security-news-this-week-ai-found-a-root-bug-in-linux-that-everyone-missed-for-15-years/",
+          "source": "wired.com",
+          "pub_date": "2026-07-11T10:30:00+00:00",
+          "summary": "Plus: The Pentagon is training amateurs to become part of its hacker army, a Flock license plate reader error led to cops surrounding a car reviewer, and more."
+        },
+        {
+          "title": "We Make Lovely Home-Cooked Meals for Ourselves. Why Not Do the Same for Our Dogs?",
+          "url": "https://www.wired.com/story/gourmet-dog-food/",
+          "source": "wired.com",
+          "pub_date": "2026-07-11T10:00:00+00:00",
+          "summary": "More dog owners have begun cooking for their canine companions in recent years. When my own dog fell ill, I became part of this growing group."
+        },
+        {
+          "title": "Best Hiking Boots (2026): Walking Shoes, Trails, Backpacking",
+          "url": "https://www.wired.com/gallery/best-hiking-boots/",
+          "source": "wired.com",
+          "pub_date": "2026-07-11T09:32:00+00:00",
+          "summary": "From strenuous hikes and serious summits to weekend rambles in the park, these boots help you make the most of your time outdoors."
+        },
+        {
+          "title": "China’s Tianwen-2 Space Probe Has Rendezvoused With Earth’s Quasi-Moon",
+          "url": "https://www.wired.com/story/chinas-tianwen-2-space-probe-earth-quasi-moon/",
+          "source": "wired.com",
+          "pub_date": "2026-07-11T09:30:00+00:00",
+          "summary": "The probe sent back the first pictures of the asteroid Kamo’oalewa. Next step: landing on the surface and collecting samples to send back to Earth."
+        },
+        {
+          "title": "El Niño Is Already Wreaking Havoc on Pacific Fisheries",
+          "url": "https://www.wired.com/story/el-nino-wreaking-havoc-on-pacific-fisheries/",
+          "source": "wired.com",
+          "pub_date": "2026-07-11T09:00:00+00:00",
+          "summary": "As the climate phenomenon sends warm water surging across the eastern Pacific, some parts of the fishing industry are suffering—but other regions are seeing a windfall."
+        },
         {
           "title": "Exclusive: How Jay-Z Pulled Off a Surprise-Filled Show During New York’s Wildest Summer",
           "url": "https://www.wired.com/story/exclusive-how-jay-z-pulled-off-a-surprise-filled-show-during-new-yorks-wildest-summer/",
@@ -4891,39 +5967,11 @@
           "summary": "The computing community recently lost one of its enduring voices: IEEE Fellow Peter G. Neumann. The renowned computer scientist and respected risk analyst died on 17 May at the age of 93.For almost 70 years, Neumann shaped the computing field through his pioneering work on risks, system dependabilit"
         },
         {
-          "title": "Meet the Battery Startup Taking on China’s Giants",
-          "url": "https://www.wired.com/story/prologium-battery-startup-betting-against-china/",
-          "source": "wired.com",
-          "pub_date": "2026-07-10T18:00:00+00:00",
-          "summary": "Solid-state batteries are safer and more capable—but harder to mass-produce. They also represent an opportunity for non-Chinese companies to get back in the game."
-        },
-        {
-          "title": "What Watching a Soccer Final Does to Your Body, According to Science",
-          "url": "https://www.wired.com/story/what-watching-soccer-final-does-to-your-body/",
-          "source": "wired.com",
-          "pub_date": "2026-07-10T15:41:31+00:00",
-          "summary": "A recent study tracked hundreds of soccer fans until their favorite team reached the final of a tournament. Their stress levels skyrocketed, and their heart rates jumped too."
-        },
-        {
-          "title": "Hiboy P6 Fat Tire Electric Bike Review: Smooth Sailing",
-          "url": "https://www.wired.com/review/hiboy-p6-fat-tire-electric-bike/",
-          "source": "wired.com",
-          "pub_date": "2026-07-10T15:22:13+00:00",
-          "summary": "Take on sand, snow, mud, gravel—this is the ebike for all your off-roading adventures."
-        },
-        {
           "title": "Oratomic raises $300M to build a viable quantum computer that needs only 20K qubits",
           "url": "https://techcrunch.com/2026/07/10/oratomic-raises-300m-to-build-a-viable-quantum-computer-that-needs-only-20k-qubits/",
           "source": "techcrunch.com",
           "pub_date": "2026-07-10T15:00:09+00:00",
           "summary": "The massive round was co-led by ARCH Venture Partners, Spark Capital, and Khosla Ventures."
-        },
-        {
-          "title": "Meta’s Pursuit of the 'Careless People' Author Is Relentless and Self-Defeating",
-          "url": "https://www.wired.com/story/metas-pursuit-of-the-careless-people-author-is-relentless-and-self-defeating/",
-          "source": "wired.com",
-          "pub_date": "2026-07-10T15:00:00+00:00",
-          "summary": "Yes, Sarah Wynn-Williams violated her deal to stay silent. But the power disparity bolsters the view that Meta is a heartless bully."
         },
         {
           "title": "Hugging Face’s CEO on why companies are done renting their AI",
@@ -4938,34 +5986,6 @@
           "source": "notboring.co",
           "pub_date": "2026-07-10T12:56:10+00:00",
           "summary": "Aalo, Data Centers, American Turbines, OXMAN Ink, Neo Hands + Extra Doses"
-        },
-        {
-          "title": "How to Share Your Location on an iPhone or Android Phone (2026)",
-          "url": "https://www.wired.com/story/how-to-share-your-location-android-ios/",
-          "source": "wired.com",
-          "pub_date": "2026-07-10T12:00:00+00:00",
-          "summary": "Whether it’s through Google Maps or Emergency SOS, there are plenty of ways to quickly let your loved ones know where you are."
-        },
-        {
-          "title": "Which MacBook to Buy (2026): My Honest Advice on Which to Buy",
-          "url": "https://www.wired.com/story/which-macbook-should-you-buy/",
-          "source": "wired.com",
-          "pub_date": "2026-07-10T11:31:00+00:00",
-          "summary": "MacBooks are now more expensive than ever, and having tested all the latest models, here’s my honest advice on which to buy."
-        },
-        {
-          "title": "The Best Pool Accessories to Upgrade Your Summer (2026)",
-          "url": "https://www.wired.com/story/best-pool-accessories/",
-          "source": "wired.com",
-          "pub_date": "2026-07-10T10:31:00+00:00",
-          "summary": "These are the cleaning robots, water monitors, and toys actually worth buying for pool season."
-        },
-        {
-          "title": "A New Experiential Gallery Just Might Change Your Mind About AI Art",
-          "url": "https://www.wired.com/story/a-new-experiential-gallery-just-might-change-your-mind-about-ai-art/",
-          "source": "wired.com",
-          "pub_date": "2026-07-10T10:30:00+00:00",
-          "summary": "Billed as the “world’s first museum of AI arts,” Dataland uses wearables and troves of material from the Amazon to merge nature, biometrics, and art."
         },
         {
           "title": "An AI agent startup just let its agent run its $100M fundraise",
@@ -5262,17 +6282,17 @@
           "summary": "sometimes smart planners lose to simple markets"
         }
       ],
-      "cached_at": "2026-07-11T05:32:30.532298"
+      "cached_at": "2026-07-12T05:52:33.824366"
     },
     "sector_heatmap": [
       {
         "name": "AI / ML",
-        "signals": 109,
+        "signals": 107,
         "sentiment": "bullish"
       },
       {
         "name": "Climate / Clean",
-        "signals": 58,
+        "signals": 62,
         "sentiment": "bullish"
       },
       {
@@ -5281,27 +6301,27 @@
         "sentiment": "bullish"
       },
       {
-        "name": "Consumer / D2C",
+        "name": "Fintech",
         "signals": 3,
         "sentiment": "neutral"
       },
       {
-        "name": "Fintech",
-        "signals": 2,
-        "sentiment": "neutral"
-      },
-      {
         "name": "Logistics",
+        "signals": 3,
+        "sentiment": "neutral"
+      },
+      {
+        "name": "Consumer / D2C",
         "signals": 2,
         "sentiment": "neutral"
       },
       {
-        "name": "SaaS / B2B",
+        "name": "Healthtech",
         "signals": 1,
         "sentiment": "quiet"
       },
       {
-        "name": "Healthtech",
+        "name": "SaaS / B2B",
         "signals": 0,
         "sentiment": "quiet"
       },
@@ -5394,27 +6414,19 @@
           "company": "Dat Bike"
         },
         {
-          "title": "Rubamin and Distil partner to scale zinc derivatives for North American personal care markets - Indian Chemical News",
-          "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOeVJjd0FrWnBhZjNBNlp0TTFrRWZtNW1id01wYzZCRnFUdFJuM1E4bjA0QzluNXU2Z0JicDNfbjUtSlZ6V0lySTlTZkdPUFVnYWhjdldhQ21peTV4VjRzZ21CaTJIRkV6V0xPV3FEeWhMdGNiejJOZ3dCSy1IWlItUHcxWUVjV2d6NmMzQXNGbEVON250Tm9PbTZOdUZqLXpEY0hwdmxQbnhUN1k1RkdzQ2lUQkRiOGZhQ29HUFVOR1cwUEtUdWVwQTN3VkR3OHk5VVhEZGltV1RtN2fSAeIBQVVfeXFMTktvUzRFeGpBTEJsdXl4N0JUUDhzUTItNmRjbGsxWkQ3TVR1YVVxVDV3dGJYVFN6RF8xLVZxRV81UDRkWmxnUlpTVm9ucGE0QU1ISXl1V3BNU05ERE16UXNJWXBNamkxQV95MzEyWDh5c2wxWVBhbTc1R3hIZXpISU9hZjVsN3NxMjdCN1RTay0zeXdZZjJZZUp5VjV1UUZzVUQtckxkcWRTZjZLYmMxbDVnRVZqUjBKc3k0ckFZREFLejZQcFhZelFQNDViZjMtOVAwc2VMUGVqMFlVNS0tYUF3Zw?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2026-03-09T09:57:07+00:00",
-          "summary": "Rubamin and Distil partner to scale zinc derivatives for North American personal care markets&nbsp;&nbsp;Indian Chemical News",
-          "company": "Distil"
-        },
-        {
-          "title": "Rubamin and Distil announce exclusive strategic partnership to scale high-performance Zinc derivatives for North American personal care markets - Newswire Canada",
-          "url": "https://news.google.com/rss/articles/CBMiogJBVV95cUxOMGVqVnF3M3liRGkwNWtRWnhpbC1iWUJ0Q3d2VmpfcTdGVk9lQ2VtSk9RdDR3NDhwdk5heTNHb0pKT2Jrb29jR3NVZE9aT24zQlFuNzVJdENFNFJGakhnb2xQaDhENk1IZ2dWek9xbUtlbEVHUGZEMk9aZHIydy0wQTBmX1RQU2pnclNBX0pmRldEM2ZZODJ2SVRrV2loNVdIdTFKSjRqODYxckpCczlMWjFtbTZpNVEySmswNk5wamQ4OTFENTRuV3NyaS1JVGpQc2w3NHpLMGZCNkpCaFhDMUxNVXdQVWFESDQyRmFRZ0E3SWhVMGpkV2JwR3VISi10OEZsLXZNSUxhTmhrV0M4OTljdUt6ZzVJd2p4a0NsZFJJUQ?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2026-03-09T07:00:00+00:00",
-          "summary": "Rubamin and Distil announce exclusive strategic partnership to scale high-performance Zinc derivatives for North American personal care markets&nbsp;&nbsp;Newswire Canada",
-          "company": "Distil"
-        },
-        {
           "title": "TVS invests $4 million in Dat Bike - Vietnam Investment Review - VIR",
           "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE0xM0pwVG4yOTBweFVHdTJXOGdPRlJwNzZheUZjTFBzV1JPREYzQk1MOFZETkdhRXh4YVBsRGtjdUxtMFRLSk80cVpnaFNCeFo5dGEyY2tLc0dLN0tnbDBzc0syTXRfWUQ3c2xrbVpRQXNLZw?oc=5",
           "source": "news.google.com",
           "pub_date": "2026-03-09T07:00:00+00:00",
           "summary": "TVS invests $4 million in Dat Bike&nbsp;&nbsp;Vietnam Investment Review - VIR",
+          "company": "Dat Bike"
+        },
+        {
+          "title": "Dat Bike nets $4m as Hanoi moves to curb gasoline motorbikes - Tech in Asia",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNeVZWTGx6TnpyZDR4aUhBbE01aS1RNTlxN0FnUGRpcnNtZlNGZ0tBcXBGbnZnTk9xRjBnNk10SkNFNmZUTkt3NTJHNk9FcFl4bnpIX3RyNHlNZGFvMEktTVVUUV9GdzVfU0t4cnhPSnpYU042cWRBbXZ4b2xFdDJhanBqc1pKaGZrNThxMkpB?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2026-03-09T07:00:00+00:00",
+          "summary": "Dat Bike nets $4m as Hanoi moves to curb gasoline motorbikes&nbsp;&nbsp;Tech in Asia",
           "company": "Dat Bike"
         },
         {
@@ -5426,19 +6438,19 @@
           "company": "Dat Bike"
         },
         {
-          "title": "The Rise of the ‘Two-Hour Getaway’: How Urban India Is Redefining Escape Without Leaving the City - The Times of India",
-          "url": "https://news.google.com/rss/articles/CBMilgJBVV95cUxQUDhweHVPYV9fdG0zYXhQOFhsRUFHenpZdU9ObXlaakF0ekRqeEZtX3NkZmJsd2Y5QjFNQWpvMUVUT1JmTTNqUGs4TDNDYnR6X1BtT2pjbzRKa2dsNjI4cjlHazVENDFXQTVXQWVwUWZjTlhMRHVkb0hRTGFvYUQ3WEVMZy0yREVXM2NxM3ZrLUttS09GLURtQmhlVlNzNW5WWFFzMGtLRVJSX0x4TVF6dXdNZU55S1JVR1BQeHppSlZkT2tuNERTMzdVbzZGb2w3NEpVUHlVSDhsZmFQVkFsNmUxdFJGY0VOalE1RHMwaDRnZTdXZ185dVMtYXNhTGhJakJDV0w4YlpwRzNaSG14RUYwWUhyUdIBmwJBVV95cUxQTllyZnp0allwZm9STG1pdGJBZjRxSFppUEZZWmlkWEp5V1R5WlVuZjB5QUktRlJIY284S0FyQ0ZKbDRGSldta0FXVjBHMkY5UWwyZzRLV0xnX2pFWk5YeGxQeVEtNjU2X3JpUXItbjEzYXhVRnRrSGZGMjB3amRaTU1HcEtlMnY0RUdLT0Jpc0t3SDc1c2w1QnlVd3lIUzFCQjBMaG5hQllzSHhrc25mUGJqQ1RJcTYxVkxEUFFfcGI2ZEdfWUJKSVE4UTNhV2FWWERzSEpFRjZGc1M3WllhRHRLUmtnNVNvcnQyclAtMWR1ZDA1NWcyU2g3STdBRUM5d3dEWEVWdGppaWl5Ri1Zdm96b2EwTFlVdGpB?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2026-02-25T08:00:00+00:00",
-          "summary": "The Rise of the ‘Two-Hour Getaway’: How Urban India Is Redefining Escape Without Leaving the City&nbsp;&nbsp;The Times of India",
-          "company": "Escape Plan"
-        },
-        {
           "title": "Travel startup Escape Plan raises $25 million to open 200+ stores across India - CNBC TV18",
           "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPa0pZdjB4OUE1NkhIc2VPa3RTUHpfUEw4VXQxSTlGVDBFcFc1aHJpRzMwT1NWbEcwWW9aUFUxRjJ6UVQxbGNQU2NlbktpM2ZTczE0VXNTVVc5M0I1WFk0bjMtbjA3M2RWS2tWbWdHLXZYR2ltYmdhaFRKNTlvUWNycUVqY1VCT1RnN29wSEtkSldZS2FSUVYwNlZLN3Z0UHlGSVlwTTVvUmk2Y2syNEdOcER5dWwwUEc4LWZVZNIBwgFBVV95cUxNVnNoZm5qSGJUYlJFTk9vWUZYUWo2b0pSZ3NiYm1aenY5bnYyZ2pvbUlJR1QwX0pXQ242TERqQy14V1owMVNEZU42TkFPV05mdTl5S3R3QUxHdjhuRWVSWm44cjdONzBaSENaYmx6LXVIWGhISkFWMC0xWGJNOTc3bm95ZEdIVjhjVWhlOWQ5NFIwTE80bVlGNWhRSHZCVldKRWN4aGJWWGhaeG9EUXhuc3NtdVp3azh6UEdnWkZYZEdydw?oc=5",
           "source": "news.google.com",
           "pub_date": "2026-01-27T08:00:00+00:00",
           "summary": "Travel startup Escape Plan raises $25 million to open 200+ stores across India&nbsp;&nbsp;CNBC TV18",
+          "company": "Escape Plan"
+        },
+        {
+          "title": "Escape Plan Raises $25 Mn Series A Led By Jungle Ventures - BWDisrupt",
+          "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNRC1NWUVhTWRhV21lMnZwdHhZX0xoZ3dQVXR5OGdLdGFrTEloX09qOWVGc0ZlbERIem51dFo0czlOVFBVVkRuUnY1LUdtd0h5clBvLWxmS3pfanBrcnVSOGFMUnpTMmtQWTRoTU9NUU5ZRTVGOVFtNnR3WEw0dm5oVUdaVWhBWmNOV3pJdjJFQ096Y2RnTVMtR0tZNWFIQQ?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2026-01-26T08:00:00+00:00",
+          "summary": "Escape Plan Raises $25 Mn Series A Led By Jungle Ventures&nbsp;&nbsp;BWDisrupt",
           "company": "Escape Plan"
         },
         {
@@ -5578,6 +6590,14 @@
           "company": "Prosperr"
         },
         {
+          "title": "How three founders built Scimplify to fill India's chemical supply gap - Forbes India",
+          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQNmtiQWhNbVo3cTVaZDgxX3ZUaUNXN0VkZ2k1QkQ3cjRIRWZDd0Nvbkk3U0R5emp1Y0dsVHZzd1ZCU3RtX1pOdGN5dW0zclVIS3ZSRHlqY0Flb1p6NlFOOWUxeUdxTHBycC0xVzRHUkRvTEgtMjlkZmNjM2pjZ3YwSmVJZnRIR0tvQlpVbWt0QnI0U3N6cmY4WVVWLUlLMDdiVEZEckhzSjQxSmNneEJUVkdOb2VDUHVsYjhZNUc1NThObkZsUXhiaVBPRmpzUjNM0gHWAUFVX3lxTFAyY05yVzJlR0VaZHB3UzM1eXA0dWl3cUQwV2NVRkxRc2hpUUc2WUpPb2xFUVhLOWxLd01mYVVXQUpBd1pqVDdNN3U5TmVrRnFsX2JDVjQzWnl2TjloMGNYN2gwNWNZZUVueFRjZkdZNUZBRWlvV1llX1hCb1FreFZuRWxfR2t3bGdmN1lJQ3NDcFBzRW93NXFQNTc3MXRuU0l4aGoxU0oyNEdrZXhwWkpfbGVURnFPRFZGai0tMTRoREhubkVsN0hjZUxSc2hoT2U1M09wZnc?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2025-10-28T07:00:00+00:00",
+          "summary": "How three founders built Scimplify to fill India's chemical supply gap&nbsp;&nbsp;Forbes India",
+          "company": "Distil"
+        },
+        {
           "title": "Sanlayan Technologies Invests in Versabyte Data Systems to Boost Indigenous Defence Electronics - Indian Startup Times",
           "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQODFNbm12T09IdTQyNUVicm8teFBFRS1UbXJ5U0syZmpnRGt2NWNYUUZhWC1HRHBaVmwxbmdiMDF5YUh6SFVrOWlXbk8yaDloRDR3TFlYY0lUMUhSY0hlT1hMRnZRY0tfcXdwc0JHVmVmM2RKb0IyZjBPa19DUm04Sm9wMHF2eWVRV3Z3eEJuX0xGeTl3ejhJZ244RnVJMC1FeVdRRFVuOWx4ZTV2NUI1TEdmT3VxczhGMTQ3ZlNEX1JqQ0V0ejgtR1lZR0VFenJBNXdkMDFyOTVUQQ?oc=5",
           "source": "news.google.com",
@@ -5586,12 +6606,12 @@
           "company": "Sanlayan"
         },
         {
-          "title": "Vietnam’s love affair with gas bikes is colliding with a new electric reality - Yahoo Finance",
-          "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOMVZheW1fdTZBNi1QX0Jnblp2cDJaLWFnMEFyMllFMjF3RDd6QnRWNVo1ZmZvaFBXRzlObUpzaWRHaGVMckVXVGRTTjJXV1hhMTJuZlVVNFhQN3RZQWV1V0Q0MzZ3NWpvdTZvaUk4elZfT2ZHcDk0bk1Ea29EMldwQw?oc=5",
+          "title": "Distil raises $7.7 million in Series A funding to strengthen specialty chemicals platform - Indian Chemical News",
+          "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQeHExdGdELXM3ck5nR2w0MU1JbURHRWZuYmVlbHBXZUhVSG9sb0ViYVJTSzVWcUdtVjVnVlRZd2FlV0VvVnVJYmRSUktDMXRsYnZlQXVLazdwbHR6ejAyWFBPRVJHSDlEbDQ5dEdId0lCT3BjU2Y0eml4aHoyckdTamhNdjdYLWVkeFBfMmJIWmtXbTMxVWIyNXBMT1NXYmo0cTktanNmQ2tyZXdXNklwU1Y3VDZJRHU0UVcyR1gwWWVoS3IyU09DQl95eUVVMkZRMkc40gHaAUFVX3lxTE96c0ZwY1pMUHNNSXhTY0hsYnBkc2ZIOHZyb3VTUmZRa01WQlFXVjZmNWhJc0FUbllhSmdVNUZONFltR3h1R1pSc01GcEpfS2tEV2tNVmlBMEoxUGgyTUM3N2syOHQ0WTl6T3llNnZNcWFSVkVkaDFNQVVFdlZxSlo4STkydlZ1djdiWDlYN2ExdkM5RGFxblN3dnFNVGIyalpneEpyZlhKSTFGWF9SeHVnTnNtR3lrZVEtZllrdUlIQzB2Y0l5QVNQbDFtM2JJNVk0N2dOcHk3dlF3?oc=5",
           "source": "news.google.com",
-          "pub_date": "2025-10-19T07:00:00+00:00",
-          "summary": "Vietnam’s love affair with gas bikes is colliding with a new electric reality&nbsp;&nbsp;Yahoo Finance",
-          "company": "Dat Bike"
+          "pub_date": "2025-09-24T05:56:01+00:00",
+          "summary": "Distil raises $7.7 million in Series A funding to strengthen specialty chemicals platform&nbsp;&nbsp;Indian Chemical News",
+          "company": "Distil"
         },
         {
           "title": "Chemicals startup Distil raises $7.7 mn Series A funding - The Economic Times B2B",
@@ -5650,14 +6670,6 @@
           "company": "Dat Bike"
         },
         {
-          "title": "Bengaluru-Based Startup Advances AESA Radar And EW Tech For Next-Gen Threat Defence - Electronics For You BUSINESS",
-          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPY2JHSnduWE9LVmQ3ZjJ2UzZXYlIxUGRobXVUYTZXdkYwc0xCdzU5NWo3b0NqOThERFV5cjFPcnFjQThFRnk3SXpfeHJjd0loNXZvc215N0p4WTZrY3gwNkk4SkF6VzJDN1ZCekRCa2NaNEZOQWhpMEtrRkNMbFFNc3p4UGc1QUtiRlFBM040M3IzOHBfNWQzeXYxdzZVaF84T3RMSTdrY0szYlJNaHY2V2J2WllLV0JjaVBNbEFHUGZVREVKQlE?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2025-09-05T07:00:00+00:00",
-          "summary": "Bengaluru-Based Startup Advances AESA Radar And EW Tech For Next-Gen Threat Defence&nbsp;&nbsp;Electronics For You BUSINESS",
-          "company": "Sanlayan"
-        },
-        {
           "title": "Prosperr.io: Simplifying Finance for Young Professionals and Businesses - YourStory.com",
           "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9wSFlkR2g4d210clFGVjVMREJ2YXVIcTdWLVUxUDljOW9kRUVrclRIX0IzcVVxelpFeV91aVpFTTFsdFRNVnBieDRieWQyQ0NVNVhzekl2aTAyVUNMVG9GemRONXVicHdJZEZYUXBrU1YwRGxs?oc=5",
           "source": "news.google.com",
@@ -5690,6 +6702,14 @@
           "company": "Sanlayan"
         },
         {
+          "title": "Defence Electronics Startup Sanlayan Raises INR 186 Cr From Ashish Kacholia, Others - IPO Central",
+          "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9SdmxlUEYxc1JxWWhsWlJIQ2R3SFQxVlZ4dUVwM3BYVy0zMWRtdVBGakx5ODZES3dIZEIwaUNDb3JhV1duZm56dERMRWxndlB6eDR5Z2VBLVg2TzBrc1lfLUxTNlowcU1PVm9tLVFNTUVBWDd4OUl5ZkpJQnFZQQ?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2025-06-10T07:00:00+00:00",
+          "summary": "Defence Electronics Startup Sanlayan Raises INR 186 Cr From Ashish Kacholia, Others&nbsp;&nbsp;IPO Central",
+          "company": "Sanlayan"
+        },
+        {
           "title": "Defence electronics startup Sanlayan raises Rs 186 Cr in Series A - Entrackr",
           "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNZzB5Sm4wSWtHTWFyeWgtUHJaWUgzcHBOQWlXVVBCNDc1VGRGQWRPbEFuMFVsRkZJYjlkSWRCQUR3OTNPdkIta1NiMnczNnllMERabGR3VnZrdURvUU1FaUFaNm5fTlFJYkYycUprMG8zcG1sSTF2eU4wT2k2cW5RMy1LeGl0cFRHRnFIZlNwemFIbXJkclhtUy0tWVZpUzk00gGgAUFVX3lxTE1nMHlKbjBJa0dNYXJ5aC1QclpZSDNwcE5BaVdVUEI0NzVUZEZBZE9sQW4wVWxGRkliOWRJZEJBRHc5M092Qi1rU2IydzM2eWUwRFpsZHdWdmt1RG9RTUVpQVo2bl9OUUliRjJxSmswbzNwbWxJMXZ5TjBPaTZxblEzLUt4aXRwVEdGcUhmU3B6YUhtcmRyWG1TLS1ZVmlTOTQ?oc=5",
           "source": "news.google.com",
@@ -5714,11 +6734,11 @@
           "company": "Sanlayan"
         },
         {
-          "title": "Sanlayan raises ₹186 crore in Series A funding round - MarcaMoney",
-          "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNSU00a1FiVWFUMU1obXgwS29zajdPMjJpREgyT1RuTFpxZzF5SHFJcFZ4Wm56bDd2OXhuX1J0Y09wOVg4MXFsR3E1MTRnOVZoOTZLME55OVY2Q2tzQU9XSmtlZ21iYmd4Z1o3Wk0wc0w1ZWVZVzVpZTY4RVQtWk44Q0xhV213QQ?oc=5",
+          "title": "Sanlayan raises Rs186 crore from investors including Ashish Kacholia, Lashit Sanghvi and Jungle Ventures - The Economic Times",
+          "url": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxNOGdfazdfN3k1emMxY21GT2tUS0dwQ1M0dEVxbUxOVGNUUjlsVVZEZGI0eDhkQ096UEJKZldBbUVFRmNmajh5UmYydnJqYzNIcVlUamNONmZ4UFlQOTFDbmluTW1MYWxFbU10ZkpRZGtCUURlcHJLSEc3RUhqdXFrMXg2XzZfRWZaSFNEcWdtX2R3eWd4V3ZLR2hiY1FrSzNNMkF4MkVvRDkyTDljRkpOVGkwWS0wYXpBX1BDWkIxXzhoTFVEVkJXZXplYzNIeTBNekJxOVJDRDBySXFtR05kQmRFSFJ2SXVqZVVBYkhwRTZ2MHFKaU4tdzhoaFRIRDDSAYQCQVVfeXFMUDBuaUpHakZlVnZUT2l0clV0c0xUUW9YU2R6UlBNR2VBSWpvMHQ4NkdQell1ZkZnejBUNGVmYXd5SmtXTVZ3cEdrb2R2aGlJSUhNTmwyX2hIWUFBUHRIa3Mtdnc3SEYtcEhBZ1pRMGpkdF9UQ2dYdlhjRlVlYS1GWk5odUxPbmpEQVVfcDZRZkZWMXRPcnN5WTQ4RW1yelRDUjJkMmM5UWFfSy1Wcnp2dnBpN1pmYm90RHJZR3VMbnV4NUNYUk5BUVZWb1V0TDJoRmRfclBNYVBLa2JrMFppUHZqTWh3OXpacnFpWWtTUk9za3puVlJBNGZUb0duQ2czWEotNUM?oc=5",
           "source": "news.google.com",
           "pub_date": "2025-06-09T07:00:00+00:00",
-          "summary": "Sanlayan raises ₹186 crore in Series A funding round&nbsp;&nbsp;MarcaMoney",
+          "summary": "Sanlayan raises Rs186 crore from investors including Ashish Kacholia, Lashit Sanghvi and Jungle Ventures&nbsp;&nbsp;The Economic Times",
           "company": "Sanlayan"
         },
         {
@@ -5743,14 +6763,6 @@
           "source": "news.google.com",
           "pub_date": "2024-08-13T07:00:00+00:00",
           "summary": "Beyond the likes: How's coto building a safe and supportive digital haven for women&nbsp;&nbsp;Business Today",
-          "company": "Coto"
-        },
-        {
-          "title": "Social community app coto launches 24/7 live consultations for women - Mediabrief.com",
-          "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9xaVY0dGxVd1NxaHhPZ2luWlI1aWNYenRJVlJjM2dIOUhYcm1qRkFOb2x2NDNQODhPMTBPTGFvRjNkRGd4S3lZMmpyN3d5cXk0TE9pc21UTDJEaU03ckF3OVp5MjJIbDdSOGwwQmFn?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2024-08-09T07:00:00+00:00",
-          "summary": "Social community app coto launches 24/7 live consultations for women&nbsp;&nbsp;Mediabrief.com",
           "company": "Coto"
         },
         {
@@ -5794,14 +6806,6 @@
           "company": "Coto"
         },
         {
-          "title": "NirogStreet raises $2.5 million in funding - The Economic Times",
-          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQMEUzM3I0SGttSkxmaDV1clJONFp2bXZDMXlEVUZPS2tfaHBvZFZfdlZrVTgwNFVfdWRBTk9tZndrSkVoS3RHOEIwYkZibS1ETk5qYzBIOVJMY01kQzZhQ3hZa2pSa0ZCNzFHWFFwYzVoNEtpZEdoMGVGQU1KUWo3UlQzdE5LWVQ3TzlSVTlzU3VxcW5WcWtfcHpQVFBqbG9SZVJOY2hWSU0wVlXSAbABQVVfeXFMTnhrQU91Wlk1STdfWUk0a1VmZ3Vib1RkM29TYlVBbWZDVlVPZmRlclE0VThLTXQzSmZPZDRZaGFnYU1wbU9ybEtCSkNOWHVUMm1sbVB4dzF1clJLWF9sZW9rNEVmNlhOSjJteHpPM3RRWnN6al92bWlzVmtPcEtGamZvbXM2QndGUHBUNEpoY3JuOTJYN2NEWmFiRlRHN2FlV1FLdlotLUoyZmxtVG53N3c?oc=5",
-          "source": "news.google.com",
-          "pub_date": "2021-07-22T07:00:00+00:00",
-          "summary": "NirogStreet raises $2.5 million in funding&nbsp;&nbsp;The Economic Times",
-          "company": "NirogStreet"
-        },
-        {
           "title": "Wavemaker, Amand Ventures lead pre-Series A funding in Ayurveda startup NirogStreet - VCCircle",
           "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOQ2E1Xy02QnZsTS03N013WjExT3piOWJmX200TUFnX0Z6cTFaV1Mya3cyeFczQ1dBR2U4SzQxNzVabUZNU0Y1SkwtanRkekNsSl80d0VFMlJOZktjSWEwUUhRanRLWDhhWlBUSmhSY3BPLXV1VmJubmFPVnZNVHJlUHd4MmwyQ1EyUGdQZVFid2Y0eUFpTGdoWC03eGdoWHF2bzJDU1VQeTI0aUk?oc=5",
           "source": "news.google.com",
@@ -5818,7 +6822,7 @@
           "company": "NirogStreet"
         }
       ],
-      "cached_at": "2026-07-11T05:32:30.532298"
+      "cached_at": "2026-07-12T05:52:33.824366"
     }
   }
 }
