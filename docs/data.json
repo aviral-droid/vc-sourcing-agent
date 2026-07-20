@@ -1,16 +1,16 @@
 {
-  "generated_at": "2026-07-19T05:43:26.542430",
-  "date_label": "2026-07-19",
-  "total_signals": 156,
-  "total_persons": 129,
+  "generated_at": "2026-07-20T06:02:18.112049",
+  "date_label": "2026-07-20",
+  "total_signals": 163,
+  "total_persons": 135,
   "sources_active": [
     "YC batches (India/SEA)",
     "Product Hunt",
     "Exa (LinkedIn + Web Search)",
     "News (RSS + Google News)",
-    "LinkedIn (stealth + departures)"
+    "Twitter/X (indexed posts)"
   ],
-  "executive_summary": "Today's top VC sourcing signals highlight David Kusnadi transitioning to stealth mode in Indonesia with a score of 60, and Vishwanath Ch also going stealth in the AI/ML space with a score of 40. Both signals reflect the trend of experienced operators in the region exploring new ventures, with Kusnadi's move particularly notable for its alignment with our investment mandate.",
+  "executive_summary": "Today's top VC sourcing signals highlight a mix of potential investments in Fintech and AI/ML, with notable figures like Kunal Shah and Venkat Rangan emerging as strong candidates for pre-seed and seed investments. The signals are evenly distributed between India and Southeast Asia, showcasing a diverse pool of founders and sectors, with a particular emphasis on seasoned operators transitioning into new ventures. Among the named leads, Kunal Shah stands out with a score of 60, indicating a strong potential for a successful exit.",
   "persons": [
     {
       "name": "Manish Srivastava",
@@ -42,9 +42,9 @@
       "twitter_handle": "",
       "signal_count": 3,
       "signal_types": [
+        "mca_registration",
         "stealth_headline_change",
-        "seniority_corroborated",
-        "mca_registration"
+        "seniority_corroborated"
       ],
       "signals": [
         {
@@ -255,8 +255,8 @@
       "signal_count": 3,
       "signal_types": [
         "stealth_founder",
-        "seniority_corroborated",
-        "mca_registration"
+        "mca_registration",
+        "seniority_corroborated"
       ],
       "signals": [
         {
@@ -322,8 +322,8 @@
       "signal_count": 4,
       "signal_types": [
         "stealth_founder",
-        "company_registration",
-        "mca_registration"
+        "mca_registration",
+        "company_registration"
       ],
       "signals": [
         {
@@ -365,52 +365,62 @@
       "company_url": "https://www.metagohealthcare.com/"
     },
     {
-      "name": "David Kusnadi",
+      "name": "Kunal Shah",
       "new_today": true,
-      "badges": [],
+      "badges": [
+        "Ex-unicorn/top co",
+        "Multi-source"
+      ],
       "first_surfaced": "",
-      "company_description": "",
-      "funding_status": "",
-      "funding_evidence": "",
+      "company_description": "the story of CRED begins with trust. we believe individuals who've proven their trustworthiness deserve better: better experiences, better rewards, better rules. this is the status quo we're building. make it to the club",
+      "funding_status": "Already raised beyond seed",
+      "funding_evidence": "https://en.wikipedia.org/wiki/Cred_(company)",
       "education": "",
       "score": 60,
-      "action": "investigate",
-      "recommended_action": "investigate",
+      "action": "watchlist",
+      "recommended_action": "watchlist",
       "previous_company": "",
       "previous_title": "",
-      "current_company": "",
-      "location": "Indonesia",
-      "sector": "Unknown",
-      "geography": "Indonesia",
+      "current_company": "Cred",
+      "location": "",
+      "sector": "Fintech",
+      "geography": "Unknown",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "David Kusnadi's transition from Rumah123 to Co-Founder & CEO at AtlasGo suggests a potential for a seasoned operator with a new venture. Further investigation is warranted to assess the opportunity and alignment with our investment focus.",
-      "linkedin_url": "https://www.linkedin.com/in/david-kusnadi-pmp-909b315",
+      "investment_thesis": "Kunal Shah's departure from Cred and his announcement of a new startup suggest a potential move into the Fintech sector, which aligns with current hot sectors. His experience in the industry could be a significant asset.",
+      "linkedin_url": "https://www.linkedin.com/in/kunal-shah-38595b60",
       "github_url": "",
       "twitter_handle": "",
-      "signal_count": 1,
+      "signal_count": 2,
       "signal_types": [
+        "stealth_founder",
         "executive_departure"
       ],
       "signals": [
         {
-          "source": "Exa",
+          "source": "news",
           "type": "executive_departure",
-          "description": "[Exa] Today, I start a new chapter. I'm joining AtlasGo as Co-Founder & CEO. For 5 years, I led Rumah123 — one of Indonesia's largest property platforms. We built, scaled, and learned. Now, … | Wasudewan . — # Today, I start a new chapter. I'm joining AtlasGo as Co-Founder & CEO. For 5 years, I led Rumah123 — one of Indonesia's largest property pla",
-          "url": "https://www.linkedin.com/posts/wasudewan-44547918_mantan-ceo-rumah123-pimpin-atlasgo-bidik-activity-7473082934904938500-ADw9"
+          "description": "[Google News] Kunal Shah steps down as Cred promoter, retains 20% Stake - Lapaas Voice",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPN19XSVRhYlBzNmxYMXk1M0pYbFItYUFuc0RzcWpJZU82dVo3V05mWExJVW1maVU1YmpPYjZ0QVRfWEgyd2Z6VGJKR29rX0JTckthUHFoXzVoOUpkY3ZUaHZ4VnQtMmxhYm4waXd5eVBlSTBPd3phQndBcFI2NFBNZktJWVJfa1NC?oc=5"
+        },
+        {
+          "source": "twitter",
+          "type": "stealth_founder",
+          "description": "[X] Kunal Shah on X: \"Excited to announce Cred, my new startup after 3+ years of playing on the sidelines. A platform to celebrate and reward the most creditworthy people of India 🇮🇳 T",
+          "url": "https://twitter.com/kunalb11/status/1059434151558987776?lang=en"
         }
       ],
       "confidence": "medium",
       "founder_type": "seasoned_operator",
       "key_strengths": [
-        "Executive departure with a clear new role",
-        "Experience leading a company"
+        "Executive departure from a known company",
+        "Experience in Fintech"
       ],
       "risks": [
-        "Unknown experience years",
-        "No sector alignment with current hot sectors"
+        "Unknown geography",
+        "Lack of verified experience years"
       ],
-      "company_url": "https://www.atlasgo.co.id/"
+      "company_url": "https://cred.club/"
     },
     {
       "name": "Steve Messinger",
@@ -755,8 +765,8 @@
       "signal_count": 3,
       "signal_types": [
         "stealth_founder",
-        "seniority_corroborated",
-        "mca_registration"
+        "mca_registration",
+        "seniority_corroborated"
       ],
       "signals": [
         {
@@ -953,6 +963,54 @@
       "company_url": "https://www.inviscid.ai/"
     },
     {
+      "name": "David Kusnadi",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-19",
+      "company_description": "",
+      "funding_status": "",
+      "funding_evidence": "",
+      "education": "",
+      "score": 60,
+      "action": "investigate",
+      "recommended_action": "investigate",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "Indonesia",
+      "sector": "Unknown",
+      "geography": "Indonesia",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "David Kusnadi's transition from Rumah123 to Co-Founder & CEO at AtlasGo suggests a potential for a seasoned operator with a new venture. Further investigation is warranted to assess the opportunity and alignment with our investment focus.",
+      "linkedin_url": "https://www.linkedin.com/in/david-kusnadi-pmp-909b315",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "Exa",
+          "type": "executive_departure",
+          "description": "[Exa] Today, I start a new chapter. I'm joining AtlasGo as Co-Founder & CEO. For 5 years, I led Rumah123 — one of Indonesia's largest property platforms. We built, scaled, and learned. Now, … | Wasude",
+          "url": "https://www.linkedin.com/posts/wasudewan-44547918_mantan-ceo-rumah123-pimpin-atlasgo-bidik-activity-7473082934904938500-ADw9"
+        }
+      ],
+      "confidence": "medium",
+      "founder_type": "seasoned_operator",
+      "key_strengths": [
+        "Executive departure with a clear new role",
+        "Experience leading a company"
+      ],
+      "risks": [
+        "Unknown experience years",
+        "No sector alignment with current hot sectors"
+      ],
+      "company_url": "https://www.atlasgo.co.id/"
+    },
+    {
       "name": "Raghav Anand",
       "new_today": false,
       "badges": [
@@ -983,8 +1041,8 @@
       "signal_count": 3,
       "signal_types": [
         "stealth_founder",
-        "seniority_corroborated",
-        "stealth_headline_change"
+        "stealth_headline_change",
+        "seniority_corroborated"
       ],
       "signals": [
         {
@@ -1343,7 +1401,7 @@
       "company_url": "bigbasket.com"
     },
     {
-      "name": "Vishwanath Ch",
+      "name": "Venkat Rangan",
       "new_today": true,
       "badges": [],
       "first_surfaced": "",
@@ -1362,8 +1420,8 @@
       "geography": "Unknown",
       "experience_years": 0,
       "is_second_time_founder": false,
-      "investment_thesis": "Vishwanath Ch is potentially building a stealth AI startup, which is an interesting sector. However, the lack of verified experience and seniority, as well as the unknown geography, makes further investigation necessary to assess the viability of the venture.",
-      "linkedin_url": "https://in.linkedin.com/in/vishwanath-ch-96823264",
+      "investment_thesis": "Venkat Rangan's LinkedIn indicates a potential shift to becoming a founder in the AI/ML sector, but without verified experience and seniority, as well as an unknown location, the investment thesis is speculative and requires further validation.",
+      "linkedin_url": "https://in.linkedin.com/in/venkat-rangan-2304992",
       "github_url": "",
       "twitter_handle": "",
       "signal_count": 1,
@@ -1374,17 +1432,255 @@
         {
           "source": "Exa",
           "type": "stealth_founder",
-          "description": "[Exa] Vishwanath Ch - Co-Founder at Stealth AI Startup focused ... — # Vishwanath Ch  Co-Founder at Stealth AI Startup focused on AI decision intelligence.  Bengaluru, Karnataka, India (IN)  500 connections • 2,188 followers  ## About  Co-Founder at Stealth AI Startup",
-          "url": "https://in.linkedin.com/in/vishwanath-ch-96823264"
+          "description": "[Exa] Venkat Rangan - Captivus AI Tech — # Venkat Rangan  Founder & CEO Captivus AI Tech| Transformation Leader | Mentor | Agentic AI lead Governance Transformation for BFSI Industry  Chennai, Tamil Nadu, India (IN)  500 connections • 1,181",
+          "url": "https://in.linkedin.com/in/venkat-rangan-2304992"
         }
       ],
       "confidence": "low",
       "founder_type": "first_time_founder",
       "key_strengths": [
-        "Stealth AI startup focus"
+        "Potential expertise in AI/ML"
       ],
       "risks": [
-        "Unknown experience, no verified seniority, and no previous exit"
+        "Lack of verified experience and seniority",
+        "Unknown geography",
+        "First-time founder status"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Sharrp Ventures",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "company_description": "",
+      "funding_status": "",
+      "funding_evidence": "",
+      "education": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Unknown",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This signal indicates participation in a funding round, but lacks specific information about the founder's background and experience. Further investigation is needed to determine if the founder meets the criteria for investment.",
+      "linkedin_url": "https://www.linkedin.com/in/kajal-dungerwal-681a3646",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "funding_news",
+          "description": "[YourStory] Naturis Cosmetics raises Rs 100 Cr led by Sharrp Ventures",
+          "url": "https://yourstory.com/2026/07/naturis-cosmetics-raises-rs-100-crore-led-by-sharrp-ventures"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Funding round participation"
+      ],
+      "risks": [
+        "Lack of verified founder information",
+        "Unknown experience level",
+        "Potential lack of prior exit or seniority"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Jesse A",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "company_description": "",
+      "funding_status": "",
+      "funding_evidence": "",
+      "education": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "Technology (specifically AWS Partnerships)",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Jesse A's announcement of Inferdat's launch as an AWS Advanced Tier Partner suggests a potential for growth in the cloud services sector. However, the lack of information on Jesse's experience and prior exits makes further investigation necessary to assess the viability of the venture.",
+      "linkedin_url": "",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "Exa",
+          "type": "stealth_founder",
+          "description": "[Exa] Super excited to finally say this out loud... Inferdat is out of stealth today. We launch as an AWS Advanced Tier Partner with the AWS GenAI Services and Agentic AI Competency, and … | Sujaiy Shiv — # Super excited to finally say this out loud... Inferdat is out of stealth today. We launch as an AWS Advanced Tier Partner with the AWS GenAI Se",
+          "url": "https://www.linkedin.com/posts/sujaiyshivakumar_dayone-activity-7483217465410355200-VFAv"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Strong AWS partnership",
+        "Launch announcement"
+      ],
+      "risks": [
+        "Unknown experience level",
+        "Potential lack of prior exits"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "Bureau Media Ventures",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "company_description": "",
+      "funding_status": "",
+      "funding_evidence": "",
+      "education": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Venture Capital/Funding",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "This signal indicates the launch of a new venture studio and fund in India, which could be an interesting opportunity in the venture capital sector. However, the lack of information about the founder's background and experience as a founder is a significant risk factor.",
+      "linkedin_url": "https://www.linkedin.com/in/ishitajagwani",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "executive_departure"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "executive_departure",
+          "description": "[Google News] Bureau Media Ventures launches as India’s first venture studio and fund - PitchOnnet",
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPX0VyMmFxVEt3dWlCRThITW9CcXdGWlphZTU4aHRSMTFnQ0VBeFZNVkswYVhGcDJhZEhXanBibFhqUGRkUFpDNnEyNXBvSjhuZVdHc2tOY3I5NUIwZDNrX1RnTmVwNnRpb3VzZXYyVkVGSGRFT2VvZTV2OC1wakVVeEpRNS1BbzduTk56Y0FnRzJPdW1RRUtlYU1qU2pjVmVvWnNlR0hBMmpIaFFpUi1Yc0VhbGo3b1Y0anJWSHpfUQ?oc=5"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Establishing a new venture studio and fund in India"
+      ],
+      "risks": [
+        "Lack of experience as a founder, no prior exits, and no clear indication of the team's expertise"
+      ],
+      "company_url": "https://www.pitchonnet.com/"
+    },
+    {
+      "name": "Inflection Point",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "company_description": "",
+      "funding_status": "",
+      "funding_evidence": "",
+      "education": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "India",
+      "sector": "Space Tech",
+      "geography": "India",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "The signal indicates a potential investment opportunity in the space tech sector, but the lack of information about the founder's background and experience raises concerns. Further investigation is needed to assess the founder's credibility and the potential of the startup.",
+      "linkedin_url": "https://www.linkedin.com/in/megan-becker-recruiter",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "funding_news"
+      ],
+      "signals": [
+        {
+          "source": "news",
+          "type": "funding_news",
+          "description": "[Google News] Indian Space Tech Startup BAAS Technologies Raises ₹5 Cr in Pre-Seed Round Led by Inflection Point Ventures - India Technology News",
+          "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPemtfbkZCaHVMV0VyM1RFajM4V2hKenB6SWF5cXp2RHRrXzhQNzlvOUJqcXpZS19XbWNVTXE1cUtYYjBhOGJuZW5lNzJnWkhESnNvdEVDMEJqSldQcTY0SFlSZEpyaHRYZ1FoU19TZGt2ZTAtZUluTXpPaVN5enlDREJ0emwwaHlDdE9VbU1pSHpiV2lpY011VUdIVGFCSUN0dkVaTDRYaDlQVEdPN3F3dV80SHBRdXhNNUxOaHlrZGRrN3JGTUtzaDQtMmxjelNURU4xUFgyQVZmYW5ZQTBQWA?oc=5"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "unknown",
+      "key_strengths": [
+        "Funding round led by a venture capital firm"
+      ],
+      "risks": [
+        "Unknown experience and background of the founder"
+      ],
+      "company_url": ""
+    },
+    {
+      "name": "",
+      "new_today": true,
+      "badges": [],
+      "first_surfaced": "",
+      "company_description": "",
+      "funding_status": "",
+      "funding_evidence": "",
+      "education": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "Unknown",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Neel Gala has indicated a transition to becoming a founder with a stealth headline on LinkedIn, suggesting a potential new venture. However, without verified seniority, experience, and geographical location, the investment thesis is speculative and requires further validation.",
+      "linkedin_url": "https://in.linkedin.com/in/galaneel",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "Exa",
+          "type": "stealth_founder",
+          "description": "[Exa] Neel Gala - Director of Engineering | ♥️ Building Products — # Neel Gala  Director of Engineering | ♥️ Building Products | Product Engineering  Mumbai, Maharashtra, India (IN)  500 connections • 7,865 followers  ## About  𝐃𝐢𝐫𝐞𝐜𝐭𝐨𝐫 𝐨𝐟 𝐄𝐧𝐠𝐢𝐧𝐞𝐞𝐫𝐢𝐧𝐠 @ 𝐂𝐨𝐝𝐢𝐭𝐚𝐬 | 𝐀𝐫𝐜",
+          "url": "https://in.linkedin.com/in/galaneel"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Stealth founder signal"
+      ],
+      "risks": [
+        "Lack of verified seniority",
+        "Unknown experience",
+        "Unknown geography"
       ],
       "company_url": ""
     },
@@ -6292,55 +6588,6 @@
       "company_url": ""
     },
     {
-      "name": "Kunal Shah",
-      "new_today": false,
-      "badges": [],
-      "first_surfaced": "2026-07-18",
-      "company_description": "the story of CRED begins with trust. we believe individuals who've proven their trustworthiness deserve better: better experiences, better rewards, better rules. this is the status quo we're building. make it to the club",
-      "funding_status": "Already raised beyond seed",
-      "funding_evidence": "https://en.wikipedia.org/wiki/Cred_(company)",
-      "education": "",
-      "score": 40,
-      "action": "watchlist",
-      "recommended_action": "watchlist",
-      "previous_company": "",
-      "previous_title": "",
-      "current_company": "Cred",
-      "location": "",
-      "sector": "Fintech",
-      "geography": "Unknown",
-      "experience_years": 0,
-      "is_second_time_founder": false,
-      "investment_thesis": "Kunal Shah's announcement of his new startup on Twitter suggests an entrepreneurial spirit, but without verified experience and a known geography, further investigation is needed to assess his potential as a founder.",
-      "linkedin_url": "https://www.linkedin.com/in/kunal-shah-38595b60",
-      "github_url": "",
-      "twitter_handle": "",
-      "signal_count": 1,
-      "signal_types": [
-        "stealth_founder"
-      ],
-      "signals": [
-        {
-          "source": "twitter",
-          "type": "stealth_founder",
-          "description": "[X] Kunal Shah on X: \"Excited to announce Cred, my new startup after 3+ years of playing on the sidelines. A platform to celebrate and reward the most creditworthy people of India 🇮🇳 T",
-          "url": "https://twitter.com/kunalb11/status/1059434151558987776?lang=en"
-        }
-      ],
-      "confidence": "low",
-      "founder_type": "first_time_founder",
-      "key_strengths": [
-        "Strong social media presence",
-        "Announcement of a new startup"
-      ],
-      "risks": [
-        "Lack of verified experience",
-        "Unknown geography",
-        "Potential lack of prior exit history"
-      ],
-      "company_url": "https://cred.club/"
-    },
-    {
       "name": "Zac Zuo",
       "new_today": false,
       "badges": [],
@@ -6442,64 +6689,460 @@
         "No prior exit or L1/L2 title departure"
       ],
       "company_url": ""
+    },
+    {
+      "name": "Vishwanath Ch",
+      "new_today": false,
+      "badges": [],
+      "first_surfaced": "2026-07-19",
+      "company_description": "",
+      "funding_status": "",
+      "funding_evidence": "",
+      "education": "",
+      "score": 40,
+      "action": "watchlist",
+      "recommended_action": "watchlist",
+      "previous_company": "",
+      "previous_title": "",
+      "current_company": "",
+      "location": "",
+      "sector": "AI/ML",
+      "geography": "Unknown",
+      "experience_years": 0,
+      "is_second_time_founder": false,
+      "investment_thesis": "Vishwanath Ch is potentially building a stealth AI startup, which is an interesting sector. However, the lack of verified experience and seniority, as well as the unknown geography, makes further investigation necessary to assess the viability of the venture.",
+      "linkedin_url": "https://in.linkedin.com/in/vishwanath-ch-96823264",
+      "github_url": "",
+      "twitter_handle": "",
+      "signal_count": 1,
+      "signal_types": [
+        "stealth_founder"
+      ],
+      "signals": [
+        {
+          "source": "Exa",
+          "type": "stealth_founder",
+          "description": "[Exa] Vishwanath Ch - Co-Founder at Stealth AI Startup focused ... — # Vishwanath Ch  Co-Founder at Stealth AI Startup focused on AI decision intelligence.  Bengaluru, Karnataka, India (IN)  500 conne",
+          "url": "https://in.linkedin.com/in/vishwanath-ch-96823264"
+        }
+      ],
+      "confidence": "low",
+      "founder_type": "first_time_founder",
+      "key_strengths": [
+        "Stealth AI startup focus"
+      ],
+      "risks": [
+        "Unknown experience, no verified seniority, and no previous exit"
+      ],
+      "company_url": ""
     }
   ],
   "source_breakdown": {
-    "Exa": 11,
+    "news": 20,
+    "twitter": 1,
+    "Exa": 14,
     "linkedin": 93,
     "verification": 10,
     "registry": 10,
     "yc": 3,
-    "news": 16,
     "GDELT": 4,
-    "Product Hunt": 8,
-    "twitter": 1
+    "Product Hunt": 8
   },
   "score_threshold": 40,
   "intelligence": {
     "ai_ml": {
       "articles": [
         {
-          "title": "Models to Pair with TypingMind",
-          "url": "https://www.reddit.com/r/artificial/comments/1v0hi95/models_to_pair_with_typingmind/",
+          "title": "\"One quick sanity check\"",
+          "url": "https://www.reddit.com/r/artificial/comments/1v1cfhk/one_quick_sanity_check/",
           "source": "reddit.com",
-          "pub_date": "2026-07-19T05:08:04+00:00",
-          "summary": "Earlier this year, AI was like working with a recent intelligent technical college graduate who was answering questions and making good suggestions I didn’t think of. Recently, it is like I have an HR intern helping me. The AI assistant can’t answer science related questions, doesn’t suggest anythin"
+          "pub_date": "2026-07-20T05:26:58+00:00",
+          "summary": "Weird how much I've seen this phrase across different companies' products  &#32; submitted by &#32;  /u/Ok_Guarantee9436   [link] &#32; [comments]"
         },
         {
-          "title": "With the launch of Kimi K3 and Fable, have we reached AI's 'good enough' era? What does this mean for OpenAI and other closed source AI labs?",
-          "url": "https://www.reddit.com/r/artificial/comments/1v0gqzn/with_the_launch_of_kimi_k3_and_fable_have_we/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-19T04:27:12+00:00",
-          "summary": "Charting Models Against the 'Good Enough' AI Threshold The 'good enough' concept is the idea that technologies progress to the point where they work for most people. After that, further improvements produce diminishing returns. Here are a few examples:  Can openers: Good enough Car tires: Good enoug"
+          "title": "Chris Dixon Leads $15M Seed Round in Poseidon — A Game Changer for AI Data",
+          "url": "https://coinfomania.com/chris-dixon-leads-15m-seed-round-in-poseidon-a-game-changer-for-ai-data/",
+          "source": "coinfomania.com",
+          "pub_date": "2026-07-20T01:49:02.000Z",
+          "summary": "Chris Dixon Leads $15M Seed Round in Poseidon — A Game Changer for AI Data  BTC  ETH  USDT  BNB  XRP  SOL  TRON  USDC  ADA  SUI  LINK  # Chris Dixon Leads $15M Seed Round in Poseidon — A Game Changer for AI Data  ByAyanfe Fakunle July 20th, 2026  Chris Dixon leads a $15M investment in Poseidon to in"
         },
         {
-          "title": "AI Simulation per user",
-          "url": "https://www.reddit.com/r/artificial/comments/1v0ennr/ai_simulation_per_user/",
+          "title": "I’d like someone to test my websites API Access with feedback",
+          "url": "https://www.reddit.com/r/artificial/comments/1v18480/id_like_someone_to_test_my_websites_api_access/",
           "source": "reddit.com",
-          "pub_date": "2026-07-19T02:39:03+00:00",
-          "summary": "This environment is all text based. Crafted ads are injected with precision. How far are we from &quot;every user in my feed is a bot&quot; as part of complete ecosystem designed to extract/elicit responses/direct actions. Where each individual user is isolated. No real human to human communication "
+          "pub_date": "2026-07-20T01:44:45+00:00",
+          "summary": "I built a pretty extensive binaural program with API access so others can use the build to produce properly made binaural beats and interact with it for something like a meditation app. Would love if someone connected to the free api key and just tried something like a custom meditation program buil"
         },
         {
-          "title": "The One and Its Return",
-          "url": "https://www.reddit.com/r/artificial/comments/1v0bxto/the_one_and_its_return/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-19T00:25:14+00:00",
-          "summary": "Building this system was a SLOW process. The culmination of the ultimate failure of my physics theory &quot;Rotational Substrate Field Theory&quot;, which was a hard pill to swallow. It was months of work. Constant work. To see it all... just be wrong.  I admitted the failure, in spite of myself, an"
+          "title": "GraphDx: A Cost-Aware Knowledge-Enhanced Multi-Agent Framework for Sequential Diagnosis",
+          "url": "https://arxiv.org/abs/2607.15280",
+          "source": "arxiv.org",
+          "pub_date": "2026-07-20T00:00:00-04:00",
+          "summary": "arXiv:2607.15280v1 Announce Type: new \nAbstract: Sequential diagnosis requires balancing diagnostic accuracy against resource costs through iterative information gathering. Existing Large Language Model (LLM) approaches exhibit a critical knowledge-reasoning gap: despite encoding extensive medical k"
         },
         {
-          "title": "Need a platform that can create and update a sleep log",
-          "url": "https://www.reddit.com/r/artificial/comments/1v05nln/need_a_platform_that_can_create_and_update_a/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-18T19:55:33+00:00",
-          "summary": "After massive failures by Copilot and Claude, I need an AI platform that is free and can save an ongoing log. I have had two strokes and a heart attack and am in a wheelchair and genuinely unable to work. I have a phone hearing with an Administrative Law Judge for SSDI on September 7 and I need to c"
+          "title": "Causal-Audit: Explicit and Auditable Graph-based Reasoning via Target-Aware Causal Chain Construction",
+          "url": "https://arxiv.org/abs/2607.15281",
+          "source": "arxiv.org",
+          "pub_date": "2026-07-20T00:00:00-04:00",
+          "summary": "arXiv:2607.15281v1 Announce Type: new \nAbstract: Causal and intervention-based question answering is fundamental to advancing large language models (LLMs) toward reasoning beyond surface-level correlations and understanding underlying causal mechanisms. However, existing LLM-based methods often rely"
         },
         {
-          "title": "When I made LLMs argue with each other, they started making up citations to win. Sycophancy wasn't the only failure mode.",
-          "url": "https://www.reddit.com/r/artificial/comments/1v05mzz/when_i_made_llms_argue_with_each_other_they/",
+          "title": "Cura 1T: Specialized Model for Agentic Healthcare",
+          "url": "https://arxiv.org/abs/2607.15314",
+          "source": "arxiv.org",
+          "pub_date": "2026-07-20T00:00:00-04:00",
+          "summary": "arXiv:2607.15314v1 Announce Type: new \nAbstract: Healthcare spans high-stakes communication, expert reasoning, and workflow execution, yet specialized LLMs that cover these use cases together remain limited. A healthcare model must handle patient consultation, clinical reasoning over text and images"
+        },
+        {
+          "title": "AnovaX: A Local, Multi-Agent Voice Assistant with LLM Planning, Typed Executors, and Adaptive Recovery",
+          "url": "https://arxiv.org/abs/2607.15367",
+          "source": "arxiv.org",
+          "pub_date": "2026-07-20T00:00:00-04:00",
+          "summary": "arXiv:2607.15367v1 Announce Type: new \nAbstract: Desktop voice assistants are still dominated by cloud pipelines that ship raw audio off the machine and expose a fixed set of skills. We describe AnovaX, a small local-first assistant that runs entirely on the user's computer and treats the desktop it"
+        },
+        {
+          "title": "Precise but Uncoupled: Reviewer Precision Does Not Guarantee Critique Uptake in Multi-Agent Math Reasoning",
+          "url": "https://arxiv.org/abs/2607.15388",
+          "source": "arxiv.org",
+          "pub_date": "2026-07-20T00:00:00-04:00",
+          "summary": "arXiv:2607.15388v1 Announce Type: new \nAbstract: Many math- and science-oriented agent systems use hierarchical designs with specialized reviewer roles, assuming that a dedicated review stage should help turn wrong candidates into correct ones. We test this assumption on 4,181 verifier-grounded Omni"
+        },
+        {
+          "title": "DrawingVQA: A Real-World Benchmark for Multi-Depth Visual-Textual Reasoning on Construction Drawings",
+          "url": "https://arxiv.org/abs/2607.15418",
+          "source": "arxiv.org",
+          "pub_date": "2026-07-20T00:00:00-04:00",
+          "summary": "arXiv:2607.15418v1 Announce Type: new \nAbstract: We introduce DrawingVQA, the first benchmark designed to evaluate multimodal large language models (MLLMs) on real-world construction drawings -- a core media in architecture, civil, and many other engineering practices. Unlike natural images or schem"
+        },
+        {
+          "title": "Do Coding Agents Need Executable World Models, Simplification, and Verification to Solve ARC-AGI-3?",
+          "url": "https://arxiv.org/abs/2607.15439",
+          "source": "arxiv.org",
+          "pub_date": "2026-07-20T00:00:00-04:00",
+          "summary": "arXiv:2607.15439v1 Announce Type: new \nAbstract: Our previous ARC-AGI-3 agent bundled executable world modeling, scheduled simplification, and exact replay verification, leaving unclear which idea accounted for its performance. We address this attribution question with four nested Codex-based agents"
+        },
+        {
+          "title": "Beyond a Joke: Multi-Angle Reasoning for Detecting and Explaining Harmful Humor in Memes",
+          "url": "https://arxiv.org/abs/2607.15442",
+          "source": "arxiv.org",
+          "pub_date": "2026-07-20T00:00:00-04:00",
+          "summary": "arXiv:2607.15442v1 Announce Type: new \nAbstract: Internet memes intertwine visual cues, textual content, and cultural context, making them particularly challenging to interpret in scenarios where humor, sarcasm, and harmful intent coexist. These complexities highlight the need for explainable meme u"
+        },
+        {
+          "title": "From Black Box to Executable Logic: Explainable Reinforcement Learning through Prolog Expert Systems",
+          "url": "https://arxiv.org/abs/2607.15459",
+          "source": "arxiv.org",
+          "pub_date": "2026-07-20T00:00:00-04:00",
+          "summary": "arXiv:2607.15459v1 Announce Type: new \nAbstract: A trained deep reinforcement learning policy is a black box, and we ask whether it can be made explainable by rewriting it as an executable logic program that reproduces its behaviour and that a person can read, a logic engine can run, and an optimize"
+        },
+        {
+          "title": "A Critical Analysis of Trustworthy AI Tools, Mark Frameworks, and the Implementation Chasms",
+          "url": "https://arxiv.org/abs/2607.15480",
+          "source": "arxiv.org",
+          "pub_date": "2026-07-20T00:00:00-04:00",
+          "summary": "arXiv:2607.15480v1 Announce Type: new \nAbstract: As artificial intelligence (AI) systems increasingly impact society, ensuring their ethical and trustworthy deployment has become a global priority. While a myriad of high-level ethical guidelines have emerged, criticism persists that these frameworks"
+        },
+        {
+          "title": "Logic, Optimization, and Artificial Intelligence",
+          "url": "https://arxiv.org/abs/2607.15532",
+          "source": "arxiv.org",
+          "pub_date": "2026-07-20T00:00:00-04:00",
+          "summary": "arXiv:2607.15532v1 Announce Type: new \nAbstract: Logic and optimization can, in combination, make valuable contributions to rule-based AI. Logic is the obvious medium for encoding a rule base and drawing inferences from it, while optimization provides a powerful technology for computing inferences. "
+        },
+        {
+          "title": "SeerGuard: A Safety Framework for Mobile GUI Agents via World Model Prediction",
+          "url": "https://arxiv.org/abs/2607.15550",
+          "source": "arxiv.org",
+          "pub_date": "2026-07-20T00:00:00-04:00",
+          "summary": "arXiv:2607.15550v1 Announce Type: new \nAbstract: Mobile graphical user interface (GUI) agents have demonstrated remarkable capabilities in automating complex tasks, yet they introduce critical safety risks where a single erroneous action can lead to irreversible consequences. Existing safety mechani"
+        },
+        {
+          "title": "Structure of the Circular-Dyadic Convolution Error",
+          "url": "https://arxiv.org/abs/2607.15293",
+          "source": "arxiv.org",
+          "pub_date": "2026-07-20T00:00:00-04:00",
+          "summary": "arXiv:2607.15293v1 Announce Type: new \nAbstract: Dyadic and circular convolution can both be computed in $O(N\\log N)$ time using the Hadamard transform and the FFT-computed discrete Fourier transform (DFT), respectively. The Hadamard transform is preferable for its real-valued sign flips, yet its su"
+        },
+        {
+          "title": "Position: Quantum Program Generation Must Prioritize Validity Over Probabilistic Scaling",
+          "url": "https://arxiv.org/abs/2607.15313",
+          "source": "arxiv.org",
+          "pub_date": "2026-07-20T00:00:00-04:00",
+          "summary": "arXiv:2607.15313v1 Announce Type: new \nAbstract: The scaling hypothesis assumes that increasing model parameters yields emergent reasoning capabilities. This position paper argues that applying this probabilistic paradigm to generic quantum circuit synthesis is a directional error. Unlike natural la"
+        },
+        {
+          "title": "A Transportable Threshold-Based Framework for Interpretable Classification of Medical Data",
+          "url": "https://arxiv.org/abs/2607.15394",
+          "source": "arxiv.org",
+          "pub_date": "2026-07-20T00:00:00-04:00",
+          "summary": "arXiv:2607.15394v1 Announce Type: new \nAbstract: Black-box models limit the adoption of artificial intelligence in medicine due to their lack of interpretability and reproducibility. We introduce a statistically grounded framework that provides fully interpretable, rule-based clinical classification"
+        },
+        {
+          "title": "Regularity-Aware Stochastic MGDA with Adaptive Conflict-Avoidant Update Direction Control",
+          "url": "https://arxiv.org/abs/2607.15412",
+          "source": "arxiv.org",
+          "pub_date": "2026-07-20T00:00:00-04:00",
+          "summary": "arXiv:2607.15412v1 Announce Type: new \nAbstract: Multi-objective learning (MOL) aims to optimize multiple objectives simultaneously. The multi-gradient descent algorithm (MGDA) is a workhorse that iteratively updates along a common descent or conflict-avoidant (CA) direction across objectives. In st"
+        },
+        {
+          "title": "AI Trading: Evaluating Large Language Models for Technical Market Analysis",
+          "url": "https://arxiv.org/abs/2607.15414",
+          "source": "arxiv.org",
+          "pub_date": "2026-07-20T00:00:00-04:00",
+          "summary": "arXiv:2607.15414v1 Announce Type: new \nAbstract: Large Language Models (LLMs) have emerged as powerful tools for processing the heterogeneous information environments of modern financial markets. This paper presents a systematic, comparative evaluation of five prominent LLMs: GPT-4 Turbo, Claude 3 O"
+        },
+        {
+          "title": "qZACH-ViT: Quantization-Aware Intrinsic Explanations with Recursive Attribution-Stabilized Optimization",
+          "url": "https://arxiv.org/abs/2607.15421",
+          "source": "arxiv.org",
+          "pub_date": "2026-07-20T00:00:00-04:00",
+          "summary": "arXiv:2607.15421v1 Announce Type: new \nAbstract: Compact medical-image classifiers need efficiency and interpretable evidence, yet these goals are often addressed separately. We introduce qZACH-ViT, a quantization-aware extension of the zero-token (CLS-token-free), position-free ZACH-ViT backbone wi"
+        },
+        {
+          "title": "From hyperplanes to hyperellipsoids: characterizing the inherent interpretability of linear and single-qubit mixed-state binary classification models",
+          "url": "https://arxiv.org/abs/2607.15433",
+          "source": "arxiv.org",
+          "pub_date": "2026-07-20T00:00:00-04:00",
+          "summary": "arXiv:2607.15433v1 Announce Type: new \nAbstract: We characterize and compare the inherent interpretability offerings of a standard linear model with a single qubit mixed state model for the task of supervised binary classification. A side by side comparison reveals that a single qubit mixed state mo"
+        },
+        {
+          "title": "Stochastic Reset Pathfinding: Path-Level Regret for Cascading Bandits over Graph Paths",
+          "url": "https://arxiv.org/abs/2607.15440",
+          "source": "arxiv.org",
+          "pub_date": "2026-07-20T00:00:00-04:00",
+          "summary": "arXiv:2607.15440v1 Announce Type: new \nAbstract: We introduce Stochastic Reset Pathfinding (SRP), an episodic learning problem on a known directed graph with unknown stationary edge success probabilities. In each episode, the agent commits to a source-to-goal path, and any edge failure during execut"
+        },
+        {
+          "title": "Who Became Financially Vulnerable After COVID-19? A Population-Level Machine Learning Analysis Using MEPS Data",
+          "url": "https://arxiv.org/abs/2607.15446",
+          "source": "arxiv.org",
+          "pub_date": "2026-07-20T00:00:00-04:00",
+          "summary": "arXiv:2607.15446v1 Announce Type: new \nAbstract: The cost of healthcare remains a concern in the United States and may have been influenced by disruptions associated with the COVID-19 pandemic. This study examines healthcare financial vulnerability before and after the pandemic using Medical Expendi"
+        },
+        {
+          "title": "LLM4EHR: Aligning Clinical Time Series with Medical Event Sequences via Large Language Models",
+          "url": "https://arxiv.org/abs/2607.15447",
+          "source": "arxiv.org",
+          "pub_date": "2026-07-20T00:00:00-04:00",
+          "summary": "arXiv:2607.15447v1 Announce Type: new \nAbstract: Recent research in clinical machine learning, focusing on outcome predictions in intensive care unit (ICU), has shifted from bespoke supervised models to foundation models, utilising modern representation learning methods. Here, foundation models are "
+        },
+        {
+          "title": "Relevant and Irrelevant: A Renormalization Group Analysis of Transformer Attention",
+          "url": "https://arxiv.org/abs/2607.15449",
+          "source": "arxiv.org",
+          "pub_date": "2026-07-20T00:00:00-04:00",
+          "summary": "arXiv:2607.15449v1 Announce Type: new \nAbstract: Using the language of Wilsonian renormalization group theory (RG), we treat the Transformer's attention mechanism as a perturbation of the trained MLP residual-stack fixed point and ask whether it constitutes a relevant, marginal, or irrelevant operat"
+        },
+        {
+          "title": "Looped Latent Attention: Cross-Loop KV Compression for Looped Transformers",
+          "url": "https://arxiv.org/abs/2607.15456",
+          "source": "arxiv.org",
+          "pub_date": "2026-07-20T00:00:00-04:00",
+          "summary": "arXiv:2607.15456v1 Announce Type: new \nAbstract: Looped, weight-tied Transformers reduce parameters by reusing a block, but decoding still stores a separate K/V cache for every recurrence step. We show that this loop-indexed cache is highly structured. For a fixed token, layer and head, K/V vectors "
+        },
+        {
+          "title": "AI advice made people three times less accurate but twice as confident, researchers found",
+          "url": "https://www.reddit.com/r/artificial/comments/1v14c5y/ai_advice_made_people_three_times_less_accurate/",
           "source": "reddit.com",
-          "pub_date": "2026-07-18T19:54:53+00:00",
-          "summary": "Some context. I've been running setups where a few LLM personas debate a question, then a separate neutral pass pulls out where they actually disagree. The whole reason I started was sycophancy. One model on its own just agrees with whatever you say, so I wanted models that would actually push back "
+          "pub_date": "2026-07-19T22:56:04+00:00",
+          "summary": "&#32; submitted by &#32;  /u/tw1st3d_m3nt4t   [link] &#32; [comments]"
+        },
+        {
+          "title": "AI search enthusiastic responses",
+          "url": "https://www.reddit.com/r/artificial/comments/1v14air/ai_search_enthusiastic_responses/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-19T22:54:13+00:00",
+          "summary": "I love the way AI has changed general search answers. Instead of just yes or no it adds fantastic. Makes me feel like the AI is more sure of answer (whether it is or not).  Reddit cut off part of image. Said yes at beginning. Sorry my pic post skills still need improvement.   &#32; submitted by &#32"
+        },
+        {
+          "title": "Netflix paid $587M for Ben Affleck’s AI filmmaking startup",
+          "url": "https://techcrunch.com/2026/07/19/netflix-paid-587m-for-ben-afflecks-ai-filmmaking-startup/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-07-19T21:45:00+00:00",
+          "summary": "Netflix revealed that it paid $587 million in cash for InterPositive, a startup co-founded by Ben Affleck."
+        },
+        {
+          "title": "The Unbundling: the badge and the contribution are no longer the same object",
+          "url": "https://www.reddit.com/r/artificial/comments/1v12m0r/the_unbundling_the_badge_and_the_contribution_are/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-19T21:42:50+00:00",
+          "summary": "For the whole history of skilled work, the badge and the contribution were bundled: you couldn't have solved the hard problem without being the kind of person who'd earned the ability to. The proof of the work and the proof of the worker were the same object. Every institution we have for trusting w"
+        },
+        {
+          "title": "What to watch for after Jensen Huang’s Japan visit",
+          "url": "https://techcrunch.com/2026/07/19/what-to-watch-for-after-jensen-huangs-japan-visit/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-07-19T21:16:07+00:00",
+          "summary": "Jensen Huang left Tokyo with deals spanning Japan's entire tech ecosystem."
+        },
+        {
+          "title": "the sprint review nobody wants to write is a join problem, not a writing problem",
+          "url": "https://www.reddit.com/r/artificial/comments/1v103fu/the_sprint_review_nobody_wants_to_write_is_a_join/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-19T19:52:20+00:00",
+          "summary": "The take that ai is good at summarizing and bad at judgment is basically right, and I think it undersells the summarizing half. Every sprint review I've written is about 20 minutes of writing sitting on top of an hour of pulling. Linear for what actually moved, GitHub for what shipped versus what's "
+        },
+        {
+          "title": "Using AI makes people less likely to admit they don't know something",
+          "url": "https://www.reddit.com/r/artificial/comments/1v101tm/using_ai_makes_people_less_likely_to_admit_they/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-19T19:50:25+00:00",
+          "summary": "&#32; submitted by &#32;  /u/NISMO1968   [link] &#32; [comments]"
+        },
+        {
+          "title": "Can an Apple lawsuit derail OpenAI’s hardware plans?",
+          "url": "https://techcrunch.com/2026/07/19/can-an-apple-lawsuit-derail-openais-hardware-plans/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-07-19T19:24:45+00:00",
+          "summary": "On the latest episode of Equity, we debate whether Apple's lawsuit will cast over OpenAi's much-discussed plans to get into hardware and go public."
+        },
+        {
+          "title": "Multicoin Capital Leads Seed Investment In Trasia, Backing Asia-Focused Perpetual Trading On Hyperliquid | Crowdfund Insider",
+          "url": "https://www.crowdfundinsider.com/2026/07/292601-multicoin-capital-leads-seed-investment-in-trasia-backing-asia-focused-perpetual-trading-on-hyperliquid/",
+          "source": "crowdfundinsider.com",
+          "pub_date": "2026-07-19T18:55:50.000Z",
+          "summary": "Multicoin Capital Leads Seed Investment In Trasia, Backing Asia-Focused Perpetual Trading On Hyperliquid | Crowdfund Insider  Multicoin Capital has provided $1.75 million in seed funding as the sole institutional backer for Trasia Labs, the developer of a specialized perpetual futures trading platfo"
+        },
+        {
+          "title": "How do you actually keep up with everything in AI?",
+          "url": "https://www.reddit.com/r/artificial/comments/1v0yb8z/how_do_you_actually_keep_up_with_everything_in_ai/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-19T18:35:59+00:00",
+          "summary": "I don’t know if I’m the only one experiencing this, but I’m struggling to find AI information that is genuinely useful or interesting. I follow a few podcasts and newsletters (around 2 podcasts and 4/5 newsletters focused on AI), but lately it feels like none of them provide any value. These are som"
+        },
+        {
+          "title": "Can countries really regulate AI if they don’t control the compute?",
+          "url": "https://www.reddit.com/r/artificial/comments/1v0xckk/can_countries_really_regulate_ai_if_they_dont/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-19T17:58:33+00:00",
+          "summary": "I keep hearing AI governance discussed as if every country is sitting at the same table with roughly the same amount of influence. But most countries don’t control the chips, cloud infrastructure, data centers, or frontier models they’re being asked to regulate. They can write rules, but enforcement"
+        },
+        {
+          "title": "Chinese open-weight model beats Opus 4.8 on some benchmarks, first time this has happened",
+          "url": "https://www.reddit.com/r/artificial/comments/1v0x2za/chinese_openweight_model_beats_opus_48_on_some/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-19T17:48:03+00:00",
+          "summary": "Moonshot released Kimi K3 July 17: 2.8 trillion parameters, fully open-source. Artificial Analysis independently ranks it ahead of Anthropic's Opus 4.8 on frontier benchmarks, first Chinese open-weight model to do that. Still behind Claude Fable 5 and GPT-5.6 overall, but Moonshot doesn't claim othe"
+        },
+        {
+          "title": "Politicians Are Trying to Change What Chatbots Say About Them",
+          "url": "https://www.reddit.com/r/artificial/comments/1v0x0my/politicians_are_trying_to_change_what_chatbots/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-19T17:45:32+00:00",
+          "summary": "&#32; submitted by &#32;  /u/gamersecret2   [link] &#32; [comments]"
+        },
+        {
+          "title": "This unpronounceable series of glyphs is an incredible side project from Kieran Hebden (aka Four Tet)",
+          "url": "https://www.theverge.com/entertainment/967696/four-tet-wingdings-album-review",
+          "source": "theverge.com",
+          "pub_date": "2026-07-19T17:02:45-04:00",
+          "summary": "Just why? &#645;&#865;&#865;&#865;&#865;&#865;&#865;&#865;&#865;&#865;&#865;&#865;(&#824;&#802;&#795;&#828;&#798;&#813;&#843;&#837;)&#824;&#858;&#816;&#859;&#788;&#830;&#768;&#831;&#850;&#834;:&#820;&#851;&#798;&#785;&#780;&#770;&#774;&#778;&#843;&#768;:&#824;&#846;&#799;&#815;&#770;&#787;&#780;&#12"
+        },
+        {
+          "title": "TechCrunch Mobility: The battle over robotaxi rules",
+          "url": "https://techcrunch.com/2026/07/19/techcrunch-mobility-the-battle-over-robotaxi-rules/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-07-19T16:05:00+00:00",
+          "summary": "Welcome back to TechCrunch Mobility, your hub for the future of transportation and now, more than ever, how AI is playing a part."
+        },
+        {
+          "title": "Kodak EC35 is a dirt-cheap point-and-shoot film camera",
+          "url": "https://www.theverge.com/gadgets/967687/kodak-ec35-point-and-shoot-film-camera",
+          "source": "theverge.com",
+          "pub_date": "2026-07-19T15:26:06-04:00",
+          "summary": "Following the success of its $99 Kodak-branded Snapic A1, Reto Project is releasing the Kodak EC35, an even more affordable 35mm film camera for just $34.99. The EC35 certainly isn't fancy. Its 25mm acrylic lens with a fixed f/10 aperture and 1/100 shutter speed basically put it on par with a drugst"
+        },
+        {
+          "title": "‘Odyssey’ director Christopher Nolan calls AI an obvious ‘Trojan horse’",
+          "url": "https://techcrunch.com/2026/07/19/odyssey-director-christopher-nolan-calls-ai-an-obvious-trojan-horse/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-07-19T14:52:08+00:00",
+          "summary": "\"Everybody knows the Greeks are inside.\""
+        },
+        {
+          "title": "Nonprofit Current AI is racing to build the World Wide Web of AI, free for all",
+          "url": "https://techcrunch.com/2026/07/19/nonprofit-current-ai-is-racing-to-build-the-world-wide-web-of-ai-free-for-all/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-07-19T14:00:00+00:00",
+          "summary": "Current AI, a non-profit building AI that leaves no one culture behind, has made remarkable progress across devices, AI chat and more."
+        },
+        {
+          "title": "I hate that I don’t hate this song made with Suno",
+          "url": "https://www.theverge.com/entertainment/967678/1010benja-semiramis-dream-suno-ai-music",
+          "source": "theverge.com",
+          "pub_date": "2026-07-19T13:35:54-04:00",
+          "summary": "I would never go so far as to say there's no place for AI in music (I'm a fan of Holly Herndon, after all). But I generally find music made with generative AI to be offensively boring, especially the outputs of Suno. So I'm having a bit of a tough time processing the fact that [&#8230;]"
+        },
+        {
+          "title": "How not to become lazy with AI?",
+          "url": "https://www.reddit.com/r/artificial/comments/1v0pmhf/how_not_to_become_lazy_with_ai/",
+          "source": "reddit.com",
+          "pub_date": "2026-07-19T12:43:12+00:00",
+          "summary": "I think this is not really AI problem, its more about mindset and it repeats with every new technology. Calculators, Internet - every time people get a tool that thinks for them, some become lazy and some learn to use it without turning off their brain. AI is just the next round, much stronger round"
+        },
+        {
+          "title": "The FBI reportedly won’t investigate ICE anymore",
+          "url": "https://www.theverge.com/policy/967674/fbi-wont-investigate-ice-assaults",
+          "source": "theverge.com",
+          "pub_date": "2026-07-19T12:42:10-04:00",
+          "summary": "According to the New York Times, federal agents have been told that the FBI will no longer be investigating confrontations involving ICE agents. The DHS and DOJ denied the change in policy to The Times. The reported change in guidance follows renewed scrutiny of violence by ICE agents who have kille"
+        },
+        {
+          "title": "Orchid is a delightfully retro and approachable hipster synth",
+          "url": "https://www.theverge.com/entertainment/967485/telepathic-instruments-orchid-tame-impala-synth-review",
+          "source": "theverge.com",
+          "pub_date": "2026-07-19T11:15:00-04:00",
+          "summary": "In 2017, I bought an old Magnus chord organ off Craigslist for $10. It's one of my favorite music gear purchases. Electric chord organs let you play full chords with just a press of a button, making them perfect for aspiring singer-songwriters or fooling around at home. But chord organs largely fell"
+        },
+        {
+          "title": "Birdfy&#8217;s solar-powered smart feeder is down to one of its best prices",
+          "url": "https://www.theverge.com/gadgets/967336/birdfy-feeder-ai-powered-smart-bird-feeder-with-camera-deal-sale",
+          "source": "theverge.com",
+          "pub_date": "2026-07-19T11:00:00-04:00",
+          "summary": "Birdfy has kicked off a midyear sale, taking up to 40 percent off a range of its smart bird feeders. One of the best deals is on Netvue’s Birdfy Feeder AI-Powered Smart Bird Feeder with Camera, which has dropped to $149.99 at Birdfy and is its second-best price to date. The bundle, which includes a "
+        },
+        {
+          "title": "US Marshals arrest the Tate brothers in Miami",
+          "url": "https://www.theverge.com/policy/967651/us-marshals-arrest-the-tate-brothers-in-miami",
+          "source": "theverge.com",
+          "pub_date": "2026-07-19T10:20:48-04:00",
+          "summary": "The manosphere influencers Andrew and Tristan Tate were arrested Saturday in Miami by US Marshals in relation to new rape and sex trafficking charges in England. According to the Associated Press, British authorities are seeking the brothers' extradition. The new charges facing Andrew Tate include s"
+        },
+        {
+          "title": "The Clapper was a bad smart home gadget — and a viral sensation",
+          "url": "https://www.theverge.com/podcast/967642/the-clapper-version-history",
+          "source": "theverge.com",
+          "pub_date": "2026-07-19T09:28:26-04:00",
+          "summary": "Clap on. Clap off. Well, more like, Clap, pause for half a beat but no longer because otherwise it'll stop hearing you, clap again because you waited too long, clap louder and faster, that didn't work, clap two more times, and suddenly: on. The Clapper didn't always work - and even when it did, it ["
+        },
+        {
+          "title": "The future of physical games is not looking great",
+          "url": "https://www.theverge.com/column/967179/physical-discs-gta-vi-playstation-rockstar-games",
+          "source": "theverge.com",
+          "pub_date": "2026-07-19T08:00:00-04:00",
+          "summary": "This is The Stepback, a weekly newsletter breaking down one essential story from the tech world. For more on video games and physical media, follow Jay Peters. The Stepback arrives in our subscribers' inboxes on Sunday at 8AM ET. Opt in for The Stepback here. How it started As a kid, I relished trip"
+        },
+        {
+          "title": "Perplexity AI Releases WANDR: An Open Benchmark Evaluating Research Agents That Must Search Wide And Deep - MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/07/19/perplexity-ai-releases-wandr-an-open-benchmark-evaluating-research-agents-that-must-search-wide-and-deep/",
+          "source": "marktechpost.com",
+          "pub_date": "2026-07-19T07:19:14.000Z",
+          "summary": "Perplexity AI Releases WANDR: An Open Benchmark Evaluating Research Agents That Must Search Wide And Deep - MarkTechPost  Search  Premium Content  Read our exclusive articles  Facebook  Instagram  X  Search  Home Editors Pick Agentic AI Perplexity AI Releases WANDR: An Open Benchmark Evaluating Rese"
+        },
+        {
+          "title": "The grueling, 630-mile road race where the only fuel is sunlight",
+          "url": "https://www.theverge.com/transportation/966701/solar-car-challenge-high-school-student-race-texas",
+          "source": "theverge.com",
+          "pub_date": "2026-07-19T07:00:00-04:00",
+          "summary": "On July 19th, dozens of teams of high school students will begin a five-day, 630-mile road race from Fort Worth to Fort Stockton in Texas. But this is not your typical contest. The students design and build the cars themselves, using off-the-shelf parts and 3D printed materials. The winner is the te"
+        },
+        {
+          "title": "The cleanup trap: Stop asking RAG to fix bad data",
+          "url": "https://venturebeat.com/orchestration/the-cleanup-trap-stop-asking-rag-to-fix-bad-data",
+          "source": "venturebeat.com",
+          "pub_date": "2026-07-19T04:00:00+00:00",
+          "summary": "The enterprise technology ecosystem is caught in a costly cycle. Over the past two years, millions of dollars have been funneled into generative AI pilots, yet many of these initiatives stall out before ever reaching a live production environment.When a project fails, the immediate instinct of techn"
         },
         {
           "title": "Waymo says San Francisco service has resumed after one-hour pause",
@@ -6516,20 +7159,6 @@
           "summary": "Chinese company Moonshot AI released a new version of its Kimi model this week, prompting concern about \"full AI communism.\""
         },
         {
-          "title": "Dave Eggers told OpenAI staff  that ChatGPT was ‘silencing an entire generation’",
-          "url": "https://www.theverge.com/ai-artificial-intelligence/967630/dave-eggers-openai-chatgpt-silencing-an-entire-generation",
-          "source": "theverge.com",
-          "pub_date": "2026-07-18T16:54:42-04:00",
-          "summary": "Last year, Sam Altman invited author Dave Eggers to give a talk to around 200 OpenAI staffers. The man has written countless novels, screenplays, pieces of journalism, started McSweeney's, and founded multiple schools and nonprofits that support writers and the arts more broadly. So one might expect"
-        },
-        {
-          "title": "The White House is dictating access to frontier AI models, shifting power from tech giants, sources say",
-          "url": "https://www.reddit.com/r/artificial/comments/1v010pk/the_white_house_is_dictating_access_to_frontier/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-18T16:54:18+00:00",
-          "summary": "&#32; submitted by &#32;  /u/PsychologicalBox5208   [link] &#32; [comments]"
-        },
-        {
           "title": "All the EVs that were discontinued or killed off in the U.S. this year",
           "url": "https://techcrunch.com/2026/07/18/all-the-evs-that-were-discontinued-or-killed-off-in-the-u-s-this-year/",
           "source": "techcrunch.com",
@@ -6542,361 +7171,123 @@
           "source": "techcrunch.com",
           "pub_date": "2026-07-18T15:54:24+00:00",
           "summary": "The Department of Justice says that federal employees can now download TikTok on their government devices."
-        },
-        {
-          "title": "I cut a RAG pipeline's response time from 90 seconds to 4. Never touched the model",
-          "url": "https://www.reddit.com/r/artificial/comments/1uzzcef/i_cut_a_rag_pipelines_response_time_from_90/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-18T15:47:54+00:00",
-          "summary": "Last year I worked with an AI startup, an Oxford spinout. Their product answered research questions through a RAG pipeline. It worked, but every query took around 90 seconds. Long enough that users were bailing before the answer even loaded. The obvious move is to blame the model and go bigger. That"
-        },
-        {
-          "title": "A 600-mile road trip (and data) proves EV charging doesn’t suck anymore",
-          "url": "https://techcrunch.com/2026/07/18/a-600-mile-road-trip-and-data-proves-ev-charging-doesnt-suck-anymore/",
-          "source": "techcrunch.com",
-          "pub_date": "2026-07-18T14:32:00+00:00",
-          "summary": "A recent road trip in an EV revealed just how much faster and more reliable DC Fast charging has become in the U.S."
-        },
-        {
-          "title": "Prompt injection works on Telegram romance scam bots",
-          "url": "https://www.reddit.com/r/artificial/comments/1uzxful/prompt_injection_works_on_telegram_romance_scam/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-18T14:31:33+00:00",
-          "summary": "Tried prompt injection on a bot that was trying to romance scam me. Worked immediately. Instead of switching platforms I just asked it what its actual task was. It dropped the persona instantly. These things are everywhere now. How long until they're indistinguishable?  &#32; submitted by &#32;  /u/"
-        },
-        {
-          "title": "Google might not kneecap the Pixel 11a with an old processor",
-          "url": "https://www.theverge.com/tech/967612/google-pixel-11a-tensor-g6-leak",
-          "source": "theverge.com",
-          "pub_date": "2026-07-18T14:25:08-04:00",
-          "summary": "Mystic Leaks suggests that the Pixel 11a will return to featuring a flagship-grade processor with the Tensor G6. Rather than the Tensor G5 found in the Pixel 10 and 10 Pro, the Pixel 10a shipped with the previous generation Tensor G4. That was a huge disappointment since, typically, the Pixel a line"
-        },
-        {
-          "title": "Prasanna Sankar Launches AI Startup Vorflux With $15M Funding | Whalesbook",
-          "url": "https://www.whalesbook.com/news/English/technology/Prasanna-Sankar-Launches-AI-Startup-Vorflux-With-dollar15M-Funding/6a5b8443fe1c9287f474fa95",
-          "source": "whalesbook.com",
-          "pub_date": "2026-07-18T13:48:51.000Z",
-          "summary": "Prasanna Sankar Launches AI Startup Vorflux With $15M Funding | Whalesbook  Go back  # Prasanna Sankar Launches AI Startup Vorflux With $15M Funding  TECHNOLOGY  Author Aarav Shah|Published at:18th July 2026, 7:18 pm  Add as a PreferredSource on Google  Prasanna Sankar, the former CTO of Rippling, h"
-        },
-        {
-          "title": "Which MCP servers are worth installing for non-dev work in 2026?? Sharing what I found beyond coding",
-          "url": "https://www.reddit.com/r/artificial/comments/1uzwdtm/which_mcp_servers_are_worth_installing_for_nondev/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-18T13:47:51+00:00",
-          "summary": "Out of ~30 MCP servers I tested for non-dev work over 4 months, I kept 8 in daily rotation. The ecosystem hit 10K+ servers by early 2026 (22K+ on Glama by May) but most are either demo-ware or duplicate coverage. Sharing the honest cut because &quot;MCP for non-devs&quot; posts usually list every op"
-        },
-        {
-          "title": "Google is open-sourcing its 3D emoji",
-          "url": "https://www.theverge.com/design/967606/google-open-source-3d-emoji",
-          "source": "theverge.com",
-          "pub_date": "2026-07-18T12:40:55-04:00",
-          "summary": "Now, if you want to, you can use Google's 3D emoji in your own creations. The company shared some details about how it went about designing the little pictograms and why, as part of World Emoji Day on Friday. Things you might not necessarily worry about in a 2D illustration suddenly become very impo"
-        },
-        {
-          "title": "Apptio co-founders reunite to build enterprise AI startup Thira with $21M seed round | LavX News",
-          "url": "https://news.lavx.hu/article/apptio-co-founders-reunite-to-build-enterprise-ai-startup-thira-with-21m-seed-round",
-          "source": "news.lavx.hu",
-          "pub_date": "2026-07-18T12:11:41.000Z",
-          "summary": "Apptio co-founders reunite to build enterprise AI startup Thira with $21M seed round | LavX News  #Startups  # Apptio co-founders reunite to build enterprise AI startup Thira with $21M seed round  July 18, 2026 at 12:11 PM•  Tomáš Novák  •4 min read  Share this article  Save  Sunny Gupta and Kurt Sh"
-        },
-        {
-          "title": "GoPro&#8217;s discounted Max 2 bundle includes $100 worth of accessories",
-          "url": "https://www.theverge.com/gadgets/967311/gopro-max2-360-degree-action-cam-accessory-bundle-deal-sale",
-          "source": "theverge.com",
-          "pub_date": "2026-07-18T11:00:00-04:00",
-          "summary": "A 360-degree camera is a great way to ensure you capture every bit of the action, but prices tend to be on the high end for models worth your attention. That’s why it’s notable that the GoPro Max 2 accessory bundle is discounted to $369 at Amazon (a dollar more at Best Buy and GoPro). [&#8230;]"
-        },
-        {
-          "title": "The Guardian’s Carter Sherman fondly remembers being terrified by Ocarina of Time",
-          "url": "https://www.theverge.com/report/967583/guardian-carter-sherman-podcast-interview",
-          "source": "theverge.com",
-          "pub_date": "2026-07-18T10:30:00-04:00",
-          "summary": "Carter Sherman has been covering sex, gender, and the complex personal and national politics that accompany them for years. She was a senior reporter for Vice and has written for Elle, Ms. magazine, and Los Angeles magazine as well. Along the way, she's garnered a Scripps Howard Award, a National Pr"
-        },
-        {
-          "title": "Surprise! Facial recognition smart locks are actually good",
-          "url": "https://www.theverge.com/tech/967183/best-facial-recognition-smart-locks-review",
-          "source": "theverge.com",
-          "pub_date": "2026-07-18T10:00:00-04:00",
-          "summary": "Hands-free unlocking is the future of smart locks. The best smart home tech removes friction, and having your door unlock for you as you walk up is as frictionless as it gets - no passcodes to remember, no need to have a free hand to wave, press, or poke at the lock. One way to [&#8230;]"
-        },
-        {
-          "title": "Sony’s flagship RGB LED TV is incredible",
-          "url": "https://www.theverge.com/tech/966788/sony-bravia-9-ii-tv-review",
-          "source": "theverge.com",
-          "pub_date": "2026-07-18T08:30:00-04:00",
-          "summary": "The Sony Bravia 9 II is the most anticipated new TV in years. It's an amazing RGB LED TV. I watched Dungeons &#38; Dragons: Honor Among Thieves on the new Bravia with my son, who has been getting into the roleplaying game but had never seen the movie. The landscapes of Faer&#251;n looked natural and"
-        },
-        {
-          "title": "More games should be on rails (literally)",
-          "url": "https://www.theverge.com/games/961152/denshattack-review",
-          "source": "theverge.com",
-          "pub_date": "2026-07-18T08:00:00-04:00",
-          "summary": "It's been a good few weeks for games on rails. Nintendo's Star Fox remake wisely kept the tightly scripted, action-packed levels from Star Fox 64 largely the same, and they're still fun to fly through nearly 20 years later. Denshattack!, a new game from Undercoders, similarly features levels packed "
-        },
-        {
-          "title": "The apps, gadgets, and tools every reader needs",
-          "url": "https://www.theverge.com/tech/967544/best-apps-gadgets-reading-installer",
-          "source": "theverge.com",
-          "pub_date": "2026-07-18T08:00:00-04:00",
-          "summary": "Hi, friends! Welcome to Installer No. 136, your guide to the best and Verge-iest stuff in the world. (If you're new here, welcome, hope your neighborhood isn't as smoky as mine, and also you can read all the old editions at the Installer homepage.) This week, I've been recording the next season of V"
-        },
-        {
-          "title": "Thira Raises $21M Seed Round to Build Enterprise AI Execution Layer | DevCuration",
-          "url": "https://devcuration.com/articles/thira-raises-21m-seed-round-to-build-enterprise-ai-execution-layer",
-          "source": "devcuration.com",
-          "pub_date": "2026-07-18T06:33:11.000Z",
-          "summary": "Thira Raises $21M Seed Round to Build Enterprise AI Execution Layer | DevCuration  Latest  Goldman Sachs| Hiring Cheat Codes Every Founder Needs: TriNet, Supermoon and Resident NYC Workshop| Applitools| Walden Robotics Raises $300M to Put Physical AI to Work| Pure Raises $8M Seed for Real Money Gami"
-        },
-        {
-          "title": "Thinking Machines Releases Inkling, Its First Open-Weights Model",
-          "url": "https://howaiworks.ai/blog/inkling-open-weights-model-thinking-machines",
-          "source": "howaiworks.ai",
-          "pub_date": "2026-07-18T05:02:24.000Z",
-          "summary": "Thinking Machines Releases Inkling, Its First Open-Weights Model  # Thinking Machines Releases Inkling, Its First Open-Weights Model  Thinking Machines Lab ships Inkling, a 975B-parameter multimodal MoE under Apache 2.0 — the leading U.S. open-weights model at release, per Artificial Analysis.  July"
-        },
-        {
-          "title": "Neil Rimer thinks the AI money is coming back out",
-          "url": "https://techcrunch.com/2026/07/17/neil-rimer-thinks-the-ai-money-is-coming-back-out/",
-          "source": "techcrunch.com",
-          "pub_date": "2026-07-18T04:47:25+00:00",
-          "summary": "Neil Rimer, the venture capitalist who co-founded Index Ventures, predicts the historic wealth AI is generating in Silicon Valley will have to be redistributed, voluntarily or involuntarily."
-        },
-        {
-          "title": "Sable Raises $45 Million To Build AI Employee For Customer Interactions",
-          "url": "https://pulse2.com/sable-raises-45-million-to-build-ai-employee-for-customer-interactions/",
-          "source": "pulse2.com",
-          "pub_date": "2026-07-18T04:01:04.000Z",
-          "summary": "Sable Raises $45 Million To Build AI Employee For Customer Interactions  # Sable Raises $45 Million To Build AI Employee For Customer Interactions  By Amit Chowdhry • Today at 12:01 AM  Sable Raises $45 Million To Build AI Employee For Customer Interactions  Sable has raised $45 million to expand Ai"
-        },
-        {
-          "title": "SaaS for Robots: YingShen's Token Model Lands $10M+ Vietn... | SaaS Intelligence Brief",
-          "url": "https://getsaasbrief.com/story/yingshen-robot-token-saas",
-          "source": "getsaasbrief.com",
-          "pub_date": "2026-07-18T03:44:58.000Z",
-          "summary": "SaaS for Robots: YingShen's Token Model Lands $10M+ Vietn... | SaaS Intelligence Brief  Share Share on X Share on Facebook Share on LinkedIn Share on Reddit  ## Key Takeaways  - The export of hundreds of AI‑powered robots to Vietnamese factories comes with a twist: customers pay for ongoing model in"
-        },
-        {
-          "title": "Fine, electric mountain bikes don’t suck",
-          "url": "https://www.theverge.com/tech/966964/emtb-riders-are-not-cheaters",
-          "source": "theverge.com",
-          "pub_date": "2026-07-18T03:00:00-04:00",
-          "summary": "Cheater, I'd grumble between huffs as yet another e-bike rider casually skittered past me on a steep ascent. It's this purist attitude that, for years, has left me blind to one simple fact: electric mountain bikes are fun! My attitude adjustment came a few weeks ago, the very first time I rode an Am"
-        },
-        {
-          "title": "Applications close in 48 hours — here’s everything Australian founders need to know about Stripe x Startup Battlefield",
-          "url": "https://techcrunch.com/2026/07/17/applications-close-in-48-hours-heres-everything-australian-founders-need-to-know-about-stripe-x-startup-battlefield/",
-          "source": "techcrunch.com",
-          "pub_date": "2026-07-17T23:08:00+00:00",
-          "summary": "The window is almost shut. On August 19, eight startups will take the stage at Stripe Tour Sydney in front of investors, global press, and the Australian tech community. One startup walks away with automatic entry into TechCrunch Disrupt in San Francisco — no application, no further competition, a g"
-        },
-        {
-          "title": "Vertu wants executives to pay $6,880 for an AI agent — here’s how it actually performs",
-          "url": "https://techcrunch.com/2026/07/17/vertu-wants-executives-to-pay-6880-for-an-ai-agent-heres-how-it-actually-performs/",
-          "source": "techcrunch.com",
-          "pub_date": "2026-07-17T22:55:09+00:00",
-          "summary": "From AI workflows to battery life and security, here's what it's really like to live with Vertu's luxury foldable every day."
-        },
-        {
-          "title": "update on the browser extension that fact checks YouTube videos AS YOU WATCH",
-          "url": "https://www.reddit.com/r/artificial/comments/1uze14i/update_on_the_browser_extension_that_fact_checks/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-17T22:19:46+00:00",
-          "summary": "HI all,  First, thank you so much for your feedback and interest in my project PopUpFactCheck. When I first posted about this July 1, I did not expect the reception it would get and I am so thankful to y'all.  Some updates. You asked for Firefox, and it is now a Firefox add-on.  It has new features."
-        },
-        {
-          "title": "Databricks hits $188B valuation, extending its run as AI’s favorite second act",
-          "url": "https://techcrunch.com/2026/07/17/databricks-hits-188b-valuation-extending-its-run-as-ais-favorite-second-act/",
-          "source": "techcrunch.com",
-          "pub_date": "2026-07-17T22:12:56+00:00",
-          "summary": "Databricks has remade its image into an AI company and has published research on the cost savings of open weight AI models for coding."
-        },
-        {
-          "title": "Kimi K3: Moonshot AI's 2.8T Frontier Model Is Live",
-          "url": "https://emergent.sh/news/kimi-k3-launch",
-          "source": "emergent.sh",
-          "pub_date": "2026-07-17T21:27:00.000Z",
-          "summary": "Kimi K3: Moonshot AI's 2.8T Frontier Model Is Live  News  /  LLM Launch  # Kimi K3: Moonshot AI's 2.8T Frontier Model Is Live  Moonshot AI's Kimi K3 is a 2.8 trillion parameter open-weight model with a 1M token context window. Here's what it can do and why it matters.  Written byBhavyadeep  Reviewed"
-        },
-        {
-          "title": "The Zoom hack that says, ‘Don’t record me’",
-          "url": "https://techcrunch.com/2026/07/17/the-zoom-hack-that-says-dont-record-me/",
-          "source": "techcrunch.com",
-          "pub_date": "2026-07-17T21:20:47+00:00",
-          "summary": "If every meeting, watercooler conversation, and date gets transcribed and summarized, who's actually reading any of it?"
-        },
-        {
-          "title": "Xi Jinping calls for more open-source AI: 'China is ready to be more open'",
-          "url": "https://www.reddit.com/r/artificial/comments/1uzcgiq/xi_jinping_calls_for_more_opensource_ai_china_is/",
-          "source": "reddit.com",
-          "pub_date": "2026-07-17T21:15:30+00:00",
-          "summary": "&#32; submitted by &#32;  /u/esporx   [link] &#32; [comments]"
-        },
-        {
-          "title": "Capital One releases VulnHunter, an open-source AI tool that finds software flaws before hackers do",
-          "url": "https://venturebeat.com/technology/capital-one-releases-vulnhunter-an-open-source-ai-tool-that-finds-software-flaws-before-hackers-do",
-          "source": "venturebeat.com",
-          "pub_date": "2026-07-17T20:51:30+00:00",
-          "summary": "Capital One on Thursday released VulnHunter, an open-source, agentic AI security tool that scans source code for exploitable vulnerabilities, maps out how an attacker would reach them, and proposes targeted fixes — all before a single line ships to production. The tool, built internally and now avai"
-        },
-        {
-          "title": "Intuit scrapped its own AI agent architecture twice in four months. At VB Transform 2026, its AI VP called that the fast path",
-          "url": "https://venturebeat.com/orchestration/intuit-scrapped-its-own-ai-agent-architecture-twice-in-four-months-at-vb-transform-2026-its-ai-vp-called-that-the-fast-path",
-          "source": "venturebeat.com",
-          "pub_date": "2026-07-17T20:46:55+00:00",
-          "summary": "Intuit was an early pioneer in the usage of agentic AI, but its path to success has hardly been a straight line.At VB Transform 2026, Intuit VP of AI Nhung Ho described how the company rebuilt its agent architecture twice in the span of about four months, first moving from a fleet of specialist agen"
-        },
-        {
-          "title": "Agility Robotics plants its flag in Tesla’s backyard",
-          "url": "https://techcrunch.com/2026/07/17/agility-robotics-plants-its-flag-in-teslas-backyard/",
-          "source": "techcrunch.com",
-          "pub_date": "2026-07-17T20:19:49+00:00",
-          "summary": "Agility is opening a new training center for its Digit robots in Fremont, California."
-        },
-        {
-          "title": "AI-driven memory crunch jolts India’s smartphone market",
-          "url": "https://techcrunch.com/2026/07/17/ai-driven-memory-crunch-jolts-indias-smartphone-market/",
-          "source": "techcrunch.com",
-          "pub_date": "2026-07-17T20:09:27+00:00",
-          "summary": "India's smartphone slowdown highlights how the AI boom is reshaping consumer electronics, from pricing and demand to corporate strategy."
-        },
-        {
-          "title": "Agents think in milliseconds, legacy infrastructure doesn't. LinkedIn, Walmart and Zendesk shared how they closed the gap at VB Transform 2026",
-          "url": "https://venturebeat.com/data/agents-think-in-milliseconds-legacy-infrastructure-doesnt-linkedin-walmart-and-zendesk-shared-how-they-closed-the-gap-at-vb-transform-2026",
-          "source": "venturebeat.com",
-          "pub_date": "2026-07-17T18:48:18+00:00",
-          "summary": "Legacy infrastructure, not the models themselves, is what&#x27;s actually slowing AI agents down. That was the shared conclusion of three infrastructure leaders — from LinkedIn, Walmart, and Zendesk — at VB Transform 2026.The panel brought together Animesh Singh, senior director of AI platform and i"
-        },
-        {
-          "title": "Elorian Raises $55M Seed at $300M Valuation for Visual AI Before Shipping a Product | MLQ News",
-          "url": "https://mlq.ai/news/elorian-raises-55m-seed-at-300m-valuation-for-visual-ai-before-shipping-a-product/",
-          "source": "mlq.ai",
-          "pub_date": "2026-07-17T18:08:23.000Z",
-          "summary": "Elorian Raises $55M Seed at $300M Valuation for Visual AI Before Shipping a Product | MLQ News  STARTUPS AI STARTUPS VENTURE CAPITAL  # Elorian Raises $55M Seed at $300M Valuation for Visual AI Before Shipping a Product  Jul 17, 2026 · 2:08 PM · by MLQ Agent · 3 min read  Key points  - Elorian raise"
-        },
-        {
-          "title": "Brex built its AI agent policy by watching what agents actually do, not by writing rules first",
-          "url": "https://venturebeat.com/orchestration/brex-built-its-ai-agent-policy-by-watching-what-agents-actually-do-not-by-writing-rules-first",
-          "source": "venturebeat.com",
-          "pub_date": "2026-07-17T17:49:19+00:00",
-          "summary": "OpenClaw has become one of the most widely adopted agentic frameworks, but it has yet to prove itself at enterprise scale. Agents need real credentials — API keys, OAuth tokens, service accounts — to work effectively, and Brex found that traditional guardrails couldn&#x27;t contain what those agents"
-        },
-        {
-          "title": "Fine-tune video and image models at scale with NVIDIA NeMo Automodel and 🤗 Diffusers",
-          "url": "https://huggingface.co/blog/nvidia/scale-diffusers-finetuning-nemo-automodel",
-          "source": "huggingface.co",
-          "pub_date": "2026-07-17T15:57:54+00:00",
-          "summary": ""
-        },
-        {
-          "title": "Aina Raises $5.5 Million To Build AI-Native Hardware Interfaces From Bengaluru And San Francisco - CXO Digitalpulse",
-          "url": "https://www.cxodigitalpulse.com/aina-raises-5-5-million-to-build-ai-native-hardware-interfaces-from-bengaluru-and-san-francisco/",
-          "source": "cxodigitalpulse.com",
-          "pub_date": "2026-07-17T08:09:14.000Z",
-          "summary": "Aina Raises $5.5 Million To Build AI-Native Hardware Interfaces From Bengaluru And San Francisco - CXO Digitalpulse  Search  CXO Musings - CXO Digitalpulse  CXO Musings - CXO Digitalpulse  CXO Musings - CXO Digitalpulse  CXO pulse  Content Hub  Search  CXO pulse  Content Hub  Search  # Aina Raises $"
-        },
-        {
-          "title": "Intel Kills AI Pilots: Gemini Enterprise Goes Companywide | THE D*AI*LY BRIEF",
-          "url": "https://www.beri.net/article/intel-gemini-enterprise-kills-ai-pilots-companywide-2026",
-          "source": "beri.net",
-          "pub_date": "2026-07-17T08:08:16.000Z",
-          "summary": "Intel Kills AI Pilots: Gemini Enterprise Goes Companywide | THE D*AI*LY BRIEF  # Intel Kills AI Pilots: Gemini Enterprise Goes Companywide  Intel scraps isolated AI pilots, deploys Gemini Enterprise across engineering, supply chain, and ops. What CIOs learn about scaling agentic AI company-wide.  By"
-        },
-        {
-          "title": "Moonshot AI Releases Kimi K3: A 2.8 Trillion Parameter Open MoE Model With Kimi Delta Attention and 1M Context - MarkTechPost",
-          "url": "https://www.marktechpost.com/2026/07/16/moonshot-ai-releases-kimi-k3-a-2-8-trillion-parameter-open-moe-model-with-kimi-delta-attention-and-1m-context/",
-          "source": "marktechpost.com",
-          "pub_date": "2026-07-16T23:47:05.000Z",
-          "summary": "Moonshot AI Releases Kimi K3: A 2.8 Trillion Parameter Open MoE Model With Kimi Delta Attention and 1M Context - MarkTechPost  Search  Premium Content  Read our exclusive articles  Facebook  Instagram  X  Search  Home Editors Pick Agentic AI Moonshot AI Releases Kimi K3: A 2.8 Trillion Parameter Ope"
-        },
-        {
-          "title": "HP fined 1.4 billion rupees for “cartelization” of ink cartridges, toner, PCs",
-          "url": "https://arstechnica.com/gadgets/2026/07/hp-fined-1-4-billion-rupees-for-cartelization-of-ink-cartridges-toner-pcs/",
-          "source": "arstechnica.com",
-          "pub_date": "2026-07-16T22:02:31+00:00",
-          "summary": "Resellers threatened to ditch HP printing supplies for counterfeits."
-        },
-        {
-          "title": "Build enterprise search for agents with Amazon Bedrock Managed Knowledge Base | Artificial Intelligence",
-          "url": "https://aws.amazon.com/blogs/machine-learning/build-enterprise-search-for-agents-with-amazon-bedrock-managed-knowledge-base/",
-          "source": "aws.amazon.com",
-          "pub_date": "2026-07-16T21:29:14.000Z",
-          "summary": "Build enterprise search for agents with Amazon Bedrock Managed Knowledge Base | Artificial Intelligence Skip to Main Content  ## Artificial Intelligence  https://aws.amazon.com/blogs/machine-learning/  # Build enterprise search for agents with Amazon Bedrock Managed Knowledge Base  Knowledge bases t"
-        },
-        {
-          "title": "China’s Moonshot AI releases Kimi K3, the largest open-source model ever, rivaling top U.S. systems - VexoWire",
-          "url": "https://vexowire.com/chinas-moonshot-ai-releases-kimi-k3-the-largest-open-source-model-ever-rivaling-top-u-s-systems/",
-          "source": "vexowire.com",
-          "pub_date": "2026-07-16T19:43:05.000Z",
-          "summary": "China’s Moonshot AI releases Kimi K3, the largest open-source model ever, rivaling top U.S. systems - VexoWire  SHARE  Share on Facebook  Share on X  Contents  - Inside the architecture that powers the world’s largest open-source AI model - Benchmark results show Kimi K3 trading blows with Claude an"
-        },
-        {
-          "title": "China’s Moonshot AI releases Kimi K3, the largest open-source model ever, rivaling top U.S. systems",
-          "url": "https://venturebeat.com/technology/chinas-moonshot-ai-releases-kimi-k3-the-largest-open-source-model-ever-rivaling-top-u-s-systems",
-          "source": "venturebeat.com",
-          "pub_date": "2026-07-16T19:42:09+00:00",
-          "summary": "Moonshot AI, the Beijing-based artificial intelligence startup backed by Alibaba, on Thursday released Kimi K3 — a 2.8-trillion-parameter model that the company says is now the largest open-source AI model in the world, and one that benchmarks show performs neck-and-neck with the most powerful propr"
-        },
-        {
-          "title": "Now, even Russia's most elite hackers are using Clickfix to infect devices",
-          "url": "https://arstechnica.com/security/2026/07/now-even-russias-most-elite-hackers-are-using-clickfix-to-infect-devices/",
-          "source": "arstechnica.com",
-          "pub_date": "2026-07-16T19:28:33+00:00",
-          "summary": "The social-engineering technique has primarily been a tool of financially motivated criminals."
-        },
-        {
-          "title": "The AI compute gap: Enterprises are buying infrastructure faster than they can measure what it costs",
-          "url": "https://venturebeat.com/ai/the-ai-compute-gap-enterprises-are-buying-infrastructure-faster-than-they-can-measure-what-it-costs",
-          "source": "venturebeat.com",
-          "pub_date": "2026-07-16T19:16:48+00:00",
-          "summary": "Across 107 enterprises, AI infrastructure spending is accelerating well ahead of the ability to see or steer its economics. Most organizations run their AI on a familiar base of hyperscalers and model-provider APIs, yet the next dollar is aimed at specialized compute almost none of them use today; a"
-        },
-        {
-          "title": "The agent security gap: 54% of enterprises have already had an AI agent incident, and most still let agents share credentials",
-          "url": "https://venturebeat.com/ai/the-agent-security-gap-54-of-enterprises-have-already-had-an-ai-agent-incident-and-most-still-let-agents-share-credentials",
-          "source": "venturebeat.com",
-          "pub_date": "2026-07-16T19:02:38+00:00",
-          "summary": "Across 107 enterprises, AI agents are being given real access to systems and data while the controls meant to contain them lag behind. More than half have already had a confirmed agent security incident or a near-miss; only about a third give every agent its own scoped identity, and most agents stil"
-        },
-        {
-          "title": "Sable Raises $45M to Build the First AI Employee that can Click, See, and Explain |\n                                    Newswire",
-          "url": "https://www.newswire.com/news/sable-raises-45m-to-build-the-first-ai-employee-that-can-click-see-and-explain",
-          "source": "newswire.com",
-          "pub_date": "2026-07-16T16:40:00.000Z",
-          "summary": "Sable Raises $45M to Build the First AI Employee that can Click, See, and Explain | Newswire  Backed by Sequoia Capital and 8VC, Sable, founded by a group of Harvard graduates, is less than a year old and is already in production at Notion, Decagon, and large public companies, transforming how busin"
-        },
-        {
-          "title": "Launch HN: Coasty (YC S26) – An API For Computer-use Agents - Good Sidekick",
-          "url": "https://goodsidekick.com/ai-tooling/launch-hn-coasty-yc-s26-an-api-for-computer-use-agents/",
-          "source": "goodsidekick.com",
-          "pub_date": "2026-07-16T16:36:28.000Z",
-          "summary": "Launch HN: Coasty (YC S26) – An API For Computer-use Agents - Good Sidekick  # Launch HN: Coasty (YC S26) – An API For Computer-use Agents  Coasty, a YC S26 startup, has launched an API enabling developers to build computer-use agents, aiming to automate complex digital tasks.  Total  0  Shares  ###"
-        },
-        {
-          "title": "19-year-old founder raises $2 million to bring hedge fund-style trading tools to ever | Ctech",
-          "url": "https://www.calcalistech.com/ctechnews/article/r10d088vgx",
-          "source": "calcalistech.com",
-          "pub_date": "2026-07-16T16:00:00.000Z",
-          "summary": "19-year-old founder raises $2 million to bring hedge fund-style trading tools to ever | Ctech  ACCESSIBILITY  by  https://twitter.com/Calcalistech  ACCESSIBILITY  ### Headlines  ### Ynet News  Recently Read  The wrong AI race  The next generation of Israeli unicorns will be built on factory floors, "
         }
       ],
-      "cached_at": "2026-07-19T05:43:31.702981"
+      "cached_at": "2026-07-20T06:02:25.266532"
     },
     "india_sea": {
       "articles": [
+        {
+          "title": "Inside SEA’s AI gold rush: The 20 investors writing the biggest cheques",
+          "url": "https://e27.co/inside-seas-ai-gold-rush-the-20-investors-writing-the-biggest-cheques-20260720/",
+          "source": "e27.co",
+          "pub_date": "2026-07-20T05:04:13+00:00",
+          "summary": "Artificial intelligence is no longer a distant promise for Southeast Asia; it is the single most consequential bet being made across the region&#8217;s venture capital landscape. In 2025, AI startup investment in Vietnam alone surged 13-fold to US$130 million, while Singapore continued to serve as t"
+        },
+        {
+          "title": "Beyond the chatbot: How Gen Z pioneers are leading ASEAN’s new AI revolution",
+          "url": "https://e27.co/beyond-the-chatbot-how-gen-z-pioneers-are-leading-aseans-new-ai-revolution-20260720/",
+          "source": "e27.co",
+          "pub_date": "2026-07-20T03:50:50+00:00",
+          "summary": "In the rapidly accelerating digital landscape of the Association of Southeast Asian Nations (ASEAN) region, a seismic shift has occurred that is fundamentally altering the trajectory of the internet economy. According to &#8220;The Gemini Report Southeast Asia 2026&#8221; published by Google, the re"
+        },
+        {
+          "title": "Should AI investing involve diversifying into Chinese tech stocks to counterbalance new industry rivals?",
+          "url": "https://e27.co/should-ai-investing-involve-diversifying-into-chinese-tech-stocks-to-counterbalance-new-industry-rivals-20260719/",
+          "source": "e27.co",
+          "pub_date": "2026-07-20T03:00:05+00:00",
+          "summary": "Artificial intelligence innovators outside of the United States can no longer be ignored. Does it mean that your AI-focused portfolio is at risk if you haven’t looked beyond Wall Street?  There’s no doubt that AI is the largest driver of growth for investors in the post-pandemic landscape, but as va"
+        },
+        {
+          "title": "Could your Bitcoin balance soon help you qualify for a home mortgage?",
+          "url": "https://e27.co/could-your-bitcoin-balance-soon-help-you-qualify-for-a-home-mortgage-20260720/",
+          "source": "e27.co",
+          "pub_date": "2026-07-20T02:55:16+00:00",
+          "summary": "Bitcoin currently trades sideways around the US$64,000 level as global risk appetite wanes significantly. Market participants closely monitor the escalating possibility of a full-scale war between the United States and Iran. According to CoinMarketCap data this morning, the price per bitcoin stood a"
+        },
+        {
+          "title": "The psychology of believing AI: Certainty vs truth",
+          "url": "https://e27.co/the-psychology-of-believing-ai-certainty-vs-truth-20260719/",
+          "source": "e27.co",
+          "pub_date": "2026-07-20T02:45:01+00:00",
+          "summary": "A client sits down, starts to speak, and within a minute, I can hear that the problem has already been shaped somewhere else. The language arrives too clean; the situation has an outline before the two of us have looked at it together. Later in the session, they often tell me where the outline came "
+        },
+        {
+          "title": "Beyond the code: How Vietnam evolved from an execution hub to a product powerhouse",
+          "url": "https://e27.co/beyond-the-code-how-vietnam-evolved-from-an-execution-hub-to-a-product-powerhouse-20260719/",
+          "source": "e27.co",
+          "pub_date": "2026-07-20T02:30:51+00:00",
+          "summary": "I&#8217;ve written tech hiring campaigns in Vietnam for years, and the old brief: &#8220;sell juniors on growth and mentorship&#8221; has completely disappeared. Why? Because founders are realising that paying for junior headcount in 2026 is often a waste of budget. Generative AI now handles the boi"
+        },
+        {
+          "title": "AI is about to blow a hole in ASEAN’s climate targets, unless baseload goes clean",
+          "url": "https://e27.co/ai-is-about-to-blow-a-hole-in-aseans-climate-targets-unless-baseload-goes-clean-20260719/",
+          "source": "e27.co",
+          "pub_date": "2026-07-20T02:15:18+00:00",
+          "summary": "There is a version of Southeast Asia&#8217;s AI story that is told almost entirely in positive terms: surging investment, government ambition, hyperscaler expansion, new data centre campuses rising across Singapore, Malaysia, Indonesia, the Philippines, and Vietnam. That story is accurate. And hidde"
+        },
+        {
+          "title": "From tools to partners: The Socratic dream of two butterflies",
+          "url": "https://e27.co/from-tools-to-partners-the-socratic-dream-of-two-butterflies-20260718/",
+          "source": "e27.co",
+          "pub_date": "2026-07-20T02:00:56+00:00",
+          "summary": "When a simple AI task turns into a meditation on intelligence, systems, and the nature of thinking. The shift It started, as many things do in tech, with something trivial. A to-do app. A specification. A test. A way to validate a system design. But somewhere between iterating on a dual primitive mo"
+        },
+        {
+          "title": "Making India ‘food wise’; AI lifts VC inflow in startup ecosystem",
+          "url": "https://yourstory.com/2026/07/making-india-food-wise-venture-funding",
+          "source": "yourstory.com",
+          "pub_date": "2026-07-20T02:00:00+00:00",
+          "summary": "Foodwize's B2B segment, Foodwize Ignite, helps chefs, hospitality professionals, and businesses embed sustainability into their food practices."
+        },
+        {
+          "title": "Southeast Asia’s sustainability opportunity is infrastructure",
+          "url": "https://e27.co/southeast-asias-sustainability-opportunity-is-infrastructure-20260718/",
+          "source": "e27.co",
+          "pub_date": "2026-07-20T01:40:00+00:00",
+          "summary": "Sustainability in Southeast Asia is entering a more practical phase. For years, much of the corporate conversation focused on targets, disclosures, and commitments. Those still matter. But the real question now is harder: how does sustainability work inside daily operations when companies are dealin"
+        },
+        {
+          "title": "2 years to agentic: Will you comply, or will you grow?",
+          "url": "https://e27.co/2-years-to-agentic-will-you-comply-or-will-you-grow-20260718/",
+          "source": "e27.co",
+          "pub_date": "2026-07-20T01:20:05+00:00",
+          "summary": "Dubai has put a deadline on autonomous AI. The companies that treat it as a compliance project will end up with a more efficient version of the business they already have. The ones that change the game will end up with a different business. The mandate is real, and it has a clock on it. [&#8230;]\nTh"
+        },
+        {
+          "title": "The extinction events in product evolution",
+          "url": "https://e27.co/the-extinction-events-in-product-evolution-20260716/",
+          "source": "e27.co",
+          "pub_date": "2026-07-20T01:15:57+00:00",
+          "summary": "Most product leaders are taught to watch competitors, benchmark features, and track market share as if category collapse begins with a stronger rival building a better version of the same thing. That story is tidy, but it is not how extinction usually works. Entire product categories do not disappea"
+        },
+        {
+          "title": "The job you’re studying for might not exist: Here’s what still will",
+          "url": "https://e27.co/the-job-youre-studying-for-might-not-exist-heres-what-still-will-20260718/",
+          "source": "e27.co",
+          "pub_date": "2026-07-20T01:00:04+00:00",
+          "summary": "Daniel Kokotajlo used to lead research at OpenAI, thinking several years ahead. He left in 2023 and gave up a chunk of equity/money to do it because he didn&#8217;t want to sign away his right to talk about what he was seeing. Since then, he&#8217;s built out some of the more detailed public forecas"
+        },
+        {
+          "title": "Why Groww Wants To Be Everything At Once",
+          "url": "https://inc42.com/features/why-groww-wants-to-be-everything-at-once/",
+          "source": "inc42.com",
+          "pub_date": "2026-07-20T00:30:42+00:00",
+          "summary": "As India&#8217;s largest stockbroker expands into wealth management, AI, global investing, lending and asset management, the next question is whether&#8230;"
+        },
+        {
+          "title": "BigBasket’s Retreat",
+          "url": "https://inc42.com/features/bigbaskets-retreat/",
+          "source": "inc42.com",
+          "pub_date": "2026-07-19T05:30:42+00:00",
+          "summary": "&#8220;I was in denial of the idea of quick commerce. Back then, if you had asked 100 people whether they&#8230;"
+        },
         {
           "title": "Art Bengaluru Collective kicks off its 11th annual art exhibition",
           "url": "https://yourstory.com/2026/07/art-bengaluru-collective-creativity-exhibition-photography",
           "source": "yourstory.com",
           "pub_date": "2026-07-19T02:00:00+00:00",
           "summary": "In this photo essay, we showcase an art exhibition at Karnataka Chitrakala Parishath, along with curator insights."
-        },
-        {
-          "title": "Liftoff for Skyroot’s Vikram-1; Building AI voice infra for Indian languages",
-          "url": "https://yourstory.com/2026/07/liftoff-for-skyroot-vikram-1-shunya-labs",
-          "source": "yourstory.com",
-          "pub_date": "2026-07-19T02:00:00+00:00",
-          "summary": "Vikram-1 is a four-stage launch vehicle designed to carry payloads of up to 350 kg to low Earth orbit (LEO), the region of space where many Earth observation, communication and scientific satellites operate."
         },
         {
           "title": "Education, AI, health: test your business creativity with Edition 241 of our weekly quiz!",
@@ -6969,20 +7360,6 @@
           "summary": "Spacetech unicorn Skyroot created history by becoming the first private Indian company to place a rocket into orbit. Its Vikram-1&#8230;"
         },
         {
-          "title": "HRV Pharma Unveils India's First AI-Native Pharmaceutical",
-          "url": "https://www.passionateinmarketing.com/hrv-pharma-introduces-riko-indias-first-ai-native-pharmaceutical-operating-system/",
-          "source": "passionateinmarketing.com",
-          "pub_date": "2026-07-18T06:32:17.000Z",
-          "summary": "HRV Pharma Unveils India's First AI-Native Pharmaceutical  Search  Sign in  Welcome! Log into your account  your username  your password  Forgot your password? Get help  Password recovery  Recover your password  your email  A password will be e-mailed to you.  Sunday, July 19, 2026  Sign in / Join  "
-        },
-        {
-          "title": "Fintech SaaS startup Hisabkitab raises undisclosed Seed funding at Rs 20 Cr valuation – Incubees",
-          "url": "https://incubees.com/fintech-saas-startup-hisabkitab-raises-undisclosed-seed-funding-at-rs-20-cr-valuation/",
-          "source": "incubees.com",
-          "pub_date": "2026-07-18T06:04:13.000Z",
-          "summary": "Fintech SaaS startup Hisabkitab raises undisclosed Seed funding at Rs 20 Cr valuation – Incubees  A group of angel investors and high net worth individuals (HNIs) have contributed an unknown sum to Hisabkitab, an AI-powered and cloud-native accounting platform for small and medium-sized enterprises,"
-        },
-        {
           "title": "FY26 Financial Tracker: Tracking The Financial Performance Of Indian Startups",
           "url": "https://inc42.com/features/fy26-financial-tracker-tracking-the-financial-performance-of-indian-startups/",
           "source": "inc42.com",
@@ -7025,32 +7402,11 @@
           "summary": "IPO-bound Jio Platforms reported a consolidated profit after tax (PAT) of ₹7,764 Cr in the first quarter of FY27 (Q1&#8230;"
         },
         {
-          "title": "Surgy Health: Bengaluru Healthcare AI Startup Automating Hospitals With AI Clinical Documentation and Patient Engagement Software – Indian Express Daily",
-          "url": "https://indianexpressdaily.com/surgy-health-bengaluru-healthcare-ai-startup-automating-hospitals-with-ai-clinical-documentation-and-patient-engagement-software/",
-          "source": "indianexpressdaily.com",
-          "pub_date": "2026-07-17T14:32:27.000Z",
-          "summary": "Surgy Health: Bengaluru Healthcare AI Startup Automating Hospitals With AI Clinical Documentation and Patient Engagement Software – Indian Express Daily  Trending now  ### How to Identify the Best ULIP Plan…  https://indianexpressdaily.com/how-to-identify-the-best-ulip-plan-in-india-based-on-your-go"
-        },
-        {
-          "title": "(Weekly funding roundup July 11-17) Sharp rise in VC inflow led by AI deals",
-          "url": "https://yourstory.com/2026/07/weekly-funding-roundup-july-11-17-sharp-rise-in-vc-inflow-led-by-ai-deals",
-          "source": "yourstory.com",
-          "pub_date": "2026-07-17T14:30:23+00:00",
-          "summary": "The venture capital funding raised in the third week of July comes as a welcome relief after a subdued inflow in the preceding two weeks."
-        },
-        {
           "title": "5 Books that changed millions of lives around the world",
           "url": "https://yourstory.com/2026/06/books-changed-life-around-world",
           "source": "yourstory.com",
           "pub_date": "2026-07-17T13:30:00+00:00",
           "summary": "Discover five influential books that transformed millions of lives through powerful lessons on purpose, habits, mindset, and personal growth."
-        },
-        {
-          "title": "Profitability, Geopolitical Concerns Weigh On Zepto’s IPO Valuation",
-          "url": "https://inc42.com/buzz/profitability-geopolitical-concerns-weigh-on-zeptos-ipo-valuation/",
-          "source": "inc42.com",
-          "pub_date": "2026-07-17T13:23:48+00:00",
-          "summary": "Quick commerce major Zepto could make its stock market debut at a valuation significantly below its peak private valuation of&#8230;"
         },
         {
           "title": "Aurrevia launches Category III alternative investment fund",
@@ -7060,11 +7416,11 @@
           "summary": "The investment platform has received a $10 million commitment from Kothari Family Office."
         },
         {
-          "title": "Turtlemint Turns Profitable In Q4, Posts PAT Of ₹3 Cr",
-          "url": "https://inc42.com/buzz/turtlemint-turns-profitable-in-q4-posts-pat-of-%e2%82%b93-cr/",
-          "source": "inc42.com",
-          "pub_date": "2026-07-17T13:11:57+00:00",
-          "summary": "Recently listed insurtech company Turtlemint turned profitable in the March quarter of FY26 (Q4 FY26), reporting a consolidated net profit&#8230;"
+          "title": "Naturis Cosmetics raises Rs 100 Cr led by Sharrp Ventures",
+          "url": "https://yourstory.com/2026/07/naturis-cosmetics-raises-rs-100-crore-led-by-sharrp-ventures",
+          "source": "yourstory.com",
+          "pub_date": "2026-07-17T12:27:27+00:00",
+          "summary": "Naturis Cosmetics will primarily use this funding for expansion activities which includes manufacturing facility and open R&amp;D centre."
         },
         {
           "title": "Armory first built a counter-drone system in six months, and now it has a Rs 100 crore defence order",
@@ -7095,32 +7451,11 @@
           "summary": "Founded by a former Asteria Aerospace product lead, the Bengaluru startup makes multi-sensor perception hardware and agentic AI for unmanned vehicles across air, land and sea."
         },
         {
-          "title": "WBBA convenes Asia-Pacific’s first Broadband Development Summit in Bangkok, launches AI-Net Certification",
-          "url": "https://e27.co/wbba-convenes-asia-pacifics-first-broadband-development-summit-in-bangkok-launches-ai-net-certification-20260717/",
-          "source": "e27.co",
-          "pub_date": "2026-07-17T11:32:52+00:00",
-          "summary": "Regulators, standards bodies and leading operators met in Bangkok on 14 July for the region’s inaugural summit, where the World Broadband Association set out a shared agenda for network infrastructure in the AI era and named XLSmart its first AI-Net Champion. Government officials, international stan"
-        },
-        {
           "title": "23-Year-Old Quits High-Paying AI Job to Build India's Innovation Platform: HackCulture - The Indian Bulletin",
           "url": "https://theindianbulletin.com/23-year-old-quits-high-paying-ai-job-to-build-indias-innovation-platform-hackculture/",
           "source": "theindianbulletin.com",
           "pub_date": "2026-07-17T09:56:22.000Z",
           "summary": "23-Year-Old Quits High-Paying AI Job to Build India's Innovation Platform: HackCulture - The Indian Bulletin  Search  Saturday, July 18, 2026  Sign in  Welcome! Log into your account  your username  your password  Forgot your password? Get help  Privacy Policy  Password recovery  Recover your passwo"
-        },
-        {
-          "title": "CMBI, SMBC back Whale’s US$40M Series C extension for enterprise AI expansion",
-          "url": "https://e27.co/cmbi-smbc-back-whales-us40m-series-c-extension-for-enterprise-ai-expansion-20260717/",
-          "source": "e27.co",
-          "pub_date": "2026-07-17T09:53:10+00:00",
-          "summary": "Singapore-headquartered enterprise AI company Whale has raised a US$40 million extension to its Series C round, bringing the total Series C financing to US$100 million, as it looks to expand deployments across Asia Pacific and North America. The extension was led by CMB International, through an inv"
-        },
-        {
-          "title": "Ecosystem Roundup: Why Winnow’s Lumitics deal matters",
-          "url": "https://e27.co/ecosystem-roundup-why-winnows-lumitics-deal-matters-20260717/",
-          "source": "e27.co",
-          "pub_date": "2026-07-17T09:36:28+00:00",
-          "summary": "Food waste is a US$1T global problem, and Southeast Asia sits at its bleeding edge. Hotels and commercial kitchens across the region discard tonnes of food daily, not from carelessness, but from an absence of data. That gap is exactly what Singapore-based Lumitics was built to close. Winnow&#8217;s "
         },
         {
           "title": "BreadTalk, Jumbo, SongFa: Why S’pore’s F&B giants are retreating from China",
@@ -7137,32 +7472,11 @@
           "summary": "Ex-Ultrahuman Executive's AI Hardware Startup Aina Raises $5.5 Million in Seed Funding - Entrepreneur India - Entrepreneur India  Return to Entrepreneur home page  Search  Return to Entrepreneur home page  Search  Entrepreneur Home/ Business News  This story appears in the issue of Subscribe »  You'"
         },
         {
-          "title": "Mandrake Bio Raises ₹16 Crore Pre-Seed Round to Build AI Gene Editing Platform – Funding Times",
-          "url": "https://fundingtimes.in/mandrake-bio-raises-%e2%82%b916-crore-pre-seed-round-to-build-ai-gene-editing-platform/",
-          "source": "fundingtimes.in",
-          "pub_date": "2026-07-17T06:34:35.000Z",
-          "summary": "Mandrake Bio Raises ₹16 Crore Pre-Seed Round to Build AI Gene Editing Platform – Funding Times  Search  Search  Saturday, July 18, 2026  Search  Search  © 2026 Funding Times –Powered by OG Media. All Rights Reserved by JMN PRIVATE LIMITED.  Business  # Mandrake Bio Raises ₹16 Crore Pre-Seed Round to"
-        },
-        {
-          "title": "pQCee’s US$3.9M raise puts Singapore in the post-quantum cybersecurity race",
-          "url": "https://e27.co/pqcees-us3-9m-raise-puts-singapore-in-the-post-quantum-cybersecurity-race-20260717/",
-          "source": "e27.co",
-          "pub_date": "2026-07-17T05:34:20+00:00",
-          "summary": "Singapore-based quantum-safe cybersecurity startup pQCee has raised US$3.9 million in a seed funding round, as governments and large enterprises begin moving post-quantum cryptography from research papers and standards discussions into procurement plans. The round was co-led by SGInnovate and Lotus "
-        },
-        {
-          "title": "How IPHatch is turning dormant MNC patents into startup equity across Asia",
-          "url": "https://e27.co/how-iphatch-is-turning-dormant-mnc-patents-into-startup-equity-across-asia-20260717/",
-          "source": "e27.co",
-          "pub_date": "2026-07-17T04:46:30+00:00",
-          "summary": "Asia does not have a shortage of patents. It has a shortage of commercial pathways for technologies that sit unused inside large corporate portfolios. That is the gap Piece Future is targeting through IPHatch, an open-innovation platform that gives startups access to patents from multinational compa"
-        },
-        {
-          "title": "CapBay, MDEC set up US$47M debt financing pool for Malaysian tech firms",
-          "url": "https://e27.co/capbay-mdec-set-up-us47m-debt-financing-pool-for-malaysian-tech-firms-20260717/",
-          "source": "e27.co",
-          "pub_date": "2026-07-17T03:36:48+00:00",
-          "summary": "Malaysian fintech company CapBay has partnered the Malaysia Digital Economy Corporation (MDEC) to offer growth financing to Malaysia Digital-status technology companies, in a move aimed at widening access to debt capital for startups and scale-ups that often fall outside conventional bank lending cr"
+          "title": "Surgy Health: Bengaluru Healthcare AI Startup Automating Hospitals With AI Clinical Documentation and Patient Engagement Software – Indian Express Daily",
+          "url": "https://indianexpressdaily.com/surgy-health-bengaluru-healthcare-ai-startup-automating-hospitals-with-ai-clinical-documentation-and-patient-engagement-software/",
+          "source": "indianexpressdaily.com",
+          "pub_date": "2026-07-17T05:32:17.000Z",
+          "summary": "Surgy Health: Bengaluru Healthcare AI Startup Automating Hospitals With AI Clinical Documentation and Patient Engagement Software – Indian Express Daily  Trending now  ### Brand Led Micro Drama’ is the future…  https://indianexpressdaily.com/brand-led-micro-drama-is-the-future-of-indian-advertising-"
         },
         {
           "title": "Mandrake Bio Raises ₹16 Crore to Design a New Generation of Gene Editors from Scratch - PNI",
@@ -7172,53 +7486,25 @@
           "summary": "Mandrake Bio Raises ₹16 Crore to Design a New Generation of Gene Editors from Scratch - PNI  Press Network of India  # Mandrake Bio Raises ₹16 Crore to Design a New Generation of Gene Editors from Scratch  Business  https://cdn.pninews.com/wp-content/uploads/2026/07/17082820/Mandrake-Bio.jpg  15  Be"
         },
         {
-          "title": "How Asia is turning football’s year-round calendar into a fan engagement battleground",
-          "url": "https://e27.co/how-asia-is-turning-footballs-year-round-calendar-into-a-fan-engagement-battleground-20260714/",
-          "source": "e27.co",
-          "pub_date": "2026-07-17T03:00:47+00:00",
-          "summary": "Basketball has always been built for momentum. A fast break, a buzzer-beater, a chasedown block or a no-look pass can change the mood of a game in seconds. That rhythm has made the sport especially well-suited to the digital age, where fans increasingly discover, follow and debate sport through clip"
+          "title": "Rippling Co-founder Launches Vorflux with $15M Seed Funding A Founder's Strategic Pivot — The Entrepreneur Story",
+          "url": "https://theentrepreneurstory.com/articles/founders/rippling-co-founder-launches-vorflux-with-15m-seed-funding",
+          "source": "theentrepreneurstory.com",
+          "pub_date": "2026-07-16T21:50:39.000Z",
+          "summary": "Rippling Co-founder Launches Vorflux with $15M Seed Funding A Founder's Strategic Pivot — The Entrepreneur Story  FOUNDERS & OPERATORS·14 min read·Jul 16, 2026  # Rippling Co-founder Launches Vorflux with $15M Seed Funding A Founder's Strategic Pivot  Prasanna Sankar, former Rippling co-founder, sec"
         },
         {
-          "title": "AI and the crisis of recognition: Do we still see the human behind the words?",
-          "url": "https://e27.co/ai-and-the-crisis-of-recognition-do-we-still-see-the-human-behind-the-words-20260714/",
-          "source": "e27.co",
-          "pub_date": "2026-07-17T02:45:06+00:00",
-          "summary": "I couldn&#8217;t understand why my student had ignored almost all of my feedback. I had carefully reviewed his capstone presentation, working through each slide, thinking about the structure, the technical flow and how he could communicate his ideas more effectively. Like many educators adapting to "
+          "title": "Jia Signs Netbank as First Institutional Partner, Opening Its SME Lending Infrastructure to Banks and Lenders - Genz Flash",
+          "url": "https://genzflash.com/jia-signs-netbank-as-first-institutional-partner-opening-its-sme-lending-infrastructure-to-banks-and-lenders-2/",
+          "source": "genzflash.com",
+          "pub_date": "2026-07-16T19:01:19.000Z",
+          "summary": "Jia Signs Netbank as First Institutional Partner, Opening Its SME Lending Infrastructure to Banks and Lenders - Genz Flash  Los Angeles, United States, July 16th, 2026, FinanceWire  Proven on US$20M in Philippine SME loans with a sub-3% NPL rate, Jia’s AI underwriting infrastructure Ossicone is now "
         },
         {
-          "title": "The sovereignty of judgment: Why human intelligence is your startup’s last moat",
-          "url": "https://e27.co/the-sovereignty-of-judgment-why-human-intelligence-is-your-startups-last-moat-20260623/",
-          "source": "e27.co",
-          "pub_date": "2026-07-17T02:15:04+00:00",
-          "summary": "As we move deeper into 2026, the initial efficiency high of AI adoption is being met with a sobering reality: when everyone uses the same models to automate, the result is beige decay, a technically perfect but culturally hollow sameness. Recent findings from the iF Design Trend Report 2026 argue th"
-        },
-        {
-          "title": "Bitcoin at US$63,780: Buying opportunity or trap? The uncomfortable truth",
-          "url": "https://e27.co/bitcoin-at-us63780-buying-opportunity-or-trap-the-uncomfortable-truth-20260717/",
-          "source": "e27.co",
-          "pub_date": "2026-07-17T02:12:10+00:00",
-          "summary": "Bitcoin trades at US$63,780.63, representing more than a 50 per cent correction from the all-time high of US$126,198 it established in October 2025. While the fourth post-halving cycle successfully produced a peak higher than any prior market expansion, the subsequent downward correction has proved "
-        },
-        {
-          "title": "The fatwa lag: How AI is overtaking the system designed to govern Islamic finance",
-          "url": "https://e27.co/the-fatwa-lag-how-ai-is-overtaking-the-system-designed-to-govern-islamic-finance-20260713/",
-          "source": "e27.co",
-          "pub_date": "2026-07-17T02:00:48+00:00",
-          "summary": "A sharia bank in Jakarta asked me last quarter whether their new credit scoring model needed Sharia Supervisory Board review. They had deployed it three months earlier, trained on five years of their own portfolio data, and were preparing to roll it out across their consumer financing book. The risk"
-        },
-        {
-          "title": "Product symbiosis: When two features create unexpected value together",
-          "url": "https://e27.co/product-symbiosis-when-two-features-create-unexpected-value-together-20260713/",
-          "source": "e27.co",
-          "pub_date": "2026-07-17T01:15:35+00:00",
-          "summary": "Product teams usually discuss features as separate units of value. One feature improves activation. Another helps retention. A third supports monetisation. A fourth reduces friction in an important workflow. This way of thinking is useful for planning, but it quietly narrows how teams understand gro"
-        },
-        {
-          "title": "Jia Signs Netbank as First Institutional Partner, Opening Its SME Lending Infrastructure to Banks and Lenders | Currency News |  Financial and Business News | Markets Insider",
-          "url": "https://markets.businessinsider.com/news/currencies/jia-signs-netbank-as-first-institutional-partner-opening-its-sme-lending-infrastructure-to-banks-and-lenders-1036334020",
-          "source": "markets.businessinsider.com",
-          "pub_date": "2026-07-16T18:44:03.000Z",
-          "summary": "Jia Signs Netbank as First Institutional Partner, Opening Its SME Lending Infrastructure to Banks and Lenders | Currency News | Financial and Business News | Markets Insider  # Jia Signs Netbank as First Institutional Partner, Opening Its SME Lending Infrastructure to Banks and Lenders  FinanceWire "
+          "title": "Jia Signs Netbank as First Institutional Partner, Opening Its SME Lending Infrastructure to Banks and Lenders - finanow.com",
+          "url": "https://finanow.com/jia-signs-netbank-as-first-institutional-partner-opening-its-sme-lending-infrastructure-to-banks-and-lenders-3/",
+          "source": "finanow.com",
+          "pub_date": "2026-07-16T18:58:08.000Z",
+          "summary": "Jia Signs Netbank as First Institutional Partner, Opening Its SME Lending Infrastructure to Banks and Lenders - finanow.com  Los Angeles, United States, July 16th, 2026, FinanceWire  Proven on US$20M in Philippine SME loans with a sub-3% NPL rate, Jia’s AI underwriting infrastructure Ossicone is now"
         },
         {
           "title": "Mandrake Bio Raises ₹16 Crore in Pre-Seed Funding to Advance AI-Powered Protein Design Platform - Entrepreneur News Network",
@@ -7226,13 +7512,6 @@
           "source": "entrepreneurnewsnetwork.com",
           "pub_date": "2026-07-16T18:24:24.000Z",
           "summary": "Mandrake Bio Raises ₹16 Crore in Pre-Seed Funding to Advance AI-Powered Protein Design Platform - Entrepreneur News Network  ☀️  Bengaluru: AI-driven biotechnology startup Mandrake Bio has secured approximately ₹16 crore in a pre-seed funding round co-led by Activate and Antler, marking a significan"
-        },
-        {
-          "title": "Mandrake Bio raises Rs 16 crore for AI gene-editing platform | IndiaAIPulse",
-          "url": "https://www.indiaaipulse.com/en/news/mandrake-bio-raises-rs-16-crore-for-ai-gene-editing",
-          "source": "indiaaipulse.com",
-          "pub_date": "2026-07-16T18:05:27.000Z",
-          "summary": "Mandrake Bio raises Rs 16 crore for AI gene-editing platform | IndiaAIPulse  TL;DR: Mandrake Bio has raised Rs 16 crore to build programmable gene-editing enzymes using generative AI, initially targeting agriculture while exploring broader healthcare applications, according to ET.  ## Mandrake Bio a"
         },
         {
           "title": "Singapore's Rize raises $31m Series B led by BNP Paribas Asset Management",
@@ -7256,13 +7535,6 @@
           "summary": "Aina Raises $5.5 Mn From Info Edge, Others To Build AI Hardware Interface  News  SUMMARY  Aina has emerged from stealth with a $5.5 Mn seed round to bring its AI-native hardware interface to market  The fundraise positions Aina among the early Indian startups betting on AI-first hardware as the next"
         },
         {
-          "title": "Aina raises $5.5M for AI interface beyond touchscreens and keyboards - Business Partner Magazine",
-          "url": "https://businesspartnermagazine.com/aina-raises-5-point-5m-for-ai-interface-beyond-touchscreens-and-keyboards/",
-          "source": "businesspartnermagazine.com",
-          "pub_date": "2026-07-16T12:00:00.000Z",
-          "summary": "Aina raises $5.5M for AI interface beyond touchscreens and keyboards - Business Partner Magazine  Click here to get this post in PDF  Too long to read? Enter your email to download this post as a PDF. We will also send you our best business tips every 2 weeks in our newsletter. You can unsubscribe a"
-        },
-        {
           "title": "Wreltik Makes Brain Response AI Available in India",
           "url": "https://startupsandinvestors.com/wreltik-neuroscience-content-analytics/",
           "source": "startupsandinvestors.com",
@@ -7281,7 +7553,7 @@
           "url": "https://inc42.com/features/former-rippling-cofounder-prasanna-sankar-raises-15-mn-for-vorflux-after-0xppl-shutdown/",
           "source": "inc42.com",
           "pub_date": "2026-07-16T09:38:38.000Z",
-          "summary": "Former Rippling Cofounder Prasanna Sankar Raises $15 Mn For Vorflux After 0xPPL Shutdown  SUMMARY  AI software engineering startup Vorflux has raised $15 Mn in a seed funding round led by Peak XV Partners, with participation from Y Combinator, Powerset, Alliance and prominent Silicon Valley founders"
+          "summary": "Former Rippling Cofounder Prasanna Sankar Raises $15 Mn For Vorflux After 0xPPL Shutdown  News  SUMMARY  AI software engineering startup Vorflux has raised $15 Mn in a seed funding round led by Y Combinator, with participation from Peak XV Partners, Powerset, Alliance and prominent Silicon Valley fo"
         },
         {
           "title": "Inside Collab Desk's Bid to Build the Trust Layer for India's Creator Economy - The Hindustan Wires",
@@ -7291,11 +7563,11 @@
           "summary": "Inside Collab Desk's Bid to Build the Trust Layer for India's Creator Economy - The Hindustan Wires  Breaking  Leadership Beyond the Battlefield: Transforming Human Potential Dr. Vasuki: Healing Minds, Empowering Professionals, Transforming Society Stranded Alone in Malaysia With No Money in His Poc"
         },
         {
-          "title": "Singapore's agritech Rize raises $31m to scale low-emission rice farming in Vietnam, Indonesia - TNGlobal",
-          "url": "https://technode.global/2026/07/16/singapores-agritech-rize-raises-31m-to-scale-low-emission-rice-farming-in-vietnam-indonesia/",
-          "source": "technode.global",
-          "pub_date": "2026-07-16T07:08:32.000Z",
-          "summary": "Singapore's agritech Rize raises $31m to scale low-emission rice farming in Vietnam, Indonesia - TNGlobal  ## Singapore's agritech Rize raises $31m to scale low-emission rice farming in Vietnam, Indonesia  Singapore’s Rize, an agricultural technology company working to reduce emissions from rice cul"
+          "title": "Mandrake Bio raises Rs 16 crore pre-seed funding co-led by Activate, Antler",
+          "url": "https://www.moneycontrol.com/news/business/funding/mandrake-bio-raises-rs-16-crore-pre-seed-funding-co-led-by-activate-antler-13975423.html",
+          "source": "moneycontrol.com",
+          "pub_date": "2026-07-16T05:33:53.000Z",
+          "summary": "Mandrake Bio raises Rs 16 crore pre-seed funding co-led by Activate, Antler  Trending Topics  # Mandrake Bio raises Rs 16 crore pre-seed funding co-led by Activate, Antler  The capital will be used to expand Mandrake Bio's AI protein-design platform, hire researchers and validate its gene-editing en"
         },
         {
           "title": "S’pore MOM lists 57 common occupations paying a median of S$100,000 per year or more",
@@ -7303,25 +7575,88 @@
           "source": "vulcanpost.com",
           "pub_date": "2026-07-16T03:25:24+00:00",
           "summary": "Disclaimer: Unless otherwise stated, any opinions expressed below belong solely to the author. Data sourced from Singapore&#8217;s Ministry of Manpower. It&#8217;s this time of the year again, when Singapore&#8217;s Ministry of Manpower releases its latest salary data for over 420 common occupations"
+        },
+        {
+          "title": "Jia Signs Netbank as First Institutional Partner, Opening Its SME Lending Infrastructure to Banks and Lenders – Finance Ronin",
+          "url": "https://financeronin.com/2026/07/16/jia-signs-netbank-as-first-institutional-partner-opening-its-sme-lending-infrastructure-to-banks-and-lenders-2/",
+          "source": "financeronin.com",
+          "pub_date": "2026-07-16T00:00:00.000Z",
+          "summary": "Jia Signs Netbank as First Institutional Partner, Opening Its SME Lending Infrastructure to Banks and Lenders – Finance Ronin  # Jia Signs Netbank as First Institutional Partner, Opening Its SME Lending Infrastructure to Banks and Lenders  - July 16, 2026 - by financeronin_m4jclb  Los Angeles, Unite"
+        },
+        {
+          "title": "Jia Signs Netbank as First Institutional Partner, Opening Its SME Lending Infrastructure to Banks and Lenders – Champions Buzz",
+          "url": "https://www.championsbuzz.com/2026/07/16/jia-signs-netbank-as-first-institutional-partner-opening-its-sme-lending-infrastructure-to-banks-and-lenders/",
+          "source": "championsbuzz.com",
+          "pub_date": "2026-07-16T00:00:00.000Z",
+          "summary": "Jia Signs Netbank as First Institutional Partner, Opening Its SME Lending Infrastructure to Banks and Lenders – Champions Buzz  # Jia Signs Netbank as First Institutional Partner, Opening Its SME Lending Infrastructure to Banks and Lenders  - July 16, 2026 - by Cloud PR Wire  Los Angeles, United Sta"
+        },
+        {
+          "title": "Built raises $2M for natural movement footwear in India | Logicity",
+          "url": "https://logicity.in/en/blog/built-raises-2m-for-natural-movement-footwear-in-india",
+          "source": "logicity.in",
+          "pub_date": "2026-07-15T21:46:51.000Z",
+          "summary": "Built raises $2M for natural movement footwear in India | Logicity  All posts  Trending Tech  # Built raises $2M for natural movement footwear in India  Manaal Khan  July 16, 2026 at 3:16 AM  4 min read  Advertisement  ### Key Takeaways  Source: Tech-Economic Times  - Built raised $2 million led by "
         }
       ],
-      "cached_at": "2026-07-19T05:43:31.702981"
+      "cached_at": "2026-07-20T06:02:25.266532"
     },
     "emerging": {
       "articles": [
+        {
+          "title": "CNCure and Portrai Team Up on AI-Based Next-Generation Cancer Drugs - Seoul Economic Daily",
+          "url": "https://en.sedaily.com/finance/2026/07/20/cncure-and-portrai-team-up-on-ai-based-next-generation",
+          "source": "en.sedaily.com",
+          "pub_date": "2026-07-20T00:51:53.000Z",
+          "summary": "CNCure and Portrai Team Up on AI-Based Next-Generation Cancer Drugs - Seoul Economic Daily[Skip to main content](#main-content) [![Samsung Newsroom](https://en.sedaily.com/ad-samsung-newsroom.gif)](https://news.samsung.com/global/) [Seoul Economic Daily](https://en.sedaily.com/) [Seoul Economic Dail"
+        },
+        {
+          "title": "How to Disable Music Videos in Spotify",
+          "url": "https://www.wired.com/story/how-to-disable-all-the-music-videos-in-spotify/",
+          "source": "wired.com",
+          "pub_date": "2026-07-19T11:00:00+00:00",
+          "summary": "A recent update made video playback the default for songs and podcasts with a visual component. If you just want to listen to music—and save your data and battery—follow these tips."
+        },
+        {
+          "title": "Best Power Banks (2026): My Picks After Testing Over 100",
+          "url": "https://www.wired.com/gallery/best-portable-chargers-power-banks/",
+          "source": "wired.com",
+          "pub_date": "2026-07-19T11:00:00+00:00",
+          "summary": "Keep your phone, laptop, handheld gaming console, and other electronics running with these travel-friendly power banks."
+        },
+        {
+          "title": "The 10 Best Electrolyte Powders (We Tested Over 20)",
+          "url": "https://www.wired.com/story/best-electrolyte-powders/",
+          "source": "wired.com",
+          "pub_date": "2026-07-19T10:32:00+00:00",
+          "summary": "Get those lost minerals back with the help of our top electrolyte powders, tablets, drops, and chews for athletes, partiers, and everyone in between."
+        },
+        {
+          "title": "The Search for Another Earth-Like Planet Just Took a Big Step Forward",
+          "url": "https://www.wired.com/story/search-for-earth-like-planet-step-forward/",
+          "source": "wired.com",
+          "pub_date": "2026-07-19T10:00:00+00:00",
+          "summary": "Astronomers have discovered a rocky exoplanet that has an atmosphere and sits within the habitable zone of a solar system."
+        },
+        {
+          "title": "FIFA’s World Cup Halftime Show Puts American-Style Spectacle on the World Stage",
+          "url": "https://www.wired.com/story/fifa-world-cup-halftime-show-what-to-expect/",
+          "source": "wired.com",
+          "pub_date": "2026-07-19T09:00:00+00:00",
+          "summary": "Organizers want the show to be the most-viewed halftime show in history. Having Shakira, Justin Bieber, Coldplay, and BTS will surely help—but do soccer fans want it?"
+        },
+        {
+          "title": "How To Watch the 2026 FIFA World Cup Finals: Spain vs. Argentina",
+          "url": "https://www.wired.com/story/how-to-watch-the-fifa-2026-world-cup-07-19-2026/",
+          "source": "wired.com",
+          "pub_date": "2026-07-19T09:00:00+00:00",
+          "summary": "The end of the FIFA Men’s World Cup is nigh. Here’s how to watch the final games and the first ever World Cup halftime show."
+        },
         {
           "title": "4 Best Walking Pads for Small Spaces and Standing Desks (2026)",
           "url": "https://www.wired.com/story/best-walking-pads/",
           "source": "wired.com",
           "pub_date": "2026-07-18T11:03:00+00:00",
           "summary": "Our remote team clocked serious hours walking, working, and sometimes jogging to find the best under-desk treadmills for home offices and small spaces."
-        },
-        {
-          "title": "Your Period Tracker Is (Probably) Spying on You",
-          "url": "https://www.wired.com/story/security-news-this-week-your-period-tracker-is-probably-spying-on-you/",
-          "source": "wired.com",
-          "pub_date": "2026-07-18T10:30:00+00:00",
-          "summary": "Plus: Russian cyberspies turn to infrastructure hacking, DHS repeatedly fails to realize it’d been hacked, a breach exposes an AI music generator’s scraping ways, and more."
         },
         {
           "title": "The Best Motion Sensors and Home Security Gadgets Without Cameras",
@@ -7331,11 +7666,11 @@
           "summary": "If you prefer not to have cameras in and around your home, try one of these more private, WIRED-tested security devices."
         },
         {
-          "title": "How Google’s New Gemini Rates Work and How to Track Your Usage",
-          "url": "https://www.wired.com/story/how-googles-new-gemini-rates-work-and-how-to-track-your-usage/",
+          "title": "Your Period Tracker Is (Probably) Spying on You",
+          "url": "https://www.wired.com/story/security-news-this-week-your-period-tracker-is-probably-spying-on-you/",
           "source": "wired.com",
-          "pub_date": "2026-07-18T10:00:00+00:00",
-          "summary": "Now that Google has changed how its usage quotas are tallied, you might not get as many AI responses as you did before."
+          "pub_date": "2026-07-18T10:30:00+00:00",
+          "summary": "Plus: Russian cyberspies turn to infrastructure hacking, DHS repeatedly fails to realize it’d been hacked, a breach exposes an AI music generator’s scraping ways, and more."
         },
         {
           "title": "FIFA Doesn’t Have a Plan to Deal With Climate Change",
@@ -7345,32 +7680,18 @@
           "summary": "This year’s World Cup has faced sweltering heat and humidity. Now it may need to deal with wildfire smoke."
         },
         {
+          "title": "How Google’s New Gemini Rates Work and How to Track Your Usage",
+          "url": "https://www.wired.com/story/how-googles-new-gemini-rates-work-and-how-to-track-your-usage/",
+          "source": "wired.com",
+          "pub_date": "2026-07-18T10:00:00+00:00",
+          "summary": "Now that Google has changed how its usage quotas are tallied, you might not get as many AI responses as you did before."
+        },
+        {
           "title": "Balmuda NatureWind Studio Review: A Better Breeze",
           "url": "https://www.wired.com/review/balmuda-naturewind-studio-fan/",
           "source": "wired.com",
           "pub_date": "2026-07-18T09:32:00+00:00",
           "summary": "Balmuda has engineered a remarkably pleasant breeze with its new NatureWind Studio, but is it worth hundreds more than its competition?"
-        },
-        {
-          "title": "The Best Tech for Back to School",
-          "url": "https://www.wired.com/story/best-tech-gear-back-to-school/",
-          "source": "wired.com",
-          "pub_date": "2026-07-18T09:01:00+00:00",
-          "summary": "Get ready to crush your coursework or scoot to class in style with these back-to-school gear picks."
-        },
-        {
-          "title": "Prompt Injection Attacks Are Thwarting AI Hacking Agents",
-          "url": "https://www.wired.com/story/prompt-injection-attacks-are-thwarting-ai-hacking-agents/",
-          "source": "wired.com",
-          "pub_date": "2026-07-18T09:00:00+00:00",
-          "summary": "“Context bombing” tricks malicious AI agents into shutting down before they can do harm."
-        },
-        {
-          "title": "SteelSeries Coupon Codes: 15% Off in July 2026",
-          "url": "https://www.wired.com/story/steelseries-coupon-code/",
-          "source": "wired.com",
-          "pub_date": "2026-07-18T05:00:00+00:00",
-          "summary": "Find the best SteelSeries coupon codes, promo codes, and discount codes for May 2026. Get deals on headsets, keyboards, and mice, including first-order and student discounts."
         },
         {
           "title": "Kimi K3: The DeepSeek Moment Moves Into Chip Design",
@@ -7394,32 +7715,11 @@
           "summary": "Databricks has remade its image into an AI company and has published research on the cost savings of open weight AI models for coding."
         },
         {
-          "title": "AWS Billing Glitch Hits Customers With Billion-Dollar Fees",
-          "url": "https://www.wired.com/story/amazon-web-services-glitch-oh-no/",
-          "source": "wired.com",
-          "pub_date": "2026-07-17T19:50:38+00:00",
-          "summary": "An error with the cloud computing giant’s billing operation caused some customers’ monthly bills to rise from a few cents to billions of dollars."
-        },
-        {
           "title": "Nuclear startup Valar Atomics in talks to raise new funding at $6B valuation",
           "url": "https://techcrunch.com/2026/07/17/nuclear-startup-valar-atomics-in-talks-to-raise-new-funding-at-6b-valuation/",
           "source": "techcrunch.com",
           "pub_date": "2026-07-17T19:22:00+00:00",
           "summary": "The potential deal highlights a growing trend of complex, multi-stage funding rounds that mask true entry prices."
-        },
-        {
-          "title": "What Cities From Chicago to Washington, DC, Look Like Under a Blanket of Wildfire Smoke",
-          "url": "https://www.wired.com/story/cities-from-chicago-to-washington-dc-look-like-wildfire-smoke/",
-          "source": "wired.com",
-          "pub_date": "2026-07-17T19:17:46+00:00",
-          "summary": "The US is home to some of the most polluted air on the planet as smoke from 120 out-of-control Canadian wildfires drifts across the border."
-        },
-        {
-          "title": "Polymarket’s Corporate Structure Is a Mystery—Even to Some of Its Former Employees",
-          "url": "https://www.wired.com/story/whats-up-with-polymarkets-panama-entity/",
-          "source": "wired.com",
-          "pub_date": "2026-07-17T18:30:00+00:00",
-          "summary": "The prediction market’s Panamanian operation seems odd, even for a company whose CEO had his apartment raided by FBI agents."
         },
         {
           "title": "This Graduate Student Equips NASA’s Robots With Assembly Skills",
@@ -7461,7 +7761,7 @@
           "url": "https://pulse2.com/airhive-acquires-carbyon-to-create-european-direct-air-capture-technology-leader/",
           "source": "pulse2.com",
           "pub_date": "2026-07-17T12:09:34.000Z",
-          "summary": "Airhive Acquires Carbyon To Create European Direct Air Capture Technology Leader  # Airhive Acquires Carbyon To Create European Direct Air Capture Technology Leader  By Amit Chowdhry • Yesterday at 8:09 AM  Airhive Acquires Carbyon To Create European Direct Air Capture Technology Leader  Airhive has"
+          "summary": "Airhive Acquires Carbyon To Create European Direct Air Capture Technology Leader  # Airhive Acquires Carbyon To Create European Direct Air Capture Technology Leader  By Amit Chowdhry • Jul 17, 2026  Airhive Acquires Carbyon To Create European Direct Air Capture Technology Leader  Airhive has acquire"
         },
         {
           "title": "British aerospace technology company Greenjets raises €35 million Series A with NATO backing | EU-Startups",
@@ -7534,13 +7834,6 @@
           "summary": "In the eastern Indian Ocean, south of Java in the vast sea stretching toward Australia, a fishing vessel slightly alters its course while operating near the boundary of its authorized fishing ground. Nothing appears unusual on deck. Nets remain in the water. Engines maintain a steady speed. To the c"
         },
         {
-          "title": "Cadence Introduces AuraStack AI Super Agent, the World’s First Agentic AI Platform for PCB and Advanced Packaging - Semiconductor for You",
-          "url": "https://www.semiconductorforu.com/cadence-introduces-aurastack-ai-super-agent-the-worlds-first-agentic-ai-platform-for-pcb-and-advanced-packaging/",
-          "source": "semiconductorforu.com",
-          "pub_date": "2026-07-16T11:57:50.000Z",
-          "summary": "Cadence Introduces AuraStack AI Super Agent, the World’s First Agentic AI Platform for PCB and Advanced Packaging - Semiconductor for You  No Result  View All Result  No Result  View All Result  No Result  View All Result  # Cadence Introduces AuraStack AI Super Agent, the World’s First Agentic AI P"
-        },
-        {
           "title": "Ultrahuman’s former hardware VP raises $5.5M for devices that control AI agents, not just record you",
           "url": "https://techcrunch.com/2026/07/16/ultrahumans-former-hardware-vp-raises-5-5m-for-devices-that-control-ai-agents-not-just-record-you/",
           "source": "techcrunch.com",
@@ -7548,18 +7841,11 @@
           "summary": "Aina is going to pilot a new device in the coming weeks."
         },
         {
-          "title": "China AI Robotics Startup Walden Robotics Raised $300 Million at $1.1 Billion Valuation, Founded in 2026 by Russ Tedrake, Ben Burchfiel, Kerri Fetzer-Borelli, Dave Johnson, Adrien Gaidon, Siyuan Feng & Rares Ambrus, Investors Include Toyota, Deviation Capital, NVIDIA, Boeing, AE Ventures, Samsung Ventures, Prologis Ventures, CoreWeave Ventures, Calibrate Ventures, Colle Capital, Shine Capital, NextView Ventures, Squarepoint Capital, One Madison Group, KAS Venture Partners & Menlo Ventures | Caproasia",
-          "url": "https://www.caproasia.com/2026/07/16/china-ai-robotics-startup-walden-robotics-raised-300-million-at-1-1-billion-valuation-founded-in-2026-by-russ-tedrake-ben-burchfiel-kerri-fetzer-borelli-dave-johnson-adrien-gaidon-siyuan-feng/",
-          "source": "caproasia.com",
-          "pub_date": "2026-07-16T11:10:28.000Z",
-          "summary": "China AI Robotics Startup Walden Robotics Raised $300 Million at $1.1 Billion Valuation, Founded in 2026 by Russ Tedrake, Ben Burchfiel, Kerri Fetzer-Borelli, Dave Johnson, Adrien Gaidon, Siyuan Feng & Rares Ambrus, Investors Include Toyota, Deviation Capital, NVIDIA, Boeing, AE Ventures, Samsung Ve"
-        },
-        {
           "title": "TYLsemi Emerges From Stealth With $43 Million to Rebuild AI Chip Supply Chains - Startup Fortune",
           "url": "https://startupfortune.com/tylsemi-emerges-from-stealth-with-43-million-to-rebuild-ai-chip-supply-chains/",
           "source": "startupfortune.com",
           "pub_date": "2026-07-16T09:25:32.000Z",
-          "summary": "TYLsemi Emerges From Stealth With $43 Million to Rebuild AI Chip Supply Chains - Startup Fortune  Search  SF Jul 18, 2026 · 3:03 PM  Subscribe✉  Most Read  Google Delays Gemini 3.5 Pro Launch… Anthropic Resets Claude Code Usage Limits… Hyundai takes full control of Boston… Binance loses access to th"
+          "summary": "TYLsemi Emerges From Stealth With $43 Million to Rebuild AI Chip Supply Chains - Startup Fortune  Search  SF Jul 20, 2026 · 5:02 AM  Subscribe✉  Most Read  Google Delays Gemini 3.5 Pro Launch… Anthropic Resets Claude Code Usage Limits… Hyundai takes full control of Boston… Binance loses access to th"
         },
         {
           "title": "Cambridge’s Silicon Microgravity secures €7.08 million to scale its GPS-free sensing and navigation tech | EU-Startups",
@@ -7583,11 +7869,25 @@
           "summary": "SWISSto12 raises $70M Series C to scale multi-orbit business - Tech.eu  NOTIFICATIONS  Sign in to your account, or Sign up to stay up to date with the hottest European tech startup news.  Sign in  Sign up  Search on Tech.eu...  Sign in to your account, or Sign up to stay up to date with the hottest "
         },
         {
+          "title": "Cadence Introduces AuraStack AI Super Agent, the World’s First Agentic AI Platform for PCB and Advanced Packaging",
+          "url": "https://chiplet-marketplace.com/insights/news/cadence-aurastack-ai-super-agent-pcb-advanced-packaging",
+          "source": "chiplet-marketplace.com",
+          "pub_date": "2026-07-16T05:44:23.000Z",
+          "summary": "Cadence Introduces AuraStack AI Super Agent, the World’s First Agentic AI Platform for PCB and Advanced Packaging  # Cadence Introduces AuraStack AI Super Agent, the World’s First Agentic AI Platform for PCB and Advanced Packaging  ## Running on Allegro AI Studio, the AuraStack AI Super Agent delive"
+        },
+        {
           "title": "Singularity Launches With $80M Series A to Scale Low-Cost Air Defense | DevCuration",
           "url": "https://devcuration.com/articles/singularity-launches-with-80m-series-a-to-scale-low-cost-air-defense",
           "source": "devcuration.com",
           "pub_date": "2026-07-16T04:00:28.000Z",
-          "summary": "Singularity Launches With $80M Series A to Scale Low-Cost Air Defense | DevCuration  Latest  Goldman Sachs| Hiring Cheat Codes Every Founder Needs: TriNet, Supermoon and Resident NYC Workshop| Applitools| Walden Robotics Raises $300M to Put Physical AI to Work| Pure Raises $8M Seed for Real Money Ga"
+          "summary": "Singularity Launches With $80M Series A to Scale Low-Cost Air Defense | DevCuration  Latest  Funded Female Founders V Signals a New Standard for Venture Deal Flow| Anthropic & Vapi Preview AI Voice at July 22 CX Webinar| Unconventional AI| A.Capital| Blue Energy Lands Constellation Investment for Nu"
+        },
+        {
+          "title": "Lululemon backs nylon-recycling startup Syntetica in $30M Series A",
+          "url": "https://techcrunch.com/2026/07/15/lululemon-backs-nylon-recycling-startup-syntetica-in-30m-series-a/",
+          "source": "techcrunch.com",
+          "pub_date": "2026-07-16T04:00:00+00:00",
+          "summary": "Syntetica, a French startup that has developed a novel approach to recycling nylon, has already obtained big-name partners and investors."
         },
         {
           "title": "Applied Computing wants to give oil and gas operators an AI model for the entire plant",
@@ -7597,11 +7897,11 @@
           "summary": "Applied Computing has raised a $20M Series A to build a foundation AI model for the oil, gas and petrochemical industry."
         },
         {
-          "title": "Lululemon backs nylon-recycling startup Syntetica in $30M Series A",
-          "url": "https://techcrunch.com/2026/07/15/lululemon-backs-nylon-recycling-startup-syntetica-in-30m-series-a/",
-          "source": "techcrunch.com",
-          "pub_date": "2026-07-16T04:00:00+00:00",
-          "summary": "Syntetica, a French startup that has developed a novel approach to recycling nylon, has already obtained big-name partners and investors."
+          "title": "KULR Selected by Icarus Robotics to Power Free-Flying Robotic Platform Bound for the International Space Station | Daily Guardian",
+          "url": "https://dailyguardian.ca/kulr-selected-by-icarus-robotics-to-power-free-flying-robotic-platform-bound-for-the-international-space-station/",
+          "source": "dailyguardian.ca",
+          "pub_date": "2026-07-15T22:14:47.000Z",
+          "summary": "KULR Selected by Icarus Robotics to Power Free-Flying Robotic Platform Bound for the International Space Station | Daily Guardian  Close Menu  Velvære Park City Selects Christie’s International Real Estate as Exclusive Sales and Marketing Brokerage  Claude can now use your 1Password credentials for "
         },
         {
           "title": "When Career Risks Are Worth Taking",
@@ -7667,18 +7967,18 @@
           "summary": "ELIZA is remembered as the world’s first AI star, a kindly therapist in chatbot form that gently probed users’ worries. Even its creator, Joseph Weizenbaum, was surprised by the warm reception given to his experiment in human-machine interaction. For some, it heralded an age of automated psychothera"
         },
         {
+          "title": "KULR Selected by Icarus Robotics to Power Free-Flying Robotic Platform Bound for the International Space Station",
+          "url": "https://kulr.ai/kulr-selected-by-icarus-robotics-to-power-free-flying-robotic-platform-bound-for-the-international-space-station/",
+          "source": "kulr.ai",
+          "pub_date": "2026-07-15T15:06:43.000Z",
+          "summary": "KULR Selected by Icarus Robotics to Power Free-Flying Robotic Platform Bound for the International Space Station  - Announcements - July 15, 2026  # KULR Selected by Icarus Robotics to Power Free-Flying Robotic Platform Bound for the International Space Station  KULR ONE Space to power Icarus Roboti"
+        },
+        {
           "title": "Katalyze AI Raises $10.5M to Build the Agentic Operating System for Pharmaceutical Companies",
           "url": "https://theaiinsider.tech/2026/07/15/katalyze-ai-raises-10-5m-to-build-the-agentic-operating-system-for-pharmaceutical-companies/",
           "source": "theaiinsider.tech",
           "pub_date": "2026-07-15T14:00:09.000Z",
           "summary": "Katalyze AI Raises $10.5M to Build the Agentic Operating System for Pharmaceutical Companies  - AI Funding & Investment  # Katalyze AI Raises $10.5M to Build the Agentic Operating System for Pharmaceutical Companies  - James Dargan - July 15, 2026 - 7 min read  Insider Brief  - Katalyze AI, the agen"
-        },
-        {
-          "title": "KULR Selected by Icarus Robotics to Power Free-Flying Robotic Platform Bound for the International Space Station",
-          "url": "https://kulr.ai/kulr-selected-by-icarus-robotics-to-power-free-flying-robotic-platform-bound-for-the-international-space-station/",
-          "source": "kulr.ai",
-          "pub_date": "2026-07-15T13:01:52.000Z",
-          "summary": "KULR Selected by Icarus Robotics to Power Free-Flying Robotic Platform Bound for the International Space Station  - Announcements - July 15, 2026  # KULR Selected by Icarus Robotics to Power Free-Flying Robotic Platform Bound for the International Space Station  KULR ONE Space to power Icarus Roboti"
         },
         {
           "title": "China Develops Its First 3.5D \"Infinity Chiplet\" & 3D DRAM Tech As It Tackles External HBM Constraints Through Domestic AI Supply Chain",
@@ -7688,11 +7988,18 @@
           "summary": "China Develops Its First 3.5D \"Infinity Chiplet\" & 3D DRAM Tech As It Tackles External HBM Constraints Through Domestic AI Supply Chain  # China Develops Its First 3.5D “Infinity Chiplet” & 3D DRAM Tech As It Tackles External HBM Constraints Through Domestic AI Supply Chain  China's DFSX is working "
         },
         {
-          "title": "OpenAI researcher Miles Wang in talks to launch AI drug discovery startup valued at $2B | TechCrunch",
-          "url": "https://techcrunch.com/2026/07/14/openai-researcher-miles-wang-in-talks-to-launch-ai-drug-discovery-startup-valued-at-2b/",
-          "source": "techcrunch.com",
-          "pub_date": "2026-07-15T00:27:04.000Z",
-          "summary": "OpenAI researcher Miles Wang in talks to launch AI drug discovery startup valued at $2B | TechCrunch  Image Credits:Andrew Brookes / Getty Images  Biotech & Health  Copy Share Link  # OpenAI researcher Miles Wang in talks to launch AI drug discovery startup valued at $2B  Marina Temkin  5:27 PM PDT "
+          "title": "Latent Labs Launches Latent-Y to Researchers Worldwide — With Free Daily Access and On-Demand Credits for Larger Campaigns | Morningstar",
+          "url": "https://www.morningstar.com/news/business-wire/20260715684640/latent-labs-launches-latent-y-to-researchers-worldwide-with-free-daily-access-and-on-demand-credits-for-larger-campaigns",
+          "source": "morningstar.com",
+          "pub_date": "2026-07-15T07:00:00.000Z",
+          "summary": "Latent Labs Launches Latent-Y to Researchers Worldwide — With Free Daily Access and On-Demand Credits for Larger Campaigns | Morningstar  Sign In  Latent Labs Launches Latent-Y to Researchers Worldwide — With Free Daily Access and On-Demand Credits for Larger Campaigns  - Latent-Y, the first lab-val"
+        },
+        {
+          "title": "Latent Labs launches Latent-Y to researchers worldwide — with free daily access and on-demand credits for larger campaigns - Latent Labs",
+          "url": "https://www.latentlabs.com/press-release/latent-labs-launches-latent-y-to-researchers-worldwide/",
+          "source": "latentlabs.com",
+          "pub_date": "2026-07-15T00:30:23.000Z",
+          "summary": "Latent Labs launches Latent-Y to researchers worldwide — with free daily access and on-demand credits for larger campaigns - Latent Labs  # Latent Labs launches Latent-Y to researchers worldwide — with free daily access and on-demand credits for larger campaigns  Share:  Share  ## Latent-Y, the firs"
         },
         {
           "title": "Singularity lands $80M at $400M valuation to build cheap drone interceptors - SiliconANGLE",
@@ -7713,70 +8020,56 @@
           "url": "https://synbiointel.com/news/baker-lab-de-novo-antibodies-xaira-therapeutics-2026/",
           "source": "synbiointel.com",
           "pub_date": "2026-07-14T18:42:30.000Z",
-          "summary": "Baker Lab's De Novo Antibodies Bind Any Epitope — synbiointel.com  Terminal/ Newsfeed/Baker Lab's De Novo Antibodies Bind Any …  BREAKING  # Baker Lab's De Novo Antibodies Bind Any Epitope  Published: July 14, 2026 at 14:42 EDTLast updated: July 15, 2026 at 05:40 EDTBy Priya Iyer, Senior EditorLast "
-        },
-        {
-          "title": "How I Turned AI to the Dark Side",
-          "url": "https://spectrum.ieee.org/jailbreaking-llms",
-          "source": "spectrum.ieee.org",
-          "pub_date": "2026-07-14T15:59:35+00:00",
-          "summary": "Summary  Researcher Dave Kuszmar discovered multiple systemic vulnerabilities that let him bypass LLM safety and obtain dangerous instructions. These exploits worked across nearly all major LLMs revealing an industry-wide security problem. Kuszmar calls for slowing deployment, increasing transparenc"
-        },
-        {
-          "title": "Chai Discovery Raises $400M to Accelerate AI-Driven Molecular Design Platform",
-          "url": "https://hitconsultant.net/2026/07/14/chai-discovery-raises-400-million-series-c/",
-          "source": "hitconsultant.net",
-          "pub_date": "2026-07-14T15:31:49.000Z",
-          "summary": "Chai Discovery Raises $400M to Accelerate AI-Driven Molecular Design Platform  - Skip to main content - Skip to secondary menu - Skip to primary sidebar - Skip to secondary sidebar - Skip to footer  ### What You Should Know  - Structural biology and AI drug design pioneer Chai Discovery has announce"
+          "summary": "Baker Lab's De Novo Antibodies Bind Any Epitope — synbiointel.com  DNAGinkgo+Platform TWSTTwist+Synthesis ABSIAbsci+AIDesign CRSPCRISPR Therapeutics+Edit BEAMBeam+BaseEdit NTLAIntellia+InVivo CRBUCaribou+CellTherapy RXRXRecursion+AI ILMNIllumina+Seq EDITEditas+Gene FUND.YTD2025$17.3B.Raised  Termina"
         }
       ],
-      "cached_at": "2026-07-19T05:43:31.702981"
+      "cached_at": "2026-07-20T06:02:25.266532"
     },
     "sector_heatmap": [
       {
         "name": "AI / ML",
-        "signals": 223,
+        "signals": 243,
         "sentiment": "bullish"
       },
       {
         "name": "Climate / Clean",
-        "signals": 90,
+        "signals": 110,
         "sentiment": "bullish"
       },
       {
         "name": "Deep Tech",
-        "signals": 24,
+        "signals": 20,
         "sentiment": "bullish"
       },
       {
         "name": "Fintech",
-        "signals": 14,
+        "signals": 15,
         "sentiment": "bullish"
       },
       {
         "name": "Healthtech",
-        "signals": 6,
-        "sentiment": "bullish"
+        "signals": 5,
+        "sentiment": "neutral"
       },
       {
         "name": "Logistics",
-        "signals": 5,
+        "signals": 4,
         "sentiment": "neutral"
       },
       {
         "name": "Consumer / D2C",
-        "signals": 5,
-        "sentiment": "neutral"
-      },
-      {
-        "name": "SaaS / B2B",
-        "signals": 2,
+        "signals": 3,
         "sentiment": "neutral"
       },
       {
         "name": "Edtech",
         "signals": 2,
         "sentiment": "neutral"
+      },
+      {
+        "name": "SaaS / B2B",
+        "signals": 1,
+        "sentiment": "quiet"
       }
     ],
     "portfolio_news": {
@@ -7788,22 +8081,6 @@
           "pub_date": "2026-07-18T17:28:53.000Z",
           "summary": "Paar Autonomy Pioneers Next-Gen AI Perception Layer for Indian Unmanned Vehicles  Search  Tri-Services  # Paar Autonomy Pioneers Next-Gen AI Perception Layer for Indian Unmanned Vehicles  Bengaluru-based deep-tech startup Paar Autonomy is revolutionising unmanned systems by developing multi-sensor p",
           "company": "Sanlayan"
-        },
-        {
-          "title": "Neo Group Bags Huge Rs 350 Cr Round From Peak XV",
-          "url": "https://startupfeed.in/neo-group-350-cr-peak-xv-funding/",
-          "source": "startupfeed.in",
-          "pub_date": "2026-07-18T08:25:34.000Z",
-          "summary": "Neo Group Bags Huge Rs 350 Cr Round From Peak XV  The Peak XV-led round lifts Neo Group’s 2026 capital raise to Rs 900 Cr after TVS Capital’s March investment.  SHARE  Quick Take  - Neo Group signed agreements for Rs 350 Cr ($36.3 Mn) led by Peak XV Partners. - Total client assets stand near Rs 1,30",
-          "company": "Prosperr"
-        },
-        {
-          "title": "HRV Pharma Unveils India's First AI-Native Pharmaceutical",
-          "url": "https://www.passionateinmarketing.com/hrv-pharma-introduces-riko-indias-first-ai-native-pharmaceutical-operating-system/",
-          "source": "passionateinmarketing.com",
-          "pub_date": "2026-07-18T06:32:17.000Z",
-          "summary": "HRV Pharma Unveils India's First AI-Native Pharmaceutical  Search  Sign in  Welcome! Log into your account  your username  your password  Forgot your password? Get help  Password recovery  Recover your password  your email  A password will be e-mailed to you.  Sunday, July 19, 2026  Sign in / Join  ",
-          "company": "GetRight"
         },
         {
           "title": "Fintech SaaS startup Hisabkitab raises undisclosed Seed funding at Rs 20 Cr valuation – Incubees",
@@ -7942,14 +8219,6 @@
           "company": "Enerzolve"
         },
         {
-          "title": "Shark Tank Featured Capsule hotel startup NapTapGo raises ₹8Cr in seed round led by Inflection Point Ventures - Newspatrolling.com",
-          "url": "https://newspatrolling.com/shark-tank-featured-capsule-hotel-startup-naptapgo-raises-%e2%82%b98cr-in-seed-round-led-by-inflection-point-ventures/",
-          "source": "newspatrolling.com",
-          "pub_date": "2026-07-16T05:34:54.000Z",
-          "summary": "Shark Tank Featured Capsule hotel startup NapTapGo raises ₹8Cr in seed round led by Inflection Point Ventures - Newspatrolling.com  Breaking News  - RUFCON 2026 Showcased the Future of Robotic Urology with Focus on Innovation, AI and Advanced Surgical Care - Montra Electric Enhances India Footprint;",
-          "company": "Escape Plan"
-        },
-        {
           "title": "ACME Solar secures Rs 2,647 crore REC funding for peak power project - The Economic Times",
           "url": "https://economictimes.indiatimes.com/industry/renewables/acme-solar-secures-rs-2647-crore-rec-funding-for-peak-power-project/articleshow/132447296.cms",
           "source": "economictimes.indiatimes.com",
@@ -8038,14 +8307,6 @@
           "company": "Distil"
         },
         {
-          "title": "Kapture CX Secures $10 Mn Pre-Series B Funding Led by Bajaj Finserv Ventures to Scale Agentic Enterprise Stack | Morningstar",
-          "url": "https://www.morningstar.com/news/pr-newswire/20260709io00389/kapture-cx-secures-10-mn-pre-series-b-funding-led-by-bajaj-finserv-ventures-to-scale-agentic-enterprise-stack",
-          "source": "morningstar.com",
-          "pub_date": "2026-07-09T14:00:00.000Z",
-          "summary": "Kapture CX Secures $10 Mn Pre-Series B Funding Led by Bajaj Finserv Ventures to Scale Agentic Enterprise Stack | Morningstar  Sign In  Kapture CX Secures $10 Mn Pre-Series B Funding Led by Bajaj Finserv Ventures to Scale Agentic Enterprise Stack  ## Kapture CX Secures $10 Mn Pre-Series B Funding Led",
-          "company": "GetRight"
-        },
-        {
           "title": "AI-powered tax technology is transforming corporate finance and compliance - The HinduBusinessLine",
           "url": "https://www.thehindubusinessline.com/economy/real-time-tax-technology-is-changing-corporate-finance-says-cygnet/article71201718.ece",
           "source": "thehindubusinessline.com",
@@ -8070,30 +8331,6 @@
           "company": "NirogStreet"
         },
         {
-          "title": "Novyte Banks On Agentic AI To Solve The Optimisation Puzzle In Materials Science Novyte Banks On Agentic AI To Solve The Optimisation Puzzle In Materials Science",
-          "url": "https://inc42.com/startups/novyte-banks-on-agentic-ai-to-solve-the-optimisation-puzzle-in-materials-science/",
-          "source": "inc42.com",
-          "pub_date": "2026-07-08T13:28:09.000Z",
-          "summary": "Novyte Banks On Agentic AI To Solve The Optimisation Puzzle In Materials Science Novyte Banks On Agentic AI To Solve The Optimisation Puzzle In Materials Science  AI  SUMMARY  Mumbai-based deeptech startup Novyte Materials is using AI to help chemical companies automate materials R&D, from formulati",
-          "company": "Distil"
-        },
-        {
-          "title": "Indian Women’s Health Startup Avni Wellness Raises $470K Seed Round | Femtech Insider - NEWSx.io",
-          "url": "https://newsx.io/2026/07/08/indian-womens-health-startup-avni-wellness-raises-470k-seed-round-femtech-insider/",
-          "source": "newsx.io",
-          "pub_date": "2026-07-08T09:02:00.000Z",
-          "summary": "Indian Women’s Health Startup Avni Wellness Raises $470K Seed Round | Femtech Insider - NEWSx.io  Avni Wellness co-founders Apurv Agarwal and Sujata Pawar. Image: Avni Wellness  Avni Wellness, a Mumbai-based women’s health startup, has secured Rs 4 crore (approximately $470,000) in seed funding led ",
-          "company": "Coto"
-        },
-        {
-          "title": "From IIT Madras to Global Defence Tech: This Startup Just Raised $2.2 Million to Take On the World | Republic World",
-          "url": "https://www.republicworld.com/education/from-iit-madras-to-global-defence-tech-this-startup-just-raised-22-million-to-take-on-the-world-2026-07-08-131639",
-          "source": "republicworld.com",
-          "pub_date": "2026-07-08T08:14:51.000Z",
-          "summary": "From IIT Madras to Global Defence Tech: This Startup Just Raised $2.2 Million to Take On the World | Republic World  LIVE TV  Updated 8 July 2026 at 13:44 IST  ## Blurgs AI, a deep‑tech startup founded by IIT Madras graduates, has raised $2.2M in its first institutional funding round. Already workin",
-          "company": "Sanlayan"
-        },
-        {
           "title": "BatX Energies Raises ₹105 Crore Series A to Power India’s Battery Recycling - Industrial Front",
           "url": "https://industrialfront.com/batx-energies-raises-%e2%82%b9105-crore-series-a-to-power-indias-battery-recycling/",
           "source": "industrialfront.com",
@@ -8115,14 +8352,6 @@
           "source": "tribunenewsline.co",
           "pub_date": "2026-07-07T04:34:43.000Z",
           "summary": "Karnataka Microalgae Biotechnology Startup Novalgae Closes Seed Round to Turn Ballari's Arid Land into High-Value Spirulina Farms - Tribune Newsline  Thursday, July 16, 2026  - Login  No Result  View All Result  No Result  View All Result  No Result  View All Result  # Karnataka Microalgae Biotechno",
-          "company": "Enerzolve"
-        },
-        {
-          "title": "India-origin battery tech powers Offgrid's first UK manufacturing facility - The Economic Times",
-          "url": "https://economictimes.indiatimes.com/industry/renewables/india-origin-battery-tech-powers-offgrids-first-uk-manufacturing-facility/articleshow/132233903.cms",
-          "source": "economictimes.indiatimes.com",
-          "pub_date": "2026-07-07T00:00:00.000Z",
-          "summary": "India-origin battery tech powers Offgrid's first UK manufacturing facility - The Economic Times  Benchmarks closed  Nifty 23,882.05-516.66  FEATURED FUNDS★★★★★Motilal Oswal Midcap Fund Direct-Growth5Y Return22.71 % Invest Now  Business News› Industry› Renewables›India-origin battery tech powers Offg",
           "company": "Enerzolve"
         },
         {
@@ -8198,14 +8427,6 @@
           "company": "Prosperr"
         },
         {
-          "title": "Triplara.com Founder Announces Triplara™ India App, an Affordable Tourism Experience Platform to Explore Beautiful India – India Story Line",
-          "url": "https://indiastoryline.co.in/triplara-com-founder-announces-triplara-india-app-an-affordable-tourism-experience-platform-to-explore-beautiful-india/",
-          "source": "indiastoryline.co.in",
-          "pub_date": "2026-07-01T11:52:33.000Z",
-          "summary": "Triplara.com Founder Announces Triplara™ India App, an Affordable Tourism Experience Platform to Explore Beautiful India – India Story Line  July 17, 2026  Trending now  ### AVPL Founder Invites Competing Drone Companies to…  ### The Grand Cliff Resort, Munnar Earns Government…  ### JU Agri Sciences",
-          "company": "Escape Plan"
-        },
-        {
           "title": "Why Atomgrid is betting big on speciality chemicals - YourStory.com",
           "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNb29ZSlFMTlVfYk1odGJERUc2enYxMDhwcmJMcjJXckNUeXFKU3JYU3V0TEs1cERmNXF2MkI0U2ZOR1ljcmhGVlFpNFFHSFAzT3QzRDJMNTM3eENsd3FabWV2WmtGd0h0NzI1aXJOWGN3SFkyYU43TUFYeW9oM0lCdjU1UmpQR1E?oc=5",
           "source": "news.google.com",
@@ -8214,11 +8435,19 @@
           "company": "Distil"
         },
         {
+          "title": "Triplara.com Founder Announces Triplara™ India App, an Affordable Tourism Experience Platform to Explore Beautiful India – India Story Line",
+          "url": "https://indiastoryline.co.in/triplara-com-founder-announces-triplara-india-app-an-affordable-tourism-experience-platform-to-explore-beautiful-india/",
+          "source": "indiastoryline.co.in",
+          "pub_date": "2026-07-01T03:46:55.000Z",
+          "summary": "Triplara.com Founder Announces Triplara™ India App, an Affordable Tourism Experience Platform to Explore Beautiful India – India Story Line  July 19, 2026  Trending now  ### Navigating the Payment Maze in Non Gamstop…  ### Test Post Created  ### How to Identify the Best ULIP Plan…  ### How Small Bus",
+          "company": "Escape Plan"
+        },
+        {
           "title": "Cost-effective drones are winning wars, and Unmannd is building the ones that fight back | YourStory",
           "url": "https://yourstory.com/2026/07/unmannd-modern-warfare-drones",
           "source": "yourstory.com",
           "pub_date": "2026-07-01T00:00:00.000Z",
-          "summary": "Cost-effective drones are winning wars, and Unmannd is building the ones that fight back | YourStory  Brands  Discover  Events  Newsletter  More  The Captable  AI Story  SMB Story  HerStory  Social Story  Enterprise Story  YS life  YS Hindi  YS Tamil  YSTV  #### Follow Us  Daily Newsletter  Subscrib",
+          "summary": "Cost-effective drones are winning wars, and Unmannd is building the ones that fight back | YourStory  Sidebar is Loading...  Company Details  | Company Overview | | | --- | --- | | Founded | 2025 (February) | | Headquarters | Bengaluru, Karnataka | | Sector | DeepTech: Defence / Robotics (Physical A",
           "company": "Sanlayan"
         },
         {
@@ -8334,11 +8563,19 @@
           "company": "Sanlayan"
         },
         {
-          "title": "The Rs.60 Crore Playbook: How Noida Startup Blubox Media is Building India's Creator Infrastructure – ThePrint – ANIPressReleases",
-          "url": "https://theprint.in/ani-press-releases/the-rs-60-crore-playbook-how-noida-startup-blubox-media-is-building-indias-creator-infrastructure/2949546/",
-          "source": "theprint.in",
-          "pub_date": "2026-06-03T12:00:45.000Z",
-          "summary": "The Rs.60 Crore Playbook: How Noida Startup Blubox Media is Building India's Creator Infrastructure – ThePrint – ANIPressReleases  ThePrint On Camera  Society & Culture  Science  Events  - Off The Cuff  More  Search  Add ThePrint as a trusted source✕  Monday, July 13, 2026  ThePrint On Camera  Socie",
+          "title": "The Rs.60 Crore Playbook: How Noida Startup Blubox Media is Building India’s Creator Infrastructure – India News Nation",
+          "url": "https://indianewsnation.in/the-rs-60-crore-playbook-how-noida-startup-blubox-media-is-building-indias-creator-infrastructure/",
+          "source": "indianewsnation.in",
+          "pub_date": "2026-06-03T21:33:56.000Z",
+          "summary": "The Rs.60 Crore Playbook: How Noida Startup Blubox Media is Building India’s Creator Infrastructure – India News Nation  Trending now  ### How to Identify the Best ULIP Plan…  ### How Small Businesses Can Plan Loan Repayments…  ### Arvind Subramanian Calls for Renewed Liberal Economic…  ### Book Rev",
+          "company": "Coto"
+        },
+        {
+          "title": "Yes Madam raises maiden Rs 50 Cr funding at Rs 750 Cr valuation | Startup Story",
+          "url": "https://startupstorymedia.com/yes-madam-raises-maiden-rs-50-cr-funding-at-rs-750-cr-valuation/",
+          "source": "startupstorymedia.com",
+          "pub_date": "2026-05-26T14:04:52.000Z",
+          "summary": "Yes Madam raises maiden Rs 50 Cr funding at Rs 750 Cr valuation | Startup Story  Funding Alert Press Release  # Yes Madam raises maiden Rs 50 Cr funding at Rs 750 Cr valuation  - StartupStory| May 26, 2026  Home salon services platform Yes Madam has received maiden funding of Rs 50 crore (approximat",
           "company": "Coto"
         },
         {
@@ -8372,6 +8609,14 @@
           "pub_date": "2026-05-23T10:15:01.000Z",
           "summary": "Experience firsthand the new electric motorbike model from Dat Bike, priced under 30 million VND.  # Experience firsthand the new electric motorbike model from Dat Bike, priced under 30 million VND.  ### On May 22nd, Dat Bike officially launched ERA – a new family electric scooter line aimed at meet",
           "company": "Dat Bike"
+        },
+        {
+          "title": "Voyaah: Reimagining Travel in India Through Hyper-Personalisation, Technology, and Local Immersion - Indian Startup Times",
+          "url": "https://www.indianstartuptimes.com/interviews/voyaah-reimagining-travel-in-india-through-hyper-personalisation-technology-and-local-immersion/",
+          "source": "indianstartuptimes.com",
+          "pub_date": "2026-05-21T13:15:46.000Z",
+          "summary": "Voyaah: Reimagining Travel in India Through Hyper-Personalisation, Technology, and Local Immersion - Indian Startup Times  - Indian Startup Times - May 21, 2026  ## Voyaah: Reimagining Travel in India Through Hyper-Personalisation, Technology, and Local Immersion  In an industry long defined by stan",
+          "company": "Escape Plan"
         },
         {
           "title": "Rare Rabbit Expands D2C Portfolio with Entry into Travel Gear Segment - Indian Retailer",
@@ -8486,12 +8731,28 @@
           "company": "Dat Bike"
         },
         {
+          "title": "Constelli Funding: Defence tech Constelli bags $20 million from General Catalyst, others, ETCIO",
+          "url": "https://cio.economictimes.indiatimes.com/news/corporate-news/defence-tech-constelli-bags-20-million-from-general-catalyst-others/128848965",
+          "source": "cio.economictimes.indiatimes.com",
+          "pub_date": "2026-02-27T00:00:00.000Z",
+          "summary": "Constelli Funding: Defence tech Constelli bags $20 million from General Catalyst, others, ETCIO  - Corporate - 3 min read  # Defence tech Constelli bags $20 million from General Catalyst, others  CEO Satya Gopal Panigrahi said funds will support R&D for next-generation electronic warfare and communi",
+          "company": "Sanlayan"
+        },
+        {
           "title": "SLEEK EV Secures First Closing of US$8.5 Million in Series A funding led by KYMCO Capital, with earlier participation from January Capital, Krungsri Finnovate, and ORZON Ventures",
           "url": "https://www.kymcocapital.com/post/sleek-ev-secures-first-closing-of-us-8-5-million-in-series-a-funding-led-by-kymco-capital-with-earl",
           "source": "kymcocapital.com",
           "pub_date": "2026-02-26T08:04:08.000Z",
           "summary": "SLEEK EV Secures First Closing of US$8.5 Million in Series A funding led by KYMCO Capital, with earlier participation from January Capital, Krungsri Finnovate, and ORZON Ventures  top of page  Sleek EV Pte. Ltd.  Thu, February 5, 2026 at 4:00 PM GMT+8 4 min read  Bangkok, Feb. 05, 2026 (GLOBE NEWSWI",
           "company": "Dat Bike"
+        },
+        {
+          "title": "BESS - Advait Greenergy Private Limited",
+          "url": "https://www.advaitgreenergy.com/our-business/bess/",
+          "source": "advaitgreenergy.com",
+          "pub_date": "2026-02-17T00:00:00.000Z",
+          "summary": "BESS - Advait Greenergy Private Limited  # BESS  ## Battery Energy Storage Systems (BESS)  Advait’s Vision for Energy Innovation  Advait Greenergy Private Limited delivers Battery Energy Storage Systems for utility-scale and industrial applications.  The company provides end-to-end capabilities cove",
+          "company": "Enerzolve"
         },
         {
           "title": "Sleek EV Secures $8.5M Series A First Close Led by KYMCO Capital, Poised to Dominate Thailand's EV Motorcycle Market | BEAMSTART",
@@ -8524,6 +8785,14 @@
           "pub_date": "2026-01-23T10:06:21.000Z",
           "summary": "Meine Electric Raises USD 750,000 Pre-Seed Funding to Scale Iron Air Long Duration Energy Storage Technology - Asia Pacific | Energetica India Magazine  Energy Guide  Guide online Free signup Advertise my Company  Magazine  Free subscription magazine  Last edition May-June 2026  Our bloggers  Bharat",
           "company": "Enerzolve"
+        },
+        {
+          "title": "Whizzo Raises $15M Series A for Materials Science Breakthroughs | Startup Story",
+          "url": "https://startupstorymedia.com/whizzo-raises-15m-series-a-for-materials-science-breakthroughs/",
+          "source": "startupstorymedia.com",
+          "pub_date": "2026-01-20T13:34:46.000Z",
+          "summary": "Whizzo Raises $15M Series A for Materials Science Breakthroughs | Startup Story  # Whizzo Raises $15M Series A for Materials Science Breakthroughs  - StartupStory| January 20, 2026  Whizzo, the Indian materials science startup pioneering next-generation composites for aerospace and automotive sector",
+          "company": "Distil"
         },
         {
           "title": "Materials science startup Whizzo raises $15 million in Series A led by Fundamentum",
@@ -8580,6 +8849,14 @@
           "pub_date": "2026-01-15T18:30:00.000Z",
           "summary": "Ayushya - AI-Powered Ayurvedic Wellness Platform  Holistic AI Health  # Life & Longevity through Ancient Wisdom  Experience the precision of modern AI harmonized with 5000 years of Ayurvedic healing. Discover your Prakruti and restore balance naturally.  Start Your Journey How It Works  8+ Ancient T",
           "company": "NirogStreet"
+        },
+        {
+          "title": "Prosperr.io raises $4m to scale AI tax platform - IBS Intelligence",
+          "url": "https://ibsintelligence.com/ibsi-news/prosperr-io-raises-4m-to-scale-ai-tax-platform/",
+          "source": "ibsintelligence.com",
+          "pub_date": "2026-01-07T04:46:40.000Z",
+          "summary": "Prosperr.io raises $4m to scale AI tax platform - IBS Intelligence  Cedar-IBSi FinTech Labs Analyst Briefings Get in touch IBSi SLT Report  Back  # Prosperr.io raises $4m to scale AI tax platform  ##### By Vriti Gothi  January 07, 2026  - IBSi SLT Report - AI - Cross Border Payments - Digital Bankin",
+          "company": "Prosperr"
         },
         {
           "title": "Advanced Ammunition & Defense Solutions | Divyastra Dynamics",
@@ -8702,6 +8979,14 @@
           "company": "Sanlayan"
         },
         {
+          "title": "About Dat Bike - Dat Bike",
+          "url": "https://dat.bike/en/about-dat-bike/",
+          "source": "dat.bike",
+          "pub_date": "2025-10-21T04:01:21.000Z",
+          "summary": "About Dat Bike - Dat Bike  ## Born from the Vision of a Vietnamese Engineer in Silicon Valley  Dat Bike is a Vietnamese electric motorbike manufacturer, founded in 2019 by Nguyen Ba Canh Son, a talented software engineer who won multiple national and international awards in technology.  Son observed",
+          "company": "Dat Bike"
+        },
+        {
           "title": "Vietnam’s love affair with gas bikes is colliding with a new electric reality - Yahoo Finance",
           "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOMVZheW1fdTZBNi1QX0Jnblp2cDJaLWFnMEFyMllFMjF3RDd6QnRWNVo1ZmZvaFBXRzlObUpzaWRHaGVMckVXVGRTTjJXV1hhMTJuZlVVNFhQN3RZQWV1V0Q0MzZ3NWpvdTZvaUk4elZfT2ZHcDk0bk1Ea29EMldwQw?oc=5",
           "source": "news.google.com",
@@ -8710,18 +8995,10 @@
           "company": "Dat Bike"
         },
         {
-          "title": "Weaver++ | Electric Motorcycle - Dat Bike",
-          "url": "https://dat.bike/en/xe-may-dien-weaver-plus-plus-en/",
-          "source": "dat.bike",
-          "pub_date": "2025-10-16T06:55:45.000Z",
-          "summary": "Weaver++ | Electric Motorcycle - Dat Bike  ## The most perfect bike  ## in Dat Bike’s history  ## Weaver++ is more powerful with a completely newengine system  ## 100km charge in just 20 minutes  All Weaver++ vehicles are equipped with a fast charging port. Feel free to charge at Dat Charge stations",
-          "company": "Dat Bike"
-        },
-        {
           "title": "Distil raises $7.7 million in Series A funding to strengthen specialty chemicals platform - Indian Chemical News",
           "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQeHExdGdELXM3ck5nR2w0MU1JbURHRWZuYmVlbHBXZUhVSG9sb0ViYVJTSzVWcUdtVjVnVlRZd2FlV0VvVnVJYmRSUktDMXRsYnZlQXVLazdwbHR6ejAyWFBPRVJHSDlEbDQ5dEdId0lCT3BjU2Y0eml4aHoyckdTamhNdjdYLWVkeFBfMmJIWmtXbTMxVWIyNXBMT1NXYmo0cTktanNmQ2tyZXdXNklwU1Y3VDZJRHU0UVcyR1gwWWVoS3IyU09DQl95eUVVMkZRMkc40gHaAUFVX3lxTE96c0ZwY1pMUHNNSXhTY0hsYnBkc2ZIOHZyb3VTUmZRa01WQlFXVjZmNWhJc0FUbllhSmdVNUZONFltR3h1R1pSc01GcEpfS2tEV2tNVmlBMEoxUGgyTUM3N2syOHQ0WTl6T3llNnZNcWFSVkVkaDFNQVVFdlZxSlo4STkydlZ1djdiWDlYN2ExdkM5RGFxblN3dnFNVGIyalpneEpyZlhKSTFGWF9SeHVnTnNtR3lrZVEtZllrdUlIQzB2Y0l5QVNQbDFtM2JJNVk0N2dOcHk3dlF3?oc=5",
           "source": "news.google.com",
-          "pub_date": "2025-09-24T05:56:01+00:00",
+          "pub_date": "2025-09-24T07:00:00+00:00",
           "summary": "Distil raises $7.7 million in Series A funding to strengthen specialty chemicals platform&nbsp;&nbsp;Indian Chemical News",
           "company": "Distil"
         },
@@ -8740,9 +9017,25 @@
           "pub_date": "2025-09-23T07:00:00+00:00",
           "summary": "Chemicals startup Distil raises $7.7 mn Series A funding&nbsp;&nbsp;The Economic Times B2B",
           "company": "Distil"
+        },
+        {
+          "title": "Speciality Chemicals Startup Distil Raises $7.7 Mn To Scale R&D - Inc42",
+          "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPRldUaXFBSXEza1dBOEdqSmtzQ29EelFWREJjUmc4VkI4VHN0RTBPM2sxQ04zMnZ3TjMtc1Jvb2lKU01KRTZZUW1IRzR2V2ZzaUg0WnpWUC02cWFWNXYtcUFhWVAxTzlrbEcxSVczelpwbHJCMm93b3RDM1FxVHV6NlBhUmtPTDRCSU11MXVn?oc=5",
+          "source": "news.google.com",
+          "pub_date": "2025-09-23T07:00:00+00:00",
+          "summary": "Speciality Chemicals Startup Distil Raises $7.7 Mn To Scale R&amp;D&nbsp;&nbsp;Inc42",
+          "company": "Distil"
+        },
+        {
+          "title": "Naritya App - Connect, Create & Earn on India’s Social Stage",
+          "url": "https://naritya.com/",
+          "source": "naritya.com",
+          "pub_date": "2025-09-15T10:29:35.000Z",
+          "summary": "Naritya App - Connect, Create & Earn on India’s Social Stage  # Where Moments Become Movements  Join India Ka Apna Stage, where creators connect, share, earn and grow together.  ## Built for People, Powered by Community  We’re building more than just another social app—we’re creating a space where v",
+          "company": "Coto"
         }
       ],
-      "cached_at": "2026-07-19T05:43:31.702981"
+      "cached_at": "2026-07-20T06:02:25.266532"
     }
   }
 }
